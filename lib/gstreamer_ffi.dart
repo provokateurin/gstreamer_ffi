@@ -44,7 +44,7 @@ class GStreamer {
   }
 
   void gst_object_unref(Pointer object) {
-    _gst.gst_object_unref(object as generated.gpointer);
+    _gst.gst_object_unref(object);
   }
 
   int gst_element_set_state(Pointer<generated.GstElement> element, int state) {

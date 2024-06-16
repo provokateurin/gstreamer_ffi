@@ -28,3 +28,7 @@ ffigen:
         'lib': 'ffi'
         'c-type': 'Char'
         'dart-type': 'int'
+      'gpointer':
+        'lib': 'ffi'
+        'c-type': 'Pointer'
+        'dart-type': 'Pointer'

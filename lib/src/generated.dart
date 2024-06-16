@@ -1610,7 +1610,7 @@ class GStreamer {
       _g_array_newPtr.asFunction<ffi.Pointer<GArray> Function(int, int, int)>();
 
   ffi.Pointer<GArray> g_array_new_take(
-    gpointer data,
+    ffi.Pointer data,
     int len,
     int clear,
     int element_size,
@@ -1626,12 +1626,12 @@ class GStreamer {
   late final _g_array_new_takePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GArray> Function(
-              gpointer, gsize, gboolean, gsize)>>('g_array_new_take');
+              ffi.Pointer, gsize, gboolean, gsize)>>('g_array_new_take');
   late final _g_array_new_take = _g_array_new_takePtr
-      .asFunction<ffi.Pointer<GArray> Function(gpointer, int, int, int)>();
+      .asFunction<ffi.Pointer<GArray> Function(ffi.Pointer, int, int, int)>();
 
   ffi.Pointer<GArray> g_array_new_take_zero_terminated(
-    gpointer data,
+    ffi.Pointer data,
     int clear,
     int element_size,
   ) {
@@ -1644,13 +1644,13 @@ class GStreamer {
 
   late final _g_array_new_take_zero_terminatedPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GArray> Function(
-              gpointer, gboolean, gsize)>>('g_array_new_take_zero_terminated');
+          ffi.Pointer<GArray> Function(ffi.Pointer, gboolean,
+              gsize)>>('g_array_new_take_zero_terminated');
   late final _g_array_new_take_zero_terminated =
       _g_array_new_take_zero_terminatedPtr
-          .asFunction<ffi.Pointer<GArray> Function(gpointer, int, int)>();
+          .asFunction<ffi.Pointer<GArray> Function(ffi.Pointer, int, int)>();
 
-  gpointer g_array_steal(
+  ffi.Pointer g_array_steal(
     ffi.Pointer<GArray> array,
     ffi.Pointer<gsize> len,
   ) {
@@ -1662,10 +1662,10 @@ class GStreamer {
 
   late final _g_array_stealPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(
+          ffi.Pointer Function(
               ffi.Pointer<GArray>, ffi.Pointer<gsize>)>>('g_array_steal');
-  late final _g_array_steal = _g_array_stealPtr
-      .asFunction<gpointer Function(ffi.Pointer<GArray>, ffi.Pointer<gsize>)>();
+  late final _g_array_steal = _g_array_stealPtr.asFunction<
+      ffi.Pointer Function(ffi.Pointer<GArray>, ffi.Pointer<gsize>)>();
 
   ffi.Pointer<GArray> g_array_sized_new(
     int zero_terminated,
@@ -1911,7 +1911,7 @@ class GStreamer {
   void g_array_sort_with_data(
     ffi.Pointer<GArray> array,
     GCompareDataFunc compare_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_array_sort_with_data(
       array,
@@ -1923,9 +1923,9 @@ class GStreamer {
   late final _g_array_sort_with_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GArray>, GCompareDataFunc,
-              gpointer)>>('g_array_sort_with_data');
+              ffi.Pointer)>>('g_array_sort_with_data');
   late final _g_array_sort_with_data = _g_array_sort_with_dataPtr.asFunction<
-      void Function(ffi.Pointer<GArray>, GCompareDataFunc, gpointer)>();
+      void Function(ffi.Pointer<GArray>, GCompareDataFunc, ffi.Pointer)>();
 
   int g_array_binary_search(
     ffi.Pointer<GArray> array,
@@ -1992,7 +1992,7 @@ class GStreamer {
           .asFunction<ffi.Pointer<GPtrArray> Function(GDestroyNotify)>();
 
   ffi.Pointer<GPtrArray> g_ptr_array_new_take(
-    ffi.Pointer<gpointer> data,
+    ffi.Pointer<ffi.Pointer> data,
     int len,
     GDestroyNotify element_free_func,
   ) {
@@ -2005,17 +2005,17 @@ class GStreamer {
 
   late final _g_ptr_array_new_takePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GPtrArray> Function(ffi.Pointer<gpointer>, gsize,
+          ffi.Pointer<GPtrArray> Function(ffi.Pointer<ffi.Pointer>, gsize,
               GDestroyNotify)>>('g_ptr_array_new_take');
   late final _g_ptr_array_new_take = _g_ptr_array_new_takePtr.asFunction<
       ffi.Pointer<GPtrArray> Function(
-          ffi.Pointer<gpointer>, int, GDestroyNotify)>();
+          ffi.Pointer<ffi.Pointer>, int, GDestroyNotify)>();
 
   ffi.Pointer<GPtrArray> g_ptr_array_new_from_array(
-    ffi.Pointer<gpointer> data,
+    ffi.Pointer<ffi.Pointer> data,
     int len,
     GCopyFunc copy_func,
-    gpointer copy_func_user_data,
+    ffi.Pointer copy_func_user_data,
     GDestroyNotify element_free_func,
   ) {
     return _g_ptr_array_new_from_array(
@@ -2030,17 +2030,17 @@ class GStreamer {
   late final _g_ptr_array_new_from_arrayPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GPtrArray> Function(
-              ffi.Pointer<gpointer>,
+              ffi.Pointer<ffi.Pointer>,
               gsize,
               GCopyFunc,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>>('g_ptr_array_new_from_array');
   late final _g_ptr_array_new_from_array =
       _g_ptr_array_new_from_arrayPtr.asFunction<
-          ffi.Pointer<GPtrArray> Function(ffi.Pointer<gpointer>, int, GCopyFunc,
-              gpointer, GDestroyNotify)>();
+          ffi.Pointer<GPtrArray> Function(ffi.Pointer<ffi.Pointer>, int,
+              GCopyFunc, ffi.Pointer, GDestroyNotify)>();
 
-  ffi.Pointer<gpointer> g_ptr_array_steal(
+  ffi.Pointer<ffi.Pointer> g_ptr_array_steal(
     ffi.Pointer<GPtrArray> array,
     ffi.Pointer<gsize> len,
   ) {
@@ -2052,16 +2052,16 @@ class GStreamer {
 
   late final _g_ptr_array_stealPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<gpointer> Function(ffi.Pointer<GPtrArray>,
+          ffi.Pointer<ffi.Pointer> Function(ffi.Pointer<GPtrArray>,
               ffi.Pointer<gsize>)>>('g_ptr_array_steal');
   late final _g_ptr_array_steal = _g_ptr_array_stealPtr.asFunction<
-      ffi.Pointer<gpointer> Function(
+      ffi.Pointer<ffi.Pointer> Function(
           ffi.Pointer<GPtrArray>, ffi.Pointer<gsize>)>();
 
   ffi.Pointer<GPtrArray> g_ptr_array_copy(
     ffi.Pointer<GPtrArray> array,
     GCopyFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_ptr_array_copy(
       array,
@@ -2073,10 +2073,10 @@ class GStreamer {
   late final _g_ptr_array_copyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GPtrArray> Function(ffi.Pointer<GPtrArray>, GCopyFunc,
-              gpointer)>>('g_ptr_array_copy');
+              ffi.Pointer)>>('g_ptr_array_copy');
   late final _g_ptr_array_copy = _g_ptr_array_copyPtr.asFunction<
       ffi.Pointer<GPtrArray> Function(
-          ffi.Pointer<GPtrArray>, GCopyFunc, gpointer)>();
+          ffi.Pointer<GPtrArray>, GCopyFunc, ffi.Pointer)>();
 
   ffi.Pointer<GPtrArray> g_ptr_array_sized_new(
     int reserved_size,
@@ -2130,7 +2130,7 @@ class GStreamer {
           ffi.Pointer<GPtrArray> Function(int, GDestroyNotify, int)>();
 
   ffi.Pointer<GPtrArray> g_ptr_array_new_take_null_terminated(
-    ffi.Pointer<gpointer> data,
+    ffi.Pointer<ffi.Pointer> data,
     GDestroyNotify element_free_func,
   ) {
     return _g_ptr_array_new_take_null_terminated(
@@ -2141,17 +2141,17 @@ class GStreamer {
 
   late final _g_ptr_array_new_take_null_terminatedPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GPtrArray> Function(ffi.Pointer<gpointer>,
+          ffi.Pointer<GPtrArray> Function(ffi.Pointer<ffi.Pointer>,
               GDestroyNotify)>>('g_ptr_array_new_take_null_terminated');
   late final _g_ptr_array_new_take_null_terminated =
       _g_ptr_array_new_take_null_terminatedPtr.asFunction<
           ffi.Pointer<GPtrArray> Function(
-              ffi.Pointer<gpointer>, GDestroyNotify)>();
+              ffi.Pointer<ffi.Pointer>, GDestroyNotify)>();
 
   ffi.Pointer<GPtrArray> g_ptr_array_new_from_null_terminated_array(
-    ffi.Pointer<gpointer> data,
+    ffi.Pointer<ffi.Pointer> data,
     GCopyFunc copy_func,
-    gpointer copy_func_user_data,
+    ffi.Pointer copy_func_user_data,
     GDestroyNotify element_free_func,
   ) {
     return _g_ptr_array_new_from_null_terminated_array(
@@ -2165,16 +2165,16 @@ class GStreamer {
   late final _g_ptr_array_new_from_null_terminated_arrayPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GPtrArray> Function(
-              ffi.Pointer<gpointer>,
+              ffi.Pointer<ffi.Pointer>,
               GCopyFunc,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>>('g_ptr_array_new_from_null_terminated_array');
   late final _g_ptr_array_new_from_null_terminated_array =
       _g_ptr_array_new_from_null_terminated_arrayPtr.asFunction<
-          ffi.Pointer<GPtrArray> Function(
-              ffi.Pointer<gpointer>, GCopyFunc, gpointer, GDestroyNotify)>();
+          ffi.Pointer<GPtrArray> Function(ffi.Pointer<ffi.Pointer>, GCopyFunc,
+              ffi.Pointer, GDestroyNotify)>();
 
-  ffi.Pointer<gpointer> g_ptr_array_free(
+  ffi.Pointer<ffi.Pointer> g_ptr_array_free(
     ffi.Pointer<GPtrArray> array,
     int free_seg,
   ) {
@@ -2186,10 +2186,10 @@ class GStreamer {
 
   late final _g_ptr_array_freePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<gpointer> Function(
+          ffi.Pointer<ffi.Pointer> Function(
               ffi.Pointer<GPtrArray>, gboolean)>>('g_ptr_array_free');
   late final _g_ptr_array_free = _g_ptr_array_freePtr.asFunction<
-      ffi.Pointer<gpointer> Function(ffi.Pointer<GPtrArray>, int)>();
+      ffi.Pointer<ffi.Pointer> Function(ffi.Pointer<GPtrArray>, int)>();
 
   ffi.Pointer<GPtrArray> g_ptr_array_ref(
     ffi.Pointer<GPtrArray> array,
@@ -2253,7 +2253,7 @@ class GStreamer {
   late final _g_ptr_array_set_size = _g_ptr_array_set_sizePtr
       .asFunction<void Function(ffi.Pointer<GPtrArray>, int)>();
 
-  gpointer g_ptr_array_remove_index(
+  ffi.Pointer g_ptr_array_remove_index(
     ffi.Pointer<GPtrArray> array,
     int index_,
   ) {
@@ -2264,12 +2264,13 @@ class GStreamer {
   }
 
   late final _g_ptr_array_remove_indexPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GPtrArray>, guint)>>(
+          ffi
+          .NativeFunction<ffi.Pointer Function(ffi.Pointer<GPtrArray>, guint)>>(
       'g_ptr_array_remove_index');
   late final _g_ptr_array_remove_index = _g_ptr_array_remove_indexPtr
-      .asFunction<gpointer Function(ffi.Pointer<GPtrArray>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GPtrArray>, int)>();
 
-  gpointer g_ptr_array_remove_index_fast(
+  ffi.Pointer g_ptr_array_remove_index_fast(
     ffi.Pointer<GPtrArray> array,
     int index_,
   ) {
@@ -2280,12 +2281,13 @@ class GStreamer {
   }
 
   late final _g_ptr_array_remove_index_fastPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GPtrArray>, guint)>>(
+          ffi
+          .NativeFunction<ffi.Pointer Function(ffi.Pointer<GPtrArray>, guint)>>(
       'g_ptr_array_remove_index_fast');
   late final _g_ptr_array_remove_index_fast = _g_ptr_array_remove_index_fastPtr
-      .asFunction<gpointer Function(ffi.Pointer<GPtrArray>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GPtrArray>, int)>();
 
-  gpointer g_ptr_array_steal_index(
+  ffi.Pointer g_ptr_array_steal_index(
     ffi.Pointer<GPtrArray> array,
     int index_,
   ) {
@@ -2296,12 +2298,13 @@ class GStreamer {
   }
 
   late final _g_ptr_array_steal_indexPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GPtrArray>, guint)>>(
+          ffi
+          .NativeFunction<ffi.Pointer Function(ffi.Pointer<GPtrArray>, guint)>>(
       'g_ptr_array_steal_index');
   late final _g_ptr_array_steal_index = _g_ptr_array_steal_indexPtr
-      .asFunction<gpointer Function(ffi.Pointer<GPtrArray>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GPtrArray>, int)>();
 
-  gpointer g_ptr_array_steal_index_fast(
+  ffi.Pointer g_ptr_array_steal_index_fast(
     ffi.Pointer<GPtrArray> array,
     int index_,
   ) {
@@ -2312,14 +2315,15 @@ class GStreamer {
   }
 
   late final _g_ptr_array_steal_index_fastPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GPtrArray>, guint)>>(
+          ffi
+          .NativeFunction<ffi.Pointer Function(ffi.Pointer<GPtrArray>, guint)>>(
       'g_ptr_array_steal_index_fast');
   late final _g_ptr_array_steal_index_fast = _g_ptr_array_steal_index_fastPtr
-      .asFunction<gpointer Function(ffi.Pointer<GPtrArray>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GPtrArray>, int)>();
 
   int g_ptr_array_remove(
     ffi.Pointer<GPtrArray> array,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_ptr_array_remove(
       array,
@@ -2328,15 +2332,15 @@ class GStreamer {
   }
 
   late final _g_ptr_array_removePtr = _lookup<
-          ffi
-          .NativeFunction<gboolean Function(ffi.Pointer<GPtrArray>, gpointer)>>(
-      'g_ptr_array_remove');
+      ffi.NativeFunction<
+          gboolean Function(
+              ffi.Pointer<GPtrArray>, ffi.Pointer)>>('g_ptr_array_remove');
   late final _g_ptr_array_remove = _g_ptr_array_removePtr
-      .asFunction<int Function(ffi.Pointer<GPtrArray>, gpointer)>();
+      .asFunction<int Function(ffi.Pointer<GPtrArray>, ffi.Pointer)>();
 
   int g_ptr_array_remove_fast(
     ffi.Pointer<GPtrArray> array,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_ptr_array_remove_fast(
       array,
@@ -2345,11 +2349,11 @@ class GStreamer {
   }
 
   late final _g_ptr_array_remove_fastPtr = _lookup<
-          ffi
-          .NativeFunction<gboolean Function(ffi.Pointer<GPtrArray>, gpointer)>>(
-      'g_ptr_array_remove_fast');
+      ffi.NativeFunction<
+          gboolean Function(
+              ffi.Pointer<GPtrArray>, ffi.Pointer)>>('g_ptr_array_remove_fast');
   late final _g_ptr_array_remove_fast = _g_ptr_array_remove_fastPtr
-      .asFunction<int Function(ffi.Pointer<GPtrArray>, gpointer)>();
+      .asFunction<int Function(ffi.Pointer<GPtrArray>, ffi.Pointer)>();
 
   ffi.Pointer<GPtrArray> g_ptr_array_remove_range(
     ffi.Pointer<GPtrArray> array,
@@ -2373,7 +2377,7 @@ class GStreamer {
 
   void g_ptr_array_add(
     ffi.Pointer<GPtrArray> array,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_ptr_array_add(
       array,
@@ -2382,17 +2386,17 @@ class GStreamer {
   }
 
   late final _g_ptr_array_addPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Void Function(ffi.Pointer<GPtrArray>, gpointer)>>(
-      'g_ptr_array_add');
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GPtrArray>, ffi.Pointer)>>('g_ptr_array_add');
   late final _g_ptr_array_add = _g_ptr_array_addPtr
-      .asFunction<void Function(ffi.Pointer<GPtrArray>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GPtrArray>, ffi.Pointer)>();
 
   void g_ptr_array_extend(
     ffi.Pointer<GPtrArray> array_to_extend,
     ffi.Pointer<GPtrArray> array,
     GCopyFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_ptr_array_extend(
       array_to_extend,
@@ -2405,10 +2409,10 @@ class GStreamer {
   late final _g_ptr_array_extendPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GPtrArray>, ffi.Pointer<GPtrArray>,
-              GCopyFunc, gpointer)>>('g_ptr_array_extend');
+              GCopyFunc, ffi.Pointer)>>('g_ptr_array_extend');
   late final _g_ptr_array_extend = _g_ptr_array_extendPtr.asFunction<
       void Function(ffi.Pointer<GPtrArray>, ffi.Pointer<GPtrArray>, GCopyFunc,
-          gpointer)>();
+          ffi.Pointer)>();
 
   void g_ptr_array_extend_and_steal(
     ffi.Pointer<GPtrArray> array_to_extend,
@@ -2431,7 +2435,7 @@ class GStreamer {
   void g_ptr_array_insert(
     ffi.Pointer<GPtrArray> array,
     int index_,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_ptr_array_insert(
       array,
@@ -2442,10 +2446,10 @@ class GStreamer {
 
   late final _g_ptr_array_insertPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<GPtrArray>, gint, gpointer)>>('g_ptr_array_insert');
+          ffi.Void Function(ffi.Pointer<GPtrArray>, gint,
+              ffi.Pointer)>>('g_ptr_array_insert');
   late final _g_ptr_array_insert = _g_ptr_array_insertPtr
-      .asFunction<void Function(ffi.Pointer<GPtrArray>, int, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GPtrArray>, int, ffi.Pointer)>();
 
   void g_ptr_array_sort(
     ffi.Pointer<GPtrArray> array,
@@ -2467,7 +2471,7 @@ class GStreamer {
   void g_ptr_array_sort_with_data(
     ffi.Pointer<GPtrArray> array,
     GCompareDataFunc compare_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_ptr_array_sort_with_data(
       array,
@@ -2479,10 +2483,11 @@ class GStreamer {
   late final _g_ptr_array_sort_with_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GPtrArray>, GCompareDataFunc,
-              gpointer)>>('g_ptr_array_sort_with_data');
+              ffi.Pointer)>>('g_ptr_array_sort_with_data');
   late final _g_ptr_array_sort_with_data =
       _g_ptr_array_sort_with_dataPtr.asFunction<
-          void Function(ffi.Pointer<GPtrArray>, GCompareDataFunc, gpointer)>();
+          void Function(
+              ffi.Pointer<GPtrArray>, GCompareDataFunc, ffi.Pointer)>();
 
   void g_ptr_array_sort_values(
     ffi.Pointer<GPtrArray> array,
@@ -2504,7 +2509,7 @@ class GStreamer {
   void g_ptr_array_sort_values_with_data(
     ffi.Pointer<GPtrArray> array,
     GCompareDataFunc compare_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_ptr_array_sort_values_with_data(
       array,
@@ -2516,15 +2521,16 @@ class GStreamer {
   late final _g_ptr_array_sort_values_with_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GPtrArray>, GCompareDataFunc,
-              gpointer)>>('g_ptr_array_sort_values_with_data');
+              ffi.Pointer)>>('g_ptr_array_sort_values_with_data');
   late final _g_ptr_array_sort_values_with_data =
       _g_ptr_array_sort_values_with_dataPtr.asFunction<
-          void Function(ffi.Pointer<GPtrArray>, GCompareDataFunc, gpointer)>();
+          void Function(
+              ffi.Pointer<GPtrArray>, GCompareDataFunc, ffi.Pointer)>();
 
   void g_ptr_array_foreach(
     ffi.Pointer<GPtrArray> array,
     GFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_ptr_array_foreach(
       array,
@@ -2535,10 +2541,10 @@ class GStreamer {
 
   late final _g_ptr_array_foreachPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<GPtrArray>, GFunc, gpointer)>>('g_ptr_array_foreach');
+          ffi.Void Function(ffi.Pointer<GPtrArray>, GFunc,
+              ffi.Pointer)>>('g_ptr_array_foreach');
   late final _g_ptr_array_foreach = _g_ptr_array_foreachPtr
-      .asFunction<void Function(ffi.Pointer<GPtrArray>, GFunc, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GPtrArray>, GFunc, ffi.Pointer)>();
 
   int g_ptr_array_find(
     ffi.Pointer<GPtrArray> haystack,
@@ -2852,7 +2858,7 @@ class GStreamer {
   void g_byte_array_sort_with_data(
     ffi.Pointer<GByteArray> array,
     GCompareDataFunc compare_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_byte_array_sort_with_data(
       array,
@@ -2864,10 +2870,11 @@ class GStreamer {
   late final _g_byte_array_sort_with_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GByteArray>, GCompareDataFunc,
-              gpointer)>>('g_byte_array_sort_with_data');
+              ffi.Pointer)>>('g_byte_array_sort_with_data');
   late final _g_byte_array_sort_with_data =
       _g_byte_array_sort_with_dataPtr.asFunction<
-          void Function(ffi.Pointer<GByteArray>, GCompareDataFunc, gpointer)>();
+          void Function(
+              ffi.Pointer<GByteArray>, GCompareDataFunc, ffi.Pointer)>();
 
   int g_atomic_int_get(
     ffi.Pointer<gint> atomic,
@@ -3050,8 +3057,8 @@ class GStreamer {
 
   int g_atomic_pointer_compare_and_exchange_full(
     ffi.Pointer<ffi.Void> atomic,
-    gpointer oldval,
-    gpointer newval,
+    ffi.Pointer oldval,
+    ffi.Pointer newval,
     ffi.Pointer<ffi.Void> preval,
   ) {
     return _g_atomic_pointer_compare_and_exchange_full(
@@ -3064,17 +3071,17 @@ class GStreamer {
 
   late final _g_atomic_pointer_compare_and_exchange_fullPtr = _lookup<
           ffi.NativeFunction<
-              gboolean Function(ffi.Pointer<ffi.Void>, gpointer, gpointer,
+              gboolean Function(ffi.Pointer<ffi.Void>, ffi.Pointer, ffi.Pointer,
                   ffi.Pointer<ffi.Void>)>>(
       'g_atomic_pointer_compare_and_exchange_full');
   late final _g_atomic_pointer_compare_and_exchange_full =
       _g_atomic_pointer_compare_and_exchange_fullPtr.asFunction<
-          int Function(ffi.Pointer<ffi.Void>, gpointer, gpointer,
+          int Function(ffi.Pointer<ffi.Void>, ffi.Pointer, ffi.Pointer,
               ffi.Pointer<ffi.Void>)>();
 
-  gpointer g_atomic_pointer_exchange(
+  ffi.Pointer g_atomic_pointer_exchange(
     ffi.Pointer<ffi.Void> atomic,
-    gpointer newval,
+    ffi.Pointer newval,
   ) {
     return _g_atomic_pointer_exchange(
       atomic,
@@ -3083,11 +3090,11 @@ class GStreamer {
   }
 
   late final _g_atomic_pointer_exchangePtr = _lookup<
-          ffi
-          .NativeFunction<gpointer Function(ffi.Pointer<ffi.Void>, gpointer)>>(
-      'g_atomic_pointer_exchange');
+      ffi.NativeFunction<
+          ffi.Pointer Function(ffi.Pointer<ffi.Void>,
+              ffi.Pointer)>>('g_atomic_pointer_exchange');
   late final _g_atomic_pointer_exchange = _g_atomic_pointer_exchangePtr
-      .asFunction<gpointer Function(ffi.Pointer<ffi.Void>, gpointer)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<ffi.Void>, ffi.Pointer)>();
 
   int g_atomic_int_exchange_and_add(
     ffi.Pointer<gint> atomic,
@@ -3752,7 +3759,7 @@ class GStreamer {
           ffi.Pointer<__va_list_tag>)>();
 
   void g_nullify_pointer(
-    ffi.Pointer<gpointer> nullify_location,
+    ffi.Pointer<ffi.Pointer> nullify_location,
   ) {
     return _g_nullify_pointer(
       nullify_location,
@@ -3760,10 +3767,10 @@ class GStreamer {
   }
 
   late final _g_nullify_pointerPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<gpointer>)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Pointer>)>>(
           'g_nullify_pointer');
-  late final _g_nullify_pointer =
-      _g_nullify_pointerPtr.asFunction<void Function(ffi.Pointer<gpointer>)>();
+  late final _g_nullify_pointer = _g_nullify_pointerPtr
+      .asFunction<void Function(ffi.Pointer<ffi.Pointer>)>();
 
   ffi.Pointer<ffi.Char> g_format_size_full(
     int size,
@@ -5500,7 +5507,7 @@ class GStreamer {
   ffi.Pointer<GThread> g_thread_new(
     ffi.Pointer<ffi.Char> name,
     GThreadFunc func,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_thread_new(
       name,
@@ -5511,16 +5518,16 @@ class GStreamer {
 
   late final _g_thread_newPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GThread> Function(
-              ffi.Pointer<ffi.Char>, GThreadFunc, gpointer)>>('g_thread_new');
+          ffi.Pointer<GThread> Function(ffi.Pointer<ffi.Char>, GThreadFunc,
+              ffi.Pointer)>>('g_thread_new');
   late final _g_thread_new = _g_thread_newPtr.asFunction<
       ffi.Pointer<GThread> Function(
-          ffi.Pointer<ffi.Char>, GThreadFunc, gpointer)>();
+          ffi.Pointer<ffi.Char>, GThreadFunc, ffi.Pointer)>();
 
   ffi.Pointer<GThread> g_thread_try_new(
     ffi.Pointer<ffi.Char> name,
     GThreadFunc func,
-    gpointer data,
+    ffi.Pointer data,
     ffi.Pointer<ffi.Pointer<GError>> error,
   ) {
     return _g_thread_try_new(
@@ -5533,11 +5540,14 @@ class GStreamer {
 
   late final _g_thread_try_newPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GThread> Function(ffi.Pointer<ffi.Char>, GThreadFunc,
-              gpointer, ffi.Pointer<ffi.Pointer<GError>>)>>('g_thread_try_new');
+          ffi.Pointer<GThread> Function(
+              ffi.Pointer<ffi.Char>,
+              GThreadFunc,
+              ffi.Pointer,
+              ffi.Pointer<ffi.Pointer<GError>>)>>('g_thread_try_new');
   late final _g_thread_try_new = _g_thread_try_newPtr.asFunction<
       ffi.Pointer<GThread> Function(ffi.Pointer<ffi.Char>, GThreadFunc,
-          gpointer, ffi.Pointer<ffi.Pointer<GError>>)>();
+          ffi.Pointer, ffi.Pointer<ffi.Pointer<GError>>)>();
 
   ffi.Pointer<GThread> g_thread_self() {
     return _g_thread_self();
@@ -5550,7 +5560,7 @@ class GStreamer {
       _g_thread_selfPtr.asFunction<ffi.Pointer<GThread> Function()>();
 
   void g_thread_exit(
-    gpointer retval,
+    ffi.Pointer retval,
   ) {
     return _g_thread_exit(
       retval,
@@ -5558,11 +5568,12 @@ class GStreamer {
   }
 
   late final _g_thread_exitPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>('g_thread_exit');
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
+          'g_thread_exit');
   late final _g_thread_exit =
-      _g_thread_exitPtr.asFunction<void Function(gpointer)>();
+      _g_thread_exitPtr.asFunction<void Function(ffi.Pointer)>();
 
-  gpointer g_thread_join(
+  ffi.Pointer g_thread_join(
     ffi.Pointer<GThread> thread,
   ) {
     return _g_thread_join(
@@ -5571,10 +5582,10 @@ class GStreamer {
   }
 
   late final _g_thread_joinPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GThread>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GThread>)>>(
           'g_thread_join');
-  late final _g_thread_join =
-      _g_thread_joinPtr.asFunction<gpointer Function(ffi.Pointer<GThread>)>();
+  late final _g_thread_join = _g_thread_joinPtr
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GThread>)>();
 
   void g_thread_yield() {
     return _g_thread_yield();
@@ -5928,7 +5939,7 @@ class GStreamer {
   late final _g_cond_wait_until = _g_cond_wait_untilPtr
       .asFunction<int Function(ffi.Pointer<GCond>, ffi.Pointer<GMutex>, int)>();
 
-  gpointer g_private_get(
+  ffi.Pointer g_private_get(
     ffi.Pointer<GPrivate> key,
   ) {
     return _g_private_get(
@@ -5937,14 +5948,14 @@ class GStreamer {
   }
 
   late final _g_private_getPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GPrivate>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GPrivate>)>>(
           'g_private_get');
-  late final _g_private_get =
-      _g_private_getPtr.asFunction<gpointer Function(ffi.Pointer<GPrivate>)>();
+  late final _g_private_get = _g_private_getPtr
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GPrivate>)>();
 
   void g_private_set(
     ffi.Pointer<GPrivate> key,
-    gpointer value,
+    ffi.Pointer value,
   ) {
     return _g_private_set(
       key,
@@ -5954,13 +5965,14 @@ class GStreamer {
 
   late final _g_private_setPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GPrivate>, gpointer)>>('g_private_set');
+          ffi.Void Function(
+              ffi.Pointer<GPrivate>, ffi.Pointer)>>('g_private_set');
   late final _g_private_set = _g_private_setPtr
-      .asFunction<void Function(ffi.Pointer<GPrivate>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GPrivate>, ffi.Pointer)>();
 
   void g_private_replace(
     ffi.Pointer<GPrivate> key,
-    gpointer value,
+    ffi.Pointer value,
   ) {
     return _g_private_replace(
       key,
@@ -5969,16 +5981,16 @@ class GStreamer {
   }
 
   late final _g_private_replacePtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Void Function(ffi.Pointer<GPrivate>, gpointer)>>(
-      'g_private_replace');
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GPrivate>, ffi.Pointer)>>('g_private_replace');
   late final _g_private_replace = _g_private_replacePtr
-      .asFunction<void Function(ffi.Pointer<GPrivate>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GPrivate>, ffi.Pointer)>();
 
-  gpointer g_once_impl(
+  ffi.Pointer g_once_impl(
     ffi.Pointer<GOnce> once,
     GThreadFunc func,
-    gpointer arg,
+    ffi.Pointer arg,
   ) {
     return _g_once_impl(
       once,
@@ -5989,10 +6001,10 @@ class GStreamer {
 
   late final _g_once_implPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(
-              ffi.Pointer<GOnce>, GThreadFunc, gpointer)>>('g_once_impl');
+          ffi.Pointer Function(
+              ffi.Pointer<GOnce>, GThreadFunc, ffi.Pointer)>>('g_once_impl');
   late final _g_once_impl = _g_once_implPtr.asFunction<
-      gpointer Function(ffi.Pointer<GOnce>, GThreadFunc, gpointer)>();
+      ffi.Pointer Function(ffi.Pointer<GOnce>, GThreadFunc, ffi.Pointer)>();
 
   int g_once_init_enter_pointer(
     ffi.Pointer<ffi.Void> location,
@@ -6010,7 +6022,7 @@ class GStreamer {
 
   void g_once_init_leave_pointer(
     ffi.Pointer<ffi.Void> location,
-    gpointer result,
+    ffi.Pointer result,
   ) {
     return _g_once_init_leave_pointer(
       location,
@@ -6019,11 +6031,11 @@ class GStreamer {
   }
 
   late final _g_once_init_leave_pointerPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>, gpointer)>>(
-      'g_once_init_leave_pointer');
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>,
+              ffi.Pointer)>>('g_once_init_leave_pointer');
   late final _g_once_init_leave_pointer = _g_once_init_leave_pointerPtr
-      .asFunction<void Function(ffi.Pointer<ffi.Void>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<ffi.Void>, ffi.Pointer)>();
 
   int g_get_num_processors() {
     return _g_get_num_processors();
@@ -6147,7 +6159,7 @@ class GStreamer {
 
   void g_async_queue_push(
     ffi.Pointer<GAsyncQueue> queue,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_async_queue_push(
       queue,
@@ -6158,13 +6170,13 @@ class GStreamer {
   late final _g_async_queue_pushPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
-              ffi.Pointer<GAsyncQueue>, gpointer)>>('g_async_queue_push');
+              ffi.Pointer<GAsyncQueue>, ffi.Pointer)>>('g_async_queue_push');
   late final _g_async_queue_push = _g_async_queue_pushPtr
-      .asFunction<void Function(ffi.Pointer<GAsyncQueue>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GAsyncQueue>, ffi.Pointer)>();
 
   void g_async_queue_push_unlocked(
     ffi.Pointer<GAsyncQueue> queue,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_async_queue_push_unlocked(
       queue,
@@ -6175,15 +6187,15 @@ class GStreamer {
   late final _g_async_queue_push_unlockedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GAsyncQueue>,
-              gpointer)>>('g_async_queue_push_unlocked');
+              ffi.Pointer)>>('g_async_queue_push_unlocked');
   late final _g_async_queue_push_unlocked = _g_async_queue_push_unlockedPtr
-      .asFunction<void Function(ffi.Pointer<GAsyncQueue>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GAsyncQueue>, ffi.Pointer)>();
 
   void g_async_queue_push_sorted(
     ffi.Pointer<GAsyncQueue> queue,
-    gpointer data,
+    ffi.Pointer data,
     GCompareDataFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_async_queue_push_sorted(
       queue,
@@ -6195,18 +6207,18 @@ class GStreamer {
 
   late final _g_async_queue_push_sortedPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GAsyncQueue>, gpointer,
-              GCompareDataFunc, gpointer)>>('g_async_queue_push_sorted');
+          ffi.Void Function(ffi.Pointer<GAsyncQueue>, ffi.Pointer,
+              GCompareDataFunc, ffi.Pointer)>>('g_async_queue_push_sorted');
   late final _g_async_queue_push_sorted =
       _g_async_queue_push_sortedPtr.asFunction<
-          void Function(ffi.Pointer<GAsyncQueue>, gpointer, GCompareDataFunc,
-              gpointer)>();
+          void Function(ffi.Pointer<GAsyncQueue>, ffi.Pointer, GCompareDataFunc,
+              ffi.Pointer)>();
 
   void g_async_queue_push_sorted_unlocked(
     ffi.Pointer<GAsyncQueue> queue,
-    gpointer data,
+    ffi.Pointer data,
     GCompareDataFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_async_queue_push_sorted_unlocked(
       queue,
@@ -6220,15 +6232,15 @@ class GStreamer {
       ffi.NativeFunction<
           ffi.Void Function(
               ffi.Pointer<GAsyncQueue>,
-              gpointer,
+              ffi.Pointer,
               GCompareDataFunc,
-              gpointer)>>('g_async_queue_push_sorted_unlocked');
+              ffi.Pointer)>>('g_async_queue_push_sorted_unlocked');
   late final _g_async_queue_push_sorted_unlocked =
       _g_async_queue_push_sorted_unlockedPtr.asFunction<
-          void Function(ffi.Pointer<GAsyncQueue>, gpointer, GCompareDataFunc,
-              gpointer)>();
+          void Function(ffi.Pointer<GAsyncQueue>, ffi.Pointer, GCompareDataFunc,
+              ffi.Pointer)>();
 
-  gpointer g_async_queue_pop(
+  ffi.Pointer g_async_queue_pop(
     ffi.Pointer<GAsyncQueue> queue,
   ) {
     return _g_async_queue_pop(
@@ -6236,13 +6248,13 @@ class GStreamer {
     );
   }
 
-  late final _g_async_queue_popPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GAsyncQueue>)>>(
-          'g_async_queue_pop');
+  late final _g_async_queue_popPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GAsyncQueue>)>>(
+      'g_async_queue_pop');
   late final _g_async_queue_pop = _g_async_queue_popPtr
-      .asFunction<gpointer Function(ffi.Pointer<GAsyncQueue>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GAsyncQueue>)>();
 
-  gpointer g_async_queue_pop_unlocked(
+  ffi.Pointer g_async_queue_pop_unlocked(
     ffi.Pointer<GAsyncQueue> queue,
   ) {
     return _g_async_queue_pop_unlocked(
@@ -6250,13 +6262,13 @@ class GStreamer {
     );
   }
 
-  late final _g_async_queue_pop_unlockedPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GAsyncQueue>)>>(
-          'g_async_queue_pop_unlocked');
+  late final _g_async_queue_pop_unlockedPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GAsyncQueue>)>>(
+      'g_async_queue_pop_unlocked');
   late final _g_async_queue_pop_unlocked = _g_async_queue_pop_unlockedPtr
-      .asFunction<gpointer Function(ffi.Pointer<GAsyncQueue>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GAsyncQueue>)>();
 
-  gpointer g_async_queue_try_pop(
+  ffi.Pointer g_async_queue_try_pop(
     ffi.Pointer<GAsyncQueue> queue,
   ) {
     return _g_async_queue_try_pop(
@@ -6264,13 +6276,13 @@ class GStreamer {
     );
   }
 
-  late final _g_async_queue_try_popPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GAsyncQueue>)>>(
-          'g_async_queue_try_pop');
+  late final _g_async_queue_try_popPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GAsyncQueue>)>>(
+      'g_async_queue_try_pop');
   late final _g_async_queue_try_pop = _g_async_queue_try_popPtr
-      .asFunction<gpointer Function(ffi.Pointer<GAsyncQueue>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GAsyncQueue>)>();
 
-  gpointer g_async_queue_try_pop_unlocked(
+  ffi.Pointer g_async_queue_try_pop_unlocked(
     ffi.Pointer<GAsyncQueue> queue,
   ) {
     return _g_async_queue_try_pop_unlocked(
@@ -6278,14 +6290,14 @@ class GStreamer {
     );
   }
 
-  late final _g_async_queue_try_pop_unlockedPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GAsyncQueue>)>>(
-          'g_async_queue_try_pop_unlocked');
+  late final _g_async_queue_try_pop_unlockedPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GAsyncQueue>)>>(
+      'g_async_queue_try_pop_unlocked');
   late final _g_async_queue_try_pop_unlocked =
       _g_async_queue_try_pop_unlockedPtr
-          .asFunction<gpointer Function(ffi.Pointer<GAsyncQueue>)>();
+          .asFunction<ffi.Pointer Function(ffi.Pointer<GAsyncQueue>)>();
 
-  gpointer g_async_queue_timeout_pop(
+  ffi.Pointer g_async_queue_timeout_pop(
     ffi.Pointer<GAsyncQueue> queue,
     int timeout,
   ) {
@@ -6297,12 +6309,12 @@ class GStreamer {
 
   late final _g_async_queue_timeout_popPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(
+          ffi.Pointer Function(
               ffi.Pointer<GAsyncQueue>, guint64)>>('g_async_queue_timeout_pop');
   late final _g_async_queue_timeout_pop = _g_async_queue_timeout_popPtr
-      .asFunction<gpointer Function(ffi.Pointer<GAsyncQueue>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GAsyncQueue>, int)>();
 
-  gpointer g_async_queue_timeout_pop_unlocked(
+  ffi.Pointer g_async_queue_timeout_pop_unlocked(
     ffi.Pointer<GAsyncQueue> queue,
     int timeout,
   ) {
@@ -6314,11 +6326,11 @@ class GStreamer {
 
   late final _g_async_queue_timeout_pop_unlockedPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GAsyncQueue>,
+          ffi.Pointer Function(ffi.Pointer<GAsyncQueue>,
               guint64)>>('g_async_queue_timeout_pop_unlocked');
   late final _g_async_queue_timeout_pop_unlocked =
       _g_async_queue_timeout_pop_unlockedPtr
-          .asFunction<gpointer Function(ffi.Pointer<GAsyncQueue>, int)>();
+          .asFunction<ffi.Pointer Function(ffi.Pointer<GAsyncQueue>, int)>();
 
   int g_async_queue_length(
     ffi.Pointer<GAsyncQueue> queue,
@@ -6351,7 +6363,7 @@ class GStreamer {
   void g_async_queue_sort(
     ffi.Pointer<GAsyncQueue> queue,
     GCompareDataFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_async_queue_sort(
       queue,
@@ -6363,14 +6375,14 @@ class GStreamer {
   late final _g_async_queue_sortPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GAsyncQueue>, GCompareDataFunc,
-              gpointer)>>('g_async_queue_sort');
+              ffi.Pointer)>>('g_async_queue_sort');
   late final _g_async_queue_sort = _g_async_queue_sortPtr.asFunction<
-      void Function(ffi.Pointer<GAsyncQueue>, GCompareDataFunc, gpointer)>();
+      void Function(ffi.Pointer<GAsyncQueue>, GCompareDataFunc, ffi.Pointer)>();
 
   void g_async_queue_sort_unlocked(
     ffi.Pointer<GAsyncQueue> queue,
     GCompareDataFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_async_queue_sort_unlocked(
       queue,
@@ -6382,15 +6394,15 @@ class GStreamer {
   late final _g_async_queue_sort_unlockedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GAsyncQueue>, GCompareDataFunc,
-              gpointer)>>('g_async_queue_sort_unlocked');
+              ffi.Pointer)>>('g_async_queue_sort_unlocked');
   late final _g_async_queue_sort_unlocked =
       _g_async_queue_sort_unlockedPtr.asFunction<
           void Function(
-              ffi.Pointer<GAsyncQueue>, GCompareDataFunc, gpointer)>();
+              ffi.Pointer<GAsyncQueue>, GCompareDataFunc, ffi.Pointer)>();
 
   int g_async_queue_remove(
     ffi.Pointer<GAsyncQueue> queue,
-    gpointer item,
+    ffi.Pointer item,
   ) {
     return _g_async_queue_remove(
       queue,
@@ -6401,13 +6413,13 @@ class GStreamer {
   late final _g_async_queue_removePtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(
-              ffi.Pointer<GAsyncQueue>, gpointer)>>('g_async_queue_remove');
+              ffi.Pointer<GAsyncQueue>, ffi.Pointer)>>('g_async_queue_remove');
   late final _g_async_queue_remove = _g_async_queue_removePtr
-      .asFunction<int Function(ffi.Pointer<GAsyncQueue>, gpointer)>();
+      .asFunction<int Function(ffi.Pointer<GAsyncQueue>, ffi.Pointer)>();
 
   int g_async_queue_remove_unlocked(
     ffi.Pointer<GAsyncQueue> queue,
-    gpointer item,
+    ffi.Pointer item,
   ) {
     return _g_async_queue_remove_unlocked(
       queue,
@@ -6418,13 +6430,13 @@ class GStreamer {
   late final _g_async_queue_remove_unlockedPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GAsyncQueue>,
-              gpointer)>>('g_async_queue_remove_unlocked');
+              ffi.Pointer)>>('g_async_queue_remove_unlocked');
   late final _g_async_queue_remove_unlocked = _g_async_queue_remove_unlockedPtr
-      .asFunction<int Function(ffi.Pointer<GAsyncQueue>, gpointer)>();
+      .asFunction<int Function(ffi.Pointer<GAsyncQueue>, ffi.Pointer)>();
 
   void g_async_queue_push_front(
     ffi.Pointer<GAsyncQueue> queue,
-    gpointer item,
+    ffi.Pointer item,
   ) {
     return _g_async_queue_push_front(
       queue,
@@ -6434,14 +6446,14 @@ class GStreamer {
 
   late final _g_async_queue_push_frontPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<GAsyncQueue>, gpointer)>>('g_async_queue_push_front');
+          ffi.Void Function(ffi.Pointer<GAsyncQueue>,
+              ffi.Pointer)>>('g_async_queue_push_front');
   late final _g_async_queue_push_front = _g_async_queue_push_frontPtr
-      .asFunction<void Function(ffi.Pointer<GAsyncQueue>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GAsyncQueue>, ffi.Pointer)>();
 
   void g_async_queue_push_front_unlocked(
     ffi.Pointer<GAsyncQueue> queue,
-    gpointer item,
+    ffi.Pointer item,
   ) {
     return _g_async_queue_push_front_unlocked(
       queue,
@@ -6452,12 +6464,12 @@ class GStreamer {
   late final _g_async_queue_push_front_unlockedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GAsyncQueue>,
-              gpointer)>>('g_async_queue_push_front_unlocked');
+              ffi.Pointer)>>('g_async_queue_push_front_unlocked');
   late final _g_async_queue_push_front_unlocked =
       _g_async_queue_push_front_unlockedPtr
-          .asFunction<void Function(ffi.Pointer<GAsyncQueue>, gpointer)>();
+          .asFunction<void Function(ffi.Pointer<GAsyncQueue>, ffi.Pointer)>();
 
-  gpointer g_async_queue_timed_pop(
+  ffi.Pointer g_async_queue_timed_pop(
     ffi.Pointer<GAsyncQueue> queue,
     ffi.Pointer<GTimeVal> end_time,
   ) {
@@ -6469,12 +6481,12 @@ class GStreamer {
 
   late final _g_async_queue_timed_popPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GAsyncQueue>,
+          ffi.Pointer Function(ffi.Pointer<GAsyncQueue>,
               ffi.Pointer<GTimeVal>)>>('g_async_queue_timed_pop');
   late final _g_async_queue_timed_pop = _g_async_queue_timed_popPtr.asFunction<
-      gpointer Function(ffi.Pointer<GAsyncQueue>, ffi.Pointer<GTimeVal>)>();
+      ffi.Pointer Function(ffi.Pointer<GAsyncQueue>, ffi.Pointer<GTimeVal>)>();
 
-  gpointer g_async_queue_timed_pop_unlocked(
+  ffi.Pointer g_async_queue_timed_pop_unlocked(
     ffi.Pointer<GAsyncQueue> queue,
     ffi.Pointer<GTimeVal> end_time,
   ) {
@@ -6486,11 +6498,12 @@ class GStreamer {
 
   late final _g_async_queue_timed_pop_unlockedPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GAsyncQueue>,
+          ffi.Pointer Function(ffi.Pointer<GAsyncQueue>,
               ffi.Pointer<GTimeVal>)>>('g_async_queue_timed_pop_unlocked');
   late final _g_async_queue_timed_pop_unlocked =
       _g_async_queue_timed_pop_unlockedPtr.asFunction<
-          gpointer Function(ffi.Pointer<GAsyncQueue>, ffi.Pointer<GTimeVal>)>();
+          ffi.Pointer Function(
+              ffi.Pointer<GAsyncQueue>, ffi.Pointer<GTimeVal>)>();
 
   __sighandler_t __sysv_signal(
     int __sig,
@@ -7197,7 +7210,7 @@ class GStreamer {
       _g_bit_unlockPtr.asFunction<void Function(ffi.Pointer<gint>, int)>();
 
   void g_pointer_bit_lock_and_get(
-    gpointer address,
+    ffi.Pointer address,
     int lock_bit,
     ffi.Pointer<guintptr> out_ptr,
   ) {
@@ -7210,17 +7223,17 @@ class GStreamer {
 
   late final _g_pointer_bit_lock_and_getPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(gpointer, guint,
+          ffi.Void Function(ffi.Pointer, guint,
               ffi.Pointer<guintptr>)>>('g_pointer_bit_lock_and_get');
   late final _g_pointer_bit_lock_and_get = _g_pointer_bit_lock_and_getPtr
-      .asFunction<void Function(gpointer, int, ffi.Pointer<guintptr>)>();
+      .asFunction<void Function(ffi.Pointer, int, ffi.Pointer<guintptr>)>();
 
-  gpointer g_pointer_bit_lock_mask_ptr(
-    gpointer ptr,
+  ffi.Pointer g_pointer_bit_lock_mask_ptr(
+    ffi.Pointer ptr,
     int lock_bit,
     int set1,
     int preserve_mask,
-    gpointer preserve_ptr,
+    ffi.Pointer preserve_ptr,
   ) {
     return _g_pointer_bit_lock_mask_ptr(
       ptr,
@@ -7233,15 +7246,16 @@ class GStreamer {
 
   late final _g_pointer_bit_lock_mask_ptrPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(gpointer, guint, gboolean, guintptr,
-              gpointer)>>('g_pointer_bit_lock_mask_ptr');
-  late final _g_pointer_bit_lock_mask_ptr = _g_pointer_bit_lock_mask_ptrPtr
-      .asFunction<gpointer Function(gpointer, int, int, int, gpointer)>();
+          ffi.Pointer Function(ffi.Pointer, guint, gboolean, guintptr,
+              ffi.Pointer)>>('g_pointer_bit_lock_mask_ptr');
+  late final _g_pointer_bit_lock_mask_ptr =
+      _g_pointer_bit_lock_mask_ptrPtr.asFunction<
+          ffi.Pointer Function(ffi.Pointer, int, int, int, ffi.Pointer)>();
 
   void g_pointer_bit_unlock_and_set(
     ffi.Pointer<ffi.Void> address,
     int lock_bit,
-    gpointer ptr,
+    ffi.Pointer ptr,
     int preserve_mask,
   ) {
     return _g_pointer_bit_unlock_and_set(
@@ -7254,10 +7268,11 @@ class GStreamer {
 
   late final _g_pointer_bit_unlock_and_setPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<ffi.Void>, guint, gpointer,
+          ffi.Void Function(ffi.Pointer<ffi.Void>, guint, ffi.Pointer,
               guintptr)>>('g_pointer_bit_unlock_and_set');
-  late final _g_pointer_bit_unlock_and_set = _g_pointer_bit_unlock_and_setPtr
-      .asFunction<void Function(ffi.Pointer<ffi.Void>, int, gpointer, int)>();
+  late final _g_pointer_bit_unlock_and_set =
+      _g_pointer_bit_unlock_and_setPtr.asFunction<
+          void Function(ffi.Pointer<ffi.Void>, int, ffi.Pointer, int)>();
 
   ffi.Pointer<GTimeZone> g_time_zone_new(
     ffi.Pointer<ffi.Char> identifier,
@@ -9496,7 +9511,7 @@ class GStreamer {
       .asFunction<ffi.Pointer<GBytes> Function(gconstpointer, int)>();
 
   ffi.Pointer<GBytes> g_bytes_new_take(
-    gpointer data,
+    ffi.Pointer data,
     int size,
   ) {
     return _g_bytes_new_take(
@@ -9506,10 +9521,10 @@ class GStreamer {
   }
 
   late final _g_bytes_new_takePtr = _lookup<
-          ffi.NativeFunction<ffi.Pointer<GBytes> Function(gpointer, gsize)>>(
+          ffi.NativeFunction<ffi.Pointer<GBytes> Function(ffi.Pointer, gsize)>>(
       'g_bytes_new_take');
   late final _g_bytes_new_take = _g_bytes_new_takePtr
-      .asFunction<ffi.Pointer<GBytes> Function(gpointer, int)>();
+      .asFunction<ffi.Pointer<GBytes> Function(ffi.Pointer, int)>();
 
   ffi.Pointer<GBytes> g_bytes_new_static(
     gconstpointer data,
@@ -9532,7 +9547,7 @@ class GStreamer {
     gconstpointer data,
     int size,
     GDestroyNotify free_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_bytes_new_with_free_func(
       data,
@@ -9545,11 +9560,11 @@ class GStreamer {
   late final _g_bytes_new_with_free_funcPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GBytes> Function(gconstpointer, gsize, GDestroyNotify,
-              gpointer)>>('g_bytes_new_with_free_func');
+              ffi.Pointer)>>('g_bytes_new_with_free_func');
   late final _g_bytes_new_with_free_func =
       _g_bytes_new_with_free_funcPtr.asFunction<
           ffi.Pointer<GBytes> Function(
-              gconstpointer, int, GDestroyNotify, gpointer)>();
+              gconstpointer, int, GDestroyNotify, ffi.Pointer)>();
 
   ffi.Pointer<GBytes> g_bytes_new_from_bytes(
     ffi.Pointer<GBytes> bytes,
@@ -9629,7 +9644,7 @@ class GStreamer {
   late final _g_bytes_unref =
       _g_bytes_unrefPtr.asFunction<void Function(ffi.Pointer<GBytes>)>();
 
-  gpointer g_bytes_unref_to_data(
+  ffi.Pointer g_bytes_unref_to_data(
     ffi.Pointer<GBytes> bytes,
     ffi.Pointer<gsize> size,
   ) {
@@ -9641,10 +9656,10 @@ class GStreamer {
 
   late final _g_bytes_unref_to_dataPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GBytes>,
+          ffi.Pointer Function(ffi.Pointer<GBytes>,
               ffi.Pointer<gsize>)>>('g_bytes_unref_to_data');
-  late final _g_bytes_unref_to_data = _g_bytes_unref_to_dataPtr
-      .asFunction<gpointer Function(ffi.Pointer<GBytes>, ffi.Pointer<gsize>)>();
+  late final _g_bytes_unref_to_data = _g_bytes_unref_to_dataPtr.asFunction<
+      ffi.Pointer Function(ffi.Pointer<GBytes>, ffi.Pointer<gsize>)>();
 
   ffi.Pointer<GByteArray> g_bytes_unref_to_array(
     ffi.Pointer<GBytes> bytes,
@@ -10447,7 +10462,7 @@ class GStreamer {
   late final _g_datalist_clear = _g_datalist_clearPtr
       .asFunction<void Function(ffi.Pointer<ffi.Pointer<GData>>)>();
 
-  gpointer g_datalist_id_get_data(
+  ffi.Pointer g_datalist_id_get_data(
     ffi.Pointer<ffi.Pointer<GData>> datalist,
     int key_id,
   ) {
@@ -10459,15 +10474,15 @@ class GStreamer {
 
   late final _g_datalist_id_get_dataPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<ffi.Pointer<GData>>,
+          ffi.Pointer Function(ffi.Pointer<ffi.Pointer<GData>>,
               GQuark)>>('g_datalist_id_get_data');
   late final _g_datalist_id_get_data = _g_datalist_id_get_dataPtr
-      .asFunction<gpointer Function(ffi.Pointer<ffi.Pointer<GData>>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<ffi.Pointer<GData>>, int)>();
 
   void g_datalist_id_set_data_full(
     ffi.Pointer<ffi.Pointer<GData>> datalist,
     int key_id,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify destroy_func,
   ) {
     return _g_datalist_id_set_data_full(
@@ -10480,11 +10495,11 @@ class GStreamer {
 
   late final _g_datalist_id_set_data_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<ffi.Pointer<GData>>, GQuark, gpointer,
-              GDestroyNotify)>>('g_datalist_id_set_data_full');
+          ffi.Void Function(ffi.Pointer<ffi.Pointer<GData>>, GQuark,
+              ffi.Pointer, GDestroyNotify)>>('g_datalist_id_set_data_full');
   late final _g_datalist_id_set_data_full =
       _g_datalist_id_set_data_fullPtr.asFunction<
-          void Function(ffi.Pointer<ffi.Pointer<GData>>, int, gpointer,
+          void Function(ffi.Pointer<ffi.Pointer<GData>>, int, ffi.Pointer,
               GDestroyNotify)>();
 
   void g_datalist_id_remove_multiple(
@@ -10508,11 +10523,11 @@ class GStreamer {
           void Function(
               ffi.Pointer<ffi.Pointer<GData>>, ffi.Pointer<GQuark>, int)>();
 
-  gpointer g_datalist_id_dup_data(
+  ffi.Pointer g_datalist_id_dup_data(
     ffi.Pointer<ffi.Pointer<GData>> datalist,
     int key_id,
     GDuplicateFunc dup_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_datalist_id_dup_data(
       datalist,
@@ -10524,17 +10539,17 @@ class GStreamer {
 
   late final _g_datalist_id_dup_dataPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<ffi.Pointer<GData>>, GQuark,
-              GDuplicateFunc, gpointer)>>('g_datalist_id_dup_data');
+          ffi.Pointer Function(ffi.Pointer<ffi.Pointer<GData>>, GQuark,
+              GDuplicateFunc, ffi.Pointer)>>('g_datalist_id_dup_data');
   late final _g_datalist_id_dup_data = _g_datalist_id_dup_dataPtr.asFunction<
-      gpointer Function(
-          ffi.Pointer<ffi.Pointer<GData>>, int, GDuplicateFunc, gpointer)>();
+      ffi.Pointer Function(
+          ffi.Pointer<ffi.Pointer<GData>>, int, GDuplicateFunc, ffi.Pointer)>();
 
   int g_datalist_id_replace_data(
     ffi.Pointer<ffi.Pointer<GData>> datalist,
     int key_id,
-    gpointer oldval,
-    gpointer newval,
+    ffi.Pointer oldval,
+    ffi.Pointer newval,
     GDestroyNotify destroy,
     ffi.Pointer<GDestroyNotify> old_destroy,
   ) {
@@ -10553,16 +10568,16 @@ class GStreamer {
           gboolean Function(
               ffi.Pointer<ffi.Pointer<GData>>,
               GQuark,
-              gpointer,
-              gpointer,
+              ffi.Pointer,
+              ffi.Pointer,
               GDestroyNotify,
               ffi.Pointer<GDestroyNotify>)>>('g_datalist_id_replace_data');
   late final _g_datalist_id_replace_data =
       _g_datalist_id_replace_dataPtr.asFunction<
-          int Function(ffi.Pointer<ffi.Pointer<GData>>, int, gpointer, gpointer,
-              GDestroyNotify, ffi.Pointer<GDestroyNotify>)>();
+          int Function(ffi.Pointer<ffi.Pointer<GData>>, int, ffi.Pointer,
+              ffi.Pointer, GDestroyNotify, ffi.Pointer<GDestroyNotify>)>();
 
-  gpointer g_datalist_id_remove_no_notify(
+  ffi.Pointer g_datalist_id_remove_no_notify(
     ffi.Pointer<ffi.Pointer<GData>> datalist,
     int key_id,
   ) {
@@ -10574,16 +10589,16 @@ class GStreamer {
 
   late final _g_datalist_id_remove_no_notifyPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<ffi.Pointer<GData>>,
+          ffi.Pointer Function(ffi.Pointer<ffi.Pointer<GData>>,
               GQuark)>>('g_datalist_id_remove_no_notify');
   late final _g_datalist_id_remove_no_notify =
       _g_datalist_id_remove_no_notifyPtr.asFunction<
-          gpointer Function(ffi.Pointer<ffi.Pointer<GData>>, int)>();
+          ffi.Pointer Function(ffi.Pointer<ffi.Pointer<GData>>, int)>();
 
   void g_datalist_foreach(
     ffi.Pointer<ffi.Pointer<GData>> datalist,
     GDataForeachFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_datalist_foreach(
       datalist,
@@ -10595,10 +10610,10 @@ class GStreamer {
   late final _g_datalist_foreachPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Pointer<GData>>, GDataForeachFunc,
-              gpointer)>>('g_datalist_foreach');
+              ffi.Pointer)>>('g_datalist_foreach');
   late final _g_datalist_foreach = _g_datalist_foreachPtr.asFunction<
       void Function(
-          ffi.Pointer<ffi.Pointer<GData>>, GDataForeachFunc, gpointer)>();
+          ffi.Pointer<ffi.Pointer<GData>>, GDataForeachFunc, ffi.Pointer)>();
 
   void g_datalist_set_flags(
     ffi.Pointer<ffi.Pointer<GData>> datalist,
@@ -10662,7 +10677,7 @@ class GStreamer {
   late final _g_dataset_destroy =
       _g_dataset_destroyPtr.asFunction<void Function(gconstpointer)>();
 
-  gpointer g_dataset_id_get_data(
+  ffi.Pointer g_dataset_id_get_data(
     gconstpointer dataset_location,
     int key_id,
   ) {
@@ -10673,12 +10688,12 @@ class GStreamer {
   }
 
   late final _g_dataset_id_get_dataPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gconstpointer, GQuark)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gconstpointer, GQuark)>>(
           'g_dataset_id_get_data');
   late final _g_dataset_id_get_data = _g_dataset_id_get_dataPtr
-      .asFunction<gpointer Function(gconstpointer, int)>();
+      .asFunction<ffi.Pointer Function(gconstpointer, int)>();
 
-  gpointer g_datalist_get_data(
+  ffi.Pointer g_datalist_get_data(
     ffi.Pointer<ffi.Pointer<GData>> datalist,
     ffi.Pointer<ffi.Char> key,
   ) {
@@ -10690,16 +10705,16 @@ class GStreamer {
 
   late final _g_datalist_get_dataPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<ffi.Pointer<GData>>,
+          ffi.Pointer Function(ffi.Pointer<ffi.Pointer<GData>>,
               ffi.Pointer<ffi.Char>)>>('g_datalist_get_data');
   late final _g_datalist_get_data = _g_datalist_get_dataPtr.asFunction<
-      gpointer Function(
+      ffi.Pointer Function(
           ffi.Pointer<ffi.Pointer<GData>>, ffi.Pointer<ffi.Char>)>();
 
   void g_dataset_id_set_data_full(
     gconstpointer dataset_location,
     int key_id,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify destroy_func,
   ) {
     return _g_dataset_id_set_data_full(
@@ -10712,13 +10727,13 @@ class GStreamer {
 
   late final _g_dataset_id_set_data_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(gconstpointer, GQuark, gpointer,
+          ffi.Void Function(gconstpointer, GQuark, ffi.Pointer,
               GDestroyNotify)>>('g_dataset_id_set_data_full');
   late final _g_dataset_id_set_data_full =
       _g_dataset_id_set_data_fullPtr.asFunction<
-          void Function(gconstpointer, int, gpointer, GDestroyNotify)>();
+          void Function(gconstpointer, int, ffi.Pointer, GDestroyNotify)>();
 
-  gpointer g_dataset_id_remove_no_notify(
+  ffi.Pointer g_dataset_id_remove_no_notify(
     gconstpointer dataset_location,
     int key_id,
   ) {
@@ -10729,15 +10744,15 @@ class GStreamer {
   }
 
   late final _g_dataset_id_remove_no_notifyPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gconstpointer, GQuark)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gconstpointer, GQuark)>>(
           'g_dataset_id_remove_no_notify');
   late final _g_dataset_id_remove_no_notify = _g_dataset_id_remove_no_notifyPtr
-      .asFunction<gpointer Function(gconstpointer, int)>();
+      .asFunction<ffi.Pointer Function(gconstpointer, int)>();
 
   void g_dataset_foreach(
     gconstpointer dataset_location,
     GDataForeachFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_dataset_foreach(
       dataset_location,
@@ -10748,10 +10763,10 @@ class GStreamer {
 
   late final _g_dataset_foreachPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(
-              gconstpointer, GDataForeachFunc, gpointer)>>('g_dataset_foreach');
-  late final _g_dataset_foreach = _g_dataset_foreachPtr
-      .asFunction<void Function(gconstpointer, GDataForeachFunc, gpointer)>();
+          ffi.Void Function(gconstpointer, GDataForeachFunc,
+              ffi.Pointer)>>('g_dataset_foreach');
+  late final _g_dataset_foreach = _g_dataset_foreachPtr.asFunction<
+      void Function(gconstpointer, GDataForeachFunc, ffi.Pointer)>();
 
   ffi.Pointer<GDate> g_date_new() {
     return _g_date_new();
@@ -12515,7 +12530,7 @@ class GStreamer {
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
   void g_free(
-    gpointer mem,
+    ffi.Pointer mem,
   ) {
     return _g_free(
       mem,
@@ -12523,11 +12538,11 @@ class GStreamer {
   }
 
   late final _g_freePtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>('g_free');
-  late final _g_free = _g_freePtr.asFunction<void Function(gpointer)>();
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>('g_free');
+  late final _g_free = _g_freePtr.asFunction<void Function(ffi.Pointer)>();
 
   void g_free_sized(
-    gpointer mem,
+    ffi.Pointer mem,
     int size,
   ) {
     return _g_free_sized(
@@ -12537,13 +12552,13 @@ class GStreamer {
   }
 
   late final _g_free_sizedPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer, ffi.Size)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer, ffi.Size)>>(
           'g_free_sized');
   late final _g_free_sized =
-      _g_free_sizedPtr.asFunction<void Function(gpointer, int)>();
+      _g_free_sizedPtr.asFunction<void Function(ffi.Pointer, int)>();
 
   void g_clear_pointer(
-    ffi.Pointer<gpointer> pp,
+    ffi.Pointer<ffi.Pointer> pp,
     GDestroyNotify destroy,
   ) {
     return _g_clear_pointer(
@@ -12555,11 +12570,11 @@ class GStreamer {
   late final _g_clear_pointerPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
-              ffi.Pointer<gpointer>, GDestroyNotify)>>('g_clear_pointer');
+              ffi.Pointer<ffi.Pointer>, GDestroyNotify)>>('g_clear_pointer');
   late final _g_clear_pointer = _g_clear_pointerPtr
-      .asFunction<void Function(ffi.Pointer<gpointer>, GDestroyNotify)>();
+      .asFunction<void Function(ffi.Pointer<ffi.Pointer>, GDestroyNotify)>();
 
-  gpointer g_malloc(
+  ffi.Pointer g_malloc(
     int n_bytes,
   ) {
     return _g_malloc(
@@ -12568,10 +12583,10 @@ class GStreamer {
   }
 
   late final _g_mallocPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize)>>('g_malloc');
-  late final _g_malloc = _g_mallocPtr.asFunction<gpointer Function(int)>();
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize)>>('g_malloc');
+  late final _g_malloc = _g_mallocPtr.asFunction<ffi.Pointer Function(int)>();
 
-  gpointer g_malloc0(
+  ffi.Pointer g_malloc0(
     int n_bytes,
   ) {
     return _g_malloc0(
@@ -12580,11 +12595,11 @@ class GStreamer {
   }
 
   late final _g_malloc0Ptr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize)>>('g_malloc0');
-  late final _g_malloc0 = _g_malloc0Ptr.asFunction<gpointer Function(int)>();
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize)>>('g_malloc0');
+  late final _g_malloc0 = _g_malloc0Ptr.asFunction<ffi.Pointer Function(int)>();
 
-  gpointer g_realloc(
-    gpointer mem,
+  ffi.Pointer g_realloc(
+    ffi.Pointer mem,
     int n_bytes,
   ) {
     return _g_realloc(
@@ -12594,12 +12609,12 @@ class GStreamer {
   }
 
   late final _g_reallocPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer, gsize)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer, gsize)>>(
           'g_realloc');
   late final _g_realloc =
-      _g_reallocPtr.asFunction<gpointer Function(gpointer, int)>();
+      _g_reallocPtr.asFunction<ffi.Pointer Function(ffi.Pointer, int)>();
 
-  gpointer g_try_malloc(
+  ffi.Pointer g_try_malloc(
     int n_bytes,
   ) {
     return _g_try_malloc(
@@ -12608,11 +12623,11 @@ class GStreamer {
   }
 
   late final _g_try_mallocPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize)>>('g_try_malloc');
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize)>>('g_try_malloc');
   late final _g_try_malloc =
-      _g_try_mallocPtr.asFunction<gpointer Function(int)>();
+      _g_try_mallocPtr.asFunction<ffi.Pointer Function(int)>();
 
-  gpointer g_try_malloc0(
+  ffi.Pointer g_try_malloc0(
     int n_bytes,
   ) {
     return _g_try_malloc0(
@@ -12621,12 +12636,12 @@ class GStreamer {
   }
 
   late final _g_try_malloc0Ptr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize)>>('g_try_malloc0');
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize)>>('g_try_malloc0');
   late final _g_try_malloc0 =
-      _g_try_malloc0Ptr.asFunction<gpointer Function(int)>();
+      _g_try_malloc0Ptr.asFunction<ffi.Pointer Function(int)>();
 
-  gpointer g_try_realloc(
-    gpointer mem,
+  ffi.Pointer g_try_realloc(
+    ffi.Pointer mem,
     int n_bytes,
   ) {
     return _g_try_realloc(
@@ -12636,12 +12651,12 @@ class GStreamer {
   }
 
   late final _g_try_reallocPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer, gsize)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer, gsize)>>(
           'g_try_realloc');
   late final _g_try_realloc =
-      _g_try_reallocPtr.asFunction<gpointer Function(gpointer, int)>();
+      _g_try_reallocPtr.asFunction<ffi.Pointer Function(ffi.Pointer, int)>();
 
-  gpointer g_malloc_n(
+  ffi.Pointer g_malloc_n(
     int n_blocks,
     int n_block_bytes,
   ) {
@@ -12652,12 +12667,12 @@ class GStreamer {
   }
 
   late final _g_malloc_nPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize, gsize)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize, gsize)>>(
           'g_malloc_n');
   late final _g_malloc_n =
-      _g_malloc_nPtr.asFunction<gpointer Function(int, int)>();
+      _g_malloc_nPtr.asFunction<ffi.Pointer Function(int, int)>();
 
-  gpointer g_malloc0_n(
+  ffi.Pointer g_malloc0_n(
     int n_blocks,
     int n_block_bytes,
   ) {
@@ -12668,13 +12683,13 @@ class GStreamer {
   }
 
   late final _g_malloc0_nPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize, gsize)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize, gsize)>>(
           'g_malloc0_n');
   late final _g_malloc0_n =
-      _g_malloc0_nPtr.asFunction<gpointer Function(int, int)>();
+      _g_malloc0_nPtr.asFunction<ffi.Pointer Function(int, int)>();
 
-  gpointer g_realloc_n(
-    gpointer mem,
+  ffi.Pointer g_realloc_n(
+    ffi.Pointer mem,
     int n_blocks,
     int n_block_bytes,
   ) {
@@ -12685,13 +12700,13 @@ class GStreamer {
     );
   }
 
-  late final _g_realloc_nPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer, gsize, gsize)>>(
-          'g_realloc_n');
+  late final _g_realloc_nPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer, gsize, gsize)>>(
+      'g_realloc_n');
   late final _g_realloc_n =
-      _g_realloc_nPtr.asFunction<gpointer Function(gpointer, int, int)>();
+      _g_realloc_nPtr.asFunction<ffi.Pointer Function(ffi.Pointer, int, int)>();
 
-  gpointer g_try_malloc_n(
+  ffi.Pointer g_try_malloc_n(
     int n_blocks,
     int n_block_bytes,
   ) {
@@ -12702,12 +12717,12 @@ class GStreamer {
   }
 
   late final _g_try_malloc_nPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize, gsize)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize, gsize)>>(
           'g_try_malloc_n');
   late final _g_try_malloc_n =
-      _g_try_malloc_nPtr.asFunction<gpointer Function(int, int)>();
+      _g_try_malloc_nPtr.asFunction<ffi.Pointer Function(int, int)>();
 
-  gpointer g_try_malloc0_n(
+  ffi.Pointer g_try_malloc0_n(
     int n_blocks,
     int n_block_bytes,
   ) {
@@ -12718,13 +12733,13 @@ class GStreamer {
   }
 
   late final _g_try_malloc0_nPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize, gsize)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize, gsize)>>(
           'g_try_malloc0_n');
   late final _g_try_malloc0_n =
-      _g_try_malloc0_nPtr.asFunction<gpointer Function(int, int)>();
+      _g_try_malloc0_nPtr.asFunction<ffi.Pointer Function(int, int)>();
 
-  gpointer g_try_realloc_n(
-    gpointer mem,
+  ffi.Pointer g_try_realloc_n(
+    ffi.Pointer mem,
     int n_blocks,
     int n_block_bytes,
   ) {
@@ -12735,13 +12750,13 @@ class GStreamer {
     );
   }
 
-  late final _g_try_realloc_nPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer, gsize, gsize)>>(
-          'g_try_realloc_n');
-  late final _g_try_realloc_n =
-      _g_try_realloc_nPtr.asFunction<gpointer Function(gpointer, int, int)>();
+  late final _g_try_realloc_nPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer, gsize, gsize)>>(
+      'g_try_realloc_n');
+  late final _g_try_realloc_n = _g_try_realloc_nPtr
+      .asFunction<ffi.Pointer Function(ffi.Pointer, int, int)>();
 
-  gpointer g_aligned_alloc(
+  ffi.Pointer g_aligned_alloc(
     int n_blocks,
     int n_block_bytes,
     int alignment,
@@ -12754,12 +12769,12 @@ class GStreamer {
   }
 
   late final _g_aligned_allocPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize, gsize, gsize)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize, gsize, gsize)>>(
           'g_aligned_alloc');
   late final _g_aligned_alloc =
-      _g_aligned_allocPtr.asFunction<gpointer Function(int, int, int)>();
+      _g_aligned_allocPtr.asFunction<ffi.Pointer Function(int, int, int)>();
 
-  gpointer g_aligned_alloc0(
+  ffi.Pointer g_aligned_alloc0(
     int n_blocks,
     int n_block_bytes,
     int alignment,
@@ -12772,13 +12787,13 @@ class GStreamer {
   }
 
   late final _g_aligned_alloc0Ptr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize, gsize, gsize)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize, gsize, gsize)>>(
           'g_aligned_alloc0');
   late final _g_aligned_alloc0 =
-      _g_aligned_alloc0Ptr.asFunction<gpointer Function(int, int, int)>();
+      _g_aligned_alloc0Ptr.asFunction<ffi.Pointer Function(int, int, int)>();
 
   void g_aligned_free(
-    gpointer mem,
+    ffi.Pointer mem,
   ) {
     return _g_aligned_free(
       mem,
@@ -12786,13 +12801,13 @@ class GStreamer {
   }
 
   late final _g_aligned_freePtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
           'g_aligned_free');
   late final _g_aligned_free =
-      _g_aligned_freePtr.asFunction<void Function(gpointer)>();
+      _g_aligned_freePtr.asFunction<void Function(ffi.Pointer)>();
 
   void g_aligned_free_sized(
-    gpointer mem,
+    ffi.Pointer mem,
     int alignment,
     int size,
   ) {
@@ -12804,10 +12819,11 @@ class GStreamer {
   }
 
   late final _g_aligned_free_sizedPtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(gpointer, ffi.Size, ffi.Size)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer, ffi.Size, ffi.Size)>>(
       'g_aligned_free_sized');
-  late final _g_aligned_free_sized =
-      _g_aligned_free_sizedPtr.asFunction<void Function(gpointer, int, int)>();
+  late final _g_aligned_free_sized = _g_aligned_free_sizedPtr
+      .asFunction<void Function(ffi.Pointer, int, int)>();
 
   void g_mem_set_vtable(
     ffi.Pointer<GMemVTable> vtable,
@@ -12858,7 +12874,7 @@ class GStreamer {
   late final _g_mem_profile = _g_mem_profilePtr.asFunction<void Function()>();
 
   ffi.Pointer<GNode> g_node_new(
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_node_new(
       data,
@@ -12866,10 +12882,10 @@ class GStreamer {
   }
 
   late final _g_node_newPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<GNode> Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer<GNode> Function(ffi.Pointer)>>(
           'g_node_new');
   late final _g_node_new =
-      _g_node_newPtr.asFunction<ffi.Pointer<GNode> Function(gpointer)>();
+      _g_node_newPtr.asFunction<ffi.Pointer<GNode> Function(ffi.Pointer)>();
 
   void g_node_destroy(
     ffi.Pointer<GNode> root,
@@ -12902,7 +12918,7 @@ class GStreamer {
   ffi.Pointer<GNode> g_node_copy_deep(
     ffi.Pointer<GNode> node,
     GCopyFunc copy_func,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_node_copy_deep(
       node,
@@ -12914,9 +12930,10 @@ class GStreamer {
   late final _g_node_copy_deepPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GNode> Function(
-              ffi.Pointer<GNode>, GCopyFunc, gpointer)>>('g_node_copy_deep');
+              ffi.Pointer<GNode>, GCopyFunc, ffi.Pointer)>>('g_node_copy_deep');
   late final _g_node_copy_deep = _g_node_copy_deepPtr.asFunction<
-      ffi.Pointer<GNode> Function(ffi.Pointer<GNode>, GCopyFunc, gpointer)>();
+      ffi.Pointer<GNode> Function(
+          ffi.Pointer<GNode>, GCopyFunc, ffi.Pointer)>();
 
   ffi.Pointer<GNode> g_node_copy(
     ffi.Pointer<GNode> node,
@@ -13074,7 +13091,7 @@ class GStreamer {
     ffi.Pointer<GNode> root,
     int order,
     int flags,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_node_find(
       root,
@@ -13087,9 +13104,9 @@ class GStreamer {
   late final _g_node_findPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GNode> Function(ffi.Pointer<GNode>, ffi.Int32, ffi.Int32,
-              gpointer)>>('g_node_find');
+              ffi.Pointer)>>('g_node_find');
   late final _g_node_find = _g_node_findPtr.asFunction<
-      ffi.Pointer<GNode> Function(ffi.Pointer<GNode>, int, int, gpointer)>();
+      ffi.Pointer<GNode> Function(ffi.Pointer<GNode>, int, int, ffi.Pointer)>();
 
   void g_node_traverse(
     ffi.Pointer<GNode> root,
@@ -13097,7 +13114,7 @@ class GStreamer {
     int flags,
     int max_depth,
     GNodeTraverseFunc func,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_node_traverse(
       root,
@@ -13112,10 +13129,10 @@ class GStreamer {
   late final _g_node_traversePtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GNode>, ffi.Int32, ffi.Int32, gint,
-              GNodeTraverseFunc, gpointer)>>('g_node_traverse');
+              GNodeTraverseFunc, ffi.Pointer)>>('g_node_traverse');
   late final _g_node_traverse = _g_node_traversePtr.asFunction<
       void Function(
-          ffi.Pointer<GNode>, int, int, int, GNodeTraverseFunc, gpointer)>();
+          ffi.Pointer<GNode>, int, int, int, GNodeTraverseFunc, ffi.Pointer)>();
 
   int g_node_max_height(
     ffi.Pointer<GNode> root,
@@ -13135,7 +13152,7 @@ class GStreamer {
     ffi.Pointer<GNode> node,
     int flags,
     GNodeForeachFunc func,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_node_children_foreach(
       node,
@@ -13148,9 +13165,9 @@ class GStreamer {
   late final _g_node_children_foreachPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GNode>, ffi.Int32, GNodeForeachFunc,
-              gpointer)>>('g_node_children_foreach');
+              ffi.Pointer)>>('g_node_children_foreach');
   late final _g_node_children_foreach = _g_node_children_foreachPtr.asFunction<
-      void Function(ffi.Pointer<GNode>, int, GNodeForeachFunc, gpointer)>();
+      void Function(ffi.Pointer<GNode>, int, GNodeForeachFunc, ffi.Pointer)>();
 
   void g_node_reverse_children(
     ffi.Pointer<GNode> node,
@@ -13214,7 +13231,7 @@ class GStreamer {
   ffi.Pointer<GNode> g_node_find_child(
     ffi.Pointer<GNode> node,
     int flags,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_node_find_child(
       node,
@@ -13225,10 +13242,10 @@ class GStreamer {
 
   late final _g_node_find_childPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GNode> Function(
-              ffi.Pointer<GNode>, ffi.Int32, gpointer)>>('g_node_find_child');
+          ffi.Pointer<GNode> Function(ffi.Pointer<GNode>, ffi.Int32,
+              ffi.Pointer)>>('g_node_find_child');
   late final _g_node_find_child = _g_node_find_childPtr.asFunction<
-      ffi.Pointer<GNode> Function(ffi.Pointer<GNode>, int, gpointer)>();
+      ffi.Pointer<GNode> Function(ffi.Pointer<GNode>, int, ffi.Pointer)>();
 
   int g_node_child_position(
     ffi.Pointer<GNode> node,
@@ -13249,7 +13266,7 @@ class GStreamer {
 
   int g_node_child_index(
     ffi.Pointer<GNode> node,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_node_child_index(
       node,
@@ -13257,11 +13274,11 @@ class GStreamer {
     );
   }
 
-  late final _g_node_child_indexPtr =
-      _lookup<ffi.NativeFunction<gint Function(ffi.Pointer<GNode>, gpointer)>>(
-          'g_node_child_index');
+  late final _g_node_child_indexPtr = _lookup<
+          ffi.NativeFunction<gint Function(ffi.Pointer<GNode>, ffi.Pointer)>>(
+      'g_node_child_index');
   late final _g_node_child_index = _g_node_child_indexPtr
-      .asFunction<int Function(ffi.Pointer<GNode>, gpointer)>();
+      .asFunction<int Function(ffi.Pointer<GNode>, ffi.Pointer)>();
 
   ffi.Pointer<GNode> g_node_first_sibling(
     ffi.Pointer<GNode> node,
@@ -13348,7 +13365,7 @@ class GStreamer {
 
   ffi.Pointer<GList> g_list_append(
     ffi.Pointer<GList> list,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_list_append(
       list,
@@ -13359,13 +13376,13 @@ class GStreamer {
   late final _g_list_appendPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GList> Function(
-              ffi.Pointer<GList>, gpointer)>>('g_list_append');
-  late final _g_list_append = _g_list_appendPtr
-      .asFunction<ffi.Pointer<GList> Function(ffi.Pointer<GList>, gpointer)>();
+              ffi.Pointer<GList>, ffi.Pointer)>>('g_list_append');
+  late final _g_list_append = _g_list_appendPtr.asFunction<
+      ffi.Pointer<GList> Function(ffi.Pointer<GList>, ffi.Pointer)>();
 
   ffi.Pointer<GList> g_list_prepend(
     ffi.Pointer<GList> list,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_list_prepend(
       list,
@@ -13376,13 +13393,13 @@ class GStreamer {
   late final _g_list_prependPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GList> Function(
-              ffi.Pointer<GList>, gpointer)>>('g_list_prepend');
-  late final _g_list_prepend = _g_list_prependPtr
-      .asFunction<ffi.Pointer<GList> Function(ffi.Pointer<GList>, gpointer)>();
+              ffi.Pointer<GList>, ffi.Pointer)>>('g_list_prepend');
+  late final _g_list_prepend = _g_list_prependPtr.asFunction<
+      ffi.Pointer<GList> Function(ffi.Pointer<GList>, ffi.Pointer)>();
 
   ffi.Pointer<GList> g_list_insert(
     ffi.Pointer<GList> list,
-    gpointer data,
+    ffi.Pointer data,
     int position,
   ) {
     return _g_list_insert(
@@ -13395,13 +13412,13 @@ class GStreamer {
   late final _g_list_insertPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GList> Function(
-              ffi.Pointer<GList>, gpointer, gint)>>('g_list_insert');
+              ffi.Pointer<GList>, ffi.Pointer, gint)>>('g_list_insert');
   late final _g_list_insert = _g_list_insertPtr.asFunction<
-      ffi.Pointer<GList> Function(ffi.Pointer<GList>, gpointer, int)>();
+      ffi.Pointer<GList> Function(ffi.Pointer<GList>, ffi.Pointer, int)>();
 
   ffi.Pointer<GList> g_list_insert_sorted(
     ffi.Pointer<GList> list,
-    gpointer data,
+    ffi.Pointer data,
     GCompareFunc func,
   ) {
     return _g_list_insert_sorted(
@@ -13413,17 +13430,17 @@ class GStreamer {
 
   late final _g_list_insert_sortedPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GList> Function(ffi.Pointer<GList>, gpointer,
+          ffi.Pointer<GList> Function(ffi.Pointer<GList>, ffi.Pointer,
               GCompareFunc)>>('g_list_insert_sorted');
   late final _g_list_insert_sorted = _g_list_insert_sortedPtr.asFunction<
       ffi.Pointer<GList> Function(
-          ffi.Pointer<GList>, gpointer, GCompareFunc)>();
+          ffi.Pointer<GList>, ffi.Pointer, GCompareFunc)>();
 
   ffi.Pointer<GList> g_list_insert_sorted_with_data(
     ffi.Pointer<GList> list,
-    gpointer data,
+    ffi.Pointer data,
     GCompareDataFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_list_insert_sorted_with_data(
       list,
@@ -13435,17 +13452,20 @@ class GStreamer {
 
   late final _g_list_insert_sorted_with_dataPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GList> Function(ffi.Pointer<GList>, gpointer,
-              GCompareDataFunc, gpointer)>>('g_list_insert_sorted_with_data');
+          ffi.Pointer<GList> Function(
+              ffi.Pointer<GList>,
+              ffi.Pointer,
+              GCompareDataFunc,
+              ffi.Pointer)>>('g_list_insert_sorted_with_data');
   late final _g_list_insert_sorted_with_data =
       _g_list_insert_sorted_with_dataPtr.asFunction<
-          ffi.Pointer<GList> Function(
-              ffi.Pointer<GList>, gpointer, GCompareDataFunc, gpointer)>();
+          ffi.Pointer<GList> Function(ffi.Pointer<GList>, ffi.Pointer,
+              GCompareDataFunc, ffi.Pointer)>();
 
   ffi.Pointer<GList> g_list_insert_before(
     ffi.Pointer<GList> list,
     ffi.Pointer<GList> sibling,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_list_insert_before(
       list,
@@ -13457,10 +13477,10 @@ class GStreamer {
   late final _g_list_insert_beforePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GList> Function(ffi.Pointer<GList>, ffi.Pointer<GList>,
-              gpointer)>>('g_list_insert_before');
+              ffi.Pointer)>>('g_list_insert_before');
   late final _g_list_insert_before = _g_list_insert_beforePtr.asFunction<
       ffi.Pointer<GList> Function(
-          ffi.Pointer<GList>, ffi.Pointer<GList>, gpointer)>();
+          ffi.Pointer<GList>, ffi.Pointer<GList>, ffi.Pointer)>();
 
   ffi.Pointer<GList> g_list_insert_before_link(
     ffi.Pointer<GList> list,
@@ -13599,7 +13619,7 @@ class GStreamer {
   ffi.Pointer<GList> g_list_copy_deep(
     ffi.Pointer<GList> list,
     GCopyFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_list_copy_deep(
       list,
@@ -13611,9 +13631,10 @@ class GStreamer {
   late final _g_list_copy_deepPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GList> Function(
-              ffi.Pointer<GList>, GCopyFunc, gpointer)>>('g_list_copy_deep');
+              ffi.Pointer<GList>, GCopyFunc, ffi.Pointer)>>('g_list_copy_deep');
   late final _g_list_copy_deep = _g_list_copy_deepPtr.asFunction<
-      ffi.Pointer<GList> Function(ffi.Pointer<GList>, GCopyFunc, gpointer)>();
+      ffi.Pointer<GList> Function(
+          ffi.Pointer<GList>, GCopyFunc, ffi.Pointer)>();
 
   ffi.Pointer<GList> g_list_nth(
     ffi.Pointer<GList> list,
@@ -13764,7 +13785,7 @@ class GStreamer {
   void g_list_foreach(
     ffi.Pointer<GList> list,
     GFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_list_foreach(
       list,
@@ -13776,9 +13797,9 @@ class GStreamer {
   late final _g_list_foreachPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
-              ffi.Pointer<GList>, GFunc, gpointer)>>('g_list_foreach');
+              ffi.Pointer<GList>, GFunc, ffi.Pointer)>>('g_list_foreach');
   late final _g_list_foreach = _g_list_foreachPtr
-      .asFunction<void Function(ffi.Pointer<GList>, GFunc, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GList>, GFunc, ffi.Pointer)>();
 
   ffi.Pointer<GList> g_list_sort(
     ffi.Pointer<GList> list,
@@ -13800,7 +13821,7 @@ class GStreamer {
   ffi.Pointer<GList> g_list_sort_with_data(
     ffi.Pointer<GList> list,
     GCompareDataFunc compare_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_list_sort_with_data(
       list,
@@ -13812,12 +13833,12 @@ class GStreamer {
   late final _g_list_sort_with_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GList> Function(ffi.Pointer<GList>, GCompareDataFunc,
-              gpointer)>>('g_list_sort_with_data');
+              ffi.Pointer)>>('g_list_sort_with_data');
   late final _g_list_sort_with_data = _g_list_sort_with_dataPtr.asFunction<
       ffi.Pointer<GList> Function(
-          ffi.Pointer<GList>, GCompareDataFunc, gpointer)>();
+          ffi.Pointer<GList>, GCompareDataFunc, ffi.Pointer)>();
 
-  gpointer g_list_nth_data(
+  ffi.Pointer g_list_nth_data(
     ffi.Pointer<GList> list,
     int n,
   ) {
@@ -13827,11 +13848,11 @@ class GStreamer {
     );
   }
 
-  late final _g_list_nth_dataPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GList>, guint)>>(
-          'g_list_nth_data');
+  late final _g_list_nth_dataPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GList>, guint)>>(
+      'g_list_nth_data');
   late final _g_list_nth_data = _g_list_nth_dataPtr
-      .asFunction<gpointer Function(ffi.Pointer<GList>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GList>, int)>();
 
   void g_clear_list(
     ffi.Pointer<ffi.Pointer<GList>> list_ptr,
@@ -13920,8 +13941,8 @@ class GStreamer {
 
   int g_hash_table_insert(
     ffi.Pointer<GHashTable> hash_table,
-    gpointer key,
-    gpointer value,
+    ffi.Pointer key,
+    ffi.Pointer value,
   ) {
     return _g_hash_table_insert(
       hash_table,
@@ -13932,15 +13953,15 @@ class GStreamer {
 
   late final _g_hash_table_insertPtr = _lookup<
       ffi.NativeFunction<
-          gboolean Function(ffi.Pointer<GHashTable>, gpointer,
-              gpointer)>>('g_hash_table_insert');
-  late final _g_hash_table_insert = _g_hash_table_insertPtr
-      .asFunction<int Function(ffi.Pointer<GHashTable>, gpointer, gpointer)>();
+          gboolean Function(ffi.Pointer<GHashTable>, ffi.Pointer,
+              ffi.Pointer)>>('g_hash_table_insert');
+  late final _g_hash_table_insert = _g_hash_table_insertPtr.asFunction<
+      int Function(ffi.Pointer<GHashTable>, ffi.Pointer, ffi.Pointer)>();
 
   int g_hash_table_replace(
     ffi.Pointer<GHashTable> hash_table,
-    gpointer key,
-    gpointer value,
+    ffi.Pointer key,
+    ffi.Pointer value,
   ) {
     return _g_hash_table_replace(
       hash_table,
@@ -13951,14 +13972,14 @@ class GStreamer {
 
   late final _g_hash_table_replacePtr = _lookup<
       ffi.NativeFunction<
-          gboolean Function(ffi.Pointer<GHashTable>, gpointer,
-              gpointer)>>('g_hash_table_replace');
-  late final _g_hash_table_replace = _g_hash_table_replacePtr
-      .asFunction<int Function(ffi.Pointer<GHashTable>, gpointer, gpointer)>();
+          gboolean Function(ffi.Pointer<GHashTable>, ffi.Pointer,
+              ffi.Pointer)>>('g_hash_table_replace');
+  late final _g_hash_table_replace = _g_hash_table_replacePtr.asFunction<
+      int Function(ffi.Pointer<GHashTable>, ffi.Pointer, ffi.Pointer)>();
 
   int g_hash_table_add(
     ffi.Pointer<GHashTable> hash_table,
-    gpointer key,
+    ffi.Pointer key,
   ) {
     return _g_hash_table_add(
       hash_table,
@@ -13969,9 +13990,9 @@ class GStreamer {
   late final _g_hash_table_addPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(
-              ffi.Pointer<GHashTable>, gpointer)>>('g_hash_table_add');
+              ffi.Pointer<GHashTable>, ffi.Pointer)>>('g_hash_table_add');
   late final _g_hash_table_add = _g_hash_table_addPtr
-      .asFunction<int Function(ffi.Pointer<GHashTable>, gpointer)>();
+      .asFunction<int Function(ffi.Pointer<GHashTable>, ffi.Pointer)>();
 
   int g_hash_table_remove(
     ffi.Pointer<GHashTable> hash_table,
@@ -14024,8 +14045,8 @@ class GStreamer {
   int g_hash_table_steal_extended(
     ffi.Pointer<GHashTable> hash_table,
     gconstpointer lookup_key,
-    ffi.Pointer<gpointer> stolen_key,
-    ffi.Pointer<gpointer> stolen_value,
+    ffi.Pointer<ffi.Pointer> stolen_key,
+    ffi.Pointer<ffi.Pointer> stolen_value,
   ) {
     return _g_hash_table_steal_extended(
       hash_table,
@@ -14040,12 +14061,12 @@ class GStreamer {
           gboolean Function(
               ffi.Pointer<GHashTable>,
               gconstpointer,
-              ffi.Pointer<gpointer>,
-              ffi.Pointer<gpointer>)>>('g_hash_table_steal_extended');
+              ffi.Pointer<ffi.Pointer>,
+              ffi.Pointer<ffi.Pointer>)>>('g_hash_table_steal_extended');
   late final _g_hash_table_steal_extended =
       _g_hash_table_steal_extendedPtr.asFunction<
           int Function(ffi.Pointer<GHashTable>, gconstpointer,
-              ffi.Pointer<gpointer>, ffi.Pointer<gpointer>)>();
+              ffi.Pointer<ffi.Pointer>, ffi.Pointer<ffi.Pointer>)>();
 
   void g_hash_table_steal_all(
     ffi.Pointer<GHashTable> hash_table,
@@ -14091,7 +14112,7 @@ class GStreamer {
   late final _g_hash_table_steal_all_values = _g_hash_table_steal_all_valuesPtr
       .asFunction<ffi.Pointer<GPtrArray> Function(ffi.Pointer<GHashTable>)>();
 
-  gpointer g_hash_table_lookup(
+  ffi.Pointer g_hash_table_lookup(
     ffi.Pointer<GHashTable> hash_table,
     gconstpointer key,
   ) {
@@ -14103,10 +14124,10 @@ class GStreamer {
 
   late final _g_hash_table_lookupPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(
+          ffi.Pointer Function(
               ffi.Pointer<GHashTable>, gconstpointer)>>('g_hash_table_lookup');
-  late final _g_hash_table_lookup = _g_hash_table_lookupPtr
-      .asFunction<gpointer Function(ffi.Pointer<GHashTable>, gconstpointer)>();
+  late final _g_hash_table_lookup = _g_hash_table_lookupPtr.asFunction<
+      ffi.Pointer Function(ffi.Pointer<GHashTable>, gconstpointer)>();
 
   int g_hash_table_contains(
     ffi.Pointer<GHashTable> hash_table,
@@ -14128,8 +14149,8 @@ class GStreamer {
   int g_hash_table_lookup_extended(
     ffi.Pointer<GHashTable> hash_table,
     gconstpointer lookup_key,
-    ffi.Pointer<gpointer> orig_key,
-    ffi.Pointer<gpointer> value,
+    ffi.Pointer<ffi.Pointer> orig_key,
+    ffi.Pointer<ffi.Pointer> value,
   ) {
     return _g_hash_table_lookup_extended(
       hash_table,
@@ -14144,17 +14165,17 @@ class GStreamer {
           gboolean Function(
               ffi.Pointer<GHashTable>,
               gconstpointer,
-              ffi.Pointer<gpointer>,
-              ffi.Pointer<gpointer>)>>('g_hash_table_lookup_extended');
+              ffi.Pointer<ffi.Pointer>,
+              ffi.Pointer<ffi.Pointer>)>>('g_hash_table_lookup_extended');
   late final _g_hash_table_lookup_extended =
       _g_hash_table_lookup_extendedPtr.asFunction<
           int Function(ffi.Pointer<GHashTable>, gconstpointer,
-              ffi.Pointer<gpointer>, ffi.Pointer<gpointer>)>();
+              ffi.Pointer<ffi.Pointer>, ffi.Pointer<ffi.Pointer>)>();
 
   void g_hash_table_foreach(
     ffi.Pointer<GHashTable> hash_table,
     GHFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_hash_table_foreach(
       hash_table,
@@ -14166,14 +14187,14 @@ class GStreamer {
   late final _g_hash_table_foreachPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GHashTable>, GHFunc,
-              gpointer)>>('g_hash_table_foreach');
-  late final _g_hash_table_foreach = _g_hash_table_foreachPtr
-      .asFunction<void Function(ffi.Pointer<GHashTable>, GHFunc, gpointer)>();
+              ffi.Pointer)>>('g_hash_table_foreach');
+  late final _g_hash_table_foreach = _g_hash_table_foreachPtr.asFunction<
+      void Function(ffi.Pointer<GHashTable>, GHFunc, ffi.Pointer)>();
 
-  gpointer g_hash_table_find(
+  ffi.Pointer g_hash_table_find(
     ffi.Pointer<GHashTable> hash_table,
     GHRFunc predicate,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_hash_table_find(
       hash_table,
@@ -14184,15 +14205,15 @@ class GStreamer {
 
   late final _g_hash_table_findPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GHashTable>, GHRFunc,
-              gpointer)>>('g_hash_table_find');
+          ffi.Pointer Function(ffi.Pointer<GHashTable>, GHRFunc,
+              ffi.Pointer)>>('g_hash_table_find');
   late final _g_hash_table_find = _g_hash_table_findPtr.asFunction<
-      gpointer Function(ffi.Pointer<GHashTable>, GHRFunc, gpointer)>();
+      ffi.Pointer Function(ffi.Pointer<GHashTable>, GHRFunc, ffi.Pointer)>();
 
   int g_hash_table_foreach_remove(
     ffi.Pointer<GHashTable> hash_table,
     GHRFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_hash_table_foreach_remove(
       hash_table,
@@ -14204,14 +14225,15 @@ class GStreamer {
   late final _g_hash_table_foreach_removePtr = _lookup<
       ffi.NativeFunction<
           guint Function(ffi.Pointer<GHashTable>, GHRFunc,
-              gpointer)>>('g_hash_table_foreach_remove');
-  late final _g_hash_table_foreach_remove = _g_hash_table_foreach_removePtr
-      .asFunction<int Function(ffi.Pointer<GHashTable>, GHRFunc, gpointer)>();
+              ffi.Pointer)>>('g_hash_table_foreach_remove');
+  late final _g_hash_table_foreach_remove =
+      _g_hash_table_foreach_removePtr.asFunction<
+          int Function(ffi.Pointer<GHashTable>, GHRFunc, ffi.Pointer)>();
 
   int g_hash_table_foreach_steal(
     ffi.Pointer<GHashTable> hash_table,
     GHRFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_hash_table_foreach_steal(
       hash_table,
@@ -14223,9 +14245,10 @@ class GStreamer {
   late final _g_hash_table_foreach_stealPtr = _lookup<
       ffi.NativeFunction<
           guint Function(ffi.Pointer<GHashTable>, GHRFunc,
-              gpointer)>>('g_hash_table_foreach_steal');
-  late final _g_hash_table_foreach_steal = _g_hash_table_foreach_stealPtr
-      .asFunction<int Function(ffi.Pointer<GHashTable>, GHRFunc, gpointer)>();
+              ffi.Pointer)>>('g_hash_table_foreach_steal');
+  late final _g_hash_table_foreach_steal =
+      _g_hash_table_foreach_stealPtr.asFunction<
+          int Function(ffi.Pointer<GHashTable>, GHRFunc, ffi.Pointer)>();
 
   int g_hash_table_size(
     ffi.Pointer<GHashTable> hash_table,
@@ -14271,7 +14294,7 @@ class GStreamer {
   late final _g_hash_table_get_values = _g_hash_table_get_valuesPtr
       .asFunction<ffi.Pointer<GList> Function(ffi.Pointer<GHashTable>)>();
 
-  ffi.Pointer<gpointer> g_hash_table_get_keys_as_array(
+  ffi.Pointer<ffi.Pointer> g_hash_table_get_keys_as_array(
     ffi.Pointer<GHashTable> hash_table,
     ffi.Pointer<guint> length,
   ) {
@@ -14283,11 +14306,11 @@ class GStreamer {
 
   late final _g_hash_table_get_keys_as_arrayPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<gpointer> Function(ffi.Pointer<GHashTable>,
+          ffi.Pointer<ffi.Pointer> Function(ffi.Pointer<GHashTable>,
               ffi.Pointer<guint>)>>('g_hash_table_get_keys_as_array');
   late final _g_hash_table_get_keys_as_array =
       _g_hash_table_get_keys_as_arrayPtr.asFunction<
-          ffi.Pointer<gpointer> Function(
+          ffi.Pointer<ffi.Pointer> Function(
               ffi.Pointer<GHashTable>, ffi.Pointer<guint>)>();
 
   ffi.Pointer<GPtrArray> g_hash_table_get_keys_as_ptr_array(
@@ -14341,8 +14364,8 @@ class GStreamer {
 
   int g_hash_table_iter_next(
     ffi.Pointer<GHashTableIter> iter,
-    ffi.Pointer<gpointer> key,
-    ffi.Pointer<gpointer> value,
+    ffi.Pointer<ffi.Pointer> key,
+    ffi.Pointer<ffi.Pointer> value,
   ) {
     return _g_hash_table_iter_next(
       iter,
@@ -14353,11 +14376,13 @@ class GStreamer {
 
   late final _g_hash_table_iter_nextPtr = _lookup<
       ffi.NativeFunction<
-          gboolean Function(ffi.Pointer<GHashTableIter>, ffi.Pointer<gpointer>,
-              ffi.Pointer<gpointer>)>>('g_hash_table_iter_next');
+          gboolean Function(
+              ffi.Pointer<GHashTableIter>,
+              ffi.Pointer<ffi.Pointer>,
+              ffi.Pointer<ffi.Pointer>)>>('g_hash_table_iter_next');
   late final _g_hash_table_iter_next = _g_hash_table_iter_nextPtr.asFunction<
-      int Function(ffi.Pointer<GHashTableIter>, ffi.Pointer<gpointer>,
-          ffi.Pointer<gpointer>)>();
+      int Function(ffi.Pointer<GHashTableIter>, ffi.Pointer<ffi.Pointer>,
+          ffi.Pointer<ffi.Pointer>)>();
 
   ffi.Pointer<GHashTable> g_hash_table_iter_get_hash_table(
     ffi.Pointer<GHashTableIter> iter,
@@ -14391,7 +14416,7 @@ class GStreamer {
 
   void g_hash_table_iter_replace(
     ffi.Pointer<GHashTableIter> iter,
-    gpointer value,
+    ffi.Pointer value,
   ) {
     return _g_hash_table_iter_replace(
       iter,
@@ -14402,9 +14427,9 @@ class GStreamer {
   late final _g_hash_table_iter_replacePtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GHashTableIter>,
-              gpointer)>>('g_hash_table_iter_replace');
+              ffi.Pointer)>>('g_hash_table_iter_replace');
   late final _g_hash_table_iter_replace = _g_hash_table_iter_replacePtr
-      .asFunction<void Function(ffi.Pointer<GHashTableIter>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GHashTableIter>, ffi.Pointer)>();
 
   void g_hash_table_iter_steal(
     ffi.Pointer<GHashTableIter> iter,
@@ -14989,7 +15014,7 @@ class GStreamer {
     ffi.Pointer<GHookList> hook_list,
     int need_valids,
     GHookFindFunc func,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_hook_find(
       hook_list,
@@ -15002,15 +15027,15 @@ class GStreamer {
   late final _g_hook_findPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GHook> Function(ffi.Pointer<GHookList>, gboolean,
-              GHookFindFunc, gpointer)>>('g_hook_find');
+              GHookFindFunc, ffi.Pointer)>>('g_hook_find');
   late final _g_hook_find = _g_hook_findPtr.asFunction<
       ffi.Pointer<GHook> Function(
-          ffi.Pointer<GHookList>, int, GHookFindFunc, gpointer)>();
+          ffi.Pointer<GHookList>, int, GHookFindFunc, ffi.Pointer)>();
 
   ffi.Pointer<GHook> g_hook_find_data(
     ffi.Pointer<GHookList> hook_list,
     int need_valids,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_hook_find_data(
       hook_list,
@@ -15021,15 +15046,15 @@ class GStreamer {
 
   late final _g_hook_find_dataPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GHook> Function(
-              ffi.Pointer<GHookList>, gboolean, gpointer)>>('g_hook_find_data');
+          ffi.Pointer<GHook> Function(ffi.Pointer<GHookList>, gboolean,
+              ffi.Pointer)>>('g_hook_find_data');
   late final _g_hook_find_data = _g_hook_find_dataPtr.asFunction<
-      ffi.Pointer<GHook> Function(ffi.Pointer<GHookList>, int, gpointer)>();
+      ffi.Pointer<GHook> Function(ffi.Pointer<GHookList>, int, ffi.Pointer)>();
 
   ffi.Pointer<GHook> g_hook_find_func(
     ffi.Pointer<GHookList> hook_list,
     int need_valids,
-    gpointer func,
+    ffi.Pointer func,
   ) {
     return _g_hook_find_func(
       hook_list,
@@ -15040,16 +15065,16 @@ class GStreamer {
 
   late final _g_hook_find_funcPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GHook> Function(
-              ffi.Pointer<GHookList>, gboolean, gpointer)>>('g_hook_find_func');
+          ffi.Pointer<GHook> Function(ffi.Pointer<GHookList>, gboolean,
+              ffi.Pointer)>>('g_hook_find_func');
   late final _g_hook_find_func = _g_hook_find_funcPtr.asFunction<
-      ffi.Pointer<GHook> Function(ffi.Pointer<GHookList>, int, gpointer)>();
+      ffi.Pointer<GHook> Function(ffi.Pointer<GHookList>, int, ffi.Pointer)>();
 
   ffi.Pointer<GHook> g_hook_find_func_data(
     ffi.Pointer<GHookList> hook_list,
     int need_valids,
-    gpointer func,
-    gpointer data,
+    ffi.Pointer func,
+    ffi.Pointer data,
   ) {
     return _g_hook_find_func_data(
       hook_list,
@@ -15062,10 +15087,10 @@ class GStreamer {
   late final _g_hook_find_func_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GHook> Function(ffi.Pointer<GHookList>, gboolean,
-              gpointer, gpointer)>>('g_hook_find_func_data');
+              ffi.Pointer, ffi.Pointer)>>('g_hook_find_func_data');
   late final _g_hook_find_func_data = _g_hook_find_func_dataPtr.asFunction<
       ffi.Pointer<GHook> Function(
-          ffi.Pointer<GHookList>, int, gpointer, gpointer)>();
+          ffi.Pointer<GHookList>, int, ffi.Pointer, ffi.Pointer)>();
 
   ffi.Pointer<GHook> g_hook_first_valid(
     ffi.Pointer<GHookList> hook_list,
@@ -15159,7 +15184,7 @@ class GStreamer {
     ffi.Pointer<GHookList> hook_list,
     int may_recurse,
     GHookMarshaller marshaller,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
   ) {
     return _g_hook_list_marshal(
       hook_list,
@@ -15172,15 +15197,16 @@ class GStreamer {
   late final _g_hook_list_marshalPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GHookList>, gboolean, GHookMarshaller,
-              gpointer)>>('g_hook_list_marshal');
+              ffi.Pointer)>>('g_hook_list_marshal');
   late final _g_hook_list_marshal = _g_hook_list_marshalPtr.asFunction<
-      void Function(ffi.Pointer<GHookList>, int, GHookMarshaller, gpointer)>();
+      void Function(
+          ffi.Pointer<GHookList>, int, GHookMarshaller, ffi.Pointer)>();
 
   void g_hook_list_marshal_check(
     ffi.Pointer<GHookList> hook_list,
     int may_recurse,
     GHookCheckMarshaller marshaller,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
   ) {
     return _g_hook_list_marshal_check(
       hook_list,
@@ -15193,11 +15219,11 @@ class GStreamer {
   late final _g_hook_list_marshal_checkPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GHookList>, gboolean,
-              GHookCheckMarshaller, gpointer)>>('g_hook_list_marshal_check');
+              GHookCheckMarshaller, ffi.Pointer)>>('g_hook_list_marshal_check');
   late final _g_hook_list_marshal_check =
       _g_hook_list_marshal_checkPtr.asFunction<
-          void Function(
-              ffi.Pointer<GHookList>, int, GHookCheckMarshaller, gpointer)>();
+          void Function(ffi.Pointer<GHookList>, int, GHookCheckMarshaller,
+              ffi.Pointer)>();
 
   int g_hostname_is_non_ascii(
     ffi.Pointer<ffi.Char> hostname,
@@ -15350,7 +15376,7 @@ class GStreamer {
 
   ffi.Pointer<GSList> g_slist_append(
     ffi.Pointer<GSList> list,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_slist_append(
       list,
@@ -15361,13 +15387,13 @@ class GStreamer {
   late final _g_slist_appendPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GSList> Function(
-              ffi.Pointer<GSList>, gpointer)>>('g_slist_append');
+              ffi.Pointer<GSList>, ffi.Pointer)>>('g_slist_append');
   late final _g_slist_append = _g_slist_appendPtr.asFunction<
-      ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, gpointer)>();
+      ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, ffi.Pointer)>();
 
   ffi.Pointer<GSList> g_slist_prepend(
     ffi.Pointer<GSList> list,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_slist_prepend(
       list,
@@ -15378,13 +15404,13 @@ class GStreamer {
   late final _g_slist_prependPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GSList> Function(
-              ffi.Pointer<GSList>, gpointer)>>('g_slist_prepend');
+              ffi.Pointer<GSList>, ffi.Pointer)>>('g_slist_prepend');
   late final _g_slist_prepend = _g_slist_prependPtr.asFunction<
-      ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, gpointer)>();
+      ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, ffi.Pointer)>();
 
   ffi.Pointer<GSList> g_slist_insert(
     ffi.Pointer<GSList> list,
-    gpointer data,
+    ffi.Pointer data,
     int position,
   ) {
     return _g_slist_insert(
@@ -15397,13 +15423,13 @@ class GStreamer {
   late final _g_slist_insertPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GSList> Function(
-              ffi.Pointer<GSList>, gpointer, gint)>>('g_slist_insert');
+              ffi.Pointer<GSList>, ffi.Pointer, gint)>>('g_slist_insert');
   late final _g_slist_insert = _g_slist_insertPtr.asFunction<
-      ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, gpointer, int)>();
+      ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, ffi.Pointer, int)>();
 
   ffi.Pointer<GSList> g_slist_insert_sorted(
     ffi.Pointer<GSList> list,
-    gpointer data,
+    ffi.Pointer data,
     GCompareFunc func,
   ) {
     return _g_slist_insert_sorted(
@@ -15415,17 +15441,17 @@ class GStreamer {
 
   late final _g_slist_insert_sortedPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, gpointer,
+          ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, ffi.Pointer,
               GCompareFunc)>>('g_slist_insert_sorted');
   late final _g_slist_insert_sorted = _g_slist_insert_sortedPtr.asFunction<
       ffi.Pointer<GSList> Function(
-          ffi.Pointer<GSList>, gpointer, GCompareFunc)>();
+          ffi.Pointer<GSList>, ffi.Pointer, GCompareFunc)>();
 
   ffi.Pointer<GSList> g_slist_insert_sorted_with_data(
     ffi.Pointer<GSList> list,
-    gpointer data,
+    ffi.Pointer data,
     GCompareDataFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_slist_insert_sorted_with_data(
       list,
@@ -15437,17 +15463,20 @@ class GStreamer {
 
   late final _g_slist_insert_sorted_with_dataPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, gpointer,
-              GCompareDataFunc, gpointer)>>('g_slist_insert_sorted_with_data');
+          ffi.Pointer<GSList> Function(
+              ffi.Pointer<GSList>,
+              ffi.Pointer,
+              GCompareDataFunc,
+              ffi.Pointer)>>('g_slist_insert_sorted_with_data');
   late final _g_slist_insert_sorted_with_data =
       _g_slist_insert_sorted_with_dataPtr.asFunction<
-          ffi.Pointer<GSList> Function(
-              ffi.Pointer<GSList>, gpointer, GCompareDataFunc, gpointer)>();
+          ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, ffi.Pointer,
+              GCompareDataFunc, ffi.Pointer)>();
 
   ffi.Pointer<GSList> g_slist_insert_before(
     ffi.Pointer<GSList> slist,
     ffi.Pointer<GSList> sibling,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_slist_insert_before(
       slist,
@@ -15459,10 +15488,10 @@ class GStreamer {
   late final _g_slist_insert_beforePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, ffi.Pointer<GSList>,
-              gpointer)>>('g_slist_insert_before');
+              ffi.Pointer)>>('g_slist_insert_before');
   late final _g_slist_insert_before = _g_slist_insert_beforePtr.asFunction<
       ffi.Pointer<GSList> Function(
-          ffi.Pointer<GSList>, ffi.Pointer<GSList>, gpointer)>();
+          ffi.Pointer<GSList>, ffi.Pointer<GSList>, ffi.Pointer)>();
 
   ffi.Pointer<GSList> g_slist_concat(
     ffi.Pointer<GSList> list1,
@@ -15581,7 +15610,7 @@ class GStreamer {
   ffi.Pointer<GSList> g_slist_copy_deep(
     ffi.Pointer<GSList> list,
     GCopyFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_slist_copy_deep(
       list,
@@ -15592,10 +15621,11 @@ class GStreamer {
 
   late final _g_slist_copy_deepPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GSList> Function(
-              ffi.Pointer<GSList>, GCopyFunc, gpointer)>>('g_slist_copy_deep');
+          ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, GCopyFunc,
+              ffi.Pointer)>>('g_slist_copy_deep');
   late final _g_slist_copy_deep = _g_slist_copy_deepPtr.asFunction<
-      ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, GCopyFunc, gpointer)>();
+      ffi.Pointer<GSList> Function(
+          ffi.Pointer<GSList>, GCopyFunc, ffi.Pointer)>();
 
   ffi.Pointer<GSList> g_slist_nth(
     ffi.Pointer<GSList> list,
@@ -15715,7 +15745,7 @@ class GStreamer {
   void g_slist_foreach(
     ffi.Pointer<GSList> list,
     GFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_slist_foreach(
       list,
@@ -15727,9 +15757,9 @@ class GStreamer {
   late final _g_slist_foreachPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
-              ffi.Pointer<GSList>, GFunc, gpointer)>>('g_slist_foreach');
+              ffi.Pointer<GSList>, GFunc, ffi.Pointer)>>('g_slist_foreach');
   late final _g_slist_foreach = _g_slist_foreachPtr
-      .asFunction<void Function(ffi.Pointer<GSList>, GFunc, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GSList>, GFunc, ffi.Pointer)>();
 
   ffi.Pointer<GSList> g_slist_sort(
     ffi.Pointer<GSList> list,
@@ -15751,7 +15781,7 @@ class GStreamer {
   ffi.Pointer<GSList> g_slist_sort_with_data(
     ffi.Pointer<GSList> list,
     GCompareDataFunc compare_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_slist_sort_with_data(
       list,
@@ -15763,12 +15793,12 @@ class GStreamer {
   late final _g_slist_sort_with_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GSList> Function(ffi.Pointer<GSList>, GCompareDataFunc,
-              gpointer)>>('g_slist_sort_with_data');
+              ffi.Pointer)>>('g_slist_sort_with_data');
   late final _g_slist_sort_with_data = _g_slist_sort_with_dataPtr.asFunction<
       ffi.Pointer<GSList> Function(
-          ffi.Pointer<GSList>, GCompareDataFunc, gpointer)>();
+          ffi.Pointer<GSList>, GCompareDataFunc, ffi.Pointer)>();
 
-  gpointer g_slist_nth_data(
+  ffi.Pointer g_slist_nth_data(
     ffi.Pointer<GSList> list,
     int n,
   ) {
@@ -15779,10 +15809,10 @@ class GStreamer {
   }
 
   late final _g_slist_nth_dataPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GSList>, guint)>>(
+          ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GSList>, guint)>>(
       'g_slist_nth_data');
   late final _g_slist_nth_data = _g_slist_nth_dataPtr
-      .asFunction<gpointer Function(ffi.Pointer<GSList>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GSList>, int)>();
 
   void g_clear_slist(
     ffi.Pointer<ffi.Pointer<GSList>> slist_ptr,
@@ -15915,7 +15945,7 @@ class GStreamer {
 
   ffi.Pointer<GSource> g_main_context_find_source_by_user_data(
     ffi.Pointer<GMainContext> context,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_main_context_find_source_by_user_data(
       context,
@@ -15926,15 +15956,16 @@ class GStreamer {
   late final _g_main_context_find_source_by_user_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GSource> Function(ffi.Pointer<GMainContext>,
-              gpointer)>>('g_main_context_find_source_by_user_data');
+              ffi.Pointer)>>('g_main_context_find_source_by_user_data');
   late final _g_main_context_find_source_by_user_data =
       _g_main_context_find_source_by_user_dataPtr.asFunction<
-          ffi.Pointer<GSource> Function(ffi.Pointer<GMainContext>, gpointer)>();
+          ffi.Pointer<GSource> Function(
+              ffi.Pointer<GMainContext>, ffi.Pointer)>();
 
   ffi.Pointer<GSource> g_main_context_find_source_by_funcs_user_data(
     ffi.Pointer<GMainContext> context,
     ffi.Pointer<GSourceFuncs> funcs,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_main_context_find_source_by_funcs_user_data(
       context,
@@ -15948,11 +15979,11 @@ class GStreamer {
           ffi.Pointer<GSource> Function(
               ffi.Pointer<GMainContext>,
               ffi.Pointer<GSourceFuncs>,
-              gpointer)>>('g_main_context_find_source_by_funcs_user_data');
+              ffi.Pointer)>>('g_main_context_find_source_by_funcs_user_data');
   late final _g_main_context_find_source_by_funcs_user_data =
       _g_main_context_find_source_by_funcs_user_dataPtr.asFunction<
           ffi.Pointer<GSource> Function(ffi.Pointer<GMainContext>,
-              ffi.Pointer<GSourceFuncs>, gpointer)>();
+              ffi.Pointer<GSourceFuncs>, ffi.Pointer)>();
 
   void g_main_context_wakeup(
     ffi.Pointer<GMainContext> context,
@@ -16534,7 +16565,7 @@ class GStreamer {
   void g_source_set_callback(
     ffi.Pointer<GSource> source,
     GSourceFunc func,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify notify,
   ) {
     return _g_source_set_callback(
@@ -16547,11 +16578,11 @@ class GStreamer {
 
   late final _g_source_set_callbackPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GSource>, GSourceFunc, gpointer,
+          ffi.Void Function(ffi.Pointer<GSource>, GSourceFunc, ffi.Pointer,
               GDestroyNotify)>>('g_source_set_callback');
   late final _g_source_set_callback = _g_source_set_callbackPtr.asFunction<
       void Function(
-          ffi.Pointer<GSource>, GSourceFunc, gpointer, GDestroyNotify)>();
+          ffi.Pointer<GSource>, GSourceFunc, ffi.Pointer, GDestroyNotify)>();
 
   void g_source_set_funcs(
     ffi.Pointer<GSource> source,
@@ -16679,7 +16710,7 @@ class GStreamer {
   late final _g_source_get_ready_time = _g_source_get_ready_timePtr
       .asFunction<int Function(ffi.Pointer<GSource>)>();
 
-  gpointer g_source_add_unix_fd(
+  ffi.Pointer g_source_add_unix_fd(
     ffi.Pointer<GSource> source,
     int fd,
     int events,
@@ -16693,14 +16724,14 @@ class GStreamer {
 
   late final _g_source_add_unix_fdPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(
+          ffi.Pointer Function(
               ffi.Pointer<GSource>, gint, ffi.Int32)>>('g_source_add_unix_fd');
   late final _g_source_add_unix_fd = _g_source_add_unix_fdPtr
-      .asFunction<gpointer Function(ffi.Pointer<GSource>, int, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GSource>, int, int)>();
 
   void g_source_modify_unix_fd(
     ffi.Pointer<GSource> source,
-    gpointer tag,
+    ffi.Pointer tag,
     int new_events,
   ) {
     return _g_source_modify_unix_fd(
@@ -16712,14 +16743,14 @@ class GStreamer {
 
   late final _g_source_modify_unix_fdPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GSource>, gpointer,
+          ffi.Void Function(ffi.Pointer<GSource>, ffi.Pointer,
               ffi.Int32)>>('g_source_modify_unix_fd');
   late final _g_source_modify_unix_fd = _g_source_modify_unix_fdPtr
-      .asFunction<void Function(ffi.Pointer<GSource>, gpointer, int)>();
+      .asFunction<void Function(ffi.Pointer<GSource>, ffi.Pointer, int)>();
 
   void g_source_remove_unix_fd(
     ffi.Pointer<GSource> source,
-    gpointer tag,
+    ffi.Pointer tag,
   ) {
     return _g_source_remove_unix_fd(
       source,
@@ -16728,15 +16759,15 @@ class GStreamer {
   }
 
   late final _g_source_remove_unix_fdPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Void Function(ffi.Pointer<GSource>, gpointer)>>(
-      'g_source_remove_unix_fd');
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GSource>, ffi.Pointer)>>('g_source_remove_unix_fd');
   late final _g_source_remove_unix_fd = _g_source_remove_unix_fdPtr
-      .asFunction<void Function(ffi.Pointer<GSource>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GSource>, ffi.Pointer)>();
 
   int g_source_query_unix_fd(
     ffi.Pointer<GSource> source,
-    gpointer tag,
+    ffi.Pointer tag,
   ) {
     return _g_source_query_unix_fd(
       source,
@@ -16745,15 +16776,15 @@ class GStreamer {
   }
 
   late final _g_source_query_unix_fdPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Int32 Function(ffi.Pointer<GSource>, gpointer)>>(
-      'g_source_query_unix_fd');
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<GSource>, ffi.Pointer)>>('g_source_query_unix_fd');
   late final _g_source_query_unix_fd = _g_source_query_unix_fdPtr
-      .asFunction<int Function(ffi.Pointer<GSource>, gpointer)>();
+      .asFunction<int Function(ffi.Pointer<GSource>, ffi.Pointer)>();
 
   void g_source_set_callback_indirect(
     ffi.Pointer<GSource> source,
-    gpointer callback_data,
+    ffi.Pointer callback_data,
     ffi.Pointer<GSourceCallbackFuncs> callback_funcs,
   ) {
     return _g_source_set_callback_indirect(
@@ -16765,12 +16796,12 @@ class GStreamer {
 
   late final _g_source_set_callback_indirectPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Void Function(ffi.Pointer<GSource>, gpointer,
+              ffi.Void Function(ffi.Pointer<GSource>, ffi.Pointer,
                   ffi.Pointer<GSourceCallbackFuncs>)>>(
       'g_source_set_callback_indirect');
   late final _g_source_set_callback_indirect =
       _g_source_set_callback_indirectPtr.asFunction<
-          void Function(ffi.Pointer<GSource>, gpointer,
+          void Function(ffi.Pointer<GSource>, ffi.Pointer,
               ffi.Pointer<GSourceCallbackFuncs>)>();
 
   void g_source_add_poll(
@@ -16970,7 +17001,7 @@ class GStreamer {
       _g_source_removePtr.asFunction<int Function(int)>();
 
   int g_source_remove_by_user_data(
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_source_remove_by_user_data(
       user_data,
@@ -16978,14 +17009,14 @@ class GStreamer {
   }
 
   late final _g_source_remove_by_user_dataPtr =
-      _lookup<ffi.NativeFunction<gboolean Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<gboolean Function(ffi.Pointer)>>(
           'g_source_remove_by_user_data');
   late final _g_source_remove_by_user_data =
-      _g_source_remove_by_user_dataPtr.asFunction<int Function(gpointer)>();
+      _g_source_remove_by_user_dataPtr.asFunction<int Function(ffi.Pointer)>();
 
   int g_source_remove_by_funcs_user_data(
     ffi.Pointer<GSourceFuncs> funcs,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_source_remove_by_funcs_user_data(
       funcs,
@@ -16996,10 +17027,10 @@ class GStreamer {
   late final _g_source_remove_by_funcs_user_dataPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GSourceFuncs>,
-              gpointer)>>('g_source_remove_by_funcs_user_data');
+              ffi.Pointer)>>('g_source_remove_by_funcs_user_data');
   late final _g_source_remove_by_funcs_user_data =
       _g_source_remove_by_funcs_user_dataPtr
-          .asFunction<int Function(ffi.Pointer<GSourceFuncs>, gpointer)>();
+          .asFunction<int Function(ffi.Pointer<GSourceFuncs>, ffi.Pointer)>();
 
   void g_clear_handle_id(
     ffi.Pointer<guint> tag_ptr,
@@ -17022,7 +17053,7 @@ class GStreamer {
     int priority,
     int interval,
     GSourceFunc function,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify notify,
   ) {
     return _g_timeout_add_full(
@@ -17036,15 +17067,15 @@ class GStreamer {
 
   late final _g_timeout_add_fullPtr = _lookup<
       ffi.NativeFunction<
-          guint Function(gint, guint, GSourceFunc, gpointer,
+          guint Function(gint, guint, GSourceFunc, ffi.Pointer,
               GDestroyNotify)>>('g_timeout_add_full');
   late final _g_timeout_add_full = _g_timeout_add_fullPtr.asFunction<
-      int Function(int, int, GSourceFunc, gpointer, GDestroyNotify)>();
+      int Function(int, int, GSourceFunc, ffi.Pointer, GDestroyNotify)>();
 
   int g_timeout_add(
     int interval,
     GSourceFunc function,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_timeout_add(
       interval,
@@ -17053,16 +17084,16 @@ class GStreamer {
     );
   }
 
-  late final _g_timeout_addPtr =
-      _lookup<ffi.NativeFunction<guint Function(guint, GSourceFunc, gpointer)>>(
-          'g_timeout_add');
-  late final _g_timeout_add =
-      _g_timeout_addPtr.asFunction<int Function(int, GSourceFunc, gpointer)>();
+  late final _g_timeout_addPtr = _lookup<
+          ffi.NativeFunction<guint Function(guint, GSourceFunc, ffi.Pointer)>>(
+      'g_timeout_add');
+  late final _g_timeout_add = _g_timeout_addPtr
+      .asFunction<int Function(int, GSourceFunc, ffi.Pointer)>();
 
   int g_timeout_add_once(
     int interval,
     GSourceOnceFunc function,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_timeout_add_once(
       interval,
@@ -17072,16 +17103,17 @@ class GStreamer {
   }
 
   late final _g_timeout_add_oncePtr = _lookup<
-          ffi.NativeFunction<guint Function(guint, GSourceOnceFunc, gpointer)>>(
+          ffi
+          .NativeFunction<guint Function(guint, GSourceOnceFunc, ffi.Pointer)>>(
       'g_timeout_add_once');
   late final _g_timeout_add_once = _g_timeout_add_oncePtr
-      .asFunction<int Function(int, GSourceOnceFunc, gpointer)>();
+      .asFunction<int Function(int, GSourceOnceFunc, ffi.Pointer)>();
 
   int g_timeout_add_seconds_full(
     int priority,
     int interval,
     GSourceFunc function,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify notify,
   ) {
     return _g_timeout_add_seconds_full(
@@ -17095,16 +17127,16 @@ class GStreamer {
 
   late final _g_timeout_add_seconds_fullPtr = _lookup<
       ffi.NativeFunction<
-          guint Function(gint, guint, GSourceFunc, gpointer,
+          guint Function(gint, guint, GSourceFunc, ffi.Pointer,
               GDestroyNotify)>>('g_timeout_add_seconds_full');
   late final _g_timeout_add_seconds_full =
       _g_timeout_add_seconds_fullPtr.asFunction<
-          int Function(int, int, GSourceFunc, gpointer, GDestroyNotify)>();
+          int Function(int, int, GSourceFunc, ffi.Pointer, GDestroyNotify)>();
 
   int g_timeout_add_seconds(
     int interval,
     GSourceFunc function,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_timeout_add_seconds(
       interval,
@@ -17113,16 +17145,16 @@ class GStreamer {
     );
   }
 
-  late final _g_timeout_add_secondsPtr =
-      _lookup<ffi.NativeFunction<guint Function(guint, GSourceFunc, gpointer)>>(
-          'g_timeout_add_seconds');
+  late final _g_timeout_add_secondsPtr = _lookup<
+          ffi.NativeFunction<guint Function(guint, GSourceFunc, ffi.Pointer)>>(
+      'g_timeout_add_seconds');
   late final _g_timeout_add_seconds = _g_timeout_add_secondsPtr
-      .asFunction<int Function(int, GSourceFunc, gpointer)>();
+      .asFunction<int Function(int, GSourceFunc, ffi.Pointer)>();
 
   int g_timeout_add_seconds_once(
     int interval,
     GSourceOnceFunc function,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_timeout_add_seconds_once(
       interval,
@@ -17132,16 +17164,17 @@ class GStreamer {
   }
 
   late final _g_timeout_add_seconds_oncePtr = _lookup<
-          ffi.NativeFunction<guint Function(guint, GSourceOnceFunc, gpointer)>>(
+          ffi
+          .NativeFunction<guint Function(guint, GSourceOnceFunc, ffi.Pointer)>>(
       'g_timeout_add_seconds_once');
   late final _g_timeout_add_seconds_once = _g_timeout_add_seconds_oncePtr
-      .asFunction<int Function(int, GSourceOnceFunc, gpointer)>();
+      .asFunction<int Function(int, GSourceOnceFunc, ffi.Pointer)>();
 
   int g_child_watch_add_full(
     int priority,
     int pid,
     GChildWatchFunc function,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify notify,
   ) {
     return _g_child_watch_add_full(
@@ -17155,15 +17188,15 @@ class GStreamer {
 
   late final _g_child_watch_add_fullPtr = _lookup<
       ffi.NativeFunction<
-          guint Function(gint, GPid, GChildWatchFunc, gpointer,
+          guint Function(gint, GPid, GChildWatchFunc, ffi.Pointer,
               GDestroyNotify)>>('g_child_watch_add_full');
   late final _g_child_watch_add_full = _g_child_watch_add_fullPtr.asFunction<
-      int Function(int, int, GChildWatchFunc, gpointer, GDestroyNotify)>();
+      int Function(int, int, GChildWatchFunc, ffi.Pointer, GDestroyNotify)>();
 
   int g_child_watch_add(
     int pid,
     GChildWatchFunc function,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_child_watch_add(
       pid,
@@ -17173,14 +17206,15 @@ class GStreamer {
   }
 
   late final _g_child_watch_addPtr = _lookup<
-          ffi.NativeFunction<guint Function(GPid, GChildWatchFunc, gpointer)>>(
+          ffi
+          .NativeFunction<guint Function(GPid, GChildWatchFunc, ffi.Pointer)>>(
       'g_child_watch_add');
   late final _g_child_watch_add = _g_child_watch_addPtr
-      .asFunction<int Function(int, GChildWatchFunc, gpointer)>();
+      .asFunction<int Function(int, GChildWatchFunc, ffi.Pointer)>();
 
   int g_idle_add(
     GSourceFunc function,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_idle_add(
       function,
@@ -17189,15 +17223,15 @@ class GStreamer {
   }
 
   late final _g_idle_addPtr =
-      _lookup<ffi.NativeFunction<guint Function(GSourceFunc, gpointer)>>(
+      _lookup<ffi.NativeFunction<guint Function(GSourceFunc, ffi.Pointer)>>(
           'g_idle_add');
   late final _g_idle_add =
-      _g_idle_addPtr.asFunction<int Function(GSourceFunc, gpointer)>();
+      _g_idle_addPtr.asFunction<int Function(GSourceFunc, ffi.Pointer)>();
 
   int g_idle_add_full(
     int priority,
     GSourceFunc function,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify notify,
   ) {
     return _g_idle_add_full(
@@ -17210,14 +17244,14 @@ class GStreamer {
 
   late final _g_idle_add_fullPtr = _lookup<
       ffi.NativeFunction<
-          guint Function(
-              gint, GSourceFunc, gpointer, GDestroyNotify)>>('g_idle_add_full');
-  late final _g_idle_add_full = _g_idle_add_fullPtr
-      .asFunction<int Function(int, GSourceFunc, gpointer, GDestroyNotify)>();
+          guint Function(gint, GSourceFunc, ffi.Pointer,
+              GDestroyNotify)>>('g_idle_add_full');
+  late final _g_idle_add_full = _g_idle_add_fullPtr.asFunction<
+      int Function(int, GSourceFunc, ffi.Pointer, GDestroyNotify)>();
 
   int g_idle_add_once(
     GSourceOnceFunc function,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_idle_add_once(
       function,
@@ -17226,13 +17260,13 @@ class GStreamer {
   }
 
   late final _g_idle_add_oncePtr =
-      _lookup<ffi.NativeFunction<guint Function(GSourceOnceFunc, gpointer)>>(
+      _lookup<ffi.NativeFunction<guint Function(GSourceOnceFunc, ffi.Pointer)>>(
           'g_idle_add_once');
-  late final _g_idle_add_once =
-      _g_idle_add_oncePtr.asFunction<int Function(GSourceOnceFunc, gpointer)>();
+  late final _g_idle_add_once = _g_idle_add_oncePtr
+      .asFunction<int Function(GSourceOnceFunc, ffi.Pointer)>();
 
   int g_idle_remove_by_data(
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_idle_remove_by_data(
       data,
@@ -17240,16 +17274,16 @@ class GStreamer {
   }
 
   late final _g_idle_remove_by_dataPtr =
-      _lookup<ffi.NativeFunction<gboolean Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<gboolean Function(ffi.Pointer)>>(
           'g_idle_remove_by_data');
   late final _g_idle_remove_by_data =
-      _g_idle_remove_by_dataPtr.asFunction<int Function(gpointer)>();
+      _g_idle_remove_by_dataPtr.asFunction<int Function(ffi.Pointer)>();
 
   void g_main_context_invoke_full(
     ffi.Pointer<GMainContext> context,
     int priority,
     GSourceFunc function,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify notify,
   ) {
     return _g_main_context_invoke_full(
@@ -17264,16 +17298,16 @@ class GStreamer {
   late final _g_main_context_invoke_fullPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GMainContext>, gint, GSourceFunc,
-              gpointer, GDestroyNotify)>>('g_main_context_invoke_full');
+              ffi.Pointer, GDestroyNotify)>>('g_main_context_invoke_full');
   late final _g_main_context_invoke_full =
       _g_main_context_invoke_fullPtr.asFunction<
-          void Function(ffi.Pointer<GMainContext>, int, GSourceFunc, gpointer,
-              GDestroyNotify)>();
+          void Function(ffi.Pointer<GMainContext>, int, GSourceFunc,
+              ffi.Pointer, GDestroyNotify)>();
 
   void g_main_context_invoke(
     ffi.Pointer<GMainContext> context,
     GSourceFunc function,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_main_context_invoke(
       context,
@@ -17285,9 +17319,9 @@ class GStreamer {
   late final _g_main_context_invokePtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GMainContext>, GSourceFunc,
-              gpointer)>>('g_main_context_invoke');
+              ffi.Pointer)>>('g_main_context_invoke');
   late final _g_main_context_invoke = _g_main_context_invokePtr.asFunction<
-      void Function(ffi.Pointer<GMainContext>, GSourceFunc, gpointer)>();
+      void Function(ffi.Pointer<GMainContext>, GSourceFunc, ffi.Pointer)>();
 
   late final ffi.Pointer<GSourceFuncs> _g_timeout_funcs =
       _lookup<GSourceFuncs>('g_timeout_funcs');
@@ -19193,7 +19227,7 @@ class GStreamer {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  gpointer g_memdup(
+  ffi.Pointer g_memdup(
     gconstpointer mem,
     int byte_size,
   ) {
@@ -19204,12 +19238,12 @@ class GStreamer {
   }
 
   late final _g_memdupPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gconstpointer, guint)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gconstpointer, guint)>>(
           'g_memdup');
   late final _g_memdup =
-      _g_memdupPtr.asFunction<gpointer Function(gconstpointer, int)>();
+      _g_memdupPtr.asFunction<ffi.Pointer Function(gconstpointer, int)>();
 
-  gpointer g_memdup2(
+  ffi.Pointer g_memdup2(
     gconstpointer mem,
     int byte_size,
   ) {
@@ -19220,10 +19254,10 @@ class GStreamer {
   }
 
   late final _g_memdup2Ptr =
-      _lookup<ffi.NativeFunction<gpointer Function(gconstpointer, gsize)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gconstpointer, gsize)>>(
           'g_memdup2');
   late final _g_memdup2 =
-      _g_memdup2Ptr.asFunction<gpointer Function(gconstpointer, int)>();
+      _g_memdup2Ptr.asFunction<ffi.Pointer Function(gconstpointer, int)>();
 
   ffi.Pointer<ffi.Pointer<ffi.Char>> g_strsplit(
     ffi.Pointer<ffi.Char> string,
@@ -20319,7 +20353,7 @@ class GStreamer {
     int priority,
     int condition,
     GIOFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _g_io_add_watch_full(
@@ -20335,9 +20369,9 @@ class GStreamer {
   late final _g_io_add_watch_fullPtr = _lookup<
       ffi.NativeFunction<
           guint Function(ffi.Pointer<GIOChannel>, gint, ffi.Int32, GIOFunc,
-              gpointer, GDestroyNotify)>>('g_io_add_watch_full');
+              ffi.Pointer, GDestroyNotify)>>('g_io_add_watch_full');
   late final _g_io_add_watch_full = _g_io_add_watch_fullPtr.asFunction<
-      int Function(ffi.Pointer<GIOChannel>, int, int, GIOFunc, gpointer,
+      int Function(ffi.Pointer<GIOChannel>, int, int, GIOFunc, ffi.Pointer,
           GDestroyNotify)>();
 
   ffi.Pointer<GSource> g_io_create_watch(
@@ -20361,7 +20395,7 @@ class GStreamer {
     ffi.Pointer<GIOChannel> channel,
     int condition,
     GIOFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_io_add_watch(
       channel,
@@ -20374,9 +20408,9 @@ class GStreamer {
   late final _g_io_add_watchPtr = _lookup<
       ffi.NativeFunction<
           guint Function(ffi.Pointer<GIOChannel>, ffi.Int32, GIOFunc,
-              gpointer)>>('g_io_add_watch');
+              ffi.Pointer)>>('g_io_add_watch');
   late final _g_io_add_watch = _g_io_add_watchPtr.asFunction<
-      int Function(ffi.Pointer<GIOChannel>, int, GIOFunc, gpointer)>();
+      int Function(ffi.Pointer<GIOChannel>, int, GIOFunc, ffi.Pointer)>();
 
   void g_io_channel_set_buffer_size(
     ffi.Pointer<GIOChannel> channel,
@@ -22314,7 +22348,7 @@ class GStreamer {
   ffi.Pointer<GMarkupParseContext> g_markup_parse_context_new(
     ffi.Pointer<GMarkupParser> parser,
     int flags,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify user_data_dnotify,
   ) {
     return _g_markup_parse_context_new(
@@ -22330,12 +22364,12 @@ class GStreamer {
           ffi.Pointer<GMarkupParseContext> Function(
               ffi.Pointer<GMarkupParser>,
               ffi.Int32,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>>('g_markup_parse_context_new');
   late final _g_markup_parse_context_new =
       _g_markup_parse_context_newPtr.asFunction<
           ffi.Pointer<GMarkupParseContext> Function(
-              ffi.Pointer<GMarkupParser>, int, gpointer, GDestroyNotify)>();
+              ffi.Pointer<GMarkupParser>, int, ffi.Pointer, GDestroyNotify)>();
 
   ffi.Pointer<GMarkupParseContext> g_markup_parse_context_ref(
     ffi.Pointer<GMarkupParseContext> context,
@@ -22414,7 +22448,7 @@ class GStreamer {
   void g_markup_parse_context_push(
     ffi.Pointer<GMarkupParseContext> context,
     ffi.Pointer<GMarkupParser> parser,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_markup_parse_context_push(
       context,
@@ -22428,13 +22462,13 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GMarkupParseContext>,
               ffi.Pointer<GMarkupParser>,
-              gpointer)>>('g_markup_parse_context_push');
+              ffi.Pointer)>>('g_markup_parse_context_push');
   late final _g_markup_parse_context_push =
       _g_markup_parse_context_pushPtr.asFunction<
           void Function(ffi.Pointer<GMarkupParseContext>,
-              ffi.Pointer<GMarkupParser>, gpointer)>();
+              ffi.Pointer<GMarkupParser>, ffi.Pointer)>();
 
-  gpointer g_markup_parse_context_pop(
+  ffi.Pointer g_markup_parse_context_pop(
     ffi.Pointer<GMarkupParseContext> context,
   ) {
     return _g_markup_parse_context_pop(
@@ -22443,11 +22477,11 @@ class GStreamer {
   }
 
   late final _g_markup_parse_context_popPtr = _lookup<
-          ffi
-          .NativeFunction<gpointer Function(ffi.Pointer<GMarkupParseContext>)>>(
-      'g_markup_parse_context_pop');
+      ffi.NativeFunction<
+          ffi.Pointer Function(
+              ffi.Pointer<GMarkupParseContext>)>>('g_markup_parse_context_pop');
   late final _g_markup_parse_context_pop = _g_markup_parse_context_popPtr
-      .asFunction<gpointer Function(ffi.Pointer<GMarkupParseContext>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GMarkupParseContext>)>();
 
   int g_markup_parse_context_end_parse(
     ffi.Pointer<GMarkupParseContext> context,
@@ -22523,7 +22557,7 @@ class GStreamer {
           void Function(ffi.Pointer<GMarkupParseContext>, ffi.Pointer<gint>,
               ffi.Pointer<gint>)>();
 
-  gpointer g_markup_parse_context_get_user_data(
+  ffi.Pointer g_markup_parse_context_get_user_data(
     ffi.Pointer<GMarkupParseContext> context,
   ) {
     return _g_markup_parse_context_get_user_data(
@@ -22532,12 +22566,12 @@ class GStreamer {
   }
 
   late final _g_markup_parse_context_get_user_dataPtr = _lookup<
-          ffi
-          .NativeFunction<gpointer Function(ffi.Pointer<GMarkupParseContext>)>>(
+          ffi.NativeFunction<
+              ffi.Pointer Function(ffi.Pointer<GMarkupParseContext>)>>(
       'g_markup_parse_context_get_user_data');
   late final _g_markup_parse_context_get_user_data =
       _g_markup_parse_context_get_user_dataPtr
-          .asFunction<gpointer Function(ffi.Pointer<GMarkupParseContext>)>();
+          .asFunction<ffi.Pointer Function(ffi.Pointer<GMarkupParseContext>)>();
 
   ffi.Pointer<ffi.Char> g_markup_escape_text(
     ffi.Pointer<ffi.Char> text,
@@ -24187,7 +24221,7 @@ class GStreamer {
 
   void g_variant_store(
     ffi.Pointer<GVariant> value,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_variant_store(
       value,
@@ -24196,11 +24230,11 @@ class GStreamer {
   }
 
   late final _g_variant_storePtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Void Function(ffi.Pointer<GVariant>, gpointer)>>(
-      'g_variant_store');
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GVariant>, ffi.Pointer)>>('g_variant_store');
   late final _g_variant_store = _g_variant_storePtr
-      .asFunction<void Function(ffi.Pointer<GVariant>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GVariant>, ffi.Pointer)>();
 
   ffi.Pointer<ffi.Char> g_variant_print(
     ffi.Pointer<GVariant> value,
@@ -24340,7 +24374,7 @@ class GStreamer {
     int size,
     int trusted,
     GDestroyNotify notify,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_variant_new_from_data(
       type,
@@ -24360,10 +24394,10 @@ class GStreamer {
               gsize,
               gboolean,
               GDestroyNotify,
-              gpointer)>>('g_variant_new_from_data');
+              ffi.Pointer)>>('g_variant_new_from_data');
   late final _g_variant_new_from_data = _g_variant_new_from_dataPtr.asFunction<
       ffi.Pointer<GVariant> Function(ffi.Pointer<GVariantType>, gconstpointer,
-          int, int, GDestroyNotify, gpointer)>();
+          int, int, GDestroyNotify, ffi.Pointer)>();
 
   ffi.Pointer<GVariantIter> g_variant_iter_new(
     ffi.Pointer<GVariant> value,
@@ -25118,7 +25152,7 @@ class GStreamer {
     ffi.Pointer<ffi.Char> log_domain,
     int log_levels,
     GLogFunc log_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_log_set_handler(
       log_domain,
@@ -25131,15 +25165,15 @@ class GStreamer {
   late final _g_log_set_handlerPtr = _lookup<
       ffi.NativeFunction<
           guint Function(ffi.Pointer<ffi.Char>, ffi.Int32, GLogFunc,
-              gpointer)>>('g_log_set_handler');
+              ffi.Pointer)>>('g_log_set_handler');
   late final _g_log_set_handler = _g_log_set_handlerPtr.asFunction<
-      int Function(ffi.Pointer<ffi.Char>, int, GLogFunc, gpointer)>();
+      int Function(ffi.Pointer<ffi.Char>, int, GLogFunc, ffi.Pointer)>();
 
   int g_log_set_handler_full(
     ffi.Pointer<ffi.Char> log_domain,
     int log_levels,
     GLogFunc log_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify destroy,
   ) {
     return _g_log_set_handler_full(
@@ -25153,11 +25187,11 @@ class GStreamer {
 
   late final _g_log_set_handler_fullPtr = _lookup<
       ffi.NativeFunction<
-          guint Function(ffi.Pointer<ffi.Char>, ffi.Int32, GLogFunc, gpointer,
-              GDestroyNotify)>>('g_log_set_handler_full');
+          guint Function(ffi.Pointer<ffi.Char>, ffi.Int32, GLogFunc,
+              ffi.Pointer, GDestroyNotify)>>('g_log_set_handler_full');
   late final _g_log_set_handler_full = _g_log_set_handler_fullPtr.asFunction<
       int Function(
-          ffi.Pointer<ffi.Char>, int, GLogFunc, gpointer, GDestroyNotify)>();
+          ffi.Pointer<ffi.Char>, int, GLogFunc, ffi.Pointer, GDestroyNotify)>();
 
   void g_log_remove_handler(
     ffi.Pointer<ffi.Char> log_domain,
@@ -25179,7 +25213,7 @@ class GStreamer {
     ffi.Pointer<ffi.Char> log_domain,
     int log_level,
     ffi.Pointer<ffi.Char> message,
-    gpointer unused_data,
+    ffi.Pointer unused_data,
   ) {
     return _g_log_default_handler(
       log_domain,
@@ -25192,14 +25226,14 @@ class GStreamer {
   late final _g_log_default_handlerPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Char>, ffi.Int32,
-              ffi.Pointer<ffi.Char>, gpointer)>>('g_log_default_handler');
+              ffi.Pointer<ffi.Char>, ffi.Pointer)>>('g_log_default_handler');
   late final _g_log_default_handler = _g_log_default_handlerPtr.asFunction<
       void Function(
-          ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>, gpointer)>();
+          ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>, ffi.Pointer)>();
 
   GLogFunc g_log_set_default_handler(
     GLogFunc log_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_log_set_default_handler(
       log_func,
@@ -25208,10 +25242,10 @@ class GStreamer {
   }
 
   late final _g_log_set_default_handlerPtr =
-      _lookup<ffi.NativeFunction<GLogFunc Function(GLogFunc, gpointer)>>(
+      _lookup<ffi.NativeFunction<GLogFunc Function(GLogFunc, ffi.Pointer)>>(
           'g_log_set_default_handler');
   late final _g_log_set_default_handler = _g_log_set_default_handlerPtr
-      .asFunction<GLogFunc Function(GLogFunc, gpointer)>();
+      .asFunction<GLogFunc Function(GLogFunc, ffi.Pointer)>();
 
   void g_log(
     ffi.Pointer<ffi.Char> log_domain,
@@ -25342,7 +25376,7 @@ class GStreamer {
 
   void g_log_set_writer_func(
     GLogWriterFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify user_data_free,
   ) {
     return _g_log_set_writer_func(
@@ -25354,10 +25388,10 @@ class GStreamer {
 
   late final _g_log_set_writer_funcPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(GLogWriterFunc, gpointer,
+          ffi.Void Function(GLogWriterFunc, ffi.Pointer,
               GDestroyNotify)>>('g_log_set_writer_func');
   late final _g_log_set_writer_func = _g_log_set_writer_funcPtr
-      .asFunction<void Function(GLogWriterFunc, gpointer, GDestroyNotify)>();
+      .asFunction<void Function(GLogWriterFunc, ffi.Pointer, GDestroyNotify)>();
 
   int g_log_writer_supports_color(
     int output_fd,
@@ -25414,7 +25448,7 @@ class GStreamer {
     int log_level,
     ffi.Pointer<GLogField> fields,
     int n_fields,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_log_writer_syslog(
       log_level,
@@ -25427,15 +25461,15 @@ class GStreamer {
   late final _g_log_writer_syslogPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int32 Function(ffi.Int32, ffi.Pointer<GLogField>, gsize,
-              gpointer)>>('g_log_writer_syslog');
-  late final _g_log_writer_syslog = _g_log_writer_syslogPtr
-      .asFunction<int Function(int, ffi.Pointer<GLogField>, int, gpointer)>();
+              ffi.Pointer)>>('g_log_writer_syslog');
+  late final _g_log_writer_syslog = _g_log_writer_syslogPtr.asFunction<
+      int Function(int, ffi.Pointer<GLogField>, int, ffi.Pointer)>();
 
   int g_log_writer_journald(
     int log_level,
     ffi.Pointer<GLogField> fields,
     int n_fields,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_log_writer_journald(
       log_level,
@@ -25448,15 +25482,15 @@ class GStreamer {
   late final _g_log_writer_journaldPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int32 Function(ffi.Int32, ffi.Pointer<GLogField>, gsize,
-              gpointer)>>('g_log_writer_journald');
-  late final _g_log_writer_journald = _g_log_writer_journaldPtr
-      .asFunction<int Function(int, ffi.Pointer<GLogField>, int, gpointer)>();
+              ffi.Pointer)>>('g_log_writer_journald');
+  late final _g_log_writer_journald = _g_log_writer_journaldPtr.asFunction<
+      int Function(int, ffi.Pointer<GLogField>, int, ffi.Pointer)>();
 
   int g_log_writer_standard_streams(
     int log_level,
     ffi.Pointer<GLogField> fields,
     int n_fields,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_log_writer_standard_streams(
       log_level,
@@ -25469,15 +25503,16 @@ class GStreamer {
   late final _g_log_writer_standard_streamsPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int32 Function(ffi.Int32, ffi.Pointer<GLogField>, gsize,
-              gpointer)>>('g_log_writer_standard_streams');
-  late final _g_log_writer_standard_streams = _g_log_writer_standard_streamsPtr
-      .asFunction<int Function(int, ffi.Pointer<GLogField>, int, gpointer)>();
+              ffi.Pointer)>>('g_log_writer_standard_streams');
+  late final _g_log_writer_standard_streams =
+      _g_log_writer_standard_streamsPtr.asFunction<
+          int Function(int, ffi.Pointer<GLogField>, int, ffi.Pointer)>();
 
   int g_log_writer_default(
     int log_level,
     ffi.Pointer<GLogField> fields,
     int n_fields,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_log_writer_default(
       log_level,
@@ -25490,9 +25525,9 @@ class GStreamer {
   late final _g_log_writer_defaultPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int32 Function(ffi.Int32, ffi.Pointer<GLogField>, gsize,
-              gpointer)>>('g_log_writer_default');
-  late final _g_log_writer_default = _g_log_writer_defaultPtr
-      .asFunction<int Function(int, ffi.Pointer<GLogField>, int, gpointer)>();
+              ffi.Pointer)>>('g_log_writer_default');
+  late final _g_log_writer_default = _g_log_writer_defaultPtr.asFunction<
+      int Function(int, ffi.Pointer<GLogField>, int, ffi.Pointer)>();
 
   void g_log_writer_default_set_use_stderr(
     int use_stderr,
@@ -25570,7 +25605,7 @@ class GStreamer {
     ffi.Pointer<ffi.Char> log_domain,
     int log_level,
     ffi.Pointer<ffi.Char> message,
-    gpointer unused_data,
+    ffi.Pointer unused_data,
   ) {
     return __g_log_fallback_handler(
       log_domain,
@@ -25583,10 +25618,10 @@ class GStreamer {
   late final __g_log_fallback_handlerPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Char>, ffi.Int32,
-              ffi.Pointer<ffi.Char>, gpointer)>>('_g_log_fallback_handler');
+              ffi.Pointer<ffi.Char>, ffi.Pointer)>>('_g_log_fallback_handler');
   late final __g_log_fallback_handler = __g_log_fallback_handlerPtr.asFunction<
       void Function(
-          ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>, gpointer)>();
+          ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>, ffi.Pointer)>();
 
   void g_return_if_fail_warning(
     ffi.Pointer<ffi.Char> log_domain,
@@ -26043,7 +26078,7 @@ class GStreamer {
   void g_option_context_set_translate_func(
     ffi.Pointer<GOptionContext> context,
     GTranslateFunc func,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify destroy_notify,
   ) {
     return _g_option_context_set_translate_func(
@@ -26059,12 +26094,12 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GOptionContext>,
               GTranslateFunc,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>>('g_option_context_set_translate_func');
   late final _g_option_context_set_translate_func =
       _g_option_context_set_translate_funcPtr.asFunction<
-          void Function(ffi.Pointer<GOptionContext>, GTranslateFunc, gpointer,
-              GDestroyNotify)>();
+          void Function(ffi.Pointer<GOptionContext>, GTranslateFunc,
+              ffi.Pointer, GDestroyNotify)>();
 
   void g_option_context_set_translation_domain(
     ffi.Pointer<GOptionContext> context,
@@ -26164,7 +26199,7 @@ class GStreamer {
     ffi.Pointer<ffi.Char> name,
     ffi.Pointer<ffi.Char> description,
     ffi.Pointer<ffi.Char> help_description,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify destroy,
   ) {
     return _g_option_group_new(
@@ -26182,14 +26217,14 @@ class GStreamer {
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>>('g_option_group_new');
   late final _g_option_group_new = _g_option_group_newPtr.asFunction<
       ffi.Pointer<GOptionGroup> Function(
           ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Char>,
-          gpointer,
+          ffi.Pointer,
           GDestroyNotify)>();
 
   void g_option_group_set_parse_hooks(
@@ -26295,7 +26330,7 @@ class GStreamer {
   void g_option_group_set_translate_func(
     ffi.Pointer<GOptionGroup> group,
     GTranslateFunc func,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify destroy_notify,
   ) {
     return _g_option_group_set_translate_func(
@@ -26308,11 +26343,14 @@ class GStreamer {
 
   late final _g_option_group_set_translate_funcPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GOptionGroup>, GTranslateFunc, gpointer,
+          ffi.Void Function(
+              ffi.Pointer<GOptionGroup>,
+              GTranslateFunc,
+              ffi.Pointer,
               GDestroyNotify)>>('g_option_group_set_translate_func');
   late final _g_option_group_set_translate_func =
       _g_option_group_set_translate_funcPtr.asFunction<
-          void Function(ffi.Pointer<GOptionGroup>, GTranslateFunc, gpointer,
+          void Function(ffi.Pointer<GOptionGroup>, GTranslateFunc, ffi.Pointer,
               GDestroyNotify)>();
 
   void g_option_group_set_translation_domain(
@@ -26744,7 +26782,7 @@ class GStreamer {
     int total_elems,
     int size,
     GCompareDataFunc compare_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_qsort_with_data(
       pbase,
@@ -26758,9 +26796,9 @@ class GStreamer {
   late final _g_qsort_with_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(gconstpointer, gint, gsize, GCompareDataFunc,
-              gpointer)>>('g_qsort_with_data');
+              ffi.Pointer)>>('g_qsort_with_data');
   late final _g_qsort_with_data = _g_qsort_with_dataPtr.asFunction<
-      void Function(gconstpointer, int, int, GCompareDataFunc, gpointer)>();
+      void Function(gconstpointer, int, int, GCompareDataFunc, ffi.Pointer)>();
 
   ffi.Pointer<GQueue> g_queue_new() {
     return _g_queue_new();
@@ -26907,7 +26945,7 @@ class GStreamer {
   void g_queue_foreach(
     ffi.Pointer<GQueue> queue,
     GFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_queue_foreach(
       queue,
@@ -26919,9 +26957,9 @@ class GStreamer {
   late final _g_queue_foreachPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
-              ffi.Pointer<GQueue>, GFunc, gpointer)>>('g_queue_foreach');
+              ffi.Pointer<GQueue>, GFunc, ffi.Pointer)>>('g_queue_foreach');
   late final _g_queue_foreach = _g_queue_foreachPtr
-      .asFunction<void Function(ffi.Pointer<GQueue>, GFunc, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GQueue>, GFunc, ffi.Pointer)>();
 
   ffi.Pointer<GList> g_queue_find(
     ffi.Pointer<GQueue> queue,
@@ -26963,7 +27001,7 @@ class GStreamer {
   void g_queue_sort(
     ffi.Pointer<GQueue> queue,
     GCompareDataFunc compare_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_queue_sort(
       queue,
@@ -26975,13 +27013,13 @@ class GStreamer {
   late final _g_queue_sortPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GQueue>, GCompareDataFunc,
-              gpointer)>>('g_queue_sort');
+              ffi.Pointer)>>('g_queue_sort');
   late final _g_queue_sort = _g_queue_sortPtr.asFunction<
-      void Function(ffi.Pointer<GQueue>, GCompareDataFunc, gpointer)>();
+      void Function(ffi.Pointer<GQueue>, GCompareDataFunc, ffi.Pointer)>();
 
   void g_queue_push_head(
     ffi.Pointer<GQueue> queue,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_queue_push_head(
       queue,
@@ -26990,14 +27028,15 @@ class GStreamer {
   }
 
   late final _g_queue_push_headPtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GQueue>, gpointer)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GQueue>, ffi.Pointer)>>(
       'g_queue_push_head');
   late final _g_queue_push_head = _g_queue_push_headPtr
-      .asFunction<void Function(ffi.Pointer<GQueue>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GQueue>, ffi.Pointer)>();
 
   void g_queue_push_tail(
     ffi.Pointer<GQueue> queue,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_queue_push_tail(
       queue,
@@ -27006,14 +27045,15 @@ class GStreamer {
   }
 
   late final _g_queue_push_tailPtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GQueue>, gpointer)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GQueue>, ffi.Pointer)>>(
       'g_queue_push_tail');
   late final _g_queue_push_tail = _g_queue_push_tailPtr
-      .asFunction<void Function(ffi.Pointer<GQueue>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GQueue>, ffi.Pointer)>();
 
   void g_queue_push_nth(
     ffi.Pointer<GQueue> queue,
-    gpointer data,
+    ffi.Pointer data,
     int n,
   ) {
     return _g_queue_push_nth(
@@ -27026,11 +27066,11 @@ class GStreamer {
   late final _g_queue_push_nthPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
-              ffi.Pointer<GQueue>, gpointer, gint)>>('g_queue_push_nth');
+              ffi.Pointer<GQueue>, ffi.Pointer, gint)>>('g_queue_push_nth');
   late final _g_queue_push_nth = _g_queue_push_nthPtr
-      .asFunction<void Function(ffi.Pointer<GQueue>, gpointer, int)>();
+      .asFunction<void Function(ffi.Pointer<GQueue>, ffi.Pointer, int)>();
 
-  gpointer g_queue_pop_head(
+  ffi.Pointer g_queue_pop_head(
     ffi.Pointer<GQueue> queue,
   ) {
     return _g_queue_pop_head(
@@ -27039,12 +27079,12 @@ class GStreamer {
   }
 
   late final _g_queue_pop_headPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GQueue>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GQueue>)>>(
           'g_queue_pop_head');
-  late final _g_queue_pop_head =
-      _g_queue_pop_headPtr.asFunction<gpointer Function(ffi.Pointer<GQueue>)>();
+  late final _g_queue_pop_head = _g_queue_pop_headPtr
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GQueue>)>();
 
-  gpointer g_queue_pop_tail(
+  ffi.Pointer g_queue_pop_tail(
     ffi.Pointer<GQueue> queue,
   ) {
     return _g_queue_pop_tail(
@@ -27053,12 +27093,12 @@ class GStreamer {
   }
 
   late final _g_queue_pop_tailPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GQueue>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GQueue>)>>(
           'g_queue_pop_tail');
-  late final _g_queue_pop_tail =
-      _g_queue_pop_tailPtr.asFunction<gpointer Function(ffi.Pointer<GQueue>)>();
+  late final _g_queue_pop_tail = _g_queue_pop_tailPtr
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GQueue>)>();
 
-  gpointer g_queue_pop_nth(
+  ffi.Pointer g_queue_pop_nth(
     ffi.Pointer<GQueue> queue,
     int n,
   ) {
@@ -27069,12 +27109,12 @@ class GStreamer {
   }
 
   late final _g_queue_pop_nthPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GQueue>, guint)>>(
+          ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GQueue>, guint)>>(
       'g_queue_pop_nth');
   late final _g_queue_pop_nth = _g_queue_pop_nthPtr
-      .asFunction<gpointer Function(ffi.Pointer<GQueue>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GQueue>, int)>();
 
-  gpointer g_queue_peek_head(
+  ffi.Pointer g_queue_peek_head(
     ffi.Pointer<GQueue> queue,
   ) {
     return _g_queue_peek_head(
@@ -27083,12 +27123,12 @@ class GStreamer {
   }
 
   late final _g_queue_peek_headPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GQueue>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GQueue>)>>(
           'g_queue_peek_head');
   late final _g_queue_peek_head = _g_queue_peek_headPtr
-      .asFunction<gpointer Function(ffi.Pointer<GQueue>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GQueue>)>();
 
-  gpointer g_queue_peek_tail(
+  ffi.Pointer g_queue_peek_tail(
     ffi.Pointer<GQueue> queue,
   ) {
     return _g_queue_peek_tail(
@@ -27097,12 +27137,12 @@ class GStreamer {
   }
 
   late final _g_queue_peek_tailPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GQueue>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GQueue>)>>(
           'g_queue_peek_tail');
   late final _g_queue_peek_tail = _g_queue_peek_tailPtr
-      .asFunction<gpointer Function(ffi.Pointer<GQueue>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GQueue>)>();
 
-  gpointer g_queue_peek_nth(
+  ffi.Pointer g_queue_peek_nth(
     ffi.Pointer<GQueue> queue,
     int n,
   ) {
@@ -27113,10 +27153,10 @@ class GStreamer {
   }
 
   late final _g_queue_peek_nthPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GQueue>, guint)>>(
+          ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GQueue>, guint)>>(
       'g_queue_peek_nth');
   late final _g_queue_peek_nth = _g_queue_peek_nthPtr
-      .asFunction<gpointer Function(ffi.Pointer<GQueue>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GQueue>, int)>();
 
   int g_queue_index(
     ffi.Pointer<GQueue> queue,
@@ -27171,7 +27211,7 @@ class GStreamer {
   void g_queue_insert_before(
     ffi.Pointer<GQueue> queue,
     ffi.Pointer<GList> sibling,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_queue_insert_before(
       queue,
@@ -27183,9 +27223,9 @@ class GStreamer {
   late final _g_queue_insert_beforePtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GQueue>, ffi.Pointer<GList>,
-              gpointer)>>('g_queue_insert_before');
+              ffi.Pointer)>>('g_queue_insert_before');
   late final _g_queue_insert_before = _g_queue_insert_beforePtr.asFunction<
-      void Function(ffi.Pointer<GQueue>, ffi.Pointer<GList>, gpointer)>();
+      void Function(ffi.Pointer<GQueue>, ffi.Pointer<GList>, ffi.Pointer)>();
 
   void g_queue_insert_before_link(
     ffi.Pointer<GQueue> queue,
@@ -27211,7 +27251,7 @@ class GStreamer {
   void g_queue_insert_after(
     ffi.Pointer<GQueue> queue,
     ffi.Pointer<GList> sibling,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_queue_insert_after(
       queue,
@@ -27223,9 +27263,9 @@ class GStreamer {
   late final _g_queue_insert_afterPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GQueue>, ffi.Pointer<GList>,
-              gpointer)>>('g_queue_insert_after');
+              ffi.Pointer)>>('g_queue_insert_after');
   late final _g_queue_insert_after = _g_queue_insert_afterPtr.asFunction<
-      void Function(ffi.Pointer<GQueue>, ffi.Pointer<GList>, gpointer)>();
+      void Function(ffi.Pointer<GQueue>, ffi.Pointer<GList>, ffi.Pointer)>();
 
   void g_queue_insert_after_link(
     ffi.Pointer<GQueue> queue,
@@ -27250,9 +27290,9 @@ class GStreamer {
 
   void g_queue_insert_sorted(
     ffi.Pointer<GQueue> queue,
-    gpointer data,
+    ffi.Pointer data,
     GCompareDataFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_queue_insert_sorted(
       queue,
@@ -27264,11 +27304,11 @@ class GStreamer {
 
   late final _g_queue_insert_sortedPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GQueue>, gpointer, GCompareDataFunc,
-              gpointer)>>('g_queue_insert_sorted');
+          ffi.Void Function(ffi.Pointer<GQueue>, ffi.Pointer, GCompareDataFunc,
+              ffi.Pointer)>>('g_queue_insert_sorted');
   late final _g_queue_insert_sorted = _g_queue_insert_sortedPtr.asFunction<
       void Function(
-          ffi.Pointer<GQueue>, gpointer, GCompareDataFunc, gpointer)>();
+          ffi.Pointer<GQueue>, ffi.Pointer, GCompareDataFunc, ffi.Pointer)>();
 
   void g_queue_push_head_link(
     ffi.Pointer<GQueue> queue,
@@ -27696,7 +27736,7 @@ class GStreamer {
   late final _g_random_double_range =
       _g_random_double_rangePtr.asFunction<double Function(double, double)>();
 
-  gpointer g_rc_box_alloc(
+  ffi.Pointer g_rc_box_alloc(
     int block_size,
   ) {
     return _g_rc_box_alloc(
@@ -27705,11 +27745,12 @@ class GStreamer {
   }
 
   late final _g_rc_box_allocPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize)>>('g_rc_box_alloc');
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize)>>(
+          'g_rc_box_alloc');
   late final _g_rc_box_alloc =
-      _g_rc_box_allocPtr.asFunction<gpointer Function(int)>();
+      _g_rc_box_allocPtr.asFunction<ffi.Pointer Function(int)>();
 
-  gpointer g_rc_box_alloc0(
+  ffi.Pointer g_rc_box_alloc0(
     int block_size,
   ) {
     return _g_rc_box_alloc0(
@@ -27718,11 +27759,12 @@ class GStreamer {
   }
 
   late final _g_rc_box_alloc0Ptr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize)>>('g_rc_box_alloc0');
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize)>>(
+          'g_rc_box_alloc0');
   late final _g_rc_box_alloc0 =
-      _g_rc_box_alloc0Ptr.asFunction<gpointer Function(int)>();
+      _g_rc_box_alloc0Ptr.asFunction<ffi.Pointer Function(int)>();
 
-  gpointer g_rc_box_dup(
+  ffi.Pointer g_rc_box_dup(
     int block_size,
     gconstpointer mem_block,
   ) {
@@ -27733,13 +27775,13 @@ class GStreamer {
   }
 
   late final _g_rc_box_dupPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize, gconstpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize, gconstpointer)>>(
           'g_rc_box_dup');
   late final _g_rc_box_dup =
-      _g_rc_box_dupPtr.asFunction<gpointer Function(int, gconstpointer)>();
+      _g_rc_box_dupPtr.asFunction<ffi.Pointer Function(int, gconstpointer)>();
 
-  gpointer g_rc_box_acquire(
-    gpointer mem_block,
+  ffi.Pointer g_rc_box_acquire(
+    ffi.Pointer mem_block,
   ) {
     return _g_rc_box_acquire(
       mem_block,
@@ -27747,13 +27789,13 @@ class GStreamer {
   }
 
   late final _g_rc_box_acquirePtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer)>>(
           'g_rc_box_acquire');
   late final _g_rc_box_acquire =
-      _g_rc_box_acquirePtr.asFunction<gpointer Function(gpointer)>();
+      _g_rc_box_acquirePtr.asFunction<ffi.Pointer Function(ffi.Pointer)>();
 
   void g_rc_box_release(
-    gpointer mem_block,
+    ffi.Pointer mem_block,
   ) {
     return _g_rc_box_release(
       mem_block,
@@ -27761,13 +27803,13 @@ class GStreamer {
   }
 
   late final _g_rc_box_releasePtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
           'g_rc_box_release');
   late final _g_rc_box_release =
-      _g_rc_box_releasePtr.asFunction<void Function(gpointer)>();
+      _g_rc_box_releasePtr.asFunction<void Function(ffi.Pointer)>();
 
   void g_rc_box_release_full(
-    gpointer mem_block,
+    ffi.Pointer mem_block,
     GDestroyNotify clear_func,
   ) {
     return _g_rc_box_release_full(
@@ -27776,14 +27818,14 @@ class GStreamer {
     );
   }
 
-  late final _g_rc_box_release_fullPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer, GDestroyNotify)>>(
-          'g_rc_box_release_full');
+  late final _g_rc_box_release_fullPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer, GDestroyNotify)>>(
+      'g_rc_box_release_full');
   late final _g_rc_box_release_full = _g_rc_box_release_fullPtr
-      .asFunction<void Function(gpointer, GDestroyNotify)>();
+      .asFunction<void Function(ffi.Pointer, GDestroyNotify)>();
 
   int g_rc_box_get_size(
-    gpointer mem_block,
+    ffi.Pointer mem_block,
   ) {
     return _g_rc_box_get_size(
       mem_block,
@@ -27791,12 +27833,12 @@ class GStreamer {
   }
 
   late final _g_rc_box_get_sizePtr =
-      _lookup<ffi.NativeFunction<gsize Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<gsize Function(ffi.Pointer)>>(
           'g_rc_box_get_size');
   late final _g_rc_box_get_size =
-      _g_rc_box_get_sizePtr.asFunction<int Function(gpointer)>();
+      _g_rc_box_get_sizePtr.asFunction<int Function(ffi.Pointer)>();
 
-  gpointer g_atomic_rc_box_alloc(
+  ffi.Pointer g_atomic_rc_box_alloc(
     int block_size,
   ) {
     return _g_atomic_rc_box_alloc(
@@ -27805,12 +27847,12 @@ class GStreamer {
   }
 
   late final _g_atomic_rc_box_allocPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize)>>(
           'g_atomic_rc_box_alloc');
   late final _g_atomic_rc_box_alloc =
-      _g_atomic_rc_box_allocPtr.asFunction<gpointer Function(int)>();
+      _g_atomic_rc_box_allocPtr.asFunction<ffi.Pointer Function(int)>();
 
-  gpointer g_atomic_rc_box_alloc0(
+  ffi.Pointer g_atomic_rc_box_alloc0(
     int block_size,
   ) {
     return _g_atomic_rc_box_alloc0(
@@ -27819,12 +27861,12 @@ class GStreamer {
   }
 
   late final _g_atomic_rc_box_alloc0Ptr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize)>>(
           'g_atomic_rc_box_alloc0');
   late final _g_atomic_rc_box_alloc0 =
-      _g_atomic_rc_box_alloc0Ptr.asFunction<gpointer Function(int)>();
+      _g_atomic_rc_box_alloc0Ptr.asFunction<ffi.Pointer Function(int)>();
 
-  gpointer g_atomic_rc_box_dup(
+  ffi.Pointer g_atomic_rc_box_dup(
     int block_size,
     gconstpointer mem_block,
   ) {
@@ -27835,13 +27877,13 @@ class GStreamer {
   }
 
   late final _g_atomic_rc_box_dupPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize, gconstpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize, gconstpointer)>>(
           'g_atomic_rc_box_dup');
   late final _g_atomic_rc_box_dup = _g_atomic_rc_box_dupPtr
-      .asFunction<gpointer Function(int, gconstpointer)>();
+      .asFunction<ffi.Pointer Function(int, gconstpointer)>();
 
-  gpointer g_atomic_rc_box_acquire(
-    gpointer mem_block,
+  ffi.Pointer g_atomic_rc_box_acquire(
+    ffi.Pointer mem_block,
   ) {
     return _g_atomic_rc_box_acquire(
       mem_block,
@@ -27849,13 +27891,13 @@ class GStreamer {
   }
 
   late final _g_atomic_rc_box_acquirePtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer)>>(
           'g_atomic_rc_box_acquire');
-  late final _g_atomic_rc_box_acquire =
-      _g_atomic_rc_box_acquirePtr.asFunction<gpointer Function(gpointer)>();
+  late final _g_atomic_rc_box_acquire = _g_atomic_rc_box_acquirePtr
+      .asFunction<ffi.Pointer Function(ffi.Pointer)>();
 
   void g_atomic_rc_box_release(
-    gpointer mem_block,
+    ffi.Pointer mem_block,
   ) {
     return _g_atomic_rc_box_release(
       mem_block,
@@ -27863,13 +27905,13 @@ class GStreamer {
   }
 
   late final _g_atomic_rc_box_releasePtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
           'g_atomic_rc_box_release');
   late final _g_atomic_rc_box_release =
-      _g_atomic_rc_box_releasePtr.asFunction<void Function(gpointer)>();
+      _g_atomic_rc_box_releasePtr.asFunction<void Function(ffi.Pointer)>();
 
   void g_atomic_rc_box_release_full(
-    gpointer mem_block,
+    ffi.Pointer mem_block,
     GDestroyNotify clear_func,
   ) {
     return _g_atomic_rc_box_release_full(
@@ -27878,14 +27920,14 @@ class GStreamer {
     );
   }
 
-  late final _g_atomic_rc_box_release_fullPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer, GDestroyNotify)>>(
-          'g_atomic_rc_box_release_full');
+  late final _g_atomic_rc_box_release_fullPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer, GDestroyNotify)>>(
+      'g_atomic_rc_box_release_full');
   late final _g_atomic_rc_box_release_full = _g_atomic_rc_box_release_fullPtr
-      .asFunction<void Function(gpointer, GDestroyNotify)>();
+      .asFunction<void Function(ffi.Pointer, GDestroyNotify)>();
 
   int g_atomic_rc_box_get_size(
-    gpointer mem_block,
+    ffi.Pointer mem_block,
   ) {
     return _g_atomic_rc_box_get_size(
       mem_block,
@@ -27893,10 +27935,10 @@ class GStreamer {
   }
 
   late final _g_atomic_rc_box_get_sizePtr =
-      _lookup<ffi.NativeFunction<gsize Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<gsize Function(ffi.Pointer)>>(
           'g_atomic_rc_box_get_size');
   late final _g_atomic_rc_box_get_size =
-      _g_atomic_rc_box_get_sizePtr.asFunction<int Function(gpointer)>();
+      _g_atomic_rc_box_get_sizePtr.asFunction<int Function(ffi.Pointer)>();
 
   void g_ref_count_init(
     ffi.Pointer<grefcount> rc,
@@ -28637,7 +28679,7 @@ class GStreamer {
     int start_position,
     int match_options,
     GRegexEvalCallback eval,
-    gpointer user_data,
+    ffi.Pointer user_data,
     ffi.Pointer<ffi.Pointer<GError>> error,
   ) {
     return _g_regex_replace_eval(
@@ -28661,7 +28703,7 @@ class GStreamer {
               gint,
               ffi.Int32,
               GRegexEvalCallback,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Pointer<GError>>)>>('g_regex_replace_eval');
   late final _g_regex_replace_eval = _g_regex_replace_evalPtr.asFunction<
       ffi.Pointer<ffi.Char> Function(
@@ -28671,7 +28713,7 @@ class GStreamer {
           int,
           int,
           GRegexEvalCallback,
-          gpointer,
+          ffi.Pointer,
           ffi.Pointer<ffi.Pointer<GError>>)>();
 
   int g_regex_check_replacement(
@@ -29145,7 +29187,7 @@ class GStreamer {
     ffi.Pointer<GScanner> scanner,
     int scope_id,
     ffi.Pointer<ffi.Char> symbol,
-    gpointer value,
+    ffi.Pointer value,
   ) {
     return _g_scanner_scope_add_symbol(
       scanner,
@@ -29158,11 +29200,11 @@ class GStreamer {
   late final _g_scanner_scope_add_symbolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GScanner>, guint, ffi.Pointer<ffi.Char>,
-              gpointer)>>('g_scanner_scope_add_symbol');
+              ffi.Pointer)>>('g_scanner_scope_add_symbol');
   late final _g_scanner_scope_add_symbol =
       _g_scanner_scope_add_symbolPtr.asFunction<
-          void Function(
-              ffi.Pointer<GScanner>, int, ffi.Pointer<ffi.Char>, gpointer)>();
+          void Function(ffi.Pointer<GScanner>, int, ffi.Pointer<ffi.Char>,
+              ffi.Pointer)>();
 
   void g_scanner_scope_remove_symbol(
     ffi.Pointer<GScanner> scanner,
@@ -29184,7 +29226,7 @@ class GStreamer {
       _g_scanner_scope_remove_symbolPtr.asFunction<
           void Function(ffi.Pointer<GScanner>, int, ffi.Pointer<ffi.Char>)>();
 
-  gpointer g_scanner_scope_lookup_symbol(
+  ffi.Pointer g_scanner_scope_lookup_symbol(
     ffi.Pointer<GScanner> scanner,
     int scope_id,
     ffi.Pointer<ffi.Char> symbol,
@@ -29198,18 +29240,18 @@ class GStreamer {
 
   late final _g_scanner_scope_lookup_symbolPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GScanner>, guint,
+          ffi.Pointer Function(ffi.Pointer<GScanner>, guint,
               ffi.Pointer<ffi.Char>)>>('g_scanner_scope_lookup_symbol');
   late final _g_scanner_scope_lookup_symbol =
       _g_scanner_scope_lookup_symbolPtr.asFunction<
-          gpointer Function(
+          ffi.Pointer Function(
               ffi.Pointer<GScanner>, int, ffi.Pointer<ffi.Char>)>();
 
   void g_scanner_scope_foreach_symbol(
     ffi.Pointer<GScanner> scanner,
     int scope_id,
     GHFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_scanner_scope_foreach_symbol(
       scanner,
@@ -29222,12 +29264,12 @@ class GStreamer {
   late final _g_scanner_scope_foreach_symbolPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GScanner>, guint, GHFunc,
-              gpointer)>>('g_scanner_scope_foreach_symbol');
+              ffi.Pointer)>>('g_scanner_scope_foreach_symbol');
   late final _g_scanner_scope_foreach_symbol =
       _g_scanner_scope_foreach_symbolPtr.asFunction<
-          void Function(ffi.Pointer<GScanner>, int, GHFunc, gpointer)>();
+          void Function(ffi.Pointer<GScanner>, int, GHFunc, ffi.Pointer)>();
 
-  gpointer g_scanner_lookup_symbol(
+  ffi.Pointer g_scanner_lookup_symbol(
     ffi.Pointer<GScanner> scanner,
     ffi.Pointer<ffi.Char> symbol,
   ) {
@@ -29239,10 +29281,10 @@ class GStreamer {
 
   late final _g_scanner_lookup_symbolPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GScanner>,
+          ffi.Pointer Function(ffi.Pointer<GScanner>,
               ffi.Pointer<ffi.Char>)>>('g_scanner_lookup_symbol');
   late final _g_scanner_lookup_symbol = _g_scanner_lookup_symbolPtr.asFunction<
-      gpointer Function(ffi.Pointer<GScanner>, ffi.Pointer<ffi.Char>)>();
+      ffi.Pointer Function(ffi.Pointer<GScanner>, ffi.Pointer<ffi.Char>)>();
 
   void g_scanner_unexp_token(
     ffi.Pointer<GScanner> scanner,
@@ -29363,7 +29405,7 @@ class GStreamer {
   void g_sequence_foreach(
     ffi.Pointer<GSequence> seq,
     GFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_sequence_foreach(
       seq,
@@ -29374,16 +29416,16 @@ class GStreamer {
 
   late final _g_sequence_foreachPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<GSequence>, GFunc, gpointer)>>('g_sequence_foreach');
+          ffi.Void Function(ffi.Pointer<GSequence>, GFunc,
+              ffi.Pointer)>>('g_sequence_foreach');
   late final _g_sequence_foreach = _g_sequence_foreachPtr
-      .asFunction<void Function(ffi.Pointer<GSequence>, GFunc, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GSequence>, GFunc, ffi.Pointer)>();
 
   void g_sequence_foreach_range(
     ffi.Pointer<GSequenceIter> begin,
     ffi.Pointer<GSequenceIter> end,
     GFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_sequence_foreach_range(
       begin,
@@ -29399,16 +29441,16 @@ class GStreamer {
               ffi.Pointer<GSequenceIter>,
               ffi.Pointer<GSequenceIter>,
               GFunc,
-              gpointer)>>('g_sequence_foreach_range');
+              ffi.Pointer)>>('g_sequence_foreach_range');
   late final _g_sequence_foreach_range =
       _g_sequence_foreach_rangePtr.asFunction<
           void Function(ffi.Pointer<GSequenceIter>, ffi.Pointer<GSequenceIter>,
-              GFunc, gpointer)>();
+              GFunc, ffi.Pointer)>();
 
   void g_sequence_sort(
     ffi.Pointer<GSequence> seq,
     GCompareDataFunc cmp_func,
-    gpointer cmp_data,
+    ffi.Pointer cmp_data,
   ) {
     return _g_sequence_sort(
       seq,
@@ -29420,14 +29462,14 @@ class GStreamer {
   late final _g_sequence_sortPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GSequence>, GCompareDataFunc,
-              gpointer)>>('g_sequence_sort');
+              ffi.Pointer)>>('g_sequence_sort');
   late final _g_sequence_sort = _g_sequence_sortPtr.asFunction<
-      void Function(ffi.Pointer<GSequence>, GCompareDataFunc, gpointer)>();
+      void Function(ffi.Pointer<GSequence>, GCompareDataFunc, ffi.Pointer)>();
 
   void g_sequence_sort_iter(
     ffi.Pointer<GSequence> seq,
     GSequenceIterCompareFunc cmp_func,
-    gpointer cmp_data,
+    ffi.Pointer cmp_data,
   ) {
     return _g_sequence_sort_iter(
       seq,
@@ -29439,10 +29481,10 @@ class GStreamer {
   late final _g_sequence_sort_iterPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GSequence>, GSequenceIterCompareFunc,
-              gpointer)>>('g_sequence_sort_iter');
+              ffi.Pointer)>>('g_sequence_sort_iter');
   late final _g_sequence_sort_iter = _g_sequence_sort_iterPtr.asFunction<
       void Function(
-          ffi.Pointer<GSequence>, GSequenceIterCompareFunc, gpointer)>();
+          ffi.Pointer<GSequence>, GSequenceIterCompareFunc, ffi.Pointer)>();
 
   int g_sequence_is_empty(
     ffi.Pointer<GSequence> seq,
@@ -29509,7 +29551,7 @@ class GStreamer {
 
   ffi.Pointer<GSequenceIter> g_sequence_append(
     ffi.Pointer<GSequence> seq,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_sequence_append(
       seq,
@@ -29520,13 +29562,14 @@ class GStreamer {
   late final _g_sequence_appendPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GSequenceIter> Function(
-              ffi.Pointer<GSequence>, gpointer)>>('g_sequence_append');
+              ffi.Pointer<GSequence>, ffi.Pointer)>>('g_sequence_append');
   late final _g_sequence_append = _g_sequence_appendPtr.asFunction<
-      ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, gpointer)>();
+      ffi.Pointer<GSequenceIter> Function(
+          ffi.Pointer<GSequence>, ffi.Pointer)>();
 
   ffi.Pointer<GSequenceIter> g_sequence_prepend(
     ffi.Pointer<GSequence> seq,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_sequence_prepend(
       seq,
@@ -29537,13 +29580,14 @@ class GStreamer {
   late final _g_sequence_prependPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GSequenceIter> Function(
-              ffi.Pointer<GSequence>, gpointer)>>('g_sequence_prepend');
+              ffi.Pointer<GSequence>, ffi.Pointer)>>('g_sequence_prepend');
   late final _g_sequence_prepend = _g_sequence_prependPtr.asFunction<
-      ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, gpointer)>();
+      ffi.Pointer<GSequenceIter> Function(
+          ffi.Pointer<GSequence>, ffi.Pointer)>();
 
   ffi.Pointer<GSequenceIter> g_sequence_insert_before(
     ffi.Pointer<GSequenceIter> iter,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_sequence_insert_before(
       iter,
@@ -29554,11 +29598,11 @@ class GStreamer {
   late final _g_sequence_insert_beforePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequenceIter>,
-              gpointer)>>('g_sequence_insert_before');
+              ffi.Pointer)>>('g_sequence_insert_before');
   late final _g_sequence_insert_before =
       _g_sequence_insert_beforePtr.asFunction<
           ffi.Pointer<GSequenceIter> Function(
-              ffi.Pointer<GSequenceIter>, gpointer)>();
+              ffi.Pointer<GSequenceIter>, ffi.Pointer)>();
 
   void g_sequence_move(
     ffi.Pointer<GSequenceIter> src,
@@ -29596,9 +29640,9 @@ class GStreamer {
 
   ffi.Pointer<GSequenceIter> g_sequence_insert_sorted(
     ffi.Pointer<GSequence> seq,
-    gpointer data,
+    ffi.Pointer data,
     GCompareDataFunc cmp_func,
-    gpointer cmp_data,
+    ffi.Pointer cmp_data,
   ) {
     return _g_sequence_insert_sorted(
       seq,
@@ -29610,18 +29654,21 @@ class GStreamer {
 
   late final _g_sequence_insert_sortedPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, gpointer,
-              GCompareDataFunc, gpointer)>>('g_sequence_insert_sorted');
+          ffi.Pointer<GSequenceIter> Function(
+              ffi.Pointer<GSequence>,
+              ffi.Pointer,
+              GCompareDataFunc,
+              ffi.Pointer)>>('g_sequence_insert_sorted');
   late final _g_sequence_insert_sorted =
       _g_sequence_insert_sortedPtr.asFunction<
-          ffi.Pointer<GSequenceIter> Function(
-              ffi.Pointer<GSequence>, gpointer, GCompareDataFunc, gpointer)>();
+          ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>,
+              ffi.Pointer, GCompareDataFunc, ffi.Pointer)>();
 
   ffi.Pointer<GSequenceIter> g_sequence_insert_sorted_iter(
     ffi.Pointer<GSequence> seq,
-    gpointer data,
+    ffi.Pointer data,
     GSequenceIterCompareFunc iter_cmp,
-    gpointer cmp_data,
+    ffi.Pointer cmp_data,
   ) {
     return _g_sequence_insert_sorted_iter(
       seq,
@@ -29635,18 +29682,18 @@ class GStreamer {
       ffi.NativeFunction<
           ffi.Pointer<GSequenceIter> Function(
               ffi.Pointer<GSequence>,
-              gpointer,
+              ffi.Pointer,
               GSequenceIterCompareFunc,
-              gpointer)>>('g_sequence_insert_sorted_iter');
+              ffi.Pointer)>>('g_sequence_insert_sorted_iter');
   late final _g_sequence_insert_sorted_iter =
       _g_sequence_insert_sorted_iterPtr.asFunction<
-          ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, gpointer,
-              GSequenceIterCompareFunc, gpointer)>();
+          ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>,
+              ffi.Pointer, GSequenceIterCompareFunc, ffi.Pointer)>();
 
   void g_sequence_sort_changed(
     ffi.Pointer<GSequenceIter> iter,
     GCompareDataFunc cmp_func,
-    gpointer cmp_data,
+    ffi.Pointer cmp_data,
   ) {
     return _g_sequence_sort_changed(
       iter,
@@ -29658,14 +29705,15 @@ class GStreamer {
   late final _g_sequence_sort_changedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GSequenceIter>, GCompareDataFunc,
-              gpointer)>>('g_sequence_sort_changed');
+              ffi.Pointer)>>('g_sequence_sort_changed');
   late final _g_sequence_sort_changed = _g_sequence_sort_changedPtr.asFunction<
-      void Function(ffi.Pointer<GSequenceIter>, GCompareDataFunc, gpointer)>();
+      void Function(
+          ffi.Pointer<GSequenceIter>, GCompareDataFunc, ffi.Pointer)>();
 
   void g_sequence_sort_changed_iter(
     ffi.Pointer<GSequenceIter> iter,
     GSequenceIterCompareFunc iter_cmp,
-    gpointer cmp_data,
+    ffi.Pointer cmp_data,
   ) {
     return _g_sequence_sort_changed_iter(
       iter,
@@ -29679,11 +29727,11 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GSequenceIter>,
               GSequenceIterCompareFunc,
-              gpointer)>>('g_sequence_sort_changed_iter');
+              ffi.Pointer)>>('g_sequence_sort_changed_iter');
   late final _g_sequence_sort_changed_iter =
       _g_sequence_sort_changed_iterPtr.asFunction<
           void Function(ffi.Pointer<GSequenceIter>, GSequenceIterCompareFunc,
-              gpointer)>();
+              ffi.Pointer)>();
 
   void g_sequence_remove(
     ffi.Pointer<GSequenceIter> iter,
@@ -29740,9 +29788,9 @@ class GStreamer {
 
   ffi.Pointer<GSequenceIter> g_sequence_search(
     ffi.Pointer<GSequence> seq,
-    gpointer data,
+    ffi.Pointer data,
     GCompareDataFunc cmp_func,
-    gpointer cmp_data,
+    ffi.Pointer cmp_data,
   ) {
     return _g_sequence_search(
       seq,
@@ -29754,17 +29802,20 @@ class GStreamer {
 
   late final _g_sequence_searchPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, gpointer,
-              GCompareDataFunc, gpointer)>>('g_sequence_search');
+          ffi.Pointer<GSequenceIter> Function(
+              ffi.Pointer<GSequence>,
+              ffi.Pointer,
+              GCompareDataFunc,
+              ffi.Pointer)>>('g_sequence_search');
   late final _g_sequence_search = _g_sequence_searchPtr.asFunction<
-      ffi.Pointer<GSequenceIter> Function(
-          ffi.Pointer<GSequence>, gpointer, GCompareDataFunc, gpointer)>();
+      ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, ffi.Pointer,
+          GCompareDataFunc, ffi.Pointer)>();
 
   ffi.Pointer<GSequenceIter> g_sequence_search_iter(
     ffi.Pointer<GSequence> seq,
-    gpointer data,
+    ffi.Pointer data,
     GSequenceIterCompareFunc iter_cmp,
-    gpointer cmp_data,
+    ffi.Pointer cmp_data,
   ) {
     return _g_sequence_search_iter(
       seq,
@@ -29776,17 +29827,20 @@ class GStreamer {
 
   late final _g_sequence_search_iterPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, gpointer,
-              GSequenceIterCompareFunc, gpointer)>>('g_sequence_search_iter');
+          ffi.Pointer<GSequenceIter> Function(
+              ffi.Pointer<GSequence>,
+              ffi.Pointer,
+              GSequenceIterCompareFunc,
+              ffi.Pointer)>>('g_sequence_search_iter');
   late final _g_sequence_search_iter = _g_sequence_search_iterPtr.asFunction<
-      ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, gpointer,
-          GSequenceIterCompareFunc, gpointer)>();
+      ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, ffi.Pointer,
+          GSequenceIterCompareFunc, ffi.Pointer)>();
 
   ffi.Pointer<GSequenceIter> g_sequence_lookup(
     ffi.Pointer<GSequence> seq,
-    gpointer data,
+    ffi.Pointer data,
     GCompareDataFunc cmp_func,
-    gpointer cmp_data,
+    ffi.Pointer cmp_data,
   ) {
     return _g_sequence_lookup(
       seq,
@@ -29798,17 +29852,20 @@ class GStreamer {
 
   late final _g_sequence_lookupPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, gpointer,
-              GCompareDataFunc, gpointer)>>('g_sequence_lookup');
+          ffi.Pointer<GSequenceIter> Function(
+              ffi.Pointer<GSequence>,
+              ffi.Pointer,
+              GCompareDataFunc,
+              ffi.Pointer)>>('g_sequence_lookup');
   late final _g_sequence_lookup = _g_sequence_lookupPtr.asFunction<
-      ffi.Pointer<GSequenceIter> Function(
-          ffi.Pointer<GSequence>, gpointer, GCompareDataFunc, gpointer)>();
+      ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, ffi.Pointer,
+          GCompareDataFunc, ffi.Pointer)>();
 
   ffi.Pointer<GSequenceIter> g_sequence_lookup_iter(
     ffi.Pointer<GSequence> seq,
-    gpointer data,
+    ffi.Pointer data,
     GSequenceIterCompareFunc iter_cmp,
-    gpointer cmp_data,
+    ffi.Pointer cmp_data,
   ) {
     return _g_sequence_lookup_iter(
       seq,
@@ -29820,13 +29877,16 @@ class GStreamer {
 
   late final _g_sequence_lookup_iterPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, gpointer,
-              GSequenceIterCompareFunc, gpointer)>>('g_sequence_lookup_iter');
+          ffi.Pointer<GSequenceIter> Function(
+              ffi.Pointer<GSequence>,
+              ffi.Pointer,
+              GSequenceIterCompareFunc,
+              ffi.Pointer)>>('g_sequence_lookup_iter');
   late final _g_sequence_lookup_iter = _g_sequence_lookup_iterPtr.asFunction<
-      ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, gpointer,
-          GSequenceIterCompareFunc, gpointer)>();
+      ffi.Pointer<GSequenceIter> Function(ffi.Pointer<GSequence>, ffi.Pointer,
+          GSequenceIterCompareFunc, ffi.Pointer)>();
 
-  gpointer g_sequence_get(
+  ffi.Pointer g_sequence_get(
     ffi.Pointer<GSequenceIter> iter,
   ) {
     return _g_sequence_get(
@@ -29835,14 +29895,14 @@ class GStreamer {
   }
 
   late final _g_sequence_getPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GSequenceIter>)>>(
+          ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GSequenceIter>)>>(
       'g_sequence_get');
   late final _g_sequence_get = _g_sequence_getPtr
-      .asFunction<gpointer Function(ffi.Pointer<GSequenceIter>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GSequenceIter>)>();
 
   void g_sequence_set(
     ffi.Pointer<GSequenceIter> iter,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_sequence_set(
       iter,
@@ -29853,9 +29913,9 @@ class GStreamer {
   late final _g_sequence_setPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
-              ffi.Pointer<GSequenceIter>, gpointer)>>('g_sequence_set');
+              ffi.Pointer<GSequenceIter>, ffi.Pointer)>>('g_sequence_set');
   late final _g_sequence_set = _g_sequence_setPtr
-      .asFunction<void Function(ffi.Pointer<GSequenceIter>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GSequenceIter>, ffi.Pointer)>();
 
   int g_sequence_iter_is_begin(
     ffi.Pointer<GSequenceIter> iter,
@@ -30068,7 +30128,7 @@ class GStreamer {
           ffi.Pointer<ffi.Pointer<ffi.Pointer<ffi.Char>>>,
           ffi.Pointer<ffi.Pointer<GError>>)>();
 
-  gpointer g_slice_alloc(
+  ffi.Pointer g_slice_alloc(
     int block_size,
   ) {
     return _g_slice_alloc(
@@ -30077,11 +30137,11 @@ class GStreamer {
   }
 
   late final _g_slice_allocPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize)>>('g_slice_alloc');
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize)>>('g_slice_alloc');
   late final _g_slice_alloc =
-      _g_slice_allocPtr.asFunction<gpointer Function(int)>();
+      _g_slice_allocPtr.asFunction<ffi.Pointer Function(int)>();
 
-  gpointer g_slice_alloc0(
+  ffi.Pointer g_slice_alloc0(
     int block_size,
   ) {
     return _g_slice_alloc0(
@@ -30090,11 +30150,12 @@ class GStreamer {
   }
 
   late final _g_slice_alloc0Ptr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize)>>('g_slice_alloc0');
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize)>>(
+          'g_slice_alloc0');
   late final _g_slice_alloc0 =
-      _g_slice_alloc0Ptr.asFunction<gpointer Function(int)>();
+      _g_slice_alloc0Ptr.asFunction<ffi.Pointer Function(int)>();
 
-  gpointer g_slice_copy(
+  ffi.Pointer g_slice_copy(
     int block_size,
     gconstpointer mem_block,
   ) {
@@ -30105,14 +30166,14 @@ class GStreamer {
   }
 
   late final _g_slice_copyPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gsize, gconstpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(gsize, gconstpointer)>>(
           'g_slice_copy');
   late final _g_slice_copy =
-      _g_slice_copyPtr.asFunction<gpointer Function(int, gconstpointer)>();
+      _g_slice_copyPtr.asFunction<ffi.Pointer Function(int, gconstpointer)>();
 
   void g_slice_free1(
     int block_size,
-    gpointer mem_block,
+    ffi.Pointer mem_block,
   ) {
     return _g_slice_free1(
       block_size,
@@ -30121,14 +30182,14 @@ class GStreamer {
   }
 
   late final _g_slice_free1Ptr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gsize, gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(gsize, ffi.Pointer)>>(
           'g_slice_free1');
   late final _g_slice_free1 =
-      _g_slice_free1Ptr.asFunction<void Function(int, gpointer)>();
+      _g_slice_free1Ptr.asFunction<void Function(int, ffi.Pointer)>();
 
   void g_slice_free_chain_with_offset(
     int block_size,
-    gpointer mem_chain,
+    ffi.Pointer mem_chain,
     int next_offset,
   ) {
     return _g_slice_free_chain_with_offset(
@@ -30139,11 +30200,11 @@ class GStreamer {
   }
 
   late final _g_slice_free_chain_with_offsetPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gsize, gpointer, gsize)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(gsize, ffi.Pointer, gsize)>>(
           'g_slice_free_chain_with_offset');
   late final _g_slice_free_chain_with_offset =
       _g_slice_free_chain_with_offsetPtr
-          .asFunction<void Function(int, gpointer, int)>();
+          .asFunction<void Function(int, ffi.Pointer, int)>();
 
   void g_slice_set_config(
     int ckey,
@@ -30219,7 +30280,7 @@ class GStreamer {
     ffi.Pointer<ffi.Pointer<ffi.Char>> envp,
     int flags,
     GSpawnChildSetupFunc child_setup,
-    gpointer user_data,
+    ffi.Pointer user_data,
     ffi.Pointer<GPid> child_pid,
     ffi.Pointer<ffi.Pointer<GError>> error,
   ) {
@@ -30243,7 +30304,7 @@ class GStreamer {
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
               ffi.Int32,
               GSpawnChildSetupFunc,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<GPid>,
               ffi.Pointer<ffi.Pointer<GError>>)>>('g_spawn_async');
   late final _g_spawn_async = _g_spawn_asyncPtr.asFunction<
@@ -30253,7 +30314,7 @@ class GStreamer {
           ffi.Pointer<ffi.Pointer<ffi.Char>>,
           int,
           GSpawnChildSetupFunc,
-          gpointer,
+          ffi.Pointer,
           ffi.Pointer<GPid>,
           ffi.Pointer<ffi.Pointer<GError>>)>();
 
@@ -30263,7 +30324,7 @@ class GStreamer {
     ffi.Pointer<ffi.Pointer<ffi.Char>> envp,
     int flags,
     GSpawnChildSetupFunc child_setup,
-    gpointer user_data,
+    ffi.Pointer user_data,
     ffi.Pointer<GPid> child_pid,
     ffi.Pointer<gint> standard_input,
     ffi.Pointer<gint> standard_output,
@@ -30293,7 +30354,7 @@ class GStreamer {
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
               ffi.Int32,
               GSpawnChildSetupFunc,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<GPid>,
               ffi.Pointer<gint>,
               ffi.Pointer<gint>,
@@ -30307,7 +30368,7 @@ class GStreamer {
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
               int,
               GSpawnChildSetupFunc,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<GPid>,
               ffi.Pointer<gint>,
               ffi.Pointer<gint>,
@@ -30320,7 +30381,7 @@ class GStreamer {
     ffi.Pointer<ffi.Pointer<ffi.Char>> envp,
     int flags,
     GSpawnChildSetupFunc child_setup,
-    gpointer user_data,
+    ffi.Pointer user_data,
     int stdin_fd,
     int stdout_fd,
     int stderr_fd,
@@ -30362,7 +30423,7 @@ class GStreamer {
                   ffi.Pointer<ffi.Pointer<ffi.Char>>,
                   ffi.Int32,
                   GSpawnChildSetupFunc,
-                  gpointer,
+                  ffi.Pointer,
                   gint,
                   gint,
                   gint,
@@ -30383,7 +30444,7 @@ class GStreamer {
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
               int,
               GSpawnChildSetupFunc,
-              gpointer,
+              ffi.Pointer,
               int,
               int,
               int,
@@ -30402,7 +30463,7 @@ class GStreamer {
     ffi.Pointer<ffi.Pointer<ffi.Char>> envp,
     int flags,
     GSpawnChildSetupFunc child_setup,
-    gpointer user_data,
+    ffi.Pointer user_data,
     ffi.Pointer<GPid> child_pid,
     int stdin_fd,
     int stdout_fd,
@@ -30432,7 +30493,7 @@ class GStreamer {
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
               ffi.Int32,
               GSpawnChildSetupFunc,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<GPid>,
               gint,
               gint,
@@ -30445,7 +30506,7 @@ class GStreamer {
           ffi.Pointer<ffi.Pointer<ffi.Char>>,
           int,
           GSpawnChildSetupFunc,
-          gpointer,
+          ffi.Pointer,
           ffi.Pointer<GPid>,
           int,
           int,
@@ -30458,7 +30519,7 @@ class GStreamer {
     ffi.Pointer<ffi.Pointer<ffi.Char>> envp,
     int flags,
     GSpawnChildSetupFunc child_setup,
-    gpointer user_data,
+    ffi.Pointer user_data,
     ffi.Pointer<ffi.Pointer<ffi.Char>> standard_output,
     ffi.Pointer<ffi.Pointer<ffi.Char>> standard_error,
     ffi.Pointer<gint> wait_status,
@@ -30486,7 +30547,7 @@ class GStreamer {
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
               ffi.Int32,
               GSpawnChildSetupFunc,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
               ffi.Pointer<gint>,
@@ -30498,7 +30559,7 @@ class GStreamer {
           ffi.Pointer<ffi.Pointer<ffi.Char>>,
           int,
           GSpawnChildSetupFunc,
-          gpointer,
+          ffi.Pointer,
           ffi.Pointer<ffi.Pointer<ffi.Char>>,
           ffi.Pointer<ffi.Pointer<ffi.Char>>,
           ffi.Pointer<gint>,
@@ -30956,7 +31017,7 @@ class GStreamer {
 
   void g_test_add_data_func_full(
     ffi.Pointer<ffi.Char> testpath,
-    gpointer test_data,
+    ffi.Pointer test_data,
     GTestDataFunc test_func,
     GDestroyNotify data_free_func,
   ) {
@@ -30970,11 +31031,11 @@ class GStreamer {
 
   late final _g_test_add_data_func_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<ffi.Char>, gpointer, GTestDataFunc,
+          ffi.Void Function(ffi.Pointer<ffi.Char>, ffi.Pointer, GTestDataFunc,
               GDestroyNotify)>>('g_test_add_data_func_full');
   late final _g_test_add_data_func_full =
       _g_test_add_data_func_fullPtr.asFunction<
-          void Function(ffi.Pointer<ffi.Char>, gpointer, GTestDataFunc,
+          void Function(ffi.Pointer<ffi.Char>, ffi.Pointer, GTestDataFunc,
               GDestroyNotify)>();
 
   ffi.Pointer<ffi.Char> g_test_get_path() {
@@ -31178,7 +31239,7 @@ class GStreamer {
       _g_test_timer_lastPtr.asFunction<double Function()>();
 
   void g_test_queue_free(
-    gpointer gfree_pointer,
+    ffi.Pointer gfree_pointer,
   ) {
     return _g_test_queue_free(
       gfree_pointer,
@@ -31186,14 +31247,14 @@ class GStreamer {
   }
 
   late final _g_test_queue_freePtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
           'g_test_queue_free');
   late final _g_test_queue_free =
-      _g_test_queue_freePtr.asFunction<void Function(gpointer)>();
+      _g_test_queue_freePtr.asFunction<void Function(ffi.Pointer)>();
 
   void g_test_queue_destroy(
     GDestroyNotify destroy_func,
-    gpointer destroy_data,
+    ffi.Pointer destroy_data,
   ) {
     return _g_test_queue_destroy(
       destroy_func,
@@ -31201,11 +31262,11 @@ class GStreamer {
     );
   }
 
-  late final _g_test_queue_destroyPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(GDestroyNotify, gpointer)>>(
-          'g_test_queue_destroy');
+  late final _g_test_queue_destroyPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(GDestroyNotify, ffi.Pointer)>>(
+      'g_test_queue_destroy');
   late final _g_test_queue_destroy = _g_test_queue_destroyPtr
-      .asFunction<void Function(GDestroyNotify, gpointer)>();
+      .asFunction<void Function(GDestroyNotify, ffi.Pointer)>();
 
   int g_test_trap_fork(
     int usec_timeout,
@@ -31866,7 +31927,7 @@ class GStreamer {
 
   void g_test_log_set_fatal_handler(
     GTestLogFatalFunc log_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_test_log_set_fatal_handler(
       log_func,
@@ -31875,10 +31936,11 @@ class GStreamer {
   }
 
   late final _g_test_log_set_fatal_handlerPtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(GTestLogFatalFunc, gpointer)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(GTestLogFatalFunc, ffi.Pointer)>>(
       'g_test_log_set_fatal_handler');
   late final _g_test_log_set_fatal_handler = _g_test_log_set_fatal_handlerPtr
-      .asFunction<void Function(GTestLogFatalFunc, gpointer)>();
+      .asFunction<void Function(GTestLogFatalFunc, ffi.Pointer)>();
 
   void g_test_expect_message(
     ffi.Pointer<ffi.Char> log_domain,
@@ -31973,7 +32035,7 @@ class GStreamer {
 
   ffi.Pointer<GThreadPool> g_thread_pool_new(
     GFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     int max_threads,
     int exclusive,
     ffi.Pointer<ffi.Pointer<GError>> error,
@@ -31989,15 +32051,15 @@ class GStreamer {
 
   late final _g_thread_pool_newPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GThreadPool> Function(GFunc, gpointer, gint, gboolean,
+          ffi.Pointer<GThreadPool> Function(GFunc, ffi.Pointer, gint, gboolean,
               ffi.Pointer<ffi.Pointer<GError>>)>>('g_thread_pool_new');
   late final _g_thread_pool_new = _g_thread_pool_newPtr.asFunction<
       ffi.Pointer<GThreadPool> Function(
-          GFunc, gpointer, int, int, ffi.Pointer<ffi.Pointer<GError>>)>();
+          GFunc, ffi.Pointer, int, int, ffi.Pointer<ffi.Pointer<GError>>)>();
 
   ffi.Pointer<GThreadPool> g_thread_pool_new_full(
     GFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify item_free_func,
     int max_threads,
     int exclusive,
@@ -32017,13 +32079,13 @@ class GStreamer {
       ffi.NativeFunction<
           ffi.Pointer<GThreadPool> Function(
               GFunc,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify,
               gint,
               gboolean,
               ffi.Pointer<ffi.Pointer<GError>>)>>('g_thread_pool_new_full');
   late final _g_thread_pool_new_full = _g_thread_pool_new_fullPtr.asFunction<
-      ffi.Pointer<GThreadPool> Function(GFunc, gpointer, GDestroyNotify, int,
+      ffi.Pointer<GThreadPool> Function(GFunc, ffi.Pointer, GDestroyNotify, int,
           int, ffi.Pointer<ffi.Pointer<GError>>)>();
 
   void g_thread_pool_free(
@@ -32047,7 +32109,7 @@ class GStreamer {
 
   int g_thread_pool_push(
     ffi.Pointer<GThreadPool> pool,
-    gpointer data,
+    ffi.Pointer data,
     ffi.Pointer<ffi.Pointer<GError>> error,
   ) {
     return _g_thread_pool_push(
@@ -32059,10 +32121,10 @@ class GStreamer {
 
   late final _g_thread_pool_pushPtr = _lookup<
       ffi.NativeFunction<
-          gboolean Function(ffi.Pointer<GThreadPool>, gpointer,
+          gboolean Function(ffi.Pointer<GThreadPool>, ffi.Pointer,
               ffi.Pointer<ffi.Pointer<GError>>)>>('g_thread_pool_push');
   late final _g_thread_pool_push = _g_thread_pool_pushPtr.asFunction<
-      int Function(ffi.Pointer<GThreadPool>, gpointer,
+      int Function(ffi.Pointer<GThreadPool>, ffi.Pointer,
           ffi.Pointer<ffi.Pointer<GError>>)>();
 
   int g_thread_pool_unprocessed(
@@ -32082,7 +32144,7 @@ class GStreamer {
   void g_thread_pool_set_sort_function(
     ffi.Pointer<GThreadPool> pool,
     GCompareDataFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_thread_pool_set_sort_function(
       pool,
@@ -32094,15 +32156,15 @@ class GStreamer {
   late final _g_thread_pool_set_sort_functionPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GThreadPool>, GCompareDataFunc,
-              gpointer)>>('g_thread_pool_set_sort_function');
+              ffi.Pointer)>>('g_thread_pool_set_sort_function');
   late final _g_thread_pool_set_sort_function =
       _g_thread_pool_set_sort_functionPtr.asFunction<
           void Function(
-              ffi.Pointer<GThreadPool>, GCompareDataFunc, gpointer)>();
+              ffi.Pointer<GThreadPool>, GCompareDataFunc, ffi.Pointer)>();
 
   int g_thread_pool_move_to_front(
     ffi.Pointer<GThreadPool> pool,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_thread_pool_move_to_front(
       pool,
@@ -32113,9 +32175,9 @@ class GStreamer {
   late final _g_thread_pool_move_to_frontPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GThreadPool>,
-              gpointer)>>('g_thread_pool_move_to_front');
+              ffi.Pointer)>>('g_thread_pool_move_to_front');
   late final _g_thread_pool_move_to_front = _g_thread_pool_move_to_frontPtr
-      .asFunction<int Function(ffi.Pointer<GThreadPool>, gpointer)>();
+      .asFunction<int Function(ffi.Pointer<GThreadPool>, ffi.Pointer)>();
 
   int g_thread_pool_set_max_threads(
     ffi.Pointer<GThreadPool> pool,
@@ -32408,7 +32470,7 @@ class GStreamer {
 
   void g_trash_stack_push(
     ffi.Pointer<ffi.Pointer<GTrashStack>> stack_p,
-    gpointer data_p,
+    ffi.Pointer data_p,
   ) {
     return _g_trash_stack_push(
       stack_p,
@@ -32419,11 +32481,11 @@ class GStreamer {
   late final _g_trash_stack_pushPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Pointer<GTrashStack>>,
-              gpointer)>>('g_trash_stack_push');
+              ffi.Pointer)>>('g_trash_stack_push');
   late final _g_trash_stack_push = _g_trash_stack_pushPtr.asFunction<
-      void Function(ffi.Pointer<ffi.Pointer<GTrashStack>>, gpointer)>();
+      void Function(ffi.Pointer<ffi.Pointer<GTrashStack>>, ffi.Pointer)>();
 
-  gpointer g_trash_stack_pop(
+  ffi.Pointer g_trash_stack_pop(
     ffi.Pointer<ffi.Pointer<GTrashStack>> stack_p,
   ) {
     return _g_trash_stack_pop(
@@ -32433,12 +32495,12 @@ class GStreamer {
 
   late final _g_trash_stack_popPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(
+          ffi.Pointer Function(
               ffi.Pointer<ffi.Pointer<GTrashStack>>)>>('g_trash_stack_pop');
-  late final _g_trash_stack_pop = _g_trash_stack_popPtr
-      .asFunction<gpointer Function(ffi.Pointer<ffi.Pointer<GTrashStack>>)>();
+  late final _g_trash_stack_pop = _g_trash_stack_popPtr.asFunction<
+      ffi.Pointer Function(ffi.Pointer<ffi.Pointer<GTrashStack>>)>();
 
-  gpointer g_trash_stack_peek(
+  ffi.Pointer g_trash_stack_peek(
     ffi.Pointer<ffi.Pointer<GTrashStack>> stack_p,
   ) {
     return _g_trash_stack_peek(
@@ -32448,10 +32510,10 @@ class GStreamer {
 
   late final _g_trash_stack_peekPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(
+          ffi.Pointer Function(
               ffi.Pointer<ffi.Pointer<GTrashStack>>)>>('g_trash_stack_peek');
-  late final _g_trash_stack_peek = _g_trash_stack_peekPtr
-      .asFunction<gpointer Function(ffi.Pointer<ffi.Pointer<GTrashStack>>)>();
+  late final _g_trash_stack_peek = _g_trash_stack_peekPtr.asFunction<
+      ffi.Pointer Function(ffi.Pointer<ffi.Pointer<GTrashStack>>)>();
 
   int g_trash_stack_height(
     ffi.Pointer<ffi.Pointer<GTrashStack>> stack_p,
@@ -32484,7 +32546,7 @@ class GStreamer {
 
   ffi.Pointer<GTree> g_tree_new_with_data(
     GCompareDataFunc key_compare_func,
-    gpointer key_compare_data,
+    ffi.Pointer key_compare_data,
   ) {
     return _g_tree_new_with_data(
       key_compare_func,
@@ -32495,13 +32557,13 @@ class GStreamer {
   late final _g_tree_new_with_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GTree> Function(
-              GCompareDataFunc, gpointer)>>('g_tree_new_with_data');
+              GCompareDataFunc, ffi.Pointer)>>('g_tree_new_with_data');
   late final _g_tree_new_with_data = _g_tree_new_with_dataPtr
-      .asFunction<ffi.Pointer<GTree> Function(GCompareDataFunc, gpointer)>();
+      .asFunction<ffi.Pointer<GTree> Function(GCompareDataFunc, ffi.Pointer)>();
 
   ffi.Pointer<GTree> g_tree_new_full(
     GCompareDataFunc key_compare_func,
-    gpointer key_compare_data,
+    ffi.Pointer key_compare_data,
     GDestroyNotify key_destroy_func,
     GDestroyNotify value_destroy_func,
   ) {
@@ -32515,11 +32577,11 @@ class GStreamer {
 
   late final _g_tree_new_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GTree> Function(GCompareDataFunc, gpointer,
+          ffi.Pointer<GTree> Function(GCompareDataFunc, ffi.Pointer,
               GDestroyNotify, GDestroyNotify)>>('g_tree_new_full');
   late final _g_tree_new_full = _g_tree_new_fullPtr.asFunction<
       ffi.Pointer<GTree> Function(
-          GCompareDataFunc, gpointer, GDestroyNotify, GDestroyNotify)>();
+          GCompareDataFunc, ffi.Pointer, GDestroyNotify, GDestroyNotify)>();
 
   ffi.Pointer<GTreeNode> g_tree_node_first(
     ffi.Pointer<GTree> tree,
@@ -32625,8 +32687,8 @@ class GStreamer {
 
   ffi.Pointer<GTreeNode> g_tree_insert_node(
     ffi.Pointer<GTree> tree,
-    gpointer key,
-    gpointer value,
+    ffi.Pointer key,
+    ffi.Pointer value,
   ) {
     return _g_tree_insert_node(
       tree,
@@ -32637,16 +32699,16 @@ class GStreamer {
 
   late final _g_tree_insert_nodePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GTreeNode> Function(
-              ffi.Pointer<GTree>, gpointer, gpointer)>>('g_tree_insert_node');
+          ffi.Pointer<GTreeNode> Function(ffi.Pointer<GTree>, ffi.Pointer,
+              ffi.Pointer)>>('g_tree_insert_node');
   late final _g_tree_insert_node = _g_tree_insert_nodePtr.asFunction<
       ffi.Pointer<GTreeNode> Function(
-          ffi.Pointer<GTree>, gpointer, gpointer)>();
+          ffi.Pointer<GTree>, ffi.Pointer, ffi.Pointer)>();
 
   void g_tree_insert(
     ffi.Pointer<GTree> tree,
-    gpointer key,
-    gpointer value,
+    ffi.Pointer key,
+    ffi.Pointer value,
   ) {
     return _g_tree_insert(
       tree,
@@ -32658,14 +32720,14 @@ class GStreamer {
   late final _g_tree_insertPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
-              ffi.Pointer<GTree>, gpointer, gpointer)>>('g_tree_insert');
-  late final _g_tree_insert = _g_tree_insertPtr
-      .asFunction<void Function(ffi.Pointer<GTree>, gpointer, gpointer)>();
+              ffi.Pointer<GTree>, ffi.Pointer, ffi.Pointer)>>('g_tree_insert');
+  late final _g_tree_insert = _g_tree_insertPtr.asFunction<
+      void Function(ffi.Pointer<GTree>, ffi.Pointer, ffi.Pointer)>();
 
   ffi.Pointer<GTreeNode> g_tree_replace_node(
     ffi.Pointer<GTree> tree,
-    gpointer key,
-    gpointer value,
+    ffi.Pointer key,
+    ffi.Pointer value,
   ) {
     return _g_tree_replace_node(
       tree,
@@ -32676,16 +32738,16 @@ class GStreamer {
 
   late final _g_tree_replace_nodePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GTreeNode> Function(
-              ffi.Pointer<GTree>, gpointer, gpointer)>>('g_tree_replace_node');
+          ffi.Pointer<GTreeNode> Function(ffi.Pointer<GTree>, ffi.Pointer,
+              ffi.Pointer)>>('g_tree_replace_node');
   late final _g_tree_replace_node = _g_tree_replace_nodePtr.asFunction<
       ffi.Pointer<GTreeNode> Function(
-          ffi.Pointer<GTree>, gpointer, gpointer)>();
+          ffi.Pointer<GTree>, ffi.Pointer, ffi.Pointer)>();
 
   void g_tree_replace(
     ffi.Pointer<GTree> tree,
-    gpointer key,
-    gpointer value,
+    ffi.Pointer key,
+    ffi.Pointer value,
   ) {
     return _g_tree_replace(
       tree,
@@ -32697,9 +32759,9 @@ class GStreamer {
   late final _g_tree_replacePtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
-              ffi.Pointer<GTree>, gpointer, gpointer)>>('g_tree_replace');
-  late final _g_tree_replace = _g_tree_replacePtr
-      .asFunction<void Function(ffi.Pointer<GTree>, gpointer, gpointer)>();
+              ffi.Pointer<GTree>, ffi.Pointer, ffi.Pointer)>>('g_tree_replace');
+  late final _g_tree_replace = _g_tree_replacePtr.asFunction<
+      void Function(ffi.Pointer<GTree>, ffi.Pointer, ffi.Pointer)>();
 
   int g_tree_remove(
     ffi.Pointer<GTree> tree,
@@ -32749,7 +32811,7 @@ class GStreamer {
   late final _g_tree_steal = _g_tree_stealPtr
       .asFunction<int Function(ffi.Pointer<GTree>, gconstpointer)>();
 
-  gpointer g_tree_node_key(
+  ffi.Pointer g_tree_node_key(
     ffi.Pointer<GTreeNode> node,
   ) {
     return _g_tree_node_key(
@@ -32758,12 +32820,12 @@ class GStreamer {
   }
 
   late final _g_tree_node_keyPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GTreeNode>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GTreeNode>)>>(
           'g_tree_node_key');
   late final _g_tree_node_key = _g_tree_node_keyPtr
-      .asFunction<gpointer Function(ffi.Pointer<GTreeNode>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GTreeNode>)>();
 
-  gpointer g_tree_node_value(
+  ffi.Pointer g_tree_node_value(
     ffi.Pointer<GTreeNode> node,
   ) {
     return _g_tree_node_value(
@@ -32772,10 +32834,10 @@ class GStreamer {
   }
 
   late final _g_tree_node_valuePtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GTreeNode>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GTreeNode>)>>(
           'g_tree_node_value');
   late final _g_tree_node_value = _g_tree_node_valuePtr
-      .asFunction<gpointer Function(ffi.Pointer<GTreeNode>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GTreeNode>)>();
 
   ffi.Pointer<GTreeNode> g_tree_lookup_node(
     ffi.Pointer<GTree> tree,
@@ -32794,7 +32856,7 @@ class GStreamer {
   late final _g_tree_lookup_node = _g_tree_lookup_nodePtr.asFunction<
       ffi.Pointer<GTreeNode> Function(ffi.Pointer<GTree>, gconstpointer)>();
 
-  gpointer g_tree_lookup(
+  ffi.Pointer g_tree_lookup(
     ffi.Pointer<GTree> tree,
     gconstpointer key,
   ) {
@@ -32806,16 +32868,16 @@ class GStreamer {
 
   late final _g_tree_lookupPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(
+          ffi.Pointer Function(
               ffi.Pointer<GTree>, gconstpointer)>>('g_tree_lookup');
   late final _g_tree_lookup = _g_tree_lookupPtr
-      .asFunction<gpointer Function(ffi.Pointer<GTree>, gconstpointer)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GTree>, gconstpointer)>();
 
   int g_tree_lookup_extended(
     ffi.Pointer<GTree> tree,
     gconstpointer lookup_key,
-    ffi.Pointer<gpointer> orig_key,
-    ffi.Pointer<gpointer> value,
+    ffi.Pointer<ffi.Pointer> orig_key,
+    ffi.Pointer<ffi.Pointer> value,
   ) {
     return _g_tree_lookup_extended(
       tree,
@@ -32830,16 +32892,16 @@ class GStreamer {
           gboolean Function(
               ffi.Pointer<GTree>,
               gconstpointer,
-              ffi.Pointer<gpointer>,
-              ffi.Pointer<gpointer>)>>('g_tree_lookup_extended');
+              ffi.Pointer<ffi.Pointer>,
+              ffi.Pointer<ffi.Pointer>)>>('g_tree_lookup_extended');
   late final _g_tree_lookup_extended = _g_tree_lookup_extendedPtr.asFunction<
-      int Function(ffi.Pointer<GTree>, gconstpointer, ffi.Pointer<gpointer>,
-          ffi.Pointer<gpointer>)>();
+      int Function(ffi.Pointer<GTree>, gconstpointer, ffi.Pointer<ffi.Pointer>,
+          ffi.Pointer<ffi.Pointer>)>();
 
   void g_tree_foreach(
     ffi.Pointer<GTree> tree,
     GTraverseFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_tree_foreach(
       tree,
@@ -32850,15 +32912,15 @@ class GStreamer {
 
   late final _g_tree_foreachPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<GTree>, GTraverseFunc, gpointer)>>('g_tree_foreach');
-  late final _g_tree_foreach = _g_tree_foreachPtr
-      .asFunction<void Function(ffi.Pointer<GTree>, GTraverseFunc, gpointer)>();
+          ffi.Void Function(ffi.Pointer<GTree>, GTraverseFunc,
+              ffi.Pointer)>>('g_tree_foreach');
+  late final _g_tree_foreach = _g_tree_foreachPtr.asFunction<
+      void Function(ffi.Pointer<GTree>, GTraverseFunc, ffi.Pointer)>();
 
   void g_tree_foreach_node(
     ffi.Pointer<GTree> tree,
     GTraverseNodeFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_tree_foreach_node(
       tree,
@@ -32870,15 +32932,15 @@ class GStreamer {
   late final _g_tree_foreach_nodePtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GTree>, GTraverseNodeFunc,
-              gpointer)>>('g_tree_foreach_node');
+              ffi.Pointer)>>('g_tree_foreach_node');
   late final _g_tree_foreach_node = _g_tree_foreach_nodePtr.asFunction<
-      void Function(ffi.Pointer<GTree>, GTraverseNodeFunc, gpointer)>();
+      void Function(ffi.Pointer<GTree>, GTraverseNodeFunc, ffi.Pointer)>();
 
   void g_tree_traverse(
     ffi.Pointer<GTree> tree,
     GTraverseFunc traverse_func,
     int traverse_type,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_tree_traverse(
       tree,
@@ -32891,9 +32953,9 @@ class GStreamer {
   late final _g_tree_traversePtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GTree>, GTraverseFunc, ffi.Int32,
-              gpointer)>>('g_tree_traverse');
+              ffi.Pointer)>>('g_tree_traverse');
   late final _g_tree_traverse = _g_tree_traversePtr.asFunction<
-      void Function(ffi.Pointer<GTree>, GTraverseFunc, int, gpointer)>();
+      void Function(ffi.Pointer<GTree>, GTraverseFunc, int, ffi.Pointer)>();
 
   ffi.Pointer<GTreeNode> g_tree_search_node(
     ffi.Pointer<GTree> tree,
@@ -32915,7 +32977,7 @@ class GStreamer {
       ffi.Pointer<GTreeNode> Function(
           ffi.Pointer<GTree>, GCompareFunc, gconstpointer)>();
 
-  gpointer g_tree_search(
+  ffi.Pointer g_tree_search(
     ffi.Pointer<GTree> tree,
     GCompareFunc search_func,
     gconstpointer user_data,
@@ -32929,10 +32991,10 @@ class GStreamer {
 
   late final _g_tree_searchPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GTree>, GCompareFunc,
+          ffi.Pointer Function(ffi.Pointer<GTree>, GCompareFunc,
               gconstpointer)>>('g_tree_search');
   late final _g_tree_search = _g_tree_searchPtr.asFunction<
-      gpointer Function(ffi.Pointer<GTree>, GCompareFunc, gconstpointer)>();
+      ffi.Pointer Function(ffi.Pointer<GTree>, GCompareFunc, gconstpointer)>();
 
   ffi.Pointer<GTreeNode> g_tree_lower_bound(
     ffi.Pointer<GTree> tree,
@@ -33977,7 +34039,7 @@ class GStreamer {
   late final _g_mem_chunk_destroy = _g_mem_chunk_destroyPtr
       .asFunction<void Function(ffi.Pointer<GMemChunk>)>();
 
-  gpointer g_mem_chunk_alloc(
+  ffi.Pointer g_mem_chunk_alloc(
     ffi.Pointer<GMemChunk> mem_chunk,
   ) {
     return _g_mem_chunk_alloc(
@@ -33986,12 +34048,12 @@ class GStreamer {
   }
 
   late final _g_mem_chunk_allocPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GMemChunk>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GMemChunk>)>>(
           'g_mem_chunk_alloc');
   late final _g_mem_chunk_alloc = _g_mem_chunk_allocPtr
-      .asFunction<gpointer Function(ffi.Pointer<GMemChunk>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GMemChunk>)>();
 
-  gpointer g_mem_chunk_alloc0(
+  ffi.Pointer g_mem_chunk_alloc0(
     ffi.Pointer<GMemChunk> mem_chunk,
   ) {
     return _g_mem_chunk_alloc0(
@@ -34000,14 +34062,14 @@ class GStreamer {
   }
 
   late final _g_mem_chunk_alloc0Ptr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GMemChunk>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GMemChunk>)>>(
           'g_mem_chunk_alloc0');
   late final _g_mem_chunk_alloc0 = _g_mem_chunk_alloc0Ptr
-      .asFunction<gpointer Function(ffi.Pointer<GMemChunk>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GMemChunk>)>();
 
   void g_mem_chunk_free(
     ffi.Pointer<GMemChunk> mem_chunk,
-    gpointer mem,
+    ffi.Pointer mem,
   ) {
     return _g_mem_chunk_free(
       mem_chunk,
@@ -34016,11 +34078,11 @@ class GStreamer {
   }
 
   late final _g_mem_chunk_freePtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Void Function(ffi.Pointer<GMemChunk>, gpointer)>>(
-      'g_mem_chunk_free');
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GMemChunk>, ffi.Pointer)>>('g_mem_chunk_free');
   late final _g_mem_chunk_free = _g_mem_chunk_freePtr
-      .asFunction<void Function(ffi.Pointer<GMemChunk>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GMemChunk>, ffi.Pointer)>();
 
   void g_mem_chunk_clean(
     ffi.Pointer<GMemChunk> mem_chunk,
@@ -34235,9 +34297,9 @@ class GStreamer {
   late final _g_cache_destroy =
       _g_cache_destroyPtr.asFunction<void Function(ffi.Pointer<GCache>)>();
 
-  gpointer g_cache_insert(
+  ffi.Pointer g_cache_insert(
     ffi.Pointer<GCache> cache,
-    gpointer key,
+    ffi.Pointer key,
   ) {
     return _g_cache_insert(
       cache,
@@ -34246,10 +34308,11 @@ class GStreamer {
   }
 
   late final _g_cache_insertPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GCache>, gpointer)>>(
-      'g_cache_insert');
+      ffi.NativeFunction<
+          ffi.Pointer Function(
+              ffi.Pointer<GCache>, ffi.Pointer)>>('g_cache_insert');
   late final _g_cache_insert = _g_cache_insertPtr
-      .asFunction<gpointer Function(ffi.Pointer<GCache>, gpointer)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GCache>, ffi.Pointer)>();
 
   void g_cache_remove(
     ffi.Pointer<GCache> cache,
@@ -34271,7 +34334,7 @@ class GStreamer {
   void g_cache_key_foreach(
     ffi.Pointer<GCache> cache,
     GHFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_cache_key_foreach(
       cache,
@@ -34282,15 +34345,15 @@ class GStreamer {
 
   late final _g_cache_key_foreachPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<GCache>, GHFunc, gpointer)>>('g_cache_key_foreach');
+          ffi.Void Function(ffi.Pointer<GCache>, GHFunc,
+              ffi.Pointer)>>('g_cache_key_foreach');
   late final _g_cache_key_foreach = _g_cache_key_foreachPtr
-      .asFunction<void Function(ffi.Pointer<GCache>, GHFunc, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GCache>, GHFunc, ffi.Pointer)>();
 
   void g_cache_value_foreach(
     ffi.Pointer<GCache> cache,
     GHFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_cache_value_foreach(
       cache,
@@ -34301,10 +34364,10 @@ class GStreamer {
 
   late final _g_cache_value_foreachPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<GCache>, GHFunc, gpointer)>>('g_cache_value_foreach');
+          ffi.Void Function(ffi.Pointer<GCache>, GHFunc,
+              ffi.Pointer)>>('g_cache_value_foreach');
   late final _g_cache_value_foreach = _g_cache_value_foreachPtr
-      .asFunction<void Function(ffi.Pointer<GCache>, GHFunc, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GCache>, GHFunc, ffi.Pointer)>();
 
   ffi.Pointer<GCompletion> g_completion_new(
     GCompletionFunc func,
@@ -34609,7 +34672,7 @@ class GStreamer {
   late final _g_tuples_destroy =
       _g_tuples_destroyPtr.asFunction<void Function(ffi.Pointer<GTuples>)>();
 
-  gpointer g_tuples_index(
+  ffi.Pointer g_tuples_index(
     ffi.Pointer<GTuples> tuples,
     int index_,
     int field,
@@ -34622,11 +34685,11 @@ class GStreamer {
   }
 
   late final _g_tuples_indexPtr = _lookup<
-          ffi
-          .NativeFunction<gpointer Function(ffi.Pointer<GTuples>, gint, gint)>>(
-      'g_tuples_index');
+      ffi.NativeFunction<
+          ffi.Pointer Function(
+              ffi.Pointer<GTuples>, gint, gint)>>('g_tuples_index');
   late final _g_tuples_index = _g_tuples_indexPtr
-      .asFunction<gpointer Function(ffi.Pointer<GTuples>, int, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GTuples>, int, int)>();
 
   late final ffi.Pointer<GThreadFunctions> _g_thread_functions_for_glib_use =
       _lookup<GThreadFunctions>('g_thread_functions_for_glib_use');
@@ -34656,7 +34719,7 @@ class GStreamer {
 
   ffi.Pointer<GThread> g_thread_create(
     GThreadFunc func,
-    gpointer data,
+    ffi.Pointer data,
     int joinable,
     ffi.Pointer<ffi.Pointer<GError>> error,
   ) {
@@ -34670,15 +34733,15 @@ class GStreamer {
 
   late final _g_thread_createPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GThread> Function(GThreadFunc, gpointer, gboolean,
+          ffi.Pointer<GThread> Function(GThreadFunc, ffi.Pointer, gboolean,
               ffi.Pointer<ffi.Pointer<GError>>)>>('g_thread_create');
   late final _g_thread_create = _g_thread_createPtr.asFunction<
       ffi.Pointer<GThread> Function(
-          GThreadFunc, gpointer, int, ffi.Pointer<ffi.Pointer<GError>>)>();
+          GThreadFunc, ffi.Pointer, int, ffi.Pointer<ffi.Pointer<GError>>)>();
 
   ffi.Pointer<GThread> g_thread_create_full(
     GThreadFunc func,
-    gpointer data,
+    ffi.Pointer data,
     int stack_size,
     int joinable,
     int bound,
@@ -34700,15 +34763,15 @@ class GStreamer {
       ffi.NativeFunction<
           ffi.Pointer<GThread> Function(
               GThreadFunc,
-              gpointer,
+              ffi.Pointer,
               gulong,
               gboolean,
               gboolean,
               ffi.Int32,
               ffi.Pointer<ffi.Pointer<GError>>)>>('g_thread_create_full');
   late final _g_thread_create_full = _g_thread_create_fullPtr.asFunction<
-      ffi.Pointer<GThread> Function(GThreadFunc, gpointer, int, int, int, int,
-          ffi.Pointer<ffi.Pointer<GError>>)>();
+      ffi.Pointer<GThread> Function(GThreadFunc, ffi.Pointer, int, int, int,
+          int, ffi.Pointer<ffi.Pointer<GError>>)>();
 
   void g_thread_set_priority(
     ffi.Pointer<GThread> thread,
@@ -34729,7 +34792,7 @@ class GStreamer {
 
   void g_thread_foreach(
     GFunc thread_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_thread_foreach(
       thread_func,
@@ -34738,10 +34801,10 @@ class GStreamer {
   }
 
   late final _g_thread_foreachPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(GFunc, gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(GFunc, ffi.Pointer)>>(
           'g_thread_foreach');
   late final _g_thread_foreach =
-      _g_thread_foreachPtr.asFunction<void Function(GFunc, gpointer)>();
+      _g_thread_foreachPtr.asFunction<void Function(GFunc, ffi.Pointer)>();
 
   int __sched_cpucount(
     int __setsize,
@@ -36870,7 +36933,7 @@ class GStreamer {
   late final _g_static_private_init = _g_static_private_initPtr
       .asFunction<void Function(ffi.Pointer<GStaticPrivate>)>();
 
-  gpointer g_static_private_get(
+  ffi.Pointer g_static_private_get(
     ffi.Pointer<GStaticPrivate> private_key,
   ) {
     return _g_static_private_get(
@@ -36879,14 +36942,15 @@ class GStreamer {
   }
 
   late final _g_static_private_getPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GStaticPrivate>)>>(
+          ffi
+          .NativeFunction<ffi.Pointer Function(ffi.Pointer<GStaticPrivate>)>>(
       'g_static_private_get');
   late final _g_static_private_get = _g_static_private_getPtr
-      .asFunction<gpointer Function(ffi.Pointer<GStaticPrivate>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GStaticPrivate>)>();
 
   void g_static_private_set(
     ffi.Pointer<GStaticPrivate> private_key,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify notify,
   ) {
     return _g_static_private_set(
@@ -36898,10 +36962,11 @@ class GStreamer {
 
   late final _g_static_private_setPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GStaticPrivate>, gpointer,
+          ffi.Void Function(ffi.Pointer<GStaticPrivate>, ffi.Pointer,
               GDestroyNotify)>>('g_static_private_set');
   late final _g_static_private_set = _g_static_private_setPtr.asFunction<
-      void Function(ffi.Pointer<GStaticPrivate>, gpointer, GDestroyNotify)>();
+      void Function(
+          ffi.Pointer<GStaticPrivate>, ffi.Pointer, GDestroyNotify)>();
 
   void g_static_private_free(
     ffi.Pointer<GStaticPrivate> private_key,
@@ -36932,7 +36997,7 @@ class GStreamer {
       _g_once_init_enter_implPtr.asFunction<int Function(ffi.Pointer<gsize>)>();
 
   void g_thread_init(
-    gpointer vtable,
+    ffi.Pointer vtable,
   ) {
     return _g_thread_init(
       vtable,
@@ -36940,12 +37005,13 @@ class GStreamer {
   }
 
   late final _g_thread_initPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>('g_thread_init');
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
+          'g_thread_init');
   late final _g_thread_init =
-      _g_thread_initPtr.asFunction<void Function(gpointer)>();
+      _g_thread_initPtr.asFunction<void Function(ffi.Pointer)>();
 
   void g_thread_init_with_errorcheck_mutexes(
-    gpointer vtable,
+    ffi.Pointer vtable,
   ) {
     return _g_thread_init_with_errorcheck_mutexes(
       vtable,
@@ -36953,11 +37019,11 @@ class GStreamer {
   }
 
   late final _g_thread_init_with_errorcheck_mutexesPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
           'g_thread_init_with_errorcheck_mutexes');
   late final _g_thread_init_with_errorcheck_mutexes =
       _g_thread_init_with_errorcheck_mutexesPtr
-          .asFunction<void Function(gpointer)>();
+          .asFunction<void Function(ffi.Pointer)>();
 
   int g_thread_get_initialized() {
     return _g_thread_get_initialized();
@@ -37162,7 +37228,7 @@ class GStreamer {
   late final _g_type_is_a =
       _g_type_is_aPtr.asFunction<int Function(int, int)>();
 
-  gpointer g_type_class_ref(
+  ffi.Pointer g_type_class_ref(
     int type,
   ) {
     return _g_type_class_ref(
@@ -37171,11 +37237,12 @@ class GStreamer {
   }
 
   late final _g_type_class_refPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(GType)>>('g_type_class_ref');
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(GType)>>(
+          'g_type_class_ref');
   late final _g_type_class_ref =
-      _g_type_class_refPtr.asFunction<gpointer Function(int)>();
+      _g_type_class_refPtr.asFunction<ffi.Pointer Function(int)>();
 
-  gpointer g_type_class_peek(
+  ffi.Pointer g_type_class_peek(
     int type,
   ) {
     return _g_type_class_peek(
@@ -37184,12 +37251,12 @@ class GStreamer {
   }
 
   late final _g_type_class_peekPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(GType)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(GType)>>(
           'g_type_class_peek');
   late final _g_type_class_peek =
-      _g_type_class_peekPtr.asFunction<gpointer Function(int)>();
+      _g_type_class_peekPtr.asFunction<ffi.Pointer Function(int)>();
 
-  gpointer g_type_class_peek_static(
+  ffi.Pointer g_type_class_peek_static(
     int type,
   ) {
     return _g_type_class_peek_static(
@@ -37198,13 +37265,13 @@ class GStreamer {
   }
 
   late final _g_type_class_peek_staticPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(GType)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(GType)>>(
           'g_type_class_peek_static');
   late final _g_type_class_peek_static =
-      _g_type_class_peek_staticPtr.asFunction<gpointer Function(int)>();
+      _g_type_class_peek_staticPtr.asFunction<ffi.Pointer Function(int)>();
 
   void g_type_class_unref(
-    gpointer g_class,
+    ffi.Pointer g_class,
   ) {
     return _g_type_class_unref(
       g_class,
@@ -37212,13 +37279,13 @@ class GStreamer {
   }
 
   late final _g_type_class_unrefPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
           'g_type_class_unref');
   late final _g_type_class_unref =
-      _g_type_class_unrefPtr.asFunction<void Function(gpointer)>();
+      _g_type_class_unrefPtr.asFunction<void Function(ffi.Pointer)>();
 
-  gpointer g_type_class_peek_parent(
-    gpointer g_class,
+  ffi.Pointer g_type_class_peek_parent(
+    ffi.Pointer g_class,
   ) {
     return _g_type_class_peek_parent(
       g_class,
@@ -37226,13 +37293,13 @@ class GStreamer {
   }
 
   late final _g_type_class_peek_parentPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer)>>(
           'g_type_class_peek_parent');
-  late final _g_type_class_peek_parent =
-      _g_type_class_peek_parentPtr.asFunction<gpointer Function(gpointer)>();
+  late final _g_type_class_peek_parent = _g_type_class_peek_parentPtr
+      .asFunction<ffi.Pointer Function(ffi.Pointer)>();
 
-  gpointer g_type_interface_peek(
-    gpointer instance_class,
+  ffi.Pointer g_type_interface_peek(
+    ffi.Pointer instance_class,
     int iface_type,
   ) {
     return _g_type_interface_peek(
@@ -37242,13 +37309,13 @@ class GStreamer {
   }
 
   late final _g_type_interface_peekPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer, GType)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer, GType)>>(
           'g_type_interface_peek');
-  late final _g_type_interface_peek =
-      _g_type_interface_peekPtr.asFunction<gpointer Function(gpointer, int)>();
+  late final _g_type_interface_peek = _g_type_interface_peekPtr
+      .asFunction<ffi.Pointer Function(ffi.Pointer, int)>();
 
-  gpointer g_type_interface_peek_parent(
-    gpointer g_iface,
+  ffi.Pointer g_type_interface_peek_parent(
+    ffi.Pointer g_iface,
   ) {
     return _g_type_interface_peek_parent(
       g_iface,
@@ -37256,12 +37323,12 @@ class GStreamer {
   }
 
   late final _g_type_interface_peek_parentPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer)>>(
           'g_type_interface_peek_parent');
   late final _g_type_interface_peek_parent = _g_type_interface_peek_parentPtr
-      .asFunction<gpointer Function(gpointer)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer)>();
 
-  gpointer g_type_default_interface_ref(
+  ffi.Pointer g_type_default_interface_ref(
     int g_type,
   ) {
     return _g_type_default_interface_ref(
@@ -37270,12 +37337,12 @@ class GStreamer {
   }
 
   late final _g_type_default_interface_refPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(GType)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(GType)>>(
           'g_type_default_interface_ref');
   late final _g_type_default_interface_ref =
-      _g_type_default_interface_refPtr.asFunction<gpointer Function(int)>();
+      _g_type_default_interface_refPtr.asFunction<ffi.Pointer Function(int)>();
 
-  gpointer g_type_default_interface_peek(
+  ffi.Pointer g_type_default_interface_peek(
     int g_type,
   ) {
     return _g_type_default_interface_peek(
@@ -37284,13 +37351,13 @@ class GStreamer {
   }
 
   late final _g_type_default_interface_peekPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(GType)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(GType)>>(
           'g_type_default_interface_peek');
   late final _g_type_default_interface_peek =
-      _g_type_default_interface_peekPtr.asFunction<gpointer Function(int)>();
+      _g_type_default_interface_peekPtr.asFunction<ffi.Pointer Function(int)>();
 
   void g_type_default_interface_unref(
-    gpointer g_iface,
+    ffi.Pointer g_iface,
   ) {
     return _g_type_default_interface_unref(
       g_iface,
@@ -37298,10 +37365,11 @@ class GStreamer {
   }
 
   late final _g_type_default_interface_unrefPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
           'g_type_default_interface_unref');
   late final _g_type_default_interface_unref =
-      _g_type_default_interface_unrefPtr.asFunction<void Function(gpointer)>();
+      _g_type_default_interface_unrefPtr
+          .asFunction<void Function(ffi.Pointer)>();
 
   ffi.Pointer<GType> g_type_children(
     int type,
@@ -37340,7 +37408,7 @@ class GStreamer {
   void g_type_set_qdata(
     int type,
     int quark,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_type_set_qdata(
       type,
@@ -37349,13 +37417,13 @@ class GStreamer {
     );
   }
 
-  late final _g_type_set_qdataPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(GType, GQuark, gpointer)>>(
-          'g_type_set_qdata');
+  late final _g_type_set_qdataPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(GType, GQuark, ffi.Pointer)>>(
+      'g_type_set_qdata');
   late final _g_type_set_qdata =
-      _g_type_set_qdataPtr.asFunction<void Function(int, int, gpointer)>();
+      _g_type_set_qdataPtr.asFunction<void Function(int, int, ffi.Pointer)>();
 
-  gpointer g_type_get_qdata(
+  ffi.Pointer g_type_get_qdata(
     int type,
     int quark,
   ) {
@@ -37366,10 +37434,10 @@ class GStreamer {
   }
 
   late final _g_type_get_qdataPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(GType, GQuark)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(GType, GQuark)>>(
           'g_type_get_qdata');
   late final _g_type_get_qdata =
-      _g_type_get_qdataPtr.asFunction<gpointer Function(int, int)>();
+      _g_type_get_qdataPtr.asFunction<ffi.Pointer Function(int, int)>();
 
   void g_type_query(
     int type,
@@ -37597,7 +37665,7 @@ class GStreamer {
           .asFunction<int Function(int)>();
 
   void g_type_class_add_private(
-    gpointer g_class,
+    ffi.Pointer g_class,
     int private_size,
   ) {
     return _g_type_class_add_private(
@@ -37607,10 +37675,10 @@ class GStreamer {
   }
 
   late final _g_type_class_add_privatePtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer, gsize)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer, gsize)>>(
           'g_type_class_add_private');
-  late final _g_type_class_add_private =
-      _g_type_class_add_privatePtr.asFunction<void Function(gpointer, int)>();
+  late final _g_type_class_add_private = _g_type_class_add_privatePtr
+      .asFunction<void Function(ffi.Pointer, int)>();
 
   int g_type_add_instance_private(
     int class_type,
@@ -37628,7 +37696,7 @@ class GStreamer {
   late final _g_type_add_instance_private =
       _g_type_add_instance_privatePtr.asFunction<int Function(int, int)>();
 
-  gpointer g_type_instance_get_private(
+  ffi.Pointer g_type_instance_get_private(
     ffi.Pointer<GTypeInstance> instance,
     int private_type,
   ) {
@@ -37640,13 +37708,13 @@ class GStreamer {
 
   late final _g_type_instance_get_privatePtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GTypeInstance>,
+          ffi.Pointer Function(ffi.Pointer<GTypeInstance>,
               GType)>>('g_type_instance_get_private');
   late final _g_type_instance_get_private = _g_type_instance_get_privatePtr
-      .asFunction<gpointer Function(ffi.Pointer<GTypeInstance>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GTypeInstance>, int)>();
 
   void g_type_class_adjust_private_offset(
-    gpointer g_class,
+    ffi.Pointer g_class,
     ffi.Pointer<gint> private_size_or_offset,
   ) {
     return _g_type_class_adjust_private_offset(
@@ -37656,11 +37724,12 @@ class GStreamer {
   }
 
   late final _g_type_class_adjust_private_offsetPtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(gpointer, ffi.Pointer<gint>)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer, ffi.Pointer<gint>)>>(
       'g_type_class_adjust_private_offset');
   late final _g_type_class_adjust_private_offset =
       _g_type_class_adjust_private_offsetPtr
-          .asFunction<void Function(gpointer, ffi.Pointer<gint>)>();
+          .asFunction<void Function(ffi.Pointer, ffi.Pointer<gint>)>();
 
   void g_type_add_class_private(
     int class_type,
@@ -37678,7 +37747,7 @@ class GStreamer {
   late final _g_type_add_class_private =
       _g_type_add_class_privatePtr.asFunction<void Function(int, int)>();
 
-  gpointer g_type_class_get_private(
+  ffi.Pointer g_type_class_get_private(
     ffi.Pointer<GTypeClass> klass,
     int private_type,
   ) {
@@ -37689,14 +37758,14 @@ class GStreamer {
   }
 
   late final _g_type_class_get_privatePtr = _lookup<
-          ffi
-          .NativeFunction<gpointer Function(ffi.Pointer<GTypeClass>, GType)>>(
-      'g_type_class_get_private');
+      ffi.NativeFunction<
+          ffi.Pointer Function(
+              ffi.Pointer<GTypeClass>, GType)>>('g_type_class_get_private');
   late final _g_type_class_get_private = _g_type_class_get_privatePtr
-      .asFunction<gpointer Function(ffi.Pointer<GTypeClass>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GTypeClass>, int)>();
 
   int g_type_class_get_instance_private_offset(
-    gpointer g_class,
+    ffi.Pointer g_class,
   ) {
     return _g_type_class_get_instance_private_offset(
       g_class,
@@ -37704,11 +37773,11 @@ class GStreamer {
   }
 
   late final _g_type_class_get_instance_private_offsetPtr =
-      _lookup<ffi.NativeFunction<gint Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<gint Function(ffi.Pointer)>>(
           'g_type_class_get_instance_private_offset');
   late final _g_type_class_get_instance_private_offset =
       _g_type_class_get_instance_private_offsetPtr
-          .asFunction<int Function(gpointer)>();
+          .asFunction<int Function(ffi.Pointer)>();
 
   void g_type_ensure(
     int type,
@@ -37814,7 +37883,7 @@ class GStreamer {
       .asFunction<void Function(ffi.Pointer<GTypeInstance>)>();
 
   void g_type_add_class_cache_func(
-    gpointer cache_data,
+    ffi.Pointer cache_data,
     GTypeClassCacheFunc cache_func,
   ) {
     return _g_type_add_class_cache_func(
@@ -37824,13 +37893,14 @@ class GStreamer {
   }
 
   late final _g_type_add_class_cache_funcPtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(gpointer, GTypeClassCacheFunc)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer, GTypeClassCacheFunc)>>(
       'g_type_add_class_cache_func');
   late final _g_type_add_class_cache_func = _g_type_add_class_cache_funcPtr
-      .asFunction<void Function(gpointer, GTypeClassCacheFunc)>();
+      .asFunction<void Function(ffi.Pointer, GTypeClassCacheFunc)>();
 
   void g_type_remove_class_cache_func(
-    gpointer cache_data,
+    ffi.Pointer cache_data,
     GTypeClassCacheFunc cache_func,
   ) {
     return _g_type_remove_class_cache_func(
@@ -37840,14 +37910,15 @@ class GStreamer {
   }
 
   late final _g_type_remove_class_cache_funcPtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(gpointer, GTypeClassCacheFunc)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer, GTypeClassCacheFunc)>>(
       'g_type_remove_class_cache_func');
   late final _g_type_remove_class_cache_func =
       _g_type_remove_class_cache_funcPtr
-          .asFunction<void Function(gpointer, GTypeClassCacheFunc)>();
+          .asFunction<void Function(ffi.Pointer, GTypeClassCacheFunc)>();
 
   void g_type_class_unref_uncached(
-    gpointer g_class,
+    ffi.Pointer g_class,
   ) {
     return _g_type_class_unref_uncached(
       g_class,
@@ -37855,13 +37926,13 @@ class GStreamer {
   }
 
   late final _g_type_class_unref_uncachedPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
           'g_type_class_unref_uncached');
   late final _g_type_class_unref_uncached =
-      _g_type_class_unref_uncachedPtr.asFunction<void Function(gpointer)>();
+      _g_type_class_unref_uncachedPtr.asFunction<void Function(ffi.Pointer)>();
 
   void g_type_add_interface_check(
-    gpointer check_data,
+    ffi.Pointer check_data,
     GTypeInterfaceCheckFunc check_func,
   ) {
     return _g_type_add_interface_check(
@@ -37872,13 +37943,13 @@ class GStreamer {
 
   late final _g_type_add_interface_checkPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(gpointer,
+          ffi.Void Function(ffi.Pointer,
               GTypeInterfaceCheckFunc)>>('g_type_add_interface_check');
   late final _g_type_add_interface_check = _g_type_add_interface_checkPtr
-      .asFunction<void Function(gpointer, GTypeInterfaceCheckFunc)>();
+      .asFunction<void Function(ffi.Pointer, GTypeInterfaceCheckFunc)>();
 
   void g_type_remove_interface_check(
-    gpointer check_data,
+    ffi.Pointer check_data,
     GTypeInterfaceCheckFunc check_func,
   ) {
     return _g_type_remove_interface_check(
@@ -37889,10 +37960,10 @@ class GStreamer {
 
   late final _g_type_remove_interface_checkPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(gpointer,
+          ffi.Void Function(ffi.Pointer,
               GTypeInterfaceCheckFunc)>>('g_type_remove_interface_check');
   late final _g_type_remove_interface_check = _g_type_remove_interface_checkPtr
-      .asFunction<void Function(gpointer, GTypeInterfaceCheckFunc)>();
+      .asFunction<void Function(ffi.Pointer, GTypeInterfaceCheckFunc)>();
 
   ffi.Pointer<GTypeValueTable> g_type_value_table_peek(
     int type,
@@ -38164,7 +38235,7 @@ class GStreamer {
 
   void g_value_set_instance(
     ffi.Pointer<GValue> value,
-    gpointer instance,
+    ffi.Pointer instance,
   ) {
     return _g_value_set_instance(
       value,
@@ -38173,14 +38244,15 @@ class GStreamer {
   }
 
   late final _g_value_set_instancePtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, gpointer)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, ffi.Pointer)>>(
       'g_value_set_instance');
   late final _g_value_set_instance = _g_value_set_instancePtr
-      .asFunction<void Function(ffi.Pointer<GValue>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GValue>, ffi.Pointer)>();
 
   void g_value_init_from_instance(
     ffi.Pointer<GValue> value,
-    gpointer instance,
+    ffi.Pointer instance,
   ) {
     return _g_value_init_from_instance(
       value,
@@ -38189,10 +38261,11 @@ class GStreamer {
   }
 
   late final _g_value_init_from_instancePtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, gpointer)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, ffi.Pointer)>>(
       'g_value_init_from_instance');
   late final _g_value_init_from_instance = _g_value_init_from_instancePtr
-      .asFunction<void Function(ffi.Pointer<GValue>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GValue>, ffi.Pointer)>();
 
   int g_value_fits_pointer(
     ffi.Pointer<GValue> value,
@@ -38208,7 +38281,7 @@ class GStreamer {
   late final _g_value_fits_pointer =
       _g_value_fits_pointerPtr.asFunction<int Function(ffi.Pointer<GValue>)>();
 
-  gpointer g_value_peek_pointer(
+  ffi.Pointer g_value_peek_pointer(
     ffi.Pointer<GValue> value,
   ) {
     return _g_value_peek_pointer(
@@ -38217,10 +38290,10 @@ class GStreamer {
   }
 
   late final _g_value_peek_pointerPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GValue>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GValue>)>>(
           'g_value_peek_pointer');
   late final _g_value_peek_pointer = _g_value_peek_pointerPtr
-      .asFunction<gpointer Function(ffi.Pointer<GValue>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GValue>)>();
 
   int g_value_type_compatible(
     int src_type,
@@ -38348,7 +38421,7 @@ class GStreamer {
   late final _g_param_spec_ref_sink = _g_param_spec_ref_sinkPtr
       .asFunction<ffi.Pointer<GParamSpec> Function(ffi.Pointer<GParamSpec>)>();
 
-  gpointer g_param_spec_get_qdata(
+  ffi.Pointer g_param_spec_get_qdata(
     ffi.Pointer<GParamSpec> pspec,
     int quark,
   ) {
@@ -38359,16 +38432,16 @@ class GStreamer {
   }
 
   late final _g_param_spec_get_qdataPtr = _lookup<
-          ffi
-          .NativeFunction<gpointer Function(ffi.Pointer<GParamSpec>, GQuark)>>(
-      'g_param_spec_get_qdata');
+      ffi.NativeFunction<
+          ffi.Pointer Function(
+              ffi.Pointer<GParamSpec>, GQuark)>>('g_param_spec_get_qdata');
   late final _g_param_spec_get_qdata = _g_param_spec_get_qdataPtr
-      .asFunction<gpointer Function(ffi.Pointer<GParamSpec>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GParamSpec>, int)>();
 
   void g_param_spec_set_qdata(
     ffi.Pointer<GParamSpec> pspec,
     int quark,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_param_spec_set_qdata(
       pspec,
@@ -38380,14 +38453,14 @@ class GStreamer {
   late final _g_param_spec_set_qdataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GParamSpec>, GQuark,
-              gpointer)>>('g_param_spec_set_qdata');
+              ffi.Pointer)>>('g_param_spec_set_qdata');
   late final _g_param_spec_set_qdata = _g_param_spec_set_qdataPtr
-      .asFunction<void Function(ffi.Pointer<GParamSpec>, int, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GParamSpec>, int, ffi.Pointer)>();
 
   void g_param_spec_set_qdata_full(
     ffi.Pointer<GParamSpec> pspec,
     int quark,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify destroy,
   ) {
     return _g_param_spec_set_qdata_full(
@@ -38400,14 +38473,14 @@ class GStreamer {
 
   late final _g_param_spec_set_qdata_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GParamSpec>, GQuark, gpointer,
+          ffi.Void Function(ffi.Pointer<GParamSpec>, GQuark, ffi.Pointer,
               GDestroyNotify)>>('g_param_spec_set_qdata_full');
   late final _g_param_spec_set_qdata_full =
       _g_param_spec_set_qdata_fullPtr.asFunction<
           void Function(
-              ffi.Pointer<GParamSpec>, int, gpointer, GDestroyNotify)>();
+              ffi.Pointer<GParamSpec>, int, ffi.Pointer, GDestroyNotify)>();
 
-  gpointer g_param_spec_steal_qdata(
+  ffi.Pointer g_param_spec_steal_qdata(
     ffi.Pointer<GParamSpec> pspec,
     int quark,
   ) {
@@ -38418,11 +38491,11 @@ class GStreamer {
   }
 
   late final _g_param_spec_steal_qdataPtr = _lookup<
-          ffi
-          .NativeFunction<gpointer Function(ffi.Pointer<GParamSpec>, GQuark)>>(
-      'g_param_spec_steal_qdata');
+      ffi.NativeFunction<
+          ffi.Pointer Function(
+              ffi.Pointer<GParamSpec>, GQuark)>>('g_param_spec_steal_qdata');
   late final _g_param_spec_steal_qdata = _g_param_spec_steal_qdataPtr
-      .asFunction<gpointer Function(ffi.Pointer<GParamSpec>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GParamSpec>, int)>();
 
   ffi.Pointer<GParamSpec> g_param_spec_get_redirect_target(
     ffi.Pointer<GParamSpec> pspec,
@@ -38763,7 +38836,7 @@ class GStreamer {
           int Function(
               ffi.Pointer<ffi.Char>, ffi.Pointer<GParamSpecTypeInfo>, int)>();
 
-  gpointer g_param_spec_internal(
+  ffi.Pointer g_param_spec_internal(
     int param_type,
     ffi.Pointer<ffi.Char> name,
     ffi.Pointer<ffi.Char> nick,
@@ -38781,10 +38854,14 @@ class GStreamer {
 
   late final _g_param_spec_internalPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(GType, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>, ffi.Int32)>>('g_param_spec_internal');
+          ffi.Pointer Function(
+              GType,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Int32)>>('g_param_spec_internal');
   late final _g_param_spec_internal = _g_param_spec_internalPtr.asFunction<
-      gpointer Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
+      ffi.Pointer Function(int, ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Char>, int)>();
 
   ffi.Pointer<GParamSpecPool> g_param_spec_pool_new(
@@ -38923,7 +39000,7 @@ class GStreamer {
 
   ffi.Pointer<GClosure> g_cclosure_new(
     GCallback callback_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GClosureNotify destroy_data,
   ) {
     return _g_cclosure_new(
@@ -38936,13 +39013,13 @@ class GStreamer {
   late final _g_cclosure_newPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GClosure> Function(
-              GCallback, gpointer, GClosureNotify)>>('g_cclosure_new');
+              GCallback, ffi.Pointer, GClosureNotify)>>('g_cclosure_new');
   late final _g_cclosure_new = _g_cclosure_newPtr.asFunction<
-      ffi.Pointer<GClosure> Function(GCallback, gpointer, GClosureNotify)>();
+      ffi.Pointer<GClosure> Function(GCallback, ffi.Pointer, GClosureNotify)>();
 
   ffi.Pointer<GClosure> g_cclosure_new_swap(
     GCallback callback_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GClosureNotify destroy_data,
   ) {
     return _g_cclosure_new_swap(
@@ -38955,9 +39032,9 @@ class GStreamer {
   late final _g_cclosure_new_swapPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GClosure> Function(
-              GCallback, gpointer, GClosureNotify)>>('g_cclosure_new_swap');
+              GCallback, ffi.Pointer, GClosureNotify)>>('g_cclosure_new_swap');
   late final _g_cclosure_new_swap = _g_cclosure_new_swapPtr.asFunction<
-      ffi.Pointer<GClosure> Function(GCallback, gpointer, GClosureNotify)>();
+      ffi.Pointer<GClosure> Function(GCallback, ffi.Pointer, GClosureNotify)>();
 
   ffi.Pointer<GClosure> g_signal_type_cclosure_new(
     int itype,
@@ -39020,7 +39097,7 @@ class GStreamer {
 
   ffi.Pointer<GClosure> g_closure_new_simple(
     int sizeof_closure,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_closure_new_simple(
       sizeof_closure,
@@ -39029,14 +39106,15 @@ class GStreamer {
   }
 
   late final _g_closure_new_simplePtr = _lookup<
-          ffi.NativeFunction<ffi.Pointer<GClosure> Function(guint, gpointer)>>(
+          ffi
+          .NativeFunction<ffi.Pointer<GClosure> Function(guint, ffi.Pointer)>>(
       'g_closure_new_simple');
   late final _g_closure_new_simple = _g_closure_new_simplePtr
-      .asFunction<ffi.Pointer<GClosure> Function(int, gpointer)>();
+      .asFunction<ffi.Pointer<GClosure> Function(int, ffi.Pointer)>();
 
   void g_closure_add_finalize_notifier(
     ffi.Pointer<GClosure> closure,
-    gpointer notify_data,
+    ffi.Pointer notify_data,
     GClosureNotify notify_func,
   ) {
     return _g_closure_add_finalize_notifier(
@@ -39048,15 +39126,15 @@ class GStreamer {
 
   late final _g_closure_add_finalize_notifierPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GClosure>, gpointer,
+          ffi.Void Function(ffi.Pointer<GClosure>, ffi.Pointer,
               GClosureNotify)>>('g_closure_add_finalize_notifier');
   late final _g_closure_add_finalize_notifier =
       _g_closure_add_finalize_notifierPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, gpointer, GClosureNotify)>();
+          void Function(ffi.Pointer<GClosure>, ffi.Pointer, GClosureNotify)>();
 
   void g_closure_remove_finalize_notifier(
     ffi.Pointer<GClosure> closure,
-    gpointer notify_data,
+    ffi.Pointer notify_data,
     GClosureNotify notify_func,
   ) {
     return _g_closure_remove_finalize_notifier(
@@ -39068,15 +39146,15 @@ class GStreamer {
 
   late final _g_closure_remove_finalize_notifierPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GClosure>, gpointer,
+          ffi.Void Function(ffi.Pointer<GClosure>, ffi.Pointer,
               GClosureNotify)>>('g_closure_remove_finalize_notifier');
   late final _g_closure_remove_finalize_notifier =
       _g_closure_remove_finalize_notifierPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, gpointer, GClosureNotify)>();
+          void Function(ffi.Pointer<GClosure>, ffi.Pointer, GClosureNotify)>();
 
   void g_closure_add_invalidate_notifier(
     ffi.Pointer<GClosure> closure,
-    gpointer notify_data,
+    ffi.Pointer notify_data,
     GClosureNotify notify_func,
   ) {
     return _g_closure_add_invalidate_notifier(
@@ -39088,15 +39166,15 @@ class GStreamer {
 
   late final _g_closure_add_invalidate_notifierPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GClosure>, gpointer,
+          ffi.Void Function(ffi.Pointer<GClosure>, ffi.Pointer,
               GClosureNotify)>>('g_closure_add_invalidate_notifier');
   late final _g_closure_add_invalidate_notifier =
       _g_closure_add_invalidate_notifierPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, gpointer, GClosureNotify)>();
+          void Function(ffi.Pointer<GClosure>, ffi.Pointer, GClosureNotify)>();
 
   void g_closure_remove_invalidate_notifier(
     ffi.Pointer<GClosure> closure,
-    gpointer notify_data,
+    ffi.Pointer notify_data,
     GClosureNotify notify_func,
   ) {
     return _g_closure_remove_invalidate_notifier(
@@ -39108,17 +39186,17 @@ class GStreamer {
 
   late final _g_closure_remove_invalidate_notifierPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GClosure>, gpointer,
+          ffi.Void Function(ffi.Pointer<GClosure>, ffi.Pointer,
               GClosureNotify)>>('g_closure_remove_invalidate_notifier');
   late final _g_closure_remove_invalidate_notifier =
       _g_closure_remove_invalidate_notifierPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, gpointer, GClosureNotify)>();
+          void Function(ffi.Pointer<GClosure>, ffi.Pointer, GClosureNotify)>();
 
   void g_closure_add_marshal_guards(
     ffi.Pointer<GClosure> closure,
-    gpointer pre_marshal_data,
+    ffi.Pointer pre_marshal_data,
     GClosureNotify pre_marshal_notify,
-    gpointer post_marshal_data,
+    ffi.Pointer post_marshal_data,
     GClosureNotify post_marshal_notify,
   ) {
     return _g_closure_add_marshal_guards(
@@ -39132,12 +39210,12 @@ class GStreamer {
 
   late final _g_closure_add_marshal_guardsPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GClosure>, gpointer, GClosureNotify,
-              gpointer, GClosureNotify)>>('g_closure_add_marshal_guards');
+          ffi.Void Function(ffi.Pointer<GClosure>, ffi.Pointer, GClosureNotify,
+              ffi.Pointer, GClosureNotify)>>('g_closure_add_marshal_guards');
   late final _g_closure_add_marshal_guards =
       _g_closure_add_marshal_guardsPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, gpointer, GClosureNotify,
-              gpointer, GClosureNotify)>();
+          void Function(ffi.Pointer<GClosure>, ffi.Pointer, GClosureNotify,
+              ffi.Pointer, GClosureNotify)>();
 
   void g_closure_set_marshal(
     ffi.Pointer<GClosure> closure,
@@ -39158,7 +39236,7 @@ class GStreamer {
 
   void g_closure_set_meta_marshal(
     ffi.Pointer<GClosure> closure,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     GClosureMarshal meta_marshal,
   ) {
     return _g_closure_set_meta_marshal(
@@ -39170,11 +39248,11 @@ class GStreamer {
 
   late final _g_closure_set_meta_marshalPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GClosure>, gpointer,
+          ffi.Void Function(ffi.Pointer<GClosure>, ffi.Pointer,
               GClosureMarshal)>>('g_closure_set_meta_marshal');
   late final _g_closure_set_meta_marshal =
       _g_closure_set_meta_marshalPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, gpointer, GClosureMarshal)>();
+          void Function(ffi.Pointer<GClosure>, ffi.Pointer, GClosureMarshal)>();
 
   void g_closure_invalidate(
     ffi.Pointer<GClosure> closure,
@@ -39195,7 +39273,7 @@ class GStreamer {
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
+    ffi.Pointer invocation_hint,
   ) {
     return _g_closure_invoke(
       closure,
@@ -39209,18 +39287,18 @@ class GStreamer {
   late final _g_closure_invokePtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, guint,
-              ffi.Pointer<GValue>, gpointer)>>('g_closure_invoke');
+              ffi.Pointer<GValue>, ffi.Pointer)>>('g_closure_invoke');
   late final _g_closure_invoke = _g_closure_invokePtr.asFunction<
       void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-          ffi.Pointer<GValue>, gpointer)>();
+          ffi.Pointer<GValue>, ffi.Pointer)>();
 
   void g_cclosure_marshal_generic(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_gvalue,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_generic(
       closure,
@@ -39239,19 +39317,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_generic');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_generic');
   late final _g_cclosure_marshal_generic =
       _g_cclosure_marshal_genericPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_generic_va(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args_list,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -39271,23 +39349,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_generic_va');
   late final _g_cclosure_marshal_generic_va =
       _g_cclosure_marshal_generic_vaPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__VOID(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__VOID(
       closure,
@@ -39306,19 +39390,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__VOID');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__VOID');
   late final _g_cclosure_marshal_VOID__VOID =
       _g_cclosure_marshal_VOID__VOIDPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__VOIDv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -39338,23 +39422,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__VOIDv');
   late final _g_cclosure_marshal_VOID__VOIDv =
       _g_cclosure_marshal_VOID__VOIDvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__BOOLEAN(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__BOOLEAN(
       closure,
@@ -39373,19 +39463,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__BOOLEAN');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__BOOLEAN');
   late final _g_cclosure_marshal_VOID__BOOLEAN =
       _g_cclosure_marshal_VOID__BOOLEANPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__BOOLEANv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -39405,23 +39495,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__BOOLEANv');
   late final _g_cclosure_marshal_VOID__BOOLEANv =
       _g_cclosure_marshal_VOID__BOOLEANvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__CHAR(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__CHAR(
       closure,
@@ -39440,19 +39536,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__CHAR');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__CHAR');
   late final _g_cclosure_marshal_VOID__CHAR =
       _g_cclosure_marshal_VOID__CHARPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__CHARv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -39472,23 +39568,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__CHARv');
   late final _g_cclosure_marshal_VOID__CHARv =
       _g_cclosure_marshal_VOID__CHARvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__UCHAR(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__UCHAR(
       closure,
@@ -39507,19 +39609,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__UCHAR');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__UCHAR');
   late final _g_cclosure_marshal_VOID__UCHAR =
       _g_cclosure_marshal_VOID__UCHARPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__UCHARv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -39539,23 +39641,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__UCHARv');
   late final _g_cclosure_marshal_VOID__UCHARv =
       _g_cclosure_marshal_VOID__UCHARvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__INT(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__INT(
       closure,
@@ -39574,19 +39682,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__INT');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__INT');
   late final _g_cclosure_marshal_VOID__INT =
       _g_cclosure_marshal_VOID__INTPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__INTv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -39606,23 +39714,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__INTv');
   late final _g_cclosure_marshal_VOID__INTv =
       _g_cclosure_marshal_VOID__INTvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__UINT(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__UINT(
       closure,
@@ -39641,19 +39755,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__UINT');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__UINT');
   late final _g_cclosure_marshal_VOID__UINT =
       _g_cclosure_marshal_VOID__UINTPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__UINTv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -39673,23 +39787,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__UINTv');
   late final _g_cclosure_marshal_VOID__UINTv =
       _g_cclosure_marshal_VOID__UINTvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__LONG(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__LONG(
       closure,
@@ -39708,19 +39828,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__LONG');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__LONG');
   late final _g_cclosure_marshal_VOID__LONG =
       _g_cclosure_marshal_VOID__LONGPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__LONGv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -39740,23 +39860,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__LONGv');
   late final _g_cclosure_marshal_VOID__LONGv =
       _g_cclosure_marshal_VOID__LONGvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__ULONG(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__ULONG(
       closure,
@@ -39775,19 +39901,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__ULONG');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__ULONG');
   late final _g_cclosure_marshal_VOID__ULONG =
       _g_cclosure_marshal_VOID__ULONGPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__ULONGv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -39807,23 +39933,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__ULONGv');
   late final _g_cclosure_marshal_VOID__ULONGv =
       _g_cclosure_marshal_VOID__ULONGvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__ENUM(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__ENUM(
       closure,
@@ -39842,19 +39974,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__ENUM');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__ENUM');
   late final _g_cclosure_marshal_VOID__ENUM =
       _g_cclosure_marshal_VOID__ENUMPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__ENUMv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -39874,23 +40006,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__ENUMv');
   late final _g_cclosure_marshal_VOID__ENUMv =
       _g_cclosure_marshal_VOID__ENUMvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__FLAGS(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__FLAGS(
       closure,
@@ -39909,19 +40047,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__FLAGS');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__FLAGS');
   late final _g_cclosure_marshal_VOID__FLAGS =
       _g_cclosure_marshal_VOID__FLAGSPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__FLAGSv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -39941,23 +40079,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__FLAGSv');
   late final _g_cclosure_marshal_VOID__FLAGSv =
       _g_cclosure_marshal_VOID__FLAGSvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__FLOAT(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__FLOAT(
       closure,
@@ -39976,19 +40120,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__FLOAT');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__FLOAT');
   late final _g_cclosure_marshal_VOID__FLOAT =
       _g_cclosure_marshal_VOID__FLOATPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__FLOATv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -40008,23 +40152,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__FLOATv');
   late final _g_cclosure_marshal_VOID__FLOATv =
       _g_cclosure_marshal_VOID__FLOATvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__DOUBLE(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__DOUBLE(
       closure,
@@ -40043,19 +40193,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__DOUBLE');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__DOUBLE');
   late final _g_cclosure_marshal_VOID__DOUBLE =
       _g_cclosure_marshal_VOID__DOUBLEPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__DOUBLEv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -40075,23 +40225,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__DOUBLEv');
   late final _g_cclosure_marshal_VOID__DOUBLEv =
       _g_cclosure_marshal_VOID__DOUBLEvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__STRING(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__STRING(
       closure,
@@ -40110,19 +40266,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__STRING');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__STRING');
   late final _g_cclosure_marshal_VOID__STRING =
       _g_cclosure_marshal_VOID__STRINGPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__STRINGv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -40142,23 +40298,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__STRINGv');
   late final _g_cclosure_marshal_VOID__STRINGv =
       _g_cclosure_marshal_VOID__STRINGvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__PARAM(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__PARAM(
       closure,
@@ -40177,19 +40339,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__PARAM');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__PARAM');
   late final _g_cclosure_marshal_VOID__PARAM =
       _g_cclosure_marshal_VOID__PARAMPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__PARAMv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -40209,23 +40371,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__PARAMv');
   late final _g_cclosure_marshal_VOID__PARAMv =
       _g_cclosure_marshal_VOID__PARAMvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__BOXED(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__BOXED(
       closure,
@@ -40244,19 +40412,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__BOXED');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__BOXED');
   late final _g_cclosure_marshal_VOID__BOXED =
       _g_cclosure_marshal_VOID__BOXEDPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__BOXEDv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -40276,23 +40444,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__BOXEDv');
   late final _g_cclosure_marshal_VOID__BOXEDv =
       _g_cclosure_marshal_VOID__BOXEDvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__POINTER(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__POINTER(
       closure,
@@ -40311,19 +40485,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__POINTER');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__POINTER');
   late final _g_cclosure_marshal_VOID__POINTER =
       _g_cclosure_marshal_VOID__POINTERPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__POINTERv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -40343,23 +40517,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__POINTERv');
   late final _g_cclosure_marshal_VOID__POINTERv =
       _g_cclosure_marshal_VOID__POINTERvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__OBJECT(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__OBJECT(
       closure,
@@ -40378,19 +40558,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__OBJECT');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__OBJECT');
   late final _g_cclosure_marshal_VOID__OBJECT =
       _g_cclosure_marshal_VOID__OBJECTPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__OBJECTv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -40410,23 +40590,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__OBJECTv');
   late final _g_cclosure_marshal_VOID__OBJECTv =
       _g_cclosure_marshal_VOID__OBJECTvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__VARIANT(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__VARIANT(
       closure,
@@ -40445,19 +40631,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__VARIANT');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__VARIANT');
   late final _g_cclosure_marshal_VOID__VARIANT =
       _g_cclosure_marshal_VOID__VARIANTPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__VARIANTv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -40477,23 +40663,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__VARIANTv');
   late final _g_cclosure_marshal_VOID__VARIANTv =
       _g_cclosure_marshal_VOID__VARIANTvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_VOID__UINT_POINTER(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_VOID__UINT_POINTER(
       closure,
@@ -40512,19 +40704,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_VOID__UINT_POINTER');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_VOID__UINT_POINTER');
   late final _g_cclosure_marshal_VOID__UINT_POINTER =
       _g_cclosure_marshal_VOID__UINT_POINTERPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_VOID__UINT_POINTERv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -40544,23 +40736,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__UINT_POINTERv');
   late final _g_cclosure_marshal_VOID__UINT_POINTERv =
       _g_cclosure_marshal_VOID__UINT_POINTERvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_BOOLEAN__FLAGS(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_BOOLEAN__FLAGS(
       closure,
@@ -40579,19 +40777,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_BOOLEAN__FLAGS');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_BOOLEAN__FLAGS');
   late final _g_cclosure_marshal_BOOLEAN__FLAGS =
       _g_cclosure_marshal_BOOLEAN__FLAGSPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_BOOLEAN__FLAGSv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -40611,23 +40809,29 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_BOOLEAN__FLAGSv');
   late final _g_cclosure_marshal_BOOLEAN__FLAGSv =
       _g_cclosure_marshal_BOOLEAN__FLAGSvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_STRING__OBJECT_POINTER(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_STRING__OBJECT_POINTER(
       closure,
@@ -40646,19 +40850,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_STRING__OBJECT_POINTER');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_STRING__OBJECT_POINTER');
   late final _g_cclosure_marshal_STRING__OBJECT_POINTER =
       _g_cclosure_marshal_STRING__OBJECT_POINTERPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_STRING__OBJECT_POINTERv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -40678,24 +40882,30 @@ class GStreamer {
               ffi.Void Function(
                   ffi.Pointer<GClosure>,
                   ffi.Pointer<GValue>,
-                  gpointer,
+                  ffi.Pointer,
                   ffi.Pointer<__va_list_tag>,
-                  gpointer,
+                  ffi.Pointer,
                   ffi.Int,
                   ffi.Pointer<GType>)>>(
       'g_cclosure_marshal_STRING__OBJECT_POINTERv');
   late final _g_cclosure_marshal_STRING__OBJECT_POINTERv =
       _g_cclosure_marshal_STRING__OBJECT_POINTERvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   void g_cclosure_marshal_BOOLEAN__BOXED_BOXED(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     int n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data,
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data,
   ) {
     return _g_cclosure_marshal_BOOLEAN__BOXED_BOXED(
       closure,
@@ -40714,19 +40924,19 @@ class GStreamer {
               ffi.Pointer<GValue>,
               guint,
               ffi.Pointer<GValue>,
-              gpointer,
-              gpointer)>>('g_cclosure_marshal_BOOLEAN__BOXED_BOXED');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_cclosure_marshal_BOOLEAN__BOXED_BOXED');
   late final _g_cclosure_marshal_BOOLEAN__BOXED_BOXED =
       _g_cclosure_marshal_BOOLEAN__BOXED_BOXEDPtr.asFunction<
           void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, int,
-              ffi.Pointer<GValue>, gpointer, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer, ffi.Pointer)>();
 
   void g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
   ) {
@@ -40746,15 +40956,21 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<__va_list_tag>,
-              gpointer,
+              ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv');
   late final _g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv =
       _g_cclosure_marshal_BOOLEAN__BOXED_BOXEDvPtr.asFunction<
-          void Function(ffi.Pointer<GClosure>, ffi.Pointer<GValue>, gpointer,
-              ffi.Pointer<__va_list_tag>, gpointer, int, ffi.Pointer<GType>)>();
+          void Function(
+              ffi.Pointer<GClosure>,
+              ffi.Pointer<GValue>,
+              ffi.Pointer,
+              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer,
+              int,
+              ffi.Pointer<GType>)>();
 
   int g_signal_newv(
     ffi.Pointer<ffi.Char> signal_name,
@@ -40762,7 +40978,7 @@ class GStreamer {
     int signal_flags,
     ffi.Pointer<GClosure> class_closure,
     GSignalAccumulator accumulator,
-    gpointer accu_data,
+    ffi.Pointer accu_data,
     GSignalCMarshaller c_marshaller,
     int return_type,
     int n_params,
@@ -40790,7 +41006,7 @@ class GStreamer {
               ffi.Int32,
               ffi.Pointer<GClosure>,
               GSignalAccumulator,
-              gpointer,
+              ffi.Pointer,
               GSignalCMarshaller,
               GType,
               guint,
@@ -40802,7 +41018,7 @@ class GStreamer {
           int,
           ffi.Pointer<GClosure>,
           GSignalAccumulator,
-          gpointer,
+          ffi.Pointer,
           GSignalCMarshaller,
           int,
           int,
@@ -40814,7 +41030,7 @@ class GStreamer {
     int signal_flags,
     ffi.Pointer<GClosure> class_closure,
     GSignalAccumulator accumulator,
-    gpointer accu_data,
+    ffi.Pointer accu_data,
     GSignalCMarshaller c_marshaller,
     int return_type,
     int n_params,
@@ -40842,7 +41058,7 @@ class GStreamer {
               ffi.Int32,
               ffi.Pointer<GClosure>,
               GSignalAccumulator,
-              gpointer,
+              ffi.Pointer,
               GSignalCMarshaller,
               GType,
               guint,
@@ -40854,7 +41070,7 @@ class GStreamer {
           int,
           ffi.Pointer<GClosure>,
           GSignalAccumulator,
-          gpointer,
+          ffi.Pointer,
           GSignalCMarshaller,
           int,
           int,
@@ -40866,7 +41082,7 @@ class GStreamer {
     int signal_flags,
     int class_offset,
     GSignalAccumulator accumulator,
-    gpointer accu_data,
+    ffi.Pointer accu_data,
     GSignalCMarshaller c_marshaller,
     int return_type,
     int n_params,
@@ -40892,13 +41108,13 @@ class GStreamer {
               ffi.Int32,
               guint,
               GSignalAccumulator,
-              gpointer,
+              ffi.Pointer,
               GSignalCMarshaller,
               GType,
               guint)>>('g_signal_new');
   late final _g_signal_new = _g_signal_newPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, int, int, int, GSignalAccumulator,
-          gpointer, GSignalCMarshaller, int, int)>();
+          ffi.Pointer, GSignalCMarshaller, int, int)>();
 
   int g_signal_new_class_handler(
     ffi.Pointer<ffi.Char> signal_name,
@@ -40906,7 +41122,7 @@ class GStreamer {
     int signal_flags,
     GCallback class_handler,
     GSignalAccumulator accumulator,
-    gpointer accu_data,
+    ffi.Pointer accu_data,
     GSignalCMarshaller c_marshaller,
     int return_type,
     int n_params,
@@ -40932,14 +41148,14 @@ class GStreamer {
               ffi.Int32,
               GCallback,
               GSignalAccumulator,
-              gpointer,
+              ffi.Pointer,
               GSignalCMarshaller,
               GType,
               guint)>>('g_signal_new_class_handler');
   late final _g_signal_new_class_handler =
       _g_signal_new_class_handlerPtr.asFunction<
           int Function(ffi.Pointer<ffi.Char>, int, int, GCallback,
-              GSignalAccumulator, gpointer, GSignalCMarshaller, int, int)>();
+              GSignalAccumulator, ffi.Pointer, GSignalCMarshaller, int, int)>();
 
   void g_signal_set_va_marshaller(
     int signal_id,
@@ -40982,7 +41198,7 @@ class GStreamer {
       void Function(ffi.Pointer<GValue>, int, int, ffi.Pointer<GValue>)>();
 
   void g_signal_emit_valist(
-    gpointer instance,
+    ffi.Pointer instance,
     int signal_id,
     int detail,
     ffi.Pointer<__va_list_tag> var_args,
@@ -40997,13 +41213,13 @@ class GStreamer {
 
   late final _g_signal_emit_valistPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(gpointer, guint, GQuark,
+          ffi.Void Function(ffi.Pointer, guint, GQuark,
               ffi.Pointer<__va_list_tag>)>>('g_signal_emit_valist');
   late final _g_signal_emit_valist = _g_signal_emit_valistPtr.asFunction<
-      void Function(gpointer, int, int, ffi.Pointer<__va_list_tag>)>();
+      void Function(ffi.Pointer, int, int, ffi.Pointer<__va_list_tag>)>();
 
   void g_signal_emit(
-    gpointer instance,
+    ffi.Pointer instance,
     int signal_id,
     int detail,
   ) {
@@ -41014,14 +41230,14 @@ class GStreamer {
     );
   }
 
-  late final _g_signal_emitPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer, guint, GQuark)>>(
-          'g_signal_emit');
+  late final _g_signal_emitPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer, guint, GQuark)>>(
+      'g_signal_emit');
   late final _g_signal_emit =
-      _g_signal_emitPtr.asFunction<void Function(gpointer, int, int)>();
+      _g_signal_emitPtr.asFunction<void Function(ffi.Pointer, int, int)>();
 
   void g_signal_emit_by_name(
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<ffi.Char> detailed_signal,
   ) {
     return _g_signal_emit_by_name(
@@ -41031,11 +41247,11 @@ class GStreamer {
   }
 
   late final _g_signal_emit_by_namePtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Void Function(gpointer, ffi.Pointer<ffi.Char>)>>(
-      'g_signal_emit_by_name');
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer, ffi.Pointer<ffi.Char>)>>('g_signal_emit_by_name');
   late final _g_signal_emit_by_name = _g_signal_emit_by_namePtr
-      .asFunction<void Function(gpointer, ffi.Pointer<ffi.Char>)>();
+      .asFunction<void Function(ffi.Pointer, ffi.Pointer<ffi.Char>)>();
 
   int g_signal_lookup(
     ffi.Pointer<ffi.Char> name,
@@ -41140,7 +41356,7 @@ class GStreamer {
           ffi.Pointer<GQuark>, int)>();
 
   ffi.Pointer<GSignalInvocationHint> g_signal_get_invocation_hint(
-    gpointer instance,
+    ffi.Pointer instance,
   ) {
     return _g_signal_get_invocation_hint(
       instance,
@@ -41150,12 +41366,12 @@ class GStreamer {
   late final _g_signal_get_invocation_hintPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GSignalInvocationHint> Function(
-              gpointer)>>('g_signal_get_invocation_hint');
+              ffi.Pointer)>>('g_signal_get_invocation_hint');
   late final _g_signal_get_invocation_hint = _g_signal_get_invocation_hintPtr
-      .asFunction<ffi.Pointer<GSignalInvocationHint> Function(gpointer)>();
+      .asFunction<ffi.Pointer<GSignalInvocationHint> Function(ffi.Pointer)>();
 
   void g_signal_stop_emission(
-    gpointer instance,
+    ffi.Pointer instance,
     int signal_id,
     int detail,
   ) {
@@ -41166,14 +41382,14 @@ class GStreamer {
     );
   }
 
-  late final _g_signal_stop_emissionPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer, guint, GQuark)>>(
-          'g_signal_stop_emission');
+  late final _g_signal_stop_emissionPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer, guint, GQuark)>>(
+      'g_signal_stop_emission');
   late final _g_signal_stop_emission = _g_signal_stop_emissionPtr
-      .asFunction<void Function(gpointer, int, int)>();
+      .asFunction<void Function(ffi.Pointer, int, int)>();
 
   void g_signal_stop_emission_by_name(
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<ffi.Char> detailed_signal,
   ) {
     return _g_signal_stop_emission_by_name(
@@ -41183,18 +41399,18 @@ class GStreamer {
   }
 
   late final _g_signal_stop_emission_by_namePtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Void Function(gpointer, ffi.Pointer<ffi.Char>)>>(
-      'g_signal_stop_emission_by_name');
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer,
+              ffi.Pointer<ffi.Char>)>>('g_signal_stop_emission_by_name');
   late final _g_signal_stop_emission_by_name =
       _g_signal_stop_emission_by_namePtr
-          .asFunction<void Function(gpointer, ffi.Pointer<ffi.Char>)>();
+          .asFunction<void Function(ffi.Pointer, ffi.Pointer<ffi.Char>)>();
 
   int g_signal_add_emission_hook(
     int signal_id,
     int detail,
     GSignalEmissionHook hook_func,
-    gpointer hook_data,
+    ffi.Pointer hook_data,
     GDestroyNotify data_destroy,
   ) {
     return _g_signal_add_emission_hook(
@@ -41208,12 +41424,12 @@ class GStreamer {
 
   late final _g_signal_add_emission_hookPtr = _lookup<
       ffi.NativeFunction<
-          gulong Function(guint, GQuark, GSignalEmissionHook, gpointer,
+          gulong Function(guint, GQuark, GSignalEmissionHook, ffi.Pointer,
               GDestroyNotify)>>('g_signal_add_emission_hook');
   late final _g_signal_add_emission_hook =
       _g_signal_add_emission_hookPtr.asFunction<
           int Function(
-              int, int, GSignalEmissionHook, gpointer, GDestroyNotify)>();
+              int, int, GSignalEmissionHook, ffi.Pointer, GDestroyNotify)>();
 
   void g_signal_remove_emission_hook(
     int signal_id,
@@ -41232,7 +41448,7 @@ class GStreamer {
       _g_signal_remove_emission_hookPtr.asFunction<void Function(int, int)>();
 
   int g_signal_has_handler_pending(
-    gpointer instance,
+    ffi.Pointer instance,
     int signal_id,
     int detail,
     int may_be_blocked,
@@ -41247,13 +41463,13 @@ class GStreamer {
 
   late final _g_signal_has_handler_pendingPtr = _lookup<
       ffi.NativeFunction<
-          gboolean Function(gpointer, guint, GQuark,
+          gboolean Function(ffi.Pointer, guint, GQuark,
               gboolean)>>('g_signal_has_handler_pending');
   late final _g_signal_has_handler_pending = _g_signal_has_handler_pendingPtr
-      .asFunction<int Function(gpointer, int, int, int)>();
+      .asFunction<int Function(ffi.Pointer, int, int, int)>();
 
   int g_signal_connect_closure_by_id(
-    gpointer instance,
+    ffi.Pointer instance,
     int signal_id,
     int detail,
     ffi.Pointer<GClosure> closure,
@@ -41270,14 +41486,14 @@ class GStreamer {
 
   late final _g_signal_connect_closure_by_idPtr = _lookup<
       ffi.NativeFunction<
-          gulong Function(gpointer, guint, GQuark, ffi.Pointer<GClosure>,
+          gulong Function(ffi.Pointer, guint, GQuark, ffi.Pointer<GClosure>,
               gboolean)>>('g_signal_connect_closure_by_id');
   late final _g_signal_connect_closure_by_id =
       _g_signal_connect_closure_by_idPtr.asFunction<
-          int Function(gpointer, int, int, ffi.Pointer<GClosure>, int)>();
+          int Function(ffi.Pointer, int, int, ffi.Pointer<GClosure>, int)>();
 
   int g_signal_connect_closure(
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<ffi.Char> detailed_signal,
     ffi.Pointer<GClosure> closure,
     int after,
@@ -41292,18 +41508,18 @@ class GStreamer {
 
   late final _g_signal_connect_closurePtr = _lookup<
       ffi.NativeFunction<
-          gulong Function(gpointer, ffi.Pointer<ffi.Char>,
+          gulong Function(ffi.Pointer, ffi.Pointer<ffi.Char>,
               ffi.Pointer<GClosure>, gboolean)>>('g_signal_connect_closure');
   late final _g_signal_connect_closure =
       _g_signal_connect_closurePtr.asFunction<
-          int Function(
-              gpointer, ffi.Pointer<ffi.Char>, ffi.Pointer<GClosure>, int)>();
+          int Function(ffi.Pointer, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<GClosure>, int)>();
 
   int g_signal_connect_data(
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<ffi.Char> detailed_signal,
     GCallback c_handler,
-    gpointer data,
+    ffi.Pointer data,
     GClosureNotify destroy_data,
     int connect_flags,
   ) {
@@ -41319,14 +41535,19 @@ class GStreamer {
 
   late final _g_signal_connect_dataPtr = _lookup<
       ffi.NativeFunction<
-          gulong Function(gpointer, ffi.Pointer<ffi.Char>, GCallback, gpointer,
-              GClosureNotify, ffi.Int32)>>('g_signal_connect_data');
+          gulong Function(
+              ffi.Pointer,
+              ffi.Pointer<ffi.Char>,
+              GCallback,
+              ffi.Pointer,
+              GClosureNotify,
+              ffi.Int32)>>('g_signal_connect_data');
   late final _g_signal_connect_data = _g_signal_connect_dataPtr.asFunction<
-      int Function(gpointer, ffi.Pointer<ffi.Char>, GCallback, gpointer,
+      int Function(ffi.Pointer, ffi.Pointer<ffi.Char>, GCallback, ffi.Pointer,
           GClosureNotify, int)>();
 
   void g_signal_handler_block(
-    gpointer instance,
+    ffi.Pointer instance,
     int handler_id,
   ) {
     return _g_signal_handler_block(
@@ -41336,13 +41557,13 @@ class GStreamer {
   }
 
   late final _g_signal_handler_blockPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer, gulong)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer, gulong)>>(
           'g_signal_handler_block');
   late final _g_signal_handler_block =
-      _g_signal_handler_blockPtr.asFunction<void Function(gpointer, int)>();
+      _g_signal_handler_blockPtr.asFunction<void Function(ffi.Pointer, int)>();
 
   void g_signal_handler_unblock(
-    gpointer instance,
+    ffi.Pointer instance,
     int handler_id,
   ) {
     return _g_signal_handler_unblock(
@@ -41352,13 +41573,13 @@ class GStreamer {
   }
 
   late final _g_signal_handler_unblockPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer, gulong)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer, gulong)>>(
           'g_signal_handler_unblock');
-  late final _g_signal_handler_unblock =
-      _g_signal_handler_unblockPtr.asFunction<void Function(gpointer, int)>();
+  late final _g_signal_handler_unblock = _g_signal_handler_unblockPtr
+      .asFunction<void Function(ffi.Pointer, int)>();
 
   void g_signal_handler_disconnect(
-    gpointer instance,
+    ffi.Pointer instance,
     int handler_id,
   ) {
     return _g_signal_handler_disconnect(
@@ -41368,13 +41589,13 @@ class GStreamer {
   }
 
   late final _g_signal_handler_disconnectPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer, gulong)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer, gulong)>>(
           'g_signal_handler_disconnect');
   late final _g_signal_handler_disconnect = _g_signal_handler_disconnectPtr
-      .asFunction<void Function(gpointer, int)>();
+      .asFunction<void Function(ffi.Pointer, int)>();
 
   int g_signal_handler_is_connected(
-    gpointer instance,
+    ffi.Pointer instance,
     int handler_id,
   ) {
     return _g_signal_handler_is_connected(
@@ -41384,19 +41605,19 @@ class GStreamer {
   }
 
   late final _g_signal_handler_is_connectedPtr =
-      _lookup<ffi.NativeFunction<gboolean Function(gpointer, gulong)>>(
+      _lookup<ffi.NativeFunction<gboolean Function(ffi.Pointer, gulong)>>(
           'g_signal_handler_is_connected');
   late final _g_signal_handler_is_connected = _g_signal_handler_is_connectedPtr
-      .asFunction<int Function(gpointer, int)>();
+      .asFunction<int Function(ffi.Pointer, int)>();
 
   int g_signal_handler_find(
-    gpointer instance,
+    ffi.Pointer instance,
     int mask,
     int signal_id,
     int detail,
     ffi.Pointer<GClosure> closure,
-    gpointer func,
-    gpointer data,
+    ffi.Pointer func,
+    ffi.Pointer data,
   ) {
     return _g_signal_handler_find(
       instance,
@@ -41412,25 +41633,25 @@ class GStreamer {
   late final _g_signal_handler_findPtr = _lookup<
       ffi.NativeFunction<
           gulong Function(
-              gpointer,
+              ffi.Pointer,
               ffi.Int32,
               guint,
               GQuark,
               ffi.Pointer<GClosure>,
-              gpointer,
-              gpointer)>>('g_signal_handler_find');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_signal_handler_find');
   late final _g_signal_handler_find = _g_signal_handler_findPtr.asFunction<
-      int Function(gpointer, int, int, int, ffi.Pointer<GClosure>, gpointer,
-          gpointer)>();
+      int Function(ffi.Pointer, int, int, int, ffi.Pointer<GClosure>,
+          ffi.Pointer, ffi.Pointer)>();
 
   int g_signal_handlers_block_matched(
-    gpointer instance,
+    ffi.Pointer instance,
     int mask,
     int signal_id,
     int detail,
     ffi.Pointer<GClosure> closure,
-    gpointer func,
-    gpointer data,
+    ffi.Pointer func,
+    ffi.Pointer data,
   ) {
     return _g_signal_handlers_block_matched(
       instance,
@@ -41446,26 +41667,26 @@ class GStreamer {
   late final _g_signal_handlers_block_matchedPtr = _lookup<
       ffi.NativeFunction<
           guint Function(
-              gpointer,
+              ffi.Pointer,
               ffi.Int32,
               guint,
               GQuark,
               ffi.Pointer<GClosure>,
-              gpointer,
-              gpointer)>>('g_signal_handlers_block_matched');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_signal_handlers_block_matched');
   late final _g_signal_handlers_block_matched =
       _g_signal_handlers_block_matchedPtr.asFunction<
-          int Function(gpointer, int, int, int, ffi.Pointer<GClosure>, gpointer,
-              gpointer)>();
+          int Function(ffi.Pointer, int, int, int, ffi.Pointer<GClosure>,
+              ffi.Pointer, ffi.Pointer)>();
 
   int g_signal_handlers_unblock_matched(
-    gpointer instance,
+    ffi.Pointer instance,
     int mask,
     int signal_id,
     int detail,
     ffi.Pointer<GClosure> closure,
-    gpointer func,
-    gpointer data,
+    ffi.Pointer func,
+    ffi.Pointer data,
   ) {
     return _g_signal_handlers_unblock_matched(
       instance,
@@ -41481,26 +41702,26 @@ class GStreamer {
   late final _g_signal_handlers_unblock_matchedPtr = _lookup<
       ffi.NativeFunction<
           guint Function(
-              gpointer,
+              ffi.Pointer,
               ffi.Int32,
               guint,
               GQuark,
               ffi.Pointer<GClosure>,
-              gpointer,
-              gpointer)>>('g_signal_handlers_unblock_matched');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_signal_handlers_unblock_matched');
   late final _g_signal_handlers_unblock_matched =
       _g_signal_handlers_unblock_matchedPtr.asFunction<
-          int Function(gpointer, int, int, int, ffi.Pointer<GClosure>, gpointer,
-              gpointer)>();
+          int Function(ffi.Pointer, int, int, int, ffi.Pointer<GClosure>,
+              ffi.Pointer, ffi.Pointer)>();
 
   int g_signal_handlers_disconnect_matched(
-    gpointer instance,
+    ffi.Pointer instance,
     int mask,
     int signal_id,
     int detail,
     ffi.Pointer<GClosure> closure,
-    gpointer func,
-    gpointer data,
+    ffi.Pointer func,
+    ffi.Pointer data,
   ) {
     return _g_signal_handlers_disconnect_matched(
       instance,
@@ -41516,21 +41737,21 @@ class GStreamer {
   late final _g_signal_handlers_disconnect_matchedPtr = _lookup<
       ffi.NativeFunction<
           guint Function(
-              gpointer,
+              ffi.Pointer,
               ffi.Int32,
               guint,
               GQuark,
               ffi.Pointer<GClosure>,
-              gpointer,
-              gpointer)>>('g_signal_handlers_disconnect_matched');
+              ffi.Pointer,
+              ffi.Pointer)>>('g_signal_handlers_disconnect_matched');
   late final _g_signal_handlers_disconnect_matched =
       _g_signal_handlers_disconnect_matchedPtr.asFunction<
-          int Function(gpointer, int, int, int, ffi.Pointer<GClosure>, gpointer,
-              gpointer)>();
+          int Function(ffi.Pointer, int, int, int, ffi.Pointer<GClosure>,
+              ffi.Pointer, ffi.Pointer)>();
 
   void g_clear_signal_handler(
     ffi.Pointer<gulong> handler_id_ptr,
-    gpointer instance,
+    ffi.Pointer instance,
   ) {
     return _g_clear_signal_handler(
       handler_id_ptr,
@@ -41539,10 +41760,11 @@ class GStreamer {
   }
 
   late final _g_clear_signal_handlerPtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<gulong>, gpointer)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<gulong>, ffi.Pointer)>>(
       'g_clear_signal_handler');
   late final _g_clear_signal_handler = _g_clear_signal_handlerPtr
-      .asFunction<void Function(ffi.Pointer<gulong>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<gulong>, ffi.Pointer)>();
 
   void g_signal_override_class_closure(
     int signal_id,
@@ -41603,7 +41825,7 @@ class GStreamer {
           void Function(ffi.Pointer<GValue>, ffi.Pointer<GValue>)>();
 
   void g_signal_chain_from_overridden_handler(
-    gpointer instance,
+    ffi.Pointer instance,
   ) {
     return _g_signal_chain_from_overridden_handler(
       instance,
@@ -41611,17 +41833,17 @@ class GStreamer {
   }
 
   late final _g_signal_chain_from_overridden_handlerPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
           'g_signal_chain_from_overridden_handler');
   late final _g_signal_chain_from_overridden_handler =
       _g_signal_chain_from_overridden_handlerPtr
-          .asFunction<void Function(gpointer)>();
+          .asFunction<void Function(ffi.Pointer)>();
 
   int g_signal_accumulator_true_handled(
     ffi.Pointer<GSignalInvocationHint> ihint,
     ffi.Pointer<GValue> return_accu,
     ffi.Pointer<GValue> handler_return,
-    gpointer dummy,
+    ffi.Pointer dummy,
   ) {
     return _g_signal_accumulator_true_handled(
       ihint,
@@ -41637,17 +41859,17 @@ class GStreamer {
               ffi.Pointer<GSignalInvocationHint>,
               ffi.Pointer<GValue>,
               ffi.Pointer<GValue>,
-              gpointer)>>('g_signal_accumulator_true_handled');
+              ffi.Pointer)>>('g_signal_accumulator_true_handled');
   late final _g_signal_accumulator_true_handled =
       _g_signal_accumulator_true_handledPtr.asFunction<
           int Function(ffi.Pointer<GSignalInvocationHint>, ffi.Pointer<GValue>,
-              ffi.Pointer<GValue>, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer)>();
 
   int g_signal_accumulator_first_wins(
     ffi.Pointer<GSignalInvocationHint> ihint,
     ffi.Pointer<GValue> return_accu,
     ffi.Pointer<GValue> handler_return,
-    gpointer dummy,
+    ffi.Pointer dummy,
   ) {
     return _g_signal_accumulator_first_wins(
       ihint,
@@ -41663,14 +41885,14 @@ class GStreamer {
               ffi.Pointer<GSignalInvocationHint>,
               ffi.Pointer<GValue>,
               ffi.Pointer<GValue>,
-              gpointer)>>('g_signal_accumulator_first_wins');
+              ffi.Pointer)>>('g_signal_accumulator_first_wins');
   late final _g_signal_accumulator_first_wins =
       _g_signal_accumulator_first_winsPtr.asFunction<
           int Function(ffi.Pointer<GSignalInvocationHint>, ffi.Pointer<GValue>,
-              ffi.Pointer<GValue>, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer)>();
 
   void g_signal_handlers_destroy(
-    gpointer instance,
+    ffi.Pointer instance,
   ) {
     return _g_signal_handlers_destroy(
       instance,
@@ -41678,10 +41900,10 @@ class GStreamer {
   }
 
   late final _g_signal_handlers_destroyPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
           'g_signal_handlers_destroy');
   late final _g_signal_handlers_destroy =
-      _g_signal_handlers_destroyPtr.asFunction<void Function(gpointer)>();
+      _g_signal_handlers_destroyPtr.asFunction<void Function(ffi.Pointer)>();
 
   void _g_signals_destroy(
     int itype,
@@ -42030,7 +42252,7 @@ class GStreamer {
   late final _g_variant_get_gtype =
       _g_variant_get_gtypePtr.asFunction<int Function()>();
 
-  gpointer g_boxed_copy(
+  ffi.Pointer g_boxed_copy(
     int boxed_type,
     gconstpointer src_boxed,
   ) {
@@ -42041,14 +42263,14 @@ class GStreamer {
   }
 
   late final _g_boxed_copyPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(GType, gconstpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(GType, gconstpointer)>>(
           'g_boxed_copy');
   late final _g_boxed_copy =
-      _g_boxed_copyPtr.asFunction<gpointer Function(int, gconstpointer)>();
+      _g_boxed_copyPtr.asFunction<ffi.Pointer Function(int, gconstpointer)>();
 
   void g_boxed_free(
     int boxed_type,
-    gpointer boxed,
+    ffi.Pointer boxed,
   ) {
     return _g_boxed_free(
       boxed_type,
@@ -42057,10 +42279,10 @@ class GStreamer {
   }
 
   late final _g_boxed_freePtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(GType, gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(GType, ffi.Pointer)>>(
           'g_boxed_free');
   late final _g_boxed_free =
-      _g_boxed_freePtr.asFunction<void Function(int, gpointer)>();
+      _g_boxed_freePtr.asFunction<void Function(int, ffi.Pointer)>();
 
   void g_value_set_boxed(
     ffi.Pointer<GValue> value,
@@ -42131,7 +42353,7 @@ class GStreamer {
       _g_value_set_boxed_take_ownershipPtr
           .asFunction<void Function(ffi.Pointer<GValue>, gconstpointer)>();
 
-  gpointer g_value_get_boxed(
+  ffi.Pointer g_value_get_boxed(
     ffi.Pointer<GValue> value,
   ) {
     return _g_value_get_boxed(
@@ -42140,12 +42362,12 @@ class GStreamer {
   }
 
   late final _g_value_get_boxedPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GValue>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GValue>)>>(
           'g_value_get_boxed');
   late final _g_value_get_boxed = _g_value_get_boxedPtr
-      .asFunction<gpointer Function(ffi.Pointer<GValue>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GValue>)>();
 
-  gpointer g_value_dup_boxed(
+  ffi.Pointer g_value_dup_boxed(
     ffi.Pointer<GValue> value,
   ) {
     return _g_value_dup_boxed(
@@ -42154,10 +42376,10 @@ class GStreamer {
   }
 
   late final _g_value_dup_boxedPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GValue>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GValue>)>>(
           'g_value_dup_boxed');
   late final _g_value_dup_boxed = _g_value_dup_boxedPtr
-      .asFunction<gpointer Function(ffi.Pointer<GValue>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GValue>)>();
 
   int g_boxed_type_register_static(
     ffi.Pointer<ffi.Char> name,
@@ -42323,7 +42545,7 @@ class GStreamer {
               ffi.Pointer<ffi.Pointer<GParamSpec>>)>();
 
   void g_object_interface_install_property(
-    gpointer g_iface,
+    ffi.Pointer g_iface,
     ffi.Pointer<GParamSpec> pspec,
   ) {
     return _g_object_interface_install_property(
@@ -42334,14 +42556,14 @@ class GStreamer {
 
   late final _g_object_interface_install_propertyPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(gpointer,
+          ffi.Void Function(ffi.Pointer,
               ffi.Pointer<GParamSpec>)>>('g_object_interface_install_property');
   late final _g_object_interface_install_property =
       _g_object_interface_install_propertyPtr
-          .asFunction<void Function(gpointer, ffi.Pointer<GParamSpec>)>();
+          .asFunction<void Function(ffi.Pointer, ffi.Pointer<GParamSpec>)>();
 
   ffi.Pointer<GParamSpec> g_object_interface_find_property(
-    gpointer g_iface,
+    ffi.Pointer g_iface,
     ffi.Pointer<ffi.Char> property_name,
   ) {
     return _g_object_interface_find_property(
@@ -42352,14 +42574,15 @@ class GStreamer {
 
   late final _g_object_interface_find_propertyPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GParamSpec> Function(gpointer,
+          ffi.Pointer<GParamSpec> Function(ffi.Pointer,
               ffi.Pointer<ffi.Char>)>>('g_object_interface_find_property');
   late final _g_object_interface_find_property =
       _g_object_interface_find_propertyPtr.asFunction<
-          ffi.Pointer<GParamSpec> Function(gpointer, ffi.Pointer<ffi.Char>)>();
+          ffi.Pointer<GParamSpec> Function(
+              ffi.Pointer, ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<ffi.Pointer<GParamSpec>> g_object_interface_list_properties(
-    gpointer g_iface,
+    ffi.Pointer g_iface,
     ffi.Pointer<guint> n_properties_p,
   ) {
     return _g_object_interface_list_properties(
@@ -42370,12 +42593,12 @@ class GStreamer {
 
   late final _g_object_interface_list_propertiesPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<ffi.Pointer<GParamSpec>> Function(gpointer,
+          ffi.Pointer<ffi.Pointer<GParamSpec>> Function(ffi.Pointer,
               ffi.Pointer<guint>)>>('g_object_interface_list_properties');
   late final _g_object_interface_list_properties =
       _g_object_interface_list_propertiesPtr.asFunction<
           ffi.Pointer<ffi.Pointer<GParamSpec>> Function(
-              gpointer, ffi.Pointer<guint>)>();
+              ffi.Pointer, ffi.Pointer<guint>)>();
 
   int g_object_get_type() {
     return _g_object_get_type();
@@ -42386,7 +42609,7 @@ class GStreamer {
   late final _g_object_get_type =
       _g_object_get_typePtr.asFunction<int Function()>();
 
-  gpointer g_object_new(
+  ffi.Pointer g_object_new(
     int object_type,
     ffi.Pointer<ffi.Char> first_property_name,
   ) {
@@ -42397,10 +42620,10 @@ class GStreamer {
   }
 
   late final _g_object_newPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(GType, ffi.Pointer<ffi.Char>)>>(
-      'g_object_new');
+      ffi.NativeFunction<
+          ffi.Pointer Function(GType, ffi.Pointer<ffi.Char>)>>('g_object_new');
   late final _g_object_new = _g_object_newPtr
-      .asFunction<gpointer Function(int, ffi.Pointer<ffi.Char>)>();
+      .asFunction<ffi.Pointer Function(int, ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<GObject> g_object_new_with_properties(
     int object_type,
@@ -42428,7 +42651,7 @@ class GStreamer {
           ffi.Pointer<GObject> Function(int, int,
               ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<GValue>)>();
 
-  gpointer g_object_newv(
+  ffi.Pointer g_object_newv(
     int object_type,
     int n_parameters,
     ffi.Pointer<GParameter> parameters,
@@ -42442,10 +42665,10 @@ class GStreamer {
 
   late final _g_object_newvPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(
+          ffi.Pointer Function(
               GType, guint, ffi.Pointer<GParameter>)>>('g_object_newv');
   late final _g_object_newv = _g_object_newvPtr
-      .asFunction<gpointer Function(int, int, ffi.Pointer<GParameter>)>();
+      .asFunction<ffi.Pointer Function(int, int, ffi.Pointer<GParameter>)>();
 
   ffi.Pointer<GObject> g_object_new_valist(
     int object_type,
@@ -42468,7 +42691,7 @@ class GStreamer {
           int, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
 
   void g_object_set(
-    gpointer object,
+    ffi.Pointer object,
     ffi.Pointer<ffi.Char> first_property_name,
   ) {
     return _g_object_set(
@@ -42479,12 +42702,13 @@ class GStreamer {
 
   late final _g_object_setPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(gpointer, ffi.Pointer<ffi.Char>)>>('g_object_set');
+          ffi.Void Function(
+              ffi.Pointer, ffi.Pointer<ffi.Char>)>>('g_object_set');
   late final _g_object_set = _g_object_setPtr
-      .asFunction<void Function(gpointer, ffi.Pointer<ffi.Char>)>();
+      .asFunction<void Function(ffi.Pointer, ffi.Pointer<ffi.Char>)>();
 
   void g_object_get(
-    gpointer object,
+    ffi.Pointer object,
     ffi.Pointer<ffi.Char> first_property_name,
   ) {
     return _g_object_get(
@@ -42495,12 +42719,13 @@ class GStreamer {
 
   late final _g_object_getPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(gpointer, ffi.Pointer<ffi.Char>)>>('g_object_get');
+          ffi.Void Function(
+              ffi.Pointer, ffi.Pointer<ffi.Char>)>>('g_object_get');
   late final _g_object_get = _g_object_getPtr
-      .asFunction<void Function(gpointer, ffi.Pointer<ffi.Char>)>();
+      .asFunction<void Function(ffi.Pointer, ffi.Pointer<ffi.Char>)>();
 
-  gpointer g_object_connect(
-    gpointer object,
+  ffi.Pointer g_object_connect(
+    ffi.Pointer object,
     ffi.Pointer<ffi.Char> signal_spec,
   ) {
     return _g_object_connect(
@@ -42510,14 +42735,14 @@ class GStreamer {
   }
 
   late final _g_object_connectPtr = _lookup<
-          ffi
-          .NativeFunction<gpointer Function(gpointer, ffi.Pointer<ffi.Char>)>>(
-      'g_object_connect');
+      ffi.NativeFunction<
+          ffi.Pointer Function(
+              ffi.Pointer, ffi.Pointer<ffi.Char>)>>('g_object_connect');
   late final _g_object_connect = _g_object_connectPtr
-      .asFunction<gpointer Function(gpointer, ffi.Pointer<ffi.Char>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer, ffi.Pointer<ffi.Char>)>();
 
   void g_object_disconnect(
-    gpointer object,
+    ffi.Pointer object,
     ffi.Pointer<ffi.Char> signal_spec,
   ) {
     return _g_object_disconnect(
@@ -42527,11 +42752,11 @@ class GStreamer {
   }
 
   late final _g_object_disconnectPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Void Function(gpointer, ffi.Pointer<ffi.Char>)>>(
-      'g_object_disconnect');
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer, ffi.Pointer<ffi.Char>)>>('g_object_disconnect');
   late final _g_object_disconnect = _g_object_disconnectPtr
-      .asFunction<void Function(gpointer, ffi.Pointer<ffi.Char>)>();
+      .asFunction<void Function(ffi.Pointer, ffi.Pointer<ffi.Char>)>();
 
   void g_object_setv(
     ffi.Pointer<GObject> object,
@@ -42727,7 +42952,7 @@ class GStreamer {
       .asFunction<void Function(ffi.Pointer<GObject>)>();
 
   int g_object_is_floating(
-    gpointer object,
+    ffi.Pointer object,
   ) {
     return _g_object_is_floating(
       object,
@@ -42735,13 +42960,13 @@ class GStreamer {
   }
 
   late final _g_object_is_floatingPtr =
-      _lookup<ffi.NativeFunction<gboolean Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<gboolean Function(ffi.Pointer)>>(
           'g_object_is_floating');
   late final _g_object_is_floating =
-      _g_object_is_floatingPtr.asFunction<int Function(gpointer)>();
+      _g_object_is_floatingPtr.asFunction<int Function(ffi.Pointer)>();
 
-  gpointer g_object_ref_sink(
-    gpointer object,
+  ffi.Pointer g_object_ref_sink(
+    ffi.Pointer object,
   ) {
     return _g_object_ref_sink(
       object,
@@ -42749,13 +42974,13 @@ class GStreamer {
   }
 
   late final _g_object_ref_sinkPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer)>>(
           'g_object_ref_sink');
   late final _g_object_ref_sink =
-      _g_object_ref_sinkPtr.asFunction<gpointer Function(gpointer)>();
+      _g_object_ref_sinkPtr.asFunction<ffi.Pointer Function(ffi.Pointer)>();
 
-  gpointer g_object_take_ref(
-    gpointer object,
+  ffi.Pointer g_object_take_ref(
+    ffi.Pointer object,
   ) {
     return _g_object_take_ref(
       object,
@@ -42763,13 +42988,13 @@ class GStreamer {
   }
 
   late final _g_object_take_refPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer)>>(
           'g_object_take_ref');
   late final _g_object_take_ref =
-      _g_object_take_refPtr.asFunction<gpointer Function(gpointer)>();
+      _g_object_take_refPtr.asFunction<ffi.Pointer Function(ffi.Pointer)>();
 
-  gpointer g_object_ref(
-    gpointer object,
+  ffi.Pointer g_object_ref(
+    ffi.Pointer object,
   ) {
     return _g_object_ref(
       object,
@@ -42777,12 +43002,13 @@ class GStreamer {
   }
 
   late final _g_object_refPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer)>>('g_object_ref');
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer)>>(
+          'g_object_ref');
   late final _g_object_ref =
-      _g_object_refPtr.asFunction<gpointer Function(gpointer)>();
+      _g_object_refPtr.asFunction<ffi.Pointer Function(ffi.Pointer)>();
 
   void g_object_unref(
-    gpointer object,
+    ffi.Pointer object,
   ) {
     return _g_object_unref(
       object,
@@ -42790,15 +43016,15 @@ class GStreamer {
   }
 
   late final _g_object_unrefPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
           'g_object_unref');
   late final _g_object_unref =
-      _g_object_unrefPtr.asFunction<void Function(gpointer)>();
+      _g_object_unrefPtr.asFunction<void Function(ffi.Pointer)>();
 
   void g_object_weak_ref(
     ffi.Pointer<GObject> object,
     GWeakNotify notify,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_object_weak_ref(
       object,
@@ -42810,14 +43036,14 @@ class GStreamer {
   late final _g_object_weak_refPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GObject>, GWeakNotify,
-              gpointer)>>('g_object_weak_ref');
-  late final _g_object_weak_ref = _g_object_weak_refPtr
-      .asFunction<void Function(ffi.Pointer<GObject>, GWeakNotify, gpointer)>();
+              ffi.Pointer)>>('g_object_weak_ref');
+  late final _g_object_weak_ref = _g_object_weak_refPtr.asFunction<
+      void Function(ffi.Pointer<GObject>, GWeakNotify, ffi.Pointer)>();
 
   void g_object_weak_unref(
     ffi.Pointer<GObject> object,
     GWeakNotify notify,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_object_weak_unref(
       object,
@@ -42829,13 +43055,13 @@ class GStreamer {
   late final _g_object_weak_unrefPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GObject>, GWeakNotify,
-              gpointer)>>('g_object_weak_unref');
-  late final _g_object_weak_unref = _g_object_weak_unrefPtr
-      .asFunction<void Function(ffi.Pointer<GObject>, GWeakNotify, gpointer)>();
+              ffi.Pointer)>>('g_object_weak_unref');
+  late final _g_object_weak_unref = _g_object_weak_unrefPtr.asFunction<
+      void Function(ffi.Pointer<GObject>, GWeakNotify, ffi.Pointer)>();
 
   void g_object_add_weak_pointer(
     ffi.Pointer<GObject> object,
-    ffi.Pointer<gpointer> weak_pointer_location,
+    ffi.Pointer<ffi.Pointer> weak_pointer_location,
   ) {
     return _g_object_add_weak_pointer(
       object,
@@ -42846,13 +43072,14 @@ class GStreamer {
   late final _g_object_add_weak_pointerPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GObject>,
-              ffi.Pointer<gpointer>)>>('g_object_add_weak_pointer');
-  late final _g_object_add_weak_pointer = _g_object_add_weak_pointerPtr
-      .asFunction<void Function(ffi.Pointer<GObject>, ffi.Pointer<gpointer>)>();
+              ffi.Pointer<ffi.Pointer>)>>('g_object_add_weak_pointer');
+  late final _g_object_add_weak_pointer =
+      _g_object_add_weak_pointerPtr.asFunction<
+          void Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Pointer>)>();
 
   void g_object_remove_weak_pointer(
     ffi.Pointer<GObject> object,
-    ffi.Pointer<gpointer> weak_pointer_location,
+    ffi.Pointer<ffi.Pointer> weak_pointer_location,
   ) {
     return _g_object_remove_weak_pointer(
       object,
@@ -42863,14 +43090,15 @@ class GStreamer {
   late final _g_object_remove_weak_pointerPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GObject>,
-              ffi.Pointer<gpointer>)>>('g_object_remove_weak_pointer');
-  late final _g_object_remove_weak_pointer = _g_object_remove_weak_pointerPtr
-      .asFunction<void Function(ffi.Pointer<GObject>, ffi.Pointer<gpointer>)>();
+              ffi.Pointer<ffi.Pointer>)>>('g_object_remove_weak_pointer');
+  late final _g_object_remove_weak_pointer =
+      _g_object_remove_weak_pointerPtr.asFunction<
+          void Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Pointer>)>();
 
   void g_object_add_toggle_ref(
     ffi.Pointer<GObject> object,
     GToggleNotify notify,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_object_add_toggle_ref(
       object,
@@ -42882,14 +43110,14 @@ class GStreamer {
   late final _g_object_add_toggle_refPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GObject>, GToggleNotify,
-              gpointer)>>('g_object_add_toggle_ref');
+              ffi.Pointer)>>('g_object_add_toggle_ref');
   late final _g_object_add_toggle_ref = _g_object_add_toggle_refPtr.asFunction<
-      void Function(ffi.Pointer<GObject>, GToggleNotify, gpointer)>();
+      void Function(ffi.Pointer<GObject>, GToggleNotify, ffi.Pointer)>();
 
   void g_object_remove_toggle_ref(
     ffi.Pointer<GObject> object,
     GToggleNotify notify,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_object_remove_toggle_ref(
       object,
@@ -42901,12 +43129,12 @@ class GStreamer {
   late final _g_object_remove_toggle_refPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GObject>, GToggleNotify,
-              gpointer)>>('g_object_remove_toggle_ref');
+              ffi.Pointer)>>('g_object_remove_toggle_ref');
   late final _g_object_remove_toggle_ref =
       _g_object_remove_toggle_refPtr.asFunction<
-          void Function(ffi.Pointer<GObject>, GToggleNotify, gpointer)>();
+          void Function(ffi.Pointer<GObject>, GToggleNotify, ffi.Pointer)>();
 
-  gpointer g_object_get_qdata(
+  ffi.Pointer g_object_get_qdata(
     ffi.Pointer<GObject> object,
     int quark,
   ) {
@@ -42917,15 +43145,16 @@ class GStreamer {
   }
 
   late final _g_object_get_qdataPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GObject>, GQuark)>>(
+          ffi
+          .NativeFunction<ffi.Pointer Function(ffi.Pointer<GObject>, GQuark)>>(
       'g_object_get_qdata');
   late final _g_object_get_qdata = _g_object_get_qdataPtr
-      .asFunction<gpointer Function(ffi.Pointer<GObject>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GObject>, int)>();
 
   void g_object_set_qdata(
     ffi.Pointer<GObject> object,
     int quark,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_object_set_qdata(
       object,
@@ -42936,15 +43165,15 @@ class GStreamer {
 
   late final _g_object_set_qdataPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<GObject>, GQuark, gpointer)>>('g_object_set_qdata');
+          ffi.Void Function(ffi.Pointer<GObject>, GQuark,
+              ffi.Pointer)>>('g_object_set_qdata');
   late final _g_object_set_qdata = _g_object_set_qdataPtr
-      .asFunction<void Function(ffi.Pointer<GObject>, int, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GObject>, int, ffi.Pointer)>();
 
   void g_object_set_qdata_full(
     ffi.Pointer<GObject> object,
     int quark,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify destroy,
   ) {
     return _g_object_set_qdata_full(
@@ -42957,12 +43186,12 @@ class GStreamer {
 
   late final _g_object_set_qdata_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GObject>, GQuark, gpointer,
+          ffi.Void Function(ffi.Pointer<GObject>, GQuark, ffi.Pointer,
               GDestroyNotify)>>('g_object_set_qdata_full');
   late final _g_object_set_qdata_full = _g_object_set_qdata_fullPtr.asFunction<
-      void Function(ffi.Pointer<GObject>, int, gpointer, GDestroyNotify)>();
+      void Function(ffi.Pointer<GObject>, int, ffi.Pointer, GDestroyNotify)>();
 
-  gpointer g_object_steal_qdata(
+  ffi.Pointer g_object_steal_qdata(
     ffi.Pointer<GObject> object,
     int quark,
   ) {
@@ -42973,16 +43202,17 @@ class GStreamer {
   }
 
   late final _g_object_steal_qdataPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GObject>, GQuark)>>(
+          ffi
+          .NativeFunction<ffi.Pointer Function(ffi.Pointer<GObject>, GQuark)>>(
       'g_object_steal_qdata');
   late final _g_object_steal_qdata = _g_object_steal_qdataPtr
-      .asFunction<gpointer Function(ffi.Pointer<GObject>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GObject>, int)>();
 
-  gpointer g_object_dup_qdata(
+  ffi.Pointer g_object_dup_qdata(
     ffi.Pointer<GObject> object,
     int quark,
     GDuplicateFunc dup_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_object_dup_qdata(
       object,
@@ -42994,16 +43224,17 @@ class GStreamer {
 
   late final _g_object_dup_qdataPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GObject>, GQuark, GDuplicateFunc,
-              gpointer)>>('g_object_dup_qdata');
+          ffi.Pointer Function(ffi.Pointer<GObject>, GQuark, GDuplicateFunc,
+              ffi.Pointer)>>('g_object_dup_qdata');
   late final _g_object_dup_qdata = _g_object_dup_qdataPtr.asFunction<
-      gpointer Function(ffi.Pointer<GObject>, int, GDuplicateFunc, gpointer)>();
+      ffi.Pointer Function(
+          ffi.Pointer<GObject>, int, GDuplicateFunc, ffi.Pointer)>();
 
   int g_object_replace_qdata(
     ffi.Pointer<GObject> object,
     int quark,
-    gpointer oldval,
-    gpointer newval,
+    ffi.Pointer oldval,
+    ffi.Pointer newval,
     GDestroyNotify destroy,
     ffi.Pointer<GDestroyNotify> old_destroy,
   ) {
@@ -43022,15 +43253,15 @@ class GStreamer {
           gboolean Function(
               ffi.Pointer<GObject>,
               GQuark,
-              gpointer,
-              gpointer,
+              ffi.Pointer,
+              ffi.Pointer,
               GDestroyNotify,
               ffi.Pointer<GDestroyNotify>)>>('g_object_replace_qdata');
   late final _g_object_replace_qdata = _g_object_replace_qdataPtr.asFunction<
-      int Function(ffi.Pointer<GObject>, int, gpointer, gpointer,
+      int Function(ffi.Pointer<GObject>, int, ffi.Pointer, ffi.Pointer,
           GDestroyNotify, ffi.Pointer<GDestroyNotify>)>();
 
-  gpointer g_object_get_data(
+  ffi.Pointer g_object_get_data(
     ffi.Pointer<GObject> object,
     ffi.Pointer<ffi.Char> key,
   ) {
@@ -43042,15 +43273,15 @@ class GStreamer {
 
   late final _g_object_get_dataPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GObject>,
+          ffi.Pointer Function(ffi.Pointer<GObject>,
               ffi.Pointer<ffi.Char>)>>('g_object_get_data');
   late final _g_object_get_data = _g_object_get_dataPtr.asFunction<
-      gpointer Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>)>();
+      ffi.Pointer Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>)>();
 
   void g_object_set_data(
     ffi.Pointer<GObject> object,
     ffi.Pointer<ffi.Char> key,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_object_set_data(
       object,
@@ -43062,14 +43293,15 @@ class GStreamer {
   late final _g_object_set_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>,
-              gpointer)>>('g_object_set_data');
+              ffi.Pointer)>>('g_object_set_data');
   late final _g_object_set_data = _g_object_set_dataPtr.asFunction<
-      void Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>, gpointer)>();
+      void Function(
+          ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>, ffi.Pointer)>();
 
   void g_object_set_data_full(
     ffi.Pointer<GObject> object,
     ffi.Pointer<ffi.Char> key,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify destroy,
   ) {
     return _g_object_set_data_full(
@@ -43083,12 +43315,12 @@ class GStreamer {
   late final _g_object_set_data_fullPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>,
-              gpointer, GDestroyNotify)>>('g_object_set_data_full');
+              ffi.Pointer, GDestroyNotify)>>('g_object_set_data_full');
   late final _g_object_set_data_full = _g_object_set_data_fullPtr.asFunction<
-      void Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>, gpointer,
+      void Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>, ffi.Pointer,
           GDestroyNotify)>();
 
-  gpointer g_object_steal_data(
+  ffi.Pointer g_object_steal_data(
     ffi.Pointer<GObject> object,
     ffi.Pointer<ffi.Char> key,
   ) {
@@ -43100,16 +43332,16 @@ class GStreamer {
 
   late final _g_object_steal_dataPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GObject>,
+          ffi.Pointer Function(ffi.Pointer<GObject>,
               ffi.Pointer<ffi.Char>)>>('g_object_steal_data');
   late final _g_object_steal_data = _g_object_steal_dataPtr.asFunction<
-      gpointer Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>)>();
+      ffi.Pointer Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>)>();
 
-  gpointer g_object_dup_data(
+  ffi.Pointer g_object_dup_data(
     ffi.Pointer<GObject> object,
     ffi.Pointer<ffi.Char> key,
     GDuplicateFunc dup_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_object_dup_data(
       object,
@@ -43121,17 +43353,17 @@ class GStreamer {
 
   late final _g_object_dup_dataPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>,
-              GDuplicateFunc, gpointer)>>('g_object_dup_data');
+          ffi.Pointer Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>,
+              GDuplicateFunc, ffi.Pointer)>>('g_object_dup_data');
   late final _g_object_dup_data = _g_object_dup_dataPtr.asFunction<
-      gpointer Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>,
-          GDuplicateFunc, gpointer)>();
+      ffi.Pointer Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>,
+          GDuplicateFunc, ffi.Pointer)>();
 
   int g_object_replace_data(
     ffi.Pointer<GObject> object,
     ffi.Pointer<ffi.Char> key,
-    gpointer oldval,
-    gpointer newval,
+    ffi.Pointer oldval,
+    ffi.Pointer newval,
     GDestroyNotify destroy,
     ffi.Pointer<GDestroyNotify> old_destroy,
   ) {
@@ -43150,13 +43382,13 @@ class GStreamer {
           gboolean Function(
               ffi.Pointer<GObject>,
               ffi.Pointer<ffi.Char>,
-              gpointer,
-              gpointer,
+              ffi.Pointer,
+              ffi.Pointer,
               GDestroyNotify,
               ffi.Pointer<GDestroyNotify>)>>('g_object_replace_data');
   late final _g_object_replace_data = _g_object_replace_dataPtr.asFunction<
-      int Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>, gpointer,
-          gpointer, GDestroyNotify, ffi.Pointer<GDestroyNotify>)>();
+      int Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>, ffi.Pointer,
+          ffi.Pointer, GDestroyNotify, ffi.Pointer<GDestroyNotify>)>();
 
   void g_object_watch_closure(
     ffi.Pointer<GObject> object,
@@ -43229,7 +43461,7 @@ class GStreamer {
 
   void g_value_set_object(
     ffi.Pointer<GValue> value,
-    gpointer v_object,
+    ffi.Pointer v_object,
   ) {
     return _g_value_set_object(
       value,
@@ -43238,12 +43470,13 @@ class GStreamer {
   }
 
   late final _g_value_set_objectPtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, gpointer)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, ffi.Pointer)>>(
       'g_value_set_object');
   late final _g_value_set_object = _g_value_set_objectPtr
-      .asFunction<void Function(ffi.Pointer<GValue>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GValue>, ffi.Pointer)>();
 
-  gpointer g_value_get_object(
+  ffi.Pointer g_value_get_object(
     ffi.Pointer<GValue> value,
   ) {
     return _g_value_get_object(
@@ -43252,12 +43485,12 @@ class GStreamer {
   }
 
   late final _g_value_get_objectPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GValue>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GValue>)>>(
           'g_value_get_object');
   late final _g_value_get_object = _g_value_get_objectPtr
-      .asFunction<gpointer Function(ffi.Pointer<GValue>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GValue>)>();
 
-  gpointer g_value_dup_object(
+  ffi.Pointer g_value_dup_object(
     ffi.Pointer<GValue> value,
   ) {
     return _g_value_dup_object(
@@ -43266,16 +43499,16 @@ class GStreamer {
   }
 
   late final _g_value_dup_objectPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GValue>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GValue>)>>(
           'g_value_dup_object');
   late final _g_value_dup_object = _g_value_dup_objectPtr
-      .asFunction<gpointer Function(ffi.Pointer<GValue>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GValue>)>();
 
   int g_signal_connect_object(
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<ffi.Char> detailed_signal,
     GCallback c_handler,
-    gpointer gobject,
+    ffi.Pointer gobject,
     int connect_flags,
   ) {
     return _g_signal_connect_object(
@@ -43289,11 +43522,11 @@ class GStreamer {
 
   late final _g_signal_connect_objectPtr = _lookup<
       ffi.NativeFunction<
-          gulong Function(gpointer, ffi.Pointer<ffi.Char>, GCallback, gpointer,
-              ffi.Int32)>>('g_signal_connect_object');
+          gulong Function(ffi.Pointer, ffi.Pointer<ffi.Char>, GCallback,
+              ffi.Pointer, ffi.Int32)>>('g_signal_connect_object');
   late final _g_signal_connect_object = _g_signal_connect_objectPtr.asFunction<
       int Function(
-          gpointer, ffi.Pointer<ffi.Char>, GCallback, gpointer, int)>();
+          ffi.Pointer, ffi.Pointer<ffi.Char>, GCallback, ffi.Pointer, int)>();
 
   void g_object_force_floating(
     ffi.Pointer<GObject> object,
@@ -43325,7 +43558,7 @@ class GStreamer {
 
   void g_value_take_object(
     ffi.Pointer<GValue> value,
-    gpointer v_object,
+    ffi.Pointer v_object,
   ) {
     return _g_value_take_object(
       value,
@@ -43334,14 +43567,15 @@ class GStreamer {
   }
 
   late final _g_value_take_objectPtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, gpointer)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, ffi.Pointer)>>(
       'g_value_take_object');
   late final _g_value_take_object = _g_value_take_objectPtr
-      .asFunction<void Function(ffi.Pointer<GValue>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GValue>, ffi.Pointer)>();
 
   void g_value_set_object_take_ownership(
     ffi.Pointer<GValue> value,
-    gpointer v_object,
+    ffi.Pointer v_object,
   ) {
     return _g_value_set_object_take_ownership(
       value,
@@ -43350,15 +43584,16 @@ class GStreamer {
   }
 
   late final _g_value_set_object_take_ownershipPtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, gpointer)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, ffi.Pointer)>>(
       'g_value_set_object_take_ownership');
   late final _g_value_set_object_take_ownership =
       _g_value_set_object_take_ownershipPtr
-          .asFunction<void Function(ffi.Pointer<GValue>, gpointer)>();
+          .asFunction<void Function(ffi.Pointer<GValue>, ffi.Pointer)>();
 
   int g_object_compat_control(
     int what,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_object_compat_control(
       what,
@@ -43367,10 +43602,10 @@ class GStreamer {
   }
 
   late final _g_object_compat_controlPtr =
-      _lookup<ffi.NativeFunction<gsize Function(gsize, gpointer)>>(
+      _lookup<ffi.NativeFunction<gsize Function(gsize, ffi.Pointer)>>(
           'g_object_compat_control');
   late final _g_object_compat_control =
-      _g_object_compat_controlPtr.asFunction<int Function(int, gpointer)>();
+      _g_object_compat_controlPtr.asFunction<int Function(int, ffi.Pointer)>();
 
   void g_clear_object(
     ffi.Pointer<ffi.Pointer<GObject>> object_ptr,
@@ -43389,7 +43624,7 @@ class GStreamer {
 
   void g_weak_ref_init(
     ffi.Pointer<GWeakRef> weak_ref,
-    gpointer object,
+    ffi.Pointer object,
   ) {
     return _g_weak_ref_init(
       weak_ref,
@@ -43398,11 +43633,11 @@ class GStreamer {
   }
 
   late final _g_weak_ref_initPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Void Function(ffi.Pointer<GWeakRef>, gpointer)>>(
-      'g_weak_ref_init');
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GWeakRef>, ffi.Pointer)>>('g_weak_ref_init');
   late final _g_weak_ref_init = _g_weak_ref_initPtr
-      .asFunction<void Function(ffi.Pointer<GWeakRef>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GWeakRef>, ffi.Pointer)>();
 
   void g_weak_ref_clear(
     ffi.Pointer<GWeakRef> weak_ref,
@@ -43418,7 +43653,7 @@ class GStreamer {
   late final _g_weak_ref_clear =
       _g_weak_ref_clearPtr.asFunction<void Function(ffi.Pointer<GWeakRef>)>();
 
-  gpointer g_weak_ref_get(
+  ffi.Pointer g_weak_ref_get(
     ffi.Pointer<GWeakRef> weak_ref,
   ) {
     return _g_weak_ref_get(
@@ -43427,14 +43662,14 @@ class GStreamer {
   }
 
   late final _g_weak_ref_getPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GWeakRef>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GWeakRef>)>>(
           'g_weak_ref_get');
-  late final _g_weak_ref_get =
-      _g_weak_ref_getPtr.asFunction<gpointer Function(ffi.Pointer<GWeakRef>)>();
+  late final _g_weak_ref_get = _g_weak_ref_getPtr
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GWeakRef>)>();
 
   void g_weak_ref_set(
     ffi.Pointer<GWeakRef> weak_ref,
-    gpointer object,
+    ffi.Pointer object,
   ) {
     return _g_weak_ref_set(
       weak_ref,
@@ -43443,11 +43678,11 @@ class GStreamer {
   }
 
   late final _g_weak_ref_setPtr = _lookup<
-          ffi
-          .NativeFunction<ffi.Void Function(ffi.Pointer<GWeakRef>, gpointer)>>(
-      'g_weak_ref_set');
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GWeakRef>, ffi.Pointer)>>('g_weak_ref_set');
   late final _g_weak_ref_set = _g_weak_ref_setPtr
-      .asFunction<void Function(ffi.Pointer<GWeakRef>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GWeakRef>, ffi.Pointer)>();
 
   int g_binding_flags_get_type() {
     return _g_binding_flags_get_type();
@@ -43586,9 +43821,9 @@ class GStreamer {
       _g_binding_unbindPtr.asFunction<void Function(ffi.Pointer<GBinding>)>();
 
   ffi.Pointer<GBinding> g_object_bind_property(
-    gpointer source,
+    ffi.Pointer source,
     ffi.Pointer<ffi.Char> source_property,
-    gpointer target,
+    ffi.Pointer target,
     ffi.Pointer<ffi.Char> target_property,
     int flags,
   ) {
@@ -43604,24 +43839,24 @@ class GStreamer {
   late final _g_object_bind_propertyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GBinding> Function(
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
               ffi.Int32)>>('g_object_bind_property');
   late final _g_object_bind_property = _g_object_bind_propertyPtr.asFunction<
-      ffi.Pointer<GBinding> Function(gpointer, ffi.Pointer<ffi.Char>, gpointer,
-          ffi.Pointer<ffi.Char>, int)>();
+      ffi.Pointer<GBinding> Function(ffi.Pointer, ffi.Pointer<ffi.Char>,
+          ffi.Pointer, ffi.Pointer<ffi.Char>, int)>();
 
   ffi.Pointer<GBinding> g_object_bind_property_full(
-    gpointer source,
+    ffi.Pointer source,
     ffi.Pointer<ffi.Char> source_property,
-    gpointer target,
+    ffi.Pointer target,
     ffi.Pointer<ffi.Char> target_property,
     int flags,
     GBindingTransformFunc transform_to,
     GBindingTransformFunc transform_from,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _g_object_bind_property_full(
@@ -43640,32 +43875,32 @@ class GStreamer {
   late final _g_object_bind_property_fullPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GBinding> Function(
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
               ffi.Int32,
               GBindingTransformFunc,
               GBindingTransformFunc,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>>('g_object_bind_property_full');
   late final _g_object_bind_property_full =
       _g_object_bind_property_fullPtr.asFunction<
           ffi.Pointer<GBinding> Function(
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
               int,
               GBindingTransformFunc,
               GBindingTransformFunc,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>();
 
   ffi.Pointer<GBinding> g_object_bind_property_with_closures(
-    gpointer source,
+    ffi.Pointer source,
     ffi.Pointer<ffi.Char> source_property,
-    gpointer target,
+    ffi.Pointer target,
     ffi.Pointer<ffi.Char> target_property,
     int flags,
     ffi.Pointer<GClosure> transform_to,
@@ -43685,9 +43920,9 @@ class GStreamer {
   late final _g_object_bind_property_with_closuresPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GBinding> Function(
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
               ffi.Int32,
               ffi.Pointer<GClosure>,
@@ -43695,9 +43930,9 @@ class GStreamer {
   late final _g_object_bind_property_with_closures =
       _g_object_bind_property_with_closuresPtr.asFunction<
           ffi.Pointer<GBinding> Function(
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
               int,
               ffi.Pointer<GClosure>,
@@ -43722,7 +43957,7 @@ class GStreamer {
   late final _g_binding_group_new = _g_binding_group_newPtr
       .asFunction<ffi.Pointer<GBindingGroup> Function()>();
 
-  gpointer g_binding_group_dup_source(
+  ffi.Pointer g_binding_group_dup_source(
     ffi.Pointer<GBindingGroup> self,
   ) {
     return _g_binding_group_dup_source(
@@ -43731,14 +43966,14 @@ class GStreamer {
   }
 
   late final _g_binding_group_dup_sourcePtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GBindingGroup>)>>(
+          ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GBindingGroup>)>>(
       'g_binding_group_dup_source');
   late final _g_binding_group_dup_source = _g_binding_group_dup_sourcePtr
-      .asFunction<gpointer Function(ffi.Pointer<GBindingGroup>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GBindingGroup>)>();
 
   void g_binding_group_set_source(
     ffi.Pointer<GBindingGroup> self,
-    gpointer source,
+    ffi.Pointer source,
   ) {
     return _g_binding_group_set_source(
       self,
@@ -43749,14 +43984,14 @@ class GStreamer {
   late final _g_binding_group_set_sourcePtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GBindingGroup>,
-              gpointer)>>('g_binding_group_set_source');
+              ffi.Pointer)>>('g_binding_group_set_source');
   late final _g_binding_group_set_source = _g_binding_group_set_sourcePtr
-      .asFunction<void Function(ffi.Pointer<GBindingGroup>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GBindingGroup>, ffi.Pointer)>();
 
   void g_binding_group_bind(
     ffi.Pointer<GBindingGroup> self,
     ffi.Pointer<ffi.Char> source_property,
-    gpointer target,
+    ffi.Pointer target,
     ffi.Pointer<ffi.Char> target_property,
     int flags,
   ) {
@@ -43774,22 +44009,22 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GBindingGroup>,
               ffi.Pointer<ffi.Char>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
               ffi.Int32)>>('g_binding_group_bind');
   late final _g_binding_group_bind = _g_binding_group_bindPtr.asFunction<
-      void Function(ffi.Pointer<GBindingGroup>, ffi.Pointer<ffi.Char>, gpointer,
-          ffi.Pointer<ffi.Char>, int)>();
+      void Function(ffi.Pointer<GBindingGroup>, ffi.Pointer<ffi.Char>,
+          ffi.Pointer, ffi.Pointer<ffi.Char>, int)>();
 
   void g_binding_group_bind_full(
     ffi.Pointer<GBindingGroup> self,
     ffi.Pointer<ffi.Char> source_property,
-    gpointer target,
+    ffi.Pointer target,
     ffi.Pointer<ffi.Char> target_property,
     int flags,
     GBindingTransformFunc transform_to,
     GBindingTransformFunc transform_from,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify user_data_destroy,
   ) {
     return _g_binding_group_bind_full(
@@ -43810,30 +44045,30 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GBindingGroup>,
               ffi.Pointer<ffi.Char>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
               ffi.Int32,
               GBindingTransformFunc,
               GBindingTransformFunc,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>>('g_binding_group_bind_full');
   late final _g_binding_group_bind_full =
       _g_binding_group_bind_fullPtr.asFunction<
           void Function(
               ffi.Pointer<GBindingGroup>,
               ffi.Pointer<ffi.Char>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
               int,
               GBindingTransformFunc,
               GBindingTransformFunc,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>();
 
   void g_binding_group_bind_with_closures(
     ffi.Pointer<GBindingGroup> self,
     ffi.Pointer<ffi.Char> source_property,
-    gpointer target,
+    ffi.Pointer target,
     ffi.Pointer<ffi.Char> target_property,
     int flags,
     ffi.Pointer<GClosure> transform_to,
@@ -43855,7 +44090,7 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GBindingGroup>,
               ffi.Pointer<ffi.Char>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
               ffi.Int32,
               ffi.Pointer<GClosure>,
@@ -43865,7 +44100,7 @@ class GStreamer {
           void Function(
               ffi.Pointer<GBindingGroup>,
               ffi.Pointer<ffi.Char>,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Char>,
               int,
               ffi.Pointer<GClosure>,
@@ -44947,7 +45182,7 @@ class GStreamer {
 
   void g_signal_group_set_target(
     ffi.Pointer<GSignalGroup> self,
-    gpointer target,
+    ffi.Pointer target,
   ) {
     return _g_signal_group_set_target(
       self,
@@ -44958,11 +45193,11 @@ class GStreamer {
   late final _g_signal_group_set_targetPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GSignalGroup>,
-              gpointer)>>('g_signal_group_set_target');
+              ffi.Pointer)>>('g_signal_group_set_target');
   late final _g_signal_group_set_target = _g_signal_group_set_targetPtr
-      .asFunction<void Function(ffi.Pointer<GSignalGroup>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GSignalGroup>, ffi.Pointer)>();
 
-  gpointer g_signal_group_dup_target(
+  ffi.Pointer g_signal_group_dup_target(
     ffi.Pointer<GSignalGroup> self,
   ) {
     return _g_signal_group_dup_target(
@@ -44970,11 +45205,11 @@ class GStreamer {
     );
   }
 
-  late final _g_signal_group_dup_targetPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GSignalGroup>)>>(
-          'g_signal_group_dup_target');
+  late final _g_signal_group_dup_targetPtr = _lookup<
+          ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GSignalGroup>)>>(
+      'g_signal_group_dup_target');
   late final _g_signal_group_dup_target = _g_signal_group_dup_targetPtr
-      .asFunction<gpointer Function(ffi.Pointer<GSignalGroup>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GSignalGroup>)>();
 
   void g_signal_group_block(
     ffi.Pointer<GSignalGroup> self,
@@ -45034,7 +45269,7 @@ class GStreamer {
     ffi.Pointer<GSignalGroup> self,
     ffi.Pointer<ffi.Char> detailed_signal,
     GCallback c_handler,
-    gpointer object,
+    ffi.Pointer object,
     int flags,
   ) {
     return _g_signal_group_connect_object(
@@ -45052,18 +45287,18 @@ class GStreamer {
               ffi.Pointer<GSignalGroup>,
               ffi.Pointer<ffi.Char>,
               GCallback,
-              gpointer,
+              ffi.Pointer,
               ffi.Int32)>>('g_signal_group_connect_object');
   late final _g_signal_group_connect_object =
       _g_signal_group_connect_objectPtr.asFunction<
           void Function(ffi.Pointer<GSignalGroup>, ffi.Pointer<ffi.Char>,
-              GCallback, gpointer, int)>();
+              GCallback, ffi.Pointer, int)>();
 
   void g_signal_group_connect_data(
     ffi.Pointer<GSignalGroup> self,
     ffi.Pointer<ffi.Char> detailed_signal,
     GCallback c_handler,
-    gpointer data,
+    ffi.Pointer data,
     GClosureNotify notify,
     int flags,
   ) {
@@ -45083,19 +45318,19 @@ class GStreamer {
               ffi.Pointer<GSignalGroup>,
               ffi.Pointer<ffi.Char>,
               GCallback,
-              gpointer,
+              ffi.Pointer,
               GClosureNotify,
               ffi.Int32)>>('g_signal_group_connect_data');
   late final _g_signal_group_connect_data =
       _g_signal_group_connect_dataPtr.asFunction<
           void Function(ffi.Pointer<GSignalGroup>, ffi.Pointer<ffi.Char>,
-              GCallback, gpointer, GClosureNotify, int)>();
+              GCallback, ffi.Pointer, GClosureNotify, int)>();
 
   void g_signal_group_connect(
     ffi.Pointer<GSignalGroup> self,
     ffi.Pointer<ffi.Char> detailed_signal,
     GCallback c_handler,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_signal_group_connect(
       self,
@@ -45108,16 +45343,16 @@ class GStreamer {
   late final _g_signal_group_connectPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GSignalGroup>, ffi.Pointer<ffi.Char>,
-              GCallback, gpointer)>>('g_signal_group_connect');
+              GCallback, ffi.Pointer)>>('g_signal_group_connect');
   late final _g_signal_group_connect = _g_signal_group_connectPtr.asFunction<
       void Function(ffi.Pointer<GSignalGroup>, ffi.Pointer<ffi.Char>, GCallback,
-          gpointer)>();
+          ffi.Pointer)>();
 
   void g_signal_group_connect_after(
     ffi.Pointer<GSignalGroup> self,
     ffi.Pointer<ffi.Char> detailed_signal,
     GCallback c_handler,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_signal_group_connect_after(
       self,
@@ -45130,17 +45365,17 @@ class GStreamer {
   late final _g_signal_group_connect_afterPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GSignalGroup>, ffi.Pointer<ffi.Char>,
-              GCallback, gpointer)>>('g_signal_group_connect_after');
+              GCallback, ffi.Pointer)>>('g_signal_group_connect_after');
   late final _g_signal_group_connect_after =
       _g_signal_group_connect_afterPtr.asFunction<
           void Function(ffi.Pointer<GSignalGroup>, ffi.Pointer<ffi.Char>,
-              GCallback, gpointer)>();
+              GCallback, ffi.Pointer)>();
 
   void g_signal_group_connect_swapped(
     ffi.Pointer<GSignalGroup> self,
     ffi.Pointer<ffi.Char> detailed_signal,
     GCallback c_handler,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _g_signal_group_connect_swapped(
       self,
@@ -45153,11 +45388,11 @@ class GStreamer {
   late final _g_signal_group_connect_swappedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GSignalGroup>, ffi.Pointer<ffi.Char>,
-              GCallback, gpointer)>>('g_signal_group_connect_swapped');
+              GCallback, ffi.Pointer)>>('g_signal_group_connect_swapped');
   late final _g_signal_group_connect_swapped =
       _g_signal_group_connect_swappedPtr.asFunction<
           void Function(ffi.Pointer<GSignalGroup>, ffi.Pointer<ffi.Char>,
-              GCallback, gpointer)>();
+              GCallback, ffi.Pointer)>();
 
   void g_source_set_closure(
     ffi.Pointer<GSource> source,
@@ -45586,7 +45821,7 @@ class GStreamer {
   ffi.Pointer<GValueArray> g_value_array_sort_with_data(
     ffi.Pointer<GValueArray> value_array,
     GCompareDataFunc compare_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _g_value_array_sort_with_data(
       value_array,
@@ -45598,11 +45833,11 @@ class GStreamer {
   late final _g_value_array_sort_with_dataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GValueArray> Function(ffi.Pointer<GValueArray>,
-              GCompareDataFunc, gpointer)>>('g_value_array_sort_with_data');
+              GCompareDataFunc, ffi.Pointer)>>('g_value_array_sort_with_data');
   late final _g_value_array_sort_with_data =
       _g_value_array_sort_with_dataPtr.asFunction<
           ffi.Pointer<GValueArray> Function(
-              ffi.Pointer<GValueArray>, GCompareDataFunc, gpointer)>();
+              ffi.Pointer<GValueArray>, GCompareDataFunc, ffi.Pointer)>();
 
   void g_value_set_char(
     ffi.Pointer<GValue> value,
@@ -46062,7 +46297,7 @@ class GStreamer {
 
   void g_value_set_pointer(
     ffi.Pointer<GValue> value,
-    gpointer v_pointer,
+    ffi.Pointer v_pointer,
   ) {
     return _g_value_set_pointer(
       value,
@@ -46071,12 +46306,13 @@ class GStreamer {
   }
 
   late final _g_value_set_pointerPtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, gpointer)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GValue>, ffi.Pointer)>>(
       'g_value_set_pointer');
   late final _g_value_set_pointer = _g_value_set_pointerPtr
-      .asFunction<void Function(ffi.Pointer<GValue>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GValue>, ffi.Pointer)>();
 
-  gpointer g_value_get_pointer(
+  ffi.Pointer g_value_get_pointer(
     ffi.Pointer<GValue> value,
   ) {
     return _g_value_get_pointer(
@@ -46085,10 +46321,10 @@ class GStreamer {
   }
 
   late final _g_value_get_pointerPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GValue>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GValue>)>>(
           'g_value_get_pointer');
   late final _g_value_get_pointer = _g_value_get_pointerPtr
-      .asFunction<gpointer Function(ffi.Pointer<GValue>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GValue>)>();
 
   int g_gtype_get_type() {
     return _g_gtype_get_type();
@@ -47130,7 +47366,7 @@ class GStreamer {
 
   void gst_atomic_queue_push(
     ffi.Pointer<GstAtomicQueue> queue,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _gst_atomic_queue_push(
       queue,
@@ -47140,12 +47376,12 @@ class GStreamer {
 
   late final _gst_atomic_queue_pushPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<GstAtomicQueue>, gpointer)>>('gst_atomic_queue_push');
+          ffi.Void Function(ffi.Pointer<GstAtomicQueue>,
+              ffi.Pointer)>>('gst_atomic_queue_push');
   late final _gst_atomic_queue_push = _gst_atomic_queue_pushPtr
-      .asFunction<void Function(ffi.Pointer<GstAtomicQueue>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GstAtomicQueue>, ffi.Pointer)>();
 
-  gpointer gst_atomic_queue_pop(
+  ffi.Pointer gst_atomic_queue_pop(
     ffi.Pointer<GstAtomicQueue> queue,
   ) {
     return _gst_atomic_queue_pop(
@@ -47154,12 +47390,13 @@ class GStreamer {
   }
 
   late final _gst_atomic_queue_popPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GstAtomicQueue>)>>(
+          ffi
+          .NativeFunction<ffi.Pointer Function(ffi.Pointer<GstAtomicQueue>)>>(
       'gst_atomic_queue_pop');
   late final _gst_atomic_queue_pop = _gst_atomic_queue_popPtr
-      .asFunction<gpointer Function(ffi.Pointer<GstAtomicQueue>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GstAtomicQueue>)>();
 
-  gpointer gst_atomic_queue_peek(
+  ffi.Pointer gst_atomic_queue_peek(
     ffi.Pointer<GstAtomicQueue> queue,
   ) {
     return _gst_atomic_queue_peek(
@@ -47168,10 +47405,11 @@ class GStreamer {
   }
 
   late final _gst_atomic_queue_peekPtr = _lookup<
-          ffi.NativeFunction<gpointer Function(ffi.Pointer<GstAtomicQueue>)>>(
+          ffi
+          .NativeFunction<ffi.Pointer Function(ffi.Pointer<GstAtomicQueue>)>>(
       'gst_atomic_queue_peek');
   late final _gst_atomic_queue_peek = _gst_atomic_queue_peekPtr
-      .asFunction<gpointer Function(ffi.Pointer<GstAtomicQueue>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GstAtomicQueue>)>();
 
   int gst_atomic_queue_length(
     ffi.Pointer<GstAtomicQueue> queue,
@@ -47354,8 +47592,8 @@ class GStreamer {
           void Function(ffi.Pointer<GObject>, ffi.Pointer<GstObject>,
               ffi.Pointer<GParamSpec>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
-  gpointer gst_object_ref(
-    gpointer object,
+  ffi.Pointer gst_object_ref(
+    ffi.Pointer object,
   ) {
     return _gst_object_ref(
       object,
@@ -47363,13 +47601,13 @@ class GStreamer {
   }
 
   late final _gst_object_refPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer)>>(
           'gst_object_ref');
   late final _gst_object_ref =
-      _gst_object_refPtr.asFunction<gpointer Function(gpointer)>();
+      _gst_object_refPtr.asFunction<ffi.Pointer Function(ffi.Pointer)>();
 
   void gst_object_unref(
-    gpointer object,
+    ffi.Pointer object,
   ) {
     return _gst_object_unref(
       object,
@@ -47377,10 +47615,10 @@ class GStreamer {
   }
 
   late final _gst_object_unrefPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer)>>(
           'gst_object_unref');
   late final _gst_object_unref =
-      _gst_object_unrefPtr.asFunction<void Function(gpointer)>();
+      _gst_object_unrefPtr.asFunction<void Function(ffi.Pointer)>();
 
   void gst_clear_object(
     ffi.Pointer<ffi.Pointer<GstObject>> object_ptr,
@@ -47397,8 +47635,8 @@ class GStreamer {
   late final _gst_clear_object = _gst_clear_objectPtr
       .asFunction<void Function(ffi.Pointer<ffi.Pointer<GstObject>>)>();
 
-  gpointer gst_object_ref_sink(
-    gpointer object,
+  ffi.Pointer gst_object_ref_sink(
+    ffi.Pointer object,
   ) {
     return _gst_object_ref_sink(
       object,
@@ -47406,10 +47644,10 @@ class GStreamer {
   }
 
   late final _gst_object_ref_sinkPtr =
-      _lookup<ffi.NativeFunction<gpointer Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer)>>(
           'gst_object_ref_sink');
   late final _gst_object_ref_sink =
-      _gst_object_ref_sinkPtr.asFunction<gpointer Function(gpointer)>();
+      _gst_object_ref_sinkPtr.asFunction<ffi.Pointer Function(ffi.Pointer)>();
 
   int gst_object_replace(
     ffi.Pointer<ffi.Pointer<GstObject>> oldobj,
@@ -48006,7 +48244,7 @@ class GStreamer {
   int gst_clock_id_wait_async(
     GstClockID id,
     GstClockCallback func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify destroy_data,
   ) {
     return _gst_clock_id_wait_async(
@@ -48019,10 +48257,11 @@ class GStreamer {
 
   late final _gst_clock_id_wait_asyncPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int32 Function(GstClockID, GstClockCallback, gpointer,
+          ffi.Int32 Function(GstClockID, GstClockCallback, ffi.Pointer,
               GDestroyNotify)>>('gst_clock_id_wait_async');
   late final _gst_clock_id_wait_async = _gst_clock_id_wait_asyncPtr.asFunction<
-      int Function(GstClockID, GstClockCallback, gpointer, GDestroyNotify)>();
+      int Function(
+          GstClockID, GstClockCallback, ffi.Pointer, GDestroyNotify)>();
 
   void gst_clock_id_unschedule(
     GstClockID id,
@@ -48198,7 +48437,7 @@ class GStreamer {
     int timestamp,
     int interval,
     int n_values,
-    gpointer values,
+    ffi.Pointer values,
   ) {
     return _gst_control_binding_get_value_array(
       binding,
@@ -48216,11 +48455,11 @@ class GStreamer {
               GstClockTime,
               GstClockTime,
               guint,
-              gpointer)>>('gst_control_binding_get_value_array');
+              ffi.Pointer)>>('gst_control_binding_get_value_array');
   late final _gst_control_binding_get_value_array =
       _gst_control_binding_get_value_arrayPtr.asFunction<
           int Function(
-              ffi.Pointer<GstControlBinding>, int, int, int, gpointer)>();
+              ffi.Pointer<GstControlBinding>, int, int, int, ffi.Pointer)>();
 
   int gst_control_binding_get_g_value_array(
     ffi.Pointer<GstControlBinding> binding,
@@ -48454,7 +48693,7 @@ class GStreamer {
     int timestamp,
     int interval,
     int n_values,
-    gpointer values,
+    ffi.Pointer values,
   ) {
     return _gst_object_get_value_array(
       object,
@@ -48474,11 +48713,11 @@ class GStreamer {
               GstClockTime,
               GstClockTime,
               guint,
-              gpointer)>>('gst_object_get_value_array');
+              ffi.Pointer)>>('gst_object_get_value_array');
   late final _gst_object_get_value_array =
       _gst_object_get_value_arrayPtr.asFunction<
           int Function(ffi.Pointer<GstObject>, ffi.Pointer<ffi.Char>, int, int,
-              int, gpointer)>();
+              int, ffi.Pointer)>();
 
   int gst_object_get_g_value_array(
     ffi.Pointer<GstObject> object,
@@ -48656,7 +48895,7 @@ class GStreamer {
   void gst_mini_object_weak_ref(
     ffi.Pointer<GstMiniObject> object,
     GstMiniObjectNotify notify,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _gst_mini_object_weak_ref(
       object,
@@ -48668,16 +48907,16 @@ class GStreamer {
   late final _gst_mini_object_weak_refPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GstMiniObject>, GstMiniObjectNotify,
-              gpointer)>>('gst_mini_object_weak_ref');
+              ffi.Pointer)>>('gst_mini_object_weak_ref');
   late final _gst_mini_object_weak_ref =
       _gst_mini_object_weak_refPtr.asFunction<
           void Function(
-              ffi.Pointer<GstMiniObject>, GstMiniObjectNotify, gpointer)>();
+              ffi.Pointer<GstMiniObject>, GstMiniObjectNotify, ffi.Pointer)>();
 
   void gst_mini_object_weak_unref(
     ffi.Pointer<GstMiniObject> object,
     GstMiniObjectNotify notify,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _gst_mini_object_weak_unref(
       object,
@@ -48689,11 +48928,11 @@ class GStreamer {
   late final _gst_mini_object_weak_unrefPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GstMiniObject>, GstMiniObjectNotify,
-              gpointer)>>('gst_mini_object_weak_unref');
+              ffi.Pointer)>>('gst_mini_object_weak_unref');
   late final _gst_mini_object_weak_unref =
       _gst_mini_object_weak_unrefPtr.asFunction<
           void Function(
-              ffi.Pointer<GstMiniObject>, GstMiniObjectNotify, gpointer)>();
+              ffi.Pointer<GstMiniObject>, GstMiniObjectNotify, ffi.Pointer)>();
 
   int gst_mini_object_lock(
     ffi.Pointer<GstMiniObject> object,
@@ -48777,7 +49016,7 @@ class GStreamer {
   void gst_mini_object_set_qdata(
     ffi.Pointer<GstMiniObject> object,
     int quark,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify destroy,
   ) {
     return _gst_mini_object_set_qdata(
@@ -48790,14 +49029,14 @@ class GStreamer {
 
   late final _gst_mini_object_set_qdataPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GstMiniObject>, GQuark, gpointer,
+          ffi.Void Function(ffi.Pointer<GstMiniObject>, GQuark, ffi.Pointer,
               GDestroyNotify)>>('gst_mini_object_set_qdata');
   late final _gst_mini_object_set_qdata =
       _gst_mini_object_set_qdataPtr.asFunction<
           void Function(
-              ffi.Pointer<GstMiniObject>, int, gpointer, GDestroyNotify)>();
+              ffi.Pointer<GstMiniObject>, int, ffi.Pointer, GDestroyNotify)>();
 
-  gpointer gst_mini_object_get_qdata(
+  ffi.Pointer gst_mini_object_get_qdata(
     ffi.Pointer<GstMiniObject> object,
     int quark,
   ) {
@@ -48809,12 +49048,12 @@ class GStreamer {
 
   late final _gst_mini_object_get_qdataPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GstMiniObject>,
+          ffi.Pointer Function(ffi.Pointer<GstMiniObject>,
               GQuark)>>('gst_mini_object_get_qdata');
   late final _gst_mini_object_get_qdata = _gst_mini_object_get_qdataPtr
-      .asFunction<gpointer Function(ffi.Pointer<GstMiniObject>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GstMiniObject>, int)>();
 
-  gpointer gst_mini_object_steal_qdata(
+  ffi.Pointer gst_mini_object_steal_qdata(
     ffi.Pointer<GstMiniObject> object,
     int quark,
   ) {
@@ -48826,10 +49065,10 @@ class GStreamer {
 
   late final _gst_mini_object_steal_qdataPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(ffi.Pointer<GstMiniObject>,
+          ffi.Pointer Function(ffi.Pointer<GstMiniObject>,
               GQuark)>>('gst_mini_object_steal_qdata');
   late final _gst_mini_object_steal_qdata = _gst_mini_object_steal_qdataPtr
-      .asFunction<gpointer Function(ffi.Pointer<GstMiniObject>, int)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GstMiniObject>, int)>();
 
   void gst_mini_object_add_parent(
     ffi.Pointer<GstMiniObject> object,
@@ -49317,11 +49556,11 @@ class GStreamer {
 
   ffi.Pointer<GstMemory> gst_memory_new_wrapped(
     int flags,
-    gpointer data,
+    ffi.Pointer data,
     int maxsize,
     int offset,
     int size,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_memory_new_wrapped(
@@ -49337,11 +49576,11 @@ class GStreamer {
 
   late final _gst_memory_new_wrappedPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GstMemory> Function(ffi.Int32, gpointer, gsize, gsize,
-              gsize, gpointer, GDestroyNotify)>>('gst_memory_new_wrapped');
+          ffi.Pointer<GstMemory> Function(ffi.Int32, ffi.Pointer, gsize, gsize,
+              gsize, ffi.Pointer, GDestroyNotify)>>('gst_memory_new_wrapped');
   late final _gst_memory_new_wrapped = _gst_memory_new_wrappedPtr.asFunction<
       ffi.Pointer<GstMemory> Function(
-          int, gpointer, int, int, int, gpointer, GDestroyNotify)>();
+          int, ffi.Pointer, int, int, int, ffi.Pointer, GDestroyNotify)>();
 
   late final ffi.Pointer<GType> __gst_date_time_type =
       _lookup<GType>('_gst_date_time_type');
@@ -50482,7 +50721,7 @@ class GStreamer {
   int gst_structure_foreach(
     ffi.Pointer<GstStructure> structure,
     GstStructureForeachFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_structure_foreach(
       structure,
@@ -50494,15 +50733,15 @@ class GStreamer {
   late final _gst_structure_foreachPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GstStructure>, GstStructureForeachFunc,
-              gpointer)>>('gst_structure_foreach');
+              ffi.Pointer)>>('gst_structure_foreach');
   late final _gst_structure_foreach = _gst_structure_foreachPtr.asFunction<
       int Function(
-          ffi.Pointer<GstStructure>, GstStructureForeachFunc, gpointer)>();
+          ffi.Pointer<GstStructure>, GstStructureForeachFunc, ffi.Pointer)>();
 
   int gst_structure_map_in_place(
     ffi.Pointer<GstStructure> structure,
     GstStructureMapFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_structure_map_in_place(
       structure,
@@ -50514,16 +50753,16 @@ class GStreamer {
   late final _gst_structure_map_in_placePtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GstStructure>, GstStructureMapFunc,
-              gpointer)>>('gst_structure_map_in_place');
+              ffi.Pointer)>>('gst_structure_map_in_place');
   late final _gst_structure_map_in_place =
       _gst_structure_map_in_placePtr.asFunction<
           int Function(
-              ffi.Pointer<GstStructure>, GstStructureMapFunc, gpointer)>();
+              ffi.Pointer<GstStructure>, GstStructureMapFunc, ffi.Pointer)>();
 
   void gst_structure_filter_and_map_in_place(
     ffi.Pointer<GstStructure> structure,
     GstStructureFilterMapFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_structure_filter_and_map_in_place(
       structure,
@@ -50537,11 +50776,11 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GstStructure>,
               GstStructureFilterMapFunc,
-              gpointer)>>('gst_structure_filter_and_map_in_place');
+              ffi.Pointer)>>('gst_structure_filter_and_map_in_place');
   late final _gst_structure_filter_and_map_in_place =
       _gst_structure_filter_and_map_in_placePtr.asFunction<
           void Function(ffi.Pointer<GstStructure>, GstStructureFilterMapFunc,
-              gpointer)>();
+              ffi.Pointer)>();
 
   int gst_structure_n_fields(
     ffi.Pointer<GstStructure> structure,
@@ -52199,7 +52438,7 @@ class GStreamer {
   int gst_caps_foreach(
     ffi.Pointer<GstCaps> caps,
     GstCapsForeachFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_caps_foreach(
       caps,
@@ -52211,14 +52450,14 @@ class GStreamer {
   late final _gst_caps_foreachPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GstCaps>, GstCapsForeachFunc,
-              gpointer)>>('gst_caps_foreach');
+              ffi.Pointer)>>('gst_caps_foreach');
   late final _gst_caps_foreach = _gst_caps_foreachPtr.asFunction<
-      int Function(ffi.Pointer<GstCaps>, GstCapsForeachFunc, gpointer)>();
+      int Function(ffi.Pointer<GstCaps>, GstCapsForeachFunc, ffi.Pointer)>();
 
   int gst_caps_map_in_place(
     ffi.Pointer<GstCaps> caps,
     GstCapsMapFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_caps_map_in_place(
       caps,
@@ -52230,14 +52469,14 @@ class GStreamer {
   late final _gst_caps_map_in_placePtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GstCaps>, GstCapsMapFunc,
-              gpointer)>>('gst_caps_map_in_place');
+              ffi.Pointer)>>('gst_caps_map_in_place');
   late final _gst_caps_map_in_place = _gst_caps_map_in_placePtr.asFunction<
-      int Function(ffi.Pointer<GstCaps>, GstCapsMapFunc, gpointer)>();
+      int Function(ffi.Pointer<GstCaps>, GstCapsMapFunc, ffi.Pointer)>();
 
   void gst_caps_filter_and_map_in_place(
     ffi.Pointer<GstCaps> caps,
     GstCapsFilterMapFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_caps_filter_and_map_in_place(
       caps,
@@ -52249,11 +52488,11 @@ class GStreamer {
   late final _gst_caps_filter_and_map_in_placePtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GstCaps>, GstCapsFilterMapFunc,
-              gpointer)>>('gst_caps_filter_and_map_in_place');
+              ffi.Pointer)>>('gst_caps_filter_and_map_in_place');
   late final _gst_caps_filter_and_map_in_place =
       _gst_caps_filter_and_map_in_placePtr.asFunction<
           void Function(
-              ffi.Pointer<GstCaps>, GstCapsFilterMapFunc, gpointer)>();
+              ffi.Pointer<GstCaps>, GstCapsFilterMapFunc, ffi.Pointer)>();
 
   int gst_caps_is_any(
     ffi.Pointer<GstCaps> caps,
@@ -52715,7 +52954,7 @@ class GStreamer {
     ffi.Pointer<ffi.Char> name,
     ffi.Pointer<ffi.Pointer<ffi.Char>> tags,
     GstCustomMetaTransformFunction transform_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify destroy_data,
   ) {
     return _gst_meta_register_custom(
@@ -52733,7 +52972,7 @@ class GStreamer {
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
               GstCustomMetaTransformFunction,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>>('gst_meta_register_custom');
   late final _gst_meta_register_custom =
       _gst_meta_register_customPtr.asFunction<
@@ -52741,7 +52980,7 @@ class GStreamer {
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
               GstCustomMetaTransformFunction,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>();
 
   ffi.Pointer<GstMetaInfo> gst_meta_register_custom_simple(
@@ -52996,11 +53235,11 @@ class GStreamer {
 
   ffi.Pointer<GstBuffer> gst_buffer_new_wrapped_full(
     int flags,
-    gpointer data,
+    ffi.Pointer data,
     int maxsize,
     int offset,
     int size,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_buffer_new_wrapped_full(
@@ -53016,15 +53255,21 @@ class GStreamer {
 
   late final _gst_buffer_new_wrapped_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GstBuffer> Function(ffi.Int32, gpointer, gsize, gsize,
-              gsize, gpointer, GDestroyNotify)>>('gst_buffer_new_wrapped_full');
+          ffi.Pointer<GstBuffer> Function(
+              ffi.Int32,
+              ffi.Pointer,
+              gsize,
+              gsize,
+              gsize,
+              ffi.Pointer,
+              GDestroyNotify)>>('gst_buffer_new_wrapped_full');
   late final _gst_buffer_new_wrapped_full =
       _gst_buffer_new_wrapped_fullPtr.asFunction<
           ffi.Pointer<GstBuffer> Function(
-              int, gpointer, int, int, int, gpointer, GDestroyNotify)>();
+              int, ffi.Pointer, int, int, int, ffi.Pointer, GDestroyNotify)>();
 
   ffi.Pointer<GstBuffer> gst_buffer_new_wrapped(
-    gpointer data,
+    ffi.Pointer data,
     int size,
   ) {
     return _gst_buffer_new_wrapped(
@@ -53034,10 +53279,11 @@ class GStreamer {
   }
 
   late final _gst_buffer_new_wrappedPtr = _lookup<
-          ffi.NativeFunction<ffi.Pointer<GstBuffer> Function(gpointer, gsize)>>(
+          ffi
+          .NativeFunction<ffi.Pointer<GstBuffer> Function(ffi.Pointer, gsize)>>(
       'gst_buffer_new_wrapped');
   late final _gst_buffer_new_wrapped = _gst_buffer_new_wrappedPtr
-      .asFunction<ffi.Pointer<GstBuffer> Function(gpointer, int)>();
+      .asFunction<ffi.Pointer<GstBuffer> Function(ffi.Pointer, int)>();
 
   ffi.Pointer<GstBuffer> gst_buffer_new_wrapped_bytes(
     ffi.Pointer<GBytes> bytes,
@@ -53411,7 +53657,7 @@ class GStreamer {
   int gst_buffer_extract(
     ffi.Pointer<GstBuffer> buffer,
     int offset,
-    gpointer dest,
+    ffi.Pointer dest,
     int size,
   ) {
     return _gst_buffer_extract(
@@ -53424,10 +53670,10 @@ class GStreamer {
 
   late final _gst_buffer_extractPtr = _lookup<
       ffi.NativeFunction<
-          gsize Function(ffi.Pointer<GstBuffer>, gsize, gpointer,
+          gsize Function(ffi.Pointer<GstBuffer>, gsize, ffi.Pointer,
               gsize)>>('gst_buffer_extract');
-  late final _gst_buffer_extract = _gst_buffer_extractPtr
-      .asFunction<int Function(ffi.Pointer<GstBuffer>, int, gpointer, int)>();
+  late final _gst_buffer_extract = _gst_buffer_extractPtr.asFunction<
+      int Function(ffi.Pointer<GstBuffer>, int, ffi.Pointer, int)>();
 
   int gst_buffer_memcmp(
     ffi.Pointer<GstBuffer> buffer,
@@ -53657,7 +53903,7 @@ class GStreamer {
     ffi.Pointer<GstBuffer> buffer,
     int offset,
     int size,
-    ffi.Pointer<gpointer> dest,
+    ffi.Pointer<ffi.Pointer> dest,
     ffi.Pointer<gsize> dest_size,
   ) {
     return _gst_buffer_extract_dup(
@@ -53675,10 +53921,10 @@ class GStreamer {
               ffi.Pointer<GstBuffer>,
               gsize,
               gsize,
-              ffi.Pointer<gpointer>,
+              ffi.Pointer<ffi.Pointer>,
               ffi.Pointer<gsize>)>>('gst_buffer_extract_dup');
   late final _gst_buffer_extract_dup = _gst_buffer_extract_dupPtr.asFunction<
-      void Function(ffi.Pointer<GstBuffer>, int, int, ffi.Pointer<gpointer>,
+      void Function(ffi.Pointer<GstBuffer>, int, int, ffi.Pointer<ffi.Pointer>,
           ffi.Pointer<gsize>)>();
 
   int gst_buffer_get_flags(
@@ -53886,7 +54132,7 @@ class GStreamer {
   ffi.Pointer<GstMeta> gst_buffer_add_meta(
     ffi.Pointer<GstBuffer> buffer,
     ffi.Pointer<GstMetaInfo> info,
-    gpointer params,
+    ffi.Pointer params,
   ) {
     return _gst_buffer_add_meta(
       buffer,
@@ -53898,10 +54144,10 @@ class GStreamer {
   late final _gst_buffer_add_metaPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GstMeta> Function(ffi.Pointer<GstBuffer>,
-              ffi.Pointer<GstMetaInfo>, gpointer)>>('gst_buffer_add_meta');
+              ffi.Pointer<GstMetaInfo>, ffi.Pointer)>>('gst_buffer_add_meta');
   late final _gst_buffer_add_meta = _gst_buffer_add_metaPtr.asFunction<
       ffi.Pointer<GstMeta> Function(
-          ffi.Pointer<GstBuffer>, ffi.Pointer<GstMetaInfo>, gpointer)>();
+          ffi.Pointer<GstBuffer>, ffi.Pointer<GstMetaInfo>, ffi.Pointer)>();
 
   int gst_buffer_remove_meta(
     ffi.Pointer<GstBuffer> buffer,
@@ -53922,7 +54168,7 @@ class GStreamer {
 
   ffi.Pointer<GstMeta> gst_buffer_iterate_meta(
     ffi.Pointer<GstBuffer> buffer,
-    ffi.Pointer<gpointer> state,
+    ffi.Pointer<ffi.Pointer> state,
   ) {
     return _gst_buffer_iterate_meta(
       buffer,
@@ -53933,14 +54179,14 @@ class GStreamer {
   late final _gst_buffer_iterate_metaPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GstMeta> Function(ffi.Pointer<GstBuffer>,
-              ffi.Pointer<gpointer>)>>('gst_buffer_iterate_meta');
+              ffi.Pointer<ffi.Pointer>)>>('gst_buffer_iterate_meta');
   late final _gst_buffer_iterate_meta = _gst_buffer_iterate_metaPtr.asFunction<
       ffi.Pointer<GstMeta> Function(
-          ffi.Pointer<GstBuffer>, ffi.Pointer<gpointer>)>();
+          ffi.Pointer<GstBuffer>, ffi.Pointer<ffi.Pointer>)>();
 
   ffi.Pointer<GstMeta> gst_buffer_iterate_meta_filtered(
     ffi.Pointer<GstBuffer> buffer,
-    ffi.Pointer<gpointer> state,
+    ffi.Pointer<ffi.Pointer> state,
     int meta_api_type,
   ) {
     return _gst_buffer_iterate_meta_filtered(
@@ -53954,17 +54200,17 @@ class GStreamer {
       ffi.NativeFunction<
           ffi.Pointer<GstMeta> Function(
               ffi.Pointer<GstBuffer>,
-              ffi.Pointer<gpointer>,
+              ffi.Pointer<ffi.Pointer>,
               GType)>>('gst_buffer_iterate_meta_filtered');
   late final _gst_buffer_iterate_meta_filtered =
       _gst_buffer_iterate_meta_filteredPtr.asFunction<
           ffi.Pointer<GstMeta> Function(
-              ffi.Pointer<GstBuffer>, ffi.Pointer<gpointer>, int)>();
+              ffi.Pointer<GstBuffer>, ffi.Pointer<ffi.Pointer>, int)>();
 
   int gst_buffer_foreach_meta(
     ffi.Pointer<GstBuffer> buffer,
     GstBufferForeachMetaFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_buffer_foreach_meta(
       buffer,
@@ -53976,10 +54222,10 @@ class GStreamer {
   late final _gst_buffer_foreach_metaPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GstBuffer>, GstBufferForeachMetaFunc,
-              gpointer)>>('gst_buffer_foreach_meta');
+              ffi.Pointer)>>('gst_buffer_foreach_meta');
   late final _gst_buffer_foreach_meta = _gst_buffer_foreach_metaPtr.asFunction<
       int Function(
-          ffi.Pointer<GstBuffer>, GstBufferForeachMetaFunc, gpointer)>();
+          ffi.Pointer<GstBuffer>, GstBufferForeachMetaFunc, ffi.Pointer)>();
 
   ffi.Pointer<GstCustomMeta> gst_buffer_add_custom_meta(
     ffi.Pointer<GstBuffer> buffer,
@@ -54259,7 +54505,7 @@ class GStreamer {
   int gst_buffer_list_foreach(
     ffi.Pointer<GstBufferList> list,
     GstBufferListFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_buffer_list_foreach(
       list,
@@ -54271,9 +54517,10 @@ class GStreamer {
   late final _gst_buffer_list_foreachPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GstBufferList>, GstBufferListFunc,
-              gpointer)>>('gst_buffer_list_foreach');
+              ffi.Pointer)>>('gst_buffer_list_foreach');
   late final _gst_buffer_list_foreach = _gst_buffer_list_foreachPtr.asFunction<
-      int Function(ffi.Pointer<GstBufferList>, GstBufferListFunc, gpointer)>();
+      int Function(
+          ffi.Pointer<GstBufferList>, GstBufferListFunc, ffi.Pointer)>();
 
   ffi.Pointer<GstBufferList> gst_buffer_list_copy_deep(
     ffi.Pointer<GstBufferList> list,
@@ -54517,7 +54764,7 @@ class GStreamer {
     ffi.Pointer<GstIterator1> it,
     GstIteratorFoldFunction func,
     ffi.Pointer<GValue> ret,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_iterator_fold(
       it,
@@ -54530,15 +54777,15 @@ class GStreamer {
   late final _gst_iterator_foldPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int32 Function(ffi.Pointer<GstIterator1>, GstIteratorFoldFunction,
-              ffi.Pointer<GValue>, gpointer)>>('gst_iterator_fold');
+              ffi.Pointer<GValue>, ffi.Pointer)>>('gst_iterator_fold');
   late final _gst_iterator_fold = _gst_iterator_foldPtr.asFunction<
       int Function(ffi.Pointer<GstIterator1>, GstIteratorFoldFunction,
-          ffi.Pointer<GValue>, gpointer)>();
+          ffi.Pointer<GValue>, ffi.Pointer)>();
 
   int gst_iterator_foreach(
     ffi.Pointer<GstIterator1> it,
     GstIteratorForeachFunction func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_iterator_foreach(
       it,
@@ -54549,17 +54796,19 @@ class GStreamer {
 
   late final _gst_iterator_foreachPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int32 Function(ffi.Pointer<GstIterator1>,
-              GstIteratorForeachFunction, gpointer)>>('gst_iterator_foreach');
+          ffi.Int32 Function(
+              ffi.Pointer<GstIterator1>,
+              GstIteratorForeachFunction,
+              ffi.Pointer)>>('gst_iterator_foreach');
   late final _gst_iterator_foreach = _gst_iterator_foreachPtr.asFunction<
-      int Function(
-          ffi.Pointer<GstIterator1>, GstIteratorForeachFunction, gpointer)>();
+      int Function(ffi.Pointer<GstIterator1>, GstIteratorForeachFunction,
+          ffi.Pointer)>();
 
   int gst_iterator_find_custom(
     ffi.Pointer<GstIterator1> it,
     GCompareFunc func,
     ffi.Pointer<GValue> elem,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_iterator_find_custom(
       it,
@@ -54572,11 +54821,11 @@ class GStreamer {
   late final _gst_iterator_find_customPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GstIterator1>, GCompareFunc,
-              ffi.Pointer<GValue>, gpointer)>>('gst_iterator_find_custom');
+              ffi.Pointer<GValue>, ffi.Pointer)>>('gst_iterator_find_custom');
   late final _gst_iterator_find_custom =
       _gst_iterator_find_customPtr.asFunction<
           int Function(ffi.Pointer<GstIterator1>, GCompareFunc,
-              ffi.Pointer<GValue>, gpointer)>();
+              ffi.Pointer<GValue>, ffi.Pointer)>();
 
   ffi.Pointer<ffi.Char> gst_format_get_name(
     int format,
@@ -55840,7 +56089,7 @@ class GStreamer {
   void gst_tag_list_foreach(
     ffi.Pointer<GstTagList> list,
     GstTagForeachFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_tag_list_foreach(
       list,
@@ -55852,9 +56101,9 @@ class GStreamer {
   late final _gst_tag_list_foreachPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GstTagList>, GstTagForeachFunc,
-              gpointer)>>('gst_tag_list_foreach');
+              ffi.Pointer)>>('gst_tag_list_foreach');
   late final _gst_tag_list_foreach = _gst_tag_list_foreachPtr.asFunction<
-      void Function(ffi.Pointer<GstTagList>, GstTagForeachFunc, gpointer)>();
+      void Function(ffi.Pointer<GstTagList>, GstTagForeachFunc, ffi.Pointer)>();
 
   ffi.Pointer<GValue> gst_tag_list_get_value_index(
     ffi.Pointer<GstTagList> list,
@@ -56270,7 +56519,7 @@ class GStreamer {
   int gst_tag_list_get_pointer(
     ffi.Pointer<GstTagList> list,
     ffi.Pointer<ffi.Char> tag,
-    ffi.Pointer<gpointer> value,
+    ffi.Pointer<ffi.Pointer> value,
   ) {
     return _gst_tag_list_get_pointer(
       list,
@@ -56282,17 +56531,17 @@ class GStreamer {
   late final _gst_tag_list_get_pointerPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GstTagList>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<gpointer>)>>('gst_tag_list_get_pointer');
+              ffi.Pointer<ffi.Pointer>)>>('gst_tag_list_get_pointer');
   late final _gst_tag_list_get_pointer =
       _gst_tag_list_get_pointerPtr.asFunction<
           int Function(ffi.Pointer<GstTagList>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<gpointer>)>();
+              ffi.Pointer<ffi.Pointer>)>();
 
   int gst_tag_list_get_pointer_index(
     ffi.Pointer<GstTagList> list,
     ffi.Pointer<ffi.Char> tag,
     int index,
-    ffi.Pointer<gpointer> value,
+    ffi.Pointer<ffi.Pointer> value,
   ) {
     return _gst_tag_list_get_pointer_index(
       list,
@@ -56304,12 +56553,15 @@ class GStreamer {
 
   late final _gst_tag_list_get_pointer_indexPtr = _lookup<
       ffi.NativeFunction<
-          gboolean Function(ffi.Pointer<GstTagList>, ffi.Pointer<ffi.Char>,
-              guint, ffi.Pointer<gpointer>)>>('gst_tag_list_get_pointer_index');
+          gboolean Function(
+              ffi.Pointer<GstTagList>,
+              ffi.Pointer<ffi.Char>,
+              guint,
+              ffi.Pointer<ffi.Pointer>)>>('gst_tag_list_get_pointer_index');
   late final _gst_tag_list_get_pointer_index =
       _gst_tag_list_get_pointer_indexPtr.asFunction<
           int Function(ffi.Pointer<GstTagList>, ffi.Pointer<ffi.Char>, int,
-              ffi.Pointer<gpointer>)>();
+              ffi.Pointer<ffi.Pointer>)>();
 
   int gst_tag_list_get_date(
     ffi.Pointer<GstTagList> list,
@@ -62676,10 +62928,10 @@ class GStreamer {
       void Function(
           ffi.Pointer<GstTaskPool>, ffi.Pointer<ffi.Pointer<GError>>)>();
 
-  gpointer gst_task_pool_push(
+  ffi.Pointer gst_task_pool_push(
     ffi.Pointer<GstTaskPool> pool,
     GstTaskPoolFunction func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     ffi.Pointer<ffi.Pointer<GError>> error,
   ) {
     return _gst_task_pool_push(
@@ -62692,18 +62944,18 @@ class GStreamer {
 
   late final _gst_task_pool_pushPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(
+          ffi.Pointer Function(
               ffi.Pointer<GstTaskPool>,
               GstTaskPoolFunction,
-              gpointer,
+              ffi.Pointer,
               ffi.Pointer<ffi.Pointer<GError>>)>>('gst_task_pool_push');
   late final _gst_task_pool_push = _gst_task_pool_pushPtr.asFunction<
-      gpointer Function(ffi.Pointer<GstTaskPool>, GstTaskPoolFunction, gpointer,
-          ffi.Pointer<ffi.Pointer<GError>>)>();
+      ffi.Pointer Function(ffi.Pointer<GstTaskPool>, GstTaskPoolFunction,
+          ffi.Pointer, ffi.Pointer<ffi.Pointer<GError>>)>();
 
   void gst_task_pool_join(
     ffi.Pointer<GstTaskPool> pool,
-    gpointer id,
+    ffi.Pointer id,
   ) {
     return _gst_task_pool_join(
       pool,
@@ -62714,13 +62966,13 @@ class GStreamer {
   late final _gst_task_pool_joinPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
-              ffi.Pointer<GstTaskPool>, gpointer)>>('gst_task_pool_join');
+              ffi.Pointer<GstTaskPool>, ffi.Pointer)>>('gst_task_pool_join');
   late final _gst_task_pool_join = _gst_task_pool_joinPtr
-      .asFunction<void Function(ffi.Pointer<GstTaskPool>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GstTaskPool>, ffi.Pointer)>();
 
   void gst_task_pool_dispose_handle(
     ffi.Pointer<GstTaskPool> pool,
-    gpointer id,
+    ffi.Pointer id,
   ) {
     return _gst_task_pool_dispose_handle(
       pool,
@@ -62731,9 +62983,9 @@ class GStreamer {
   late final _gst_task_pool_dispose_handlePtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GstTaskPool>,
-              gpointer)>>('gst_task_pool_dispose_handle');
+              ffi.Pointer)>>('gst_task_pool_dispose_handle');
   late final _gst_task_pool_dispose_handle = _gst_task_pool_dispose_handlePtr
-      .asFunction<void Function(ffi.Pointer<GstTaskPool>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GstTaskPool>, ffi.Pointer)>();
 
   void gst_task_pool_cleanup(
     ffi.Pointer<GstTaskPool> pool,
@@ -62822,7 +63074,7 @@ class GStreamer {
 
   ffi.Pointer<GstTask> gst_task_new(
     GstTaskFunction func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_task_new(
@@ -62835,10 +63087,10 @@ class GStreamer {
   late final _gst_task_newPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GstTask> Function(
-              GstTaskFunction, gpointer, GDestroyNotify)>>('gst_task_new');
+              GstTaskFunction, ffi.Pointer, GDestroyNotify)>>('gst_task_new');
   late final _gst_task_new = _gst_task_newPtr.asFunction<
       ffi.Pointer<GstTask> Function(
-          GstTaskFunction, gpointer, GDestroyNotify)>();
+          GstTaskFunction, ffi.Pointer, GDestroyNotify)>();
 
   void gst_task_set_lock(
     ffi.Pointer<GstTask> task,
@@ -62892,7 +63144,7 @@ class GStreamer {
   void gst_task_set_enter_callback(
     ffi.Pointer<GstTask> task,
     GstTaskThreadFunc enter_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_task_set_enter_callback(
@@ -62905,17 +63157,17 @@ class GStreamer {
 
   late final _gst_task_set_enter_callbackPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GstTask>, GstTaskThreadFunc, gpointer,
-              GDestroyNotify)>>('gst_task_set_enter_callback');
+          ffi.Void Function(ffi.Pointer<GstTask>, GstTaskThreadFunc,
+              ffi.Pointer, GDestroyNotify)>>('gst_task_set_enter_callback');
   late final _gst_task_set_enter_callback =
       _gst_task_set_enter_callbackPtr.asFunction<
-          void Function(ffi.Pointer<GstTask>, GstTaskThreadFunc, gpointer,
+          void Function(ffi.Pointer<GstTask>, GstTaskThreadFunc, ffi.Pointer,
               GDestroyNotify)>();
 
   void gst_task_set_leave_callback(
     ffi.Pointer<GstTask> task,
     GstTaskThreadFunc leave_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_task_set_leave_callback(
@@ -62928,11 +63180,11 @@ class GStreamer {
 
   late final _gst_task_set_leave_callbackPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GstTask>, GstTaskThreadFunc, gpointer,
-              GDestroyNotify)>>('gst_task_set_leave_callback');
+          ffi.Void Function(ffi.Pointer<GstTask>, GstTaskThreadFunc,
+              ffi.Pointer, GDestroyNotify)>>('gst_task_set_leave_callback');
   late final _gst_task_set_leave_callback =
       _gst_task_set_leave_callbackPtr.asFunction<
-          void Function(ffi.Pointer<GstTask>, GstTaskThreadFunc, gpointer,
+          void Function(ffi.Pointer<GstTask>, GstTaskThreadFunc, ffi.Pointer,
               GDestroyNotify)>();
 
   int gst_task_get_state(
@@ -63471,7 +63723,7 @@ class GStreamer {
     ffi.Pointer<GstPad> pad,
     int mask,
     GstPadProbeCallback callback,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify destroy_data,
   ) {
     return _gst_pad_add_probe(
@@ -63486,9 +63738,9 @@ class GStreamer {
   late final _gst_pad_add_probePtr = _lookup<
       ffi.NativeFunction<
           gulong Function(ffi.Pointer<GstPad>, ffi.Int32, GstPadProbeCallback,
-              gpointer, GDestroyNotify)>>('gst_pad_add_probe');
+              ffi.Pointer, GDestroyNotify)>>('gst_pad_add_probe');
   late final _gst_pad_add_probe = _gst_pad_add_probePtr.asFunction<
-      int Function(ffi.Pointer<GstPad>, int, GstPadProbeCallback, gpointer,
+      int Function(ffi.Pointer<GstPad>, int, GstPadProbeCallback, ffi.Pointer,
           GDestroyNotify)>();
 
   void gst_pad_remove_probe(
@@ -63579,7 +63831,7 @@ class GStreamer {
 
   void gst_pad_set_element_private(
     ffi.Pointer<GstPad> pad,
-    gpointer priv,
+    ffi.Pointer priv,
   ) {
     return _gst_pad_set_element_private(
       pad,
@@ -63588,12 +63840,13 @@ class GStreamer {
   }
 
   late final _gst_pad_set_element_privatePtr = _lookup<
-          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstPad>, gpointer)>>(
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstPad>, ffi.Pointer)>>(
       'gst_pad_set_element_private');
   late final _gst_pad_set_element_private = _gst_pad_set_element_privatePtr
-      .asFunction<void Function(ffi.Pointer<GstPad>, gpointer)>();
+      .asFunction<void Function(ffi.Pointer<GstPad>, ffi.Pointer)>();
 
-  gpointer gst_pad_get_element_private(
+  ffi.Pointer gst_pad_get_element_private(
     ffi.Pointer<GstPad> pad,
   ) {
     return _gst_pad_get_element_private(
@@ -63602,10 +63855,10 @@ class GStreamer {
   }
 
   late final _gst_pad_get_element_privatePtr =
-      _lookup<ffi.NativeFunction<gpointer Function(ffi.Pointer<GstPad>)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer Function(ffi.Pointer<GstPad>)>>(
           'gst_pad_get_element_private');
   late final _gst_pad_get_element_private = _gst_pad_get_element_privatePtr
-      .asFunction<gpointer Function(ffi.Pointer<GstPad>)>();
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GstPad>)>();
 
   ffi.Pointer<GstPadTemplate> gst_pad_get_pad_template(
     ffi.Pointer<GstPad> pad,
@@ -63662,7 +63915,7 @@ class GStreamer {
   void gst_pad_sticky_events_foreach(
     ffi.Pointer<GstPad> pad,
     GstPadStickyEventsForeachFunction foreach_func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_pad_sticky_events_foreach(
       pad,
@@ -63676,16 +63929,16 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GstPad>,
               GstPadStickyEventsForeachFunction,
-              gpointer)>>('gst_pad_sticky_events_foreach');
+              ffi.Pointer)>>('gst_pad_sticky_events_foreach');
   late final _gst_pad_sticky_events_foreach =
       _gst_pad_sticky_events_foreachPtr.asFunction<
           void Function(ffi.Pointer<GstPad>, GstPadStickyEventsForeachFunction,
-              gpointer)>();
+              ffi.Pointer)>();
 
   void gst_pad_set_activate_function_full(
     ffi.Pointer<GstPad> pad,
     GstPadActivateFunction activate,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_pad_set_activate_function_full(
@@ -63698,17 +63951,20 @@ class GStreamer {
 
   late final _gst_pad_set_activate_function_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GstPad>, GstPadActivateFunction,
-              gpointer, GDestroyNotify)>>('gst_pad_set_activate_function_full');
+          ffi.Void Function(
+              ffi.Pointer<GstPad>,
+              GstPadActivateFunction,
+              ffi.Pointer,
+              GDestroyNotify)>>('gst_pad_set_activate_function_full');
   late final _gst_pad_set_activate_function_full =
       _gst_pad_set_activate_function_fullPtr.asFunction<
-          void Function(ffi.Pointer<GstPad>, GstPadActivateFunction, gpointer,
-              GDestroyNotify)>();
+          void Function(ffi.Pointer<GstPad>, GstPadActivateFunction,
+              ffi.Pointer, GDestroyNotify)>();
 
   void gst_pad_set_activatemode_function_full(
     ffi.Pointer<GstPad> pad,
     GstPadActivateModeFunction activatemode,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_pad_set_activatemode_function_full(
@@ -63724,17 +63980,17 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GstPad>,
               GstPadActivateModeFunction,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>>('gst_pad_set_activatemode_function_full');
   late final _gst_pad_set_activatemode_function_full =
       _gst_pad_set_activatemode_function_fullPtr.asFunction<
           void Function(ffi.Pointer<GstPad>, GstPadActivateModeFunction,
-              gpointer, GDestroyNotify)>();
+              ffi.Pointer, GDestroyNotify)>();
 
   void gst_pad_set_chain_function_full(
     ffi.Pointer<GstPad> pad,
     GstPadChainFunction chain,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_pad_set_chain_function_full(
@@ -63747,17 +64003,17 @@ class GStreamer {
 
   late final _gst_pad_set_chain_function_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GstPad>, GstPadChainFunction, gpointer,
-              GDestroyNotify)>>('gst_pad_set_chain_function_full');
+          ffi.Void Function(ffi.Pointer<GstPad>, GstPadChainFunction,
+              ffi.Pointer, GDestroyNotify)>>('gst_pad_set_chain_function_full');
   late final _gst_pad_set_chain_function_full =
       _gst_pad_set_chain_function_fullPtr.asFunction<
-          void Function(ffi.Pointer<GstPad>, GstPadChainFunction, gpointer,
+          void Function(ffi.Pointer<GstPad>, GstPadChainFunction, ffi.Pointer,
               GDestroyNotify)>();
 
   void gst_pad_set_chain_list_function_full(
     ffi.Pointer<GstPad> pad,
     GstPadChainListFunction chainlist,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_pad_set_chain_list_function_full(
@@ -63773,17 +64029,17 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GstPad>,
               GstPadChainListFunction,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>>('gst_pad_set_chain_list_function_full');
   late final _gst_pad_set_chain_list_function_full =
       _gst_pad_set_chain_list_function_fullPtr.asFunction<
-          void Function(ffi.Pointer<GstPad>, GstPadChainListFunction, gpointer,
-              GDestroyNotify)>();
+          void Function(ffi.Pointer<GstPad>, GstPadChainListFunction,
+              ffi.Pointer, GDestroyNotify)>();
 
   void gst_pad_set_getrange_function_full(
     ffi.Pointer<GstPad> pad,
     GstPadGetRangeFunction get1,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_pad_set_getrange_function_full(
@@ -63796,17 +64052,20 @@ class GStreamer {
 
   late final _gst_pad_set_getrange_function_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GstPad>, GstPadGetRangeFunction,
-              gpointer, GDestroyNotify)>>('gst_pad_set_getrange_function_full');
+          ffi.Void Function(
+              ffi.Pointer<GstPad>,
+              GstPadGetRangeFunction,
+              ffi.Pointer,
+              GDestroyNotify)>>('gst_pad_set_getrange_function_full');
   late final _gst_pad_set_getrange_function_full =
       _gst_pad_set_getrange_function_fullPtr.asFunction<
-          void Function(ffi.Pointer<GstPad>, GstPadGetRangeFunction, gpointer,
-              GDestroyNotify)>();
+          void Function(ffi.Pointer<GstPad>, GstPadGetRangeFunction,
+              ffi.Pointer, GDestroyNotify)>();
 
   void gst_pad_set_event_function_full(
     ffi.Pointer<GstPad> pad,
     GstPadEventFunction event,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_pad_set_event_function_full(
@@ -63819,17 +64078,17 @@ class GStreamer {
 
   late final _gst_pad_set_event_function_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GstPad>, GstPadEventFunction, gpointer,
-              GDestroyNotify)>>('gst_pad_set_event_function_full');
+          ffi.Void Function(ffi.Pointer<GstPad>, GstPadEventFunction,
+              ffi.Pointer, GDestroyNotify)>>('gst_pad_set_event_function_full');
   late final _gst_pad_set_event_function_full =
       _gst_pad_set_event_function_fullPtr.asFunction<
-          void Function(ffi.Pointer<GstPad>, GstPadEventFunction, gpointer,
+          void Function(ffi.Pointer<GstPad>, GstPadEventFunction, ffi.Pointer,
               GDestroyNotify)>();
 
   void gst_pad_set_event_full_function_full(
     ffi.Pointer<GstPad> pad,
     GstPadEventFullFunction event,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_pad_set_event_full_function_full(
@@ -63845,17 +64104,17 @@ class GStreamer {
           ffi.Void Function(
               ffi.Pointer<GstPad>,
               GstPadEventFullFunction,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>>('gst_pad_set_event_full_function_full');
   late final _gst_pad_set_event_full_function_full =
       _gst_pad_set_event_full_function_fullPtr.asFunction<
-          void Function(ffi.Pointer<GstPad>, GstPadEventFullFunction, gpointer,
-              GDestroyNotify)>();
+          void Function(ffi.Pointer<GstPad>, GstPadEventFullFunction,
+              ffi.Pointer, GDestroyNotify)>();
 
   void gst_pad_set_link_function_full(
     ffi.Pointer<GstPad> pad,
     GstPadLinkFunction link,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_pad_set_link_function_full(
@@ -63868,17 +64127,17 @@ class GStreamer {
 
   late final _gst_pad_set_link_function_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GstPad>, GstPadLinkFunction, gpointer,
-              GDestroyNotify)>>('gst_pad_set_link_function_full');
+          ffi.Void Function(ffi.Pointer<GstPad>, GstPadLinkFunction,
+              ffi.Pointer, GDestroyNotify)>>('gst_pad_set_link_function_full');
   late final _gst_pad_set_link_function_full =
       _gst_pad_set_link_function_fullPtr.asFunction<
-          void Function(ffi.Pointer<GstPad>, GstPadLinkFunction, gpointer,
+          void Function(ffi.Pointer<GstPad>, GstPadLinkFunction, ffi.Pointer,
               GDestroyNotify)>();
 
   void gst_pad_set_unlink_function_full(
     ffi.Pointer<GstPad> pad,
     GstPadUnlinkFunction unlink,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_pad_set_unlink_function_full(
@@ -63891,11 +64150,14 @@ class GStreamer {
 
   late final _gst_pad_set_unlink_function_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GstPad>, GstPadUnlinkFunction, gpointer,
+          ffi.Void Function(
+              ffi.Pointer<GstPad>,
+              GstPadUnlinkFunction,
+              ffi.Pointer,
               GDestroyNotify)>>('gst_pad_set_unlink_function_full');
   late final _gst_pad_set_unlink_function_full =
       _gst_pad_set_unlink_function_fullPtr.asFunction<
-          void Function(ffi.Pointer<GstPad>, GstPadUnlinkFunction, gpointer,
+          void Function(ffi.Pointer<GstPad>, GstPadUnlinkFunction, ffi.Pointer,
               GDestroyNotify)>();
 
   int gst_pad_can_link(
@@ -64269,7 +64531,7 @@ class GStreamer {
   int gst_pad_start_task(
     ffi.Pointer<GstPad> pad,
     GstTaskFunction func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_pad_start_task(
@@ -64282,11 +64544,11 @@ class GStreamer {
 
   late final _gst_pad_start_taskPtr = _lookup<
       ffi.NativeFunction<
-          gboolean Function(ffi.Pointer<GstPad>, GstTaskFunction, gpointer,
+          gboolean Function(ffi.Pointer<GstPad>, GstTaskFunction, ffi.Pointer,
               GDestroyNotify)>>('gst_pad_start_task');
   late final _gst_pad_start_task = _gst_pad_start_taskPtr.asFunction<
       int Function(
-          ffi.Pointer<GstPad>, GstTaskFunction, gpointer, GDestroyNotify)>();
+          ffi.Pointer<GstPad>, GstTaskFunction, ffi.Pointer, GDestroyNotify)>();
 
   int gst_pad_pause_task(
     ffi.Pointer<GstPad> pad,
@@ -64333,7 +64595,7 @@ class GStreamer {
   void gst_pad_set_iterate_internal_links_function_full(
     ffi.Pointer<GstPad> pad,
     GstPadIterIntLinkFunction iterintlink,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_pad_set_iterate_internal_links_function_full(
@@ -64347,12 +64609,12 @@ class GStreamer {
   late final _gst_pad_set_iterate_internal_links_function_fullPtr = _lookup<
           ffi.NativeFunction<
               ffi.Void Function(ffi.Pointer<GstPad>, GstPadIterIntLinkFunction,
-                  gpointer, GDestroyNotify)>>(
+                  ffi.Pointer, GDestroyNotify)>>(
       'gst_pad_set_iterate_internal_links_function_full');
   late final _gst_pad_set_iterate_internal_links_function_full =
       _gst_pad_set_iterate_internal_links_function_fullPtr.asFunction<
           void Function(ffi.Pointer<GstPad>, GstPadIterIntLinkFunction,
-              gpointer, GDestroyNotify)>();
+              ffi.Pointer, GDestroyNotify)>();
 
   ffi.Pointer<GstIterator1> gst_pad_iterate_internal_links(
     ffi.Pointer<GstPad> pad,
@@ -64443,7 +64705,7 @@ class GStreamer {
   void gst_pad_set_query_function_full(
     ffi.Pointer<GstPad> pad,
     GstPadQueryFunction query,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_pad_set_query_function_full(
@@ -64456,11 +64718,11 @@ class GStreamer {
 
   late final _gst_pad_set_query_function_fullPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GstPad>, GstPadQueryFunction, gpointer,
-              GDestroyNotify)>>('gst_pad_set_query_function_full');
+          ffi.Void Function(ffi.Pointer<GstPad>, GstPadQueryFunction,
+              ffi.Pointer, GDestroyNotify)>>('gst_pad_set_query_function_full');
   late final _gst_pad_set_query_function_full =
       _gst_pad_set_query_function_fullPtr.asFunction<
-          void Function(ffi.Pointer<GstPad>, GstPadQueryFunction, gpointer,
+          void Function(ffi.Pointer<GstPad>, GstPadQueryFunction, ffi.Pointer,
               GDestroyNotify)>();
 
   int gst_pad_query_default(
@@ -64486,7 +64748,7 @@ class GStreamer {
   int gst_pad_forward(
     ffi.Pointer<GstPad> pad,
     GstPadForwardFunction forward,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_pad_forward(
       pad,
@@ -64498,9 +64760,9 @@ class GStreamer {
   late final _gst_pad_forwardPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GstPad>, GstPadForwardFunction,
-              gpointer)>>('gst_pad_forward');
+              ffi.Pointer)>>('gst_pad_forward');
   late final _gst_pad_forward = _gst_pad_forwardPtr.asFunction<
-      int Function(ffi.Pointer<GstPad>, GstPadForwardFunction, gpointer)>();
+      int Function(ffi.Pointer<GstPad>, GstPadForwardFunction, ffi.Pointer)>();
 
   int gst_bus_get_type() {
     return _gst_bus_get_type();
@@ -64655,7 +64917,7 @@ class GStreamer {
   void gst_bus_set_sync_handler(
     ffi.Pointer<GstBus> bus,
     GstBusSyncHandler func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_bus_set_sync_handler(
@@ -64668,11 +64930,11 @@ class GStreamer {
 
   late final _gst_bus_set_sync_handlerPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GstBus>, GstBusSyncHandler, gpointer,
+          ffi.Void Function(ffi.Pointer<GstBus>, GstBusSyncHandler, ffi.Pointer,
               GDestroyNotify)>>('gst_bus_set_sync_handler');
   late final _gst_bus_set_sync_handler =
       _gst_bus_set_sync_handlerPtr.asFunction<
-          void Function(ffi.Pointer<GstBus>, GstBusSyncHandler, gpointer,
+          void Function(ffi.Pointer<GstBus>, GstBusSyncHandler, ffi.Pointer,
               GDestroyNotify)>();
 
   void gst_bus_get_pollfd(
@@ -64711,7 +64973,7 @@ class GStreamer {
     ffi.Pointer<GstBus> bus,
     int priority,
     GstBusFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_bus_add_watch_full(
@@ -64725,16 +64987,16 @@ class GStreamer {
 
   late final _gst_bus_add_watch_fullPtr = _lookup<
       ffi.NativeFunction<
-          guint Function(ffi.Pointer<GstBus>, gint, GstBusFunc, gpointer,
+          guint Function(ffi.Pointer<GstBus>, gint, GstBusFunc, ffi.Pointer,
               GDestroyNotify)>>('gst_bus_add_watch_full');
   late final _gst_bus_add_watch_full = _gst_bus_add_watch_fullPtr.asFunction<
       int Function(
-          ffi.Pointer<GstBus>, int, GstBusFunc, gpointer, GDestroyNotify)>();
+          ffi.Pointer<GstBus>, int, GstBusFunc, ffi.Pointer, GDestroyNotify)>();
 
   int gst_bus_add_watch(
     ffi.Pointer<GstBus> bus,
     GstBusFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_bus_add_watch(
       bus,
@@ -64745,10 +65007,10 @@ class GStreamer {
 
   late final _gst_bus_add_watchPtr = _lookup<
       ffi.NativeFunction<
-          guint Function(
-              ffi.Pointer<GstBus>, GstBusFunc, gpointer)>>('gst_bus_add_watch');
+          guint Function(ffi.Pointer<GstBus>, GstBusFunc,
+              ffi.Pointer)>>('gst_bus_add_watch');
   late final _gst_bus_add_watch = _gst_bus_add_watchPtr
-      .asFunction<int Function(ffi.Pointer<GstBus>, GstBusFunc, gpointer)>();
+      .asFunction<int Function(ffi.Pointer<GstBus>, GstBusFunc, ffi.Pointer)>();
 
   int gst_bus_remove_watch(
     ffi.Pointer<GstBus> bus,
@@ -64786,7 +65048,7 @@ class GStreamer {
   int gst_bus_async_signal_func(
     ffi.Pointer<GstBus> bus,
     ffi.Pointer<GstMessage> message,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _gst_bus_async_signal_func(
       bus,
@@ -64798,16 +65060,16 @@ class GStreamer {
   late final _gst_bus_async_signal_funcPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GstBus>, ffi.Pointer<GstMessage>,
-              gpointer)>>('gst_bus_async_signal_func');
+              ffi.Pointer)>>('gst_bus_async_signal_func');
   late final _gst_bus_async_signal_func =
       _gst_bus_async_signal_funcPtr.asFunction<
           int Function(
-              ffi.Pointer<GstBus>, ffi.Pointer<GstMessage>, gpointer)>();
+              ffi.Pointer<GstBus>, ffi.Pointer<GstMessage>, ffi.Pointer)>();
 
   int gst_bus_sync_signal_handler(
     ffi.Pointer<GstBus> bus,
     ffi.Pointer<GstMessage> message,
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _gst_bus_sync_signal_handler(
       bus,
@@ -64819,11 +65081,11 @@ class GStreamer {
   late final _gst_bus_sync_signal_handlerPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int32 Function(ffi.Pointer<GstBus>, ffi.Pointer<GstMessage>,
-              gpointer)>>('gst_bus_sync_signal_handler');
+              ffi.Pointer)>>('gst_bus_sync_signal_handler');
   late final _gst_bus_sync_signal_handler =
       _gst_bus_sync_signal_handlerPtr.asFunction<
           int Function(
-              ffi.Pointer<GstBus>, ffi.Pointer<GstMessage>, gpointer)>();
+              ffi.Pointer<GstBus>, ffi.Pointer<GstMessage>, ffi.Pointer)>();
 
   void gst_bus_add_signal_watch(
     ffi.Pointer<GstBus> bus,
@@ -64986,7 +65248,7 @@ class GStreamer {
     ffi.Pointer<ffi.Char> source,
     ffi.Pointer<ffi.Char> package,
     ffi.Pointer<ffi.Char> origin,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_plugin_register_static_full(
       major_version,
@@ -65016,7 +65278,7 @@ class GStreamer {
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              gpointer)>>('gst_plugin_register_static_full');
+              ffi.Pointer)>>('gst_plugin_register_static_full');
   late final _gst_plugin_register_static_full =
       _gst_plugin_register_static_fullPtr.asFunction<
           int Function(
@@ -65030,7 +65292,7 @@ class GStreamer {
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              gpointer)>();
+              ffi.Pointer)>();
 
   ffi.Pointer<ffi.Char> gst_plugin_get_name(
     ffi.Pointer<GstPlugin> plugin,
@@ -67746,7 +68008,7 @@ class GStreamer {
   int gst_element_foreach_sink_pad(
     ffi.Pointer<GstElement> element,
     GstElementForeachPadFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_element_foreach_sink_pad(
       element,
@@ -67758,16 +68020,16 @@ class GStreamer {
   late final _gst_element_foreach_sink_padPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GstElement>, GstElementForeachPadFunc,
-              gpointer)>>('gst_element_foreach_sink_pad');
+              ffi.Pointer)>>('gst_element_foreach_sink_pad');
   late final _gst_element_foreach_sink_pad =
       _gst_element_foreach_sink_padPtr.asFunction<
-          int Function(
-              ffi.Pointer<GstElement>, GstElementForeachPadFunc, gpointer)>();
+          int Function(ffi.Pointer<GstElement>, GstElementForeachPadFunc,
+              ffi.Pointer)>();
 
   int gst_element_foreach_src_pad(
     ffi.Pointer<GstElement> element,
     GstElementForeachPadFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_element_foreach_src_pad(
       element,
@@ -67779,16 +68041,16 @@ class GStreamer {
   late final _gst_element_foreach_src_padPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GstElement>, GstElementForeachPadFunc,
-              gpointer)>>('gst_element_foreach_src_pad');
+              ffi.Pointer)>>('gst_element_foreach_src_pad');
   late final _gst_element_foreach_src_pad =
       _gst_element_foreach_src_padPtr.asFunction<
-          int Function(
-              ffi.Pointer<GstElement>, GstElementForeachPadFunc, gpointer)>();
+          int Function(ffi.Pointer<GstElement>, GstElementForeachPadFunc,
+              ffi.Pointer)>();
 
   int gst_element_foreach_pad(
     ffi.Pointer<GstElement> element,
     GstElementForeachPadFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_element_foreach_pad(
       element,
@@ -67800,10 +68062,10 @@ class GStreamer {
   late final _gst_element_foreach_padPtr = _lookup<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GstElement>, GstElementForeachPadFunc,
-              gpointer)>>('gst_element_foreach_pad');
+              ffi.Pointer)>>('gst_element_foreach_pad');
   late final _gst_element_foreach_pad = _gst_element_foreach_padPtr.asFunction<
       int Function(
-          ffi.Pointer<GstElement>, GstElementForeachPadFunc, gpointer)>();
+          ffi.Pointer<GstElement>, GstElementForeachPadFunc, ffi.Pointer)>();
 
   int gst_element_send_event(
     ffi.Pointer<GstElement> element,
@@ -68162,7 +68424,7 @@ class GStreamer {
   void gst_element_call_async(
     ffi.Pointer<GstElement> element,
     GstElementCallAsyncFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify destroy_notify,
   ) {
     return _gst_element_call_async(
@@ -68176,10 +68438,10 @@ class GStreamer {
   late final _gst_element_call_asyncPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GstElement>, GstElementCallAsyncFunc,
-              gpointer, GDestroyNotify)>>('gst_element_call_async');
+              ffi.Pointer, GDestroyNotify)>>('gst_element_call_async');
   late final _gst_element_call_async = _gst_element_call_asyncPtr.asFunction<
-      void Function(ffi.Pointer<GstElement>, GstElementCallAsyncFunc, gpointer,
-          GDestroyNotify)>();
+      void Function(ffi.Pointer<GstElement>, GstElementCallAsyncFunc,
+          ffi.Pointer, GDestroyNotify)>();
 
   ffi.Pointer<GstElementFactory> gst_element_get_factory(
     ffi.Pointer<GstElement> element,
@@ -70918,7 +71180,7 @@ class GStreamer {
     int line,
     ffi.Pointer<GObject> object,
     ffi.Pointer<GstDebugMessage> message,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_debug_log_default(
       category,
@@ -70942,7 +71204,7 @@ class GStreamer {
               gint,
               ffi.Pointer<GObject>,
               ffi.Pointer<GstDebugMessage>,
-              gpointer)>>('gst_debug_log_default');
+              ffi.Pointer)>>('gst_debug_log_default');
   late final _gst_debug_log_default = _gst_debug_log_defaultPtr.asFunction<
       void Function(
           ffi.Pointer<GstDebugCategory>,
@@ -70952,7 +71214,7 @@ class GStreamer {
           int,
           ffi.Pointer<GObject>,
           ffi.Pointer<GstDebugMessage>,
-          gpointer)>();
+          ffi.Pointer)>();
 
   ffi.Pointer<ffi.Char> gst_debug_level_get_name(
     int level,
@@ -70970,7 +71232,7 @@ class GStreamer {
 
   void gst_debug_add_log_function(
     GstLogFunction func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_debug_add_log_function(
@@ -70982,10 +71244,10 @@ class GStreamer {
 
   late final _gst_debug_add_log_functionPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Void Function(GstLogFunction, gpointer,
+          ffi.Void Function(GstLogFunction, ffi.Pointer,
               GDestroyNotify)>>('gst_debug_add_log_function');
   late final _gst_debug_add_log_function = _gst_debug_add_log_functionPtr
-      .asFunction<void Function(GstLogFunction, gpointer, GDestroyNotify)>();
+      .asFunction<void Function(GstLogFunction, ffi.Pointer, GDestroyNotify)>();
 
   int gst_debug_remove_log_function(
     GstLogFunction func,
@@ -71002,7 +71264,7 @@ class GStreamer {
       .asFunction<int Function(GstLogFunction)>();
 
   int gst_debug_remove_log_function_by_data(
-    gpointer data,
+    ffi.Pointer data,
   ) {
     return _gst_debug_remove_log_function_by_data(
       data,
@@ -71010,11 +71272,11 @@ class GStreamer {
   }
 
   late final _gst_debug_remove_log_function_by_dataPtr =
-      _lookup<ffi.NativeFunction<guint Function(gpointer)>>(
+      _lookup<ffi.NativeFunction<guint Function(ffi.Pointer)>>(
           'gst_debug_remove_log_function_by_data');
   late final _gst_debug_remove_log_function_by_data =
       _gst_debug_remove_log_function_by_dataPtr
-          .asFunction<int Function(gpointer)>();
+          .asFunction<int Function(ffi.Pointer)>();
 
   void gst_debug_set_active(
     int active,
@@ -73876,7 +74138,7 @@ class GStreamer {
     ffi.Pointer<GstRegistry> registry,
     GstPluginFilter filter,
     int first,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_registry_plugin_filter(
       registry,
@@ -73889,17 +74151,17 @@ class GStreamer {
   late final _gst_registry_plugin_filterPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GList> Function(ffi.Pointer<GstRegistry>, GstPluginFilter,
-              gboolean, gpointer)>>('gst_registry_plugin_filter');
+              gboolean, ffi.Pointer)>>('gst_registry_plugin_filter');
   late final _gst_registry_plugin_filter =
       _gst_registry_plugin_filterPtr.asFunction<
           ffi.Pointer<GList> Function(
-              ffi.Pointer<GstRegistry>, GstPluginFilter, int, gpointer)>();
+              ffi.Pointer<GstRegistry>, GstPluginFilter, int, ffi.Pointer)>();
 
   ffi.Pointer<GList> gst_registry_feature_filter(
     ffi.Pointer<GstRegistry> registry,
     GstPluginFeatureFilter filter,
     int first,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_registry_feature_filter(
       registry,
@@ -73915,11 +74177,11 @@ class GStreamer {
               ffi.Pointer<GstRegistry>,
               GstPluginFeatureFilter,
               gboolean,
-              gpointer)>>('gst_registry_feature_filter');
+              ffi.Pointer)>>('gst_registry_feature_filter');
   late final _gst_registry_feature_filter =
       _gst_registry_feature_filterPtr.asFunction<
           ffi.Pointer<GList> Function(ffi.Pointer<GstRegistry>,
-              GstPluginFeatureFilter, int, gpointer)>();
+              GstPluginFeatureFilter, int, ffi.Pointer)>();
 
   ffi.Pointer<GList> gst_registry_get_feature_list(
     ffi.Pointer<GstRegistry> registry,
@@ -74096,7 +74358,7 @@ class GStreamer {
 
   ffi.Pointer<GstPromise> gst_promise_new_with_change_func(
     GstPromiseChangeFunc func,
-    gpointer user_data,
+    ffi.Pointer user_data,
     GDestroyNotify notify,
   ) {
     return _gst_promise_new_with_change_func(
@@ -74108,12 +74370,12 @@ class GStreamer {
 
   late final _gst_promise_new_with_change_funcPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<GstPromise> Function(GstPromiseChangeFunc, gpointer,
+          ffi.Pointer<GstPromise> Function(GstPromiseChangeFunc, ffi.Pointer,
               GDestroyNotify)>>('gst_promise_new_with_change_func');
   late final _gst_promise_new_with_change_func =
       _gst_promise_new_with_change_funcPtr.asFunction<
           ffi.Pointer<GstPromise> Function(
-              GstPromiseChangeFunc, gpointer, GDestroyNotify)>();
+              GstPromiseChangeFunc, ffi.Pointer, GDestroyNotify)>();
 
   int gst_promise_wait(
     ffi.Pointer<GstPromise> promise,
@@ -74740,7 +75002,7 @@ class GStreamer {
     GstTypeFindFunction func,
     ffi.Pointer<ffi.Char> extensions,
     ffi.Pointer<GstCaps> possible_caps,
-    gpointer data,
+    ffi.Pointer data,
     GDestroyNotify data_notify,
   ) {
     return _gst_type_find_register(
@@ -74764,7 +75026,7 @@ class GStreamer {
               GstTypeFindFunction,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<GstCaps>,
-              gpointer,
+              ffi.Pointer,
               GDestroyNotify)>>('gst_type_find_register');
   late final _gst_type_find_register = _gst_type_find_registerPtr.asFunction<
       int Function(
@@ -74774,7 +75036,7 @@ class GStreamer {
           GstTypeFindFunction,
           ffi.Pointer<ffi.Char>,
           ffi.Pointer<GstCaps>,
-          gpointer,
+          ffi.Pointer,
           GDestroyNotify)>();
 
   int gst_type_find_factory_get_type() {
@@ -76394,14 +76656,14 @@ class GStreamer {
   late final _gst_util_get_timestamp =
       _gst_util_get_timestampPtr.asFunction<int Function()>();
 
-  gpointer gst_util_array_binary_search(
-    gpointer array,
+  ffi.Pointer gst_util_array_binary_search(
+    ffi.Pointer array,
     int num_elements,
     int element_size,
     GCompareDataFunc search_func,
     int mode,
     gconstpointer search_data,
-    gpointer user_data,
+    ffi.Pointer user_data,
   ) {
     return _gst_util_array_binary_search(
       array,
@@ -76416,12 +76678,18 @@ class GStreamer {
 
   late final _gst_util_array_binary_searchPtr = _lookup<
       ffi.NativeFunction<
-          gpointer Function(gpointer, guint, gsize, GCompareDataFunc, ffi.Int32,
-              gconstpointer, gpointer)>>('gst_util_array_binary_search');
+          ffi.Pointer Function(
+              ffi.Pointer,
+              guint,
+              gsize,
+              GCompareDataFunc,
+              ffi.Int32,
+              gconstpointer,
+              ffi.Pointer)>>('gst_util_array_binary_search');
   late final _gst_util_array_binary_search =
       _gst_util_array_binary_searchPtr.asFunction<
-          gpointer Function(gpointer, int, int, GCompareDataFunc, int,
-              gconstpointer, gpointer)>();
+          ffi.Pointer Function(ffi.Pointer, int, int, GCompareDataFunc, int,
+              gconstpointer, ffi.Pointer)>();
 
   int gst_util_greatest_common_divisor(
     int a,
@@ -77042,13 +77310,12 @@ typedef guint8 = ffi.UnsignedChar;
 typedef Dartguint8 = int;
 
 final class _GPtrArray extends ffi.Struct {
-  external ffi.Pointer<gpointer> pdata;
+  external ffi.Pointer<ffi.Pointer> pdata;
 
   @guint()
   external int len;
 }
 
-typedef gpointer = ffi.Pointer<ffi.Void>;
 typedef GArray = _GArray;
 typedef gboolean = gint;
 typedef gint = ffi.Int;
@@ -77063,13 +77330,13 @@ typedef DartGCompareFuncFunction = Dartgint Function(
 typedef GCompareDataFunc
     = ffi.Pointer<ffi.NativeFunction<GCompareDataFuncFunction>>;
 typedef GCompareDataFuncFunction = gint Function(
-    gconstpointer a, gconstpointer b, gpointer user_data);
+    gconstpointer a, gconstpointer b, ffi.Pointer user_data);
 typedef DartGCompareDataFuncFunction = Dartgint Function(
-    gconstpointer a, gconstpointer b, gpointer user_data);
+    gconstpointer a, gconstpointer b, ffi.Pointer user_data);
 typedef GDestroyNotify
     = ffi.Pointer<ffi.NativeFunction<GDestroyNotifyFunction>>;
-typedef GDestroyNotifyFunction = ffi.Void Function(gpointer data);
-typedef DartGDestroyNotifyFunction = void Function(gpointer data);
+typedef GDestroyNotifyFunction = ffi.Void Function(ffi.Pointer data);
+typedef DartGDestroyNotifyFunction = void Function(ffi.Pointer data);
 typedef GPtrArray = _GPtrArray;
 
 /// GCopyFunc:
@@ -77083,10 +77350,13 @@ typedef GPtrArray = _GPtrArray;
 ///
 /// Since: 2.4
 typedef GCopyFunc = ffi.Pointer<ffi.NativeFunction<GCopyFuncFunction>>;
-typedef GCopyFuncFunction = gpointer Function(gconstpointer src, gpointer data);
+typedef GCopyFuncFunction = ffi.Pointer Function(
+    gconstpointer src, ffi.Pointer data);
 typedef GFunc = ffi.Pointer<ffi.NativeFunction<GFuncFunction>>;
-typedef GFuncFunction = ffi.Void Function(gpointer data, gpointer user_data);
-typedef DartGFuncFunction = void Function(gpointer data, gpointer user_data);
+typedef GFuncFunction = ffi.Void Function(
+    ffi.Pointer data, ffi.Pointer user_data);
+typedef DartGFuncFunction = void Function(
+    ffi.Pointer data, ffi.Pointer user_data);
 typedef GEqualFunc = ffi.Pointer<ffi.NativeFunction<GEqualFuncFunction>>;
 typedef GEqualFuncFunction = gboolean Function(
     gconstpointer a, gconstpointer b);
@@ -77541,7 +77811,7 @@ abstract class GThreadError {
 final class _GThread extends ffi.Struct {
   external GThreadFunc func;
 
-  external gpointer data;
+  external ffi.Pointer data;
 
   @gboolean()
   external int joinable;
@@ -77551,7 +77821,7 @@ final class _GThread extends ffi.Struct {
 }
 
 typedef GThreadFunc = ffi.Pointer<ffi.NativeFunction<GThreadFuncFunction>>;
-typedef GThreadFuncFunction = gpointer Function(gpointer data);
+typedef GThreadFuncFunction = ffi.Pointer Function(ffi.Pointer data);
 
 abstract class GThreadPriority {
   static const int G_THREAD_PRIORITY_LOW = 0;
@@ -77561,47 +77831,47 @@ abstract class GThreadPriority {
 }
 
 final class _GMutex extends ffi.Union {
-  external gpointer p;
+  external ffi.Pointer p;
 
   @ffi.Array.multi([2])
   external ffi.Array<guint> i;
 }
 
 final class _GRecMutex extends ffi.Struct {
-  external gpointer p;
+  external ffi.Pointer p;
 
   @ffi.Array.multi([2])
   external ffi.Array<guint> i;
 }
 
 final class _GRWLock extends ffi.Struct {
-  external gpointer p;
+  external ffi.Pointer p;
 
   @ffi.Array.multi([2])
   external ffi.Array<guint> i;
 }
 
 final class _GCond extends ffi.Struct {
-  external gpointer p;
+  external ffi.Pointer p;
 
   @ffi.Array.multi([2])
   external ffi.Array<guint> i;
 }
 
 final class _GPrivate extends ffi.Struct {
-  external gpointer p;
+  external ffi.Pointer p;
 
   external GDestroyNotify notify;
 
   @ffi.Array.multi([2])
-  external ffi.Array<gpointer> future;
+  external ffi.Array<ffi.Pointer> future;
 }
 
 final class _GOnce extends ffi.Struct {
   @ffi.Int32()
   external int status;
 
-  external gpointer retval;
+  external ffi.Pointer retval;
 }
 
 abstract class GOnceStatus {
@@ -78282,14 +78552,14 @@ final class _GData extends ffi.Opaque {}
 typedef GData = _GData;
 typedef GDuplicateFunc
     = ffi.Pointer<ffi.NativeFunction<GDuplicateFuncFunction>>;
-typedef GDuplicateFuncFunction = gpointer Function(
-    gpointer data, gpointer user_data);
+typedef GDuplicateFuncFunction = ffi.Pointer Function(
+    ffi.Pointer data, ffi.Pointer user_data);
 typedef GDataForeachFunc
     = ffi.Pointer<ffi.NativeFunction<GDataForeachFuncFunction>>;
 typedef GDataForeachFuncFunction = ffi.Void Function(
-    GQuark key_id, gpointer data, gpointer user_data);
+    GQuark key_id, ffi.Pointer data, ffi.Pointer user_data);
 typedef DartGDataForeachFuncFunction = void Function(
-    Dartguint32 key_id, gpointer data, gpointer user_data);
+    Dartguint32 key_id, ffi.Pointer data, ffi.Pointer user_data);
 
 final class _GDate extends ffi.Opaque {}
 
@@ -78431,25 +78701,27 @@ abstract class GFileSetContentsFlags {
 }
 
 final class _GMemVTable extends ffi.Struct {
-  external ffi.Pointer<ffi.NativeFunction<gpointer Function(gsize n_bytes)>>
+  external ffi.Pointer<ffi.NativeFunction<ffi.Pointer Function(gsize n_bytes)>>
       malloc;
 
   external ffi.Pointer<
-          ffi.NativeFunction<gpointer Function(gpointer mem, gsize n_bytes)>>
+          ffi
+          .NativeFunction<ffi.Pointer Function(ffi.Pointer mem, gsize n_bytes)>>
       realloc;
 
-  external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(gpointer mem)>>
+  external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer mem)>>
       free;
 
   external ffi.Pointer<
       ffi.NativeFunction<
-          gpointer Function(gsize n_blocks, gsize n_block_bytes)>> calloc;
+          ffi.Pointer Function(gsize n_blocks, gsize n_block_bytes)>> calloc;
 
-  external ffi.Pointer<ffi.NativeFunction<gpointer Function(gsize n_bytes)>>
+  external ffi.Pointer<ffi.NativeFunction<ffi.Pointer Function(gsize n_bytes)>>
       try_malloc;
 
   external ffi.Pointer<
-          ffi.NativeFunction<gpointer Function(gpointer mem, gsize n_bytes)>>
+          ffi
+          .NativeFunction<ffi.Pointer Function(ffi.Pointer mem, gsize n_bytes)>>
       try_realloc;
 }
 
@@ -78469,7 +78741,7 @@ final class _GMemVTable extends ffi.Struct {
 typedef GMemVTable = _GMemVTable;
 
 final class _GNode extends ffi.Struct {
-  external gpointer data;
+  external ffi.Pointer data;
 
   external ffi.Pointer<GNode> next;
 
@@ -78501,18 +78773,18 @@ abstract class GTraverseType {
 typedef GNodeTraverseFunc
     = ffi.Pointer<ffi.NativeFunction<GNodeTraverseFuncFunction>>;
 typedef GNodeTraverseFuncFunction = gboolean Function(
-    ffi.Pointer<GNode> node, gpointer data);
+    ffi.Pointer<GNode> node, ffi.Pointer data);
 typedef DartGNodeTraverseFuncFunction = Dartgint Function(
-    ffi.Pointer<GNode> node, gpointer data);
+    ffi.Pointer<GNode> node, ffi.Pointer data);
 typedef GNodeForeachFunc
     = ffi.Pointer<ffi.NativeFunction<GNodeForeachFuncFunction>>;
 typedef GNodeForeachFuncFunction = ffi.Void Function(
-    ffi.Pointer<GNode> node, gpointer data);
+    ffi.Pointer<GNode> node, ffi.Pointer data);
 typedef DartGNodeForeachFuncFunction = void Function(
-    ffi.Pointer<GNode> node, gpointer data);
+    ffi.Pointer<GNode> node, ffi.Pointer data);
 
 final class _GList extends ffi.Struct {
-  external gpointer data;
+  external ffi.Pointer data;
 
   external ffi.Pointer<GList> next;
 
@@ -78524,11 +78796,11 @@ typedef GList = _GList;
 final class _GHashTable extends ffi.Opaque {}
 
 final class _GHashTableIter extends ffi.Struct {
-  external gpointer dummy1;
+  external ffi.Pointer dummy1;
 
-  external gpointer dummy2;
+  external ffi.Pointer dummy2;
 
-  external gpointer dummy3;
+  external ffi.Pointer dummy3;
 
   @ffi.Int()
   external int dummy4;
@@ -78536,7 +78808,7 @@ final class _GHashTableIter extends ffi.Struct {
   @gboolean()
   external int dummy5;
 
-  external gpointer dummy6;
+  external ffi.Pointer dummy6;
 }
 
 typedef GHashTable = _GHashTable;
@@ -78545,14 +78817,14 @@ typedef GHashFuncFunction = guint Function(gconstpointer key);
 typedef DartGHashFuncFunction = Dartguint Function(gconstpointer key);
 typedef GHFunc = ffi.Pointer<ffi.NativeFunction<GHFuncFunction>>;
 typedef GHFuncFunction = ffi.Void Function(
-    gpointer key, gpointer value, gpointer user_data);
+    ffi.Pointer key, ffi.Pointer value, ffi.Pointer user_data);
 typedef DartGHFuncFunction = void Function(
-    gpointer key, gpointer value, gpointer user_data);
+    ffi.Pointer key, ffi.Pointer value, ffi.Pointer user_data);
 typedef GHRFunc = ffi.Pointer<ffi.NativeFunction<GHRFuncFunction>>;
 typedef GHRFuncFunction = gboolean Function(
-    gpointer key, gpointer value, gpointer user_data);
+    ffi.Pointer key, ffi.Pointer value, ffi.Pointer user_data);
 typedef DartGHRFuncFunction = Dartgint Function(
-    gpointer key, gpointer value, gpointer user_data);
+    ffi.Pointer key, ffi.Pointer value, ffi.Pointer user_data);
 typedef GHashTableIter = _GHashTableIter;
 
 final class _GHmac extends ffi.Opaque {}
@@ -78560,7 +78832,7 @@ final class _GHmac extends ffi.Opaque {}
 typedef GHmac = _GHmac;
 
 final class _GHook extends ffi.Struct {
-  external gpointer data;
+  external ffi.Pointer data;
 
   external ffi.Pointer<GHook> next;
 
@@ -78575,7 +78847,7 @@ final class _GHook extends ffi.Struct {
   @guint()
   external int flags;
 
-  external gpointer func;
+  external ffi.Pointer func;
 
   external GDestroyNotify destroy;
 }
@@ -78599,21 +78871,21 @@ typedef DartGHookCompareFuncFunction = Dartgint Function(
     ffi.Pointer<GHook> new_hook, ffi.Pointer<GHook> sibling);
 typedef GHookFindFunc = ffi.Pointer<ffi.NativeFunction<GHookFindFuncFunction>>;
 typedef GHookFindFuncFunction = gboolean Function(
-    ffi.Pointer<GHook> hook, gpointer data);
+    ffi.Pointer<GHook> hook, ffi.Pointer data);
 typedef DartGHookFindFuncFunction = Dartgint Function(
-    ffi.Pointer<GHook> hook, gpointer data);
+    ffi.Pointer<GHook> hook, ffi.Pointer data);
 typedef GHookMarshaller
     = ffi.Pointer<ffi.NativeFunction<GHookMarshallerFunction>>;
 typedef GHookMarshallerFunction = ffi.Void Function(
-    ffi.Pointer<GHook> hook, gpointer marshal_data);
+    ffi.Pointer<GHook> hook, ffi.Pointer marshal_data);
 typedef DartGHookMarshallerFunction = void Function(
-    ffi.Pointer<GHook> hook, gpointer marshal_data);
+    ffi.Pointer<GHook> hook, ffi.Pointer marshal_data);
 typedef GHookCheckMarshaller
     = ffi.Pointer<ffi.NativeFunction<GHookCheckMarshallerFunction>>;
 typedef GHookCheckMarshallerFunction = gboolean Function(
-    ffi.Pointer<GHook> hook, gpointer marshal_data);
+    ffi.Pointer<GHook> hook, ffi.Pointer marshal_data);
 typedef DartGHookCheckMarshallerFunction = Dartgint Function(
-    ffi.Pointer<GHook> hook, gpointer marshal_data);
+    ffi.Pointer<GHook> hook, ffi.Pointer marshal_data);
 
 /// GPollFD:
 /// @fd: the file descriptor to poll (or a HANDLE on Win32)
@@ -78642,7 +78914,7 @@ typedef Dartgushort = int;
 typedef GPollFD = _GPollFD;
 
 final class _GSList extends ffi.Struct {
-  external gpointer data;
+  external ffi.Pointer data;
 
   external ffi.Pointer<GSList> next;
 }
@@ -78679,7 +78951,7 @@ final class _GMainContext extends ffi.Opaque {}
 final class _GMainLoop extends ffi.Opaque {}
 
 final class _GSource extends ffi.Struct {
-  external gpointer callback_data;
+  external ffi.Pointer callback_data;
 
   external ffi.Pointer<GSourceCallbackFuncs> callback_funcs;
 
@@ -78721,16 +78993,20 @@ final class _GSource extends ffi.Struct {
 typedef GSourceCallbackFuncs = _GSourceCallbackFuncs;
 
 final class _GSourceCallbackFuncs extends ffi.Struct {
-  external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(gpointer cb_data)>>
-      ref;
+  external ffi
+      .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer cb_data)>> ref;
 
-  external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(gpointer cb_data)>>
+  external ffi
+      .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer cb_data)>>
       unref;
 
   external ffi.Pointer<
       ffi.NativeFunction<
-          ffi.Void Function(gpointer cb_data, ffi.Pointer<GSource> source,
-              ffi.Pointer<GSourceFunc> func, ffi.Pointer<gpointer> data)>> get1;
+          ffi.Void Function(
+              ffi.Pointer cb_data,
+              ffi.Pointer<GSource> source,
+              ffi.Pointer<GSourceFunc> func,
+              ffi.Pointer<ffi.Pointer> data)>> get1;
 }
 
 /// GSource:
@@ -78753,8 +79029,8 @@ typedef GSource = _GSource;
 /// Returns: %FALSE if the source should be removed. %G_SOURCE_CONTINUE and
 /// %G_SOURCE_REMOVE are more memorable names for the return value.
 typedef GSourceFunc = ffi.Pointer<ffi.NativeFunction<GSourceFuncFunction>>;
-typedef GSourceFuncFunction = gboolean Function(gpointer user_data);
-typedef DartGSourceFuncFunction = Dartgint Function(gpointer user_data);
+typedef GSourceFuncFunction = gboolean Function(ffi.Pointer user_data);
+typedef DartGSourceFuncFunction = Dartgint Function(ffi.Pointer user_data);
 
 /// GSourceFuncs:
 /// @prepare: Called before all the file descriptors are polled. If the
@@ -78823,7 +79099,7 @@ final class _GSourceFuncs extends ffi.Struct {
   external ffi.Pointer<
       ffi.NativeFunction<
           gboolean Function(ffi.Pointer<GSource> source, GSourceFunc callback,
-              gpointer user_data)>> dispatch;
+              ffi.Pointer user_data)>> dispatch;
 
   external ffi.Pointer<
           ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GSource> source)>>
@@ -78917,8 +79193,8 @@ typedef DartGClearHandleFuncFunction = void Function(Dartguint handle_id);
 /// Since: 2.74
 typedef GSourceOnceFunc
     = ffi.Pointer<ffi.NativeFunction<GSourceOnceFuncFunction>>;
-typedef GSourceOnceFuncFunction = ffi.Void Function(gpointer user_data);
-typedef DartGSourceOnceFuncFunction = void Function(gpointer user_data);
+typedef GSourceOnceFuncFunction = ffi.Void Function(ffi.Pointer user_data);
+typedef DartGSourceOnceFuncFunction = void Function(ffi.Pointer user_data);
 
 /// GChildWatchFunc:
 /// @pid: the process id of the child process
@@ -78936,9 +79212,9 @@ typedef DartGSourceOnceFuncFunction = void Function(gpointer user_data);
 typedef GChildWatchFunc
     = ffi.Pointer<ffi.NativeFunction<GChildWatchFuncFunction>>;
 typedef GChildWatchFuncFunction = ffi.Void Function(
-    GPid pid, gint wait_status, gpointer user_data);
+    GPid pid, gint wait_status, ffi.Pointer user_data);
 typedef DartGChildWatchFuncFunction = void Function(
-    DartGPid pid, Dartgint wait_status, gpointer user_data);
+    DartGPid pid, Dartgint wait_status, ffi.Pointer user_data);
 
 /// GUnicodeType:
 /// @G_UNICODE_CONTROL: General category "Other, Control" (Cc)
@@ -79690,9 +79966,9 @@ abstract class GIOChannelError {
 
 typedef GIOFunc = ffi.Pointer<ffi.NativeFunction<GIOFuncFunction>>;
 typedef GIOFuncFunction = gboolean Function(
-    ffi.Pointer<GIOChannel> source, ffi.Int32 condition, gpointer data);
+    ffi.Pointer<GIOChannel> source, ffi.Int32 condition, ffi.Pointer data);
 typedef DartGIOFuncFunction = Dartgint Function(
-    ffi.Pointer<GIOChannel> source, int condition, gpointer data);
+    ffi.Pointer<GIOChannel> source, int condition, ffi.Pointer data);
 
 abstract class GKeyFileError {
   static const int G_KEY_FILE_ERROR_UNKNOWN_ENCODING = 0;
@@ -79804,7 +80080,7 @@ final class _GMarkupParser extends ffi.Struct {
               ffi.Pointer<ffi.Char> element_name,
               ffi.Pointer<ffi.Pointer<ffi.Char>> attribute_names,
               ffi.Pointer<ffi.Pointer<ffi.Char>> attribute_values,
-              gpointer user_data,
+              ffi.Pointer user_data,
               ffi.Pointer<ffi.Pointer<GError>> error)>> start_element;
 
   external ffi.Pointer<
@@ -79812,7 +80088,7 @@ final class _GMarkupParser extends ffi.Struct {
           ffi.Void Function(
               ffi.Pointer<GMarkupParseContext> context,
               ffi.Pointer<ffi.Char> element_name,
-              gpointer user_data,
+              ffi.Pointer user_data,
               ffi.Pointer<ffi.Pointer<GError>> error)>> end_element;
 
   external ffi.Pointer<
@@ -79821,7 +80097,7 @@ final class _GMarkupParser extends ffi.Struct {
               ffi.Pointer<GMarkupParseContext> context,
               ffi.Pointer<ffi.Char> text,
               gsize text_len,
-              gpointer user_data,
+              ffi.Pointer user_data,
               ffi.Pointer<ffi.Pointer<GError>> error)>> text;
 
   external ffi.Pointer<
@@ -79830,13 +80106,13 @@ final class _GMarkupParser extends ffi.Struct {
               ffi.Pointer<GMarkupParseContext> context,
               ffi.Pointer<ffi.Char> passthrough_text,
               gsize text_len,
-              gpointer user_data,
+              ffi.Pointer user_data,
               ffi.Pointer<ffi.Pointer<GError>> error)>> passthrough;
 
   external ffi.Pointer<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GMarkupParseContext> context,
-              ffi.Pointer<GError> error, gpointer user_data)>> error;
+              ffi.Pointer<GError> error, ffi.Pointer user_data)>> error;
 }
 
 /// GMarkupParseContext:
@@ -79978,9 +80254,9 @@ abstract class GLogLevelFlags {
 
 typedef GLogFunc = ffi.Pointer<ffi.NativeFunction<GLogFuncFunction>>;
 typedef GLogFuncFunction = ffi.Void Function(ffi.Pointer<ffi.Char> log_domain,
-    ffi.Int32 log_level, ffi.Pointer<ffi.Char> message, gpointer user_data);
+    ffi.Int32 log_level, ffi.Pointer<ffi.Char> message, ffi.Pointer user_data);
 typedef DartGLogFuncFunction = void Function(ffi.Pointer<ffi.Char> log_domain,
-    int log_level, ffi.Pointer<ffi.Char> message, gpointer user_data);
+    int log_level, ffi.Pointer<ffi.Char> message, ffi.Pointer user_data);
 
 /// GLogWriterOutput:
 /// @G_LOG_WRITER_HANDLED: Log writer has handled the log entry.
@@ -80056,9 +80332,9 @@ typedef GLogField = _GLogField;
 typedef GLogWriterFunc
     = ffi.Pointer<ffi.NativeFunction<GLogWriterFuncFunction>>;
 typedef GLogWriterFuncFunction = ffi.Int32 Function(ffi.Int32 log_level,
-    ffi.Pointer<GLogField> fields, gsize n_fields, gpointer user_data);
+    ffi.Pointer<GLogField> fields, gsize n_fields, ffi.Pointer user_data);
 typedef DartGLogWriterFuncFunction = int Function(int log_level,
-    ffi.Pointer<GLogField> fields, Dartgsize n_fields, gpointer user_data);
+    ffi.Pointer<GLogField> fields, Dartgsize n_fields, ffi.Pointer user_data);
 
 /// GPrintFunc:
 /// @string: the message to output
@@ -80125,7 +80401,7 @@ final class _GOptionEntry extends ffi.Struct {
   @ffi.Int32()
   external int arg;
 
-  external gpointer arg_data;
+  external ffi.Pointer arg_data;
 
   external ffi.Pointer<ffi.Char> description;
 
@@ -80240,7 +80516,7 @@ typedef GOptionEntry = _GOptionEntry;
 typedef GTranslateFunc
     = ffi.Pointer<ffi.NativeFunction<GTranslateFuncFunction>>;
 typedef GTranslateFuncFunction = ffi.Pointer<ffi.Char> Function(
-    ffi.Pointer<ffi.Char> str, gpointer data);
+    ffi.Pointer<ffi.Char> str, ffi.Pointer data);
 
 /// GOptionGroup:
 ///
@@ -80269,12 +80545,12 @@ typedef GOptionParseFunc
 typedef GOptionParseFuncFunction = gboolean Function(
     ffi.Pointer<GOptionContext> context,
     ffi.Pointer<GOptionGroup> group,
-    gpointer data,
+    ffi.Pointer data,
     ffi.Pointer<ffi.Pointer<GError>> error);
 typedef DartGOptionParseFuncFunction = Dartgint Function(
     ffi.Pointer<GOptionContext> context,
     ffi.Pointer<GOptionGroup> group,
-    gpointer data,
+    ffi.Pointer data,
     ffi.Pointer<ffi.Pointer<GError>> error);
 
 /// GOptionErrorFunc:
@@ -80290,17 +80566,17 @@ typedef GOptionErrorFunc
 typedef GOptionErrorFuncFunction = ffi.Void Function(
     ffi.Pointer<GOptionContext> context,
     ffi.Pointer<GOptionGroup> group,
-    gpointer data,
+    ffi.Pointer data,
     ffi.Pointer<ffi.Pointer<GError>> error);
 typedef DartGOptionErrorFuncFunction = void Function(
     ffi.Pointer<GOptionContext> context,
     ffi.Pointer<GOptionGroup> group,
-    gpointer data,
+    ffi.Pointer data,
     ffi.Pointer<ffi.Pointer<GError>> error);
 
 final class _GPathBuf extends ffi.Struct {
   @ffi.Array.multi([8])
-  external ffi.Array<gpointer> dummy;
+  external ffi.Array<ffi.Pointer> dummy;
 }
 
 typedef GPathBuf = _GPathBuf;
@@ -80718,14 +80994,14 @@ typedef GRegexEvalCallback
 typedef GRegexEvalCallbackFunction = gboolean Function(
     ffi.Pointer<GMatchInfo> match_info,
     ffi.Pointer<GString> result,
-    gpointer user_data);
+    ffi.Pointer user_data);
 typedef DartGRegexEvalCallbackFunction = Dartgint Function(
     ffi.Pointer<GMatchInfo> match_info,
     ffi.Pointer<GString> result,
-    gpointer user_data);
+    ffi.Pointer user_data);
 
 final class _GScanner extends ffi.Struct {
-  external gpointer user_data;
+  external ffi.Pointer user_data;
 
   @guint()
   external int max_parse_errors;
@@ -80812,7 +81088,7 @@ abstract class GTokenType {
 typedef GTokenValue = _GTokenValue;
 
 final class _GTokenValue extends ffi.Union {
-  external gpointer v_symbol;
+  external ffi.Pointer v_symbol;
 
   external ffi.Pointer<ffi.Char> v_identifier;
 
@@ -80877,9 +81153,13 @@ typedef GSequenceIter = _GSequenceNode;
 typedef GSequenceIterCompareFunc
     = ffi.Pointer<ffi.NativeFunction<GSequenceIterCompareFuncFunction>>;
 typedef GSequenceIterCompareFuncFunction = gint Function(
-    ffi.Pointer<GSequenceIter> a, ffi.Pointer<GSequenceIter> b, gpointer data);
+    ffi.Pointer<GSequenceIter> a,
+    ffi.Pointer<GSequenceIter> b,
+    ffi.Pointer data);
 typedef DartGSequenceIterCompareFuncFunction = Dartgint Function(
-    ffi.Pointer<GSequenceIter> a, ffi.Pointer<GSequenceIter> b, gpointer data);
+    ffi.Pointer<GSequenceIter> a,
+    ffi.Pointer<GSequenceIter> b,
+    ffi.Pointer data);
 
 abstract class GShellError {
   static const int G_SHELL_ERROR_BAD_QUOTING = 0;
@@ -81046,8 +81326,8 @@ abstract class GSpawnFlags {
 /// list to the `g_spawn...` function.
 typedef GSpawnChildSetupFunc
     = ffi.Pointer<ffi.NativeFunction<GSpawnChildSetupFuncFunction>>;
-typedef GSpawnChildSetupFuncFunction = ffi.Void Function(gpointer data);
-typedef DartGSpawnChildSetupFuncFunction = void Function(gpointer data);
+typedef GSpawnChildSetupFuncFunction = ffi.Void Function(ffi.Pointer data);
+typedef DartGSpawnChildSetupFuncFunction = void Function(ffi.Pointer data);
 
 final class _GStringChunk extends ffi.Opaque {}
 
@@ -81106,9 +81386,9 @@ abstract class GTestSubprocessFlags {
 typedef GTestFixtureFunc
     = ffi.Pointer<ffi.NativeFunction<GTestFixtureFuncFunction>>;
 typedef GTestFixtureFuncFunction = ffi.Void Function(
-    gpointer fixture, gconstpointer user_data);
+    ffi.Pointer fixture, gconstpointer user_data);
 typedef DartGTestFixtureFuncFunction = void Function(
-    gpointer fixture, gconstpointer user_data);
+    ffi.Pointer fixture, gconstpointer user_data);
 
 final class GTestConfig extends ffi.Struct {
   @gboolean()
@@ -81177,12 +81457,12 @@ typedef GTestLogFatalFuncFunction = gboolean Function(
     ffi.Pointer<ffi.Char> log_domain,
     ffi.Int32 log_level,
     ffi.Pointer<ffi.Char> message,
-    gpointer user_data);
+    ffi.Pointer user_data);
 typedef DartGTestLogFatalFuncFunction = Dartgint Function(
     ffi.Pointer<ffi.Char> log_domain,
     int log_level,
     ffi.Pointer<ffi.Char> message,
-    gpointer user_data);
+    ffi.Pointer user_data);
 
 abstract class GTestFileType {
   static const int G_TEST_DIST = 0;
@@ -81192,7 +81472,7 @@ abstract class GTestFileType {
 final class _GThreadPool extends ffi.Struct {
   external GFunc func;
 
-  external gpointer user_data;
+  external ffi.Pointer user_data;
 
   @gboolean()
   external int exclusive;
@@ -81224,9 +81504,9 @@ typedef GTree = _GTree;
 typedef GTreeNode = _GTreeNode;
 typedef GTraverseFunc = ffi.Pointer<ffi.NativeFunction<GTraverseFuncFunction>>;
 typedef GTraverseFuncFunction = gboolean Function(
-    gpointer key, gpointer value, gpointer data);
+    ffi.Pointer key, ffi.Pointer value, ffi.Pointer data);
 typedef DartGTraverseFuncFunction = Dartgint Function(
-    gpointer key, gpointer value, gpointer data);
+    ffi.Pointer key, ffi.Pointer value, ffi.Pointer data);
 
 /// GTraverseNodeFunc:
 /// @node: a #GTreeNode
@@ -81242,9 +81522,9 @@ typedef DartGTraverseFuncFunction = Dartgint Function(
 typedef GTraverseNodeFunc
     = ffi.Pointer<ffi.NativeFunction<GTraverseNodeFuncFunction>>;
 typedef GTraverseNodeFuncFunction = gboolean Function(
-    ffi.Pointer<GTreeNode> node, gpointer data);
+    ffi.Pointer<GTreeNode> node, ffi.Pointer data);
 typedef DartGTraverseNodeFuncFunction = Dartgint Function(
-    ffi.Pointer<GTreeNode> node, gpointer data);
+    ffi.Pointer<GTreeNode> node, ffi.Pointer data);
 
 final class _GUri extends ffi.Opaque {}
 
@@ -81347,9 +81627,9 @@ final class _GUriParamsIter extends ffi.Struct {
   @gint()
   external int dummy0;
 
-  external gpointer dummy1;
+  external ffi.Pointer dummy1;
 
-  external gpointer dummy2;
+  external ffi.Pointer dummy2;
 
   @ffi.Array.multi([256])
   external ffi.Array<guint8> dummy3;
@@ -81397,13 +81677,13 @@ final class _GCache extends ffi.Opaque {}
 
 typedef GCache = _GCache;
 typedef GCacheNewFunc = ffi.Pointer<ffi.NativeFunction<GCacheNewFuncFunction>>;
-typedef GCacheNewFuncFunction = gpointer Function(gpointer key);
+typedef GCacheNewFuncFunction = ffi.Pointer Function(ffi.Pointer key);
 typedef GCacheDestroyFunc
     = ffi.Pointer<ffi.NativeFunction<GCacheDestroyFuncFunction>>;
-typedef GCacheDestroyFuncFunction = ffi.Void Function(gpointer value);
-typedef DartGCacheDestroyFuncFunction = void Function(gpointer value);
+typedef GCacheDestroyFuncFunction = ffi.Void Function(ffi.Pointer value);
+typedef DartGCacheDestroyFuncFunction = void Function(ffi.Pointer value);
 typedef GCacheDupFunc = ffi.Pointer<ffi.NativeFunction<GCacheDupFuncFunction>>;
-typedef GCacheDupFuncFunction = gpointer Function(gpointer value);
+typedef GCacheDupFuncFunction = ffi.Pointer Function(ffi.Pointer value);
 
 final class _GCompletion extends ffi.Struct {
   external ffi.Pointer<GList> items;
@@ -81419,7 +81699,8 @@ final class _GCompletion extends ffi.Struct {
 
 typedef GCompletionFunc
     = ffi.Pointer<ffi.NativeFunction<GCompletionFuncFunction>>;
-typedef GCompletionFuncFunction = ffi.Pointer<ffi.Char> Function(gpointer item);
+typedef GCompletionFuncFunction = ffi.Pointer<ffi.Char> Function(
+    ffi.Pointer item);
 typedef GCompletionStrncmpFunc
     = ffi.Pointer<ffi.NativeFunction<GCompletionStrncmpFuncFunction>>;
 typedef GCompletionStrncmpFuncFunction = gint Function(
@@ -81489,45 +81770,48 @@ final class _GThreadFunctions extends ffi.Struct {
       private_new;
 
   external ffi.Pointer<
-          ffi
-          .NativeFunction<gpointer Function(ffi.Pointer<GPrivate> private_key)>>
-      private_get;
+      ffi.NativeFunction<
+          ffi.Pointer Function(ffi.Pointer<GPrivate> private_key)>> private_get;
 
   external ffi.Pointer<
-      ffi.NativeFunction<
-          ffi.Void Function(
-              ffi.Pointer<GPrivate> private_key, gpointer data)>> private_set;
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  ffi.Pointer<GPrivate> private_key, ffi.Pointer data)>>
+      private_set;
 
   external ffi.Pointer<
       ffi.NativeFunction<
           ffi.Void Function(
               GThreadFunc func,
-              gpointer data,
+              ffi.Pointer data,
               gulong stack_size,
               gboolean joinable,
               gboolean bound,
               ffi.Int32 priority,
-              gpointer thread,
+              ffi.Pointer thread,
               ffi.Pointer<ffi.Pointer<GError>> error)>> thread_create;
 
   external ffi.Pointer<ffi.NativeFunction<ffi.Void Function()>> thread_yield;
 
-  external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(gpointer thread)>>
+  external ffi
+      .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer thread)>>
       thread_join;
 
   external ffi.Pointer<ffi.NativeFunction<ffi.Void Function()>> thread_exit;
 
   external ffi.Pointer<
           ffi.NativeFunction<
-              ffi.Void Function(gpointer thread, ffi.Int32 priority)>>
+              ffi.Void Function(ffi.Pointer thread, ffi.Int32 priority)>>
       thread_set_priority;
 
-  external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(gpointer thread)>>
+  external ffi
+      .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer thread)>>
       thread_self;
 
   external ffi.Pointer<
-      ffi.NativeFunction<
-          gboolean Function(gpointer thread1, gpointer thread2)>> thread_equal;
+          ffi.NativeFunction<
+              gboolean Function(ffi.Pointer thread1, ffi.Pointer thread2)>>
+      thread_equal;
 }
 
 typedef GThreadFunctions = _GThreadFunctions;
@@ -81705,7 +81989,7 @@ final class UnnamedUnion9 extends ffi.Union {
   @gdouble()
   external double v_double;
 
-  external gpointer v_pointer;
+  external ffi.Pointer v_pointer;
 }
 
 typedef gfloat = ffi.Float;
@@ -81812,8 +82096,8 @@ final class _GTypeInfo extends ffi.Struct {
 /// have to be altered. See GClassInitFunc() for a discussion of the class
 /// initialization process.
 typedef GBaseInitFunc = ffi.Pointer<ffi.NativeFunction<GBaseInitFuncFunction>>;
-typedef GBaseInitFuncFunction = ffi.Void Function(gpointer g_class);
-typedef DartGBaseInitFuncFunction = void Function(gpointer g_class);
+typedef GBaseInitFuncFunction = ffi.Void Function(ffi.Pointer g_class);
+typedef DartGBaseInitFuncFunction = void Function(ffi.Pointer g_class);
 
 /// GBaseFinalizeFunc:
 /// @g_class: (type GObject.TypeClass): The #GTypeClass structure to finalize
@@ -81828,8 +82112,8 @@ typedef DartGBaseInitFuncFunction = void Function(gpointer g_class);
 /// See GClassInitFunc() for a discussion of the class initialization process.
 typedef GBaseFinalizeFunc
     = ffi.Pointer<ffi.NativeFunction<GBaseFinalizeFuncFunction>>;
-typedef GBaseFinalizeFuncFunction = ffi.Void Function(gpointer g_class);
-typedef DartGBaseFinalizeFuncFunction = void Function(gpointer g_class);
+typedef GBaseFinalizeFuncFunction = ffi.Void Function(ffi.Pointer g_class);
+typedef DartGBaseFinalizeFuncFunction = void Function(ffi.Pointer g_class);
 
 /// GClassInitFunc:
 /// @g_class: (type GObject.TypeClass): The #GTypeClass structure to initialize.
@@ -81935,9 +82219,9 @@ typedef DartGBaseFinalizeFuncFunction = void Function(gpointer g_class);
 typedef GClassInitFunc
     = ffi.Pointer<ffi.NativeFunction<GClassInitFuncFunction>>;
 typedef GClassInitFuncFunction = ffi.Void Function(
-    gpointer g_class, gpointer class_data);
+    ffi.Pointer g_class, ffi.Pointer class_data);
 typedef DartGClassInitFuncFunction = void Function(
-    gpointer g_class, gpointer class_data);
+    ffi.Pointer g_class, ffi.Pointer class_data);
 
 /// GClassFinalizeFunc:
 /// @g_class: (type GObject.TypeClass): The #GTypeClass structure to finalize
@@ -81955,9 +82239,9 @@ typedef DartGClassInitFuncFunction = void Function(
 typedef GClassFinalizeFunc
     = ffi.Pointer<ffi.NativeFunction<GClassFinalizeFuncFunction>>;
 typedef GClassFinalizeFuncFunction = ffi.Void Function(
-    gpointer g_class, gpointer class_data);
+    ffi.Pointer g_class, ffi.Pointer class_data);
 typedef DartGClassFinalizeFuncFunction = void Function(
-    gpointer g_class, gpointer class_data);
+    ffi.Pointer g_class, ffi.Pointer class_data);
 
 /// GInstanceInitFunc:
 /// @instance: The instance to initialize
@@ -81980,9 +82264,9 @@ typedef DartGClassFinalizeFuncFunction = void Function(
 typedef GInstanceInitFunc
     = ffi.Pointer<ffi.NativeFunction<GInstanceInitFuncFunction>>;
 typedef GInstanceInitFuncFunction = ffi.Void Function(
-    ffi.Pointer<GTypeInstance> instance, gpointer g_class);
+    ffi.Pointer<GTypeInstance> instance, ffi.Pointer g_class);
 typedef DartGInstanceInitFuncFunction = void Function(
-    ffi.Pointer<GTypeInstance> instance, gpointer g_class);
+    ffi.Pointer<GTypeInstance> instance, ffi.Pointer g_class);
 typedef GTypeInstance = _GTypeInstance;
 typedef GTypeValueTable = _GTypeValueTable;
 
@@ -82121,7 +82405,7 @@ typedef DartGTypeValueCopyFuncFunction = void Function(
 /// Since: 2.78
 typedef GTypeValuePeekPointerFunc
     = ffi.Pointer<ffi.NativeFunction<GTypeValuePeekPointerFuncFunction>>;
-typedef GTypeValuePeekPointerFuncFunction = gpointer Function(
+typedef GTypeValuePeekPointerFuncFunction = ffi.Pointer Function(
     ffi.Pointer<GValue> value);
 
 /// GTypeValueCollectFunc:
@@ -82324,7 +82608,7 @@ final class _GInterfaceInfo extends ffi.Struct {
 
   external GInterfaceFinalizeFunc interface_finalize;
 
-  external gpointer interface_data;
+  external ffi.Pointer interface_data;
 }
 
 /// GInterfaceInitFunc:
@@ -82342,9 +82626,9 @@ final class _GInterfaceInfo extends ffi.Struct {
 typedef GInterfaceInitFunc
     = ffi.Pointer<ffi.NativeFunction<GInterfaceInitFuncFunction>>;
 typedef GInterfaceInitFuncFunction = ffi.Void Function(
-    gpointer g_iface, gpointer iface_data);
+    ffi.Pointer g_iface, ffi.Pointer iface_data);
 typedef DartGInterfaceInitFuncFunction = void Function(
-    gpointer g_iface, gpointer iface_data);
+    ffi.Pointer g_iface, ffi.Pointer iface_data);
 
 /// GInterfaceFinalizeFunc:
 /// @g_iface: (type GObject.TypeInterface): The interface structure to finalize
@@ -82357,9 +82641,9 @@ typedef DartGInterfaceInitFuncFunction = void Function(
 typedef GInterfaceFinalizeFunc
     = ffi.Pointer<ffi.NativeFunction<GInterfaceFinalizeFuncFunction>>;
 typedef GInterfaceFinalizeFuncFunction = ffi.Void Function(
-    gpointer g_iface, gpointer iface_data);
+    ffi.Pointer g_iface, ffi.Pointer iface_data);
 typedef DartGInterfaceFinalizeFuncFunction = void Function(
-    gpointer g_iface, gpointer iface_data);
+    ffi.Pointer g_iface, ffi.Pointer iface_data);
 
 /// GTypeQuery:
 /// @type: the #GType value of the type
@@ -82455,9 +82739,9 @@ typedef GInterfaceInfo = _GInterfaceInfo;
 typedef GTypeClassCacheFunc
     = ffi.Pointer<ffi.NativeFunction<GTypeClassCacheFuncFunction>>;
 typedef GTypeClassCacheFuncFunction = gboolean Function(
-    gpointer cache_data, ffi.Pointer<GTypeClass> g_class);
+    ffi.Pointer cache_data, ffi.Pointer<GTypeClass> g_class);
 typedef DartGTypeClassCacheFuncFunction = Dartgint Function(
-    gpointer cache_data, ffi.Pointer<GTypeClass> g_class);
+    ffi.Pointer cache_data, ffi.Pointer<GTypeClass> g_class);
 
 /// GTypeInterfaceCheckFunc:
 /// @check_data: data passed to g_type_add_interface_check()
@@ -82472,9 +82756,9 @@ typedef DartGTypeClassCacheFuncFunction = Dartgint Function(
 typedef GTypeInterfaceCheckFunc
     = ffi.Pointer<ffi.NativeFunction<GTypeInterfaceCheckFuncFunction>>;
 typedef GTypeInterfaceCheckFuncFunction = ffi.Void Function(
-    gpointer check_data, gpointer g_iface);
+    ffi.Pointer check_data, ffi.Pointer g_iface);
 typedef DartGTypeInterfaceCheckFuncFunction = void Function(
-    gpointer check_data, gpointer g_iface);
+    ffi.Pointer check_data, ffi.Pointer g_iface);
 
 /// GValueTransform:
 /// @src_value: Source value.
@@ -82623,7 +82907,7 @@ final class _GParamSpecClass extends ffi.Struct {
       value_is_valid;
 
   @ffi.Array.multi([3])
-  external ffi.Array<gpointer> dummy;
+  external ffi.Array<ffi.Pointer> dummy;
 }
 
 typedef GParamSpec = _GParamSpec;
@@ -82711,7 +82995,7 @@ typedef GParamSpecPool = _GParamSpecPool;
 final class _GClosure extends ffi.Opaque {}
 
 final class _GClosureNotifyData extends ffi.Struct {
-  external gpointer data;
+  external ffi.Pointer data;
 
   external GClosureNotify notify;
 }
@@ -82725,9 +83009,9 @@ final class _GClosureNotifyData extends ffi.Struct {
 typedef GClosureNotify
     = ffi.Pointer<ffi.NativeFunction<GClosureNotifyFunction>>;
 typedef GClosureNotifyFunction = ffi.Void Function(
-    gpointer data, ffi.Pointer<GClosure> closure);
+    ffi.Pointer data, ffi.Pointer<GClosure> closure);
 typedef DartGClosureNotifyFunction = void Function(
-    gpointer data, ffi.Pointer<GClosure> closure);
+    ffi.Pointer data, ffi.Pointer<GClosure> closure);
 typedef GClosure = _GClosure;
 
 final class _GCClosure extends ffi.Opaque {}
@@ -82769,15 +83053,15 @@ typedef GClosureMarshalFunction = ffi.Void Function(
     ffi.Pointer<GValue> return_value,
     guint n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data);
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data);
 typedef DartGClosureMarshalFunction = void Function(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     Dartguint n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer invocation_hint,
-    gpointer marshal_data);
+    ffi.Pointer invocation_hint,
+    ffi.Pointer marshal_data);
 
 /// GSignalQuery:
 /// @signal_id: The signal id of the signal being queried, or 0 if the
@@ -82944,12 +83228,12 @@ typedef GSignalAccumulatorFunction = gboolean Function(
     ffi.Pointer<GSignalInvocationHint> ihint,
     ffi.Pointer<GValue> return_accu,
     ffi.Pointer<GValue> handler_return,
-    gpointer data);
+    ffi.Pointer data);
 typedef DartGSignalAccumulatorFunction = Dartgint Function(
     ffi.Pointer<GSignalInvocationHint> ihint,
     ffi.Pointer<GValue> return_accu,
     ffi.Pointer<GValue> handler_return,
-    gpointer data);
+    ffi.Pointer data);
 typedef GSignalInvocationHint = _GSignalInvocationHint;
 
 /// GSignalCMarshaller:
@@ -82993,17 +83277,17 @@ typedef GVaClosureMarshal
 typedef GVaClosureMarshalFunction = ffi.Void Function(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     ffi.Int n_params,
     ffi.Pointer<GType> param_types);
 typedef DartGVaClosureMarshalFunction = void Function(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
-    gpointer instance,
+    ffi.Pointer instance,
     ffi.Pointer<__va_list_tag> args,
-    gpointer marshal_data,
+    ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types);
 typedef GSignalQuery = _GSignalQuery;
@@ -83031,12 +83315,12 @@ typedef GSignalEmissionHookFunction = gboolean Function(
     ffi.Pointer<GSignalInvocationHint> ihint,
     guint n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer data);
+    ffi.Pointer data);
 typedef DartGSignalEmissionHookFunction = Dartgint Function(
     ffi.Pointer<GSignalInvocationHint> ihint,
     Dartguint n_param_values,
     ffi.Pointer<GValue> param_values,
-    gpointer data);
+    ffi.Pointer data);
 
 /// GBoxedCopyFunc:
 /// @boxed: (not nullable): The boxed structure to be copied.
@@ -83047,7 +83331,7 @@ typedef DartGSignalEmissionHookFunction = Dartgint Function(
 /// Returns: (not nullable): The newly created copy of the boxed structure.
 typedef GBoxedCopyFunc
     = ffi.Pointer<ffi.NativeFunction<GBoxedCopyFuncFunction>>;
-typedef GBoxedCopyFuncFunction = gpointer Function(gpointer boxed);
+typedef GBoxedCopyFuncFunction = ffi.Pointer Function(ffi.Pointer boxed);
 
 /// GBoxedFreeFunc:
 /// @boxed: (not nullable): The boxed structure to be freed.
@@ -83056,8 +83340,8 @@ typedef GBoxedCopyFuncFunction = gpointer Function(gpointer boxed);
 /// structure passed.
 typedef GBoxedFreeFunc
     = ffi.Pointer<ffi.NativeFunction<GBoxedFreeFuncFunction>>;
-typedef GBoxedFreeFuncFunction = ffi.Void Function(gpointer boxed);
-typedef DartGBoxedFreeFuncFunction = void Function(gpointer boxed);
+typedef GBoxedFreeFuncFunction = ffi.Void Function(ffi.Pointer boxed);
+typedef DartGBoxedFreeFuncFunction = void Function(ffi.Pointer boxed);
 
 final class _GObject extends ffi.Struct {
   external GTypeInstance g_type_instance;
@@ -83187,13 +83471,13 @@ final class _GObjectClass extends ffi.Struct {
   @gsize()
   external int n_construct_properties;
 
-  external gpointer pspecs;
+  external ffi.Pointer pspecs;
 
   @gsize()
   external int n_pspecs;
 
   @ffi.Array.multi([3])
-  external ffi.Array<gpointer> pdummy;
+  external ffi.Array<ffi.Pointer> pdummy;
 }
 
 typedef GObject = _GObject;
@@ -83231,9 +83515,9 @@ typedef GParameter = _GParameter;
 /// them on the object from this callback.
 typedef GWeakNotify = ffi.Pointer<ffi.NativeFunction<GWeakNotifyFunction>>;
 typedef GWeakNotifyFunction = ffi.Void Function(
-    gpointer data, ffi.Pointer<GObject> where_the_object_was);
+    ffi.Pointer data, ffi.Pointer<GObject> where_the_object_was);
 typedef DartGWeakNotifyFunction = void Function(
-    gpointer data, ffi.Pointer<GObject> where_the_object_was);
+    ffi.Pointer data, ffi.Pointer<GObject> where_the_object_was);
 
 /// GToggleNotify:
 /// @data: Callback data passed to g_object_add_toggle_ref()
@@ -83249,16 +83533,16 @@ typedef DartGWeakNotifyFunction = void Function(
 /// See also: g_object_add_toggle_ref()
 typedef GToggleNotify = ffi.Pointer<ffi.NativeFunction<GToggleNotifyFunction>>;
 typedef GToggleNotifyFunction = ffi.Void Function(
-    gpointer data, ffi.Pointer<GObject> object, gboolean is_last_ref);
+    ffi.Pointer data, ffi.Pointer<GObject> object, gboolean is_last_ref);
 typedef DartGToggleNotifyFunction = void Function(
-    gpointer data, ffi.Pointer<GObject> object, Dartgint is_last_ref);
+    ffi.Pointer data, ffi.Pointer<GObject> object, Dartgint is_last_ref);
 
 final class GWeakRef extends ffi.Struct {
   external UnnamedUnion10 priv;
 }
 
 final class UnnamedUnion10 extends ffi.Union {
-  external gpointer p;
+  external ffi.Pointer p;
 }
 
 final class _GBinding extends ffi.Opaque {}
@@ -83317,12 +83601,12 @@ typedef GBindingTransformFuncFunction = gboolean Function(
     ffi.Pointer<GBinding> binding,
     ffi.Pointer<GValue> from_value,
     ffi.Pointer<GValue> to_value,
-    gpointer user_data);
+    ffi.Pointer user_data);
 typedef DartGBindingTransformFuncFunction = Dartgint Function(
     ffi.Pointer<GBinding> binding,
     ffi.Pointer<GValue> from_value,
     ffi.Pointer<GValue> to_value,
-    gpointer user_data);
+    ffi.Pointer user_data);
 
 final class _GBindingGroup extends ffi.Opaque {}
 
@@ -83800,7 +84084,7 @@ final class _GParamSpecVariant extends ffi.Struct {
   external ffi.Pointer<GVariant> default_value;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> padding;
+  external ffi.Array<ffi.Pointer> padding;
 }
 
 final class _GSignalGroup extends ffi.Opaque {}
@@ -84048,7 +84332,7 @@ final class _GstElement extends ffi.Struct {
   external ffi.Pointer<GList> contexts;
 
   @ffi.Array.multi([3])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstObject = _GstObject;
@@ -84080,7 +84364,7 @@ final class _GstObject extends ffi.Struct {
   @guint64()
   external int last_sync;
 
-  external gpointer _gst_reserved;
+  external ffi.Pointer _gst_reserved;
 }
 
 typedef GInitiallyUnowned = _GObject;
@@ -84135,7 +84419,7 @@ final class _GstBus extends ffi.Struct {
   external ffi.Pointer<GstBusPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstBusPrivate = _GstBusPrivate;
@@ -84154,7 +84438,7 @@ final class _GstClock extends ffi.Struct {
   external ffi.Pointer<GstClockPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstClockPrivate = _GstClockPrivate;
@@ -84198,7 +84482,7 @@ typedef GstClockTime = guint64;
 final class _GstElementClass extends ffi.Struct {
   external GstObjectClass parent_class;
 
-  external gpointer metadata;
+  external ffi.Pointer metadata;
 
   external ffi.Pointer<GstElementFactory> elementfactory;
 
@@ -84302,7 +84586,7 @@ final class _GstElementClass extends ffi.Struct {
               ffi.Pointer<GstContext> context)>> set_context;
 
   @ffi.Array.multi([18])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstObjectClass = _GstObjectClass;
@@ -84326,7 +84610,7 @@ final class _GstObjectClass extends ffi.Struct {
               ffi.Pointer<GParamSpec> pspec)>> deep_notify;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GInitiallyUnownedClass = _GObjectClass;
@@ -84440,7 +84724,7 @@ final class _GstMiniObject extends ffi.Struct {
   @guint()
   external int priv_uint;
 
-  external gpointer priv_pointer;
+  external ffi.Pointer priv_pointer;
 }
 
 /// GstMiniObjectCopyFunction:
@@ -84486,7 +84770,7 @@ typedef DartGstMiniObjectFreeFunctionFunction = void Function(
 
 final class UnnamedUnion11 extends ffi.Union {
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 
   external UnnamedStruct15 abi;
 }
@@ -84995,7 +85279,7 @@ final class UnnamedUnion13 extends ffi.Union {
   external UnnamedStruct17 abi;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 final class UnnamedStruct17 extends ffi.Struct {
@@ -85061,7 +85345,7 @@ final class _GstControlBindingClass extends ffi.Struct {
               GstClockTime timestamp,
               GstClockTime interval,
               guint n_values,
-              gpointer values)>> get_value_array;
+              ffi.Pointer values)>> get_value_array;
 
   /// GstControlBindingClass::get_g_value_array:
   /// @binding: the control binding
@@ -85083,7 +85367,7 @@ final class _GstControlBindingClass extends ffi.Struct {
               ffi.Pointer<GValue> values)>> get_g_value_array;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstControlBinding = _GstControlBinding;
@@ -85115,7 +85399,7 @@ final class _GstClockEntry extends ffi.Struct {
 
   external GstClockCallback func;
 
-  external gpointer user_data;
+  external ffi.Pointer user_data;
 
   external GDestroyNotify destroy_data;
 
@@ -85126,7 +85410,7 @@ final class _GstClockEntry extends ffi.Struct {
   external int woken_up;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstClockEntryType:
@@ -85176,17 +85460,17 @@ typedef GstClockCallbackFunction = gboolean Function(
     ffi.Pointer<GstClock> clock,
     GstClockTime time,
     GstClockID id,
-    gpointer user_data);
+    ffi.Pointer user_data);
 typedef DartGstClockCallbackFunction = Dartgint Function(
     ffi.Pointer<GstClock> clock,
     Dartguint64 time,
     GstClockID id,
-    gpointer user_data);
+    ffi.Pointer user_data);
 
 /// GstClockID:
 ///
 /// A datatype to hold the handle to an outstanding sync or async clock callback.
-typedef GstClockID = gpointer;
+typedef GstClockID = ffi.Pointer;
 
 /// GstClockClass:
 /// @parent_class: the parent class structure
@@ -85278,7 +85562,7 @@ final class _GstClockClass extends ffi.Struct {
               ffi.Pointer<GstClockEntry> entry)>> unschedule;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstClockEntry = _GstClockEntry;
@@ -85324,7 +85608,7 @@ final class _GstControlSource extends ffi.Struct {
   external GstControlSourceGetValueArray get_value_array;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstControlSourceGetValue:
@@ -85380,7 +85664,7 @@ final class _GstControlSourceClass extends ffi.Struct {
   external GstObjectClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstTimedValue:
@@ -85414,7 +85698,7 @@ final class _GstPadClass extends ffi.Struct {
               ffi.Pointer<GstPad> pad, ffi.Pointer<GstPad> peer)>> unlinked;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstPadProbeInfo:
@@ -85435,7 +85719,7 @@ final class _GstPadProbeInfo extends ffi.Struct {
   @gulong()
   external int id;
 
-  external gpointer data;
+  external ffi.Pointer data;
 
   @guint64()
   external int offset;
@@ -85503,7 +85787,7 @@ abstract class GstPadProbeType {
 
 final class UnnamedUnion14 extends ffi.Union {
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 
   external UnnamedStruct18 abi;
 }
@@ -85613,9 +85897,9 @@ abstract class GstLockFlags {
 typedef GstMiniObjectNotify
     = ffi.Pointer<ffi.NativeFunction<GstMiniObjectNotifyFunction>>;
 typedef GstMiniObjectNotifyFunction = ffi.Void Function(
-    gpointer user_data, ffi.Pointer<GstMiniObject> obj);
+    ffi.Pointer user_data, ffi.Pointer<GstMiniObject> obj);
 typedef DartGstMiniObjectNotifyFunction = void Function(
-    gpointer user_data, ffi.Pointer<GstMiniObject> obj);
+    ffi.Pointer user_data, ffi.Pointer<GstMiniObject> obj);
 
 /// GstMemory:
 /// @mini_object: parent structure
@@ -85682,7 +85966,7 @@ final class _GstAllocator extends ffi.Struct {
   external GstMemoryUnmapFullFunction mem_unmap_full;
 
   @ffi.Array.multi([2])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 
   external ffi.Pointer<GstAllocatorPrivate> priv;
 }
@@ -85700,9 +85984,9 @@ final class _GstAllocator extends ffi.Struct {
 /// accessed according to the access pattern in @flags.
 typedef GstMemoryMapFunction
     = ffi.Pointer<ffi.NativeFunction<GstMemoryMapFunctionFunction>>;
-typedef GstMemoryMapFunctionFunction = gpointer Function(
+typedef GstMemoryMapFunctionFunction = ffi.Pointer Function(
     ffi.Pointer<GstMemory> mem, gsize maxsize, ffi.Int32 flags);
-typedef DartGstMemoryMapFunctionFunction = gpointer Function(
+typedef DartGstMemoryMapFunctionFunction = ffi.Pointer Function(
     ffi.Pointer<GstMemory> mem, Dartgsize maxsize, int flags);
 typedef GstMemory = _GstMemory;
 
@@ -85797,9 +86081,9 @@ typedef DartGstMemoryIsSpanFunctionFunction = Dartgint Function(
 /// accessed according to the access pattern in @info's flags.
 typedef GstMemoryMapFullFunction
     = ffi.Pointer<ffi.NativeFunction<GstMemoryMapFullFunctionFunction>>;
-typedef GstMemoryMapFullFunctionFunction = gpointer Function(
+typedef GstMemoryMapFullFunctionFunction = ffi.Pointer Function(
     ffi.Pointer<GstMemory> mem, ffi.Pointer<GstMapInfo> info, gsize maxsize);
-typedef DartGstMemoryMapFullFunctionFunction = gpointer Function(
+typedef DartGstMemoryMapFullFunctionFunction = ffi.Pointer Function(
     ffi.Pointer<GstMemory> mem,
     ffi.Pointer<GstMapInfo> info,
     Dartgsize maxsize);
@@ -85834,10 +86118,10 @@ final class GstMapInfo extends ffi.Struct {
   external int maxsize;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> user_data;
+  external ffi.Array<ffi.Pointer> user_data;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstMemoryUnmapFullFunction:
@@ -85902,7 +86186,7 @@ final class _GstAllocatorClass extends ffi.Struct {
               ffi.Pointer<GstMemory> memory)>> free;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstAllocationParams = _GstAllocationParams;
@@ -85928,7 +86212,7 @@ final class _GstAllocationParams extends ffi.Struct {
   external int padding;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstAllocatorFlags:
@@ -86012,9 +86296,9 @@ typedef GstStructure = _GstStructure;
 typedef GstStructureForeachFunc
     = ffi.Pointer<ffi.NativeFunction<GstStructureForeachFuncFunction>>;
 typedef GstStructureForeachFuncFunction = gboolean Function(
-    GQuark field_id, ffi.Pointer<GValue> value, gpointer user_data);
+    GQuark field_id, ffi.Pointer<GValue> value, ffi.Pointer user_data);
 typedef DartGstStructureForeachFuncFunction = Dartgint Function(
-    Dartguint32 field_id, ffi.Pointer<GValue> value, gpointer user_data);
+    Dartguint32 field_id, ffi.Pointer<GValue> value, ffi.Pointer user_data);
 
 /// GstStructureMapFunc:
 /// @field_id: the #GQuark of the field name
@@ -86029,9 +86313,9 @@ typedef DartGstStructureForeachFuncFunction = Dartgint Function(
 typedef GstStructureMapFunc
     = ffi.Pointer<ffi.NativeFunction<GstStructureMapFuncFunction>>;
 typedef GstStructureMapFuncFunction = gboolean Function(
-    GQuark field_id, ffi.Pointer<GValue> value, gpointer user_data);
+    GQuark field_id, ffi.Pointer<GValue> value, ffi.Pointer user_data);
 typedef DartGstStructureMapFuncFunction = Dartgint Function(
-    Dartguint32 field_id, ffi.Pointer<GValue> value, gpointer user_data);
+    Dartguint32 field_id, ffi.Pointer<GValue> value, ffi.Pointer user_data);
 
 /// GstStructureFilterMapFunc:
 /// @field_id: the #GQuark of the field name
@@ -86047,9 +86331,9 @@ typedef DartGstStructureMapFuncFunction = Dartgint Function(
 typedef GstStructureFilterMapFunc
     = ffi.Pointer<ffi.NativeFunction<GstStructureFilterMapFuncFunction>>;
 typedef GstStructureFilterMapFuncFunction = gboolean Function(
-    GQuark field_id, ffi.Pointer<GValue> value, gpointer user_data);
+    GQuark field_id, ffi.Pointer<GValue> value, ffi.Pointer user_data);
 typedef DartGstStructureFilterMapFuncFunction = Dartgint Function(
-    Dartguint32 field_id, ffi.Pointer<GValue> value, gpointer user_data);
+    Dartguint32 field_id, ffi.Pointer<GValue> value, ffi.Pointer user_data);
 
 final class _GstCapsFeatures extends ffi.Opaque {}
 
@@ -86107,7 +86391,7 @@ final class _GstStaticCaps extends ffi.Struct {
   external ffi.Pointer<ffi.Char> string;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstStaticCaps = _GstStaticCaps;
@@ -86129,11 +86413,11 @@ typedef GstCapsForeachFunc
 typedef GstCapsForeachFuncFunction = gboolean Function(
     ffi.Pointer<GstCapsFeatures> features,
     ffi.Pointer<GstStructure> structure,
-    gpointer user_data);
+    ffi.Pointer user_data);
 typedef DartGstCapsForeachFuncFunction = Dartgint Function(
     ffi.Pointer<GstCapsFeatures> features,
     ffi.Pointer<GstStructure> structure,
-    gpointer user_data);
+    ffi.Pointer user_data);
 
 /// GstCapsMapFunc:
 /// @features: the #GstCapsFeatures
@@ -86150,11 +86434,11 @@ typedef GstCapsMapFunc
 typedef GstCapsMapFuncFunction = gboolean Function(
     ffi.Pointer<GstCapsFeatures> features,
     ffi.Pointer<GstStructure> structure,
-    gpointer user_data);
+    ffi.Pointer user_data);
 typedef DartGstCapsMapFuncFunction = Dartgint Function(
     ffi.Pointer<GstCapsFeatures> features,
     ffi.Pointer<GstStructure> structure,
-    gpointer user_data);
+    ffi.Pointer user_data);
 
 /// GstCapsFilterMapFunc:
 /// @features: the #GstCapsFeatures
@@ -86172,11 +86456,11 @@ typedef GstCapsFilterMapFunc
 typedef GstCapsFilterMapFuncFunction = gboolean Function(
     ffi.Pointer<GstCapsFeatures> features,
     ffi.Pointer<GstStructure> structure,
-    gpointer user_data);
+    ffi.Pointer user_data);
 typedef DartGstCapsFilterMapFuncFunction = Dartgint Function(
     ffi.Pointer<GstCapsFeatures> features,
     ffi.Pointer<GstStructure> structure,
-    gpointer user_data);
+    ffi.Pointer user_data);
 
 /// GstBuffer:
 /// @mini_object: the parent structure
@@ -86237,7 +86521,7 @@ final class _GstBufferPool extends ffi.Struct {
   external ffi.Pointer<GstBufferPoolPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstBufferPoolPrivate = _GstBufferPoolPrivate;
@@ -86256,7 +86540,7 @@ final class _GstByteArrayInterface extends ffi.Struct {
               ffi.Pointer<GstByteArrayInterface> self, gsize length)>> resize;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstByteArrayInterface:
@@ -86352,9 +86636,13 @@ final class _GstMetaInfo extends ffi.Struct {
 typedef GstMetaInitFunction
     = ffi.Pointer<ffi.NativeFunction<GstMetaInitFunctionFunction>>;
 typedef GstMetaInitFunctionFunction = gboolean Function(
-    ffi.Pointer<GstMeta> meta, gpointer params, ffi.Pointer<GstBuffer> buffer);
+    ffi.Pointer<GstMeta> meta,
+    ffi.Pointer params,
+    ffi.Pointer<GstBuffer> buffer);
 typedef DartGstMetaInitFunctionFunction = Dartgint Function(
-    ffi.Pointer<GstMeta> meta, gpointer params, ffi.Pointer<GstBuffer> buffer);
+    ffi.Pointer<GstMeta> meta,
+    ffi.Pointer params,
+    ffi.Pointer<GstBuffer> buffer);
 typedef GstMeta = _GstMeta;
 typedef GstBuffer = _GstBuffer;
 
@@ -86393,13 +86681,13 @@ typedef GstMetaTransformFunctionFunction = gboolean Function(
     ffi.Pointer<GstMeta> meta,
     ffi.Pointer<GstBuffer> buffer,
     GQuark type,
-    gpointer data);
+    ffi.Pointer data);
 typedef DartGstMetaTransformFunctionFunction = Dartgint Function(
     ffi.Pointer<GstBuffer> transbuf,
     ffi.Pointer<GstMeta> meta,
     ffi.Pointer<GstBuffer> buffer,
     Dartguint32 type,
-    gpointer data);
+    ffi.Pointer data);
 
 /// GstMetaSerializeFunction:
 /// @meta: a #GstMeta
@@ -86530,15 +86818,15 @@ typedef GstCustomMetaTransformFunctionFunction = gboolean Function(
     ffi.Pointer<GstCustomMeta> meta,
     ffi.Pointer<GstBuffer> buffer,
     GQuark type,
-    gpointer data,
-    gpointer user_data);
+    ffi.Pointer data,
+    ffi.Pointer user_data);
 typedef DartGstCustomMetaTransformFunctionFunction = Dartgint Function(
     ffi.Pointer<GstBuffer> transbuf,
     ffi.Pointer<GstCustomMeta> meta,
     ffi.Pointer<GstBuffer> buffer,
     Dartguint32 type,
-    gpointer data,
-    gpointer user_data);
+    ffi.Pointer data,
+    ffi.Pointer user_data);
 
 /// GstBufferFlags:
 /// @GST_BUFFER_FLAG_LIVE:          the buffer is live data and should be discarded in
@@ -86661,11 +86949,11 @@ typedef GstBufferForeachMetaFunc
 typedef GstBufferForeachMetaFuncFunction = gboolean Function(
     ffi.Pointer<GstBuffer> buffer,
     ffi.Pointer<ffi.Pointer<GstMeta>> meta,
-    gpointer user_data);
+    ffi.Pointer user_data);
 typedef DartGstBufferForeachMetaFuncFunction = Dartgint Function(
     ffi.Pointer<GstBuffer> buffer,
     ffi.Pointer<ffi.Pointer<GstMeta>> meta,
-    gpointer user_data);
+    ffi.Pointer user_data);
 
 /// GstParentBufferMeta:
 /// @parent: the parent #GstMeta structure
@@ -86756,11 +87044,13 @@ typedef GstBufferList = _GstBufferList;
 typedef GstBufferListFunc
     = ffi.Pointer<ffi.NativeFunction<GstBufferListFuncFunction>>;
 typedef GstBufferListFuncFunction = gboolean Function(
-    ffi.Pointer<ffi.Pointer<GstBuffer>> buffer, guint idx, gpointer user_data);
+    ffi.Pointer<ffi.Pointer<GstBuffer>> buffer,
+    guint idx,
+    ffi.Pointer user_data);
 typedef DartGstBufferListFuncFunction = Dartgint Function(
     ffi.Pointer<ffi.Pointer<GstBuffer>> buffer,
     Dartguint idx,
-    gpointer user_data);
+    ffi.Pointer user_data);
 
 final class _GstPadTemplateClass extends ffi.Struct {
   external GstObjectClass parent_class;
@@ -86772,7 +87062,7 @@ final class _GstPadTemplateClass extends ffi.Struct {
       pad_created;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstStaticPadTemplate:
@@ -86893,7 +87183,7 @@ final class _GstIterator extends ffi.Struct {
   external int size;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstIteratorCopyFunction:
@@ -87005,9 +87295,9 @@ typedef GstIterator1 = _GstIterator;
 typedef GstIteratorFoldFunction
     = ffi.Pointer<ffi.NativeFunction<GstIteratorFoldFunctionFunction>>;
 typedef GstIteratorFoldFunctionFunction = gboolean Function(
-    ffi.Pointer<GValue> item, ffi.Pointer<GValue> ret, gpointer user_data);
+    ffi.Pointer<GValue> item, ffi.Pointer<GValue> ret, ffi.Pointer user_data);
 typedef DartGstIteratorFoldFunctionFunction = Dartgint Function(
-    ffi.Pointer<GValue> item, ffi.Pointer<GValue> ret, gpointer user_data);
+    ffi.Pointer<GValue> item, ffi.Pointer<GValue> ret, ffi.Pointer user_data);
 
 /// GstIteratorForeachFunction:
 /// @item: The item
@@ -87017,9 +87307,9 @@ typedef DartGstIteratorFoldFunctionFunction = Dartgint Function(
 typedef GstIteratorForeachFunction
     = ffi.Pointer<ffi.NativeFunction<GstIteratorForeachFunctionFunction>>;
 typedef GstIteratorForeachFunctionFunction = ffi.Void Function(
-    ffi.Pointer<GValue> item, gpointer user_data);
+    ffi.Pointer<GValue> item, ffi.Pointer user_data);
 typedef DartGstIteratorForeachFunctionFunction = void Function(
-    ffi.Pointer<GValue> item, gpointer user_data);
+    ffi.Pointer<GValue> item, ffi.Pointer user_data);
 
 /// GstFormat:
 /// @GST_FORMAT_UNDEFINED: undefined format
@@ -87161,7 +87451,7 @@ final class _GstSegment extends ffi.Struct {
   external int duration;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstSegmentFlags:
@@ -87423,11 +87713,11 @@ typedef GstTagForeachFunc
 typedef GstTagForeachFuncFunction = ffi.Void Function(
     ffi.Pointer<GstTagList> list,
     ffi.Pointer<ffi.Char> tag,
-    gpointer user_data);
+    ffi.Pointer user_data);
 typedef DartGstTagForeachFuncFunction = void Function(
     ffi.Pointer<GstTagList> list,
     ffi.Pointer<ffi.Char> tag,
-    gpointer user_data);
+    ffi.Pointer user_data);
 
 /// GstQueryTypeFlags:
 /// @GST_QUERY_TYPE_UPSTREAM:     Set if the query can travel upstream.
@@ -87544,7 +87834,7 @@ final class _GstDevice extends ffi.Struct {
   external ffi.Pointer<GstDevicePrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstDevicePrivate = _GstDevicePrivate;
@@ -87577,7 +87867,7 @@ final class _GstDeviceClass extends ffi.Struct {
               ffi.Pointer<GstElement> element)>> reconfigure_element;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstDevice = _GstDevice;
@@ -87630,7 +87920,7 @@ final class _GstStream extends ffi.Struct {
   external ffi.Pointer<GstStreamPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstStreamPrivate = _GstStreamPrivate;
@@ -87645,7 +87935,7 @@ final class _GstStreamClass extends ffi.Struct {
   external GstObjectClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstStream = _GstStream;
@@ -87678,7 +87968,7 @@ final class _GstStreamCollection extends ffi.Struct {
   external ffi.Pointer<GstStreamCollectionPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstStreamCollectionPrivate = _GstStreamCollectionPrivate;
@@ -87701,7 +87991,7 @@ final class _GstStreamCollectionClass extends ffi.Struct {
               ffi.Pointer<GParamSpec> pspec)>> stream_notify;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstStreamCollection = _GstStreamCollection;
@@ -87795,7 +88085,7 @@ final class _GstTaskPool extends ffi.Struct {
   external ffi.Pointer<GThreadPool> pool;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstTaskPoolClass:
@@ -87820,15 +88110,16 @@ final class _GstTaskPoolClass extends ffi.Struct {
 
   external ffi.Pointer<
       ffi.NativeFunction<
-          gpointer Function(
+          ffi.Pointer Function(
               ffi.Pointer<GstTaskPool> pool,
               GstTaskPoolFunction func,
-              gpointer user_data,
+              ffi.Pointer user_data,
               ffi.Pointer<ffi.Pointer<GError>> error)>> push;
 
   external ffi.Pointer<
-      ffi.NativeFunction<
-          ffi.Void Function(ffi.Pointer<GstTaskPool> pool, gpointer id)>> join;
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<GstTaskPool> pool, ffi.Pointer id)>>
+      join;
 
   /// GstTaskPoolClass::dispose_handle:
   /// @pool: a #GstTaskPool
@@ -87839,11 +88130,11 @@ final class _GstTaskPoolClass extends ffi.Struct {
   /// Since: 1.20
   external ffi.Pointer<
           ffi.NativeFunction<
-              ffi.Void Function(ffi.Pointer<GstTaskPool> pool, gpointer id)>>
+              ffi.Void Function(ffi.Pointer<GstTaskPool> pool, ffi.Pointer id)>>
       dispose_handle;
 
   @ffi.Array.multi([3])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstTaskPool = _GstTaskPool;
@@ -87870,7 +88161,7 @@ final class _GstSharedTaskPool extends ffi.Struct {
   external ffi.Pointer<GstSharedTaskPoolPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstSharedTaskPoolPrivate = _GstSharedTaskPoolPrivate;
@@ -87886,7 +88177,7 @@ final class _GstSharedTaskPoolClass extends ffi.Struct {
   external GstTaskPoolClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstTaskPoolClass = _GstTaskPoolClass;
@@ -87914,7 +88205,7 @@ final class _GstTask extends ffi.Struct {
 
   external GstTaskFunction func;
 
-  external gpointer user_data;
+  external ffi.Pointer user_data;
 
   external GDestroyNotify notify;
 
@@ -87926,7 +88217,7 @@ final class _GstTask extends ffi.Struct {
   external ffi.Pointer<GstTaskPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstTaskState:
@@ -87948,8 +88239,8 @@ abstract class GstTaskState {
 /// a #GstTask.
 typedef GstTaskFunction
     = ffi.Pointer<ffi.NativeFunction<GstTaskFunctionFunction>>;
-typedef GstTaskFunctionFunction = ffi.Void Function(gpointer user_data);
-typedef DartGstTaskFunctionFunction = void Function(gpointer user_data);
+typedef GstTaskFunctionFunction = ffi.Void Function(ffi.Pointer user_data);
+typedef DartGstTaskFunctionFunction = void Function(ffi.Pointer user_data);
 typedef GstTaskPrivate = _GstTaskPrivate;
 
 final class _GstTaskPrivate extends ffi.Opaque {}
@@ -87960,7 +88251,7 @@ final class _GstTaskClass extends ffi.Struct {
   external ffi.Pointer<GstTaskPool> pool;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstTask = _GstTask;
@@ -87973,10 +88264,10 @@ typedef GstTask = _GstTask;
 /// Custom GstTask thread callback functions that can be installed.
 typedef GstTaskThreadFunc
     = ffi.Pointer<ffi.NativeFunction<GstTaskThreadFuncFunction>>;
-typedef GstTaskThreadFuncFunction = ffi.Void Function(
-    ffi.Pointer<GstTask> task, ffi.Pointer<GThread> thread, gpointer user_data);
-typedef DartGstTaskThreadFuncFunction = void Function(
-    ffi.Pointer<GstTask> task, ffi.Pointer<GThread> thread, gpointer user_data);
+typedef GstTaskThreadFuncFunction = ffi.Void Function(ffi.Pointer<GstTask> task,
+    ffi.Pointer<GThread> thread, ffi.Pointer user_data);
+typedef DartGstTaskThreadFuncFunction = void Function(ffi.Pointer<GstTask> task,
+    ffi.Pointer<GThread> thread, ffi.Pointer user_data);
 
 /// GstPadTemplateFlags:
 /// @GST_PAD_TEMPLATE_FLAG_LAST: first flag that can be used by subclasses.
@@ -88144,9 +88435,9 @@ typedef GstPadProbeCallback
 typedef GstPadProbeCallbackFunction = ffi.Int32 Function(
     ffi.Pointer<GstPad> pad,
     ffi.Pointer<GstPadProbeInfo> info,
-    gpointer user_data);
+    ffi.Pointer user_data);
 typedef DartGstPadProbeCallbackFunction = int Function(ffi.Pointer<GstPad> pad,
-    ffi.Pointer<GstPadProbeInfo> info, gpointer user_data);
+    ffi.Pointer<GstPadProbeInfo> info, ffi.Pointer user_data);
 
 /// GstPadStickyEventsForeachFunction:
 /// @pad: the #GstPad.
@@ -88169,11 +88460,11 @@ typedef GstPadStickyEventsForeachFunction = ffi
 typedef GstPadStickyEventsForeachFunctionFunction = gboolean Function(
     ffi.Pointer<GstPad> pad,
     ffi.Pointer<ffi.Pointer<GstEvent>> event,
-    gpointer user_data);
+    ffi.Pointer user_data);
 typedef DartGstPadStickyEventsForeachFunctionFunction = Dartgint Function(
     ffi.Pointer<GstPad> pad,
     ffi.Pointer<ffi.Pointer<GstEvent>> event,
-    gpointer user_data);
+    ffi.Pointer user_data);
 
 /// GstPadActivateFunction:
 /// @pad: a #GstPad
@@ -88465,9 +88756,9 @@ typedef DartGstPadQueryFunctionFunction = Dartgint Function(
 typedef GstPadForwardFunction
     = ffi.Pointer<ffi.NativeFunction<GstPadForwardFunctionFunction>>;
 typedef GstPadForwardFunctionFunction = gboolean Function(
-    ffi.Pointer<GstPad> pad, gpointer user_data);
+    ffi.Pointer<GstPad> pad, ffi.Pointer user_data);
 typedef DartGstPadForwardFunctionFunction = Dartgint Function(
-    ffi.Pointer<GstPad> pad, gpointer user_data);
+    ffi.Pointer<GstPad> pad, ffi.Pointer user_data);
 
 /// GstBusClass:
 /// @parent_class: the parent class structure
@@ -88499,7 +88790,7 @@ final class _GstBusClass extends ffi.Struct {
       sync_message;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstBusFlags:
@@ -88540,9 +88831,9 @@ abstract class GstBusSyncReply {
 typedef GstBusSyncHandler
     = ffi.Pointer<ffi.NativeFunction<GstBusSyncHandlerFunction>>;
 typedef GstBusSyncHandlerFunction = ffi.Int32 Function(ffi.Pointer<GstBus> bus,
-    ffi.Pointer<GstMessage> message, gpointer user_data);
+    ffi.Pointer<GstMessage> message, ffi.Pointer user_data);
 typedef DartGstBusSyncHandlerFunction = int Function(ffi.Pointer<GstBus> bus,
-    ffi.Pointer<GstMessage> message, gpointer user_data);
+    ffi.Pointer<GstMessage> message, ffi.Pointer user_data);
 
 /// GstBusFunc:
 /// @bus: the #GstBus that sent the message
@@ -88562,9 +88853,9 @@ typedef DartGstBusSyncHandlerFunction = int Function(ffi.Pointer<GstBus> bus,
 /// Returns: %FALSE if the event source should be removed.
 typedef GstBusFunc = ffi.Pointer<ffi.NativeFunction<GstBusFuncFunction>>;
 typedef GstBusFuncFunction = gboolean Function(ffi.Pointer<GstBus> bus,
-    ffi.Pointer<GstMessage> message, gpointer user_data);
+    ffi.Pointer<GstMessage> message, ffi.Pointer user_data);
 typedef DartGstBusFuncFunction = Dartgint Function(ffi.Pointer<GstBus> bus,
-    ffi.Pointer<GstMessage> message, gpointer user_data);
+    ffi.Pointer<GstMessage> message, ffi.Pointer user_data);
 
 final class _GstElementFactoryClass extends ffi.Opaque {}
 
@@ -88621,7 +88912,7 @@ final class _GstPluginDesc extends ffi.Struct {
   external ffi.Pointer<ffi.Char> release_datetime;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstPluginInitFunc:
@@ -88706,9 +88997,9 @@ abstract class GstPluginDependencyFlags {
 typedef GstPluginInitFullFunc
     = ffi.Pointer<ffi.NativeFunction<GstPluginInitFullFuncFunction>>;
 typedef GstPluginInitFullFuncFunction = gboolean Function(
-    ffi.Pointer<GstPlugin> plugin, gpointer user_data);
+    ffi.Pointer<GstPlugin> plugin, ffi.Pointer user_data);
 typedef DartGstPluginInitFullFuncFunction = Dartgint Function(
-    ffi.Pointer<GstPlugin> plugin, gpointer user_data);
+    ffi.Pointer<GstPlugin> plugin, ffi.Pointer user_data);
 
 final class _GstPluginFeature extends ffi.Opaque {}
 
@@ -88856,11 +89147,11 @@ typedef GstElementForeachPadFunc
 typedef GstElementForeachPadFuncFunction = gboolean Function(
     ffi.Pointer<GstElement> element,
     ffi.Pointer<GstPad> pad,
-    gpointer user_data);
+    ffi.Pointer user_data);
 typedef DartGstElementForeachPadFuncFunction = Dartgint Function(
     ffi.Pointer<GstElement> element,
     ffi.Pointer<GstPad> pad,
-    gpointer user_data);
+    ffi.Pointer user_data);
 
 /// GstElementCallAsyncFunc:
 /// @element: The #GstElement this function has been called against
@@ -88870,9 +89161,9 @@ typedef DartGstElementForeachPadFuncFunction = Dartgint Function(
 typedef GstElementCallAsyncFunc
     = ffi.Pointer<ffi.NativeFunction<GstElementCallAsyncFuncFunction>>;
 typedef GstElementCallAsyncFuncFunction = ffi.Void Function(
-    ffi.Pointer<GstElement> element, gpointer user_data);
+    ffi.Pointer<GstElement> element, ffi.Pointer user_data);
 typedef DartGstElementCallAsyncFuncFunction = void Function(
-    ffi.Pointer<GstElement> element, gpointer user_data);
+    ffi.Pointer<GstElement> element, ffi.Pointer user_data);
 
 /// GstBinFlags:
 /// @GST_BIN_FLAG_LAST: the last enum in the series of flags for bins.
@@ -88949,7 +89240,7 @@ final class _GstBin extends ffi.Struct {
   external ffi.Pointer<GstBinPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstBinPrivate = _GstBinPrivate;
@@ -89065,7 +89356,7 @@ final class _GstBinClass extends ffi.Struct {
               ffi.Pointer<GstElement> child)>> deep_element_removed;
 
   @ffi.Array.multi([2])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstBin = _GstBin;
@@ -89228,7 +89519,7 @@ final class _GstBufferPoolClass extends ffi.Struct {
       flush_stop;
 
   @ffi.Array.multi([2])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstBufferPoolAcquireParams = _GstBufferPoolAcquireParams;
@@ -89259,7 +89550,7 @@ final class _GstBufferPoolAcquireParams extends ffi.Struct {
   external int flags;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstBufferPoolAcquireFlags:
@@ -89352,7 +89643,7 @@ final class _GstChildProxyInterface extends ffi.Struct {
               ffi.Pointer<ffi.Char> name)>> child_removed;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstChildProxy:
@@ -89399,7 +89690,7 @@ final class _GstDeviceProvider extends ffi.Struct {
   external ffi.Pointer<GstDeviceProviderPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstDeviceProviderPrivate = _GstDeviceProviderPrivate;
@@ -89439,10 +89730,10 @@ final class _GstDeviceProviderClass extends ffi.Struct {
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GstDeviceProvider> provider)>> stop;
 
-  external gpointer metadata;
+  external ffi.Pointer metadata;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstDeviceProviderFactoryClass:
@@ -89472,7 +89763,7 @@ final class _GstDeviceMonitor extends ffi.Struct {
   external ffi.Pointer<GstDeviceMonitorPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstDeviceMonitorPrivate = _GstDeviceMonitorPrivate;
@@ -89489,7 +89780,7 @@ final class _GstDeviceMonitorClass extends ffi.Struct {
   external GstObjectClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstDeviceMonitor = _GstDeviceMonitor;
@@ -89659,7 +89950,7 @@ final class _GstProxyPadClass extends ffi.Struct {
   external GstPadClass parent_class;
 
   @ffi.Array.multi([1])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstPadClass = _GstPadClass;
@@ -89673,7 +89964,7 @@ final class _GstGhostPadClass extends ffi.Struct {
   external GstProxyPadClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstProxyPadClass = _GstProxyPadClass;
@@ -89858,7 +90149,7 @@ typedef GstLogFunctionFunction = ffi.Void Function(
     gint line,
     ffi.Pointer<GObject> object,
     ffi.Pointer<GstDebugMessage> message,
-    gpointer user_data);
+    ffi.Pointer user_data);
 typedef DartGstLogFunctionFunction = void Function(
     ffi.Pointer<GstDebugCategory> category,
     int level,
@@ -89867,7 +90158,7 @@ typedef DartGstLogFunctionFunction = void Function(
     Dartgint line,
     ffi.Pointer<GObject> object,
     ffi.Pointer<GstDebugMessage> message,
-    gpointer user_data);
+    ffi.Pointer user_data);
 
 /// GstValueTable:
 /// @type: a #GType
@@ -89895,7 +90186,7 @@ final class _GstValueTable extends ffi.Struct {
   external GstValueDeserializeWithPSpecFunc deserialize_with_pspec;
 
   @ffi.Array.multi([3])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstValueCompareFunc:
@@ -90030,7 +90321,7 @@ final class _GstPipeline extends ffi.Struct {
   external ffi.Pointer<GstPipelinePrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstPipelinePrivate = _GstPipelinePrivate;
@@ -90041,7 +90332,7 @@ final class _GstPipelineClass extends ffi.Struct {
   external GstBinClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstBinClass = _GstBinClass;
@@ -90146,7 +90437,7 @@ final class _GstPresetInterface extends ffi.Struct {
               ffi.Pointer<ffi.Pointer<ffi.Char>> value)>> get_meta;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstPreset:
@@ -90200,9 +90491,9 @@ typedef GstRegistry = _GstRegistry;
 typedef GstPluginFilter
     = ffi.Pointer<ffi.NativeFunction<GstPluginFilterFunction>>;
 typedef GstPluginFilterFunction = gboolean Function(
-    ffi.Pointer<GstPlugin> plugin, gpointer user_data);
+    ffi.Pointer<GstPlugin> plugin, ffi.Pointer user_data);
 typedef DartGstPluginFilterFunction = Dartgint Function(
-    ffi.Pointer<GstPlugin> plugin, gpointer user_data);
+    ffi.Pointer<GstPlugin> plugin, ffi.Pointer user_data);
 
 /// GstPluginFeatureFilter:
 /// @feature: the pluginfeature to check
@@ -90216,9 +90507,9 @@ typedef DartGstPluginFilterFunction = Dartgint Function(
 typedef GstPluginFeatureFilter
     = ffi.Pointer<ffi.NativeFunction<GstPluginFeatureFilterFunction>>;
 typedef GstPluginFeatureFilterFunction = gboolean Function(
-    ffi.Pointer<GstPluginFeature> feature, gpointer user_data);
+    ffi.Pointer<GstPluginFeature> feature, ffi.Pointer user_data);
 typedef DartGstPluginFeatureFilterFunction = Dartgint Function(
-    ffi.Pointer<GstPluginFeature> feature, gpointer user_data);
+    ffi.Pointer<GstPluginFeature> feature, ffi.Pointer user_data);
 
 /// GstPromise:
 /// @parent: parent #GstMiniObject
@@ -90257,9 +90548,9 @@ typedef GstPromise = _GstPromise;
 typedef GstPromiseChangeFunc
     = ffi.Pointer<ffi.NativeFunction<GstPromiseChangeFuncFunction>>;
 typedef GstPromiseChangeFuncFunction = ffi.Void Function(
-    ffi.Pointer<GstPromise> promise, gpointer user_data);
+    ffi.Pointer<GstPromise> promise, ffi.Pointer user_data);
 typedef DartGstPromiseChangeFuncFunction = void Function(
-    ffi.Pointer<GstPromise> promise, gpointer user_data);
+    ffi.Pointer<GstPromise> promise, ffi.Pointer user_data);
 
 /// GstSystemClock:
 ///
@@ -90270,7 +90561,7 @@ final class _GstSystemClock extends ffi.Struct {
   external ffi.Pointer<GstSystemClockPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstSystemClockPrivate = _GstSystemClockPrivate;
@@ -90281,7 +90572,7 @@ final class _GstSystemClockClass extends ffi.Struct {
   external GstClockClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstClockClass = _GstClockClass;
@@ -90341,7 +90632,7 @@ final class _GstTracer extends ffi.Struct {
   external ffi.Pointer<GstTracerPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstTracerPrivate = _GstTracerPrivate;
@@ -90352,7 +90643,7 @@ final class _GstTracerClass extends ffi.Struct {
   external GstObjectClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 typedef GstTracer = _GstTracer;
@@ -90426,21 +90717,20 @@ final class _GstTypeFind extends ffi.Struct {
   external ffi.Pointer<
       ffi.NativeFunction<
           ffi.Pointer<guint8> Function(
-              gpointer data, gint64 offset, guint size)>> peek;
+              ffi.Pointer data, gint64 offset, guint size)>> peek;
 
   external ffi.Pointer<
-          ffi.NativeFunction<
-              ffi.Void Function(
-                  gpointer data, guint probability, ffi.Pointer<GstCaps> caps)>>
-      suggest;
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer data, guint probability,
+              ffi.Pointer<GstCaps> caps)>> suggest;
 
-  external gpointer data;
+  external ffi.Pointer data;
 
-  external ffi.Pointer<ffi.NativeFunction<guint64 Function(gpointer data)>>
+  external ffi.Pointer<ffi.NativeFunction<guint64 Function(ffi.Pointer data)>>
       get_length;
 
   @ffi.Array.multi([4])
-  external ffi.Array<gpointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> _gst_reserved;
 }
 
 /// GstTypeFindProbability:
@@ -90472,9 +90762,9 @@ typedef GstTypeFind = _GstTypeFind;
 typedef GstTypeFindFunction
     = ffi.Pointer<ffi.NativeFunction<GstTypeFindFunctionFunction>>;
 typedef GstTypeFindFunctionFunction = ffi.Void Function(
-    ffi.Pointer<GstTypeFind> find, gpointer user_data);
+    ffi.Pointer<GstTypeFind> find, ffi.Pointer user_data);
 typedef DartGstTypeFindFunctionFunction = void Function(
-    ffi.Pointer<GstTypeFind> find, gpointer user_data);
+    ffi.Pointer<GstTypeFind> find, ffi.Pointer user_data);
 
 final class _GstTypeFindFactory extends ffi.Opaque {}
 
@@ -90775,7 +91065,7 @@ const String G_GNUC_PRETTY_FUNCTION = '';
 
 const int G_ANALYZER_ANALYZING = 0;
 
-const String G_STRLOC = '/tmp/NCCHEJ/temp_for_macros.hpp:46';
+const String G_STRLOC = '/tmp/BTIKGJ/temp_for_macros.hpp:46';
 
 const int FALSE = 0;
 

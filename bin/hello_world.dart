@@ -1,13 +1,13 @@
 import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
-import 'package:gstreamer_ffi/gstreamer_ffi.dart';
+import 'package:gstreamer_ffi/libgstreamer.dart';
 
 /// Implementation of https://gstreamer.freedesktop.org/documentation/tutorials/basic/hello-world.html?gi-language=c
 void main() {
   final dylib = DynamicLibrary.open('/usr/lib/libgstreamer-1.0.so.0');
 
-  final gst = GStreamer(dylib);
+  final gst = LibGStreamer(dylib);
 
   gst.gst_init();
 

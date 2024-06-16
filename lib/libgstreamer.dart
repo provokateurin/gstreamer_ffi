@@ -2,14 +2,14 @@ import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
 
-import 'src/generated.dart' as generated;
+import 'src/libgstreamer.dart' as libgstreamer;
 
-export 'src/generated.dart' show GstState, GST_CLOCK_TIME_NONE, GstMessageType;
+export 'src/libgstreamer.dart' show GstState, GST_CLOCK_TIME_NONE, GstMessageType;
 
-class GStreamer {
-  GStreamer(DynamicLibrary dylib) : _gst = generated.GStreamer(dylib);
+class LibGStreamer {
+  LibGStreamer(DynamicLibrary dylib) : _gst = libgstreamer.LibGStreamer(dylib);
 
-  final generated.GStreamer _gst;
+  final libgstreamer.LibGStreamer _gst;
 
   void gst_init() {
     // TODO: Allow passing args
@@ -22,11 +22,11 @@ class GStreamer {
     malloc.free(_argv);
   }
 
-  Pointer<generated.GstElement> gst_parse_launch(
+  Pointer<libgstreamer.GstElement> gst_parse_launch(
     String pipeline_description,
   ) {
     final _pipeline_description = pipeline_description.toNativeUtf8().cast<Char>();
-    final _error = calloc<generated.GError>();
+    final _error = calloc<libgstreamer.GError>();
 
     final _element = _gst.gst_parse_launch(_pipeline_description, Pointer.fromAddress(_error.address));
 
@@ -47,25 +47,26 @@ class GStreamer {
     _gst.gst_object_unref(object);
   }
 
-  int gst_element_set_state(Pointer<generated.GstElement> element, int state) {
+  int gst_element_set_state(Pointer<libgstreamer.GstElement> element, int state) {
     return _gst.gst_element_set_state(element, state);
   }
 
-  Pointer<generated.GstBus> gst_element_get_bus(Pointer<generated.GstElement> element) {
+  Pointer<libgstreamer.GstBus> gst_element_get_bus(Pointer<libgstreamer.GstElement> element) {
     return _gst.gst_element_get_bus(element);
   }
 
-  Pointer<generated.GstMessage> gst_bus_timed_pop_filtered(Pointer<generated.GstBus> bus, int timeout, int types) {
+  Pointer<libgstreamer.GstMessage> gst_bus_timed_pop_filtered(
+      Pointer<libgstreamer.GstBus> bus, int timeout, int types) {
     return _gst.gst_bus_timed_pop_filtered(bus, timeout, types);
   }
 
   ({
-    Pointer<generated.GError> gerror,
+    Pointer<libgstreamer.GError> gerror,
     Pointer<Char> debug,
   }) gst_message_parse_error(
-    Pointer<generated.GstMessage> message,
+    Pointer<libgstreamer.GstMessage> message,
   ) {
-    final _gerror = calloc<generated.GError>();
+    final _gerror = calloc<libgstreamer.GError>();
     final _debug = calloc<Char>();
 
     _gst.gst_message_parse_error(
@@ -80,7 +81,7 @@ class GStreamer {
     );
   }
 
-  void gst_message_unref(Pointer<generated.GstMessage> msg) {
-    _gst.gst_mini_object_unref(msg.cast<generated.GstMiniObject>());
+  void gst_message_unref(Pointer<libgstreamer.GstMessage> msg) {
+    _gst.gst_mini_object_unref(msg.cast<libgstreamer.GstMiniObject>());
   }
 }

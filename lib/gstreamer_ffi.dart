@@ -79,4 +79,8 @@ class GStreamer {
       debug: _debug,
     );
   }
+
+  void gst_message_unref(Pointer<generated.GstMessage> msg) {
+    _gst.gst_mini_object_unref(msg.cast<generated.GstMiniObject>());
+  }
 }

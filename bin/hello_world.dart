@@ -38,7 +38,7 @@ void main() {
     throw Exception(error_message);
   }
 
-  // TODO: Unref msg, gst_message_unref missing due to https://github.com/dart-lang/native/issues/459
+  gst.gst_message_unref(msg);
   gst.gst_object_unref(bus);
   gst.gst_element_set_state(pipeline, GstState.GST_STATE_NULL);
   gst.gst_object_unref(pipeline);

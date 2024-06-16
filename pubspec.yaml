@@ -1,0 +1,30 @@
+name: gstreamer_ffi
+version: 1.0.0
+
+environment:
+  sdk: ^3.0.0
+
+dependencies:
+  ffi: ^2.1.2
+
+dev_dependencies:
+  ffigen: ^12.0.0
+
+ffigen:
+  name: GStreamer
+  description: Bindings to GStreamer
+  output: 'lib/src/generated.dart'
+  headers:
+    entry-points:
+      - '/usr/include/gstreamer-1.0/gst/gst.h'
+  compiler-opts:
+    - '-I/usr/include/gstreamer-1.0'
+    - '-I/usr/include/glib-2.0'
+    - '-I/usr/lib/glib-2.0/include'
+    - '-I/usr/lib/clang/17/include'
+  type-map:
+    'typedefs':
+      'gchar':
+        'lib': 'ffi'
+        'c-type': 'Char'
+        'dart-type': 'int'

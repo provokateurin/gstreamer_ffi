@@ -4,18 +4,18 @@
 // ignore_for_file: type=lint
 import 'dart:ffi' as ffi;
 
-/// Bindings to libgstreamer
-class LibGStreamer {
+/// Bindings to libgstvideo
+class LibGstVideo {
   /// Holds the symbol lookup function.
   final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
       _lookup;
 
   /// The symbols are looked up in [dynamicLibrary].
-  LibGStreamer(ffi.DynamicLibrary dynamicLibrary)
+  LibGstVideo(ffi.DynamicLibrary dynamicLibrary)
       : _lookup = dynamicLibrary.lookup;
 
   /// The symbols are looked up with [lookup].
-  LibGStreamer.fromLookup(
+  LibGstVideo.fromLookup(
       ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
           lookup)
       : _lookup = lookup;
@@ -77447,6 +77447,10383 @@ class LibGStreamer {
           'gst_get_main_executable_path');
   late final _gst_get_main_executable_path = _gst_get_main_executable_pathPtr
       .asFunction<ffi.Pointer<ffi.Char> Function()>();
+
+  int gst_color_balance_type_get_type() {
+    return _gst_color_balance_type_get_type();
+  }
+
+  late final _gst_color_balance_type_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_color_balance_type_get_type');
+  late final _gst_color_balance_type_get_type =
+      _gst_color_balance_type_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_decoder_request_sync_point_flags_get_type() {
+    return _gst_video_decoder_request_sync_point_flags_get_type();
+  }
+
+  late final _gst_video_decoder_request_sync_point_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_decoder_request_sync_point_flags_get_type');
+  late final _gst_video_decoder_request_sync_point_flags_get_type =
+      _gst_video_decoder_request_sync_point_flags_get_typePtr
+          .asFunction<int Function()>();
+
+  int gst_video_gl_texture_type_get_type() {
+    return _gst_video_gl_texture_type_get_type();
+  }
+
+  late final _gst_video_gl_texture_type_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_gl_texture_type_get_type');
+  late final _gst_video_gl_texture_type_get_type =
+      _gst_video_gl_texture_type_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_gl_texture_orientation_get_type() {
+    return _gst_video_gl_texture_orientation_get_type();
+  }
+
+  late final _gst_video_gl_texture_orientation_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_gl_texture_orientation_get_type');
+  late final _gst_video_gl_texture_orientation_get_type =
+      _gst_video_gl_texture_orientation_get_typePtr
+          .asFunction<int Function()>();
+
+  int gst_video_time_code_flags_get_type() {
+    return _gst_video_time_code_flags_get_type();
+  }
+
+  late final _gst_video_time_code_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_time_code_flags_get_type');
+  late final _gst_video_time_code_flags_get_type =
+      _gst_video_time_code_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_codec_frame_flags_get_type() {
+    return _gst_video_codec_frame_flags_get_type();
+  }
+
+  late final _gst_video_codec_frame_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_codec_frame_flags_get_type');
+  late final _gst_video_codec_frame_flags_get_type =
+      _gst_video_codec_frame_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_navigation_modifier_type_get_type() {
+    return _gst_navigation_modifier_type_get_type();
+  }
+
+  late final _gst_navigation_modifier_type_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_navigation_modifier_type_get_type');
+  late final _gst_navigation_modifier_type_get_type =
+      _gst_navigation_modifier_type_get_typePtr.asFunction<int Function()>();
+
+  int gst_navigation_command_get_type() {
+    return _gst_navigation_command_get_type();
+  }
+
+  late final _gst_navigation_command_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_navigation_command_get_type');
+  late final _gst_navigation_command_get_type =
+      _gst_navigation_command_get_typePtr.asFunction<int Function()>();
+
+  int gst_navigation_query_type_get_type() {
+    return _gst_navigation_query_type_get_type();
+  }
+
+  late final _gst_navigation_query_type_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_navigation_query_type_get_type');
+  late final _gst_navigation_query_type_get_type =
+      _gst_navigation_query_type_get_typePtr.asFunction<int Function()>();
+
+  int gst_navigation_message_type_get_type() {
+    return _gst_navigation_message_type_get_type();
+  }
+
+  late final _gst_navigation_message_type_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_navigation_message_type_get_type');
+  late final _gst_navigation_message_type_get_type =
+      _gst_navigation_message_type_get_typePtr.asFunction<int Function()>();
+
+  int gst_navigation_event_type_get_type() {
+    return _gst_navigation_event_type_get_type();
+  }
+
+  late final _gst_navigation_event_type_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_navigation_event_type_get_type');
+  late final _gst_navigation_event_type_get_type =
+      _gst_navigation_event_type_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_ancillary_did_get_type() {
+    return _gst_video_ancillary_did_get_type();
+  }
+
+  late final _gst_video_ancillary_did_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_ancillary_did_get_type');
+  late final _gst_video_ancillary_did_get_type =
+      _gst_video_ancillary_did_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_ancillary_di_d16_get_type() {
+    return _gst_video_ancillary_di_d16_get_type();
+  }
+
+  late final _gst_video_ancillary_di_d16_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_ancillary_di_d16_get_type');
+  late final _gst_video_ancillary_di_d16_get_type =
+      _gst_video_ancillary_di_d16_get_typePtr.asFunction<int Function()>();
+
+  int gst_ancillary_meta_field_get_type() {
+    return _gst_ancillary_meta_field_get_type();
+  }
+
+  late final _gst_ancillary_meta_field_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_ancillary_meta_field_get_type');
+  late final _gst_ancillary_meta_field_get_type =
+      _gst_ancillary_meta_field_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_afd_value_get_type() {
+    return _gst_video_afd_value_get_type();
+  }
+
+  late final _gst_video_afd_value_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_afd_value_get_type');
+  late final _gst_video_afd_value_get_type =
+      _gst_video_afd_value_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_afd_spec_get_type() {
+    return _gst_video_afd_spec_get_type();
+  }
+
+  late final _gst_video_afd_spec_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_afd_spec_get_type');
+  late final _gst_video_afd_spec_get_type =
+      _gst_video_afd_spec_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_caption_type_get_type() {
+    return _gst_video_caption_type_get_type();
+  }
+
+  late final _gst_video_caption_type_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_caption_type_get_type');
+  late final _gst_video_caption_type_get_type =
+      _gst_video_caption_type_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_vbi_parser_result_get_type() {
+    return _gst_video_vbi_parser_result_get_type();
+  }
+
+  late final _gst_video_vbi_parser_result_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_vbi_parser_result_get_type');
+  late final _gst_video_vbi_parser_result_get_type =
+      _gst_video_vbi_parser_result_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_chroma_site_get_type() {
+    return _gst_video_chroma_site_get_type();
+  }
+
+  late final _gst_video_chroma_site_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_chroma_site_get_type');
+  late final _gst_video_chroma_site_get_type =
+      _gst_video_chroma_site_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_chroma_method_get_type() {
+    return _gst_video_chroma_method_get_type();
+  }
+
+  late final _gst_video_chroma_method_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_chroma_method_get_type');
+  late final _gst_video_chroma_method_get_type =
+      _gst_video_chroma_method_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_chroma_flags_get_type() {
+    return _gst_video_chroma_flags_get_type();
+  }
+
+  late final _gst_video_chroma_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_chroma_flags_get_type');
+  late final _gst_video_chroma_flags_get_type =
+      _gst_video_chroma_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_color_range_get_type() {
+    return _gst_video_color_range_get_type();
+  }
+
+  late final _gst_video_color_range_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_color_range_get_type');
+  late final _gst_video_color_range_get_type =
+      _gst_video_color_range_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_color_matrix_get_type() {
+    return _gst_video_color_matrix_get_type();
+  }
+
+  late final _gst_video_color_matrix_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_color_matrix_get_type');
+  late final _gst_video_color_matrix_get_type =
+      _gst_video_color_matrix_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_transfer_function_get_type() {
+    return _gst_video_transfer_function_get_type();
+  }
+
+  late final _gst_video_transfer_function_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_transfer_function_get_type');
+  late final _gst_video_transfer_function_get_type =
+      _gst_video_transfer_function_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_color_primaries_get_type() {
+    return _gst_video_color_primaries_get_type();
+  }
+
+  late final _gst_video_color_primaries_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_color_primaries_get_type');
+  late final _gst_video_color_primaries_get_type =
+      _gst_video_color_primaries_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_alpha_mode_get_type() {
+    return _gst_video_alpha_mode_get_type();
+  }
+
+  late final _gst_video_alpha_mode_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_alpha_mode_get_type');
+  late final _gst_video_alpha_mode_get_type =
+      _gst_video_alpha_mode_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_chroma_mode_get_type() {
+    return _gst_video_chroma_mode_get_type();
+  }
+
+  late final _gst_video_chroma_mode_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_chroma_mode_get_type');
+  late final _gst_video_chroma_mode_get_type =
+      _gst_video_chroma_mode_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_matrix_mode_get_type() {
+    return _gst_video_matrix_mode_get_type();
+  }
+
+  late final _gst_video_matrix_mode_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_matrix_mode_get_type');
+  late final _gst_video_matrix_mode_get_type =
+      _gst_video_matrix_mode_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_gamma_mode_get_type() {
+    return _gst_video_gamma_mode_get_type();
+  }
+
+  late final _gst_video_gamma_mode_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_gamma_mode_get_type');
+  late final _gst_video_gamma_mode_get_type =
+      _gst_video_gamma_mode_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_primaries_mode_get_type() {
+    return _gst_video_primaries_mode_get_type();
+  }
+
+  late final _gst_video_primaries_mode_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_primaries_mode_get_type');
+  late final _gst_video_primaries_mode_get_type =
+      _gst_video_primaries_mode_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_dither_method_get_type() {
+    return _gst_video_dither_method_get_type();
+  }
+
+  late final _gst_video_dither_method_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_dither_method_get_type');
+  late final _gst_video_dither_method_get_type =
+      _gst_video_dither_method_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_dither_flags_get_type() {
+    return _gst_video_dither_flags_get_type();
+  }
+
+  late final _gst_video_dither_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_dither_flags_get_type');
+  late final _gst_video_dither_flags_get_type =
+      _gst_video_dither_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_format_get_type() {
+    return _gst_video_format_get_type();
+  }
+
+  late final _gst_video_format_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_format_get_type');
+  late final _gst_video_format_get_type =
+      _gst_video_format_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_format_flags_get_type() {
+    return _gst_video_format_flags_get_type();
+  }
+
+  late final _gst_video_format_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_format_flags_get_type');
+  late final _gst_video_format_flags_get_type =
+      _gst_video_format_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_pack_flags_get_type() {
+    return _gst_video_pack_flags_get_type();
+  }
+
+  late final _gst_video_pack_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_pack_flags_get_type');
+  late final _gst_video_pack_flags_get_type =
+      _gst_video_pack_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_frame_flags_get_type() {
+    return _gst_video_frame_flags_get_type();
+  }
+
+  late final _gst_video_frame_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_frame_flags_get_type');
+  late final _gst_video_frame_flags_get_type =
+      _gst_video_frame_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_buffer_flags_get_type() {
+    return _gst_video_buffer_flags_get_type();
+  }
+
+  late final _gst_video_buffer_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_buffer_flags_get_type');
+  late final _gst_video_buffer_flags_get_type =
+      _gst_video_buffer_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_frame_map_flags_get_type() {
+    return _gst_video_frame_map_flags_get_type();
+  }
+
+  late final _gst_video_frame_map_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_frame_map_flags_get_type');
+  late final _gst_video_frame_map_flags_get_type =
+      _gst_video_frame_map_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_interlace_mode_get_type() {
+    return _gst_video_interlace_mode_get_type();
+  }
+
+  late final _gst_video_interlace_mode_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_interlace_mode_get_type');
+  late final _gst_video_interlace_mode_get_type =
+      _gst_video_interlace_mode_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_multiview_mode_get_type() {
+    return _gst_video_multiview_mode_get_type();
+  }
+
+  late final _gst_video_multiview_mode_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_multiview_mode_get_type');
+  late final _gst_video_multiview_mode_get_type =
+      _gst_video_multiview_mode_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_multiview_frame_packing_get_type() {
+    return _gst_video_multiview_frame_packing_get_type();
+  }
+
+  late final _gst_video_multiview_frame_packing_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_multiview_frame_packing_get_type');
+  late final _gst_video_multiview_frame_packing_get_type =
+      _gst_video_multiview_frame_packing_get_typePtr
+          .asFunction<int Function()>();
+
+  int gst_video_multiview_flags_get_type() {
+    return _gst_video_multiview_flags_get_type();
+  }
+
+  late final _gst_video_multiview_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_multiview_flags_get_type');
+  late final _gst_video_multiview_flags_get_type =
+      _gst_video_multiview_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_flags_get_type() {
+    return _gst_video_flags_get_type();
+  }
+
+  late final _gst_video_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('gst_video_flags_get_type');
+  late final _gst_video_flags_get_type =
+      _gst_video_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_field_order_get_type() {
+    return _gst_video_field_order_get_type();
+  }
+
+  late final _gst_video_field_order_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_field_order_get_type');
+  late final _gst_video_field_order_get_type =
+      _gst_video_field_order_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_overlay_format_flags_get_type() {
+    return _gst_video_overlay_format_flags_get_type();
+  }
+
+  late final _gst_video_overlay_format_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_overlay_format_flags_get_type');
+  late final _gst_video_overlay_format_flags_get_type =
+      _gst_video_overlay_format_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_resampler_method_get_type() {
+    return _gst_video_resampler_method_get_type();
+  }
+
+  late final _gst_video_resampler_method_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_resampler_method_get_type');
+  late final _gst_video_resampler_method_get_type =
+      _gst_video_resampler_method_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_resampler_flags_get_type() {
+    return _gst_video_resampler_flags_get_type();
+  }
+
+  late final _gst_video_resampler_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_resampler_flags_get_type');
+  late final _gst_video_resampler_flags_get_type =
+      _gst_video_resampler_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_scaler_flags_get_type() {
+    return _gst_video_scaler_flags_get_type();
+  }
+
+  late final _gst_video_scaler_flags_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_scaler_flags_get_type');
+  late final _gst_video_scaler_flags_get_type =
+      _gst_video_scaler_flags_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_tile_type_get_type() {
+    return _gst_video_tile_type_get_type();
+  }
+
+  late final _gst_video_tile_type_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_tile_type_get_type');
+  late final _gst_video_tile_type_get_type =
+      _gst_video_tile_type_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_tile_mode_get_type() {
+    return _gst_video_tile_mode_get_type();
+  }
+
+  late final _gst_video_tile_mode_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_tile_mode_get_type');
+  late final _gst_video_tile_mode_get_type =
+      _gst_video_tile_mode_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_orientation_method_get_type() {
+    return _gst_video_orientation_method_get_type();
+  }
+
+  late final _gst_video_orientation_method_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_orientation_method_get_type');
+  late final _gst_video_orientation_method_get_type =
+      _gst_video_orientation_method_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_tile_get_index(
+    int mode,
+    int x,
+    int y,
+    int x_tiles,
+    int y_tiles,
+  ) {
+    return _gst_video_tile_get_index(
+      mode,
+      x,
+      y,
+      x_tiles,
+      y_tiles,
+    );
+  }
+
+  late final _gst_video_tile_get_indexPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.UnsignedInt Function(ffi.Int32, ffi.Int, ffi.Int, ffi.Int,
+              ffi.Int)>>('gst_video_tile_get_index');
+  late final _gst_video_tile_get_index = _gst_video_tile_get_indexPtr
+      .asFunction<int Function(int, int, int, int, int)>();
+
+  int gst_video_chroma_from_string(
+    ffi.Pointer<ffi.Char> s,
+  ) {
+    return _gst_video_chroma_from_string(
+      s,
+    );
+  }
+
+  late final _gst_video_chroma_from_stringPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Char>)>>(
+          'gst_video_chroma_from_string');
+  late final _gst_video_chroma_from_string = _gst_video_chroma_from_stringPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+
+  ffi.Pointer<ffi.Char> gst_video_chroma_to_string(
+    int site,
+  ) {
+    return _gst_video_chroma_to_string(
+      site,
+    );
+  }
+
+  late final _gst_video_chroma_to_stringPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>(
+          'gst_video_chroma_to_string');
+  late final _gst_video_chroma_to_string = _gst_video_chroma_to_stringPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+
+  int gst_video_chroma_site_from_string(
+    ffi.Pointer<ffi.Char> s,
+  ) {
+    return _gst_video_chroma_site_from_string(
+      s,
+    );
+  }
+
+  late final _gst_video_chroma_site_from_stringPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Char>)>>(
+          'gst_video_chroma_site_from_string');
+  late final _gst_video_chroma_site_from_string =
+      _gst_video_chroma_site_from_stringPtr
+          .asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+
+  ffi.Pointer<ffi.Char> gst_video_chroma_site_to_string(
+    int site,
+  ) {
+    return _gst_video_chroma_site_to_string(
+      site,
+    );
+  }
+
+  late final _gst_video_chroma_site_to_stringPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>(
+          'gst_video_chroma_site_to_string');
+  late final _gst_video_chroma_site_to_string =
+      _gst_video_chroma_site_to_stringPtr
+          .asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+
+  ffi.Pointer<GstVideoChromaResample> gst_video_chroma_resample_new(
+    int method,
+    int site,
+    int flags,
+    int format,
+    int h_factor,
+    int v_factor,
+  ) {
+    return _gst_video_chroma_resample_new(
+      method,
+      site,
+      flags,
+      format,
+      h_factor,
+      v_factor,
+    );
+  }
+
+  late final _gst_video_chroma_resample_newPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoChromaResample> Function(
+              ffi.Int32,
+              ffi.Int32,
+              ffi.Int32,
+              ffi.Int32,
+              ffi.Int,
+              ffi.Int)>>('gst_video_chroma_resample_new');
+  late final _gst_video_chroma_resample_new =
+      _gst_video_chroma_resample_newPtr.asFunction<
+          ffi.Pointer<GstVideoChromaResample> Function(
+              int, int, int, int, int, int)>();
+
+  void gst_video_chroma_resample_free(
+    ffi.Pointer<GstVideoChromaResample> resample,
+  ) {
+    return _gst_video_chroma_resample_free(
+      resample,
+    );
+  }
+
+  late final _gst_video_chroma_resample_freePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<GstVideoChromaResample>)>>(
+      'gst_video_chroma_resample_free');
+  late final _gst_video_chroma_resample_free =
+      _gst_video_chroma_resample_freePtr
+          .asFunction<void Function(ffi.Pointer<GstVideoChromaResample>)>();
+
+  void gst_video_chroma_resample_get_info(
+    ffi.Pointer<GstVideoChromaResample> resample,
+    ffi.Pointer<ffi.UnsignedInt> n_lines,
+    ffi.Pointer<ffi.Int> offset,
+  ) {
+    return _gst_video_chroma_resample_get_info(
+      resample,
+      n_lines,
+      offset,
+    );
+  }
+
+  late final _gst_video_chroma_resample_get_infoPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoChromaResample>,
+              ffi.Pointer<ffi.UnsignedInt>,
+              ffi.Pointer<ffi.Int>)>>('gst_video_chroma_resample_get_info');
+  late final _gst_video_chroma_resample_get_info =
+      _gst_video_chroma_resample_get_infoPtr.asFunction<
+          void Function(ffi.Pointer<GstVideoChromaResample>,
+              ffi.Pointer<ffi.UnsignedInt>, ffi.Pointer<ffi.Int>)>();
+
+  void gst_video_chroma_resample(
+    ffi.Pointer<GstVideoChromaResample> resample,
+    ffi.Pointer<ffi.Pointer> lines,
+    int width,
+  ) {
+    return _gst_video_chroma_resample(
+      resample,
+      lines,
+      width,
+    );
+  }
+
+  late final _gst_video_chroma_resamplePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoChromaResample>,
+              ffi.Pointer<ffi.Pointer>, ffi.Int)>>('gst_video_chroma_resample');
+  late final _gst_video_chroma_resample =
+      _gst_video_chroma_resamplePtr.asFunction<
+          void Function(ffi.Pointer<GstVideoChromaResample>,
+              ffi.Pointer<ffi.Pointer>, int)>();
+
+  void gst_video_format_info_component(
+    ffi.Pointer<GstVideoFormatInfo> info,
+    int plane,
+    ffi.Pointer<ffi.Int> components,
+  ) {
+    return _gst_video_format_info_component(
+      info,
+      plane,
+      components,
+    );
+  }
+
+  late final _gst_video_format_info_componentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoFormatInfo>, ffi.UnsignedInt,
+              ffi.Pointer<ffi.Int>)>>('gst_video_format_info_component');
+  late final _gst_video_format_info_component =
+      _gst_video_format_info_componentPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstVideoFormatInfo>, int, ffi.Pointer<ffi.Int>)>();
+
+  int gst_video_format_info_extrapolate_stride(
+    ffi.Pointer<GstVideoFormatInfo> finfo,
+    int plane,
+    int stride,
+  ) {
+    return _gst_video_format_info_extrapolate_stride(
+      finfo,
+      plane,
+      stride,
+    );
+  }
+
+  late final _gst_video_format_info_extrapolate_stridePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoFormatInfo>, ffi.Int,
+              ffi.Int)>>('gst_video_format_info_extrapolate_stride');
+  late final _gst_video_format_info_extrapolate_stride =
+      _gst_video_format_info_extrapolate_stridePtr.asFunction<
+          int Function(ffi.Pointer<GstVideoFormatInfo>, int, int)>();
+
+  int gst_video_format_from_masks(
+    int depth,
+    int bpp,
+    int endianness,
+    int red_mask,
+    int green_mask,
+    int blue_mask,
+    int alpha_mask,
+  ) {
+    return _gst_video_format_from_masks(
+      depth,
+      bpp,
+      endianness,
+      red_mask,
+      green_mask,
+      blue_mask,
+      alpha_mask,
+    );
+  }
+
+  late final _gst_video_format_from_masksPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Int,
+              ffi.Int,
+              ffi.Int,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_video_format_from_masks');
+  late final _gst_video_format_from_masks = _gst_video_format_from_masksPtr
+      .asFunction<int Function(int, int, int, int, int, int, int)>();
+
+  int gst_video_format_from_fourcc(
+    int fourcc,
+  ) {
+    return _gst_video_format_from_fourcc(
+      fourcc,
+    );
+  }
+
+  late final _gst_video_format_from_fourccPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32)>>(
+          'gst_video_format_from_fourcc');
+  late final _gst_video_format_from_fourcc =
+      _gst_video_format_from_fourccPtr.asFunction<int Function(int)>();
+
+  int gst_video_format_from_string(
+    ffi.Pointer<ffi.Char> format,
+  ) {
+    return _gst_video_format_from_string(
+      format,
+    );
+  }
+
+  late final _gst_video_format_from_stringPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Char>)>>(
+          'gst_video_format_from_string');
+  late final _gst_video_format_from_string = _gst_video_format_from_stringPtr
+      .asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+
+  int gst_video_format_to_fourcc(
+    int format,
+  ) {
+    return _gst_video_format_to_fourcc(
+      format,
+    );
+  }
+
+  late final _gst_video_format_to_fourccPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Int32)>>(
+          'gst_video_format_to_fourcc');
+  late final _gst_video_format_to_fourcc =
+      _gst_video_format_to_fourccPtr.asFunction<int Function(int)>();
+
+  ffi.Pointer<ffi.Char> gst_video_format_to_string(
+    int format,
+  ) {
+    return _gst_video_format_to_string(
+      format,
+    );
+  }
+
+  late final _gst_video_format_to_stringPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>(
+          'gst_video_format_to_string');
+  late final _gst_video_format_to_string = _gst_video_format_to_stringPtr
+      .asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+
+  ffi.Pointer<GstVideoFormatInfo> gst_video_format_get_info(
+    int format,
+  ) {
+    return _gst_video_format_get_info(
+      format,
+    );
+  }
+
+  late final _gst_video_format_get_infoPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Pointer<GstVideoFormatInfo> Function(ffi.Int32)>>(
+      'gst_video_format_get_info');
+  late final _gst_video_format_get_info = _gst_video_format_get_infoPtr
+      .asFunction<ffi.Pointer<GstVideoFormatInfo> Function(int)>();
+
+  ffi.Pointer gst_video_format_get_palette(
+    int format,
+    ffi.Pointer<ffi.Size> size,
+  ) {
+    return _gst_video_format_get_palette(
+      format,
+      size,
+    );
+  }
+
+  late final _gst_video_format_get_palettePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer Function(ffi.Int32,
+              ffi.Pointer<ffi.Size>)>>('gst_video_format_get_palette');
+  late final _gst_video_format_get_palette = _gst_video_format_get_palettePtr
+      .asFunction<ffi.Pointer Function(int, ffi.Pointer<ffi.Size>)>();
+
+  ffi.Pointer<ffi.Int32> gst_video_formats_raw(
+    ffi.Pointer<ffi.UnsignedInt> len,
+  ) {
+    return _gst_video_formats_raw(
+      len,
+    );
+  }
+
+  late final _gst_video_formats_rawPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Int32> Function(
+              ffi.Pointer<ffi.UnsignedInt>)>>('gst_video_formats_raw');
+  late final _gst_video_formats_raw = _gst_video_formats_rawPtr.asFunction<
+      ffi.Pointer<ffi.Int32> Function(ffi.Pointer<ffi.UnsignedInt>)>();
+
+  ffi.Pointer<ffi.Int32> gst_video_formats_any(
+    ffi.Pointer<ffi.UnsignedInt> len,
+  ) {
+    return _gst_video_formats_any(
+      len,
+    );
+  }
+
+  late final _gst_video_formats_anyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Int32> Function(
+              ffi.Pointer<ffi.UnsignedInt>)>>('gst_video_formats_any');
+  late final _gst_video_formats_any = _gst_video_formats_anyPtr.asFunction<
+      ffi.Pointer<ffi.Int32> Function(ffi.Pointer<ffi.UnsignedInt>)>();
+
+  ffi.Pointer<GstCaps> gst_video_make_raw_caps(
+    ffi.Pointer<ffi.Int32> formats,
+    int len,
+  ) {
+    return _gst_video_make_raw_caps(
+      formats,
+      len,
+    );
+  }
+
+  late final _gst_video_make_raw_capsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstCaps> Function(ffi.Pointer<ffi.Int32>,
+              ffi.UnsignedInt)>>('gst_video_make_raw_caps');
+  late final _gst_video_make_raw_caps = _gst_video_make_raw_capsPtr
+      .asFunction<ffi.Pointer<GstCaps> Function(ffi.Pointer<ffi.Int32>, int)>();
+
+  ffi.Pointer<GstCaps> gst_video_make_raw_caps_with_features(
+    ffi.Pointer<ffi.Int32> formats,
+    int len,
+    ffi.Pointer<GstCapsFeatures> features,
+  ) {
+    return _gst_video_make_raw_caps_with_features(
+      formats,
+      len,
+      features,
+    );
+  }
+
+  late final _gst_video_make_raw_caps_with_featuresPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstCaps> Function(ffi.Pointer<ffi.Int32>,
+                  ffi.UnsignedInt, ffi.Pointer<GstCapsFeatures>)>>(
+      'gst_video_make_raw_caps_with_features');
+  late final _gst_video_make_raw_caps_with_features =
+      _gst_video_make_raw_caps_with_featuresPtr.asFunction<
+          ffi.Pointer<GstCaps> Function(
+              ffi.Pointer<ffi.Int32>, int, ffi.Pointer<GstCapsFeatures>)>();
+
+  int gst_video_color_matrix_get_Kr_Kb(
+    int matrix,
+    ffi.Pointer<ffi.Double> Kr,
+    ffi.Pointer<ffi.Double> Kb,
+  ) {
+    return _gst_video_color_matrix_get_Kr_Kb(
+      matrix,
+      Kr,
+      Kb,
+    );
+  }
+
+  late final _gst_video_color_matrix_get_Kr_KbPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int32, ffi.Pointer<ffi.Double>,
+              ffi.Pointer<ffi.Double>)>>('gst_video_color_matrix_get_Kr_Kb');
+  late final _gst_video_color_matrix_get_Kr_Kb =
+      _gst_video_color_matrix_get_Kr_KbPtr.asFunction<
+          int Function(
+              int, ffi.Pointer<ffi.Double>, ffi.Pointer<ffi.Double>)>();
+
+  double gst_video_color_transfer_encode(
+    int func,
+    double val,
+  ) {
+    return _gst_video_color_transfer_encode(
+      func,
+      val,
+    );
+  }
+
+  late final _gst_video_color_transfer_encodePtr =
+      _lookup<ffi.NativeFunction<ffi.Double Function(ffi.Int32, ffi.Double)>>(
+          'gst_video_color_transfer_encode');
+  late final _gst_video_color_transfer_encode =
+      _gst_video_color_transfer_encodePtr
+          .asFunction<double Function(int, double)>();
+
+  double gst_video_transfer_function_encode(
+    int func,
+    double val,
+  ) {
+    return _gst_video_transfer_function_encode(
+      func,
+      val,
+    );
+  }
+
+  late final _gst_video_transfer_function_encodePtr =
+      _lookup<ffi.NativeFunction<ffi.Double Function(ffi.Int32, ffi.Double)>>(
+          'gst_video_transfer_function_encode');
+  late final _gst_video_transfer_function_encode =
+      _gst_video_transfer_function_encodePtr
+          .asFunction<double Function(int, double)>();
+
+  double gst_video_color_transfer_decode(
+    int func,
+    double val,
+  ) {
+    return _gst_video_color_transfer_decode(
+      func,
+      val,
+    );
+  }
+
+  late final _gst_video_color_transfer_decodePtr =
+      _lookup<ffi.NativeFunction<ffi.Double Function(ffi.Int32, ffi.Double)>>(
+          'gst_video_color_transfer_decode');
+  late final _gst_video_color_transfer_decode =
+      _gst_video_color_transfer_decodePtr
+          .asFunction<double Function(int, double)>();
+
+  double gst_video_transfer_function_decode(
+    int func,
+    double val,
+  ) {
+    return _gst_video_transfer_function_decode(
+      func,
+      val,
+    );
+  }
+
+  late final _gst_video_transfer_function_decodePtr =
+      _lookup<ffi.NativeFunction<ffi.Double Function(ffi.Int32, ffi.Double)>>(
+          'gst_video_transfer_function_decode');
+  late final _gst_video_transfer_function_decode =
+      _gst_video_transfer_function_decodePtr
+          .asFunction<double Function(int, double)>();
+
+  ffi.Pointer<GstVideoColorPrimariesInfo> gst_video_color_primaries_get_info(
+    int primaries,
+  ) {
+    return _gst_video_color_primaries_get_info(
+      primaries,
+    );
+  }
+
+  late final _gst_video_color_primaries_get_infoPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoColorPrimariesInfo> Function(
+              ffi.Int32)>>('gst_video_color_primaries_get_info');
+  late final _gst_video_color_primaries_get_info =
+      _gst_video_color_primaries_get_infoPtr
+          .asFunction<ffi.Pointer<GstVideoColorPrimariesInfo> Function(int)>();
+
+  int gst_video_color_primaries_is_equivalent(
+    int primaries,
+    int other,
+  ) {
+    return _gst_video_color_primaries_is_equivalent(
+      primaries,
+      other,
+    );
+  }
+
+  late final _gst_video_color_primaries_is_equivalentPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int32, ffi.Int32)>>(
+          'gst_video_color_primaries_is_equivalent');
+  late final _gst_video_color_primaries_is_equivalent =
+      _gst_video_color_primaries_is_equivalentPtr
+          .asFunction<int Function(int, int)>();
+
+  int gst_video_colorimetry_matches(
+    ffi.Pointer<GstVideoColorimetry> cinfo,
+    ffi.Pointer<ffi.Char> color,
+  ) {
+    return _gst_video_colorimetry_matches(
+      cinfo,
+      color,
+    );
+  }
+
+  late final _gst_video_colorimetry_matchesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoColorimetry>,
+              ffi.Pointer<ffi.Char>)>>('gst_video_colorimetry_matches');
+  late final _gst_video_colorimetry_matches =
+      _gst_video_colorimetry_matchesPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoColorimetry>, ffi.Pointer<ffi.Char>)>();
+
+  int gst_video_colorimetry_from_string(
+    ffi.Pointer<GstVideoColorimetry> cinfo,
+    ffi.Pointer<ffi.Char> color,
+  ) {
+    return _gst_video_colorimetry_from_string(
+      cinfo,
+      color,
+    );
+  }
+
+  late final _gst_video_colorimetry_from_stringPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoColorimetry>,
+              ffi.Pointer<ffi.Char>)>>('gst_video_colorimetry_from_string');
+  late final _gst_video_colorimetry_from_string =
+      _gst_video_colorimetry_from_stringPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoColorimetry>, ffi.Pointer<ffi.Char>)>();
+
+  ffi.Pointer<ffi.Char> gst_video_colorimetry_to_string(
+    ffi.Pointer<GstVideoColorimetry> cinfo,
+  ) {
+    return _gst_video_colorimetry_to_string(
+      cinfo,
+    );
+  }
+
+  late final _gst_video_colorimetry_to_stringPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<ffi.Char> Function(
+                  ffi.Pointer<GstVideoColorimetry>)>>(
+      'gst_video_colorimetry_to_string');
+  late final _gst_video_colorimetry_to_string =
+      _gst_video_colorimetry_to_stringPtr.asFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<GstVideoColorimetry>)>();
+
+  int gst_video_colorimetry_is_equal(
+    ffi.Pointer<GstVideoColorimetry> cinfo,
+    ffi.Pointer<GstVideoColorimetry> other,
+  ) {
+    return _gst_video_colorimetry_is_equal(
+      cinfo,
+      other,
+    );
+  }
+
+  late final _gst_video_colorimetry_is_equalPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstVideoColorimetry>,
+                  ffi.Pointer<GstVideoColorimetry>)>>(
+      'gst_video_colorimetry_is_equal');
+  late final _gst_video_colorimetry_is_equal =
+      _gst_video_colorimetry_is_equalPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoColorimetry>,
+              ffi.Pointer<GstVideoColorimetry>)>();
+
+  int gst_video_colorimetry_is_equivalent(
+    ffi.Pointer<GstVideoColorimetry> cinfo,
+    int bitdepth,
+    ffi.Pointer<GstVideoColorimetry> other,
+    int other_bitdepth,
+  ) {
+    return _gst_video_colorimetry_is_equivalent(
+      cinfo,
+      bitdepth,
+      other,
+      other_bitdepth,
+    );
+  }
+
+  late final _gst_video_colorimetry_is_equivalentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoColorimetry>,
+              ffi.UnsignedInt,
+              ffi.Pointer<GstVideoColorimetry>,
+              ffi.UnsignedInt)>>('gst_video_colorimetry_is_equivalent');
+  late final _gst_video_colorimetry_is_equivalent =
+      _gst_video_colorimetry_is_equivalentPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoColorimetry>, int,
+              ffi.Pointer<GstVideoColorimetry>, int)>();
+
+  void gst_video_color_range_offsets(
+    int range,
+    ffi.Pointer<GstVideoFormatInfo> info,
+    ffi.Pointer<ffi.Int> offset,
+    ffi.Pointer<ffi.Int> scale,
+  ) {
+    return _gst_video_color_range_offsets(
+      range,
+      info,
+      offset,
+      scale,
+    );
+  }
+
+  late final _gst_video_color_range_offsetsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Int32,
+              ffi.Pointer<GstVideoFormatInfo>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Int>)>>('gst_video_color_range_offsets');
+  late final _gst_video_color_range_offsets =
+      _gst_video_color_range_offsetsPtr.asFunction<
+          void Function(int, ffi.Pointer<GstVideoFormatInfo>,
+              ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>)>();
+
+  int gst_video_color_matrix_to_iso(
+    int matrix,
+  ) {
+    return _gst_video_color_matrix_to_iso(
+      matrix,
+    );
+  }
+
+  late final _gst_video_color_matrix_to_isoPtr =
+      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function(ffi.Int32)>>(
+          'gst_video_color_matrix_to_iso');
+  late final _gst_video_color_matrix_to_iso =
+      _gst_video_color_matrix_to_isoPtr.asFunction<int Function(int)>();
+
+  int gst_video_transfer_function_to_iso(
+    int func,
+  ) {
+    return _gst_video_transfer_function_to_iso(
+      func,
+    );
+  }
+
+  late final _gst_video_transfer_function_to_isoPtr =
+      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function(ffi.Int32)>>(
+          'gst_video_transfer_function_to_iso');
+  late final _gst_video_transfer_function_to_iso =
+      _gst_video_transfer_function_to_isoPtr.asFunction<int Function(int)>();
+
+  int gst_video_color_primaries_to_iso(
+    int primaries,
+  ) {
+    return _gst_video_color_primaries_to_iso(
+      primaries,
+    );
+  }
+
+  late final _gst_video_color_primaries_to_isoPtr =
+      _lookup<ffi.NativeFunction<ffi.UnsignedInt Function(ffi.Int32)>>(
+          'gst_video_color_primaries_to_iso');
+  late final _gst_video_color_primaries_to_iso =
+      _gst_video_color_primaries_to_isoPtr.asFunction<int Function(int)>();
+
+  int gst_video_color_matrix_from_iso(
+    int value,
+  ) {
+    return _gst_video_color_matrix_from_iso(
+      value,
+    );
+  }
+
+  late final _gst_video_color_matrix_from_isoPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.UnsignedInt)>>(
+          'gst_video_color_matrix_from_iso');
+  late final _gst_video_color_matrix_from_iso =
+      _gst_video_color_matrix_from_isoPtr.asFunction<int Function(int)>();
+
+  int gst_video_transfer_function_from_iso(
+    int value,
+  ) {
+    return _gst_video_transfer_function_from_iso(
+      value,
+    );
+  }
+
+  late final _gst_video_transfer_function_from_isoPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.UnsignedInt)>>(
+          'gst_video_transfer_function_from_iso');
+  late final _gst_video_transfer_function_from_iso =
+      _gst_video_transfer_function_from_isoPtr.asFunction<int Function(int)>();
+
+  int gst_video_color_primaries_from_iso(
+    int value,
+  ) {
+    return _gst_video_color_primaries_from_iso(
+      value,
+    );
+  }
+
+  late final _gst_video_color_primaries_from_isoPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.UnsignedInt)>>(
+          'gst_video_color_primaries_from_iso');
+  late final _gst_video_color_primaries_from_iso =
+      _gst_video_color_primaries_from_isoPtr.asFunction<int Function(int)>();
+
+  int gst_video_transfer_function_is_equivalent(
+    int from_func,
+    int from_bpp,
+    int to_func,
+    int to_bpp,
+  ) {
+    return _gst_video_transfer_function_is_equivalent(
+      from_func,
+      from_bpp,
+      to_func,
+      to_bpp,
+    );
+  }
+
+  late final _gst_video_transfer_function_is_equivalentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int32, ffi.UnsignedInt, ffi.Int32,
+              ffi.UnsignedInt)>>('gst_video_transfer_function_is_equivalent');
+  late final _gst_video_transfer_function_is_equivalent =
+      _gst_video_transfer_function_is_equivalentPtr
+          .asFunction<int Function(int, int, int, int)>();
+
+  ffi.Pointer<GstVideoDither> gst_video_dither_new(
+    int method,
+    int flags,
+    int format,
+    ffi.Pointer<ffi.UnsignedInt> quantizer,
+    int width,
+  ) {
+    return _gst_video_dither_new(
+      method,
+      flags,
+      format,
+      quantizer,
+      width,
+    );
+  }
+
+  late final _gst_video_dither_newPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoDither> Function(
+              ffi.Int32,
+              ffi.Int32,
+              ffi.Int32,
+              ffi.Pointer<ffi.UnsignedInt>,
+              ffi.UnsignedInt)>>('gst_video_dither_new');
+  late final _gst_video_dither_new = _gst_video_dither_newPtr.asFunction<
+      ffi.Pointer<GstVideoDither> Function(
+          int, int, int, ffi.Pointer<ffi.UnsignedInt>, int)>();
+
+  void gst_video_dither_free(
+    ffi.Pointer<GstVideoDither> dither,
+  ) {
+    return _gst_video_dither_free(
+      dither,
+    );
+  }
+
+  late final _gst_video_dither_freePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoDither>)>>(
+      'gst_video_dither_free');
+  late final _gst_video_dither_free = _gst_video_dither_freePtr
+      .asFunction<void Function(ffi.Pointer<GstVideoDither>)>();
+
+  void gst_video_dither_line(
+    ffi.Pointer<GstVideoDither> dither,
+    ffi.Pointer line,
+    int x,
+    int y,
+    int width,
+  ) {
+    return _gst_video_dither_line(
+      dither,
+      line,
+      x,
+      y,
+      width,
+    );
+  }
+
+  late final _gst_video_dither_linePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoDither>,
+              ffi.Pointer,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_video_dither_line');
+  late final _gst_video_dither_line = _gst_video_dither_linePtr.asFunction<
+      void Function(ffi.Pointer<GstVideoDither>, ffi.Pointer, int, int, int)>();
+
+  ffi.Pointer<ffi.Char> gst_video_interlace_mode_to_string(
+    int mode,
+  ) {
+    return _gst_video_interlace_mode_to_string(
+      mode,
+    );
+  }
+
+  late final _gst_video_interlace_mode_to_stringPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>(
+          'gst_video_interlace_mode_to_string');
+  late final _gst_video_interlace_mode_to_string =
+      _gst_video_interlace_mode_to_stringPtr
+          .asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+
+  int gst_video_interlace_mode_from_string(
+    ffi.Pointer<ffi.Char> mode,
+  ) {
+    return _gst_video_interlace_mode_from_string(
+      mode,
+    );
+  }
+
+  late final _gst_video_interlace_mode_from_stringPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Char>)>>(
+          'gst_video_interlace_mode_from_string');
+  late final _gst_video_interlace_mode_from_string =
+      _gst_video_interlace_mode_from_stringPtr
+          .asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+
+  ffi.Pointer<ffi.Char> gst_video_field_order_to_string(
+    int order,
+  ) {
+    return _gst_video_field_order_to_string(
+      order,
+    );
+  }
+
+  late final _gst_video_field_order_to_stringPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>(
+          'gst_video_field_order_to_string');
+  late final _gst_video_field_order_to_string =
+      _gst_video_field_order_to_stringPtr
+          .asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+
+  int gst_video_field_order_from_string(
+    ffi.Pointer<ffi.Char> order,
+  ) {
+    return _gst_video_field_order_from_string(
+      order,
+    );
+  }
+
+  late final _gst_video_field_order_from_stringPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Char>)>>(
+          'gst_video_field_order_from_string');
+  late final _gst_video_field_order_from_string =
+      _gst_video_field_order_from_stringPtr
+          .asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+
+  int gst_video_info_get_type() {
+    return _gst_video_info_get_type();
+  }
+
+  late final _gst_video_info_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('gst_video_info_get_type');
+  late final _gst_video_info_get_type =
+      _gst_video_info_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstVideoInfo> gst_video_info_new() {
+    return _gst_video_info_new();
+  }
+
+  late final _gst_video_info_newPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstVideoInfo> Function()>>(
+          'gst_video_info_new');
+  late final _gst_video_info_new =
+      _gst_video_info_newPtr.asFunction<ffi.Pointer<GstVideoInfo> Function()>();
+
+  void gst_video_info_init(
+    ffi.Pointer<GstVideoInfo> info,
+  ) {
+    return _gst_video_info_init(
+      info,
+    );
+  }
+
+  late final _gst_video_info_initPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoInfo>)>>(
+          'gst_video_info_init');
+  late final _gst_video_info_init = _gst_video_info_initPtr
+      .asFunction<void Function(ffi.Pointer<GstVideoInfo>)>();
+
+  ffi.Pointer<GstVideoInfo> gst_video_info_copy(
+    ffi.Pointer<GstVideoInfo> info,
+  ) {
+    return _gst_video_info_copy(
+      info,
+    );
+  }
+
+  late final _gst_video_info_copyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoInfo> Function(
+              ffi.Pointer<GstVideoInfo>)>>('gst_video_info_copy');
+  late final _gst_video_info_copy = _gst_video_info_copyPtr.asFunction<
+      ffi.Pointer<GstVideoInfo> Function(ffi.Pointer<GstVideoInfo>)>();
+
+  void gst_video_info_free(
+    ffi.Pointer<GstVideoInfo> info,
+  ) {
+    return _gst_video_info_free(
+      info,
+    );
+  }
+
+  late final _gst_video_info_freePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoInfo>)>>(
+          'gst_video_info_free');
+  late final _gst_video_info_free = _gst_video_info_freePtr
+      .asFunction<void Function(ffi.Pointer<GstVideoInfo>)>();
+
+  ffi.Pointer<GstVideoInfo> gst_video_info_new_from_caps(
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_video_info_new_from_caps(
+      caps,
+    );
+  }
+
+  late final _gst_video_info_new_from_capsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoInfo> Function(
+              ffi.Pointer<GstCaps>)>>('gst_video_info_new_from_caps');
+  late final _gst_video_info_new_from_caps = _gst_video_info_new_from_capsPtr
+      .asFunction<ffi.Pointer<GstVideoInfo> Function(ffi.Pointer<GstCaps>)>();
+
+  int gst_video_info_set_format(
+    ffi.Pointer<GstVideoInfo> info,
+    int format,
+    int width,
+    int height,
+  ) {
+    return _gst_video_info_set_format(
+      info,
+      format,
+      width,
+      height,
+    );
+  }
+
+  late final _gst_video_info_set_formatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoInfo>, ffi.Int32,
+              ffi.UnsignedInt, ffi.UnsignedInt)>>('gst_video_info_set_format');
+  late final _gst_video_info_set_format = _gst_video_info_set_formatPtr
+      .asFunction<int Function(ffi.Pointer<GstVideoInfo>, int, int, int)>();
+
+  int gst_video_info_set_interlaced_format(
+    ffi.Pointer<GstVideoInfo> info,
+    int format,
+    int mode,
+    int width,
+    int height,
+  ) {
+    return _gst_video_info_set_interlaced_format(
+      info,
+      format,
+      mode,
+      width,
+      height,
+    );
+  }
+
+  late final _gst_video_info_set_interlaced_formatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoInfo>,
+              ffi.Int32,
+              ffi.Int32,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_video_info_set_interlaced_format');
+  late final _gst_video_info_set_interlaced_format =
+      _gst_video_info_set_interlaced_formatPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoInfo>, int, int, int, int)>();
+
+  int gst_video_info_from_caps(
+    ffi.Pointer<GstVideoInfo> info,
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_video_info_from_caps(
+      info,
+      caps,
+    );
+  }
+
+  late final _gst_video_info_from_capsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstCaps>)>>('gst_video_info_from_caps');
+  late final _gst_video_info_from_caps =
+      _gst_video_info_from_capsPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoInfo>, ffi.Pointer<GstCaps>)>();
+
+  ffi.Pointer<GstCaps> gst_video_info_to_caps(
+    ffi.Pointer<GstVideoInfo> info,
+  ) {
+    return _gst_video_info_to_caps(
+      info,
+    );
+  }
+
+  late final _gst_video_info_to_capsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstCaps> Function(
+              ffi.Pointer<GstVideoInfo>)>>('gst_video_info_to_caps');
+  late final _gst_video_info_to_caps = _gst_video_info_to_capsPtr
+      .asFunction<ffi.Pointer<GstCaps> Function(ffi.Pointer<GstVideoInfo>)>();
+
+  int gst_video_info_convert(
+    ffi.Pointer<GstVideoInfo> info,
+    int src_format,
+    int src_value,
+    int dest_format,
+    ffi.Pointer<ffi.Int64> dest_value,
+  ) {
+    return _gst_video_info_convert(
+      info,
+      src_format,
+      src_value,
+      dest_format,
+      dest_value,
+    );
+  }
+
+  late final _gst_video_info_convertPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoInfo>, ffi.Int32, ffi.Int64,
+              ffi.Int32, ffi.Pointer<ffi.Int64>)>>('gst_video_info_convert');
+  late final _gst_video_info_convert = _gst_video_info_convertPtr.asFunction<
+      int Function(
+          ffi.Pointer<GstVideoInfo>, int, int, int, ffi.Pointer<ffi.Int64>)>();
+
+  int gst_video_info_is_equal(
+    ffi.Pointer<GstVideoInfo> info,
+    ffi.Pointer<GstVideoInfo> other,
+  ) {
+    return _gst_video_info_is_equal(
+      info,
+      other,
+    );
+  }
+
+  late final _gst_video_info_is_equalPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstVideoInfo>)>>('gst_video_info_is_equal');
+  late final _gst_video_info_is_equal = _gst_video_info_is_equalPtr.asFunction<
+      int Function(ffi.Pointer<GstVideoInfo>, ffi.Pointer<GstVideoInfo>)>();
+
+  int gst_video_info_align(
+    ffi.Pointer<GstVideoInfo> info,
+    ffi.Pointer<GstVideoAlignment> align,
+  ) {
+    return _gst_video_info_align(
+      info,
+      align,
+    );
+  }
+
+  late final _gst_video_info_alignPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstVideoAlignment>)>>('gst_video_info_align');
+  late final _gst_video_info_align = _gst_video_info_alignPtr.asFunction<
+      int Function(
+          ffi.Pointer<GstVideoInfo>, ffi.Pointer<GstVideoAlignment>)>();
+
+  int gst_video_info_align_full(
+    ffi.Pointer<GstVideoInfo> info,
+    ffi.Pointer<GstVideoAlignment> align,
+    ffi.Pointer<ffi.Size> plane_size,
+  ) {
+    return _gst_video_info_align_full(
+      info,
+      align,
+      plane_size,
+    );
+  }
+
+  late final _gst_video_info_align_fullPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstVideoAlignment>,
+              ffi.Pointer<ffi.Size>)>>('gst_video_info_align_full');
+  late final _gst_video_info_align_full =
+      _gst_video_info_align_fullPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstVideoAlignment>, ffi.Pointer<ffi.Size>)>();
+
+  int gst_video_frame_map(
+    ffi.Pointer<GstVideoFrame> frame,
+    ffi.Pointer<GstVideoInfo> info,
+    ffi.Pointer<GstBuffer> buffer,
+    int flags,
+  ) {
+    return _gst_video_frame_map(
+      frame,
+      info,
+      buffer,
+      flags,
+    );
+  }
+
+  late final _gst_video_frame_mapPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoFrame>,
+              ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstBuffer>,
+              ffi.Int32)>>('gst_video_frame_map');
+  late final _gst_video_frame_map = _gst_video_frame_mapPtr.asFunction<
+      int Function(ffi.Pointer<GstVideoFrame>, ffi.Pointer<GstVideoInfo>,
+          ffi.Pointer<GstBuffer>, int)>();
+
+  int gst_video_frame_map_id(
+    ffi.Pointer<GstVideoFrame> frame,
+    ffi.Pointer<GstVideoInfo> info,
+    ffi.Pointer<GstBuffer> buffer,
+    int id,
+    int flags,
+  ) {
+    return _gst_video_frame_map_id(
+      frame,
+      info,
+      buffer,
+      id,
+      flags,
+    );
+  }
+
+  late final _gst_video_frame_map_idPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoFrame>,
+              ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstBuffer>,
+              ffi.Int,
+              ffi.Int32)>>('gst_video_frame_map_id');
+  late final _gst_video_frame_map_id = _gst_video_frame_map_idPtr.asFunction<
+      int Function(ffi.Pointer<GstVideoFrame>, ffi.Pointer<GstVideoInfo>,
+          ffi.Pointer<GstBuffer>, int, int)>();
+
+  void gst_video_frame_unmap(
+    ffi.Pointer<GstVideoFrame> frame,
+  ) {
+    return _gst_video_frame_unmap(
+      frame,
+    );
+  }
+
+  late final _gst_video_frame_unmapPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoFrame>)>>(
+      'gst_video_frame_unmap');
+  late final _gst_video_frame_unmap = _gst_video_frame_unmapPtr
+      .asFunction<void Function(ffi.Pointer<GstVideoFrame>)>();
+
+  int gst_video_frame_copy(
+    ffi.Pointer<GstVideoFrame> dest,
+    ffi.Pointer<GstVideoFrame> src,
+  ) {
+    return _gst_video_frame_copy(
+      dest,
+      src,
+    );
+  }
+
+  late final _gst_video_frame_copyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoFrame>,
+              ffi.Pointer<GstVideoFrame>)>>('gst_video_frame_copy');
+  late final _gst_video_frame_copy = _gst_video_frame_copyPtr.asFunction<
+      int Function(ffi.Pointer<GstVideoFrame>, ffi.Pointer<GstVideoFrame>)>();
+
+  int gst_video_frame_copy_plane(
+    ffi.Pointer<GstVideoFrame> dest,
+    ffi.Pointer<GstVideoFrame> src,
+    int plane,
+  ) {
+    return _gst_video_frame_copy_plane(
+      dest,
+      src,
+      plane,
+    );
+  }
+
+  late final _gst_video_frame_copy_planePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoFrame>,
+              ffi.Pointer<GstVideoFrame>,
+              ffi.UnsignedInt)>>('gst_video_frame_copy_plane');
+  late final _gst_video_frame_copy_plane =
+      _gst_video_frame_copy_planePtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoFrame>, ffi.Pointer<GstVideoFrame>, int)>();
+
+  ffi.Pointer<GstVideoConverter> gst_video_converter_new(
+    ffi.Pointer<GstVideoInfo> in_info,
+    ffi.Pointer<GstVideoInfo> out_info,
+    ffi.Pointer<GstStructure> config,
+  ) {
+    return _gst_video_converter_new(
+      in_info,
+      out_info,
+      config,
+    );
+  }
+
+  late final _gst_video_converter_newPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoConverter> Function(
+              ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstStructure>)>>('gst_video_converter_new');
+  late final _gst_video_converter_new = _gst_video_converter_newPtr.asFunction<
+      ffi.Pointer<GstVideoConverter> Function(ffi.Pointer<GstVideoInfo>,
+          ffi.Pointer<GstVideoInfo>, ffi.Pointer<GstStructure>)>();
+
+  ffi.Pointer<GstVideoConverter> gst_video_converter_new_with_pool(
+    ffi.Pointer<GstVideoInfo> in_info,
+    ffi.Pointer<GstVideoInfo> out_info,
+    ffi.Pointer<GstStructure> config,
+    ffi.Pointer<GstTaskPool> pool,
+  ) {
+    return _gst_video_converter_new_with_pool(
+      in_info,
+      out_info,
+      config,
+      pool,
+    );
+  }
+
+  late final _gst_video_converter_new_with_poolPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoConverter> Function(
+              ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstStructure>,
+              ffi.Pointer<GstTaskPool>)>>('gst_video_converter_new_with_pool');
+  late final _gst_video_converter_new_with_pool =
+      _gst_video_converter_new_with_poolPtr.asFunction<
+          ffi.Pointer<GstVideoConverter> Function(
+              ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstStructure>,
+              ffi.Pointer<GstTaskPool>)>();
+
+  void gst_video_converter_free(
+    ffi.Pointer<GstVideoConverter> convert,
+  ) {
+    return _gst_video_converter_free(
+      convert,
+    );
+  }
+
+  late final _gst_video_converter_freePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoConverter>)>>(
+      'gst_video_converter_free');
+  late final _gst_video_converter_free = _gst_video_converter_freePtr
+      .asFunction<void Function(ffi.Pointer<GstVideoConverter>)>();
+
+  int gst_video_converter_set_config(
+    ffi.Pointer<GstVideoConverter> convert,
+    ffi.Pointer<GstStructure> config,
+  ) {
+    return _gst_video_converter_set_config(
+      convert,
+      config,
+    );
+  }
+
+  late final _gst_video_converter_set_configPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoConverter>,
+              ffi.Pointer<GstStructure>)>>('gst_video_converter_set_config');
+  late final _gst_video_converter_set_config =
+      _gst_video_converter_set_configPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoConverter>, ffi.Pointer<GstStructure>)>();
+
+  ffi.Pointer<GstStructure> gst_video_converter_get_config(
+    ffi.Pointer<GstVideoConverter> convert,
+  ) {
+    return _gst_video_converter_get_config(
+      convert,
+    );
+  }
+
+  late final _gst_video_converter_get_configPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstStructure> Function(
+                  ffi.Pointer<GstVideoConverter>)>>(
+      'gst_video_converter_get_config');
+  late final _gst_video_converter_get_config =
+      _gst_video_converter_get_configPtr.asFunction<
+          ffi.Pointer<GstStructure> Function(ffi.Pointer<GstVideoConverter>)>();
+
+  void gst_video_converter_frame(
+    ffi.Pointer<GstVideoConverter> convert,
+    ffi.Pointer<GstVideoFrame> src,
+    ffi.Pointer<GstVideoFrame> dest,
+  ) {
+    return _gst_video_converter_frame(
+      convert,
+      src,
+      dest,
+    );
+  }
+
+  late final _gst_video_converter_framePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoConverter>,
+              ffi.Pointer<GstVideoFrame>,
+              ffi.Pointer<GstVideoFrame>)>>('gst_video_converter_frame');
+  late final _gst_video_converter_frame =
+      _gst_video_converter_framePtr.asFunction<
+          void Function(ffi.Pointer<GstVideoConverter>,
+              ffi.Pointer<GstVideoFrame>, ffi.Pointer<GstVideoFrame>)>();
+
+  void gst_video_converter_frame_finish(
+    ffi.Pointer<GstVideoConverter> convert,
+  ) {
+    return _gst_video_converter_frame_finish(
+      convert,
+    );
+  }
+
+  late final _gst_video_converter_frame_finishPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoConverter>)>>(
+      'gst_video_converter_frame_finish');
+  late final _gst_video_converter_frame_finish =
+      _gst_video_converter_frame_finishPtr
+          .asFunction<void Function(ffi.Pointer<GstVideoConverter>)>();
+
+  ffi.Pointer<GstVideoInfo> gst_video_converter_get_in_info(
+    ffi.Pointer<GstVideoConverter> convert,
+  ) {
+    return _gst_video_converter_get_in_info(
+      convert,
+    );
+  }
+
+  late final _gst_video_converter_get_in_infoPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoInfo> Function(
+                  ffi.Pointer<GstVideoConverter>)>>(
+      'gst_video_converter_get_in_info');
+  late final _gst_video_converter_get_in_info =
+      _gst_video_converter_get_in_infoPtr.asFunction<
+          ffi.Pointer<GstVideoInfo> Function(ffi.Pointer<GstVideoConverter>)>();
+
+  ffi.Pointer<GstVideoInfo> gst_video_converter_get_out_info(
+    ffi.Pointer<GstVideoConverter> convert,
+  ) {
+    return _gst_video_converter_get_out_info(
+      convert,
+    );
+  }
+
+  late final _gst_video_converter_get_out_infoPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoInfo> Function(
+                  ffi.Pointer<GstVideoConverter>)>>(
+      'gst_video_converter_get_out_info');
+  late final _gst_video_converter_get_out_info =
+      _gst_video_converter_get_out_infoPtr.asFunction<
+          ffi.Pointer<GstVideoInfo> Function(ffi.Pointer<GstVideoConverter>)>();
+
+  int gst_video_resampler_init(
+    ffi.Pointer<GstVideoResampler> resampler,
+    int method,
+    int flags,
+    int n_phases,
+    int n_taps,
+    double shift,
+    int in_size,
+    int out_size,
+    ffi.Pointer<GstStructure> options,
+  ) {
+    return _gst_video_resampler_init(
+      resampler,
+      method,
+      flags,
+      n_phases,
+      n_taps,
+      shift,
+      in_size,
+      out_size,
+      options,
+    );
+  }
+
+  late final _gst_video_resampler_initPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoResampler>,
+              ffi.Int32,
+              ffi.Int32,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.Double,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.Pointer<GstStructure>)>>('gst_video_resampler_init');
+  late final _gst_video_resampler_init =
+      _gst_video_resampler_initPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoResampler>, int, int, int, int,
+              double, int, int, ffi.Pointer<GstStructure>)>();
+
+  void gst_video_resampler_clear(
+    ffi.Pointer<GstVideoResampler> resampler,
+  ) {
+    return _gst_video_resampler_clear(
+      resampler,
+    );
+  }
+
+  late final _gst_video_resampler_clearPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoResampler>)>>(
+      'gst_video_resampler_clear');
+  late final _gst_video_resampler_clear = _gst_video_resampler_clearPtr
+      .asFunction<void Function(ffi.Pointer<GstVideoResampler>)>();
+
+  ffi.Pointer<GstVideoScaler> gst_video_scaler_new(
+    int method,
+    int flags,
+    int n_taps,
+    int in_size,
+    int out_size,
+    ffi.Pointer<GstStructure> options,
+  ) {
+    return _gst_video_scaler_new(
+      method,
+      flags,
+      n_taps,
+      in_size,
+      out_size,
+      options,
+    );
+  }
+
+  late final _gst_video_scaler_newPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoScaler> Function(
+              ffi.Int32,
+              ffi.Int32,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.Pointer<GstStructure>)>>('gst_video_scaler_new');
+  late final _gst_video_scaler_new = _gst_video_scaler_newPtr.asFunction<
+      ffi.Pointer<GstVideoScaler> Function(
+          int, int, int, int, int, ffi.Pointer<GstStructure>)>();
+
+  void gst_video_scaler_free(
+    ffi.Pointer<GstVideoScaler> scale,
+  ) {
+    return _gst_video_scaler_free(
+      scale,
+    );
+  }
+
+  late final _gst_video_scaler_freePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoScaler>)>>(
+      'gst_video_scaler_free');
+  late final _gst_video_scaler_free = _gst_video_scaler_freePtr
+      .asFunction<void Function(ffi.Pointer<GstVideoScaler>)>();
+
+  int gst_video_scaler_get_max_taps(
+    ffi.Pointer<GstVideoScaler> scale,
+  ) {
+    return _gst_video_scaler_get_max_taps(
+      scale,
+    );
+  }
+
+  late final _gst_video_scaler_get_max_tapsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.UnsignedInt Function(
+              ffi.Pointer<GstVideoScaler>)>>('gst_video_scaler_get_max_taps');
+  late final _gst_video_scaler_get_max_taps = _gst_video_scaler_get_max_tapsPtr
+      .asFunction<int Function(ffi.Pointer<GstVideoScaler>)>();
+
+  ffi.Pointer<ffi.Double> gst_video_scaler_get_coeff(
+    ffi.Pointer<GstVideoScaler> scale,
+    int out_offset,
+    ffi.Pointer<ffi.UnsignedInt> in_offset,
+    ffi.Pointer<ffi.UnsignedInt> n_taps,
+  ) {
+    return _gst_video_scaler_get_coeff(
+      scale,
+      out_offset,
+      in_offset,
+      n_taps,
+    );
+  }
+
+  late final _gst_video_scaler_get_coeffPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Double> Function(
+              ffi.Pointer<GstVideoScaler>,
+              ffi.UnsignedInt,
+              ffi.Pointer<ffi.UnsignedInt>,
+              ffi.Pointer<ffi.UnsignedInt>)>>('gst_video_scaler_get_coeff');
+  late final _gst_video_scaler_get_coeff =
+      _gst_video_scaler_get_coeffPtr.asFunction<
+          ffi.Pointer<ffi.Double> Function(ffi.Pointer<GstVideoScaler>, int,
+              ffi.Pointer<ffi.UnsignedInt>, ffi.Pointer<ffi.UnsignedInt>)>();
+
+  void gst_video_scaler_horizontal(
+    ffi.Pointer<GstVideoScaler> scale,
+    int format,
+    ffi.Pointer src,
+    ffi.Pointer dest,
+    int dest_offset,
+    int width,
+  ) {
+    return _gst_video_scaler_horizontal(
+      scale,
+      format,
+      src,
+      dest,
+      dest_offset,
+      width,
+    );
+  }
+
+  late final _gst_video_scaler_horizontalPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoScaler>,
+              ffi.Int32,
+              ffi.Pointer,
+              ffi.Pointer,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_video_scaler_horizontal');
+  late final _gst_video_scaler_horizontal =
+      _gst_video_scaler_horizontalPtr.asFunction<
+          void Function(ffi.Pointer<GstVideoScaler>, int, ffi.Pointer,
+              ffi.Pointer, int, int)>();
+
+  void gst_video_scaler_vertical(
+    ffi.Pointer<GstVideoScaler> scale,
+    int format,
+    ffi.Pointer<ffi.Pointer> src_lines,
+    ffi.Pointer dest,
+    int dest_offset,
+    int width,
+  ) {
+    return _gst_video_scaler_vertical(
+      scale,
+      format,
+      src_lines,
+      dest,
+      dest_offset,
+      width,
+    );
+  }
+
+  late final _gst_video_scaler_verticalPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoScaler>,
+              ffi.Int32,
+              ffi.Pointer<ffi.Pointer>,
+              ffi.Pointer,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_video_scaler_vertical');
+  late final _gst_video_scaler_vertical =
+      _gst_video_scaler_verticalPtr.asFunction<
+          void Function(ffi.Pointer<GstVideoScaler>, int,
+              ffi.Pointer<ffi.Pointer>, ffi.Pointer, int, int)>();
+
+  ffi.Pointer<GstVideoScaler> gst_video_scaler_combine_packed_YUV(
+    ffi.Pointer<GstVideoScaler> y_scale,
+    ffi.Pointer<GstVideoScaler> uv_scale,
+    int in_format,
+    int out_format,
+  ) {
+    return _gst_video_scaler_combine_packed_YUV(
+      y_scale,
+      uv_scale,
+      in_format,
+      out_format,
+    );
+  }
+
+  late final _gst_video_scaler_combine_packed_YUVPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoScaler> Function(
+              ffi.Pointer<GstVideoScaler>,
+              ffi.Pointer<GstVideoScaler>,
+              ffi.Int32,
+              ffi.Int32)>>('gst_video_scaler_combine_packed_YUV');
+  late final _gst_video_scaler_combine_packed_YUV =
+      _gst_video_scaler_combine_packed_YUVPtr.asFunction<
+          ffi.Pointer<GstVideoScaler> Function(ffi.Pointer<GstVideoScaler>,
+              ffi.Pointer<GstVideoScaler>, int, int)>();
+
+  void gst_video_scaler_2d(
+    ffi.Pointer<GstVideoScaler> hscale,
+    ffi.Pointer<GstVideoScaler> vscale,
+    int format,
+    ffi.Pointer src,
+    int src_stride,
+    ffi.Pointer dest,
+    int dest_stride,
+    int x,
+    int y,
+    int width,
+    int height,
+  ) {
+    return _gst_video_scaler_2d(
+      hscale,
+      vscale,
+      format,
+      src,
+      src_stride,
+      dest,
+      dest_stride,
+      x,
+      y,
+      width,
+      height,
+    );
+  }
+
+  late final _gst_video_scaler_2dPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoScaler>,
+              ffi.Pointer<GstVideoScaler>,
+              ffi.Int32,
+              ffi.Pointer,
+              ffi.Int,
+              ffi.Pointer,
+              ffi.Int,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_video_scaler_2d');
+  late final _gst_video_scaler_2d = _gst_video_scaler_2dPtr.asFunction<
+      void Function(ffi.Pointer<GstVideoScaler>, ffi.Pointer<GstVideoScaler>,
+          int, ffi.Pointer, int, ffi.Pointer, int, int, int, int, int)>();
+
+  int gst_video_multiview_flagset_get_type() {
+    return _gst_video_multiview_flagset_get_type();
+  }
+
+  late final _gst_video_multiview_flagset_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_multiview_flagset_get_type');
+  late final _gst_video_multiview_flagset_get_type =
+      _gst_video_multiview_flagset_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<ffi.Char> gst_video_multiview_mode_to_caps_string(
+    int mview_mode,
+  ) {
+    return _gst_video_multiview_mode_to_caps_string(
+      mview_mode,
+    );
+  }
+
+  late final _gst_video_multiview_mode_to_caps_stringPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>(
+          'gst_video_multiview_mode_to_caps_string');
+  late final _gst_video_multiview_mode_to_caps_string =
+      _gst_video_multiview_mode_to_caps_stringPtr
+          .asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+
+  int gst_video_multiview_mode_from_caps_string(
+    ffi.Pointer<ffi.Char> caps_mview_mode,
+  ) {
+    return _gst_video_multiview_mode_from_caps_string(
+      caps_mview_mode,
+    );
+  }
+
+  late final _gst_video_multiview_mode_from_caps_stringPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Char>)>>(
+          'gst_video_multiview_mode_from_caps_string');
+  late final _gst_video_multiview_mode_from_caps_string =
+      _gst_video_multiview_mode_from_caps_stringPtr
+          .asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+
+  ffi.Pointer<GValue> gst_video_multiview_get_mono_modes() {
+    return _gst_video_multiview_get_mono_modes();
+  }
+
+  late final _gst_video_multiview_get_mono_modesPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GValue> Function()>>(
+          'gst_video_multiview_get_mono_modes');
+  late final _gst_video_multiview_get_mono_modes =
+      _gst_video_multiview_get_mono_modesPtr
+          .asFunction<ffi.Pointer<GValue> Function()>();
+
+  ffi.Pointer<GValue> gst_video_multiview_get_unpacked_modes() {
+    return _gst_video_multiview_get_unpacked_modes();
+  }
+
+  late final _gst_video_multiview_get_unpacked_modesPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GValue> Function()>>(
+          'gst_video_multiview_get_unpacked_modes');
+  late final _gst_video_multiview_get_unpacked_modes =
+      _gst_video_multiview_get_unpacked_modesPtr
+          .asFunction<ffi.Pointer<GValue> Function()>();
+
+  ffi.Pointer<GValue> gst_video_multiview_get_doubled_height_modes() {
+    return _gst_video_multiview_get_doubled_height_modes();
+  }
+
+  late final _gst_video_multiview_get_doubled_height_modesPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GValue> Function()>>(
+          'gst_video_multiview_get_doubled_height_modes');
+  late final _gst_video_multiview_get_doubled_height_modes =
+      _gst_video_multiview_get_doubled_height_modesPtr
+          .asFunction<ffi.Pointer<GValue> Function()>();
+
+  ffi.Pointer<GValue> gst_video_multiview_get_doubled_width_modes() {
+    return _gst_video_multiview_get_doubled_width_modes();
+  }
+
+  late final _gst_video_multiview_get_doubled_width_modesPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GValue> Function()>>(
+          'gst_video_multiview_get_doubled_width_modes');
+  late final _gst_video_multiview_get_doubled_width_modes =
+      _gst_video_multiview_get_doubled_width_modesPtr
+          .asFunction<ffi.Pointer<GValue> Function()>();
+
+  ffi.Pointer<GValue> gst_video_multiview_get_doubled_size_modes() {
+    return _gst_video_multiview_get_doubled_size_modes();
+  }
+
+  late final _gst_video_multiview_get_doubled_size_modesPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GValue> Function()>>(
+          'gst_video_multiview_get_doubled_size_modes');
+  late final _gst_video_multiview_get_doubled_size_modes =
+      _gst_video_multiview_get_doubled_size_modesPtr
+          .asFunction<ffi.Pointer<GValue> Function()>();
+
+  void gst_video_multiview_video_info_change_mode(
+    ffi.Pointer<GstVideoInfo> info,
+    int out_mview_mode,
+    int out_mview_flags,
+  ) {
+    return _gst_video_multiview_video_info_change_mode(
+      info,
+      out_mview_mode,
+      out_mview_flags,
+    );
+  }
+
+  late final _gst_video_multiview_video_info_change_modePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoInfo>, ffi.Int32,
+              ffi.Int32)>>('gst_video_multiview_video_info_change_mode');
+  late final _gst_video_multiview_video_info_change_mode =
+      _gst_video_multiview_video_info_change_modePtr
+          .asFunction<void Function(ffi.Pointer<GstVideoInfo>, int, int)>();
+
+  int gst_video_multiview_guess_half_aspect(
+    int mv_mode,
+    int width,
+    int height,
+    int par_n,
+    int par_d,
+  ) {
+    return _gst_video_multiview_guess_half_aspect(
+      mv_mode,
+      width,
+      height,
+      par_n,
+      par_d,
+    );
+  }
+
+  late final _gst_video_multiview_guess_half_aspectPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Int32,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_video_multiview_guess_half_aspect');
+  late final _gst_video_multiview_guess_half_aspect =
+      _gst_video_multiview_guess_half_aspectPtr
+          .asFunction<int Function(int, int, int, int, int)>();
+
+  int gst_video_info_dma_drm_get_type() {
+    return _gst_video_info_dma_drm_get_type();
+  }
+
+  late final _gst_video_info_dma_drm_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_info_dma_drm_get_type');
+  late final _gst_video_info_dma_drm_get_type =
+      _gst_video_info_dma_drm_get_typePtr.asFunction<int Function()>();
+
+  void gst_video_info_dma_drm_free(
+    ffi.Pointer<GstVideoInfoDmaDrm> drm_info,
+  ) {
+    return _gst_video_info_dma_drm_free(
+      drm_info,
+    );
+  }
+
+  late final _gst_video_info_dma_drm_freePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoInfoDmaDrm>)>>(
+      'gst_video_info_dma_drm_free');
+  late final _gst_video_info_dma_drm_free = _gst_video_info_dma_drm_freePtr
+      .asFunction<void Function(ffi.Pointer<GstVideoInfoDmaDrm>)>();
+
+  void gst_video_info_dma_drm_init(
+    ffi.Pointer<GstVideoInfoDmaDrm> drm_info,
+  ) {
+    return _gst_video_info_dma_drm_init(
+      drm_info,
+    );
+  }
+
+  late final _gst_video_info_dma_drm_initPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoInfoDmaDrm>)>>(
+      'gst_video_info_dma_drm_init');
+  late final _gst_video_info_dma_drm_init = _gst_video_info_dma_drm_initPtr
+      .asFunction<void Function(ffi.Pointer<GstVideoInfoDmaDrm>)>();
+
+  ffi.Pointer<GstVideoInfoDmaDrm> gst_video_info_dma_drm_new() {
+    return _gst_video_info_dma_drm_new();
+  }
+
+  late final _gst_video_info_dma_drm_newPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstVideoInfoDmaDrm> Function()>>(
+          'gst_video_info_dma_drm_new');
+  late final _gst_video_info_dma_drm_new = _gst_video_info_dma_drm_newPtr
+      .asFunction<ffi.Pointer<GstVideoInfoDmaDrm> Function()>();
+
+  ffi.Pointer<GstCaps> gst_video_info_dma_drm_to_caps(
+    ffi.Pointer<GstVideoInfoDmaDrm> drm_info,
+  ) {
+    return _gst_video_info_dma_drm_to_caps(
+      drm_info,
+    );
+  }
+
+  late final _gst_video_info_dma_drm_to_capsPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstCaps> Function(ffi.Pointer<GstVideoInfoDmaDrm>)>>(
+      'gst_video_info_dma_drm_to_caps');
+  late final _gst_video_info_dma_drm_to_caps =
+      _gst_video_info_dma_drm_to_capsPtr.asFunction<
+          ffi.Pointer<GstCaps> Function(ffi.Pointer<GstVideoInfoDmaDrm>)>();
+
+  int gst_video_info_dma_drm_from_caps(
+    ffi.Pointer<GstVideoInfoDmaDrm> drm_info,
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_video_info_dma_drm_from_caps(
+      drm_info,
+      caps,
+    );
+  }
+
+  late final _gst_video_info_dma_drm_from_capsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoInfoDmaDrm>,
+              ffi.Pointer<GstCaps>)>>('gst_video_info_dma_drm_from_caps');
+  late final _gst_video_info_dma_drm_from_caps =
+      _gst_video_info_dma_drm_from_capsPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoInfoDmaDrm>, ffi.Pointer<GstCaps>)>();
+
+  int gst_video_info_dma_drm_from_video_info(
+    ffi.Pointer<GstVideoInfoDmaDrm> drm_info,
+    ffi.Pointer<GstVideoInfo> info,
+    int modifier,
+  ) {
+    return _gst_video_info_dma_drm_from_video_info(
+      drm_info,
+      info,
+      modifier,
+    );
+  }
+
+  late final _gst_video_info_dma_drm_from_video_infoPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoInfoDmaDrm>,
+              ffi.Pointer<GstVideoInfo>,
+              ffi.Uint64)>>('gst_video_info_dma_drm_from_video_info');
+  late final _gst_video_info_dma_drm_from_video_info =
+      _gst_video_info_dma_drm_from_video_infoPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoInfoDmaDrm>,
+              ffi.Pointer<GstVideoInfo>, int)>();
+
+  int gst_video_info_dma_drm_to_video_info(
+    ffi.Pointer<GstVideoInfoDmaDrm> drm_info,
+    ffi.Pointer<GstVideoInfo> info,
+  ) {
+    return _gst_video_info_dma_drm_to_video_info(
+      drm_info,
+      info,
+    );
+  }
+
+  late final _gst_video_info_dma_drm_to_video_infoPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstVideoInfoDmaDrm>, ffi.Pointer<GstVideoInfo>)>>(
+      'gst_video_info_dma_drm_to_video_info');
+  late final _gst_video_info_dma_drm_to_video_info =
+      _gst_video_info_dma_drm_to_video_infoPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoInfoDmaDrm>, ffi.Pointer<GstVideoInfo>)>();
+
+  ffi.Pointer<GstVideoInfoDmaDrm> gst_video_info_dma_drm_new_from_caps(
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_video_info_dma_drm_new_from_caps(
+      caps,
+    );
+  }
+
+  late final _gst_video_info_dma_drm_new_from_capsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoInfoDmaDrm> Function(
+              ffi.Pointer<GstCaps>)>>('gst_video_info_dma_drm_new_from_caps');
+  late final _gst_video_info_dma_drm_new_from_caps =
+      _gst_video_info_dma_drm_new_from_capsPtr.asFunction<
+          ffi.Pointer<GstVideoInfoDmaDrm> Function(ffi.Pointer<GstCaps>)>();
+
+  int gst_video_is_dma_drm_caps(
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_video_is_dma_drm_caps(
+      caps,
+    );
+  }
+
+  late final _gst_video_is_dma_drm_capsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstCaps>)>>(
+          'gst_video_is_dma_drm_caps');
+  late final _gst_video_is_dma_drm_caps = _gst_video_is_dma_drm_capsPtr
+      .asFunction<int Function(ffi.Pointer<GstCaps>)>();
+
+  int gst_video_dma_drm_fourcc_from_string(
+    ffi.Pointer<ffi.Char> format_str,
+    ffi.Pointer<ffi.Uint64> modifier,
+  ) {
+    return _gst_video_dma_drm_fourcc_from_string(
+      format_str,
+      modifier,
+    );
+  }
+
+  late final _gst_video_dma_drm_fourcc_from_stringPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Uint32 Function(
+                  ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Uint64>)>>(
+      'gst_video_dma_drm_fourcc_from_string');
+  late final _gst_video_dma_drm_fourcc_from_string =
+      _gst_video_dma_drm_fourcc_from_stringPtr.asFunction<
+          int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Uint64>)>();
+
+  ffi.Pointer<ffi.Char> gst_video_dma_drm_fourcc_to_string(
+    int fourcc,
+    int modifier,
+  ) {
+    return _gst_video_dma_drm_fourcc_to_string(
+      fourcc,
+      modifier,
+    );
+  }
+
+  late final _gst_video_dma_drm_fourcc_to_stringPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Uint32, ffi.Uint64)>>('gst_video_dma_drm_fourcc_to_string');
+  late final _gst_video_dma_drm_fourcc_to_string =
+      _gst_video_dma_drm_fourcc_to_stringPtr
+          .asFunction<ffi.Pointer<ffi.Char> Function(int, int)>();
+
+  int gst_video_dma_drm_fourcc_from_format(
+    int format,
+  ) {
+    return _gst_video_dma_drm_fourcc_from_format(
+      format,
+    );
+  }
+
+  late final _gst_video_dma_drm_fourcc_from_formatPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Int32)>>(
+          'gst_video_dma_drm_fourcc_from_format');
+  late final _gst_video_dma_drm_fourcc_from_format =
+      _gst_video_dma_drm_fourcc_from_formatPtr.asFunction<int Function(int)>();
+
+  int gst_video_dma_drm_fourcc_to_format(
+    int fourcc,
+  ) {
+    return _gst_video_dma_drm_fourcc_to_format(
+      fourcc,
+    );
+  }
+
+  late final _gst_video_dma_drm_fourcc_to_formatPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Uint32)>>(
+          'gst_video_dma_drm_fourcc_to_format');
+  late final _gst_video_dma_drm_fourcc_to_format =
+      _gst_video_dma_drm_fourcc_to_formatPtr.asFunction<int Function(int)>();
+
+  void gst_video_alignment_reset(
+    ffi.Pointer<GstVideoAlignment> align,
+  ) {
+    return _gst_video_alignment_reset(
+      align,
+    );
+  }
+
+  late final _gst_video_alignment_resetPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoAlignment>)>>(
+      'gst_video_alignment_reset');
+  late final _gst_video_alignment_reset = _gst_video_alignment_resetPtr
+      .asFunction<void Function(ffi.Pointer<GstVideoAlignment>)>();
+
+  int gst_video_calculate_display_ratio(
+    ffi.Pointer<ffi.UnsignedInt> dar_n,
+    ffi.Pointer<ffi.UnsignedInt> dar_d,
+    int video_width,
+    int video_height,
+    int video_par_n,
+    int video_par_d,
+    int display_par_n,
+    int display_par_d,
+  ) {
+    return _gst_video_calculate_display_ratio(
+      dar_n,
+      dar_d,
+      video_width,
+      video_height,
+      video_par_n,
+      video_par_d,
+      display_par_n,
+      display_par_d,
+    );
+  }
+
+  late final _gst_video_calculate_display_ratioPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<ffi.UnsignedInt>,
+              ffi.Pointer<ffi.UnsignedInt>,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_video_calculate_display_ratio');
+  late final _gst_video_calculate_display_ratio =
+      _gst_video_calculate_display_ratioPtr.asFunction<
+          int Function(ffi.Pointer<ffi.UnsignedInt>,
+              ffi.Pointer<ffi.UnsignedInt>, int, int, int, int, int, int)>();
+
+  int gst_video_guess_framerate(
+    int duration,
+    ffi.Pointer<ffi.Int> dest_n,
+    ffi.Pointer<ffi.Int> dest_d,
+  ) {
+    return _gst_video_guess_framerate(
+      duration,
+      dest_n,
+      dest_d,
+    );
+  }
+
+  late final _gst_video_guess_frameratePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(GstClockTime, ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Int>)>>('gst_video_guess_framerate');
+  late final _gst_video_guess_framerate =
+      _gst_video_guess_frameratePtr.asFunction<
+          int Function(int, ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.Int>)>();
+
+  int gst_video_is_common_aspect_ratio(
+    int width,
+    int height,
+    int par_n,
+    int par_d,
+  ) {
+    return _gst_video_is_common_aspect_ratio(
+      width,
+      height,
+      par_n,
+      par_d,
+    );
+  }
+
+  late final _gst_video_is_common_aspect_ratioPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Int, ffi.Int, ffi.Int,
+              ffi.Int)>>('gst_video_is_common_aspect_ratio');
+  late final _gst_video_is_common_aspect_ratio =
+      _gst_video_is_common_aspect_ratioPtr
+          .asFunction<int Function(int, int, int, int)>();
+
+  void gst_video_convert_sample_async(
+    ffi.Pointer<GstSample> sample,
+    ffi.Pointer<GstCaps> to_caps,
+    int timeout,
+    GstVideoConvertSampleCallback callback,
+    ffi.Pointer user_data,
+    GDestroyNotify destroy_notify,
+  ) {
+    return _gst_video_convert_sample_async(
+      sample,
+      to_caps,
+      timeout,
+      callback,
+      user_data,
+      destroy_notify,
+    );
+  }
+
+  late final _gst_video_convert_sample_asyncPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstSample>,
+              ffi.Pointer<GstCaps>,
+              GstClockTime,
+              GstVideoConvertSampleCallback,
+              ffi.Pointer,
+              GDestroyNotify)>>('gst_video_convert_sample_async');
+  late final _gst_video_convert_sample_async =
+      _gst_video_convert_sample_asyncPtr.asFunction<
+          void Function(ffi.Pointer<GstSample>, ffi.Pointer<GstCaps>, int,
+              GstVideoConvertSampleCallback, ffi.Pointer, GDestroyNotify)>();
+
+  ffi.Pointer<GstSample> gst_video_convert_sample(
+    ffi.Pointer<GstSample> sample,
+    ffi.Pointer<GstCaps> to_caps,
+    int timeout,
+    ffi.Pointer<ffi.Pointer<GError>> error,
+  ) {
+    return _gst_video_convert_sample(
+      sample,
+      to_caps,
+      timeout,
+      error,
+    );
+  }
+
+  late final _gst_video_convert_samplePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstSample> Function(
+              ffi.Pointer<GstSample>,
+              ffi.Pointer<GstCaps>,
+              GstClockTime,
+              ffi.Pointer<ffi.Pointer<GError>>)>>('gst_video_convert_sample');
+  late final _gst_video_convert_sample =
+      _gst_video_convert_samplePtr.asFunction<
+          ffi.Pointer<GstSample> Function(ffi.Pointer<GstSample>,
+              ffi.Pointer<GstCaps>, int, ffi.Pointer<ffi.Pointer<GError>>)>();
+
+  int gst_video_orientation_from_tag(
+    ffi.Pointer<GstTagList> taglist,
+    ffi.Pointer<ffi.Int32> method,
+  ) {
+    return _gst_video_orientation_from_tag(
+      taglist,
+      method,
+    );
+  }
+
+  late final _gst_video_orientation_from_tagPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstTagList>,
+              ffi.Pointer<ffi.Int32>)>>('gst_video_orientation_from_tag');
+  late final _gst_video_orientation_from_tag =
+      _gst_video_orientation_from_tagPtr.asFunction<
+          int Function(ffi.Pointer<GstTagList>, ffi.Pointer<ffi.Int32>)>();
+
+  int gst_color_balance_channel_get_type() {
+    return _gst_color_balance_channel_get_type();
+  }
+
+  late final _gst_color_balance_channel_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_color_balance_channel_get_type');
+  late final _gst_color_balance_channel_get_type =
+      _gst_color_balance_channel_get_typePtr.asFunction<int Function()>();
+
+  int gst_color_balance_get_type() {
+    return _gst_color_balance_get_type();
+  }
+
+  late final _gst_color_balance_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_color_balance_get_type');
+  late final _gst_color_balance_get_type =
+      _gst_color_balance_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GList> gst_color_balance_list_channels(
+    ffi.Pointer<GstColorBalance> balance,
+  ) {
+    return _gst_color_balance_list_channels(
+      balance,
+    );
+  }
+
+  late final _gst_color_balance_list_channelsPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GList> Function(ffi.Pointer<GstColorBalance>)>>(
+      'gst_color_balance_list_channels');
+  late final _gst_color_balance_list_channels =
+      _gst_color_balance_list_channelsPtr.asFunction<
+          ffi.Pointer<GList> Function(ffi.Pointer<GstColorBalance>)>();
+
+  void gst_color_balance_set_value(
+    ffi.Pointer<GstColorBalance> balance,
+    ffi.Pointer<GstColorBalanceChannel> channel,
+    int value,
+  ) {
+    return _gst_color_balance_set_value(
+      balance,
+      channel,
+      value,
+    );
+  }
+
+  late final _gst_color_balance_set_valuePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstColorBalance>,
+              ffi.Pointer<GstColorBalanceChannel>,
+              ffi.Int)>>('gst_color_balance_set_value');
+  late final _gst_color_balance_set_value =
+      _gst_color_balance_set_valuePtr.asFunction<
+          void Function(ffi.Pointer<GstColorBalance>,
+              ffi.Pointer<GstColorBalanceChannel>, int)>();
+
+  int gst_color_balance_get_value(
+    ffi.Pointer<GstColorBalance> balance,
+    ffi.Pointer<GstColorBalanceChannel> channel,
+  ) {
+    return _gst_color_balance_get_value(
+      balance,
+      channel,
+    );
+  }
+
+  late final _gst_color_balance_get_valuePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstColorBalance>,
+                  ffi.Pointer<GstColorBalanceChannel>)>>(
+      'gst_color_balance_get_value');
+  late final _gst_color_balance_get_value =
+      _gst_color_balance_get_valuePtr.asFunction<
+          int Function(ffi.Pointer<GstColorBalance>,
+              ffi.Pointer<GstColorBalanceChannel>)>();
+
+  int gst_color_balance_get_balance_type(
+    ffi.Pointer<GstColorBalance> balance,
+  ) {
+    return _gst_color_balance_get_balance_type(
+      balance,
+    );
+  }
+
+  late final _gst_color_balance_get_balance_typePtr = _lookup<
+          ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstColorBalance>)>>(
+      'gst_color_balance_get_balance_type');
+  late final _gst_color_balance_get_balance_type =
+      _gst_color_balance_get_balance_typePtr
+          .asFunction<int Function(ffi.Pointer<GstColorBalance>)>();
+
+  void gst_color_balance_value_changed(
+    ffi.Pointer<GstColorBalance> balance,
+    ffi.Pointer<GstColorBalanceChannel> channel,
+    int value,
+  ) {
+    return _gst_color_balance_value_changed(
+      balance,
+      channel,
+      value,
+    );
+  }
+
+  late final _gst_color_balance_value_changedPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstColorBalance>,
+              ffi.Pointer<GstColorBalanceChannel>,
+              ffi.Int)>>('gst_color_balance_value_changed');
+  late final _gst_color_balance_value_changed =
+      _gst_color_balance_value_changedPtr.asFunction<
+          void Function(ffi.Pointer<GstColorBalance>,
+              ffi.Pointer<GstColorBalanceChannel>, int)>();
+
+  int gst_video_affine_transformation_meta_api_get_type() {
+    return _gst_video_affine_transformation_meta_api_get_type();
+  }
+
+  late final _gst_video_affine_transformation_meta_api_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_affine_transformation_meta_api_get_type');
+  late final _gst_video_affine_transformation_meta_api_get_type =
+      _gst_video_affine_transformation_meta_api_get_typePtr
+          .asFunction<int Function()>();
+
+  ffi.Pointer<GstMetaInfo> gst_video_affine_transformation_meta_get_info() {
+    return _gst_video_affine_transformation_meta_get_info();
+  }
+
+  late final _gst_video_affine_transformation_meta_get_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstMetaInfo> Function()>>(
+          'gst_video_affine_transformation_meta_get_info');
+  late final _gst_video_affine_transformation_meta_get_info =
+      _gst_video_affine_transformation_meta_get_infoPtr
+          .asFunction<ffi.Pointer<GstMetaInfo> Function()>();
+
+  ffi.Pointer<GstVideoAffineTransformationMeta>
+      gst_buffer_add_video_affine_transformation_meta(
+    ffi.Pointer<GstBuffer> buffer,
+  ) {
+    return _gst_buffer_add_video_affine_transformation_meta(
+      buffer,
+    );
+  }
+
+  late final _gst_buffer_add_video_affine_transformation_metaPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoAffineTransformationMeta> Function(
+                  ffi.Pointer<GstBuffer>)>>(
+      'gst_buffer_add_video_affine_transformation_meta');
+  late final _gst_buffer_add_video_affine_transformation_meta =
+      _gst_buffer_add_video_affine_transformation_metaPtr.asFunction<
+          ffi.Pointer<GstVideoAffineTransformationMeta> Function(
+              ffi.Pointer<GstBuffer>)>();
+
+  void gst_video_affine_transformation_meta_apply_matrix(
+    ffi.Pointer<GstVideoAffineTransformationMeta> meta,
+    ffi.Pointer<ffi.Float> matrix,
+  ) {
+    return _gst_video_affine_transformation_meta_apply_matrix(
+      meta,
+      matrix,
+    );
+  }
+
+  late final _gst_video_affine_transformation_meta_apply_matrixPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<GstVideoAffineTransformationMeta>,
+                  ffi.Pointer<ffi.Float>)>>(
+      'gst_video_affine_transformation_meta_apply_matrix');
+  late final _gst_video_affine_transformation_meta_apply_matrix =
+      _gst_video_affine_transformation_meta_apply_matrixPtr.asFunction<
+          void Function(ffi.Pointer<GstVideoAffineTransformationMeta>,
+              ffi.Pointer<ffi.Float>)>();
+
+  int gst_aggregator_pad_get_type() {
+    return _gst_aggregator_pad_get_type();
+  }
+
+  late final _gst_aggregator_pad_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_aggregator_pad_get_type');
+  late final _gst_aggregator_pad_get_type =
+      _gst_aggregator_pad_get_typePtr.asFunction<int Function()>();
+
+  /// GstAggregatorPad methods *
+  ffi.Pointer<GstBuffer> gst_aggregator_pad_pop_buffer(
+    ffi.Pointer<GstAggregatorPad> pad,
+  ) {
+    return _gst_aggregator_pad_pop_buffer(
+      pad,
+    );
+  }
+
+  late final _gst_aggregator_pad_pop_bufferPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBuffer> Function(
+              ffi.Pointer<GstAggregatorPad>)>>('gst_aggregator_pad_pop_buffer');
+  late final _gst_aggregator_pad_pop_buffer =
+      _gst_aggregator_pad_pop_bufferPtr.asFunction<
+          ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstAggregatorPad>)>();
+
+  ffi.Pointer<GstBuffer> gst_aggregator_pad_peek_buffer(
+    ffi.Pointer<GstAggregatorPad> pad,
+  ) {
+    return _gst_aggregator_pad_peek_buffer(
+      pad,
+    );
+  }
+
+  late final _gst_aggregator_pad_peek_bufferPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstAggregatorPad>)>>(
+      'gst_aggregator_pad_peek_buffer');
+  late final _gst_aggregator_pad_peek_buffer =
+      _gst_aggregator_pad_peek_bufferPtr.asFunction<
+          ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstAggregatorPad>)>();
+
+  int gst_aggregator_pad_drop_buffer(
+    ffi.Pointer<GstAggregatorPad> pad,
+  ) {
+    return _gst_aggregator_pad_drop_buffer(
+      pad,
+    );
+  }
+
+  late final _gst_aggregator_pad_drop_bufferPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAggregatorPad>)>>(
+      'gst_aggregator_pad_drop_buffer');
+  late final _gst_aggregator_pad_drop_buffer =
+      _gst_aggregator_pad_drop_bufferPtr
+          .asFunction<int Function(ffi.Pointer<GstAggregatorPad>)>();
+
+  int gst_aggregator_pad_has_buffer(
+    ffi.Pointer<GstAggregatorPad> pad,
+  ) {
+    return _gst_aggregator_pad_has_buffer(
+      pad,
+    );
+  }
+
+  late final _gst_aggregator_pad_has_bufferPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAggregatorPad>)>>(
+      'gst_aggregator_pad_has_buffer');
+  late final _gst_aggregator_pad_has_buffer = _gst_aggregator_pad_has_bufferPtr
+      .asFunction<int Function(ffi.Pointer<GstAggregatorPad>)>();
+
+  int gst_aggregator_pad_is_eos(
+    ffi.Pointer<GstAggregatorPad> pad,
+  ) {
+    return _gst_aggregator_pad_is_eos(
+      pad,
+    );
+  }
+
+  late final _gst_aggregator_pad_is_eosPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAggregatorPad>)>>(
+      'gst_aggregator_pad_is_eos');
+  late final _gst_aggregator_pad_is_eos = _gst_aggregator_pad_is_eosPtr
+      .asFunction<int Function(ffi.Pointer<GstAggregatorPad>)>();
+
+  int gst_aggregator_pad_is_inactive(
+    ffi.Pointer<GstAggregatorPad> pad,
+  ) {
+    return _gst_aggregator_pad_is_inactive(
+      pad,
+    );
+  }
+
+  late final _gst_aggregator_pad_is_inactivePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAggregatorPad>)>>(
+      'gst_aggregator_pad_is_inactive');
+  late final _gst_aggregator_pad_is_inactive =
+      _gst_aggregator_pad_is_inactivePtr
+          .asFunction<int Function(ffi.Pointer<GstAggregatorPad>)>();
+
+  /// GstAggregator methods *
+  int gst_aggregator_finish_buffer(
+    ffi.Pointer<GstAggregator> aggregator,
+    ffi.Pointer<GstBuffer> buffer,
+  ) {
+    return _gst_aggregator_finish_buffer(
+      aggregator,
+      buffer,
+    );
+  }
+
+  late final _gst_aggregator_finish_bufferPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstAggregator>,
+              ffi.Pointer<GstBuffer>)>>('gst_aggregator_finish_buffer');
+  late final _gst_aggregator_finish_buffer =
+      _gst_aggregator_finish_bufferPtr.asFunction<
+          int Function(ffi.Pointer<GstAggregator>, ffi.Pointer<GstBuffer>)>();
+
+  int gst_aggregator_finish_buffer_list(
+    ffi.Pointer<GstAggregator> aggregator,
+    ffi.Pointer<GstBufferList> bufferlist,
+  ) {
+    return _gst_aggregator_finish_buffer_list(
+      aggregator,
+      bufferlist,
+    );
+  }
+
+  late final _gst_aggregator_finish_buffer_listPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(
+                  ffi.Pointer<GstAggregator>, ffi.Pointer<GstBufferList>)>>(
+      'gst_aggregator_finish_buffer_list');
+  late final _gst_aggregator_finish_buffer_list =
+      _gst_aggregator_finish_buffer_listPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstAggregator>, ffi.Pointer<GstBufferList>)>();
+
+  void gst_aggregator_set_src_caps(
+    ffi.Pointer<GstAggregator> self,
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_aggregator_set_src_caps(
+      self,
+      caps,
+    );
+  }
+
+  late final _gst_aggregator_set_src_capsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAggregator>,
+              ffi.Pointer<GstCaps>)>>('gst_aggregator_set_src_caps');
+  late final _gst_aggregator_set_src_caps =
+      _gst_aggregator_set_src_capsPtr.asFunction<
+          void Function(ffi.Pointer<GstAggregator>, ffi.Pointer<GstCaps>)>();
+
+  int gst_aggregator_negotiate(
+    ffi.Pointer<GstAggregator> self,
+  ) {
+    return _gst_aggregator_negotiate(
+      self,
+    );
+  }
+
+  late final _gst_aggregator_negotiatePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAggregator>)>>(
+          'gst_aggregator_negotiate');
+  late final _gst_aggregator_negotiate = _gst_aggregator_negotiatePtr
+      .asFunction<int Function(ffi.Pointer<GstAggregator>)>();
+
+  void gst_aggregator_set_latency(
+    ffi.Pointer<GstAggregator> self,
+    int min_latency,
+    int max_latency,
+  ) {
+    return _gst_aggregator_set_latency(
+      self,
+      min_latency,
+      max_latency,
+    );
+  }
+
+  late final _gst_aggregator_set_latencyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAggregator>, GstClockTime,
+              GstClockTime)>>('gst_aggregator_set_latency');
+  late final _gst_aggregator_set_latency = _gst_aggregator_set_latencyPtr
+      .asFunction<void Function(ffi.Pointer<GstAggregator>, int, int)>();
+
+  int gst_aggregator_get_type() {
+    return _gst_aggregator_get_type();
+  }
+
+  late final _gst_aggregator_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('gst_aggregator_get_type');
+  late final _gst_aggregator_get_type =
+      _gst_aggregator_get_typePtr.asFunction<int Function()>();
+
+  int gst_aggregator_get_latency(
+    ffi.Pointer<GstAggregator> self,
+  ) {
+    return _gst_aggregator_get_latency(
+      self,
+    );
+  }
+
+  late final _gst_aggregator_get_latencyPtr = _lookup<
+          ffi
+          .NativeFunction<GstClockTime Function(ffi.Pointer<GstAggregator>)>>(
+      'gst_aggregator_get_latency');
+  late final _gst_aggregator_get_latency = _gst_aggregator_get_latencyPtr
+      .asFunction<int Function(ffi.Pointer<GstAggregator>)>();
+
+  ffi.Pointer<GstBufferPool> gst_aggregator_get_buffer_pool(
+    ffi.Pointer<GstAggregator> self,
+  ) {
+    return _gst_aggregator_get_buffer_pool(
+      self,
+    );
+  }
+
+  late final _gst_aggregator_get_buffer_poolPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBufferPool> Function(
+              ffi.Pointer<GstAggregator>)>>('gst_aggregator_get_buffer_pool');
+  late final _gst_aggregator_get_buffer_pool =
+      _gst_aggregator_get_buffer_poolPtr.asFunction<
+          ffi.Pointer<GstBufferPool> Function(ffi.Pointer<GstAggregator>)>();
+
+  void gst_aggregator_get_allocator(
+    ffi.Pointer<GstAggregator> self,
+    ffi.Pointer<ffi.Pointer<GstAllocator>> allocator,
+    ffi.Pointer<GstAllocationParams> params,
+  ) {
+    return _gst_aggregator_get_allocator(
+      self,
+      allocator,
+      params,
+    );
+  }
+
+  late final _gst_aggregator_get_allocatorPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  ffi.Pointer<GstAggregator>,
+                  ffi.Pointer<ffi.Pointer<GstAllocator>>,
+                  ffi.Pointer<GstAllocationParams>)>>(
+      'gst_aggregator_get_allocator');
+  late final _gst_aggregator_get_allocator =
+      _gst_aggregator_get_allocatorPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstAggregator>,
+              ffi.Pointer<ffi.Pointer<GstAllocator>>,
+              ffi.Pointer<GstAllocationParams>)>();
+
+  int gst_aggregator_simple_get_next_time(
+    ffi.Pointer<GstAggregator> self,
+  ) {
+    return _gst_aggregator_simple_get_next_time(
+      self,
+    );
+  }
+
+  late final _gst_aggregator_simple_get_next_timePtr = _lookup<
+          ffi
+          .NativeFunction<GstClockTime Function(ffi.Pointer<GstAggregator>)>>(
+      'gst_aggregator_simple_get_next_time');
+  late final _gst_aggregator_simple_get_next_time =
+      _gst_aggregator_simple_get_next_timePtr
+          .asFunction<int Function(ffi.Pointer<GstAggregator>)>();
+
+  void gst_aggregator_update_segment(
+    ffi.Pointer<GstAggregator> self,
+    ffi.Pointer<GstSegment> segment,
+  ) {
+    return _gst_aggregator_update_segment(
+      self,
+      segment,
+    );
+  }
+
+  late final _gst_aggregator_update_segmentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAggregator>,
+              ffi.Pointer<GstSegment>)>>('gst_aggregator_update_segment');
+  late final _gst_aggregator_update_segment =
+      _gst_aggregator_update_segmentPtr.asFunction<
+          void Function(ffi.Pointer<GstAggregator>, ffi.Pointer<GstSegment>)>();
+
+  ffi.Pointer<GstSample> gst_aggregator_peek_next_sample(
+    ffi.Pointer<GstAggregator> self,
+    ffi.Pointer<GstAggregatorPad> pad,
+  ) {
+    return _gst_aggregator_peek_next_sample(
+      self,
+      pad,
+    );
+  }
+
+  late final _gst_aggregator_peek_next_samplePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstSample> Function(
+                  ffi.Pointer<GstAggregator>, ffi.Pointer<GstAggregatorPad>)>>(
+      'gst_aggregator_peek_next_sample');
+  late final _gst_aggregator_peek_next_sample =
+      _gst_aggregator_peek_next_samplePtr.asFunction<
+          ffi.Pointer<GstSample> Function(
+              ffi.Pointer<GstAggregator>, ffi.Pointer<GstAggregatorPad>)>();
+
+  void gst_aggregator_selected_samples(
+    ffi.Pointer<GstAggregator> self,
+    int pts,
+    int dts,
+    int duration,
+    ffi.Pointer<GstStructure> info,
+  ) {
+    return _gst_aggregator_selected_samples(
+      self,
+      pts,
+      dts,
+      duration,
+      info,
+    );
+  }
+
+  late final _gst_aggregator_selected_samplesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstAggregator>,
+              GstClockTime,
+              GstClockTime,
+              GstClockTime,
+              ffi.Pointer<GstStructure>)>>('gst_aggregator_selected_samples');
+  late final _gst_aggregator_selected_samples =
+      _gst_aggregator_selected_samplesPtr.asFunction<
+          void Function(ffi.Pointer<GstAggregator>, int, int, int,
+              ffi.Pointer<GstStructure>)>();
+
+  void gst_aggregator_set_ignore_inactive_pads(
+    ffi.Pointer<GstAggregator> self,
+    int ignore,
+  ) {
+    return _gst_aggregator_set_ignore_inactive_pads(
+      self,
+      ignore,
+    );
+  }
+
+  late final _gst_aggregator_set_ignore_inactive_padsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAggregator>,
+              ffi.Int)>>('gst_aggregator_set_ignore_inactive_pads');
+  late final _gst_aggregator_set_ignore_inactive_pads =
+      _gst_aggregator_set_ignore_inactive_padsPtr
+          .asFunction<void Function(ffi.Pointer<GstAggregator>, int)>();
+
+  int gst_aggregator_get_ignore_inactive_pads(
+    ffi.Pointer<GstAggregator> self,
+  ) {
+    return _gst_aggregator_get_ignore_inactive_pads(
+      self,
+    );
+  }
+
+  late final _gst_aggregator_get_ignore_inactive_padsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAggregator>)>>(
+          'gst_aggregator_get_ignore_inactive_pads');
+  late final _gst_aggregator_get_ignore_inactive_pads =
+      _gst_aggregator_get_ignore_inactive_padsPtr
+          .asFunction<int Function(ffi.Pointer<GstAggregator>)>();
+
+  int gst_aggregator_get_force_live(
+    ffi.Pointer<GstAggregator> self,
+  ) {
+    return _gst_aggregator_get_force_live(
+      self,
+    );
+  }
+
+  late final _gst_aggregator_get_force_livePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAggregator>)>>(
+          'gst_aggregator_get_force_live');
+  late final _gst_aggregator_get_force_live = _gst_aggregator_get_force_livePtr
+      .asFunction<int Function(ffi.Pointer<GstAggregator>)>();
+
+  void gst_aggregator_set_force_live(
+    ffi.Pointer<GstAggregator> self,
+    int force_live,
+  ) {
+    return _gst_aggregator_set_force_live(
+      self,
+      force_live,
+    );
+  }
+
+  late final _gst_aggregator_set_force_livePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAggregator>,
+              ffi.Int)>>('gst_aggregator_set_force_live');
+  late final _gst_aggregator_set_force_live = _gst_aggregator_set_force_livePtr
+      .asFunction<void Function(ffi.Pointer<GstAggregator>, int)>();
+
+  int gst_aggregator_start_time_selection_get_type() {
+    return _gst_aggregator_start_time_selection_get_type();
+  }
+
+  late final _gst_aggregator_start_time_selection_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_aggregator_start_time_selection_get_type');
+  late final _gst_aggregator_start_time_selection_get_type =
+      _gst_aggregator_start_time_selection_get_typePtr
+          .asFunction<int Function()>();
+
+  int gst_video_aggregator_pad_get_type() {
+    return _gst_video_aggregator_pad_get_type();
+  }
+
+  late final _gst_video_aggregator_pad_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_aggregator_pad_get_type');
+  late final _gst_video_aggregator_pad_get_type =
+      _gst_video_aggregator_pad_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_aggregator_pad_has_current_buffer(
+    ffi.Pointer<GstVideoAggregatorPad> pad,
+  ) {
+    return _gst_video_aggregator_pad_has_current_buffer(
+      pad,
+    );
+  }
+
+  late final _gst_video_aggregator_pad_has_current_bufferPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstVideoAggregatorPad>)>>(
+      'gst_video_aggregator_pad_has_current_buffer');
+  late final _gst_video_aggregator_pad_has_current_buffer =
+      _gst_video_aggregator_pad_has_current_bufferPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoAggregatorPad>)>();
+
+  ffi.Pointer<GstBuffer> gst_video_aggregator_pad_get_current_buffer(
+    ffi.Pointer<GstVideoAggregatorPad> pad,
+  ) {
+    return _gst_video_aggregator_pad_get_current_buffer(
+      pad,
+    );
+  }
+
+  late final _gst_video_aggregator_pad_get_current_bufferPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstBuffer> Function(
+                  ffi.Pointer<GstVideoAggregatorPad>)>>(
+      'gst_video_aggregator_pad_get_current_buffer');
+  late final _gst_video_aggregator_pad_get_current_buffer =
+      _gst_video_aggregator_pad_get_current_bufferPtr.asFunction<
+          ffi.Pointer<GstBuffer> Function(
+              ffi.Pointer<GstVideoAggregatorPad>)>();
+
+  ffi.Pointer<GstVideoFrame> gst_video_aggregator_pad_get_prepared_frame(
+    ffi.Pointer<GstVideoAggregatorPad> pad,
+  ) {
+    return _gst_video_aggregator_pad_get_prepared_frame(
+      pad,
+    );
+  }
+
+  late final _gst_video_aggregator_pad_get_prepared_framePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoFrame> Function(
+                  ffi.Pointer<GstVideoAggregatorPad>)>>(
+      'gst_video_aggregator_pad_get_prepared_frame');
+  late final _gst_video_aggregator_pad_get_prepared_frame =
+      _gst_video_aggregator_pad_get_prepared_framePtr.asFunction<
+          ffi.Pointer<GstVideoFrame> Function(
+              ffi.Pointer<GstVideoAggregatorPad>)>();
+
+  void gst_video_aggregator_pad_set_needs_alpha(
+    ffi.Pointer<GstVideoAggregatorPad> pad,
+    int needs_alpha,
+  ) {
+    return _gst_video_aggregator_pad_set_needs_alpha(
+      pad,
+      needs_alpha,
+    );
+  }
+
+  late final _gst_video_aggregator_pad_set_needs_alphaPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoAggregatorPad>,
+              ffi.Int)>>('gst_video_aggregator_pad_set_needs_alpha');
+  late final _gst_video_aggregator_pad_set_needs_alpha =
+      _gst_video_aggregator_pad_set_needs_alphaPtr
+          .asFunction<void Function(ffi.Pointer<GstVideoAggregatorPad>, int)>();
+
+  int gst_video_aggregator_convert_pad_get_type() {
+    return _gst_video_aggregator_convert_pad_get_type();
+  }
+
+  late final _gst_video_aggregator_convert_pad_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_aggregator_convert_pad_get_type');
+  late final _gst_video_aggregator_convert_pad_get_type =
+      _gst_video_aggregator_convert_pad_get_typePtr
+          .asFunction<int Function()>();
+
+  void gst_video_aggregator_convert_pad_update_conversion_info(
+    ffi.Pointer<GstVideoAggregatorConvertPad> pad,
+  ) {
+    return _gst_video_aggregator_convert_pad_update_conversion_info(
+      pad,
+    );
+  }
+
+  late final _gst_video_aggregator_convert_pad_update_conversion_infoPtr =
+      _lookup<
+              ffi.NativeFunction<
+                  ffi.Void Function(
+                      ffi.Pointer<GstVideoAggregatorConvertPad>)>>(
+          'gst_video_aggregator_convert_pad_update_conversion_info');
+  late final _gst_video_aggregator_convert_pad_update_conversion_info =
+      _gst_video_aggregator_convert_pad_update_conversion_infoPtr.asFunction<
+          void Function(ffi.Pointer<GstVideoAggregatorConvertPad>)>();
+
+  int gst_video_aggregator_parallel_convert_pad_get_type() {
+    return _gst_video_aggregator_parallel_convert_pad_get_type();
+  }
+
+  late final _gst_video_aggregator_parallel_convert_pad_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_aggregator_parallel_convert_pad_get_type');
+  late final _gst_video_aggregator_parallel_convert_pad_get_type =
+      _gst_video_aggregator_parallel_convert_pad_get_typePtr
+          .asFunction<int Function()>();
+
+  int gst_video_aggregator_get_type() {
+    return _gst_video_aggregator_get_type();
+  }
+
+  late final _gst_video_aggregator_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_aggregator_get_type');
+  late final _gst_video_aggregator_get_type =
+      _gst_video_aggregator_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstTaskPool> gst_video_aggregator_get_execution_task_pool(
+    ffi.Pointer<GstVideoAggregator> vagg,
+  ) {
+    return _gst_video_aggregator_get_execution_task_pool(
+      vagg,
+    );
+  }
+
+  late final _gst_video_aggregator_get_execution_task_poolPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstTaskPool> Function(
+                  ffi.Pointer<GstVideoAggregator>)>>(
+      'gst_video_aggregator_get_execution_task_pool');
+  late final _gst_video_aggregator_get_execution_task_pool =
+      _gst_video_aggregator_get_execution_task_poolPtr.asFunction<
+          ffi.Pointer<GstTaskPool> Function(ffi.Pointer<GstVideoAggregator>)>();
+
+  int gst_video_codec_alpha_meta_api_get_type() {
+    return _gst_video_codec_alpha_meta_api_get_type();
+  }
+
+  late final _gst_video_codec_alpha_meta_api_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_codec_alpha_meta_api_get_type');
+  late final _gst_video_codec_alpha_meta_api_get_type =
+      _gst_video_codec_alpha_meta_api_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstMetaInfo> gst_video_codec_alpha_meta_get_info() {
+    return _gst_video_codec_alpha_meta_get_info();
+  }
+
+  late final _gst_video_codec_alpha_meta_get_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstMetaInfo> Function()>>(
+          'gst_video_codec_alpha_meta_get_info');
+  late final _gst_video_codec_alpha_meta_get_info =
+      _gst_video_codec_alpha_meta_get_infoPtr
+          .asFunction<ffi.Pointer<GstMetaInfo> Function()>();
+
+  ffi.Pointer<GstVideoCodecAlphaMeta> gst_buffer_add_video_codec_alpha_meta(
+    ffi.Pointer<GstBuffer> buffer,
+    ffi.Pointer<GstBuffer> alpha_buffer,
+  ) {
+    return _gst_buffer_add_video_codec_alpha_meta(
+      buffer,
+      alpha_buffer,
+    );
+  }
+
+  late final _gst_buffer_add_video_codec_alpha_metaPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoCodecAlphaMeta> Function(
+                  ffi.Pointer<GstBuffer>, ffi.Pointer<GstBuffer>)>>(
+      'gst_buffer_add_video_codec_alpha_meta');
+  late final _gst_buffer_add_video_codec_alpha_meta =
+      _gst_buffer_add_video_codec_alpha_metaPtr.asFunction<
+          ffi.Pointer<GstVideoCodecAlphaMeta> Function(
+              ffi.Pointer<GstBuffer>, ffi.Pointer<GstBuffer>)>();
+
+  int gst_adapter_get_type() {
+    return _gst_adapter_get_type();
+  }
+
+  late final _gst_adapter_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('gst_adapter_get_type');
+  late final _gst_adapter_get_type =
+      _gst_adapter_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstAdapter> gst_adapter_new() {
+    return _gst_adapter_new();
+  }
+
+  late final _gst_adapter_newPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstAdapter> Function()>>(
+          'gst_adapter_new');
+  late final _gst_adapter_new =
+      _gst_adapter_newPtr.asFunction<ffi.Pointer<GstAdapter> Function()>();
+
+  void gst_adapter_clear(
+    ffi.Pointer<GstAdapter> adapter,
+  ) {
+    return _gst_adapter_clear(
+      adapter,
+    );
+  }
+
+  late final _gst_adapter_clearPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstAdapter>)>>(
+          'gst_adapter_clear');
+  late final _gst_adapter_clear = _gst_adapter_clearPtr
+      .asFunction<void Function(ffi.Pointer<GstAdapter>)>();
+
+  void gst_adapter_push(
+    ffi.Pointer<GstAdapter> adapter,
+    ffi.Pointer<GstBuffer> buf,
+  ) {
+    return _gst_adapter_push(
+      adapter,
+      buf,
+    );
+  }
+
+  late final _gst_adapter_pushPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAdapter>,
+              ffi.Pointer<GstBuffer>)>>('gst_adapter_push');
+  late final _gst_adapter_push = _gst_adapter_pushPtr.asFunction<
+      void Function(ffi.Pointer<GstAdapter>, ffi.Pointer<GstBuffer>)>();
+
+  ffi.Pointer gst_adapter_map(
+    ffi.Pointer<GstAdapter> adapter,
+    int size,
+  ) {
+    return _gst_adapter_map(
+      adapter,
+      size,
+    );
+  }
+
+  late final _gst_adapter_mapPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer Function(
+              ffi.Pointer<GstAdapter>, ffi.Size)>>('gst_adapter_map');
+  late final _gst_adapter_map = _gst_adapter_mapPtr
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GstAdapter>, int)>();
+
+  void gst_adapter_unmap(
+    ffi.Pointer<GstAdapter> adapter,
+  ) {
+    return _gst_adapter_unmap(
+      adapter,
+    );
+  }
+
+  late final _gst_adapter_unmapPtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstAdapter>)>>(
+          'gst_adapter_unmap');
+  late final _gst_adapter_unmap = _gst_adapter_unmapPtr
+      .asFunction<void Function(ffi.Pointer<GstAdapter>)>();
+
+  void gst_adapter_copy(
+    ffi.Pointer<GstAdapter> adapter,
+    ffi.Pointer dest,
+    int offset,
+    int size,
+  ) {
+    return _gst_adapter_copy(
+      adapter,
+      dest,
+      offset,
+      size,
+    );
+  }
+
+  late final _gst_adapter_copyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAdapter>, ffi.Pointer, ffi.Size,
+              ffi.Size)>>('gst_adapter_copy');
+  late final _gst_adapter_copy = _gst_adapter_copyPtr.asFunction<
+      void Function(ffi.Pointer<GstAdapter>, ffi.Pointer, int, int)>();
+
+  ffi.Pointer<GBytes> gst_adapter_copy_bytes(
+    ffi.Pointer<GstAdapter> adapter,
+    int offset,
+    int size,
+  ) {
+    return _gst_adapter_copy_bytes(
+      adapter,
+      offset,
+      size,
+    );
+  }
+
+  late final _gst_adapter_copy_bytesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GBytes> Function(ffi.Pointer<GstAdapter>, ffi.Size,
+              ffi.Size)>>('gst_adapter_copy_bytes');
+  late final _gst_adapter_copy_bytes = _gst_adapter_copy_bytesPtr.asFunction<
+      ffi.Pointer<GBytes> Function(ffi.Pointer<GstAdapter>, int, int)>();
+
+  void gst_adapter_flush(
+    ffi.Pointer<GstAdapter> adapter,
+    int flush,
+  ) {
+    return _gst_adapter_flush(
+      adapter,
+      flush,
+    );
+  }
+
+  late final _gst_adapter_flushPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstAdapter>, ffi.Size)>>('gst_adapter_flush');
+  late final _gst_adapter_flush = _gst_adapter_flushPtr
+      .asFunction<void Function(ffi.Pointer<GstAdapter>, int)>();
+
+  ffi.Pointer gst_adapter_take(
+    ffi.Pointer<GstAdapter> adapter,
+    int nbytes,
+  ) {
+    return _gst_adapter_take(
+      adapter,
+      nbytes,
+    );
+  }
+
+  late final _gst_adapter_takePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer Function(
+              ffi.Pointer<GstAdapter>, ffi.Size)>>('gst_adapter_take');
+  late final _gst_adapter_take = _gst_adapter_takePtr
+      .asFunction<ffi.Pointer Function(ffi.Pointer<GstAdapter>, int)>();
+
+  ffi.Pointer<GstBuffer> gst_adapter_take_buffer(
+    ffi.Pointer<GstAdapter> adapter,
+    int nbytes,
+  ) {
+    return _gst_adapter_take_buffer(
+      adapter,
+      nbytes,
+    );
+  }
+
+  late final _gst_adapter_take_bufferPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBuffer> Function(
+              ffi.Pointer<GstAdapter>, ffi.Size)>>('gst_adapter_take_buffer');
+  late final _gst_adapter_take_buffer = _gst_adapter_take_bufferPtr.asFunction<
+      ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstAdapter>, int)>();
+
+  ffi.Pointer<GList> gst_adapter_take_list(
+    ffi.Pointer<GstAdapter> adapter,
+    int nbytes,
+  ) {
+    return _gst_adapter_take_list(
+      adapter,
+      nbytes,
+    );
+  }
+
+  late final _gst_adapter_take_listPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GList> Function(
+              ffi.Pointer<GstAdapter>, ffi.Size)>>('gst_adapter_take_list');
+  late final _gst_adapter_take_list = _gst_adapter_take_listPtr
+      .asFunction<ffi.Pointer<GList> Function(ffi.Pointer<GstAdapter>, int)>();
+
+  ffi.Pointer<GstBuffer> gst_adapter_take_buffer_fast(
+    ffi.Pointer<GstAdapter> adapter,
+    int nbytes,
+  ) {
+    return _gst_adapter_take_buffer_fast(
+      adapter,
+      nbytes,
+    );
+  }
+
+  late final _gst_adapter_take_buffer_fastPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstAdapter>,
+              ffi.Size)>>('gst_adapter_take_buffer_fast');
+  late final _gst_adapter_take_buffer_fast =
+      _gst_adapter_take_buffer_fastPtr.asFunction<
+          ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstAdapter>, int)>();
+
+  ffi.Pointer<GstBufferList> gst_adapter_take_buffer_list(
+    ffi.Pointer<GstAdapter> adapter,
+    int nbytes,
+  ) {
+    return _gst_adapter_take_buffer_list(
+      adapter,
+      nbytes,
+    );
+  }
+
+  late final _gst_adapter_take_buffer_listPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBufferList> Function(ffi.Pointer<GstAdapter>,
+              ffi.Size)>>('gst_adapter_take_buffer_list');
+  late final _gst_adapter_take_buffer_list =
+      _gst_adapter_take_buffer_listPtr.asFunction<
+          ffi.Pointer<GstBufferList> Function(ffi.Pointer<GstAdapter>, int)>();
+
+  ffi.Pointer<GstBuffer> gst_adapter_get_buffer(
+    ffi.Pointer<GstAdapter> adapter,
+    int nbytes,
+  ) {
+    return _gst_adapter_get_buffer(
+      adapter,
+      nbytes,
+    );
+  }
+
+  late final _gst_adapter_get_bufferPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBuffer> Function(
+              ffi.Pointer<GstAdapter>, ffi.Size)>>('gst_adapter_get_buffer');
+  late final _gst_adapter_get_buffer = _gst_adapter_get_bufferPtr.asFunction<
+      ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstAdapter>, int)>();
+
+  ffi.Pointer<GList> gst_adapter_get_list(
+    ffi.Pointer<GstAdapter> adapter,
+    int nbytes,
+  ) {
+    return _gst_adapter_get_list(
+      adapter,
+      nbytes,
+    );
+  }
+
+  late final _gst_adapter_get_listPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GList> Function(
+              ffi.Pointer<GstAdapter>, ffi.Size)>>('gst_adapter_get_list');
+  late final _gst_adapter_get_list = _gst_adapter_get_listPtr
+      .asFunction<ffi.Pointer<GList> Function(ffi.Pointer<GstAdapter>, int)>();
+
+  ffi.Pointer<GstBuffer> gst_adapter_get_buffer_fast(
+    ffi.Pointer<GstAdapter> adapter,
+    int nbytes,
+  ) {
+    return _gst_adapter_get_buffer_fast(
+      adapter,
+      nbytes,
+    );
+  }
+
+  late final _gst_adapter_get_buffer_fastPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstAdapter>,
+              ffi.Size)>>('gst_adapter_get_buffer_fast');
+  late final _gst_adapter_get_buffer_fast =
+      _gst_adapter_get_buffer_fastPtr.asFunction<
+          ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstAdapter>, int)>();
+
+  ffi.Pointer<GstBufferList> gst_adapter_get_buffer_list(
+    ffi.Pointer<GstAdapter> adapter,
+    int nbytes,
+  ) {
+    return _gst_adapter_get_buffer_list(
+      adapter,
+      nbytes,
+    );
+  }
+
+  late final _gst_adapter_get_buffer_listPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBufferList> Function(ffi.Pointer<GstAdapter>,
+              ffi.Size)>>('gst_adapter_get_buffer_list');
+  late final _gst_adapter_get_buffer_list =
+      _gst_adapter_get_buffer_listPtr.asFunction<
+          ffi.Pointer<GstBufferList> Function(ffi.Pointer<GstAdapter>, int)>();
+
+  int gst_adapter_available(
+    ffi.Pointer<GstAdapter> adapter,
+  ) {
+    return _gst_adapter_available(
+      adapter,
+    );
+  }
+
+  late final _gst_adapter_availablePtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<GstAdapter>)>>(
+          'gst_adapter_available');
+  late final _gst_adapter_available = _gst_adapter_availablePtr
+      .asFunction<int Function(ffi.Pointer<GstAdapter>)>();
+
+  int gst_adapter_available_fast(
+    ffi.Pointer<GstAdapter> adapter,
+  ) {
+    return _gst_adapter_available_fast(
+      adapter,
+    );
+  }
+
+  late final _gst_adapter_available_fastPtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<GstAdapter>)>>(
+          'gst_adapter_available_fast');
+  late final _gst_adapter_available_fast = _gst_adapter_available_fastPtr
+      .asFunction<int Function(ffi.Pointer<GstAdapter>)>();
+
+  int gst_adapter_prev_pts(
+    ffi.Pointer<GstAdapter> adapter,
+    ffi.Pointer<ffi.Uint64> distance,
+  ) {
+    return _gst_adapter_prev_pts(
+      adapter,
+      distance,
+    );
+  }
+
+  late final _gst_adapter_prev_ptsPtr = _lookup<
+      ffi.NativeFunction<
+          GstClockTime Function(ffi.Pointer<GstAdapter>,
+              ffi.Pointer<ffi.Uint64>)>>('gst_adapter_prev_pts');
+  late final _gst_adapter_prev_pts = _gst_adapter_prev_ptsPtr.asFunction<
+      int Function(ffi.Pointer<GstAdapter>, ffi.Pointer<ffi.Uint64>)>();
+
+  int gst_adapter_prev_dts(
+    ffi.Pointer<GstAdapter> adapter,
+    ffi.Pointer<ffi.Uint64> distance,
+  ) {
+    return _gst_adapter_prev_dts(
+      adapter,
+      distance,
+    );
+  }
+
+  late final _gst_adapter_prev_dtsPtr = _lookup<
+      ffi.NativeFunction<
+          GstClockTime Function(ffi.Pointer<GstAdapter>,
+              ffi.Pointer<ffi.Uint64>)>>('gst_adapter_prev_dts');
+  late final _gst_adapter_prev_dts = _gst_adapter_prev_dtsPtr.asFunction<
+      int Function(ffi.Pointer<GstAdapter>, ffi.Pointer<ffi.Uint64>)>();
+
+  int gst_adapter_prev_pts_at_offset(
+    ffi.Pointer<GstAdapter> adapter,
+    int offset,
+    ffi.Pointer<ffi.Uint64> distance,
+  ) {
+    return _gst_adapter_prev_pts_at_offset(
+      adapter,
+      offset,
+      distance,
+    );
+  }
+
+  late final _gst_adapter_prev_pts_at_offsetPtr = _lookup<
+      ffi.NativeFunction<
+          GstClockTime Function(ffi.Pointer<GstAdapter>, ffi.Size,
+              ffi.Pointer<ffi.Uint64>)>>('gst_adapter_prev_pts_at_offset');
+  late final _gst_adapter_prev_pts_at_offset =
+      _gst_adapter_prev_pts_at_offsetPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstAdapter>, int, ffi.Pointer<ffi.Uint64>)>();
+
+  int gst_adapter_prev_dts_at_offset(
+    ffi.Pointer<GstAdapter> adapter,
+    int offset,
+    ffi.Pointer<ffi.Uint64> distance,
+  ) {
+    return _gst_adapter_prev_dts_at_offset(
+      adapter,
+      offset,
+      distance,
+    );
+  }
+
+  late final _gst_adapter_prev_dts_at_offsetPtr = _lookup<
+      ffi.NativeFunction<
+          GstClockTime Function(ffi.Pointer<GstAdapter>, ffi.Size,
+              ffi.Pointer<ffi.Uint64>)>>('gst_adapter_prev_dts_at_offset');
+  late final _gst_adapter_prev_dts_at_offset =
+      _gst_adapter_prev_dts_at_offsetPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstAdapter>, int, ffi.Pointer<ffi.Uint64>)>();
+
+  int gst_adapter_prev_offset(
+    ffi.Pointer<GstAdapter> adapter,
+    ffi.Pointer<ffi.Uint64> distance,
+  ) {
+    return _gst_adapter_prev_offset(
+      adapter,
+      distance,
+    );
+  }
+
+  late final _gst_adapter_prev_offsetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Uint64 Function(ffi.Pointer<GstAdapter>,
+              ffi.Pointer<ffi.Uint64>)>>('gst_adapter_prev_offset');
+  late final _gst_adapter_prev_offset = _gst_adapter_prev_offsetPtr.asFunction<
+      int Function(ffi.Pointer<GstAdapter>, ffi.Pointer<ffi.Uint64>)>();
+
+  int gst_adapter_pts_at_discont(
+    ffi.Pointer<GstAdapter> adapter,
+  ) {
+    return _gst_adapter_pts_at_discont(
+      adapter,
+    );
+  }
+
+  late final _gst_adapter_pts_at_discontPtr = _lookup<
+          ffi.NativeFunction<GstClockTime Function(ffi.Pointer<GstAdapter>)>>(
+      'gst_adapter_pts_at_discont');
+  late final _gst_adapter_pts_at_discont = _gst_adapter_pts_at_discontPtr
+      .asFunction<int Function(ffi.Pointer<GstAdapter>)>();
+
+  int gst_adapter_dts_at_discont(
+    ffi.Pointer<GstAdapter> adapter,
+  ) {
+    return _gst_adapter_dts_at_discont(
+      adapter,
+    );
+  }
+
+  late final _gst_adapter_dts_at_discontPtr = _lookup<
+          ffi.NativeFunction<GstClockTime Function(ffi.Pointer<GstAdapter>)>>(
+      'gst_adapter_dts_at_discont');
+  late final _gst_adapter_dts_at_discont = _gst_adapter_dts_at_discontPtr
+      .asFunction<int Function(ffi.Pointer<GstAdapter>)>();
+
+  int gst_adapter_offset_at_discont(
+    ffi.Pointer<GstAdapter> adapter,
+  ) {
+    return _gst_adapter_offset_at_discont(
+      adapter,
+    );
+  }
+
+  late final _gst_adapter_offset_at_discontPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<GstAdapter>)>>(
+          'gst_adapter_offset_at_discont');
+  late final _gst_adapter_offset_at_discont = _gst_adapter_offset_at_discontPtr
+      .asFunction<int Function(ffi.Pointer<GstAdapter>)>();
+
+  int gst_adapter_distance_from_discont(
+    ffi.Pointer<GstAdapter> adapter,
+  ) {
+    return _gst_adapter_distance_from_discont(
+      adapter,
+    );
+  }
+
+  late final _gst_adapter_distance_from_discontPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<GstAdapter>)>>(
+          'gst_adapter_distance_from_discont');
+  late final _gst_adapter_distance_from_discont =
+      _gst_adapter_distance_from_discontPtr
+          .asFunction<int Function(ffi.Pointer<GstAdapter>)>();
+
+  int gst_adapter_masked_scan_uint32(
+    ffi.Pointer<GstAdapter> adapter,
+    int mask,
+    int pattern,
+    int offset,
+    int size,
+  ) {
+    return _gst_adapter_masked_scan_uint32(
+      adapter,
+      mask,
+      pattern,
+      offset,
+      size,
+    );
+  }
+
+  late final _gst_adapter_masked_scan_uint32Ptr = _lookup<
+      ffi.NativeFunction<
+          gssize Function(ffi.Pointer<GstAdapter>, ffi.Uint32, ffi.Uint32,
+              ffi.Size, ffi.Size)>>('gst_adapter_masked_scan_uint32');
+  late final _gst_adapter_masked_scan_uint32 =
+      _gst_adapter_masked_scan_uint32Ptr.asFunction<
+          int Function(ffi.Pointer<GstAdapter>, int, int, int, int)>();
+
+  int gst_adapter_masked_scan_uint32_peek(
+    ffi.Pointer<GstAdapter> adapter,
+    int mask,
+    int pattern,
+    int offset,
+    int size,
+    ffi.Pointer<ffi.Uint32> value,
+  ) {
+    return _gst_adapter_masked_scan_uint32_peek(
+      adapter,
+      mask,
+      pattern,
+      offset,
+      size,
+      value,
+    );
+  }
+
+  late final _gst_adapter_masked_scan_uint32_peekPtr = _lookup<
+      ffi.NativeFunction<
+          gssize Function(
+              ffi.Pointer<GstAdapter>,
+              ffi.Uint32,
+              ffi.Uint32,
+              ffi.Size,
+              ffi.Size,
+              ffi.Pointer<ffi.Uint32>)>>('gst_adapter_masked_scan_uint32_peek');
+  late final _gst_adapter_masked_scan_uint32_peek =
+      _gst_adapter_masked_scan_uint32_peekPtr.asFunction<
+          int Function(ffi.Pointer<GstAdapter>, int, int, int, int,
+              ffi.Pointer<ffi.Uint32>)>();
+
+  void gst_video_mastering_display_info_init(
+    ffi.Pointer<GstVideoMasteringDisplayInfo> minfo,
+  ) {
+    return _gst_video_mastering_display_info_init(
+      minfo,
+    );
+  }
+
+  late final _gst_video_mastering_display_info_initPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<GstVideoMasteringDisplayInfo>)>>(
+      'gst_video_mastering_display_info_init');
+  late final _gst_video_mastering_display_info_init =
+      _gst_video_mastering_display_info_initPtr.asFunction<
+          void Function(ffi.Pointer<GstVideoMasteringDisplayInfo>)>();
+
+  int gst_video_mastering_display_info_from_string(
+    ffi.Pointer<GstVideoMasteringDisplayInfo> minfo,
+    ffi.Pointer<ffi.Char> mastering,
+  ) {
+    return _gst_video_mastering_display_info_from_string(
+      minfo,
+      mastering,
+    );
+  }
+
+  late final _gst_video_mastering_display_info_from_stringPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstVideoMasteringDisplayInfo>,
+                  ffi.Pointer<ffi.Char>)>>(
+      'gst_video_mastering_display_info_from_string');
+  late final _gst_video_mastering_display_info_from_string =
+      _gst_video_mastering_display_info_from_stringPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoMasteringDisplayInfo>,
+              ffi.Pointer<ffi.Char>)>();
+
+  ffi.Pointer<ffi.Char> gst_video_mastering_display_info_to_string(
+    ffi.Pointer<GstVideoMasteringDisplayInfo> minfo,
+  ) {
+    return _gst_video_mastering_display_info_to_string(
+      minfo,
+    );
+  }
+
+  late final _gst_video_mastering_display_info_to_stringPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<ffi.Char> Function(
+                  ffi.Pointer<GstVideoMasteringDisplayInfo>)>>(
+      'gst_video_mastering_display_info_to_string');
+  late final _gst_video_mastering_display_info_to_string =
+      _gst_video_mastering_display_info_to_stringPtr.asFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<GstVideoMasteringDisplayInfo>)>();
+
+  int gst_video_mastering_display_info_is_equal(
+    ffi.Pointer<GstVideoMasteringDisplayInfo> minfo,
+    ffi.Pointer<GstVideoMasteringDisplayInfo> other,
+  ) {
+    return _gst_video_mastering_display_info_is_equal(
+      minfo,
+      other,
+    );
+  }
+
+  late final _gst_video_mastering_display_info_is_equalPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstVideoMasteringDisplayInfo>,
+                  ffi.Pointer<GstVideoMasteringDisplayInfo>)>>(
+      'gst_video_mastering_display_info_is_equal');
+  late final _gst_video_mastering_display_info_is_equal =
+      _gst_video_mastering_display_info_is_equalPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoMasteringDisplayInfo>,
+              ffi.Pointer<GstVideoMasteringDisplayInfo>)>();
+
+  int gst_video_mastering_display_info_from_caps(
+    ffi.Pointer<GstVideoMasteringDisplayInfo> minfo,
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_video_mastering_display_info_from_caps(
+      minfo,
+      caps,
+    );
+  }
+
+  late final _gst_video_mastering_display_info_from_capsPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstVideoMasteringDisplayInfo>,
+                  ffi.Pointer<GstCaps>)>>(
+      'gst_video_mastering_display_info_from_caps');
+  late final _gst_video_mastering_display_info_from_caps =
+      _gst_video_mastering_display_info_from_capsPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoMasteringDisplayInfo>,
+              ffi.Pointer<GstCaps>)>();
+
+  int gst_video_mastering_display_info_add_to_caps(
+    ffi.Pointer<GstVideoMasteringDisplayInfo> minfo,
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_video_mastering_display_info_add_to_caps(
+      minfo,
+      caps,
+    );
+  }
+
+  late final _gst_video_mastering_display_info_add_to_capsPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstVideoMasteringDisplayInfo>,
+                  ffi.Pointer<GstCaps>)>>(
+      'gst_video_mastering_display_info_add_to_caps');
+  late final _gst_video_mastering_display_info_add_to_caps =
+      _gst_video_mastering_display_info_add_to_capsPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoMasteringDisplayInfo>,
+              ffi.Pointer<GstCaps>)>();
+
+  void gst_video_content_light_level_init(
+    ffi.Pointer<GstVideoContentLightLevel> linfo,
+  ) {
+    return _gst_video_content_light_level_init(
+      linfo,
+    );
+  }
+
+  late final _gst_video_content_light_level_initPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<GstVideoContentLightLevel>)>>(
+      'gst_video_content_light_level_init');
+  late final _gst_video_content_light_level_init =
+      _gst_video_content_light_level_initPtr
+          .asFunction<void Function(ffi.Pointer<GstVideoContentLightLevel>)>();
+
+  int gst_video_content_light_level_from_string(
+    ffi.Pointer<GstVideoContentLightLevel> linfo,
+    ffi.Pointer<ffi.Char> level,
+  ) {
+    return _gst_video_content_light_level_from_string(
+      linfo,
+      level,
+    );
+  }
+
+  late final _gst_video_content_light_level_from_stringPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstVideoContentLightLevel>,
+                  ffi.Pointer<ffi.Char>)>>(
+      'gst_video_content_light_level_from_string');
+  late final _gst_video_content_light_level_from_string =
+      _gst_video_content_light_level_from_stringPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoContentLightLevel>, ffi.Pointer<ffi.Char>)>();
+
+  ffi.Pointer<ffi.Char> gst_video_content_light_level_to_string(
+    ffi.Pointer<GstVideoContentLightLevel> linfo,
+  ) {
+    return _gst_video_content_light_level_to_string(
+      linfo,
+    );
+  }
+
+  late final _gst_video_content_light_level_to_stringPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<ffi.Char> Function(
+                  ffi.Pointer<GstVideoContentLightLevel>)>>(
+      'gst_video_content_light_level_to_string');
+  late final _gst_video_content_light_level_to_string =
+      _gst_video_content_light_level_to_stringPtr.asFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<GstVideoContentLightLevel>)>();
+
+  int gst_video_content_light_level_is_equal(
+    ffi.Pointer<GstVideoContentLightLevel> linfo,
+    ffi.Pointer<GstVideoContentLightLevel> other,
+  ) {
+    return _gst_video_content_light_level_is_equal(
+      linfo,
+      other,
+    );
+  }
+
+  late final _gst_video_content_light_level_is_equalPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstVideoContentLightLevel>,
+                  ffi.Pointer<GstVideoContentLightLevel>)>>(
+      'gst_video_content_light_level_is_equal');
+  late final _gst_video_content_light_level_is_equal =
+      _gst_video_content_light_level_is_equalPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoContentLightLevel>,
+              ffi.Pointer<GstVideoContentLightLevel>)>();
+
+  int gst_video_content_light_level_from_caps(
+    ffi.Pointer<GstVideoContentLightLevel> linfo,
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_video_content_light_level_from_caps(
+      linfo,
+      caps,
+    );
+  }
+
+  late final _gst_video_content_light_level_from_capsPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstVideoContentLightLevel>,
+                  ffi.Pointer<GstCaps>)>>(
+      'gst_video_content_light_level_from_caps');
+  late final _gst_video_content_light_level_from_caps =
+      _gst_video_content_light_level_from_capsPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoContentLightLevel>, ffi.Pointer<GstCaps>)>();
+
+  int gst_video_content_light_level_add_to_caps(
+    ffi.Pointer<GstVideoContentLightLevel> linfo,
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_video_content_light_level_add_to_caps(
+      linfo,
+      caps,
+    );
+  }
+
+  late final _gst_video_content_light_level_add_to_capsPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstVideoContentLightLevel>,
+                  ffi.Pointer<GstCaps>)>>(
+      'gst_video_content_light_level_add_to_caps');
+  late final _gst_video_content_light_level_add_to_caps =
+      _gst_video_content_light_level_add_to_capsPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoContentLightLevel>, ffi.Pointer<GstCaps>)>();
+
+  int gst_video_codec_state_get_type() {
+    return _gst_video_codec_state_get_type();
+  }
+
+  late final _gst_video_codec_state_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_codec_state_get_type');
+  late final _gst_video_codec_state_get_type =
+      _gst_video_codec_state_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstVideoCodecState> gst_video_codec_state_ref(
+    ffi.Pointer<GstVideoCodecState> state,
+  ) {
+    return _gst_video_codec_state_ref(
+      state,
+    );
+  }
+
+  late final _gst_video_codec_state_refPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoCodecState> Function(
+              ffi.Pointer<GstVideoCodecState>)>>('gst_video_codec_state_ref');
+  late final _gst_video_codec_state_ref =
+      _gst_video_codec_state_refPtr.asFunction<
+          ffi.Pointer<GstVideoCodecState> Function(
+              ffi.Pointer<GstVideoCodecState>)>();
+
+  void gst_video_codec_state_unref(
+    ffi.Pointer<GstVideoCodecState> state,
+  ) {
+    return _gst_video_codec_state_unref(
+      state,
+    );
+  }
+
+  late final _gst_video_codec_state_unrefPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoCodecState>)>>(
+      'gst_video_codec_state_unref');
+  late final _gst_video_codec_state_unref = _gst_video_codec_state_unrefPtr
+      .asFunction<void Function(ffi.Pointer<GstVideoCodecState>)>();
+
+  int gst_video_codec_frame_get_type() {
+    return _gst_video_codec_frame_get_type();
+  }
+
+  late final _gst_video_codec_frame_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_codec_frame_get_type');
+  late final _gst_video_codec_frame_get_type =
+      _gst_video_codec_frame_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstVideoCodecFrame> gst_video_codec_frame_ref(
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_codec_frame_ref(
+      frame,
+    );
+  }
+
+  late final _gst_video_codec_frame_refPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoCodecFrame> Function(
+              ffi.Pointer<GstVideoCodecFrame>)>>('gst_video_codec_frame_ref');
+  late final _gst_video_codec_frame_ref =
+      _gst_video_codec_frame_refPtr.asFunction<
+          ffi.Pointer<GstVideoCodecFrame> Function(
+              ffi.Pointer<GstVideoCodecFrame>)>();
+
+  void gst_video_codec_frame_unref(
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_codec_frame_unref(
+      frame,
+    );
+  }
+
+  late final _gst_video_codec_frame_unrefPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_codec_frame_unref');
+  late final _gst_video_codec_frame_unref = _gst_video_codec_frame_unrefPtr
+      .asFunction<void Function(ffi.Pointer<GstVideoCodecFrame>)>();
+
+  void gst_video_codec_frame_set_user_data(
+    ffi.Pointer<GstVideoCodecFrame> frame,
+    ffi.Pointer user_data,
+    GDestroyNotify notify,
+  ) {
+    return _gst_video_codec_frame_set_user_data(
+      frame,
+      user_data,
+      notify,
+    );
+  }
+
+  late final _gst_video_codec_frame_set_user_dataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoCodecFrame>, ffi.Pointer,
+              GDestroyNotify)>>('gst_video_codec_frame_set_user_data');
+  late final _gst_video_codec_frame_set_user_data =
+      _gst_video_codec_frame_set_user_dataPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstVideoCodecFrame>, ffi.Pointer, GDestroyNotify)>();
+
+  ffi.Pointer gst_video_codec_frame_get_user_data(
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_codec_frame_get_user_data(
+      frame,
+    );
+  }
+
+  late final _gst_video_codec_frame_get_user_dataPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer Function(ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_codec_frame_get_user_data');
+  late final _gst_video_codec_frame_get_user_data =
+      _gst_video_codec_frame_get_user_dataPtr
+          .asFunction<ffi.Pointer Function(ffi.Pointer<GstVideoCodecFrame>)>();
+
+  int _gst_video_decoder_error(
+    ffi.Pointer<GstVideoDecoder> dec,
+    int weight,
+    int domain,
+    int code,
+    ffi.Pointer<ffi.Char> txt,
+    ffi.Pointer<ffi.Char> debug,
+    ffi.Pointer<ffi.Char> file,
+    ffi.Pointer<ffi.Char> function,
+    int line,
+  ) {
+    return __gst_video_decoder_error(
+      dec,
+      weight,
+      domain,
+      code,
+      txt,
+      debug,
+      file,
+      function,
+      line,
+    );
+  }
+
+  late final __gst_video_decoder_errorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<GstVideoDecoder>,
+              ffi.Int,
+              GQuark,
+              ffi.Int,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Int)>>('_gst_video_decoder_error');
+  late final __gst_video_decoder_error =
+      __gst_video_decoder_errorPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoDecoder>,
+              int,
+              int,
+              int,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>,
+              int)>();
+
+  int gst_video_decoder_get_type() {
+    return _gst_video_decoder_get_type();
+  }
+
+  late final _gst_video_decoder_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_decoder_get_type');
+  late final _gst_video_decoder_get_type =
+      _gst_video_decoder_get_typePtr.asFunction<int Function()>();
+
+  void gst_video_decoder_set_packetized(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    int packetized,
+  ) {
+    return _gst_video_decoder_set_packetized(
+      decoder,
+      packetized,
+    );
+  }
+
+  late final _gst_video_decoder_set_packetizedPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoDecoder>,
+              ffi.Int)>>('gst_video_decoder_set_packetized');
+  late final _gst_video_decoder_set_packetized =
+      _gst_video_decoder_set_packetizedPtr
+          .asFunction<void Function(ffi.Pointer<GstVideoDecoder>, int)>();
+
+  int gst_video_decoder_get_packetized(
+    ffi.Pointer<GstVideoDecoder> decoder,
+  ) {
+    return _gst_video_decoder_get_packetized(
+      decoder,
+    );
+  }
+
+  late final _gst_video_decoder_get_packetizedPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_get_packetized');
+  late final _gst_video_decoder_get_packetized =
+      _gst_video_decoder_get_packetizedPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoDecoder>)>();
+
+  void gst_video_decoder_set_subframe_mode(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    int subframe_mode,
+  ) {
+    return _gst_video_decoder_set_subframe_mode(
+      decoder,
+      subframe_mode,
+    );
+  }
+
+  late final _gst_video_decoder_set_subframe_modePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoDecoder>,
+              ffi.Int)>>('gst_video_decoder_set_subframe_mode');
+  late final _gst_video_decoder_set_subframe_mode =
+      _gst_video_decoder_set_subframe_modePtr
+          .asFunction<void Function(ffi.Pointer<GstVideoDecoder>, int)>();
+
+  int gst_video_decoder_get_subframe_mode(
+    ffi.Pointer<GstVideoDecoder> decoder,
+  ) {
+    return _gst_video_decoder_get_subframe_mode(
+      decoder,
+    );
+  }
+
+  late final _gst_video_decoder_get_subframe_modePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_get_subframe_mode');
+  late final _gst_video_decoder_get_subframe_mode =
+      _gst_video_decoder_get_subframe_modePtr
+          .asFunction<int Function(ffi.Pointer<GstVideoDecoder>)>();
+
+  int gst_video_decoder_get_input_subframe_index(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_decoder_get_input_subframe_index(
+      decoder,
+      frame,
+    );
+  }
+
+  late final _gst_video_decoder_get_input_subframe_indexPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.UnsignedInt Function(ffi.Pointer<GstVideoDecoder>,
+                  ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_decoder_get_input_subframe_index');
+  late final _gst_video_decoder_get_input_subframe_index =
+      _gst_video_decoder_get_input_subframe_indexPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoDecoder>, ffi.Pointer<GstVideoCodecFrame>)>();
+
+  int gst_video_decoder_get_processed_subframe_index(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_decoder_get_processed_subframe_index(
+      decoder,
+      frame,
+    );
+  }
+
+  late final _gst_video_decoder_get_processed_subframe_indexPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.UnsignedInt Function(ffi.Pointer<GstVideoDecoder>,
+                  ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_decoder_get_processed_subframe_index');
+  late final _gst_video_decoder_get_processed_subframe_index =
+      _gst_video_decoder_get_processed_subframe_indexPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoDecoder>, ffi.Pointer<GstVideoCodecFrame>)>();
+
+  void gst_video_decoder_set_estimate_rate(
+    ffi.Pointer<GstVideoDecoder> dec,
+    int enabled,
+  ) {
+    return _gst_video_decoder_set_estimate_rate(
+      dec,
+      enabled,
+    );
+  }
+
+  late final _gst_video_decoder_set_estimate_ratePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoDecoder>,
+              ffi.Int)>>('gst_video_decoder_set_estimate_rate');
+  late final _gst_video_decoder_set_estimate_rate =
+      _gst_video_decoder_set_estimate_ratePtr
+          .asFunction<void Function(ffi.Pointer<GstVideoDecoder>, int)>();
+
+  int gst_video_decoder_get_estimate_rate(
+    ffi.Pointer<GstVideoDecoder> dec,
+  ) {
+    return _gst_video_decoder_get_estimate_rate(
+      dec,
+    );
+  }
+
+  late final _gst_video_decoder_get_estimate_ratePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_get_estimate_rate');
+  late final _gst_video_decoder_get_estimate_rate =
+      _gst_video_decoder_get_estimate_ratePtr
+          .asFunction<int Function(ffi.Pointer<GstVideoDecoder>)>();
+
+  void gst_video_decoder_set_max_errors(
+    ffi.Pointer<GstVideoDecoder> dec,
+    int num,
+  ) {
+    return _gst_video_decoder_set_max_errors(
+      dec,
+      num,
+    );
+  }
+
+  late final _gst_video_decoder_set_max_errorsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoDecoder>,
+              ffi.Int)>>('gst_video_decoder_set_max_errors');
+  late final _gst_video_decoder_set_max_errors =
+      _gst_video_decoder_set_max_errorsPtr
+          .asFunction<void Function(ffi.Pointer<GstVideoDecoder>, int)>();
+
+  int gst_video_decoder_get_max_errors(
+    ffi.Pointer<GstVideoDecoder> dec,
+  ) {
+    return _gst_video_decoder_get_max_errors(
+      dec,
+    );
+  }
+
+  late final _gst_video_decoder_get_max_errorsPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_get_max_errors');
+  late final _gst_video_decoder_get_max_errors =
+      _gst_video_decoder_get_max_errorsPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoDecoder>)>();
+
+  void gst_video_decoder_set_needs_format(
+    ffi.Pointer<GstVideoDecoder> dec,
+    int enabled,
+  ) {
+    return _gst_video_decoder_set_needs_format(
+      dec,
+      enabled,
+    );
+  }
+
+  late final _gst_video_decoder_set_needs_formatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoDecoder>,
+              ffi.Int)>>('gst_video_decoder_set_needs_format');
+  late final _gst_video_decoder_set_needs_format =
+      _gst_video_decoder_set_needs_formatPtr
+          .asFunction<void Function(ffi.Pointer<GstVideoDecoder>, int)>();
+
+  int gst_video_decoder_get_needs_format(
+    ffi.Pointer<GstVideoDecoder> dec,
+  ) {
+    return _gst_video_decoder_get_needs_format(
+      dec,
+    );
+  }
+
+  late final _gst_video_decoder_get_needs_formatPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_get_needs_format');
+  late final _gst_video_decoder_get_needs_format =
+      _gst_video_decoder_get_needs_formatPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoDecoder>)>();
+
+  void gst_video_decoder_set_needs_sync_point(
+    ffi.Pointer<GstVideoDecoder> dec,
+    int enabled,
+  ) {
+    return _gst_video_decoder_set_needs_sync_point(
+      dec,
+      enabled,
+    );
+  }
+
+  late final _gst_video_decoder_set_needs_sync_pointPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoDecoder>,
+              ffi.Int)>>('gst_video_decoder_set_needs_sync_point');
+  late final _gst_video_decoder_set_needs_sync_point =
+      _gst_video_decoder_set_needs_sync_pointPtr
+          .asFunction<void Function(ffi.Pointer<GstVideoDecoder>, int)>();
+
+  int gst_video_decoder_get_needs_sync_point(
+    ffi.Pointer<GstVideoDecoder> dec,
+  ) {
+    return _gst_video_decoder_get_needs_sync_point(
+      dec,
+    );
+  }
+
+  late final _gst_video_decoder_get_needs_sync_pointPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_get_needs_sync_point');
+  late final _gst_video_decoder_get_needs_sync_point =
+      _gst_video_decoder_get_needs_sync_pointPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoDecoder>)>();
+
+  void gst_video_decoder_set_latency(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    int min_latency,
+    int max_latency,
+  ) {
+    return _gst_video_decoder_set_latency(
+      decoder,
+      min_latency,
+      max_latency,
+    );
+  }
+
+  late final _gst_video_decoder_set_latencyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoDecoder>, GstClockTime,
+              GstClockTime)>>('gst_video_decoder_set_latency');
+  late final _gst_video_decoder_set_latency = _gst_video_decoder_set_latencyPtr
+      .asFunction<void Function(ffi.Pointer<GstVideoDecoder>, int, int)>();
+
+  void gst_video_decoder_get_latency(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    ffi.Pointer<GstClockTime> min_latency,
+    ffi.Pointer<GstClockTime> max_latency,
+  ) {
+    return _gst_video_decoder_get_latency(
+      decoder,
+      min_latency,
+      max_latency,
+    );
+  }
+
+  late final _gst_video_decoder_get_latencyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoDecoder>,
+              ffi.Pointer<GstClockTime>,
+              ffi.Pointer<GstClockTime>)>>('gst_video_decoder_get_latency');
+  late final _gst_video_decoder_get_latency =
+      _gst_video_decoder_get_latencyPtr.asFunction<
+          void Function(ffi.Pointer<GstVideoDecoder>, ffi.Pointer<GstClockTime>,
+              ffi.Pointer<GstClockTime>)>();
+
+  void gst_video_decoder_get_allocator(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    ffi.Pointer<ffi.Pointer<GstAllocator>> allocator,
+    ffi.Pointer<GstAllocationParams> params,
+  ) {
+    return _gst_video_decoder_get_allocator(
+      decoder,
+      allocator,
+      params,
+    );
+  }
+
+  late final _gst_video_decoder_get_allocatorPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  ffi.Pointer<GstVideoDecoder>,
+                  ffi.Pointer<ffi.Pointer<GstAllocator>>,
+                  ffi.Pointer<GstAllocationParams>)>>(
+      'gst_video_decoder_get_allocator');
+  late final _gst_video_decoder_get_allocator =
+      _gst_video_decoder_get_allocatorPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstVideoDecoder>,
+              ffi.Pointer<ffi.Pointer<GstAllocator>>,
+              ffi.Pointer<GstAllocationParams>)>();
+
+  ffi.Pointer<GstBufferPool> gst_video_decoder_get_buffer_pool(
+    ffi.Pointer<GstVideoDecoder> decoder,
+  ) {
+    return _gst_video_decoder_get_buffer_pool(
+      decoder,
+    );
+  }
+
+  late final _gst_video_decoder_get_buffer_poolPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstBufferPool> Function(
+                  ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_get_buffer_pool');
+  late final _gst_video_decoder_get_buffer_pool =
+      _gst_video_decoder_get_buffer_poolPtr.asFunction<
+          ffi.Pointer<GstBufferPool> Function(ffi.Pointer<GstVideoDecoder>)>();
+
+  ffi.Pointer<GstVideoCodecFrame> gst_video_decoder_get_frame(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    int frame_number,
+  ) {
+    return _gst_video_decoder_get_frame(
+      decoder,
+      frame_number,
+    );
+  }
+
+  late final _gst_video_decoder_get_framePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoCodecFrame> Function(ffi.Pointer<GstVideoDecoder>,
+              ffi.Int)>>('gst_video_decoder_get_frame');
+  late final _gst_video_decoder_get_frame =
+      _gst_video_decoder_get_framePtr.asFunction<
+          ffi.Pointer<GstVideoCodecFrame> Function(
+              ffi.Pointer<GstVideoDecoder>, int)>();
+
+  ffi.Pointer<GstVideoCodecFrame> gst_video_decoder_get_oldest_frame(
+    ffi.Pointer<GstVideoDecoder> decoder,
+  ) {
+    return _gst_video_decoder_get_oldest_frame(
+      decoder,
+    );
+  }
+
+  late final _gst_video_decoder_get_oldest_framePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoCodecFrame> Function(
+                  ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_get_oldest_frame');
+  late final _gst_video_decoder_get_oldest_frame =
+      _gst_video_decoder_get_oldest_framePtr.asFunction<
+          ffi.Pointer<GstVideoCodecFrame> Function(
+              ffi.Pointer<GstVideoDecoder>)>();
+
+  ffi.Pointer<GList> gst_video_decoder_get_frames(
+    ffi.Pointer<GstVideoDecoder> decoder,
+  ) {
+    return _gst_video_decoder_get_frames(
+      decoder,
+    );
+  }
+
+  late final _gst_video_decoder_get_framesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GList> Function(
+              ffi.Pointer<GstVideoDecoder>)>>('gst_video_decoder_get_frames');
+  late final _gst_video_decoder_get_frames = _gst_video_decoder_get_framesPtr
+      .asFunction<ffi.Pointer<GList> Function(ffi.Pointer<GstVideoDecoder>)>();
+
+  void gst_video_decoder_add_to_frame(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    int n_bytes,
+  ) {
+    return _gst_video_decoder_add_to_frame(
+      decoder,
+      n_bytes,
+    );
+  }
+
+  late final _gst_video_decoder_add_to_framePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoDecoder>,
+              ffi.Int)>>('gst_video_decoder_add_to_frame');
+  late final _gst_video_decoder_add_to_frame =
+      _gst_video_decoder_add_to_framePtr
+          .asFunction<void Function(ffi.Pointer<GstVideoDecoder>, int)>();
+
+  int gst_video_decoder_have_frame(
+    ffi.Pointer<GstVideoDecoder> decoder,
+  ) {
+    return _gst_video_decoder_have_frame(
+      decoder,
+    );
+  }
+
+  late final _gst_video_decoder_have_framePtr = _lookup<
+          ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_have_frame');
+  late final _gst_video_decoder_have_frame = _gst_video_decoder_have_framePtr
+      .asFunction<int Function(ffi.Pointer<GstVideoDecoder>)>();
+
+  int gst_video_decoder_have_last_subframe(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_decoder_have_last_subframe(
+      decoder,
+      frame,
+    );
+  }
+
+  late final _gst_video_decoder_have_last_subframePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<GstVideoDecoder>,
+                  ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_decoder_have_last_subframe');
+  late final _gst_video_decoder_have_last_subframe =
+      _gst_video_decoder_have_last_subframePtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoDecoder>, ffi.Pointer<GstVideoCodecFrame>)>();
+
+  int gst_video_decoder_get_pending_frame_size(
+    ffi.Pointer<GstVideoDecoder> decoder,
+  ) {
+    return _gst_video_decoder_get_pending_frame_size(
+      decoder,
+    );
+  }
+
+  late final _gst_video_decoder_get_pending_frame_sizePtr = _lookup<
+          ffi.NativeFunction<ffi.Size Function(ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_get_pending_frame_size');
+  late final _gst_video_decoder_get_pending_frame_size =
+      _gst_video_decoder_get_pending_frame_sizePtr
+          .asFunction<int Function(ffi.Pointer<GstVideoDecoder>)>();
+
+  ffi.Pointer<GstBuffer> gst_video_decoder_allocate_output_buffer(
+    ffi.Pointer<GstVideoDecoder> decoder,
+  ) {
+    return _gst_video_decoder_allocate_output_buffer(
+      decoder,
+    );
+  }
+
+  late final _gst_video_decoder_allocate_output_bufferPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_allocate_output_buffer');
+  late final _gst_video_decoder_allocate_output_buffer =
+      _gst_video_decoder_allocate_output_bufferPtr.asFunction<
+          ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstVideoDecoder>)>();
+
+  int gst_video_decoder_allocate_output_frame_with_params(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+    ffi.Pointer<GstBufferPoolAcquireParams> params,
+  ) {
+    return _gst_video_decoder_allocate_output_frame_with_params(
+      decoder,
+      frame,
+      params,
+    );
+  }
+
+  late final _gst_video_decoder_allocate_output_frame_with_paramsPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(
+                  ffi.Pointer<GstVideoDecoder>,
+                  ffi.Pointer<GstVideoCodecFrame>,
+                  ffi.Pointer<GstBufferPoolAcquireParams>)>>(
+      'gst_video_decoder_allocate_output_frame_with_params');
+  late final _gst_video_decoder_allocate_output_frame_with_params =
+      _gst_video_decoder_allocate_output_frame_with_paramsPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoDecoder>,
+              ffi.Pointer<GstVideoCodecFrame>,
+              ffi.Pointer<GstBufferPoolAcquireParams>)>();
+
+  int gst_video_decoder_allocate_output_frame(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_decoder_allocate_output_frame(
+      decoder,
+      frame,
+    );
+  }
+
+  late final _gst_video_decoder_allocate_output_framePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<GstVideoDecoder>,
+                  ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_decoder_allocate_output_frame');
+  late final _gst_video_decoder_allocate_output_frame =
+      _gst_video_decoder_allocate_output_framePtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoDecoder>, ffi.Pointer<GstVideoCodecFrame>)>();
+
+  ffi.Pointer<GstVideoCodecState> gst_video_decoder_set_output_state(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    int fmt,
+    int width,
+    int height,
+    ffi.Pointer<GstVideoCodecState> reference,
+  ) {
+    return _gst_video_decoder_set_output_state(
+      decoder,
+      fmt,
+      width,
+      height,
+      reference,
+    );
+  }
+
+  late final _gst_video_decoder_set_output_statePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoCodecState> Function(
+                  ffi.Pointer<GstVideoDecoder>,
+                  ffi.Int32,
+                  ffi.UnsignedInt,
+                  ffi.UnsignedInt,
+                  ffi.Pointer<GstVideoCodecState>)>>(
+      'gst_video_decoder_set_output_state');
+  late final _gst_video_decoder_set_output_state =
+      _gst_video_decoder_set_output_statePtr.asFunction<
+          ffi.Pointer<GstVideoCodecState> Function(ffi.Pointer<GstVideoDecoder>,
+              int, int, int, ffi.Pointer<GstVideoCodecState>)>();
+
+  ffi.Pointer<GstVideoCodecState> gst_video_decoder_set_interlaced_output_state(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    int fmt,
+    int interlace_mode,
+    int width,
+    int height,
+    ffi.Pointer<GstVideoCodecState> reference,
+  ) {
+    return _gst_video_decoder_set_interlaced_output_state(
+      decoder,
+      fmt,
+      interlace_mode,
+      width,
+      height,
+      reference,
+    );
+  }
+
+  late final _gst_video_decoder_set_interlaced_output_statePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoCodecState> Function(
+                  ffi.Pointer<GstVideoDecoder>,
+                  ffi.Int32,
+                  ffi.Int32,
+                  ffi.UnsignedInt,
+                  ffi.UnsignedInt,
+                  ffi.Pointer<GstVideoCodecState>)>>(
+      'gst_video_decoder_set_interlaced_output_state');
+  late final _gst_video_decoder_set_interlaced_output_state =
+      _gst_video_decoder_set_interlaced_output_statePtr.asFunction<
+          ffi.Pointer<GstVideoCodecState> Function(ffi.Pointer<GstVideoDecoder>,
+              int, int, int, int, ffi.Pointer<GstVideoCodecState>)>();
+
+  ffi.Pointer<GstVideoCodecState> gst_video_decoder_get_output_state(
+    ffi.Pointer<GstVideoDecoder> decoder,
+  ) {
+    return _gst_video_decoder_get_output_state(
+      decoder,
+    );
+  }
+
+  late final _gst_video_decoder_get_output_statePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoCodecState> Function(
+                  ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_get_output_state');
+  late final _gst_video_decoder_get_output_state =
+      _gst_video_decoder_get_output_statePtr.asFunction<
+          ffi.Pointer<GstVideoCodecState> Function(
+              ffi.Pointer<GstVideoDecoder>)>();
+
+  int gst_video_decoder_negotiate(
+    ffi.Pointer<GstVideoDecoder> decoder,
+  ) {
+    return _gst_video_decoder_negotiate(
+      decoder,
+    );
+  }
+
+  late final _gst_video_decoder_negotiatePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_negotiate');
+  late final _gst_video_decoder_negotiate = _gst_video_decoder_negotiatePtr
+      .asFunction<int Function(ffi.Pointer<GstVideoDecoder>)>();
+
+  int gst_video_decoder_get_max_decode_time(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_decoder_get_max_decode_time(
+      decoder,
+      frame,
+    );
+  }
+
+  late final _gst_video_decoder_get_max_decode_timePtr = _lookup<
+          ffi.NativeFunction<
+              GstClockTimeDiff Function(ffi.Pointer<GstVideoDecoder>,
+                  ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_decoder_get_max_decode_time');
+  late final _gst_video_decoder_get_max_decode_time =
+      _gst_video_decoder_get_max_decode_timePtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoDecoder>, ffi.Pointer<GstVideoCodecFrame>)>();
+
+  double gst_video_decoder_get_qos_proportion(
+    ffi.Pointer<GstVideoDecoder> decoder,
+  ) {
+    return _gst_video_decoder_get_qos_proportion(
+      decoder,
+    );
+  }
+
+  late final _gst_video_decoder_get_qos_proportionPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Double Function(ffi.Pointer<GstVideoDecoder>)>>(
+      'gst_video_decoder_get_qos_proportion');
+  late final _gst_video_decoder_get_qos_proportion =
+      _gst_video_decoder_get_qos_proportionPtr
+          .asFunction<double Function(ffi.Pointer<GstVideoDecoder>)>();
+
+  int gst_video_decoder_finish_frame(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_decoder_finish_frame(
+      decoder,
+      frame,
+    );
+  }
+
+  late final _gst_video_decoder_finish_framePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<GstVideoDecoder>,
+                  ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_decoder_finish_frame');
+  late final _gst_video_decoder_finish_frame =
+      _gst_video_decoder_finish_framePtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoDecoder>, ffi.Pointer<GstVideoCodecFrame>)>();
+
+  int gst_video_decoder_finish_subframe(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_decoder_finish_subframe(
+      decoder,
+      frame,
+    );
+  }
+
+  late final _gst_video_decoder_finish_subframePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<GstVideoDecoder>,
+                  ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_decoder_finish_subframe');
+  late final _gst_video_decoder_finish_subframe =
+      _gst_video_decoder_finish_subframePtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoDecoder>, ffi.Pointer<GstVideoCodecFrame>)>();
+
+  int gst_video_decoder_drop_frame(
+    ffi.Pointer<GstVideoDecoder> dec,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_decoder_drop_frame(
+      dec,
+      frame,
+    );
+  }
+
+  late final _gst_video_decoder_drop_framePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<GstVideoDecoder>,
+                  ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_decoder_drop_frame');
+  late final _gst_video_decoder_drop_frame =
+      _gst_video_decoder_drop_framePtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoDecoder>, ffi.Pointer<GstVideoCodecFrame>)>();
+
+  int gst_video_decoder_drop_subframe(
+    ffi.Pointer<GstVideoDecoder> dec,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_decoder_drop_subframe(
+      dec,
+      frame,
+    );
+  }
+
+  late final _gst_video_decoder_drop_subframePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<GstVideoDecoder>,
+                  ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_decoder_drop_subframe');
+  late final _gst_video_decoder_drop_subframe =
+      _gst_video_decoder_drop_subframePtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoDecoder>, ffi.Pointer<GstVideoCodecFrame>)>();
+
+  void gst_video_decoder_request_sync_point(
+    ffi.Pointer<GstVideoDecoder> dec,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+    int flags,
+  ) {
+    return _gst_video_decoder_request_sync_point(
+      dec,
+      frame,
+      flags,
+    );
+  }
+
+  late final _gst_video_decoder_request_sync_pointPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoDecoder>,
+              ffi.Pointer<GstVideoCodecFrame>,
+              ffi.Int32)>>('gst_video_decoder_request_sync_point');
+  late final _gst_video_decoder_request_sync_point =
+      _gst_video_decoder_request_sync_pointPtr.asFunction<
+          void Function(ffi.Pointer<GstVideoDecoder>,
+              ffi.Pointer<GstVideoCodecFrame>, int)>();
+
+  void gst_video_decoder_release_frame(
+    ffi.Pointer<GstVideoDecoder> dec,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_decoder_release_frame(
+      dec,
+      frame,
+    );
+  }
+
+  late final _gst_video_decoder_release_framePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<GstVideoDecoder>,
+                  ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_decoder_release_frame');
+  late final _gst_video_decoder_release_frame =
+      _gst_video_decoder_release_framePtr.asFunction<
+          void Function(
+              ffi.Pointer<GstVideoDecoder>, ffi.Pointer<GstVideoCodecFrame>)>();
+
+  void gst_video_decoder_merge_tags(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    ffi.Pointer<GstTagList> tags,
+    int mode,
+  ) {
+    return _gst_video_decoder_merge_tags(
+      decoder,
+      tags,
+      mode,
+    );
+  }
+
+  late final _gst_video_decoder_merge_tagsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoDecoder>,
+              ffi.Pointer<GstTagList>,
+              ffi.Int32)>>('gst_video_decoder_merge_tags');
+  late final _gst_video_decoder_merge_tags =
+      _gst_video_decoder_merge_tagsPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstVideoDecoder>, ffi.Pointer<GstTagList>, int)>();
+
+  ffi.Pointer<GstCaps> gst_video_decoder_proxy_getcaps(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    ffi.Pointer<GstCaps> caps,
+    ffi.Pointer<GstCaps> filter,
+  ) {
+    return _gst_video_decoder_proxy_getcaps(
+      decoder,
+      caps,
+      filter,
+    );
+  }
+
+  late final _gst_video_decoder_proxy_getcapsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstCaps> Function(
+              ffi.Pointer<GstVideoDecoder>,
+              ffi.Pointer<GstCaps>,
+              ffi.Pointer<GstCaps>)>>('gst_video_decoder_proxy_getcaps');
+  late final _gst_video_decoder_proxy_getcaps =
+      _gst_video_decoder_proxy_getcapsPtr.asFunction<
+          ffi.Pointer<GstCaps> Function(ffi.Pointer<GstVideoDecoder>,
+              ffi.Pointer<GstCaps>, ffi.Pointer<GstCaps>)>();
+
+  void gst_video_decoder_set_use_default_pad_acceptcaps(
+    ffi.Pointer<GstVideoDecoder> decoder,
+    int use,
+  ) {
+    return _gst_video_decoder_set_use_default_pad_acceptcaps(
+      decoder,
+      use,
+    );
+  }
+
+  late final _gst_video_decoder_set_use_default_pad_acceptcapsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoDecoder>,
+              ffi.Int)>>('gst_video_decoder_set_use_default_pad_acceptcaps');
+  late final _gst_video_decoder_set_use_default_pad_acceptcaps =
+      _gst_video_decoder_set_use_default_pad_acceptcapsPtr
+          .asFunction<void Function(ffi.Pointer<GstVideoDecoder>, int)>();
+
+  int gst_video_encoder_get_type() {
+    return _gst_video_encoder_get_type();
+  }
+
+  late final _gst_video_encoder_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_encoder_get_type');
+  late final _gst_video_encoder_get_type =
+      _gst_video_encoder_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstVideoCodecState> gst_video_encoder_get_output_state(
+    ffi.Pointer<GstVideoEncoder> encoder,
+  ) {
+    return _gst_video_encoder_get_output_state(
+      encoder,
+    );
+  }
+
+  late final _gst_video_encoder_get_output_statePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoCodecState> Function(
+                  ffi.Pointer<GstVideoEncoder>)>>(
+      'gst_video_encoder_get_output_state');
+  late final _gst_video_encoder_get_output_state =
+      _gst_video_encoder_get_output_statePtr.asFunction<
+          ffi.Pointer<GstVideoCodecState> Function(
+              ffi.Pointer<GstVideoEncoder>)>();
+
+  ffi.Pointer<GstVideoCodecState> gst_video_encoder_set_output_state(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    ffi.Pointer<GstCaps> caps,
+    ffi.Pointer<GstVideoCodecState> reference,
+  ) {
+    return _gst_video_encoder_set_output_state(
+      encoder,
+      caps,
+      reference,
+    );
+  }
+
+  late final _gst_video_encoder_set_output_statePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoCodecState> Function(
+                  ffi.Pointer<GstVideoEncoder>,
+                  ffi.Pointer<GstCaps>,
+                  ffi.Pointer<GstVideoCodecState>)>>(
+      'gst_video_encoder_set_output_state');
+  late final _gst_video_encoder_set_output_state =
+      _gst_video_encoder_set_output_statePtr.asFunction<
+          ffi.Pointer<GstVideoCodecState> Function(ffi.Pointer<GstVideoEncoder>,
+              ffi.Pointer<GstCaps>, ffi.Pointer<GstVideoCodecState>)>();
+
+  int gst_video_encoder_negotiate(
+    ffi.Pointer<GstVideoEncoder> encoder,
+  ) {
+    return _gst_video_encoder_negotiate(
+      encoder,
+    );
+  }
+
+  late final _gst_video_encoder_negotiatePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstVideoEncoder>)>>(
+      'gst_video_encoder_negotiate');
+  late final _gst_video_encoder_negotiate = _gst_video_encoder_negotiatePtr
+      .asFunction<int Function(ffi.Pointer<GstVideoEncoder>)>();
+
+  ffi.Pointer<GstVideoCodecFrame> gst_video_encoder_get_frame(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    int frame_number,
+  ) {
+    return _gst_video_encoder_get_frame(
+      encoder,
+      frame_number,
+    );
+  }
+
+  late final _gst_video_encoder_get_framePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoCodecFrame> Function(ffi.Pointer<GstVideoEncoder>,
+              ffi.Int)>>('gst_video_encoder_get_frame');
+  late final _gst_video_encoder_get_frame =
+      _gst_video_encoder_get_framePtr.asFunction<
+          ffi.Pointer<GstVideoCodecFrame> Function(
+              ffi.Pointer<GstVideoEncoder>, int)>();
+
+  ffi.Pointer<GstVideoCodecFrame> gst_video_encoder_get_oldest_frame(
+    ffi.Pointer<GstVideoEncoder> encoder,
+  ) {
+    return _gst_video_encoder_get_oldest_frame(
+      encoder,
+    );
+  }
+
+  late final _gst_video_encoder_get_oldest_framePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoCodecFrame> Function(
+                  ffi.Pointer<GstVideoEncoder>)>>(
+      'gst_video_encoder_get_oldest_frame');
+  late final _gst_video_encoder_get_oldest_frame =
+      _gst_video_encoder_get_oldest_framePtr.asFunction<
+          ffi.Pointer<GstVideoCodecFrame> Function(
+              ffi.Pointer<GstVideoEncoder>)>();
+
+  ffi.Pointer<GList> gst_video_encoder_get_frames(
+    ffi.Pointer<GstVideoEncoder> encoder,
+  ) {
+    return _gst_video_encoder_get_frames(
+      encoder,
+    );
+  }
+
+  late final _gst_video_encoder_get_framesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GList> Function(
+              ffi.Pointer<GstVideoEncoder>)>>('gst_video_encoder_get_frames');
+  late final _gst_video_encoder_get_frames = _gst_video_encoder_get_framesPtr
+      .asFunction<ffi.Pointer<GList> Function(ffi.Pointer<GstVideoEncoder>)>();
+
+  ffi.Pointer<GstBuffer> gst_video_encoder_allocate_output_buffer(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    int size,
+  ) {
+    return _gst_video_encoder_allocate_output_buffer(
+      encoder,
+      size,
+    );
+  }
+
+  late final _gst_video_encoder_allocate_output_bufferPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstVideoEncoder>,
+              ffi.Size)>>('gst_video_encoder_allocate_output_buffer');
+  late final _gst_video_encoder_allocate_output_buffer =
+      _gst_video_encoder_allocate_output_bufferPtr.asFunction<
+          ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstVideoEncoder>, int)>();
+
+  int gst_video_encoder_allocate_output_frame(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+    int size,
+  ) {
+    return _gst_video_encoder_allocate_output_frame(
+      encoder,
+      frame,
+      size,
+    );
+  }
+
+  late final _gst_video_encoder_allocate_output_framePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<GstVideoEncoder>,
+              ffi.Pointer<GstVideoCodecFrame>,
+              ffi.Size)>>('gst_video_encoder_allocate_output_frame');
+  late final _gst_video_encoder_allocate_output_frame =
+      _gst_video_encoder_allocate_output_framePtr.asFunction<
+          int Function(ffi.Pointer<GstVideoEncoder>,
+              ffi.Pointer<GstVideoCodecFrame>, int)>();
+
+  int gst_video_encoder_finish_frame(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_encoder_finish_frame(
+      encoder,
+      frame,
+    );
+  }
+
+  late final _gst_video_encoder_finish_framePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<GstVideoEncoder>,
+                  ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_encoder_finish_frame');
+  late final _gst_video_encoder_finish_frame =
+      _gst_video_encoder_finish_framePtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoEncoder>, ffi.Pointer<GstVideoCodecFrame>)>();
+
+  int gst_video_encoder_finish_subframe(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_encoder_finish_subframe(
+      encoder,
+      frame,
+    );
+  }
+
+  late final _gst_video_encoder_finish_subframePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<GstVideoEncoder>,
+                  ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_encoder_finish_subframe');
+  late final _gst_video_encoder_finish_subframe =
+      _gst_video_encoder_finish_subframePtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoEncoder>, ffi.Pointer<GstVideoCodecFrame>)>();
+
+  ffi.Pointer<GstCaps> gst_video_encoder_proxy_getcaps(
+    ffi.Pointer<GstVideoEncoder> enc,
+    ffi.Pointer<GstCaps> caps,
+    ffi.Pointer<GstCaps> filter,
+  ) {
+    return _gst_video_encoder_proxy_getcaps(
+      enc,
+      caps,
+      filter,
+    );
+  }
+
+  late final _gst_video_encoder_proxy_getcapsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstCaps> Function(
+              ffi.Pointer<GstVideoEncoder>,
+              ffi.Pointer<GstCaps>,
+              ffi.Pointer<GstCaps>)>>('gst_video_encoder_proxy_getcaps');
+  late final _gst_video_encoder_proxy_getcaps =
+      _gst_video_encoder_proxy_getcapsPtr.asFunction<
+          ffi.Pointer<GstCaps> Function(ffi.Pointer<GstVideoEncoder>,
+              ffi.Pointer<GstCaps>, ffi.Pointer<GstCaps>)>();
+
+  void gst_video_encoder_set_latency(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    int min_latency,
+    int max_latency,
+  ) {
+    return _gst_video_encoder_set_latency(
+      encoder,
+      min_latency,
+      max_latency,
+    );
+  }
+
+  late final _gst_video_encoder_set_latencyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoEncoder>, GstClockTime,
+              GstClockTime)>>('gst_video_encoder_set_latency');
+  late final _gst_video_encoder_set_latency = _gst_video_encoder_set_latencyPtr
+      .asFunction<void Function(ffi.Pointer<GstVideoEncoder>, int, int)>();
+
+  void gst_video_encoder_get_latency(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    ffi.Pointer<GstClockTime> min_latency,
+    ffi.Pointer<GstClockTime> max_latency,
+  ) {
+    return _gst_video_encoder_get_latency(
+      encoder,
+      min_latency,
+      max_latency,
+    );
+  }
+
+  late final _gst_video_encoder_get_latencyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoEncoder>,
+              ffi.Pointer<GstClockTime>,
+              ffi.Pointer<GstClockTime>)>>('gst_video_encoder_get_latency');
+  late final _gst_video_encoder_get_latency =
+      _gst_video_encoder_get_latencyPtr.asFunction<
+          void Function(ffi.Pointer<GstVideoEncoder>, ffi.Pointer<GstClockTime>,
+              ffi.Pointer<GstClockTime>)>();
+
+  void gst_video_encoder_set_headers(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    ffi.Pointer<GList> headers,
+  ) {
+    return _gst_video_encoder_set_headers(
+      encoder,
+      headers,
+    );
+  }
+
+  late final _gst_video_encoder_set_headersPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoEncoder>,
+              ffi.Pointer<GList>)>>('gst_video_encoder_set_headers');
+  late final _gst_video_encoder_set_headers =
+      _gst_video_encoder_set_headersPtr.asFunction<
+          void Function(ffi.Pointer<GstVideoEncoder>, ffi.Pointer<GList>)>();
+
+  void gst_video_encoder_merge_tags(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    ffi.Pointer<GstTagList> tags,
+    int mode,
+  ) {
+    return _gst_video_encoder_merge_tags(
+      encoder,
+      tags,
+      mode,
+    );
+  }
+
+  late final _gst_video_encoder_merge_tagsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoEncoder>,
+              ffi.Pointer<GstTagList>,
+              ffi.Int32)>>('gst_video_encoder_merge_tags');
+  late final _gst_video_encoder_merge_tags =
+      _gst_video_encoder_merge_tagsPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstVideoEncoder>, ffi.Pointer<GstTagList>, int)>();
+
+  void gst_video_encoder_get_allocator(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    ffi.Pointer<ffi.Pointer<GstAllocator>> allocator,
+    ffi.Pointer<GstAllocationParams> params,
+  ) {
+    return _gst_video_encoder_get_allocator(
+      encoder,
+      allocator,
+      params,
+    );
+  }
+
+  late final _gst_video_encoder_get_allocatorPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  ffi.Pointer<GstVideoEncoder>,
+                  ffi.Pointer<ffi.Pointer<GstAllocator>>,
+                  ffi.Pointer<GstAllocationParams>)>>(
+      'gst_video_encoder_get_allocator');
+  late final _gst_video_encoder_get_allocator =
+      _gst_video_encoder_get_allocatorPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstVideoEncoder>,
+              ffi.Pointer<ffi.Pointer<GstAllocator>>,
+              ffi.Pointer<GstAllocationParams>)>();
+
+  void gst_video_encoder_set_min_pts(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    int min_pts,
+  ) {
+    return _gst_video_encoder_set_min_pts(
+      encoder,
+      min_pts,
+    );
+  }
+
+  late final _gst_video_encoder_set_min_ptsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoEncoder>,
+              GstClockTime)>>('gst_video_encoder_set_min_pts');
+  late final _gst_video_encoder_set_min_pts = _gst_video_encoder_set_min_ptsPtr
+      .asFunction<void Function(ffi.Pointer<GstVideoEncoder>, int)>();
+
+  void gst_video_encoder_set_qos_enabled(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    int enabled,
+  ) {
+    return _gst_video_encoder_set_qos_enabled(
+      encoder,
+      enabled,
+    );
+  }
+
+  late final _gst_video_encoder_set_qos_enabledPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoEncoder>,
+              ffi.Int)>>('gst_video_encoder_set_qos_enabled');
+  late final _gst_video_encoder_set_qos_enabled =
+      _gst_video_encoder_set_qos_enabledPtr
+          .asFunction<void Function(ffi.Pointer<GstVideoEncoder>, int)>();
+
+  int gst_video_encoder_is_qos_enabled(
+    ffi.Pointer<GstVideoEncoder> encoder,
+  ) {
+    return _gst_video_encoder_is_qos_enabled(
+      encoder,
+    );
+  }
+
+  late final _gst_video_encoder_is_qos_enabledPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstVideoEncoder>)>>(
+      'gst_video_encoder_is_qos_enabled');
+  late final _gst_video_encoder_is_qos_enabled =
+      _gst_video_encoder_is_qos_enabledPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoEncoder>)>();
+
+  int gst_video_encoder_get_max_encode_time(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    ffi.Pointer<GstVideoCodecFrame> frame,
+  ) {
+    return _gst_video_encoder_get_max_encode_time(
+      encoder,
+      frame,
+    );
+  }
+
+  late final _gst_video_encoder_get_max_encode_timePtr = _lookup<
+          ffi.NativeFunction<
+              GstClockTimeDiff Function(ffi.Pointer<GstVideoEncoder>,
+                  ffi.Pointer<GstVideoCodecFrame>)>>(
+      'gst_video_encoder_get_max_encode_time');
+  late final _gst_video_encoder_get_max_encode_time =
+      _gst_video_encoder_get_max_encode_timePtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoEncoder>, ffi.Pointer<GstVideoCodecFrame>)>();
+
+  void gst_video_encoder_set_min_force_key_unit_interval(
+    ffi.Pointer<GstVideoEncoder> encoder,
+    int interval,
+  ) {
+    return _gst_video_encoder_set_min_force_key_unit_interval(
+      encoder,
+      interval,
+    );
+  }
+
+  late final _gst_video_encoder_set_min_force_key_unit_intervalPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<GstVideoEncoder>, GstClockTime)>>(
+      'gst_video_encoder_set_min_force_key_unit_interval');
+  late final _gst_video_encoder_set_min_force_key_unit_interval =
+      _gst_video_encoder_set_min_force_key_unit_intervalPtr
+          .asFunction<void Function(ffi.Pointer<GstVideoEncoder>, int)>();
+
+  int gst_video_encoder_get_min_force_key_unit_interval(
+    ffi.Pointer<GstVideoEncoder> encoder,
+  ) {
+    return _gst_video_encoder_get_min_force_key_unit_interval(
+      encoder,
+    );
+  }
+
+  late final _gst_video_encoder_get_min_force_key_unit_intervalPtr = _lookup<
+          ffi
+          .NativeFunction<GstClockTime Function(ffi.Pointer<GstVideoEncoder>)>>(
+      'gst_video_encoder_get_min_force_key_unit_interval');
+  late final _gst_video_encoder_get_min_force_key_unit_interval =
+      _gst_video_encoder_get_min_force_key_unit_intervalPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoEncoder>)>();
+
+  int gst_base_transform_get_type() {
+    return _gst_base_transform_get_type();
+  }
+
+  late final _gst_base_transform_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_base_transform_get_type');
+  late final _gst_base_transform_get_type =
+      _gst_base_transform_get_typePtr.asFunction<int Function()>();
+
+  void gst_base_transform_set_passthrough(
+    ffi.Pointer<GstBaseTransform> trans,
+    int passthrough,
+  ) {
+    return _gst_base_transform_set_passthrough(
+      trans,
+      passthrough,
+    );
+  }
+
+  late final _gst_base_transform_set_passthroughPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseTransform>,
+              ffi.Int)>>('gst_base_transform_set_passthrough');
+  late final _gst_base_transform_set_passthrough =
+      _gst_base_transform_set_passthroughPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseTransform>, int)>();
+
+  int gst_base_transform_is_passthrough(
+    ffi.Pointer<GstBaseTransform> trans,
+  ) {
+    return _gst_base_transform_is_passthrough(
+      trans,
+    );
+  }
+
+  late final _gst_base_transform_is_passthroughPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseTransform>)>>(
+      'gst_base_transform_is_passthrough');
+  late final _gst_base_transform_is_passthrough =
+      _gst_base_transform_is_passthroughPtr
+          .asFunction<int Function(ffi.Pointer<GstBaseTransform>)>();
+
+  void gst_base_transform_set_in_place(
+    ffi.Pointer<GstBaseTransform> trans,
+    int in_place,
+  ) {
+    return _gst_base_transform_set_in_place(
+      trans,
+      in_place,
+    );
+  }
+
+  late final _gst_base_transform_set_in_placePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseTransform>,
+              ffi.Int)>>('gst_base_transform_set_in_place');
+  late final _gst_base_transform_set_in_place =
+      _gst_base_transform_set_in_placePtr
+          .asFunction<void Function(ffi.Pointer<GstBaseTransform>, int)>();
+
+  int gst_base_transform_is_in_place(
+    ffi.Pointer<GstBaseTransform> trans,
+  ) {
+    return _gst_base_transform_is_in_place(
+      trans,
+    );
+  }
+
+  late final _gst_base_transform_is_in_placePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseTransform>)>>(
+      'gst_base_transform_is_in_place');
+  late final _gst_base_transform_is_in_place =
+      _gst_base_transform_is_in_placePtr
+          .asFunction<int Function(ffi.Pointer<GstBaseTransform>)>();
+
+  void gst_base_transform_update_qos(
+    ffi.Pointer<GstBaseTransform> trans,
+    double proportion,
+    int diff,
+    int timestamp,
+  ) {
+    return _gst_base_transform_update_qos(
+      trans,
+      proportion,
+      diff,
+      timestamp,
+    );
+  }
+
+  late final _gst_base_transform_update_qosPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstBaseTransform>,
+              ffi.Double,
+              GstClockTimeDiff,
+              GstClockTime)>>('gst_base_transform_update_qos');
+  late final _gst_base_transform_update_qos =
+      _gst_base_transform_update_qosPtr.asFunction<
+          void Function(ffi.Pointer<GstBaseTransform>, double, int, int)>();
+
+  void gst_base_transform_set_qos_enabled(
+    ffi.Pointer<GstBaseTransform> trans,
+    int enabled,
+  ) {
+    return _gst_base_transform_set_qos_enabled(
+      trans,
+      enabled,
+    );
+  }
+
+  late final _gst_base_transform_set_qos_enabledPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseTransform>,
+              ffi.Int)>>('gst_base_transform_set_qos_enabled');
+  late final _gst_base_transform_set_qos_enabled =
+      _gst_base_transform_set_qos_enabledPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseTransform>, int)>();
+
+  int gst_base_transform_is_qos_enabled(
+    ffi.Pointer<GstBaseTransform> trans,
+  ) {
+    return _gst_base_transform_is_qos_enabled(
+      trans,
+    );
+  }
+
+  late final _gst_base_transform_is_qos_enabledPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseTransform>)>>(
+      'gst_base_transform_is_qos_enabled');
+  late final _gst_base_transform_is_qos_enabled =
+      _gst_base_transform_is_qos_enabledPtr
+          .asFunction<int Function(ffi.Pointer<GstBaseTransform>)>();
+
+  void gst_base_transform_set_gap_aware(
+    ffi.Pointer<GstBaseTransform> trans,
+    int gap_aware,
+  ) {
+    return _gst_base_transform_set_gap_aware(
+      trans,
+      gap_aware,
+    );
+  }
+
+  late final _gst_base_transform_set_gap_awarePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseTransform>,
+              ffi.Int)>>('gst_base_transform_set_gap_aware');
+  late final _gst_base_transform_set_gap_aware =
+      _gst_base_transform_set_gap_awarePtr
+          .asFunction<void Function(ffi.Pointer<GstBaseTransform>, int)>();
+
+  void gst_base_transform_set_prefer_passthrough(
+    ffi.Pointer<GstBaseTransform> trans,
+    int prefer_passthrough,
+  ) {
+    return _gst_base_transform_set_prefer_passthrough(
+      trans,
+      prefer_passthrough,
+    );
+  }
+
+  late final _gst_base_transform_set_prefer_passthroughPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseTransform>,
+              ffi.Int)>>('gst_base_transform_set_prefer_passthrough');
+  late final _gst_base_transform_set_prefer_passthrough =
+      _gst_base_transform_set_prefer_passthroughPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseTransform>, int)>();
+
+  ffi.Pointer<GstBufferPool> gst_base_transform_get_buffer_pool(
+    ffi.Pointer<GstBaseTransform> trans,
+  ) {
+    return _gst_base_transform_get_buffer_pool(
+      trans,
+    );
+  }
+
+  late final _gst_base_transform_get_buffer_poolPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstBufferPool> Function(
+                  ffi.Pointer<GstBaseTransform>)>>(
+      'gst_base_transform_get_buffer_pool');
+  late final _gst_base_transform_get_buffer_pool =
+      _gst_base_transform_get_buffer_poolPtr.asFunction<
+          ffi.Pointer<GstBufferPool> Function(ffi.Pointer<GstBaseTransform>)>();
+
+  void gst_base_transform_get_allocator(
+    ffi.Pointer<GstBaseTransform> trans,
+    ffi.Pointer<ffi.Pointer<GstAllocator>> allocator,
+    ffi.Pointer<GstAllocationParams> params,
+  ) {
+    return _gst_base_transform_get_allocator(
+      trans,
+      allocator,
+      params,
+    );
+  }
+
+  late final _gst_base_transform_get_allocatorPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  ffi.Pointer<GstBaseTransform>,
+                  ffi.Pointer<ffi.Pointer<GstAllocator>>,
+                  ffi.Pointer<GstAllocationParams>)>>(
+      'gst_base_transform_get_allocator');
+  late final _gst_base_transform_get_allocator =
+      _gst_base_transform_get_allocatorPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstBaseTransform>,
+              ffi.Pointer<ffi.Pointer<GstAllocator>>,
+              ffi.Pointer<GstAllocationParams>)>();
+
+  void gst_base_transform_reconfigure_sink(
+    ffi.Pointer<GstBaseTransform> trans,
+  ) {
+    return _gst_base_transform_reconfigure_sink(
+      trans,
+    );
+  }
+
+  late final _gst_base_transform_reconfigure_sinkPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstBaseTransform>)>>(
+      'gst_base_transform_reconfigure_sink');
+  late final _gst_base_transform_reconfigure_sink =
+      _gst_base_transform_reconfigure_sinkPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseTransform>)>();
+
+  void gst_base_transform_reconfigure_src(
+    ffi.Pointer<GstBaseTransform> trans,
+  ) {
+    return _gst_base_transform_reconfigure_src(
+      trans,
+    );
+  }
+
+  late final _gst_base_transform_reconfigure_srcPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstBaseTransform>)>>(
+      'gst_base_transform_reconfigure_src');
+  late final _gst_base_transform_reconfigure_src =
+      _gst_base_transform_reconfigure_srcPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseTransform>)>();
+
+  int gst_base_transform_update_src_caps(
+    ffi.Pointer<GstBaseTransform> trans,
+    ffi.Pointer<GstCaps> updated_caps,
+  ) {
+    return _gst_base_transform_update_src_caps(
+      trans,
+      updated_caps,
+    );
+  }
+
+  late final _gst_base_transform_update_src_capsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstBaseTransform>,
+              ffi.Pointer<GstCaps>)>>('gst_base_transform_update_src_caps');
+  late final _gst_base_transform_update_src_caps =
+      _gst_base_transform_update_src_capsPtr.asFunction<
+          int Function(ffi.Pointer<GstBaseTransform>, ffi.Pointer<GstCaps>)>();
+
+  int gst_base_transform_reconfigure(
+    ffi.Pointer<GstBaseTransform> trans,
+  ) {
+    return _gst_base_transform_reconfigure(
+      trans,
+    );
+  }
+
+  late final _gst_base_transform_reconfigurePtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseTransform>)>>(
+      'gst_base_transform_reconfigure');
+  late final _gst_base_transform_reconfigure =
+      _gst_base_transform_reconfigurePtr
+          .asFunction<int Function(ffi.Pointer<GstBaseTransform>)>();
+
+  int gst_video_filter_get_type() {
+    return _gst_video_filter_get_type();
+  }
+
+  late final _gst_video_filter_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_filter_get_type');
+  late final _gst_video_filter_get_type =
+      _gst_video_filter_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_time_code_get_type() {
+    return _gst_video_time_code_get_type();
+  }
+
+  late final _gst_video_time_code_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_time_code_get_type');
+  late final _gst_video_time_code_get_type =
+      _gst_video_time_code_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstVideoTimeCode> gst_video_time_code_new(
+    int fps_n,
+    int fps_d,
+    ffi.Pointer<GDateTime> latest_daily_jam,
+    int flags,
+    int hours,
+    int minutes,
+    int seconds,
+    int frames,
+    int field_count,
+  ) {
+    return _gst_video_time_code_new(
+      fps_n,
+      fps_d,
+      latest_daily_jam,
+      flags,
+      hours,
+      minutes,
+      seconds,
+      frames,
+      field_count,
+    );
+  }
+
+  late final _gst_video_time_code_newPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoTimeCode> Function(
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.Pointer<GDateTime>,
+              ffi.Int32,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_video_time_code_new');
+  late final _gst_video_time_code_new = _gst_video_time_code_newPtr.asFunction<
+      ffi.Pointer<GstVideoTimeCode> Function(
+          int, int, ffi.Pointer<GDateTime>, int, int, int, int, int, int)>();
+
+  ffi.Pointer<GstVideoTimeCode> gst_video_time_code_new_empty() {
+    return _gst_video_time_code_new_empty();
+  }
+
+  late final _gst_video_time_code_new_emptyPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstVideoTimeCode> Function()>>(
+          'gst_video_time_code_new_empty');
+  late final _gst_video_time_code_new_empty = _gst_video_time_code_new_emptyPtr
+      .asFunction<ffi.Pointer<GstVideoTimeCode> Function()>();
+
+  ffi.Pointer<GstVideoTimeCode> gst_video_time_code_new_from_string(
+    ffi.Pointer<ffi.Char> tc_str,
+  ) {
+    return _gst_video_time_code_new_from_string(
+      tc_str,
+    );
+  }
+
+  late final _gst_video_time_code_new_from_stringPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoTimeCode> Function(
+              ffi.Pointer<ffi.Char>)>>('gst_video_time_code_new_from_string');
+  late final _gst_video_time_code_new_from_string =
+      _gst_video_time_code_new_from_stringPtr.asFunction<
+          ffi.Pointer<GstVideoTimeCode> Function(ffi.Pointer<ffi.Char>)>();
+
+  ffi.Pointer<GstVideoTimeCode> gst_video_time_code_new_from_date_time(
+    int fps_n,
+    int fps_d,
+    ffi.Pointer<GDateTime> dt,
+    int flags,
+    int field_count,
+  ) {
+    return _gst_video_time_code_new_from_date_time(
+      fps_n,
+      fps_d,
+      dt,
+      flags,
+      field_count,
+    );
+  }
+
+  late final _gst_video_time_code_new_from_date_timePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoTimeCode> Function(
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.Pointer<GDateTime>,
+              ffi.Int32,
+              ffi.UnsignedInt)>>('gst_video_time_code_new_from_date_time');
+  late final _gst_video_time_code_new_from_date_time =
+      _gst_video_time_code_new_from_date_timePtr.asFunction<
+          ffi.Pointer<GstVideoTimeCode> Function(
+              int, int, ffi.Pointer<GDateTime>, int, int)>();
+
+  ffi.Pointer<GstVideoTimeCode> gst_video_time_code_new_from_date_time_full(
+    int fps_n,
+    int fps_d,
+    ffi.Pointer<GDateTime> dt,
+    int flags,
+    int field_count,
+  ) {
+    return _gst_video_time_code_new_from_date_time_full(
+      fps_n,
+      fps_d,
+      dt,
+      flags,
+      field_count,
+    );
+  }
+
+  late final _gst_video_time_code_new_from_date_time_fullPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoTimeCode> Function(
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.Pointer<GDateTime>,
+              ffi.Int32,
+              ffi.UnsignedInt)>>('gst_video_time_code_new_from_date_time_full');
+  late final _gst_video_time_code_new_from_date_time_full =
+      _gst_video_time_code_new_from_date_time_fullPtr.asFunction<
+          ffi.Pointer<GstVideoTimeCode> Function(
+              int, int, ffi.Pointer<GDateTime>, int, int)>();
+
+  void gst_video_time_code_free(
+    ffi.Pointer<GstVideoTimeCode> tc,
+  ) {
+    return _gst_video_time_code_free(
+      tc,
+    );
+  }
+
+  late final _gst_video_time_code_freePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoTimeCode>)>>(
+      'gst_video_time_code_free');
+  late final _gst_video_time_code_free = _gst_video_time_code_freePtr
+      .asFunction<void Function(ffi.Pointer<GstVideoTimeCode>)>();
+
+  ffi.Pointer<GstVideoTimeCode> gst_video_time_code_copy(
+    ffi.Pointer<GstVideoTimeCode> tc,
+  ) {
+    return _gst_video_time_code_copy(
+      tc,
+    );
+  }
+
+  late final _gst_video_time_code_copyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoTimeCode> Function(
+              ffi.Pointer<GstVideoTimeCode>)>>('gst_video_time_code_copy');
+  late final _gst_video_time_code_copy =
+      _gst_video_time_code_copyPtr.asFunction<
+          ffi.Pointer<GstVideoTimeCode> Function(
+              ffi.Pointer<GstVideoTimeCode>)>();
+
+  void gst_video_time_code_init(
+    ffi.Pointer<GstVideoTimeCode> tc,
+    int fps_n,
+    int fps_d,
+    ffi.Pointer<GDateTime> latest_daily_jam,
+    int flags,
+    int hours,
+    int minutes,
+    int seconds,
+    int frames,
+    int field_count,
+  ) {
+    return _gst_video_time_code_init(
+      tc,
+      fps_n,
+      fps_d,
+      latest_daily_jam,
+      flags,
+      hours,
+      minutes,
+      seconds,
+      frames,
+      field_count,
+    );
+  }
+
+  late final _gst_video_time_code_initPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoTimeCode>,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.Pointer<GDateTime>,
+              ffi.Int32,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_video_time_code_init');
+  late final _gst_video_time_code_init =
+      _gst_video_time_code_initPtr.asFunction<
+          void Function(ffi.Pointer<GstVideoTimeCode>, int, int,
+              ffi.Pointer<GDateTime>, int, int, int, int, int, int)>();
+
+  void gst_video_time_code_init_from_date_time(
+    ffi.Pointer<GstVideoTimeCode> tc,
+    int fps_n,
+    int fps_d,
+    ffi.Pointer<GDateTime> dt,
+    int flags,
+    int field_count,
+  ) {
+    return _gst_video_time_code_init_from_date_time(
+      tc,
+      fps_n,
+      fps_d,
+      dt,
+      flags,
+      field_count,
+    );
+  }
+
+  late final _gst_video_time_code_init_from_date_timePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoTimeCode>,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.Pointer<GDateTime>,
+              ffi.Int32,
+              ffi.UnsignedInt)>>('gst_video_time_code_init_from_date_time');
+  late final _gst_video_time_code_init_from_date_time =
+      _gst_video_time_code_init_from_date_timePtr.asFunction<
+          void Function(ffi.Pointer<GstVideoTimeCode>, int, int,
+              ffi.Pointer<GDateTime>, int, int)>();
+
+  int gst_video_time_code_init_from_date_time_full(
+    ffi.Pointer<GstVideoTimeCode> tc,
+    int fps_n,
+    int fps_d,
+    ffi.Pointer<GDateTime> dt,
+    int flags,
+    int field_count,
+  ) {
+    return _gst_video_time_code_init_from_date_time_full(
+      tc,
+      fps_n,
+      fps_d,
+      dt,
+      flags,
+      field_count,
+    );
+  }
+
+  late final _gst_video_time_code_init_from_date_time_fullPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstVideoTimeCode>,
+                  ffi.UnsignedInt,
+                  ffi.UnsignedInt,
+                  ffi.Pointer<GDateTime>,
+                  ffi.Int32,
+                  ffi.UnsignedInt)>>(
+      'gst_video_time_code_init_from_date_time_full');
+  late final _gst_video_time_code_init_from_date_time_full =
+      _gst_video_time_code_init_from_date_time_fullPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoTimeCode>, int, int,
+              ffi.Pointer<GDateTime>, int, int)>();
+
+  void gst_video_time_code_clear(
+    ffi.Pointer<GstVideoTimeCode> tc,
+  ) {
+    return _gst_video_time_code_clear(
+      tc,
+    );
+  }
+
+  late final _gst_video_time_code_clearPtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoTimeCode>)>>(
+      'gst_video_time_code_clear');
+  late final _gst_video_time_code_clear = _gst_video_time_code_clearPtr
+      .asFunction<void Function(ffi.Pointer<GstVideoTimeCode>)>();
+
+  int gst_video_time_code_is_valid(
+    ffi.Pointer<GstVideoTimeCode> tc,
+  ) {
+    return _gst_video_time_code_is_valid(
+      tc,
+    );
+  }
+
+  late final _gst_video_time_code_is_validPtr = _lookup<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstVideoTimeCode>)>>(
+      'gst_video_time_code_is_valid');
+  late final _gst_video_time_code_is_valid = _gst_video_time_code_is_validPtr
+      .asFunction<int Function(ffi.Pointer<GstVideoTimeCode>)>();
+
+  int gst_video_time_code_compare(
+    ffi.Pointer<GstVideoTimeCode> tc1,
+    ffi.Pointer<GstVideoTimeCode> tc2,
+  ) {
+    return _gst_video_time_code_compare(
+      tc1,
+      tc2,
+    );
+  }
+
+  late final _gst_video_time_code_comparePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoTimeCode>,
+              ffi.Pointer<GstVideoTimeCode>)>>('gst_video_time_code_compare');
+  late final _gst_video_time_code_compare =
+      _gst_video_time_code_comparePtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoTimeCode>, ffi.Pointer<GstVideoTimeCode>)>();
+
+  void gst_video_time_code_increment_frame(
+    ffi.Pointer<GstVideoTimeCode> tc,
+  ) {
+    return _gst_video_time_code_increment_frame(
+      tc,
+    );
+  }
+
+  late final _gst_video_time_code_increment_framePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoTimeCode>)>>(
+      'gst_video_time_code_increment_frame');
+  late final _gst_video_time_code_increment_frame =
+      _gst_video_time_code_increment_framePtr
+          .asFunction<void Function(ffi.Pointer<GstVideoTimeCode>)>();
+
+  void gst_video_time_code_add_frames(
+    ffi.Pointer<GstVideoTimeCode> tc,
+    int frames,
+  ) {
+    return _gst_video_time_code_add_frames(
+      tc,
+      frames,
+    );
+  }
+
+  late final _gst_video_time_code_add_framesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoTimeCode>,
+              ffi.Int64)>>('gst_video_time_code_add_frames');
+  late final _gst_video_time_code_add_frames =
+      _gst_video_time_code_add_framesPtr
+          .asFunction<void Function(ffi.Pointer<GstVideoTimeCode>, int)>();
+
+  ffi.Pointer<ffi.Char> gst_video_time_code_to_string(
+    ffi.Pointer<GstVideoTimeCode> tc,
+  ) {
+    return _gst_video_time_code_to_string(
+      tc,
+    );
+  }
+
+  late final _gst_video_time_code_to_stringPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<GstVideoTimeCode>)>>('gst_video_time_code_to_string');
+  late final _gst_video_time_code_to_string =
+      _gst_video_time_code_to_stringPtr.asFunction<
+          ffi.Pointer<ffi.Char> Function(ffi.Pointer<GstVideoTimeCode>)>();
+
+  ffi.Pointer<GDateTime> gst_video_time_code_to_date_time(
+    ffi.Pointer<GstVideoTimeCode> tc,
+  ) {
+    return _gst_video_time_code_to_date_time(
+      tc,
+    );
+  }
+
+  late final _gst_video_time_code_to_date_timePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GDateTime> Function(ffi.Pointer<GstVideoTimeCode>)>>(
+      'gst_video_time_code_to_date_time');
+  late final _gst_video_time_code_to_date_time =
+      _gst_video_time_code_to_date_timePtr.asFunction<
+          ffi.Pointer<GDateTime> Function(ffi.Pointer<GstVideoTimeCode>)>();
+
+  int gst_video_time_code_nsec_since_daily_jam(
+    ffi.Pointer<GstVideoTimeCode> tc,
+  ) {
+    return _gst_video_time_code_nsec_since_daily_jam(
+      tc,
+    );
+  }
+
+  late final _gst_video_time_code_nsec_since_daily_jamPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Uint64 Function(ffi.Pointer<GstVideoTimeCode>)>>(
+      'gst_video_time_code_nsec_since_daily_jam');
+  late final _gst_video_time_code_nsec_since_daily_jam =
+      _gst_video_time_code_nsec_since_daily_jamPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoTimeCode>)>();
+
+  int gst_video_time_code_frames_since_daily_jam(
+    ffi.Pointer<GstVideoTimeCode> tc,
+  ) {
+    return _gst_video_time_code_frames_since_daily_jam(
+      tc,
+    );
+  }
+
+  late final _gst_video_time_code_frames_since_daily_jamPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Uint64 Function(ffi.Pointer<GstVideoTimeCode>)>>(
+      'gst_video_time_code_frames_since_daily_jam');
+  late final _gst_video_time_code_frames_since_daily_jam =
+      _gst_video_time_code_frames_since_daily_jamPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoTimeCode>)>();
+
+  ffi.Pointer<GstVideoTimeCode> gst_video_time_code_add_interval(
+    ffi.Pointer<GstVideoTimeCode> tc,
+    ffi.Pointer<GstVideoTimeCodeInterval> tc_inter,
+  ) {
+    return _gst_video_time_code_add_interval(
+      tc,
+      tc_inter,
+    );
+  }
+
+  late final _gst_video_time_code_add_intervalPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoTimeCode> Function(
+                  ffi.Pointer<GstVideoTimeCode>,
+                  ffi.Pointer<GstVideoTimeCodeInterval>)>>(
+      'gst_video_time_code_add_interval');
+  late final _gst_video_time_code_add_interval =
+      _gst_video_time_code_add_intervalPtr.asFunction<
+          ffi.Pointer<GstVideoTimeCode> Function(ffi.Pointer<GstVideoTimeCode>,
+              ffi.Pointer<GstVideoTimeCodeInterval>)>();
+
+  int gst_video_time_code_interval_get_type() {
+    return _gst_video_time_code_interval_get_type();
+  }
+
+  late final _gst_video_time_code_interval_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_time_code_interval_get_type');
+  late final _gst_video_time_code_interval_get_type =
+      _gst_video_time_code_interval_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstVideoTimeCodeInterval> gst_video_time_code_interval_new(
+    int hours,
+    int minutes,
+    int seconds,
+    int frames,
+  ) {
+    return _gst_video_time_code_interval_new(
+      hours,
+      minutes,
+      seconds,
+      frames,
+    );
+  }
+
+  late final _gst_video_time_code_interval_newPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoTimeCodeInterval> Function(
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_video_time_code_interval_new');
+  late final _gst_video_time_code_interval_new =
+      _gst_video_time_code_interval_newPtr.asFunction<
+          ffi.Pointer<GstVideoTimeCodeInterval> Function(int, int, int, int)>();
+
+  ffi.Pointer<GstVideoTimeCodeInterval>
+      gst_video_time_code_interval_new_from_string(
+    ffi.Pointer<ffi.Char> tc_inter_str,
+  ) {
+    return _gst_video_time_code_interval_new_from_string(
+      tc_inter_str,
+    );
+  }
+
+  late final _gst_video_time_code_interval_new_from_stringPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoTimeCodeInterval> Function(
+                  ffi.Pointer<ffi.Char>)>>(
+      'gst_video_time_code_interval_new_from_string');
+  late final _gst_video_time_code_interval_new_from_string =
+      _gst_video_time_code_interval_new_from_stringPtr.asFunction<
+          ffi.Pointer<GstVideoTimeCodeInterval> Function(
+              ffi.Pointer<ffi.Char>)>();
+
+  void gst_video_time_code_interval_free(
+    ffi.Pointer<GstVideoTimeCodeInterval> tc,
+  ) {
+    return _gst_video_time_code_interval_free(
+      tc,
+    );
+  }
+
+  late final _gst_video_time_code_interval_freePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<GstVideoTimeCodeInterval>)>>(
+      'gst_video_time_code_interval_free');
+  late final _gst_video_time_code_interval_free =
+      _gst_video_time_code_interval_freePtr
+          .asFunction<void Function(ffi.Pointer<GstVideoTimeCodeInterval>)>();
+
+  ffi.Pointer<GstVideoTimeCodeInterval> gst_video_time_code_interval_copy(
+    ffi.Pointer<GstVideoTimeCodeInterval> tc,
+  ) {
+    return _gst_video_time_code_interval_copy(
+      tc,
+    );
+  }
+
+  late final _gst_video_time_code_interval_copyPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoTimeCodeInterval> Function(
+                  ffi.Pointer<GstVideoTimeCodeInterval>)>>(
+      'gst_video_time_code_interval_copy');
+  late final _gst_video_time_code_interval_copy =
+      _gst_video_time_code_interval_copyPtr.asFunction<
+          ffi.Pointer<GstVideoTimeCodeInterval> Function(
+              ffi.Pointer<GstVideoTimeCodeInterval>)>();
+
+  void gst_video_time_code_interval_init(
+    ffi.Pointer<GstVideoTimeCodeInterval> tc,
+    int hours,
+    int minutes,
+    int seconds,
+    int frames,
+  ) {
+    return _gst_video_time_code_interval_init(
+      tc,
+      hours,
+      minutes,
+      seconds,
+      frames,
+    );
+  }
+
+  late final _gst_video_time_code_interval_initPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoTimeCodeInterval>,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_video_time_code_interval_init');
+  late final _gst_video_time_code_interval_init =
+      _gst_video_time_code_interval_initPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstVideoTimeCodeInterval>, int, int, int, int)>();
+
+  void gst_video_time_code_interval_clear(
+    ffi.Pointer<GstVideoTimeCodeInterval> tc,
+  ) {
+    return _gst_video_time_code_interval_clear(
+      tc,
+    );
+  }
+
+  late final _gst_video_time_code_interval_clearPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<GstVideoTimeCodeInterval>)>>(
+      'gst_video_time_code_interval_clear');
+  late final _gst_video_time_code_interval_clear =
+      _gst_video_time_code_interval_clearPtr
+          .asFunction<void Function(ffi.Pointer<GstVideoTimeCodeInterval>)>();
+
+  int gst_video_meta_api_get_type() {
+    return _gst_video_meta_api_get_type();
+  }
+
+  late final _gst_video_meta_api_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_meta_api_get_type');
+  late final _gst_video_meta_api_get_type =
+      _gst_video_meta_api_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstMetaInfo> gst_video_meta_get_info() {
+    return _gst_video_meta_get_info();
+  }
+
+  late final _gst_video_meta_get_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstMetaInfo> Function()>>(
+          'gst_video_meta_get_info');
+  late final _gst_video_meta_get_info = _gst_video_meta_get_infoPtr
+      .asFunction<ffi.Pointer<GstMetaInfo> Function()>();
+
+  ffi.Pointer<GstVideoMeta> gst_buffer_get_video_meta(
+    ffi.Pointer<GstBuffer> buffer,
+  ) {
+    return _gst_buffer_get_video_meta(
+      buffer,
+    );
+  }
+
+  late final _gst_buffer_get_video_metaPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoMeta> Function(
+              ffi.Pointer<GstBuffer>)>>('gst_buffer_get_video_meta');
+  late final _gst_buffer_get_video_meta = _gst_buffer_get_video_metaPtr
+      .asFunction<ffi.Pointer<GstVideoMeta> Function(ffi.Pointer<GstBuffer>)>();
+
+  ffi.Pointer<GstVideoMeta> gst_buffer_get_video_meta_id(
+    ffi.Pointer<GstBuffer> buffer,
+    int id,
+  ) {
+    return _gst_buffer_get_video_meta_id(
+      buffer,
+      id,
+    );
+  }
+
+  late final _gst_buffer_get_video_meta_idPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoMeta> Function(ffi.Pointer<GstBuffer>,
+              ffi.Int)>>('gst_buffer_get_video_meta_id');
+  late final _gst_buffer_get_video_meta_id =
+      _gst_buffer_get_video_meta_idPtr.asFunction<
+          ffi.Pointer<GstVideoMeta> Function(ffi.Pointer<GstBuffer>, int)>();
+
+  ffi.Pointer<GstVideoMeta> gst_buffer_add_video_meta(
+    ffi.Pointer<GstBuffer> buffer,
+    int flags,
+    int format,
+    int width,
+    int height,
+  ) {
+    return _gst_buffer_add_video_meta(
+      buffer,
+      flags,
+      format,
+      width,
+      height,
+    );
+  }
+
+  late final _gst_buffer_add_video_metaPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoMeta> Function(
+              ffi.Pointer<GstBuffer>,
+              ffi.Int32,
+              ffi.Int32,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_buffer_add_video_meta');
+  late final _gst_buffer_add_video_meta =
+      _gst_buffer_add_video_metaPtr.asFunction<
+          ffi.Pointer<GstVideoMeta> Function(
+              ffi.Pointer<GstBuffer>, int, int, int, int)>();
+
+  ffi.Pointer<GstVideoMeta> gst_buffer_add_video_meta_full(
+    ffi.Pointer<GstBuffer> buffer,
+    int flags,
+    int format,
+    int width,
+    int height,
+    int n_planes,
+    ffi.Pointer<ffi.Size> offset,
+    ffi.Pointer<ffi.Int> stride,
+  ) {
+    return _gst_buffer_add_video_meta_full(
+      buffer,
+      flags,
+      format,
+      width,
+      height,
+      n_planes,
+      offset,
+      stride,
+    );
+  }
+
+  late final _gst_buffer_add_video_meta_fullPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoMeta> Function(
+              ffi.Pointer<GstBuffer>,
+              ffi.Int32,
+              ffi.Int32,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.Pointer<ffi.Size>,
+              ffi.Pointer<ffi.Int>)>>('gst_buffer_add_video_meta_full');
+  late final _gst_buffer_add_video_meta_full =
+      _gst_buffer_add_video_meta_fullPtr.asFunction<
+          ffi.Pointer<GstVideoMeta> Function(ffi.Pointer<GstBuffer>, int, int,
+              int, int, int, ffi.Pointer<ffi.Size>, ffi.Pointer<ffi.Int>)>();
+
+  int gst_video_meta_map(
+    ffi.Pointer<GstVideoMeta> meta,
+    int plane,
+    ffi.Pointer<GstMapInfo> info,
+    ffi.Pointer<ffi.Pointer> data,
+    ffi.Pointer<ffi.Int> stride,
+    int flags,
+  ) {
+    return _gst_video_meta_map(
+      meta,
+      plane,
+      info,
+      data,
+      stride,
+      flags,
+    );
+  }
+
+  late final _gst_video_meta_mapPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoMeta>,
+              ffi.UnsignedInt,
+              ffi.Pointer<GstMapInfo>,
+              ffi.Pointer<ffi.Pointer>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Int32)>>('gst_video_meta_map');
+  late final _gst_video_meta_map = _gst_video_meta_mapPtr.asFunction<
+      int Function(ffi.Pointer<GstVideoMeta>, int, ffi.Pointer<GstMapInfo>,
+          ffi.Pointer<ffi.Pointer>, ffi.Pointer<ffi.Int>, int)>();
+
+  int gst_video_meta_unmap(
+    ffi.Pointer<GstVideoMeta> meta,
+    int plane,
+    ffi.Pointer<GstMapInfo> info,
+  ) {
+    return _gst_video_meta_unmap(
+      meta,
+      plane,
+      info,
+    );
+  }
+
+  late final _gst_video_meta_unmapPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoMeta>, ffi.UnsignedInt,
+              ffi.Pointer<GstMapInfo>)>>('gst_video_meta_unmap');
+  late final _gst_video_meta_unmap = _gst_video_meta_unmapPtr.asFunction<
+      int Function(ffi.Pointer<GstVideoMeta>, int, ffi.Pointer<GstMapInfo>)>();
+
+  int gst_video_meta_set_alignment(
+    ffi.Pointer<GstVideoMeta> meta,
+    GstVideoAlignment alignment,
+  ) {
+    return _gst_video_meta_set_alignment(
+      meta,
+      alignment,
+    );
+  }
+
+  late final _gst_video_meta_set_alignmentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoMeta>,
+              GstVideoAlignment)>>('gst_video_meta_set_alignment');
+  late final _gst_video_meta_set_alignment = _gst_video_meta_set_alignmentPtr
+      .asFunction<int Function(ffi.Pointer<GstVideoMeta>, GstVideoAlignment)>();
+
+  int gst_video_meta_get_plane_size(
+    ffi.Pointer<GstVideoMeta> meta,
+    ffi.Pointer<ffi.Size> plane_size,
+  ) {
+    return _gst_video_meta_get_plane_size(
+      meta,
+      plane_size,
+    );
+  }
+
+  late final _gst_video_meta_get_plane_sizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoMeta>,
+              ffi.Pointer<ffi.Size>)>>('gst_video_meta_get_plane_size');
+  late final _gst_video_meta_get_plane_size =
+      _gst_video_meta_get_plane_sizePtr.asFunction<
+          int Function(ffi.Pointer<GstVideoMeta>, ffi.Pointer<ffi.Size>)>();
+
+  int gst_video_meta_get_plane_height(
+    ffi.Pointer<GstVideoMeta> meta,
+    ffi.Pointer<ffi.UnsignedInt> plane_height,
+  ) {
+    return _gst_video_meta_get_plane_height(
+      meta,
+      plane_height,
+    );
+  }
+
+  late final _gst_video_meta_get_plane_heightPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstVideoMeta>, ffi.Pointer<ffi.UnsignedInt>)>>(
+      'gst_video_meta_get_plane_height');
+  late final _gst_video_meta_get_plane_height =
+      _gst_video_meta_get_plane_heightPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoMeta>, ffi.Pointer<ffi.UnsignedInt>)>();
+
+  int gst_video_crop_meta_api_get_type() {
+    return _gst_video_crop_meta_api_get_type();
+  }
+
+  late final _gst_video_crop_meta_api_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_crop_meta_api_get_type');
+  late final _gst_video_crop_meta_api_get_type =
+      _gst_video_crop_meta_api_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstMetaInfo> gst_video_crop_meta_get_info() {
+    return _gst_video_crop_meta_get_info();
+  }
+
+  late final _gst_video_crop_meta_get_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstMetaInfo> Function()>>(
+          'gst_video_crop_meta_get_info');
+  late final _gst_video_crop_meta_get_info = _gst_video_crop_meta_get_infoPtr
+      .asFunction<ffi.Pointer<GstMetaInfo> Function()>();
+
+  int gst_video_meta_transform_scale_get_quark() {
+    return _gst_video_meta_transform_scale_get_quark();
+  }
+
+  late final _gst_video_meta_transform_scale_get_quarkPtr =
+      _lookup<ffi.NativeFunction<GQuark Function()>>(
+          'gst_video_meta_transform_scale_get_quark');
+  late final _gst_video_meta_transform_scale_get_quark =
+      _gst_video_meta_transform_scale_get_quarkPtr.asFunction<int Function()>();
+
+  int gst_video_gl_texture_upload_meta_api_get_type() {
+    return _gst_video_gl_texture_upload_meta_api_get_type();
+  }
+
+  late final _gst_video_gl_texture_upload_meta_api_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_gl_texture_upload_meta_api_get_type');
+  late final _gst_video_gl_texture_upload_meta_api_get_type =
+      _gst_video_gl_texture_upload_meta_api_get_typePtr
+          .asFunction<int Function()>();
+
+  ffi.Pointer<GstMetaInfo> gst_video_gl_texture_upload_meta_get_info() {
+    return _gst_video_gl_texture_upload_meta_get_info();
+  }
+
+  late final _gst_video_gl_texture_upload_meta_get_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstMetaInfo> Function()>>(
+          'gst_video_gl_texture_upload_meta_get_info');
+  late final _gst_video_gl_texture_upload_meta_get_info =
+      _gst_video_gl_texture_upload_meta_get_infoPtr
+          .asFunction<ffi.Pointer<GstMetaInfo> Function()>();
+
+  ffi.Pointer<GstVideoGLTextureUploadMeta>
+      gst_buffer_add_video_gl_texture_upload_meta(
+    ffi.Pointer<GstBuffer> buffer,
+    int texture_orientation,
+    int n_textures,
+    ffi.Pointer<ffi.Int32> texture_type,
+    GstVideoGLTextureUpload upload,
+    ffi.Pointer user_data,
+    GBoxedCopyFunc user_data_copy,
+    GBoxedFreeFunc user_data_free,
+  ) {
+    return _gst_buffer_add_video_gl_texture_upload_meta(
+      buffer,
+      texture_orientation,
+      n_textures,
+      texture_type,
+      upload,
+      user_data,
+      user_data_copy,
+      user_data_free,
+    );
+  }
+
+  late final _gst_buffer_add_video_gl_texture_upload_metaPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoGLTextureUploadMeta> Function(
+              ffi.Pointer<GstBuffer>,
+              ffi.Int32,
+              ffi.UnsignedInt,
+              ffi.Pointer<ffi.Int32>,
+              GstVideoGLTextureUpload,
+              ffi.Pointer,
+              GBoxedCopyFunc,
+              GBoxedFreeFunc)>>('gst_buffer_add_video_gl_texture_upload_meta');
+  late final _gst_buffer_add_video_gl_texture_upload_meta =
+      _gst_buffer_add_video_gl_texture_upload_metaPtr.asFunction<
+          ffi.Pointer<GstVideoGLTextureUploadMeta> Function(
+              ffi.Pointer<GstBuffer>,
+              int,
+              int,
+              ffi.Pointer<ffi.Int32>,
+              GstVideoGLTextureUpload,
+              ffi.Pointer,
+              GBoxedCopyFunc,
+              GBoxedFreeFunc)>();
+
+  int gst_video_gl_texture_upload_meta_upload(
+    ffi.Pointer<GstVideoGLTextureUploadMeta> meta,
+    ffi.Pointer<ffi.UnsignedInt> texture_id,
+  ) {
+    return _gst_video_gl_texture_upload_meta_upload(
+      meta,
+      texture_id,
+    );
+  }
+
+  late final _gst_video_gl_texture_upload_meta_uploadPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstVideoGLTextureUploadMeta>,
+                  ffi.Pointer<ffi.UnsignedInt>)>>(
+      'gst_video_gl_texture_upload_meta_upload');
+  late final _gst_video_gl_texture_upload_meta_upload =
+      _gst_video_gl_texture_upload_meta_uploadPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoGLTextureUploadMeta>,
+              ffi.Pointer<ffi.UnsignedInt>)>();
+
+  int gst_video_region_of_interest_meta_api_get_type() {
+    return _gst_video_region_of_interest_meta_api_get_type();
+  }
+
+  late final _gst_video_region_of_interest_meta_api_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_region_of_interest_meta_api_get_type');
+  late final _gst_video_region_of_interest_meta_api_get_type =
+      _gst_video_region_of_interest_meta_api_get_typePtr
+          .asFunction<int Function()>();
+
+  ffi.Pointer<GstMetaInfo> gst_video_region_of_interest_meta_get_info() {
+    return _gst_video_region_of_interest_meta_get_info();
+  }
+
+  late final _gst_video_region_of_interest_meta_get_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstMetaInfo> Function()>>(
+          'gst_video_region_of_interest_meta_get_info');
+  late final _gst_video_region_of_interest_meta_get_info =
+      _gst_video_region_of_interest_meta_get_infoPtr
+          .asFunction<ffi.Pointer<GstMetaInfo> Function()>();
+
+  ffi.Pointer<GstVideoRegionOfInterestMeta>
+      gst_buffer_get_video_region_of_interest_meta_id(
+    ffi.Pointer<GstBuffer> buffer,
+    int id,
+  ) {
+    return _gst_buffer_get_video_region_of_interest_meta_id(
+      buffer,
+      id,
+    );
+  }
+
+  late final _gst_buffer_get_video_region_of_interest_meta_idPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoRegionOfInterestMeta> Function(
+              ffi.Pointer<GstBuffer>,
+              ffi.Int)>>('gst_buffer_get_video_region_of_interest_meta_id');
+  late final _gst_buffer_get_video_region_of_interest_meta_id =
+      _gst_buffer_get_video_region_of_interest_meta_idPtr.asFunction<
+          ffi.Pointer<GstVideoRegionOfInterestMeta> Function(
+              ffi.Pointer<GstBuffer>, int)>();
+
+  ffi.Pointer<GstVideoRegionOfInterestMeta>
+      gst_buffer_add_video_region_of_interest_meta(
+    ffi.Pointer<GstBuffer> buffer,
+    ffi.Pointer<ffi.Char> roi_type,
+    int x,
+    int y,
+    int w,
+    int h,
+  ) {
+    return _gst_buffer_add_video_region_of_interest_meta(
+      buffer,
+      roi_type,
+      x,
+      y,
+      w,
+      h,
+    );
+  }
+
+  late final _gst_buffer_add_video_region_of_interest_metaPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoRegionOfInterestMeta> Function(
+                  ffi.Pointer<GstBuffer>,
+                  ffi.Pointer<ffi.Char>,
+                  ffi.UnsignedInt,
+                  ffi.UnsignedInt,
+                  ffi.UnsignedInt,
+                  ffi.UnsignedInt)>>(
+      'gst_buffer_add_video_region_of_interest_meta');
+  late final _gst_buffer_add_video_region_of_interest_meta =
+      _gst_buffer_add_video_region_of_interest_metaPtr.asFunction<
+          ffi.Pointer<GstVideoRegionOfInterestMeta> Function(
+              ffi.Pointer<GstBuffer>,
+              ffi.Pointer<ffi.Char>,
+              int,
+              int,
+              int,
+              int)>();
+
+  ffi.Pointer<GstVideoRegionOfInterestMeta>
+      gst_buffer_add_video_region_of_interest_meta_id(
+    ffi.Pointer<GstBuffer> buffer,
+    int roi_type,
+    int x,
+    int y,
+    int w,
+    int h,
+  ) {
+    return _gst_buffer_add_video_region_of_interest_meta_id(
+      buffer,
+      roi_type,
+      x,
+      y,
+      w,
+      h,
+    );
+  }
+
+  late final _gst_buffer_add_video_region_of_interest_meta_idPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoRegionOfInterestMeta> Function(
+                  ffi.Pointer<GstBuffer>,
+                  GQuark,
+                  ffi.UnsignedInt,
+                  ffi.UnsignedInt,
+                  ffi.UnsignedInt,
+                  ffi.UnsignedInt)>>(
+      'gst_buffer_add_video_region_of_interest_meta_id');
+  late final _gst_buffer_add_video_region_of_interest_meta_id =
+      _gst_buffer_add_video_region_of_interest_meta_idPtr.asFunction<
+          ffi.Pointer<GstVideoRegionOfInterestMeta> Function(
+              ffi.Pointer<GstBuffer>, int, int, int, int, int)>();
+
+  void gst_video_region_of_interest_meta_add_param(
+    ffi.Pointer<GstVideoRegionOfInterestMeta> meta,
+    ffi.Pointer<GstStructure> s,
+  ) {
+    return _gst_video_region_of_interest_meta_add_param(
+      meta,
+      s,
+    );
+  }
+
+  late final _gst_video_region_of_interest_meta_add_paramPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<GstVideoRegionOfInterestMeta>,
+                  ffi.Pointer<GstStructure>)>>(
+      'gst_video_region_of_interest_meta_add_param');
+  late final _gst_video_region_of_interest_meta_add_param =
+      _gst_video_region_of_interest_meta_add_paramPtr.asFunction<
+          void Function(ffi.Pointer<GstVideoRegionOfInterestMeta>,
+              ffi.Pointer<GstStructure>)>();
+
+  ffi.Pointer<GstStructure> gst_video_region_of_interest_meta_get_param(
+    ffi.Pointer<GstVideoRegionOfInterestMeta> meta,
+    ffi.Pointer<ffi.Char> name,
+  ) {
+    return _gst_video_region_of_interest_meta_get_param(
+      meta,
+      name,
+    );
+  }
+
+  late final _gst_video_region_of_interest_meta_get_paramPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstStructure> Function(
+                  ffi.Pointer<GstVideoRegionOfInterestMeta>,
+                  ffi.Pointer<ffi.Char>)>>(
+      'gst_video_region_of_interest_meta_get_param');
+  late final _gst_video_region_of_interest_meta_get_param =
+      _gst_video_region_of_interest_meta_get_paramPtr.asFunction<
+          ffi.Pointer<GstStructure> Function(
+              ffi.Pointer<GstVideoRegionOfInterestMeta>,
+              ffi.Pointer<ffi.Char>)>();
+
+  int gst_video_time_code_meta_api_get_type() {
+    return _gst_video_time_code_meta_api_get_type();
+  }
+
+  late final _gst_video_time_code_meta_api_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_time_code_meta_api_get_type');
+  late final _gst_video_time_code_meta_api_get_type =
+      _gst_video_time_code_meta_api_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstMetaInfo> gst_video_time_code_meta_get_info() {
+    return _gst_video_time_code_meta_get_info();
+  }
+
+  late final _gst_video_time_code_meta_get_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstMetaInfo> Function()>>(
+          'gst_video_time_code_meta_get_info');
+  late final _gst_video_time_code_meta_get_info =
+      _gst_video_time_code_meta_get_infoPtr
+          .asFunction<ffi.Pointer<GstMetaInfo> Function()>();
+
+  ffi.Pointer<GstVideoTimeCodeMeta> gst_buffer_add_video_time_code_meta(
+    ffi.Pointer<GstBuffer> buffer,
+    ffi.Pointer<GstVideoTimeCode> tc,
+  ) {
+    return _gst_buffer_add_video_time_code_meta(
+      buffer,
+      tc,
+    );
+  }
+
+  late final _gst_buffer_add_video_time_code_metaPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoTimeCodeMeta> Function(
+                  ffi.Pointer<GstBuffer>, ffi.Pointer<GstVideoTimeCode>)>>(
+      'gst_buffer_add_video_time_code_meta');
+  late final _gst_buffer_add_video_time_code_meta =
+      _gst_buffer_add_video_time_code_metaPtr.asFunction<
+          ffi.Pointer<GstVideoTimeCodeMeta> Function(
+              ffi.Pointer<GstBuffer>, ffi.Pointer<GstVideoTimeCode>)>();
+
+  ffi.Pointer<GstVideoTimeCodeMeta> gst_buffer_add_video_time_code_meta_full(
+    ffi.Pointer<GstBuffer> buffer,
+    int fps_n,
+    int fps_d,
+    ffi.Pointer<GDateTime> latest_daily_jam,
+    int flags,
+    int hours,
+    int minutes,
+    int seconds,
+    int frames,
+    int field_count,
+  ) {
+    return _gst_buffer_add_video_time_code_meta_full(
+      buffer,
+      fps_n,
+      fps_d,
+      latest_daily_jam,
+      flags,
+      hours,
+      minutes,
+      seconds,
+      frames,
+      field_count,
+    );
+  }
+
+  late final _gst_buffer_add_video_time_code_meta_fullPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoTimeCodeMeta> Function(
+              ffi.Pointer<GstBuffer>,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.Pointer<GDateTime>,
+              ffi.Int32,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_buffer_add_video_time_code_meta_full');
+  late final _gst_buffer_add_video_time_code_meta_full =
+      _gst_buffer_add_video_time_code_meta_fullPtr.asFunction<
+          ffi.Pointer<GstVideoTimeCodeMeta> Function(
+              ffi.Pointer<GstBuffer>,
+              int,
+              int,
+              ffi.Pointer<GDateTime>,
+              int,
+              int,
+              int,
+              int,
+              int,
+              int)>();
+
+  void gst_buffer_pool_config_set_video_alignment(
+    ffi.Pointer<GstStructure> config,
+    ffi.Pointer<GstVideoAlignment> align,
+  ) {
+    return _gst_buffer_pool_config_set_video_alignment(
+      config,
+      align,
+    );
+  }
+
+  late final _gst_buffer_pool_config_set_video_alignmentPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  ffi.Pointer<GstStructure>, ffi.Pointer<GstVideoAlignment>)>>(
+      'gst_buffer_pool_config_set_video_alignment');
+  late final _gst_buffer_pool_config_set_video_alignment =
+      _gst_buffer_pool_config_set_video_alignmentPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstStructure>, ffi.Pointer<GstVideoAlignment>)>();
+
+  int gst_buffer_pool_config_get_video_alignment(
+    ffi.Pointer<GstStructure> config,
+    ffi.Pointer<GstVideoAlignment> align,
+  ) {
+    return _gst_buffer_pool_config_get_video_alignment(
+      config,
+      align,
+    );
+  }
+
+  late final _gst_buffer_pool_config_get_video_alignmentPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstStructure>, ffi.Pointer<GstVideoAlignment>)>>(
+      'gst_buffer_pool_config_get_video_alignment');
+  late final _gst_buffer_pool_config_get_video_alignment =
+      _gst_buffer_pool_config_get_video_alignmentPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstStructure>, ffi.Pointer<GstVideoAlignment>)>();
+
+  int gst_video_buffer_pool_get_type() {
+    return _gst_video_buffer_pool_get_type();
+  }
+
+  late final _gst_video_buffer_pool_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_buffer_pool_get_type');
+  late final _gst_video_buffer_pool_get_type =
+      _gst_video_buffer_pool_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstBufferPool> gst_video_buffer_pool_new() {
+    return _gst_video_buffer_pool_new();
+  }
+
+  late final _gst_video_buffer_pool_newPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstBufferPool> Function()>>(
+          'gst_video_buffer_pool_new');
+  late final _gst_video_buffer_pool_new = _gst_video_buffer_pool_newPtr
+      .asFunction<ffi.Pointer<GstBufferPool> Function()>();
+
+  int gst_base_sink_get_type() {
+    return _gst_base_sink_get_type();
+  }
+
+  late final _gst_base_sink_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('gst_base_sink_get_type');
+  late final _gst_base_sink_get_type =
+      _gst_base_sink_get_typePtr.asFunction<int Function()>();
+
+  int gst_base_sink_do_preroll(
+    ffi.Pointer<GstBaseSink> sink,
+    ffi.Pointer<GstMiniObject> obj,
+  ) {
+    return _gst_base_sink_do_preroll(
+      sink,
+      obj,
+    );
+  }
+
+  late final _gst_base_sink_do_prerollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink>,
+              ffi.Pointer<GstMiniObject>)>>('gst_base_sink_do_preroll');
+  late final _gst_base_sink_do_preroll =
+      _gst_base_sink_do_prerollPtr.asFunction<
+          int Function(ffi.Pointer<GstBaseSink>, ffi.Pointer<GstMiniObject>)>();
+
+  int gst_base_sink_wait_preroll(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_wait_preroll(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_wait_prerollPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_wait_preroll');
+  late final _gst_base_sink_wait_preroll = _gst_base_sink_wait_prerollPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_sync(
+    ffi.Pointer<GstBaseSink> sink,
+    int sync1,
+  ) {
+    return _gst_base_sink_set_sync(
+      sink,
+      sync1,
+    );
+  }
+
+  late final _gst_base_sink_set_syncPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstBaseSink>, ffi.Int)>>('gst_base_sink_set_sync');
+  late final _gst_base_sink_set_sync = _gst_base_sink_set_syncPtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_sync(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_sync(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_syncPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_get_sync');
+  late final _gst_base_sink_get_sync = _gst_base_sink_get_syncPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_drop_out_of_segment(
+    ffi.Pointer<GstBaseSink> sink,
+    int drop_out_of_segment,
+  ) {
+    return _gst_base_sink_set_drop_out_of_segment(
+      sink,
+      drop_out_of_segment,
+    );
+  }
+
+  late final _gst_base_sink_set_drop_out_of_segmentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Int)>>('gst_base_sink_set_drop_out_of_segment');
+  late final _gst_base_sink_set_drop_out_of_segment =
+      _gst_base_sink_set_drop_out_of_segmentPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_drop_out_of_segment(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_drop_out_of_segment(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_drop_out_of_segmentPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_get_drop_out_of_segment');
+  late final _gst_base_sink_get_drop_out_of_segment =
+      _gst_base_sink_get_drop_out_of_segmentPtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_max_lateness(
+    ffi.Pointer<GstBaseSink> sink,
+    int max_lateness,
+  ) {
+    return _gst_base_sink_set_max_lateness(
+      sink,
+      max_lateness,
+    );
+  }
+
+  late final _gst_base_sink_set_max_latenessPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Int64)>>('gst_base_sink_set_max_lateness');
+  late final _gst_base_sink_set_max_lateness =
+      _gst_base_sink_set_max_latenessPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_max_lateness(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_max_lateness(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_max_latenessPtr =
+      _lookup<ffi.NativeFunction<ffi.Int64 Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_get_max_lateness');
+  late final _gst_base_sink_get_max_lateness =
+      _gst_base_sink_get_max_latenessPtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_qos_enabled(
+    ffi.Pointer<GstBaseSink> sink,
+    int enabled,
+  ) {
+    return _gst_base_sink_set_qos_enabled(
+      sink,
+      enabled,
+    );
+  }
+
+  late final _gst_base_sink_set_qos_enabledPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Int)>>('gst_base_sink_set_qos_enabled');
+  late final _gst_base_sink_set_qos_enabled = _gst_base_sink_set_qos_enabledPtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_is_qos_enabled(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_is_qos_enabled(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_is_qos_enabledPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_is_qos_enabled');
+  late final _gst_base_sink_is_qos_enabled = _gst_base_sink_is_qos_enabledPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_async_enabled(
+    ffi.Pointer<GstBaseSink> sink,
+    int enabled,
+  ) {
+    return _gst_base_sink_set_async_enabled(
+      sink,
+      enabled,
+    );
+  }
+
+  late final _gst_base_sink_set_async_enabledPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Int)>>('gst_base_sink_set_async_enabled');
+  late final _gst_base_sink_set_async_enabled =
+      _gst_base_sink_set_async_enabledPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_is_async_enabled(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_is_async_enabled(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_is_async_enabledPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_is_async_enabled');
+  late final _gst_base_sink_is_async_enabled =
+      _gst_base_sink_is_async_enabledPtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_ts_offset(
+    ffi.Pointer<GstBaseSink> sink,
+    int offset,
+  ) {
+    return _gst_base_sink_set_ts_offset(
+      sink,
+      offset,
+    );
+  }
+
+  late final _gst_base_sink_set_ts_offsetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              GstClockTimeDiff)>>('gst_base_sink_set_ts_offset');
+  late final _gst_base_sink_set_ts_offset = _gst_base_sink_set_ts_offsetPtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_ts_offset(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_ts_offset(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_ts_offsetPtr = _lookup<
+          ffi
+          .NativeFunction<GstClockTimeDiff Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_ts_offset');
+  late final _gst_base_sink_get_ts_offset = _gst_base_sink_get_ts_offsetPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  ffi.Pointer<GstSample> gst_base_sink_get_last_sample(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_last_sample(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_last_samplePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstSample> Function(
+              ffi.Pointer<GstBaseSink>)>>('gst_base_sink_get_last_sample');
+  late final _gst_base_sink_get_last_sample = _gst_base_sink_get_last_samplePtr
+      .asFunction<ffi.Pointer<GstSample> Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_last_sample_enabled(
+    ffi.Pointer<GstBaseSink> sink,
+    int enabled,
+  ) {
+    return _gst_base_sink_set_last_sample_enabled(
+      sink,
+      enabled,
+    );
+  }
+
+  late final _gst_base_sink_set_last_sample_enabledPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Int)>>('gst_base_sink_set_last_sample_enabled');
+  late final _gst_base_sink_set_last_sample_enabled =
+      _gst_base_sink_set_last_sample_enabledPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_is_last_sample_enabled(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_is_last_sample_enabled(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_is_last_sample_enabledPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_is_last_sample_enabled');
+  late final _gst_base_sink_is_last_sample_enabled =
+      _gst_base_sink_is_last_sample_enabledPtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  int gst_base_sink_query_latency(
+    ffi.Pointer<GstBaseSink> sink,
+    ffi.Pointer<ffi.Int> live,
+    ffi.Pointer<ffi.Int> upstream_live,
+    ffi.Pointer<GstClockTime> min_latency,
+    ffi.Pointer<GstClockTime> max_latency,
+  ) {
+    return _gst_base_sink_query_latency(
+      sink,
+      live,
+      upstream_live,
+      min_latency,
+      max_latency,
+    );
+  }
+
+  late final _gst_base_sink_query_latencyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstBaseSink>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<GstClockTime>,
+              ffi.Pointer<GstClockTime>)>>('gst_base_sink_query_latency');
+  late final _gst_base_sink_query_latency =
+      _gst_base_sink_query_latencyPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstBaseSink>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<GstClockTime>,
+              ffi.Pointer<GstClockTime>)>();
+
+  int gst_base_sink_get_latency(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_latency(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_latencyPtr = _lookup<
+          ffi.NativeFunction<GstClockTime Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_latency');
+  late final _gst_base_sink_get_latency = _gst_base_sink_get_latencyPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_render_delay(
+    ffi.Pointer<GstBaseSink> sink,
+    int delay,
+  ) {
+    return _gst_base_sink_set_render_delay(
+      sink,
+      delay,
+    );
+  }
+
+  late final _gst_base_sink_set_render_delayPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              GstClockTime)>>('gst_base_sink_set_render_delay');
+  late final _gst_base_sink_set_render_delay =
+      _gst_base_sink_set_render_delayPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_render_delay(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_render_delay(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_render_delayPtr = _lookup<
+          ffi.NativeFunction<GstClockTime Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_render_delay');
+  late final _gst_base_sink_get_render_delay =
+      _gst_base_sink_get_render_delayPtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_blocksize(
+    ffi.Pointer<GstBaseSink> sink,
+    int blocksize,
+  ) {
+    return _gst_base_sink_set_blocksize(
+      sink,
+      blocksize,
+    );
+  }
+
+  late final _gst_base_sink_set_blocksizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.UnsignedInt)>>('gst_base_sink_set_blocksize');
+  late final _gst_base_sink_set_blocksize = _gst_base_sink_set_blocksizePtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_blocksize(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_blocksize(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_blocksizePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.UnsignedInt Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_blocksize');
+  late final _gst_base_sink_get_blocksize = _gst_base_sink_get_blocksizePtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_throttle_time(
+    ffi.Pointer<GstBaseSink> sink,
+    int throttle,
+  ) {
+    return _gst_base_sink_set_throttle_time(
+      sink,
+      throttle,
+    );
+  }
+
+  late final _gst_base_sink_set_throttle_timePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Uint64)>>('gst_base_sink_set_throttle_time');
+  late final _gst_base_sink_set_throttle_time =
+      _gst_base_sink_set_throttle_timePtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_throttle_time(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_throttle_time(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_throttle_timePtr = _lookup<
+          ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_throttle_time');
+  late final _gst_base_sink_get_throttle_time =
+      _gst_base_sink_get_throttle_timePtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_max_bitrate(
+    ffi.Pointer<GstBaseSink> sink,
+    int max_bitrate,
+  ) {
+    return _gst_base_sink_set_max_bitrate(
+      sink,
+      max_bitrate,
+    );
+  }
+
+  late final _gst_base_sink_set_max_bitratePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Uint64)>>('gst_base_sink_set_max_bitrate');
+  late final _gst_base_sink_set_max_bitrate = _gst_base_sink_set_max_bitratePtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_max_bitrate(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_max_bitrate(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_max_bitratePtr = _lookup<
+          ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_max_bitrate');
+  late final _gst_base_sink_get_max_bitrate = _gst_base_sink_get_max_bitratePtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_processing_deadline(
+    ffi.Pointer<GstBaseSink> sink,
+    int processing_deadline,
+  ) {
+    return _gst_base_sink_set_processing_deadline(
+      sink,
+      processing_deadline,
+    );
+  }
+
+  late final _gst_base_sink_set_processing_deadlinePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              GstClockTime)>>('gst_base_sink_set_processing_deadline');
+  late final _gst_base_sink_set_processing_deadline =
+      _gst_base_sink_set_processing_deadlinePtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_processing_deadline(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_processing_deadline(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_processing_deadlinePtr = _lookup<
+          ffi.NativeFunction<GstClockTime Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_processing_deadline');
+  late final _gst_base_sink_get_processing_deadline =
+      _gst_base_sink_get_processing_deadlinePtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  int gst_base_sink_wait_clock(
+    ffi.Pointer<GstBaseSink> sink,
+    int time,
+    ffi.Pointer<GstClockTimeDiff> jitter,
+  ) {
+    return _gst_base_sink_wait_clock(
+      sink,
+      time,
+      jitter,
+    );
+  }
+
+  late final _gst_base_sink_wait_clockPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink>, GstClockTime,
+              ffi.Pointer<GstClockTimeDiff>)>>('gst_base_sink_wait_clock');
+  late final _gst_base_sink_wait_clock =
+      _gst_base_sink_wait_clockPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstBaseSink>, int, ffi.Pointer<GstClockTimeDiff>)>();
+
+  int gst_base_sink_wait(
+    ffi.Pointer<GstBaseSink> sink,
+    int time,
+    ffi.Pointer<GstClockTimeDiff> jitter,
+  ) {
+    return _gst_base_sink_wait(
+      sink,
+      time,
+      jitter,
+    );
+  }
+
+  late final _gst_base_sink_waitPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink>, GstClockTime,
+              ffi.Pointer<GstClockTimeDiff>)>>('gst_base_sink_wait');
+  late final _gst_base_sink_wait = _gst_base_sink_waitPtr.asFunction<
+      int Function(
+          ffi.Pointer<GstBaseSink>, int, ffi.Pointer<GstClockTimeDiff>)>();
+
+  ffi.Pointer<GstStructure> gst_base_sink_get_stats(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_stats(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_statsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstStructure> Function(
+              ffi.Pointer<GstBaseSink>)>>('gst_base_sink_get_stats');
+  late final _gst_base_sink_get_stats = _gst_base_sink_get_statsPtr.asFunction<
+      ffi.Pointer<GstStructure> Function(ffi.Pointer<GstBaseSink>)>();
+
+  int gst_video_sink_get_type() {
+    return _gst_video_sink_get_type();
+  }
+
+  late final _gst_video_sink_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('gst_video_sink_get_type');
+  late final _gst_video_sink_get_type =
+      _gst_video_sink_get_typePtr.asFunction<int Function()>();
+
+  void gst_video_sink_center_rect(
+    GstVideoRectangle src,
+    GstVideoRectangle dst,
+    ffi.Pointer<GstVideoRectangle> result,
+    int scaling,
+  ) {
+    return _gst_video_sink_center_rect(
+      src,
+      dst,
+      result,
+      scaling,
+    );
+  }
+
+  late final _gst_video_sink_center_rectPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              GstVideoRectangle,
+              GstVideoRectangle,
+              ffi.Pointer<GstVideoRectangle>,
+              ffi.Int)>>('gst_video_sink_center_rect');
+  late final _gst_video_sink_center_rect =
+      _gst_video_sink_center_rectPtr.asFunction<
+          void Function(GstVideoRectangle, GstVideoRectangle,
+              ffi.Pointer<GstVideoRectangle>, int)>();
+
+  void gst_video_center_rect(
+    ffi.Pointer<GstVideoRectangle> src,
+    ffi.Pointer<GstVideoRectangle> dst,
+    ffi.Pointer<GstVideoRectangle> result,
+    int scaling,
+  ) {
+    return _gst_video_center_rect(
+      src,
+      dst,
+      result,
+      scaling,
+    );
+  }
+
+  late final _gst_video_center_rectPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoRectangle>,
+              ffi.Pointer<GstVideoRectangle>,
+              ffi.Pointer<GstVideoRectangle>,
+              ffi.Int)>>('gst_video_center_rect');
+  late final _gst_video_center_rect = _gst_video_center_rectPtr.asFunction<
+      void Function(
+          ffi.Pointer<GstVideoRectangle>,
+          ffi.Pointer<GstVideoRectangle>,
+          ffi.Pointer<GstVideoRectangle>,
+          int)>();
+
+  int gst_navigation_get_type() {
+    return _gst_navigation_get_type();
+  }
+
+  late final _gst_navigation_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('gst_navigation_get_type');
+  late final _gst_navigation_get_type =
+      _gst_navigation_get_typePtr.asFunction<int Function()>();
+
+  int gst_navigation_query_get_type(
+    ffi.Pointer<GstQuery> query,
+  ) {
+    return _gst_navigation_query_get_type(
+      query,
+    );
+  }
+
+  late final _gst_navigation_query_get_typePtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstQuery>)>>(
+          'gst_navigation_query_get_type');
+  late final _gst_navigation_query_get_type = _gst_navigation_query_get_typePtr
+      .asFunction<int Function(ffi.Pointer<GstQuery>)>();
+
+  ffi.Pointer<GstQuery> gst_navigation_query_new_commands() {
+    return _gst_navigation_query_new_commands();
+  }
+
+  late final _gst_navigation_query_new_commandsPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstQuery> Function()>>(
+          'gst_navigation_query_new_commands');
+  late final _gst_navigation_query_new_commands =
+      _gst_navigation_query_new_commandsPtr
+          .asFunction<ffi.Pointer<GstQuery> Function()>();
+
+  void gst_navigation_query_set_commands(
+    ffi.Pointer<GstQuery> query,
+    int n_cmds,
+  ) {
+    return _gst_navigation_query_set_commands(
+      query,
+      n_cmds,
+    );
+  }
+
+  late final _gst_navigation_query_set_commandsPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstQuery>, ffi.Int)>>(
+      'gst_navigation_query_set_commands');
+  late final _gst_navigation_query_set_commands =
+      _gst_navigation_query_set_commandsPtr
+          .asFunction<void Function(ffi.Pointer<GstQuery>, int)>();
+
+  void gst_navigation_query_set_commandsv(
+    ffi.Pointer<GstQuery> query,
+    int n_cmds,
+    ffi.Pointer<ffi.Int32> cmds,
+  ) {
+    return _gst_navigation_query_set_commandsv(
+      query,
+      n_cmds,
+      cmds,
+    );
+  }
+
+  late final _gst_navigation_query_set_commandsvPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstQuery>, ffi.Int,
+              ffi.Pointer<ffi.Int32>)>>('gst_navigation_query_set_commandsv');
+  late final _gst_navigation_query_set_commandsv =
+      _gst_navigation_query_set_commandsvPtr.asFunction<
+          void Function(ffi.Pointer<GstQuery>, int, ffi.Pointer<ffi.Int32>)>();
+
+  int gst_navigation_query_parse_commands_length(
+    ffi.Pointer<GstQuery> query,
+    ffi.Pointer<ffi.UnsignedInt> n_cmds,
+  ) {
+    return _gst_navigation_query_parse_commands_length(
+      query,
+      n_cmds,
+    );
+  }
+
+  late final _gst_navigation_query_parse_commands_lengthPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstQuery>, ffi.Pointer<ffi.UnsignedInt>)>>(
+      'gst_navigation_query_parse_commands_length');
+  late final _gst_navigation_query_parse_commands_length =
+      _gst_navigation_query_parse_commands_lengthPtr.asFunction<
+          int Function(ffi.Pointer<GstQuery>, ffi.Pointer<ffi.UnsignedInt>)>();
+
+  int gst_navigation_query_parse_commands_nth(
+    ffi.Pointer<GstQuery> query,
+    int nth,
+    ffi.Pointer<ffi.Int32> cmd,
+  ) {
+    return _gst_navigation_query_parse_commands_nth(
+      query,
+      nth,
+      cmd,
+    );
+  }
+
+  late final _gst_navigation_query_parse_commands_nthPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstQuery>, ffi.UnsignedInt,
+                  ffi.Pointer<ffi.Int32>)>>(
+      'gst_navigation_query_parse_commands_nth');
+  late final _gst_navigation_query_parse_commands_nth =
+      _gst_navigation_query_parse_commands_nthPtr.asFunction<
+          int Function(ffi.Pointer<GstQuery>, int, ffi.Pointer<ffi.Int32>)>();
+
+  ffi.Pointer<GstQuery> gst_navigation_query_new_angles() {
+    return _gst_navigation_query_new_angles();
+  }
+
+  late final _gst_navigation_query_new_anglesPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstQuery> Function()>>(
+          'gst_navigation_query_new_angles');
+  late final _gst_navigation_query_new_angles =
+      _gst_navigation_query_new_anglesPtr
+          .asFunction<ffi.Pointer<GstQuery> Function()>();
+
+  void gst_navigation_query_set_angles(
+    ffi.Pointer<GstQuery> query,
+    int cur_angle,
+    int n_angles,
+  ) {
+    return _gst_navigation_query_set_angles(
+      query,
+      cur_angle,
+      n_angles,
+    );
+  }
+
+  late final _gst_navigation_query_set_anglesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstQuery>, ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_navigation_query_set_angles');
+  late final _gst_navigation_query_set_angles =
+      _gst_navigation_query_set_anglesPtr
+          .asFunction<void Function(ffi.Pointer<GstQuery>, int, int)>();
+
+  int gst_navigation_query_parse_angles(
+    ffi.Pointer<GstQuery> query,
+    ffi.Pointer<ffi.UnsignedInt> cur_angle,
+    ffi.Pointer<ffi.UnsignedInt> n_angles,
+  ) {
+    return _gst_navigation_query_parse_angles(
+      query,
+      cur_angle,
+      n_angles,
+    );
+  }
+
+  late final _gst_navigation_query_parse_anglesPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstQuery>,
+                  ffi.Pointer<ffi.UnsignedInt>, ffi.Pointer<ffi.UnsignedInt>)>>(
+      'gst_navigation_query_parse_angles');
+  late final _gst_navigation_query_parse_angles =
+      _gst_navigation_query_parse_anglesPtr.asFunction<
+          int Function(ffi.Pointer<GstQuery>, ffi.Pointer<ffi.UnsignedInt>,
+              ffi.Pointer<ffi.UnsignedInt>)>();
+
+  int gst_navigation_message_get_type(
+    ffi.Pointer<GstMessage> message,
+  ) {
+    return _gst_navigation_message_get_type(
+      message,
+    );
+  }
+
+  late final _gst_navigation_message_get_typePtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstMessage>)>>(
+          'gst_navigation_message_get_type');
+  late final _gst_navigation_message_get_type =
+      _gst_navigation_message_get_typePtr
+          .asFunction<int Function(ffi.Pointer<GstMessage>)>();
+
+  ffi.Pointer<GstMessage> gst_navigation_message_new_mouse_over(
+    ffi.Pointer<GstObject> src,
+    int active,
+  ) {
+    return _gst_navigation_message_new_mouse_over(
+      src,
+      active,
+    );
+  }
+
+  late final _gst_navigation_message_new_mouse_overPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstMessage> Function(ffi.Pointer<GstObject>,
+              ffi.Int)>>('gst_navigation_message_new_mouse_over');
+  late final _gst_navigation_message_new_mouse_over =
+      _gst_navigation_message_new_mouse_overPtr.asFunction<
+          ffi.Pointer<GstMessage> Function(ffi.Pointer<GstObject>, int)>();
+
+  int gst_navigation_message_parse_mouse_over(
+    ffi.Pointer<GstMessage> message,
+    ffi.Pointer<ffi.Int> active,
+  ) {
+    return _gst_navigation_message_parse_mouse_over(
+      message,
+      active,
+    );
+  }
+
+  late final _gst_navigation_message_parse_mouse_overPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstMessage>, ffi.Pointer<ffi.Int>)>>(
+      'gst_navigation_message_parse_mouse_over');
+  late final _gst_navigation_message_parse_mouse_over =
+      _gst_navigation_message_parse_mouse_overPtr.asFunction<
+          int Function(ffi.Pointer<GstMessage>, ffi.Pointer<ffi.Int>)>();
+
+  ffi.Pointer<GstMessage> gst_navigation_message_new_commands_changed(
+    ffi.Pointer<GstObject> src,
+  ) {
+    return _gst_navigation_message_new_commands_changed(
+      src,
+    );
+  }
+
+  late final _gst_navigation_message_new_commands_changedPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstMessage> Function(ffi.Pointer<GstObject>)>>(
+      'gst_navigation_message_new_commands_changed');
+  late final _gst_navigation_message_new_commands_changed =
+      _gst_navigation_message_new_commands_changedPtr.asFunction<
+          ffi.Pointer<GstMessage> Function(ffi.Pointer<GstObject>)>();
+
+  ffi.Pointer<GstMessage> gst_navigation_message_new_angles_changed(
+    ffi.Pointer<GstObject> src,
+    int cur_angle,
+    int n_angles,
+  ) {
+    return _gst_navigation_message_new_angles_changed(
+      src,
+      cur_angle,
+      n_angles,
+    );
+  }
+
+  late final _gst_navigation_message_new_angles_changedPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstMessage> Function(
+              ffi.Pointer<GstObject>,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_navigation_message_new_angles_changed');
+  late final _gst_navigation_message_new_angles_changed =
+      _gst_navigation_message_new_angles_changedPtr.asFunction<
+          ffi.Pointer<GstMessage> Function(ffi.Pointer<GstObject>, int, int)>();
+
+  int gst_navigation_message_parse_angles_changed(
+    ffi.Pointer<GstMessage> message,
+    ffi.Pointer<ffi.UnsignedInt> cur_angle,
+    ffi.Pointer<ffi.UnsignedInt> n_angles,
+  ) {
+    return _gst_navigation_message_parse_angles_changed(
+      message,
+      cur_angle,
+      n_angles,
+    );
+  }
+
+  late final _gst_navigation_message_parse_angles_changedPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstMessage>,
+                  ffi.Pointer<ffi.UnsignedInt>, ffi.Pointer<ffi.UnsignedInt>)>>(
+      'gst_navigation_message_parse_angles_changed');
+  late final _gst_navigation_message_parse_angles_changed =
+      _gst_navigation_message_parse_angles_changedPtr.asFunction<
+          int Function(ffi.Pointer<GstMessage>, ffi.Pointer<ffi.UnsignedInt>,
+              ffi.Pointer<ffi.UnsignedInt>)>();
+
+  ffi.Pointer<GstMessage> gst_navigation_message_new_event(
+    ffi.Pointer<GstObject> src,
+    ffi.Pointer<GstEvent> event,
+  ) {
+    return _gst_navigation_message_new_event(
+      src,
+      event,
+    );
+  }
+
+  late final _gst_navigation_message_new_eventPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstMessage> Function(ffi.Pointer<GstObject>,
+              ffi.Pointer<GstEvent>)>>('gst_navigation_message_new_event');
+  late final _gst_navigation_message_new_event =
+      _gst_navigation_message_new_eventPtr.asFunction<
+          ffi.Pointer<GstMessage> Function(
+              ffi.Pointer<GstObject>, ffi.Pointer<GstEvent>)>();
+
+  int gst_navigation_message_parse_event(
+    ffi.Pointer<GstMessage> message,
+    ffi.Pointer<ffi.Pointer<GstEvent>> event,
+  ) {
+    return _gst_navigation_message_parse_event(
+      message,
+      event,
+    );
+  }
+
+  late final _gst_navigation_message_parse_eventPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstMessage>,
+                  ffi.Pointer<ffi.Pointer<GstEvent>>)>>(
+      'gst_navigation_message_parse_event');
+  late final _gst_navigation_message_parse_event =
+      _gst_navigation_message_parse_eventPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstMessage>, ffi.Pointer<ffi.Pointer<GstEvent>>)>();
+
+  int gst_navigation_event_get_type(
+    ffi.Pointer<GstEvent> event,
+  ) {
+    return _gst_navigation_event_get_type(
+      event,
+    );
+  }
+
+  late final _gst_navigation_event_get_typePtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstEvent>)>>(
+          'gst_navigation_event_get_type');
+  late final _gst_navigation_event_get_type = _gst_navigation_event_get_typePtr
+      .asFunction<int Function(ffi.Pointer<GstEvent>)>();
+
+  ffi.Pointer<GstEvent> gst_navigation_event_new_key_press(
+    ffi.Pointer<ffi.Char> key,
+    int state,
+  ) {
+    return _gst_navigation_event_new_key_press(
+      key,
+      state,
+    );
+  }
+
+  late final _gst_navigation_event_new_key_pressPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstEvent> Function(ffi.Pointer<ffi.Char>,
+              ffi.Int32)>>('gst_navigation_event_new_key_press');
+  late final _gst_navigation_event_new_key_press =
+      _gst_navigation_event_new_key_pressPtr.asFunction<
+          ffi.Pointer<GstEvent> Function(ffi.Pointer<ffi.Char>, int)>();
+
+  ffi.Pointer<GstEvent> gst_navigation_event_new_key_release(
+    ffi.Pointer<ffi.Char> key,
+    int state,
+  ) {
+    return _gst_navigation_event_new_key_release(
+      key,
+      state,
+    );
+  }
+
+  late final _gst_navigation_event_new_key_releasePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstEvent> Function(ffi.Pointer<ffi.Char>,
+              ffi.Int32)>>('gst_navigation_event_new_key_release');
+  late final _gst_navigation_event_new_key_release =
+      _gst_navigation_event_new_key_releasePtr.asFunction<
+          ffi.Pointer<GstEvent> Function(ffi.Pointer<ffi.Char>, int)>();
+
+  ffi.Pointer<GstEvent> gst_navigation_event_new_mouse_button_press(
+    int button,
+    double x,
+    double y,
+    int state,
+  ) {
+    return _gst_navigation_event_new_mouse_button_press(
+      button,
+      x,
+      y,
+      state,
+    );
+  }
+
+  late final _gst_navigation_event_new_mouse_button_pressPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstEvent> Function(ffi.Int, ffi.Double, ffi.Double,
+              ffi.Int32)>>('gst_navigation_event_new_mouse_button_press');
+  late final _gst_navigation_event_new_mouse_button_press =
+      _gst_navigation_event_new_mouse_button_pressPtr.asFunction<
+          ffi.Pointer<GstEvent> Function(int, double, double, int)>();
+
+  ffi.Pointer<GstEvent> gst_navigation_event_new_mouse_button_release(
+    int button,
+    double x,
+    double y,
+    int state,
+  ) {
+    return _gst_navigation_event_new_mouse_button_release(
+      button,
+      x,
+      y,
+      state,
+    );
+  }
+
+  late final _gst_navigation_event_new_mouse_button_releasePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstEvent> Function(ffi.Int, ffi.Double, ffi.Double,
+              ffi.Int32)>>('gst_navigation_event_new_mouse_button_release');
+  late final _gst_navigation_event_new_mouse_button_release =
+      _gst_navigation_event_new_mouse_button_releasePtr.asFunction<
+          ffi.Pointer<GstEvent> Function(int, double, double, int)>();
+
+  ffi.Pointer<GstEvent> gst_navigation_event_new_mouse_move(
+    double x,
+    double y,
+    int state,
+  ) {
+    return _gst_navigation_event_new_mouse_move(
+      x,
+      y,
+      state,
+    );
+  }
+
+  late final _gst_navigation_event_new_mouse_movePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstEvent> Function(ffi.Double, ffi.Double,
+              ffi.Int32)>>('gst_navigation_event_new_mouse_move');
+  late final _gst_navigation_event_new_mouse_move =
+      _gst_navigation_event_new_mouse_movePtr
+          .asFunction<ffi.Pointer<GstEvent> Function(double, double, int)>();
+
+  ffi.Pointer<GstEvent> gst_navigation_event_new_mouse_scroll(
+    double x,
+    double y,
+    double delta_x,
+    double delta_y,
+    int state,
+  ) {
+    return _gst_navigation_event_new_mouse_scroll(
+      x,
+      y,
+      delta_x,
+      delta_y,
+      state,
+    );
+  }
+
+  late final _gst_navigation_event_new_mouse_scrollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstEvent> Function(ffi.Double, ffi.Double, ffi.Double,
+              ffi.Double, ffi.Int32)>>('gst_navigation_event_new_mouse_scroll');
+  late final _gst_navigation_event_new_mouse_scroll =
+      _gst_navigation_event_new_mouse_scrollPtr.asFunction<
+          ffi.Pointer<GstEvent> Function(
+              double, double, double, double, int)>();
+
+  ffi.Pointer<GstEvent> gst_navigation_event_new_command(
+    int command,
+  ) {
+    return _gst_navigation_event_new_command(
+      command,
+    );
+  }
+
+  late final _gst_navigation_event_new_commandPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstEvent> Function(ffi.Int32)>>(
+          'gst_navigation_event_new_command');
+  late final _gst_navigation_event_new_command =
+      _gst_navigation_event_new_commandPtr
+          .asFunction<ffi.Pointer<GstEvent> Function(int)>();
+
+  ffi.Pointer<GstEvent> gst_navigation_event_new_touch_down(
+    int identifier,
+    double x,
+    double y,
+    double pressure,
+    int state,
+  ) {
+    return _gst_navigation_event_new_touch_down(
+      identifier,
+      x,
+      y,
+      pressure,
+      state,
+    );
+  }
+
+  late final _gst_navigation_event_new_touch_downPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstEvent> Function(
+              ffi.UnsignedInt,
+              ffi.Double,
+              ffi.Double,
+              ffi.Double,
+              ffi.Int32)>>('gst_navigation_event_new_touch_down');
+  late final _gst_navigation_event_new_touch_down =
+      _gst_navigation_event_new_touch_downPtr.asFunction<
+          ffi.Pointer<GstEvent> Function(int, double, double, double, int)>();
+
+  ffi.Pointer<GstEvent> gst_navigation_event_new_touch_motion(
+    int identifier,
+    double x,
+    double y,
+    double pressure,
+    int state,
+  ) {
+    return _gst_navigation_event_new_touch_motion(
+      identifier,
+      x,
+      y,
+      pressure,
+      state,
+    );
+  }
+
+  late final _gst_navigation_event_new_touch_motionPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstEvent> Function(
+              ffi.UnsignedInt,
+              ffi.Double,
+              ffi.Double,
+              ffi.Double,
+              ffi.Int32)>>('gst_navigation_event_new_touch_motion');
+  late final _gst_navigation_event_new_touch_motion =
+      _gst_navigation_event_new_touch_motionPtr.asFunction<
+          ffi.Pointer<GstEvent> Function(int, double, double, double, int)>();
+
+  ffi.Pointer<GstEvent> gst_navigation_event_new_touch_up(
+    int identifier,
+    double x,
+    double y,
+    int state,
+  ) {
+    return _gst_navigation_event_new_touch_up(
+      identifier,
+      x,
+      y,
+      state,
+    );
+  }
+
+  late final _gst_navigation_event_new_touch_upPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstEvent> Function(ffi.UnsignedInt, ffi.Double,
+              ffi.Double, ffi.Int32)>>('gst_navigation_event_new_touch_up');
+  late final _gst_navigation_event_new_touch_up =
+      _gst_navigation_event_new_touch_upPtr.asFunction<
+          ffi.Pointer<GstEvent> Function(int, double, double, int)>();
+
+  ffi.Pointer<GstEvent> gst_navigation_event_new_touch_frame(
+    int state,
+  ) {
+    return _gst_navigation_event_new_touch_frame(
+      state,
+    );
+  }
+
+  late final _gst_navigation_event_new_touch_framePtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstEvent> Function(ffi.Int32)>>(
+          'gst_navigation_event_new_touch_frame');
+  late final _gst_navigation_event_new_touch_frame =
+      _gst_navigation_event_new_touch_framePtr
+          .asFunction<ffi.Pointer<GstEvent> Function(int)>();
+
+  ffi.Pointer<GstEvent> gst_navigation_event_new_touch_cancel(
+    int state,
+  ) {
+    return _gst_navigation_event_new_touch_cancel(
+      state,
+    );
+  }
+
+  late final _gst_navigation_event_new_touch_cancelPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstEvent> Function(ffi.Int32)>>(
+          'gst_navigation_event_new_touch_cancel');
+  late final _gst_navigation_event_new_touch_cancel =
+      _gst_navigation_event_new_touch_cancelPtr
+          .asFunction<ffi.Pointer<GstEvent> Function(int)>();
+
+  int gst_navigation_event_parse_key_event(
+    ffi.Pointer<GstEvent> event,
+    ffi.Pointer<ffi.Pointer<ffi.Char>> key,
+  ) {
+    return _gst_navigation_event_parse_key_event(
+      event,
+      key,
+    );
+  }
+
+  late final _gst_navigation_event_parse_key_eventPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstEvent>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>>(
+      'gst_navigation_event_parse_key_event');
+  late final _gst_navigation_event_parse_key_event =
+      _gst_navigation_event_parse_key_eventPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstEvent>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
+
+  int gst_navigation_event_parse_mouse_button_event(
+    ffi.Pointer<GstEvent> event,
+    ffi.Pointer<ffi.Int> button,
+    ffi.Pointer<ffi.Double> x,
+    ffi.Pointer<ffi.Double> y,
+  ) {
+    return _gst_navigation_event_parse_mouse_button_event(
+      event,
+      button,
+      x,
+      y,
+    );
+  }
+
+  late final _gst_navigation_event_parse_mouse_button_eventPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstEvent>, ffi.Pointer<ffi.Int>,
+                  ffi.Pointer<ffi.Double>, ffi.Pointer<ffi.Double>)>>(
+      'gst_navigation_event_parse_mouse_button_event');
+  late final _gst_navigation_event_parse_mouse_button_event =
+      _gst_navigation_event_parse_mouse_button_eventPtr.asFunction<
+          int Function(ffi.Pointer<GstEvent>, ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Double>, ffi.Pointer<ffi.Double>)>();
+
+  int gst_navigation_event_parse_mouse_move_event(
+    ffi.Pointer<GstEvent> event,
+    ffi.Pointer<ffi.Double> x,
+    ffi.Pointer<ffi.Double> y,
+  ) {
+    return _gst_navigation_event_parse_mouse_move_event(
+      event,
+      x,
+      y,
+    );
+  }
+
+  late final _gst_navigation_event_parse_mouse_move_eventPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstEvent>, ffi.Pointer<ffi.Double>,
+                  ffi.Pointer<ffi.Double>)>>(
+      'gst_navigation_event_parse_mouse_move_event');
+  late final _gst_navigation_event_parse_mouse_move_event =
+      _gst_navigation_event_parse_mouse_move_eventPtr.asFunction<
+          int Function(ffi.Pointer<GstEvent>, ffi.Pointer<ffi.Double>,
+              ffi.Pointer<ffi.Double>)>();
+
+  int gst_navigation_event_parse_mouse_scroll_event(
+    ffi.Pointer<GstEvent> event,
+    ffi.Pointer<ffi.Double> x,
+    ffi.Pointer<ffi.Double> y,
+    ffi.Pointer<ffi.Double> delta_x,
+    ffi.Pointer<ffi.Double> delta_y,
+  ) {
+    return _gst_navigation_event_parse_mouse_scroll_event(
+      event,
+      x,
+      y,
+      delta_x,
+      delta_y,
+    );
+  }
+
+  late final _gst_navigation_event_parse_mouse_scroll_eventPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstEvent>,
+                  ffi.Pointer<ffi.Double>,
+                  ffi.Pointer<ffi.Double>,
+                  ffi.Pointer<ffi.Double>,
+                  ffi.Pointer<ffi.Double>)>>(
+      'gst_navigation_event_parse_mouse_scroll_event');
+  late final _gst_navigation_event_parse_mouse_scroll_event =
+      _gst_navigation_event_parse_mouse_scroll_eventPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstEvent>,
+              ffi.Pointer<ffi.Double>,
+              ffi.Pointer<ffi.Double>,
+              ffi.Pointer<ffi.Double>,
+              ffi.Pointer<ffi.Double>)>();
+
+  int gst_navigation_event_parse_command(
+    ffi.Pointer<GstEvent> event,
+    ffi.Pointer<ffi.Int32> command,
+  ) {
+    return _gst_navigation_event_parse_command(
+      event,
+      command,
+    );
+  }
+
+  late final _gst_navigation_event_parse_commandPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstEvent>,
+              ffi.Pointer<ffi.Int32>)>>('gst_navigation_event_parse_command');
+  late final _gst_navigation_event_parse_command =
+      _gst_navigation_event_parse_commandPtr.asFunction<
+          int Function(ffi.Pointer<GstEvent>, ffi.Pointer<ffi.Int32>)>();
+
+  int gst_navigation_event_parse_touch_event(
+    ffi.Pointer<GstEvent> event,
+    ffi.Pointer<ffi.UnsignedInt> identifier,
+    ffi.Pointer<ffi.Double> x,
+    ffi.Pointer<ffi.Double> y,
+    ffi.Pointer<ffi.Double> pressure,
+  ) {
+    return _gst_navigation_event_parse_touch_event(
+      event,
+      identifier,
+      x,
+      y,
+      pressure,
+    );
+  }
+
+  late final _gst_navigation_event_parse_touch_eventPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstEvent>,
+                  ffi.Pointer<ffi.UnsignedInt>,
+                  ffi.Pointer<ffi.Double>,
+                  ffi.Pointer<ffi.Double>,
+                  ffi.Pointer<ffi.Double>)>>(
+      'gst_navigation_event_parse_touch_event');
+  late final _gst_navigation_event_parse_touch_event =
+      _gst_navigation_event_parse_touch_eventPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstEvent>,
+              ffi.Pointer<ffi.UnsignedInt>,
+              ffi.Pointer<ffi.Double>,
+              ffi.Pointer<ffi.Double>,
+              ffi.Pointer<ffi.Double>)>();
+
+  int gst_navigation_event_parse_touch_up_event(
+    ffi.Pointer<GstEvent> event,
+    ffi.Pointer<ffi.UnsignedInt> identifier,
+    ffi.Pointer<ffi.Double> x,
+    ffi.Pointer<ffi.Double> y,
+  ) {
+    return _gst_navigation_event_parse_touch_up_event(
+      event,
+      identifier,
+      x,
+      y,
+    );
+  }
+
+  late final _gst_navigation_event_parse_touch_up_eventPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstEvent>,
+                  ffi.Pointer<ffi.UnsignedInt>,
+                  ffi.Pointer<ffi.Double>,
+                  ffi.Pointer<ffi.Double>)>>(
+      'gst_navigation_event_parse_touch_up_event');
+  late final _gst_navigation_event_parse_touch_up_event =
+      _gst_navigation_event_parse_touch_up_eventPtr.asFunction<
+          int Function(ffi.Pointer<GstEvent>, ffi.Pointer<ffi.UnsignedInt>,
+              ffi.Pointer<ffi.Double>, ffi.Pointer<ffi.Double>)>();
+
+  int gst_navigation_event_get_coordinates(
+    ffi.Pointer<GstEvent> event,
+    ffi.Pointer<ffi.Double> x,
+    ffi.Pointer<ffi.Double> y,
+  ) {
+    return _gst_navigation_event_get_coordinates(
+      event,
+      x,
+      y,
+    );
+  }
+
+  late final _gst_navigation_event_get_coordinatesPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstEvent>, ffi.Pointer<ffi.Double>,
+                  ffi.Pointer<ffi.Double>)>>(
+      'gst_navigation_event_get_coordinates');
+  late final _gst_navigation_event_get_coordinates =
+      _gst_navigation_event_get_coordinatesPtr.asFunction<
+          int Function(ffi.Pointer<GstEvent>, ffi.Pointer<ffi.Double>,
+              ffi.Pointer<ffi.Double>)>();
+
+  int gst_navigation_event_set_coordinates(
+    ffi.Pointer<GstEvent> event,
+    double x,
+    double y,
+  ) {
+    return _gst_navigation_event_set_coordinates(
+      event,
+      x,
+      y,
+    );
+  }
+
+  late final _gst_navigation_event_set_coordinatesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstEvent>, ffi.Double,
+              ffi.Double)>>('gst_navigation_event_set_coordinates');
+  late final _gst_navigation_event_set_coordinates =
+      _gst_navigation_event_set_coordinatesPtr
+          .asFunction<int Function(ffi.Pointer<GstEvent>, double, double)>();
+
+  void gst_navigation_send_event(
+    ffi.Pointer<GstNavigation> navigation,
+    ffi.Pointer<GstStructure> structure,
+  ) {
+    return _gst_navigation_send_event(
+      navigation,
+      structure,
+    );
+  }
+
+  late final _gst_navigation_send_eventPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstNavigation>,
+              ffi.Pointer<GstStructure>)>>('gst_navigation_send_event');
+  late final _gst_navigation_send_event =
+      _gst_navigation_send_eventPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstNavigation>, ffi.Pointer<GstStructure>)>();
+
+  void gst_navigation_send_key_event(
+    ffi.Pointer<GstNavigation> navigation,
+    ffi.Pointer<ffi.Char> event,
+    ffi.Pointer<ffi.Char> key,
+  ) {
+    return _gst_navigation_send_key_event(
+      navigation,
+      event,
+      key,
+    );
+  }
+
+  late final _gst_navigation_send_key_eventPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstNavigation>, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>)>>('gst_navigation_send_key_event');
+  late final _gst_navigation_send_key_event =
+      _gst_navigation_send_key_eventPtr.asFunction<
+          void Function(ffi.Pointer<GstNavigation>, ffi.Pointer<ffi.Char>,
+              ffi.Pointer<ffi.Char>)>();
+
+  void gst_navigation_send_mouse_event(
+    ffi.Pointer<GstNavigation> navigation,
+    ffi.Pointer<ffi.Char> event,
+    int button,
+    double x,
+    double y,
+  ) {
+    return _gst_navigation_send_mouse_event(
+      navigation,
+      event,
+      button,
+      x,
+      y,
+    );
+  }
+
+  late final _gst_navigation_send_mouse_eventPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstNavigation>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Int,
+              ffi.Double,
+              ffi.Double)>>('gst_navigation_send_mouse_event');
+  late final _gst_navigation_send_mouse_event =
+      _gst_navigation_send_mouse_eventPtr.asFunction<
+          void Function(ffi.Pointer<GstNavigation>, ffi.Pointer<ffi.Char>, int,
+              double, double)>();
+
+  void gst_navigation_send_mouse_scroll_event(
+    ffi.Pointer<GstNavigation> navigation,
+    double x,
+    double y,
+    double delta_x,
+    double delta_y,
+  ) {
+    return _gst_navigation_send_mouse_scroll_event(
+      navigation,
+      x,
+      y,
+      delta_x,
+      delta_y,
+    );
+  }
+
+  late final _gst_navigation_send_mouse_scroll_eventPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstNavigation>,
+              ffi.Double,
+              ffi.Double,
+              ffi.Double,
+              ffi.Double)>>('gst_navigation_send_mouse_scroll_event');
+  late final _gst_navigation_send_mouse_scroll_event =
+      _gst_navigation_send_mouse_scroll_eventPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstNavigation>, double, double, double, double)>();
+
+  void gst_navigation_send_command(
+    ffi.Pointer<GstNavigation> navigation,
+    int command,
+  ) {
+    return _gst_navigation_send_command(
+      navigation,
+      command,
+    );
+  }
+
+  late final _gst_navigation_send_commandPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstNavigation>,
+              ffi.Int32)>>('gst_navigation_send_command');
+  late final _gst_navigation_send_command = _gst_navigation_send_commandPtr
+      .asFunction<void Function(ffi.Pointer<GstNavigation>, int)>();
+
+  void gst_navigation_send_event_simple(
+    ffi.Pointer<GstNavigation> navigation,
+    ffi.Pointer<GstEvent> event,
+  ) {
+    return _gst_navigation_send_event_simple(
+      navigation,
+      event,
+    );
+  }
+
+  late final _gst_navigation_send_event_simplePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstNavigation>,
+              ffi.Pointer<GstEvent>)>>('gst_navigation_send_event_simple');
+  late final _gst_navigation_send_event_simple =
+      _gst_navigation_send_event_simplePtr.asFunction<
+          void Function(ffi.Pointer<GstNavigation>, ffi.Pointer<GstEvent>)>();
+
+  int gst_navigation_event_parse_modifier_state(
+    ffi.Pointer<GstEvent> event,
+    ffi.Pointer<ffi.Int32> state,
+  ) {
+    return _gst_navigation_event_parse_modifier_state(
+      event,
+      state,
+    );
+  }
+
+  late final _gst_navigation_event_parse_modifier_statePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstEvent>, ffi.Pointer<ffi.Int32>)>>(
+      'gst_navigation_event_parse_modifier_state');
+  late final _gst_navigation_event_parse_modifier_state =
+      _gst_navigation_event_parse_modifier_statePtr.asFunction<
+          int Function(ffi.Pointer<GstEvent>, ffi.Pointer<ffi.Int32>)>();
+
+  int gst_ancillary_meta_api_get_type() {
+    return _gst_ancillary_meta_api_get_type();
+  }
+
+  late final _gst_ancillary_meta_api_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_ancillary_meta_api_get_type');
+  late final _gst_ancillary_meta_api_get_type =
+      _gst_ancillary_meta_api_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstMetaInfo> gst_ancillary_meta_get_info() {
+    return _gst_ancillary_meta_get_info();
+  }
+
+  late final _gst_ancillary_meta_get_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstMetaInfo> Function()>>(
+          'gst_ancillary_meta_get_info');
+  late final _gst_ancillary_meta_get_info = _gst_ancillary_meta_get_infoPtr
+      .asFunction<ffi.Pointer<GstMetaInfo> Function()>();
+
+  ffi.Pointer<GstAncillaryMeta> gst_buffer_add_ancillary_meta(
+    ffi.Pointer<GstBuffer> buffer,
+  ) {
+    return _gst_buffer_add_ancillary_meta(
+      buffer,
+    );
+  }
+
+  late final _gst_buffer_add_ancillary_metaPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstAncillaryMeta> Function(
+              ffi.Pointer<GstBuffer>)>>('gst_buffer_add_ancillary_meta');
+  late final _gst_buffer_add_ancillary_meta =
+      _gst_buffer_add_ancillary_metaPtr.asFunction<
+          ffi.Pointer<GstAncillaryMeta> Function(ffi.Pointer<GstBuffer>)>();
+
+  int gst_video_afd_meta_api_get_type() {
+    return _gst_video_afd_meta_api_get_type();
+  }
+
+  late final _gst_video_afd_meta_api_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_afd_meta_api_get_type');
+  late final _gst_video_afd_meta_api_get_type =
+      _gst_video_afd_meta_api_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstMetaInfo> gst_video_afd_meta_get_info() {
+    return _gst_video_afd_meta_get_info();
+  }
+
+  late final _gst_video_afd_meta_get_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstMetaInfo> Function()>>(
+          'gst_video_afd_meta_get_info');
+  late final _gst_video_afd_meta_get_info = _gst_video_afd_meta_get_infoPtr
+      .asFunction<ffi.Pointer<GstMetaInfo> Function()>();
+
+  ffi.Pointer<GstVideoAFDMeta> gst_buffer_add_video_afd_meta(
+    ffi.Pointer<GstBuffer> buffer,
+    int field,
+    int spec,
+    int afd,
+  ) {
+    return _gst_buffer_add_video_afd_meta(
+      buffer,
+      field,
+      spec,
+      afd,
+    );
+  }
+
+  late final _gst_buffer_add_video_afd_metaPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoAFDMeta> Function(
+              ffi.Pointer<GstBuffer>,
+              ffi.Uint8,
+              ffi.Int32,
+              ffi.Int32)>>('gst_buffer_add_video_afd_meta');
+  late final _gst_buffer_add_video_afd_meta =
+      _gst_buffer_add_video_afd_metaPtr.asFunction<
+          ffi.Pointer<GstVideoAFDMeta> Function(
+              ffi.Pointer<GstBuffer>, int, int, int)>();
+
+  int gst_video_bar_meta_api_get_type() {
+    return _gst_video_bar_meta_api_get_type();
+  }
+
+  late final _gst_video_bar_meta_api_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_bar_meta_api_get_type');
+  late final _gst_video_bar_meta_api_get_type =
+      _gst_video_bar_meta_api_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstMetaInfo> gst_video_bar_meta_get_info() {
+    return _gst_video_bar_meta_get_info();
+  }
+
+  late final _gst_video_bar_meta_get_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstMetaInfo> Function()>>(
+          'gst_video_bar_meta_get_info');
+  late final _gst_video_bar_meta_get_info = _gst_video_bar_meta_get_infoPtr
+      .asFunction<ffi.Pointer<GstMetaInfo> Function()>();
+
+  ffi.Pointer<GstVideoBarMeta> gst_buffer_add_video_bar_meta(
+    ffi.Pointer<GstBuffer> buffer,
+    int field,
+    int is_letterbox,
+    int bar_data1,
+    int bar_data2,
+  ) {
+    return _gst_buffer_add_video_bar_meta(
+      buffer,
+      field,
+      is_letterbox,
+      bar_data1,
+      bar_data2,
+    );
+  }
+
+  late final _gst_buffer_add_video_bar_metaPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoBarMeta> Function(
+              ffi.Pointer<GstBuffer>,
+              ffi.Uint8,
+              ffi.Int,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt)>>('gst_buffer_add_video_bar_meta');
+  late final _gst_buffer_add_video_bar_meta =
+      _gst_buffer_add_video_bar_metaPtr.asFunction<
+          ffi.Pointer<GstVideoBarMeta> Function(
+              ffi.Pointer<GstBuffer>, int, int, int, int)>();
+
+  int gst_video_caption_type_from_caps(
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_video_caption_type_from_caps(
+      caps,
+    );
+  }
+
+  late final _gst_video_caption_type_from_capsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstCaps>)>>(
+          'gst_video_caption_type_from_caps');
+  late final _gst_video_caption_type_from_caps =
+      _gst_video_caption_type_from_capsPtr
+          .asFunction<int Function(ffi.Pointer<GstCaps>)>();
+
+  ffi.Pointer<GstCaps> gst_video_caption_type_to_caps(
+    int type,
+  ) {
+    return _gst_video_caption_type_to_caps(
+      type,
+    );
+  }
+
+  late final _gst_video_caption_type_to_capsPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstCaps> Function(ffi.Int32)>>(
+          'gst_video_caption_type_to_caps');
+  late final _gst_video_caption_type_to_caps =
+      _gst_video_caption_type_to_capsPtr
+          .asFunction<ffi.Pointer<GstCaps> Function(int)>();
+
+  int gst_video_caption_meta_api_get_type() {
+    return _gst_video_caption_meta_api_get_type();
+  }
+
+  late final _gst_video_caption_meta_api_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_caption_meta_api_get_type');
+  late final _gst_video_caption_meta_api_get_type =
+      _gst_video_caption_meta_api_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstMetaInfo> gst_video_caption_meta_get_info() {
+    return _gst_video_caption_meta_get_info();
+  }
+
+  late final _gst_video_caption_meta_get_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstMetaInfo> Function()>>(
+          'gst_video_caption_meta_get_info');
+  late final _gst_video_caption_meta_get_info =
+      _gst_video_caption_meta_get_infoPtr
+          .asFunction<ffi.Pointer<GstMetaInfo> Function()>();
+
+  ffi.Pointer<GstVideoCaptionMeta> gst_buffer_add_video_caption_meta(
+    ffi.Pointer<GstBuffer> buffer,
+    int caption_type,
+    ffi.Pointer<ffi.Uint8> data,
+    int size,
+  ) {
+    return _gst_buffer_add_video_caption_meta(
+      buffer,
+      caption_type,
+      data,
+      size,
+    );
+  }
+
+  late final _gst_buffer_add_video_caption_metaPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoCaptionMeta> Function(
+              ffi.Pointer<GstBuffer>,
+              ffi.Int32,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Size)>>('gst_buffer_add_video_caption_meta');
+  late final _gst_buffer_add_video_caption_meta =
+      _gst_buffer_add_video_caption_metaPtr.asFunction<
+          ffi.Pointer<GstVideoCaptionMeta> Function(
+              ffi.Pointer<GstBuffer>, int, ffi.Pointer<ffi.Uint8>, int)>();
+
+  int gst_video_vbi_parser_get_type() {
+    return _gst_video_vbi_parser_get_type();
+  }
+
+  late final _gst_video_vbi_parser_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_vbi_parser_get_type');
+  late final _gst_video_vbi_parser_get_type =
+      _gst_video_vbi_parser_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_vbi_parser_get_ancillary(
+    ffi.Pointer<GstVideoVBIParser> parser,
+    ffi.Pointer<GstVideoAncillary> anc,
+  ) {
+    return _gst_video_vbi_parser_get_ancillary(
+      parser,
+      anc,
+    );
+  }
+
+  late final _gst_video_vbi_parser_get_ancillaryPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<GstVideoVBIParser>,
+                  ffi.Pointer<GstVideoAncillary>)>>(
+      'gst_video_vbi_parser_get_ancillary');
+  late final _gst_video_vbi_parser_get_ancillary =
+      _gst_video_vbi_parser_get_ancillaryPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoVBIParser>,
+              ffi.Pointer<GstVideoAncillary>)>();
+
+  ffi.Pointer<GstVideoVBIParser> gst_video_vbi_parser_new(
+    int format,
+    int pixel_width,
+  ) {
+    return _gst_video_vbi_parser_new(
+      format,
+      pixel_width,
+    );
+  }
+
+  late final _gst_video_vbi_parser_newPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoVBIParser> Function(
+              ffi.Int32, ffi.Uint32)>>('gst_video_vbi_parser_new');
+  late final _gst_video_vbi_parser_new = _gst_video_vbi_parser_newPtr
+      .asFunction<ffi.Pointer<GstVideoVBIParser> Function(int, int)>();
+
+  ffi.Pointer<GstVideoVBIParser> gst_video_vbi_parser_copy(
+    ffi.Pointer<GstVideoVBIParser> parser,
+  ) {
+    return _gst_video_vbi_parser_copy(
+      parser,
+    );
+  }
+
+  late final _gst_video_vbi_parser_copyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoVBIParser> Function(
+              ffi.Pointer<GstVideoVBIParser>)>>('gst_video_vbi_parser_copy');
+  late final _gst_video_vbi_parser_copy =
+      _gst_video_vbi_parser_copyPtr.asFunction<
+          ffi.Pointer<GstVideoVBIParser> Function(
+              ffi.Pointer<GstVideoVBIParser>)>();
+
+  void gst_video_vbi_parser_free(
+    ffi.Pointer<GstVideoVBIParser> parser,
+  ) {
+    return _gst_video_vbi_parser_free(
+      parser,
+    );
+  }
+
+  late final _gst_video_vbi_parser_freePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoVBIParser>)>>(
+      'gst_video_vbi_parser_free');
+  late final _gst_video_vbi_parser_free = _gst_video_vbi_parser_freePtr
+      .asFunction<void Function(ffi.Pointer<GstVideoVBIParser>)>();
+
+  void gst_video_vbi_parser_add_line(
+    ffi.Pointer<GstVideoVBIParser> parser,
+    ffi.Pointer<ffi.Uint8> data,
+  ) {
+    return _gst_video_vbi_parser_add_line(
+      parser,
+      data,
+    );
+  }
+
+  late final _gst_video_vbi_parser_add_linePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoVBIParser>,
+              ffi.Pointer<ffi.Uint8>)>>('gst_video_vbi_parser_add_line');
+  late final _gst_video_vbi_parser_add_line =
+      _gst_video_vbi_parser_add_linePtr.asFunction<
+          void Function(
+              ffi.Pointer<GstVideoVBIParser>, ffi.Pointer<ffi.Uint8>)>();
+
+  int gst_video_vbi_encoder_get_type() {
+    return _gst_video_vbi_encoder_get_type();
+  }
+
+  late final _gst_video_vbi_encoder_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_vbi_encoder_get_type');
+  late final _gst_video_vbi_encoder_get_type =
+      _gst_video_vbi_encoder_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstVideoVBIEncoder> gst_video_vbi_encoder_new(
+    int format,
+    int pixel_width,
+  ) {
+    return _gst_video_vbi_encoder_new(
+      format,
+      pixel_width,
+    );
+  }
+
+  late final _gst_video_vbi_encoder_newPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoVBIEncoder> Function(
+              ffi.Int32, ffi.Uint32)>>('gst_video_vbi_encoder_new');
+  late final _gst_video_vbi_encoder_new = _gst_video_vbi_encoder_newPtr
+      .asFunction<ffi.Pointer<GstVideoVBIEncoder> Function(int, int)>();
+
+  ffi.Pointer<GstVideoVBIEncoder> gst_video_vbi_encoder_copy(
+    ffi.Pointer<GstVideoVBIEncoder> encoder,
+  ) {
+    return _gst_video_vbi_encoder_copy(
+      encoder,
+    );
+  }
+
+  late final _gst_video_vbi_encoder_copyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoVBIEncoder> Function(
+              ffi.Pointer<GstVideoVBIEncoder>)>>('gst_video_vbi_encoder_copy');
+  late final _gst_video_vbi_encoder_copy =
+      _gst_video_vbi_encoder_copyPtr.asFunction<
+          ffi.Pointer<GstVideoVBIEncoder> Function(
+              ffi.Pointer<GstVideoVBIEncoder>)>();
+
+  void gst_video_vbi_encoder_free(
+    ffi.Pointer<GstVideoVBIEncoder> encoder,
+  ) {
+    return _gst_video_vbi_encoder_free(
+      encoder,
+    );
+  }
+
+  late final _gst_video_vbi_encoder_freePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoVBIEncoder>)>>(
+      'gst_video_vbi_encoder_free');
+  late final _gst_video_vbi_encoder_free = _gst_video_vbi_encoder_freePtr
+      .asFunction<void Function(ffi.Pointer<GstVideoVBIEncoder>)>();
+
+  int gst_video_vbi_encoder_add_ancillary(
+    ffi.Pointer<GstVideoVBIEncoder> encoder,
+    int composite,
+    int DID,
+    int SDID_block_number,
+    ffi.Pointer<ffi.Uint8> data,
+    int data_count,
+  ) {
+    return _gst_video_vbi_encoder_add_ancillary(
+      encoder,
+      composite,
+      DID,
+      SDID_block_number,
+      data,
+      data_count,
+    );
+  }
+
+  late final _gst_video_vbi_encoder_add_ancillaryPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoVBIEncoder>,
+              ffi.Int,
+              ffi.Uint8,
+              ffi.Uint8,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.UnsignedInt)>>('gst_video_vbi_encoder_add_ancillary');
+  late final _gst_video_vbi_encoder_add_ancillary =
+      _gst_video_vbi_encoder_add_ancillaryPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoVBIEncoder>, int, int, int,
+              ffi.Pointer<ffi.Uint8>, int)>();
+
+  void gst_video_vbi_encoder_write_line(
+    ffi.Pointer<GstVideoVBIEncoder> encoder,
+    ffi.Pointer<ffi.Uint8> data,
+  ) {
+    return _gst_video_vbi_encoder_write_line(
+      encoder,
+      data,
+    );
+  }
+
+  late final _gst_video_vbi_encoder_write_linePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoVBIEncoder>,
+              ffi.Pointer<ffi.Uint8>)>>('gst_video_vbi_encoder_write_line');
+  late final _gst_video_vbi_encoder_write_line =
+      _gst_video_vbi_encoder_write_linePtr.asFunction<
+          void Function(
+              ffi.Pointer<GstVideoVBIEncoder>, ffi.Pointer<ffi.Uint8>)>();
+
+  void gst_video_blend_scale_linear_RGBA(
+    ffi.Pointer<GstVideoInfo> src,
+    ffi.Pointer<GstBuffer> src_buffer,
+    int dest_height,
+    int dest_width,
+    ffi.Pointer<GstVideoInfo> dest,
+    ffi.Pointer<ffi.Pointer<GstBuffer>> dest_buffer,
+  ) {
+    return _gst_video_blend_scale_linear_RGBA(
+      src,
+      src_buffer,
+      dest_height,
+      dest_width,
+      dest,
+      dest_buffer,
+    );
+  }
+
+  late final _gst_video_blend_scale_linear_RGBAPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  ffi.Pointer<GstVideoInfo>,
+                  ffi.Pointer<GstBuffer>,
+                  ffi.Int,
+                  ffi.Int,
+                  ffi.Pointer<GstVideoInfo>,
+                  ffi.Pointer<ffi.Pointer<GstBuffer>>)>>(
+      'gst_video_blend_scale_linear_RGBA');
+  late final _gst_video_blend_scale_linear_RGBA =
+      _gst_video_blend_scale_linear_RGBAPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<GstBuffer>,
+              int,
+              int,
+              ffi.Pointer<GstVideoInfo>,
+              ffi.Pointer<ffi.Pointer<GstBuffer>>)>();
+
+  int gst_video_blend(
+    ffi.Pointer<GstVideoFrame> dest,
+    ffi.Pointer<GstVideoFrame> src,
+    int x,
+    int y,
+    double global_alpha,
+  ) {
+    return _gst_video_blend(
+      dest,
+      src,
+      x,
+      y,
+      global_alpha,
+    );
+  }
+
+  late final _gst_video_blendPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoFrame>,
+              ffi.Pointer<GstVideoFrame>,
+              ffi.Int,
+              ffi.Int,
+              ffi.Float)>>('gst_video_blend');
+  late final _gst_video_blend = _gst_video_blendPtr.asFunction<
+      int Function(ffi.Pointer<GstVideoFrame>, ffi.Pointer<GstVideoFrame>, int,
+          int, double)>();
+
+  int gst_video_direction_get_type() {
+    return _gst_video_direction_get_type();
+  }
+
+  late final _gst_video_direction_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_direction_get_type');
+  late final _gst_video_direction_get_type =
+      _gst_video_direction_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstEvent> gst_video_event_new_still_frame(
+    int in_still,
+  ) {
+    return _gst_video_event_new_still_frame(
+      in_still,
+    );
+  }
+
+  late final _gst_video_event_new_still_framePtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstEvent> Function(ffi.Int)>>(
+          'gst_video_event_new_still_frame');
+  late final _gst_video_event_new_still_frame =
+      _gst_video_event_new_still_framePtr
+          .asFunction<ffi.Pointer<GstEvent> Function(int)>();
+
+  int gst_video_event_parse_still_frame(
+    ffi.Pointer<GstEvent> event,
+    ffi.Pointer<ffi.Int> in_still,
+  ) {
+    return _gst_video_event_parse_still_frame(
+      event,
+      in_still,
+    );
+  }
+
+  late final _gst_video_event_parse_still_framePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstEvent>,
+              ffi.Pointer<ffi.Int>)>>('gst_video_event_parse_still_frame');
+  late final _gst_video_event_parse_still_frame =
+      _gst_video_event_parse_still_framePtr.asFunction<
+          int Function(ffi.Pointer<GstEvent>, ffi.Pointer<ffi.Int>)>();
+
+  ffi.Pointer<GstEvent> gst_video_event_new_downstream_force_key_unit(
+    int timestamp,
+    int stream_time,
+    int running_time,
+    int all_headers,
+    int count,
+  ) {
+    return _gst_video_event_new_downstream_force_key_unit(
+      timestamp,
+      stream_time,
+      running_time,
+      all_headers,
+      count,
+    );
+  }
+
+  late final _gst_video_event_new_downstream_force_key_unitPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstEvent> Function(GstClockTime, GstClockTime,
+                  GstClockTime, ffi.Int, ffi.UnsignedInt)>>(
+      'gst_video_event_new_downstream_force_key_unit');
+  late final _gst_video_event_new_downstream_force_key_unit =
+      _gst_video_event_new_downstream_force_key_unitPtr.asFunction<
+          ffi.Pointer<GstEvent> Function(int, int, int, int, int)>();
+
+  int gst_video_event_parse_downstream_force_key_unit(
+    ffi.Pointer<GstEvent> event,
+    ffi.Pointer<GstClockTime> timestamp,
+    ffi.Pointer<GstClockTime> stream_time,
+    ffi.Pointer<GstClockTime> running_time,
+    ffi.Pointer<ffi.Int> all_headers,
+    ffi.Pointer<ffi.UnsignedInt> count,
+  ) {
+    return _gst_video_event_parse_downstream_force_key_unit(
+      event,
+      timestamp,
+      stream_time,
+      running_time,
+      all_headers,
+      count,
+    );
+  }
+
+  late final _gst_video_event_parse_downstream_force_key_unitPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstEvent>,
+                  ffi.Pointer<GstClockTime>,
+                  ffi.Pointer<GstClockTime>,
+                  ffi.Pointer<GstClockTime>,
+                  ffi.Pointer<ffi.Int>,
+                  ffi.Pointer<ffi.UnsignedInt>)>>(
+      'gst_video_event_parse_downstream_force_key_unit');
+  late final _gst_video_event_parse_downstream_force_key_unit =
+      _gst_video_event_parse_downstream_force_key_unitPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstEvent>,
+              ffi.Pointer<GstClockTime>,
+              ffi.Pointer<GstClockTime>,
+              ffi.Pointer<GstClockTime>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.UnsignedInt>)>();
+
+  ffi.Pointer<GstEvent> gst_video_event_new_upstream_force_key_unit(
+    int running_time,
+    int all_headers,
+    int count,
+  ) {
+    return _gst_video_event_new_upstream_force_key_unit(
+      running_time,
+      all_headers,
+      count,
+    );
+  }
+
+  late final _gst_video_event_new_upstream_force_key_unitPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstEvent> Function(GstClockTime, ffi.Int,
+              ffi.UnsignedInt)>>('gst_video_event_new_upstream_force_key_unit');
+  late final _gst_video_event_new_upstream_force_key_unit =
+      _gst_video_event_new_upstream_force_key_unitPtr
+          .asFunction<ffi.Pointer<GstEvent> Function(int, int, int)>();
+
+  int gst_video_event_parse_upstream_force_key_unit(
+    ffi.Pointer<GstEvent> event,
+    ffi.Pointer<GstClockTime> running_time,
+    ffi.Pointer<ffi.Int> all_headers,
+    ffi.Pointer<ffi.UnsignedInt> count,
+  ) {
+    return _gst_video_event_parse_upstream_force_key_unit(
+      event,
+      running_time,
+      all_headers,
+      count,
+    );
+  }
+
+  late final _gst_video_event_parse_upstream_force_key_unitPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstEvent>, ffi.Pointer<GstClockTime>,
+                  ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.UnsignedInt>)>>(
+      'gst_video_event_parse_upstream_force_key_unit');
+  late final _gst_video_event_parse_upstream_force_key_unit =
+      _gst_video_event_parse_upstream_force_key_unitPtr.asFunction<
+          int Function(ffi.Pointer<GstEvent>, ffi.Pointer<GstClockTime>,
+              ffi.Pointer<ffi.Int>, ffi.Pointer<ffi.UnsignedInt>)>();
+
+  int gst_video_event_is_force_key_unit(
+    ffi.Pointer<GstEvent> event,
+  ) {
+    return _gst_video_event_is_force_key_unit(
+      event,
+    );
+  }
+
+  late final _gst_video_event_is_force_key_unitPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstEvent>)>>(
+          'gst_video_event_is_force_key_unit');
+  late final _gst_video_event_is_force_key_unit =
+      _gst_video_event_is_force_key_unitPtr
+          .asFunction<int Function(ffi.Pointer<GstEvent>)>();
+
+  int gst_video_orientation_get_type() {
+    return _gst_video_orientation_get_type();
+  }
+
+  late final _gst_video_orientation_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_orientation_get_type');
+  late final _gst_video_orientation_get_type =
+      _gst_video_orientation_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_orientation_get_hflip(
+    ffi.Pointer<GstVideoOrientation> video_orientation,
+    ffi.Pointer<ffi.Int> flip,
+  ) {
+    return _gst_video_orientation_get_hflip(
+      video_orientation,
+      flip,
+    );
+  }
+
+  late final _gst_video_orientation_get_hflipPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation>,
+              ffi.Pointer<ffi.Int>)>>('gst_video_orientation_get_hflip');
+  late final _gst_video_orientation_get_hflip =
+      _gst_video_orientation_get_hflipPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoOrientation>, ffi.Pointer<ffi.Int>)>();
+
+  int gst_video_orientation_get_vflip(
+    ffi.Pointer<GstVideoOrientation> video_orientation,
+    ffi.Pointer<ffi.Int> flip,
+  ) {
+    return _gst_video_orientation_get_vflip(
+      video_orientation,
+      flip,
+    );
+  }
+
+  late final _gst_video_orientation_get_vflipPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation>,
+              ffi.Pointer<ffi.Int>)>>('gst_video_orientation_get_vflip');
+  late final _gst_video_orientation_get_vflip =
+      _gst_video_orientation_get_vflipPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoOrientation>, ffi.Pointer<ffi.Int>)>();
+
+  int gst_video_orientation_get_hcenter(
+    ffi.Pointer<GstVideoOrientation> video_orientation,
+    ffi.Pointer<ffi.Int> center,
+  ) {
+    return _gst_video_orientation_get_hcenter(
+      video_orientation,
+      center,
+    );
+  }
+
+  late final _gst_video_orientation_get_hcenterPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation>,
+              ffi.Pointer<ffi.Int>)>>('gst_video_orientation_get_hcenter');
+  late final _gst_video_orientation_get_hcenter =
+      _gst_video_orientation_get_hcenterPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoOrientation>, ffi.Pointer<ffi.Int>)>();
+
+  int gst_video_orientation_get_vcenter(
+    ffi.Pointer<GstVideoOrientation> video_orientation,
+    ffi.Pointer<ffi.Int> center,
+  ) {
+    return _gst_video_orientation_get_vcenter(
+      video_orientation,
+      center,
+    );
+  }
+
+  late final _gst_video_orientation_get_vcenterPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation>,
+              ffi.Pointer<ffi.Int>)>>('gst_video_orientation_get_vcenter');
+  late final _gst_video_orientation_get_vcenter =
+      _gst_video_orientation_get_vcenterPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoOrientation>, ffi.Pointer<ffi.Int>)>();
+
+  int gst_video_orientation_set_hflip(
+    ffi.Pointer<GstVideoOrientation> video_orientation,
+    int flip,
+  ) {
+    return _gst_video_orientation_set_hflip(
+      video_orientation,
+      flip,
+    );
+  }
+
+  late final _gst_video_orientation_set_hflipPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation>,
+              ffi.Int)>>('gst_video_orientation_set_hflip');
+  late final _gst_video_orientation_set_hflip =
+      _gst_video_orientation_set_hflipPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoOrientation>, int)>();
+
+  int gst_video_orientation_set_vflip(
+    ffi.Pointer<GstVideoOrientation> video_orientation,
+    int flip,
+  ) {
+    return _gst_video_orientation_set_vflip(
+      video_orientation,
+      flip,
+    );
+  }
+
+  late final _gst_video_orientation_set_vflipPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation>,
+              ffi.Int)>>('gst_video_orientation_set_vflip');
+  late final _gst_video_orientation_set_vflip =
+      _gst_video_orientation_set_vflipPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoOrientation>, int)>();
+
+  int gst_video_orientation_set_hcenter(
+    ffi.Pointer<GstVideoOrientation> video_orientation,
+    int center,
+  ) {
+    return _gst_video_orientation_set_hcenter(
+      video_orientation,
+      center,
+    );
+  }
+
+  late final _gst_video_orientation_set_hcenterPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation>,
+              ffi.Int)>>('gst_video_orientation_set_hcenter');
+  late final _gst_video_orientation_set_hcenter =
+      _gst_video_orientation_set_hcenterPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoOrientation>, int)>();
+
+  int gst_video_orientation_set_vcenter(
+    ffi.Pointer<GstVideoOrientation> video_orientation,
+    int center,
+  ) {
+    return _gst_video_orientation_set_vcenter(
+      video_orientation,
+      center,
+    );
+  }
+
+  late final _gst_video_orientation_set_vcenterPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation>,
+              ffi.Int)>>('gst_video_orientation_set_vcenter');
+  late final _gst_video_orientation_set_vcenter =
+      _gst_video_orientation_set_vcenterPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoOrientation>, int)>();
+
+  int gst_video_overlay_rectangle_get_type() {
+    return _gst_video_overlay_rectangle_get_type();
+  }
+
+  late final _gst_video_overlay_rectangle_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_overlay_rectangle_get_type');
+  late final _gst_video_overlay_rectangle_get_type =
+      _gst_video_overlay_rectangle_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstVideoOverlayRectangle> gst_video_overlay_rectangle_new_raw(
+    ffi.Pointer<GstBuffer> pixels,
+    int render_x,
+    int render_y,
+    int render_width,
+    int render_height,
+    int flags,
+  ) {
+    return _gst_video_overlay_rectangle_new_raw(
+      pixels,
+      render_x,
+      render_y,
+      render_width,
+      render_height,
+      flags,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_new_rawPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoOverlayRectangle> Function(
+              ffi.Pointer<GstBuffer>,
+              ffi.Int,
+              ffi.Int,
+              ffi.UnsignedInt,
+              ffi.UnsignedInt,
+              ffi.Int32)>>('gst_video_overlay_rectangle_new_raw');
+  late final _gst_video_overlay_rectangle_new_raw =
+      _gst_video_overlay_rectangle_new_rawPtr.asFunction<
+          ffi.Pointer<GstVideoOverlayRectangle> Function(
+              ffi.Pointer<GstBuffer>, int, int, int, int, int)>();
+
+  ffi.Pointer<GstVideoOverlayRectangle> gst_video_overlay_rectangle_copy(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+  ) {
+    return _gst_video_overlay_rectangle_copy(
+      rectangle,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_copyPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoOverlayRectangle> Function(
+                  ffi.Pointer<GstVideoOverlayRectangle>)>>(
+      'gst_video_overlay_rectangle_copy');
+  late final _gst_video_overlay_rectangle_copy =
+      _gst_video_overlay_rectangle_copyPtr.asFunction<
+          ffi.Pointer<GstVideoOverlayRectangle> Function(
+              ffi.Pointer<GstVideoOverlayRectangle>)>();
+
+  int gst_video_overlay_rectangle_get_seqnum(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+  ) {
+    return _gst_video_overlay_rectangle_get_seqnum(
+      rectangle,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_get_seqnumPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.UnsignedInt Function(ffi.Pointer<GstVideoOverlayRectangle>)>>(
+      'gst_video_overlay_rectangle_get_seqnum');
+  late final _gst_video_overlay_rectangle_get_seqnum =
+      _gst_video_overlay_rectangle_get_seqnumPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoOverlayRectangle>)>();
+
+  void gst_video_overlay_rectangle_set_render_rectangle(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+    int render_x,
+    int render_y,
+    int render_width,
+    int render_height,
+  ) {
+    return _gst_video_overlay_rectangle_set_render_rectangle(
+      rectangle,
+      render_x,
+      render_y,
+      render_width,
+      render_height,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_set_render_rectanglePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<GstVideoOverlayRectangle>, ffi.Int,
+                  ffi.Int, ffi.UnsignedInt, ffi.UnsignedInt)>>(
+      'gst_video_overlay_rectangle_set_render_rectangle');
+  late final _gst_video_overlay_rectangle_set_render_rectangle =
+      _gst_video_overlay_rectangle_set_render_rectanglePtr.asFunction<
+          void Function(
+              ffi.Pointer<GstVideoOverlayRectangle>, int, int, int, int)>();
+
+  int gst_video_overlay_rectangle_get_render_rectangle(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+    ffi.Pointer<ffi.Int> render_x,
+    ffi.Pointer<ffi.Int> render_y,
+    ffi.Pointer<ffi.UnsignedInt> render_width,
+    ffi.Pointer<ffi.UnsignedInt> render_height,
+  ) {
+    return _gst_video_overlay_rectangle_get_render_rectangle(
+      rectangle,
+      render_x,
+      render_y,
+      render_width,
+      render_height,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_get_render_rectanglePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstVideoOverlayRectangle>,
+                  ffi.Pointer<ffi.Int>,
+                  ffi.Pointer<ffi.Int>,
+                  ffi.Pointer<ffi.UnsignedInt>,
+                  ffi.Pointer<ffi.UnsignedInt>)>>(
+      'gst_video_overlay_rectangle_get_render_rectangle');
+  late final _gst_video_overlay_rectangle_get_render_rectangle =
+      _gst_video_overlay_rectangle_get_render_rectanglePtr.asFunction<
+          int Function(
+              ffi.Pointer<GstVideoOverlayRectangle>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.UnsignedInt>,
+              ffi.Pointer<ffi.UnsignedInt>)>();
+
+  ffi.Pointer<GstBuffer> gst_video_overlay_rectangle_get_pixels_raw(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+    int flags,
+  ) {
+    return _gst_video_overlay_rectangle_get_pixels_raw(
+      rectangle,
+      flags,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_get_pixels_rawPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstVideoOverlayRectangle>,
+              ffi.Int32)>>('gst_video_overlay_rectangle_get_pixels_raw');
+  late final _gst_video_overlay_rectangle_get_pixels_raw =
+      _gst_video_overlay_rectangle_get_pixels_rawPtr.asFunction<
+          ffi.Pointer<GstBuffer> Function(
+              ffi.Pointer<GstVideoOverlayRectangle>, int)>();
+
+  ffi.Pointer<GstBuffer> gst_video_overlay_rectangle_get_pixels_argb(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+    int flags,
+  ) {
+    return _gst_video_overlay_rectangle_get_pixels_argb(
+      rectangle,
+      flags,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_get_pixels_argbPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstVideoOverlayRectangle>,
+              ffi.Int32)>>('gst_video_overlay_rectangle_get_pixels_argb');
+  late final _gst_video_overlay_rectangle_get_pixels_argb =
+      _gst_video_overlay_rectangle_get_pixels_argbPtr.asFunction<
+          ffi.Pointer<GstBuffer> Function(
+              ffi.Pointer<GstVideoOverlayRectangle>, int)>();
+
+  ffi.Pointer<GstBuffer> gst_video_overlay_rectangle_get_pixels_ayuv(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+    int flags,
+  ) {
+    return _gst_video_overlay_rectangle_get_pixels_ayuv(
+      rectangle,
+      flags,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_get_pixels_ayuvPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBuffer> Function(ffi.Pointer<GstVideoOverlayRectangle>,
+              ffi.Int32)>>('gst_video_overlay_rectangle_get_pixels_ayuv');
+  late final _gst_video_overlay_rectangle_get_pixels_ayuv =
+      _gst_video_overlay_rectangle_get_pixels_ayuvPtr.asFunction<
+          ffi.Pointer<GstBuffer> Function(
+              ffi.Pointer<GstVideoOverlayRectangle>, int)>();
+
+  ffi.Pointer<GstBuffer> gst_video_overlay_rectangle_get_pixels_unscaled_raw(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+    int flags,
+  ) {
+    return _gst_video_overlay_rectangle_get_pixels_unscaled_raw(
+      rectangle,
+      flags,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_get_pixels_unscaled_rawPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstBuffer> Function(
+                  ffi.Pointer<GstVideoOverlayRectangle>, ffi.Int32)>>(
+      'gst_video_overlay_rectangle_get_pixels_unscaled_raw');
+  late final _gst_video_overlay_rectangle_get_pixels_unscaled_raw =
+      _gst_video_overlay_rectangle_get_pixels_unscaled_rawPtr.asFunction<
+          ffi.Pointer<GstBuffer> Function(
+              ffi.Pointer<GstVideoOverlayRectangle>, int)>();
+
+  ffi.Pointer<GstBuffer> gst_video_overlay_rectangle_get_pixels_unscaled_argb(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+    int flags,
+  ) {
+    return _gst_video_overlay_rectangle_get_pixels_unscaled_argb(
+      rectangle,
+      flags,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_get_pixels_unscaled_argbPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstBuffer> Function(
+                  ffi.Pointer<GstVideoOverlayRectangle>, ffi.Int32)>>(
+      'gst_video_overlay_rectangle_get_pixels_unscaled_argb');
+  late final _gst_video_overlay_rectangle_get_pixels_unscaled_argb =
+      _gst_video_overlay_rectangle_get_pixels_unscaled_argbPtr.asFunction<
+          ffi.Pointer<GstBuffer> Function(
+              ffi.Pointer<GstVideoOverlayRectangle>, int)>();
+
+  ffi.Pointer<GstBuffer> gst_video_overlay_rectangle_get_pixels_unscaled_ayuv(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+    int flags,
+  ) {
+    return _gst_video_overlay_rectangle_get_pixels_unscaled_ayuv(
+      rectangle,
+      flags,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_get_pixels_unscaled_ayuvPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstBuffer> Function(
+                  ffi.Pointer<GstVideoOverlayRectangle>, ffi.Int32)>>(
+      'gst_video_overlay_rectangle_get_pixels_unscaled_ayuv');
+  late final _gst_video_overlay_rectangle_get_pixels_unscaled_ayuv =
+      _gst_video_overlay_rectangle_get_pixels_unscaled_ayuvPtr.asFunction<
+          ffi.Pointer<GstBuffer> Function(
+              ffi.Pointer<GstVideoOverlayRectangle>, int)>();
+
+  int gst_video_overlay_rectangle_get_flags(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+  ) {
+    return _gst_video_overlay_rectangle_get_flags(
+      rectangle,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_get_flagsPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<GstVideoOverlayRectangle>)>>(
+      'gst_video_overlay_rectangle_get_flags');
+  late final _gst_video_overlay_rectangle_get_flags =
+      _gst_video_overlay_rectangle_get_flagsPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoOverlayRectangle>)>();
+
+  double gst_video_overlay_rectangle_get_global_alpha(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+  ) {
+    return _gst_video_overlay_rectangle_get_global_alpha(
+      rectangle,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_get_global_alphaPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Float Function(ffi.Pointer<GstVideoOverlayRectangle>)>>(
+      'gst_video_overlay_rectangle_get_global_alpha');
+  late final _gst_video_overlay_rectangle_get_global_alpha =
+      _gst_video_overlay_rectangle_get_global_alphaPtr
+          .asFunction<double Function(ffi.Pointer<GstVideoOverlayRectangle>)>();
+
+  void gst_video_overlay_rectangle_set_global_alpha(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+    double global_alpha,
+  ) {
+    return _gst_video_overlay_rectangle_set_global_alpha(
+      rectangle,
+      global_alpha,
+    );
+  }
+
+  late final _gst_video_overlay_rectangle_set_global_alphaPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoOverlayRectangle>,
+              ffi.Float)>>('gst_video_overlay_rectangle_set_global_alpha');
+  late final _gst_video_overlay_rectangle_set_global_alpha =
+      _gst_video_overlay_rectangle_set_global_alphaPtr.asFunction<
+          void Function(ffi.Pointer<GstVideoOverlayRectangle>, double)>();
+
+  int gst_video_overlay_composition_get_type() {
+    return _gst_video_overlay_composition_get_type();
+  }
+
+  late final _gst_video_overlay_composition_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_overlay_composition_get_type');
+  late final _gst_video_overlay_composition_get_type =
+      _gst_video_overlay_composition_get_typePtr.asFunction<int Function()>();
+
+  ffi.Pointer<GstVideoOverlayComposition> gst_video_overlay_composition_copy(
+    ffi.Pointer<GstVideoOverlayComposition> comp,
+  ) {
+    return _gst_video_overlay_composition_copy(
+      comp,
+    );
+  }
+
+  late final _gst_video_overlay_composition_copyPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoOverlayComposition> Function(
+                  ffi.Pointer<GstVideoOverlayComposition>)>>(
+      'gst_video_overlay_composition_copy');
+  late final _gst_video_overlay_composition_copy =
+      _gst_video_overlay_composition_copyPtr.asFunction<
+          ffi.Pointer<GstVideoOverlayComposition> Function(
+              ffi.Pointer<GstVideoOverlayComposition>)>();
+
+  ffi.Pointer<GstVideoOverlayComposition>
+      gst_video_overlay_composition_make_writable(
+    ffi.Pointer<GstVideoOverlayComposition> comp,
+  ) {
+    return _gst_video_overlay_composition_make_writable(
+      comp,
+    );
+  }
+
+  late final _gst_video_overlay_composition_make_writablePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoOverlayComposition> Function(
+                  ffi.Pointer<GstVideoOverlayComposition>)>>(
+      'gst_video_overlay_composition_make_writable');
+  late final _gst_video_overlay_composition_make_writable =
+      _gst_video_overlay_composition_make_writablePtr.asFunction<
+          ffi.Pointer<GstVideoOverlayComposition> Function(
+              ffi.Pointer<GstVideoOverlayComposition>)>();
+
+  ffi.Pointer<GstVideoOverlayComposition> gst_video_overlay_composition_new(
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+  ) {
+    return _gst_video_overlay_composition_new(
+      rectangle,
+    );
+  }
+
+  late final _gst_video_overlay_composition_newPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoOverlayComposition> Function(
+                  ffi.Pointer<GstVideoOverlayRectangle>)>>(
+      'gst_video_overlay_composition_new');
+  late final _gst_video_overlay_composition_new =
+      _gst_video_overlay_composition_newPtr.asFunction<
+          ffi.Pointer<GstVideoOverlayComposition> Function(
+              ffi.Pointer<GstVideoOverlayRectangle>)>();
+
+  void gst_video_overlay_composition_add_rectangle(
+    ffi.Pointer<GstVideoOverlayComposition> comp,
+    ffi.Pointer<GstVideoOverlayRectangle> rectangle,
+  ) {
+    return _gst_video_overlay_composition_add_rectangle(
+      comp,
+      rectangle,
+    );
+  }
+
+  late final _gst_video_overlay_composition_add_rectanglePtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<GstVideoOverlayComposition>,
+                  ffi.Pointer<GstVideoOverlayRectangle>)>>(
+      'gst_video_overlay_composition_add_rectangle');
+  late final _gst_video_overlay_composition_add_rectangle =
+      _gst_video_overlay_composition_add_rectanglePtr.asFunction<
+          void Function(ffi.Pointer<GstVideoOverlayComposition>,
+              ffi.Pointer<GstVideoOverlayRectangle>)>();
+
+  int gst_video_overlay_composition_n_rectangles(
+    ffi.Pointer<GstVideoOverlayComposition> comp,
+  ) {
+    return _gst_video_overlay_composition_n_rectangles(
+      comp,
+    );
+  }
+
+  late final _gst_video_overlay_composition_n_rectanglesPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.UnsignedInt Function(
+                  ffi.Pointer<GstVideoOverlayComposition>)>>(
+      'gst_video_overlay_composition_n_rectangles');
+  late final _gst_video_overlay_composition_n_rectangles =
+      _gst_video_overlay_composition_n_rectanglesPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoOverlayComposition>)>();
+
+  ffi.Pointer<GstVideoOverlayRectangle>
+      gst_video_overlay_composition_get_rectangle(
+    ffi.Pointer<GstVideoOverlayComposition> comp,
+    int n,
+  ) {
+    return _gst_video_overlay_composition_get_rectangle(
+      comp,
+      n,
+    );
+  }
+
+  late final _gst_video_overlay_composition_get_rectanglePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstVideoOverlayRectangle> Function(
+              ffi.Pointer<GstVideoOverlayComposition>,
+              ffi.UnsignedInt)>>('gst_video_overlay_composition_get_rectangle');
+  late final _gst_video_overlay_composition_get_rectangle =
+      _gst_video_overlay_composition_get_rectanglePtr.asFunction<
+          ffi.Pointer<GstVideoOverlayRectangle> Function(
+              ffi.Pointer<GstVideoOverlayComposition>, int)>();
+
+  int gst_video_overlay_composition_get_seqnum(
+    ffi.Pointer<GstVideoOverlayComposition> comp,
+  ) {
+    return _gst_video_overlay_composition_get_seqnum(
+      comp,
+    );
+  }
+
+  late final _gst_video_overlay_composition_get_seqnumPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.UnsignedInt Function(
+                  ffi.Pointer<GstVideoOverlayComposition>)>>(
+      'gst_video_overlay_composition_get_seqnum');
+  late final _gst_video_overlay_composition_get_seqnum =
+      _gst_video_overlay_composition_get_seqnumPtr
+          .asFunction<int Function(ffi.Pointer<GstVideoOverlayComposition>)>();
+
+  int gst_video_overlay_composition_blend(
+    ffi.Pointer<GstVideoOverlayComposition> comp,
+    ffi.Pointer<GstVideoFrame> video_buf,
+  ) {
+    return _gst_video_overlay_composition_blend(
+      comp,
+      video_buf,
+    );
+  }
+
+  late final _gst_video_overlay_composition_blendPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstVideoOverlayComposition>,
+                  ffi.Pointer<GstVideoFrame>)>>(
+      'gst_video_overlay_composition_blend');
+  late final _gst_video_overlay_composition_blend =
+      _gst_video_overlay_composition_blendPtr.asFunction<
+          int Function(ffi.Pointer<GstVideoOverlayComposition>,
+              ffi.Pointer<GstVideoFrame>)>();
+
+  int gst_video_overlay_composition_meta_api_get_type() {
+    return _gst_video_overlay_composition_meta_api_get_type();
+  }
+
+  late final _gst_video_overlay_composition_meta_api_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_overlay_composition_meta_api_get_type');
+  late final _gst_video_overlay_composition_meta_api_get_type =
+      _gst_video_overlay_composition_meta_api_get_typePtr
+          .asFunction<int Function()>();
+
+  ffi.Pointer<GstMetaInfo> gst_video_overlay_composition_meta_get_info() {
+    return _gst_video_overlay_composition_meta_get_info();
+  }
+
+  late final _gst_video_overlay_composition_meta_get_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstMetaInfo> Function()>>(
+          'gst_video_overlay_composition_meta_get_info');
+  late final _gst_video_overlay_composition_meta_get_info =
+      _gst_video_overlay_composition_meta_get_infoPtr
+          .asFunction<ffi.Pointer<GstMetaInfo> Function()>();
+
+  ffi.Pointer<GstVideoOverlayCompositionMeta>
+      gst_buffer_add_video_overlay_composition_meta(
+    ffi.Pointer<GstBuffer> buf,
+    ffi.Pointer<GstVideoOverlayComposition> comp,
+  ) {
+    return _gst_buffer_add_video_overlay_composition_meta(
+      buf,
+      comp,
+    );
+  }
+
+  late final _gst_buffer_add_video_overlay_composition_metaPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoOverlayCompositionMeta> Function(
+                  ffi.Pointer<GstBuffer>,
+                  ffi.Pointer<GstVideoOverlayComposition>)>>(
+      'gst_buffer_add_video_overlay_composition_meta');
+  late final _gst_buffer_add_video_overlay_composition_meta =
+      _gst_buffer_add_video_overlay_composition_metaPtr.asFunction<
+          ffi.Pointer<GstVideoOverlayCompositionMeta> Function(
+              ffi.Pointer<GstBuffer>,
+              ffi.Pointer<GstVideoOverlayComposition>)>();
+
+  int gst_video_overlay_get_type() {
+    return _gst_video_overlay_get_type();
+  }
+
+  late final _gst_video_overlay_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_overlay_get_type');
+  late final _gst_video_overlay_get_type =
+      _gst_video_overlay_get_typePtr.asFunction<int Function()>();
+
+  int gst_video_overlay_set_render_rectangle(
+    ffi.Pointer<GstVideoOverlay> overlay,
+    int x,
+    int y,
+    int width,
+    int height,
+  ) {
+    return _gst_video_overlay_set_render_rectangle(
+      overlay,
+      x,
+      y,
+      width,
+      height,
+    );
+  }
+
+  late final _gst_video_overlay_set_render_rectanglePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOverlay>, ffi.Int, ffi.Int,
+              ffi.Int, ffi.Int)>>('gst_video_overlay_set_render_rectangle');
+  late final _gst_video_overlay_set_render_rectangle =
+      _gst_video_overlay_set_render_rectanglePtr.asFunction<
+          int Function(ffi.Pointer<GstVideoOverlay>, int, int, int, int)>();
+
+  void gst_video_overlay_expose(
+    ffi.Pointer<GstVideoOverlay> overlay,
+  ) {
+    return _gst_video_overlay_expose(
+      overlay,
+    );
+  }
+
+  late final _gst_video_overlay_exposePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoOverlay>)>>(
+      'gst_video_overlay_expose');
+  late final _gst_video_overlay_expose = _gst_video_overlay_exposePtr
+      .asFunction<void Function(ffi.Pointer<GstVideoOverlay>)>();
+
+  void gst_video_overlay_handle_events(
+    ffi.Pointer<GstVideoOverlay> overlay,
+    int handle_events,
+  ) {
+    return _gst_video_overlay_handle_events(
+      overlay,
+      handle_events,
+    );
+  }
+
+  late final _gst_video_overlay_handle_eventsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoOverlay>,
+              ffi.Int)>>('gst_video_overlay_handle_events');
+  late final _gst_video_overlay_handle_events =
+      _gst_video_overlay_handle_eventsPtr
+          .asFunction<void Function(ffi.Pointer<GstVideoOverlay>, int)>();
+
+  void gst_video_overlay_set_window_handle(
+    ffi.Pointer<GstVideoOverlay> overlay,
+    int handle,
+  ) {
+    return _gst_video_overlay_set_window_handle(
+      overlay,
+      handle,
+    );
+  }
+
+  late final _gst_video_overlay_set_window_handlePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoOverlay>,
+              ffi.UintPtr)>>('gst_video_overlay_set_window_handle');
+  late final _gst_video_overlay_set_window_handle =
+      _gst_video_overlay_set_window_handlePtr
+          .asFunction<void Function(ffi.Pointer<GstVideoOverlay>, int)>();
+
+  void gst_video_overlay_got_window_handle(
+    ffi.Pointer<GstVideoOverlay> overlay,
+    int handle,
+  ) {
+    return _gst_video_overlay_got_window_handle(
+      overlay,
+      handle,
+    );
+  }
+
+  late final _gst_video_overlay_got_window_handlePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoOverlay>,
+              ffi.UintPtr)>>('gst_video_overlay_got_window_handle');
+  late final _gst_video_overlay_got_window_handle =
+      _gst_video_overlay_got_window_handlePtr
+          .asFunction<void Function(ffi.Pointer<GstVideoOverlay>, int)>();
+
+  void gst_video_overlay_prepare_window_handle(
+    ffi.Pointer<GstVideoOverlay> overlay,
+  ) {
+    return _gst_video_overlay_prepare_window_handle(
+      overlay,
+    );
+  }
+
+  late final _gst_video_overlay_prepare_window_handlePtr = _lookup<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstVideoOverlay>)>>(
+      'gst_video_overlay_prepare_window_handle');
+  late final _gst_video_overlay_prepare_window_handle =
+      _gst_video_overlay_prepare_window_handlePtr
+          .asFunction<void Function(ffi.Pointer<GstVideoOverlay>)>();
+
+  int gst_is_video_overlay_prepare_window_handle_message(
+    ffi.Pointer<GstMessage> msg,
+  ) {
+    return _gst_is_video_overlay_prepare_window_handle_message(
+      msg,
+    );
+  }
+
+  late final _gst_is_video_overlay_prepare_window_handle_messagePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstMessage>)>>(
+          'gst_is_video_overlay_prepare_window_handle_message');
+  late final _gst_is_video_overlay_prepare_window_handle_message =
+      _gst_is_video_overlay_prepare_window_handle_messagePtr
+          .asFunction<int Function(ffi.Pointer<GstMessage>)>();
+
+  void gst_video_overlay_install_properties(
+    ffi.Pointer<GObjectClass> oclass,
+    int last_prop_id,
+  ) {
+    return _gst_video_overlay_install_properties(
+      oclass,
+      last_prop_id,
+    );
+  }
+
+  late final _gst_video_overlay_install_propertiesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GObjectClass>,
+              ffi.Int)>>('gst_video_overlay_install_properties');
+  late final _gst_video_overlay_install_properties =
+      _gst_video_overlay_install_propertiesPtr
+          .asFunction<void Function(ffi.Pointer<GObjectClass>, int)>();
+
+  int gst_video_overlay_set_property(
+    ffi.Pointer<GObject> object,
+    int last_prop_id,
+    int property_id,
+    ffi.Pointer<GValue> value,
+  ) {
+    return _gst_video_overlay_set_property(
+      object,
+      last_prop_id,
+      property_id,
+      value,
+    );
+  }
+
+  late final _gst_video_overlay_set_propertyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GObject>, ffi.Int, ffi.UnsignedInt,
+              ffi.Pointer<GValue>)>>('gst_video_overlay_set_property');
+  late final _gst_video_overlay_set_property =
+      _gst_video_overlay_set_propertyPtr.asFunction<
+          int Function(ffi.Pointer<GObject>, int, int, ffi.Pointer<GValue>)>();
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Uint8>> _H264_MISP_MICROSECTIME =
+      _lookup<ffi.Pointer<ffi.Uint8>>('H264_MISP_MICROSECTIME');
+
+  ffi.Pointer<ffi.Uint8> get H264_MISP_MICROSECTIME =>
+      _H264_MISP_MICROSECTIME.value;
+
+  set H264_MISP_MICROSECTIME(ffi.Pointer<ffi.Uint8> value) =>
+      _H264_MISP_MICROSECTIME.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Uint8>> _H265_MISP_MICROSECONDS =
+      _lookup<ffi.Pointer<ffi.Uint8>>('H265_MISP_MICROSECONDS');
+
+  ffi.Pointer<ffi.Uint8> get H265_MISP_MICROSECONDS =>
+      _H265_MISP_MICROSECONDS.value;
+
+  set H265_MISP_MICROSECONDS(ffi.Pointer<ffi.Uint8> value) =>
+      _H265_MISP_MICROSECONDS.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Uint8>> _H265_MISP_NANOSECONDS =
+      _lookup<ffi.Pointer<ffi.Uint8>>('H265_MISP_NANOSECONDS');
+
+  ffi.Pointer<ffi.Uint8> get H265_MISP_NANOSECONDS =>
+      _H265_MISP_NANOSECONDS.value;
+
+  set H265_MISP_NANOSECONDS(ffi.Pointer<ffi.Uint8> value) =>
+      _H265_MISP_NANOSECONDS.value = value;
+
+  int gst_video_sei_user_data_unregistered_meta_api_get_type() {
+    return _gst_video_sei_user_data_unregistered_meta_api_get_type();
+  }
+
+  late final _gst_video_sei_user_data_unregistered_meta_api_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_video_sei_user_data_unregistered_meta_api_get_type');
+  late final _gst_video_sei_user_data_unregistered_meta_api_get_type =
+      _gst_video_sei_user_data_unregistered_meta_api_get_typePtr
+          .asFunction<int Function()>();
+
+  ffi.Pointer<GstMetaInfo>
+      gst_video_sei_user_data_unregistered_meta_get_info() {
+    return _gst_video_sei_user_data_unregistered_meta_get_info();
+  }
+
+  late final _gst_video_sei_user_data_unregistered_meta_get_infoPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<GstMetaInfo> Function()>>(
+          'gst_video_sei_user_data_unregistered_meta_get_info');
+  late final _gst_video_sei_user_data_unregistered_meta_get_info =
+      _gst_video_sei_user_data_unregistered_meta_get_infoPtr
+          .asFunction<ffi.Pointer<GstMetaInfo> Function()>();
+
+  ffi.Pointer<GstVideoSEIUserDataUnregisteredMeta>
+      gst_buffer_add_video_sei_user_data_unregistered_meta(
+    ffi.Pointer<GstBuffer> buffer,
+    ffi.Pointer<ffi.Uint8> uuid,
+    ffi.Pointer<ffi.Uint8> data,
+    int size,
+  ) {
+    return _gst_buffer_add_video_sei_user_data_unregistered_meta(
+      buffer,
+      uuid,
+      data,
+      size,
+    );
+  }
+
+  late final _gst_buffer_add_video_sei_user_data_unregistered_metaPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<GstVideoSEIUserDataUnregisteredMeta> Function(
+                  ffi.Pointer<GstBuffer>,
+                  ffi.Pointer<ffi.Uint8>,
+                  ffi.Pointer<ffi.Uint8>,
+                  ffi.Size)>>(
+      'gst_buffer_add_video_sei_user_data_unregistered_meta');
+  late final _gst_buffer_add_video_sei_user_data_unregistered_meta =
+      _gst_buffer_add_video_sei_user_data_unregistered_metaPtr.asFunction<
+          ffi.Pointer<GstVideoSEIUserDataUnregisteredMeta> Function(
+              ffi.Pointer<GstBuffer>,
+              ffi.Pointer<ffi.Uint8>,
+              ffi.Pointer<ffi.Uint8>,
+              int)>();
+
+  int gst_video_sei_user_data_unregistered_parse_precision_time_stamp(
+    ffi.Pointer<GstVideoSEIUserDataUnregisteredMeta> user_data,
+    ffi.Pointer<ffi.Uint8> status,
+    ffi.Pointer<ffi.Uint64> precision_time_stamp,
+  ) {
+    return _gst_video_sei_user_data_unregistered_parse_precision_time_stamp(
+      user_data,
+      status,
+      precision_time_stamp,
+    );
+  }
+
+  late final _gst_video_sei_user_data_unregistered_parse_precision_time_stampPtr =
+      _lookup<
+              ffi.NativeFunction<
+                  ffi.Int Function(
+                      ffi.Pointer<GstVideoSEIUserDataUnregisteredMeta>,
+                      ffi.Pointer<ffi.Uint8>,
+                      ffi.Pointer<ffi.Uint64>)>>(
+          'gst_video_sei_user_data_unregistered_parse_precision_time_stamp');
+  late final _gst_video_sei_user_data_unregistered_parse_precision_time_stamp =
+      _gst_video_sei_user_data_unregistered_parse_precision_time_stampPtr
+          .asFunction<
+              int Function(ffi.Pointer<GstVideoSEIUserDataUnregisteredMeta>,
+                  ffi.Pointer<ffi.Uint8>, ffi.Pointer<ffi.Uint64>)>();
 }
 
 final class max_align_t extends ffi.Opaque {}
@@ -91110,6 +101487,5141 @@ abstract class GstPluginAPIFlags {
   static const int GST_PLUGIN_API_FLAG_IGNORE_ENUM_MEMBERS = 1;
 }
 
+/// GstVideoAlignment:
+/// @padding_left: extra pixels on the left side
+/// @padding_right: extra pixels on the right side
+/// @padding_top: extra pixels on the top
+/// @padding_bottom: extra pixels on the bottom
+/// @stride_align: array with extra alignment requirements for the strides
+///
+/// Extra alignment parameters for the memory of video buffers. This
+/// structure is usually used to configure the bufferpool if it supports the
+/// #GST_BUFFER_POOL_OPTION_VIDEO_ALIGNMENT.
+final class _GstVideoAlignment extends ffi.Struct {
+  @ffi.UnsignedInt()
+  external int padding_top;
+
+  @ffi.UnsignedInt()
+  external int padding_bottom;
+
+  @ffi.UnsignedInt()
+  external int padding_left;
+
+  @ffi.UnsignedInt()
+  external int padding_right;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.UnsignedInt> stride_align;
+}
+
+/// GstVideoTileType:
+/// @GST_VIDEO_TILE_TYPE_INDEXED: Tiles are indexed. Use
+/// gst_video_tile_get_index () to retrieve the tile at the requested
+/// coordinates.
+///
+/// Enum value describing the most common tiling types.
+abstract class GstVideoTileType {
+  static const int GST_VIDEO_TILE_TYPE_INDEXED = 0;
+}
+
+/// GstVideoTileInfo:
+///
+/// Description of a tile. This structure allow to describe arbitrary tile
+/// dimensions and sizes.
+///
+/// Since: 1.22
+final class _GstVideoTileInfo extends ffi.Struct {
+  /// GstVideoTileInfo.width:
+  ///
+  /// The width in pixels of a tile. This value can be zero if the number of
+  /// pixels per line is not an integer value.
+  ///
+  /// Since: 1.22
+  @ffi.UnsignedInt()
+  external int width;
+
+  /// GstVideoTileInfo::height:
+  ///
+  /// The width in pixels of a tile. This value can be zero if the number of
+  /// pixels per line is not an integer value.
+  ///
+  /// Since: 1.22
+  @ffi.UnsignedInt()
+  external int height;
+
+  /// GstVideoTileInfo.stride:
+  ///
+  /// The stride (in bytes) of a tile line. Regardless if the tile have sub-tiles
+  /// this stride multiplied by the height should be equal to
+  /// #GstVideoTileInfo.size. This value is used to translate into linear stride
+  /// when older APIs are being used to expose this format.
+  ///
+  /// Since: 1.22
+  @ffi.UnsignedInt()
+  external int stride;
+
+  /// GstVideoTileInfo.size:
+  ///
+  /// The size in bytes of a tile. This value must be divisible by
+  /// #GstVideoTileInfo.stride.
+  ///
+  /// Since: 1.22
+  @ffi.UnsignedInt()
+  external int size;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Uint32> padding;
+}
+
+/// GstVideoTileMode:
+/// @GST_VIDEO_TILE_MODE_UNKNOWN: Unknown or unset tile mode
+/// @GST_VIDEO_TILE_MODE_ZFLIPZ_2X2: Every four adjacent blocks - two
+/// horizontally and two vertically are grouped together and are located
+/// in memory in Z or flipped Z order. In case of odd rows, the last row
+/// of blocks is arranged in linear order.
+/// @GST_VIDEO_TILE_MODE_LINEAR: Tiles are in row order. (Since: 1.18)
+/// @GST_VIDEO_TILE_MODE_LINEAR_SUBSAMPLED: Tiles are in row order, with
+/// variable tile size according to subsampling. (Since: 1.20)
+///
+/// Enum value describing the available tiling modes.
+abstract class GstVideoTileMode {
+  static const int GST_VIDEO_TILE_MODE_UNKNOWN = 0;
+  static const int GST_VIDEO_TILE_MODE_ZFLIPZ_2X2 = 65536;
+
+  /// GST_VIDEO_TILE_MODE_LINEAR:
+  ///
+  /// Tiles are in row order.
+  ///
+  /// Since: 1.18
+  static const int GST_VIDEO_TILE_MODE_LINEAR = 131072;
+}
+
+/// GstVideoFormat:
+/// @GST_VIDEO_FORMAT_UNKNOWN: Unknown or unset video format id
+/// @GST_VIDEO_FORMAT_ENCODED: Encoded video format. Only ever use that in caps for
+/// special video formats in combination with non-system
+/// memory GstCapsFeatures where it does not make sense
+/// to specify a real video format.
+/// @GST_VIDEO_FORMAT_I420: planar 4:2:0 YUV
+/// @GST_VIDEO_FORMAT_YV12: planar 4:2:0 YVU (like I420 but UV planes swapped)
+/// @GST_VIDEO_FORMAT_YUY2: packed 4:2:2 YUV (Y0-U0-Y1-V0 Y2-U2-Y3-V2 Y4 ...)
+/// @GST_VIDEO_FORMAT_UYVY: packed 4:2:2 YUV (U0-Y0-V0-Y1 U2-Y2-V2-Y3 U4 ...)
+/// @GST_VIDEO_FORMAT_VYUY: packed 4:2:2 YUV (V0-Y0-U0-Y1 V2-Y2-U2-Y3 V4 ...)
+/// @GST_VIDEO_FORMAT_AYUV: packed 4:4:4 YUV with alpha channel (A0-Y0-U0-V0 ...)
+/// @GST_VIDEO_FORMAT_RGBx: sparse rgb packed into 32 bit, space last
+/// @GST_VIDEO_FORMAT_BGRx: sparse reverse rgb packed into 32 bit, space last
+/// @GST_VIDEO_FORMAT_xRGB: sparse rgb packed into 32 bit, space first
+/// @GST_VIDEO_FORMAT_xBGR: sparse reverse rgb packed into 32 bit, space first
+/// @GST_VIDEO_FORMAT_RGBA: rgb with alpha channel last
+/// @GST_VIDEO_FORMAT_BGRA: reverse rgb with alpha channel last
+/// @GST_VIDEO_FORMAT_ARGB: rgb with alpha channel first
+/// @GST_VIDEO_FORMAT_ABGR: reverse rgb with alpha channel first
+/// @GST_VIDEO_FORMAT_RGB: RGB packed into 24 bits without padding (`R-G-B-R-G-B`)
+/// @GST_VIDEO_FORMAT_BGR: reverse RGB packed into 24 bits without padding (`B-G-R-B-G-R`)
+/// @GST_VIDEO_FORMAT_Y41B: planar 4:1:1 YUV
+/// @GST_VIDEO_FORMAT_Y42B: planar 4:2:2 YUV
+/// @GST_VIDEO_FORMAT_YVYU: packed 4:2:2 YUV (Y0-V0-Y1-U0 Y2-V2-Y3-U2 Y4 ...)
+/// @GST_VIDEO_FORMAT_Y444: planar 4:4:4 YUV
+/// @GST_VIDEO_FORMAT_v210: packed 4:2:2 10-bit YUV, complex format
+/// @GST_VIDEO_FORMAT_v216: packed 4:2:2 16-bit YUV, Y0-U0-Y1-V1 order
+/// @GST_VIDEO_FORMAT_NV12: planar 4:2:0 YUV with interleaved UV plane
+/// @GST_VIDEO_FORMAT_NV21: planar 4:2:0 YUV with interleaved VU plane
+/// @GST_VIDEO_FORMAT_NV12_10LE32: 10-bit variant of @GST_VIDEO_FORMAT_NV12, packed into 32bit words (MSB 2 bits padding) (Since: 1.14)
+/// @GST_VIDEO_FORMAT_GRAY8: 8-bit grayscale
+/// @GST_VIDEO_FORMAT_GRAY10_LE32: 10-bit grayscale, packed into 32bit words (2 bits padding) (Since: 1.14)
+/// @GST_VIDEO_FORMAT_GRAY16_BE: 16-bit grayscale, most significant byte first
+/// @GST_VIDEO_FORMAT_GRAY16_LE: 16-bit grayscale, least significant byte first
+/// @GST_VIDEO_FORMAT_v308: packed 4:4:4 YUV (Y-U-V ...)
+/// @GST_VIDEO_FORMAT_IYU2: packed 4:4:4 YUV (U-Y-V ...) (Since: 1.10)
+/// @GST_VIDEO_FORMAT_RGB16: rgb 5-6-5 bits per component
+/// @GST_VIDEO_FORMAT_BGR16: reverse rgb 5-6-5 bits per component
+/// @GST_VIDEO_FORMAT_RGB15: rgb 5-5-5 bits per component
+/// @GST_VIDEO_FORMAT_BGR15: reverse rgb 5-5-5 bits per component
+/// @GST_VIDEO_FORMAT_UYVP: packed 10-bit 4:2:2 YUV (U0-Y0-V0-Y1 U2-Y2-V2-Y3 U4 ...)
+/// @GST_VIDEO_FORMAT_A420: planar 4:4:2:0 AYUV
+/// @GST_VIDEO_FORMAT_RGB8P: 8-bit paletted RGB
+/// @GST_VIDEO_FORMAT_YUV9: planar 4:1:0 YUV
+/// @GST_VIDEO_FORMAT_YVU9: planar 4:1:0 YUV (like YUV9 but UV planes swapped)
+/// @GST_VIDEO_FORMAT_IYU1: packed 4:1:1 YUV (Cb-Y0-Y1-Cr-Y2-Y3 ...)
+/// @GST_VIDEO_FORMAT_ARGB64: rgb with alpha channel first, 16 bits (native endianness) per channel
+/// @GST_VIDEO_FORMAT_AYUV64: packed 4:4:4 YUV with alpha channel, 16 bits (native endianness) per channel (A0-Y0-U0-V0 ...)
+/// @GST_VIDEO_FORMAT_r210: packed 4:4:4 RGB, 10 bits per channel
+/// @GST_VIDEO_FORMAT_I420_10BE: planar 4:2:0 YUV, 10 bits per channel
+/// @GST_VIDEO_FORMAT_I420_10LE: planar 4:2:0 YUV, 10 bits per channel
+/// @GST_VIDEO_FORMAT_I422_10BE: planar 4:2:2 YUV, 10 bits per channel
+/// @GST_VIDEO_FORMAT_I422_10LE: planar 4:2:2 YUV, 10 bits per channel
+/// @GST_VIDEO_FORMAT_Y444_10BE: planar 4:4:4 YUV, 10 bits per channel (Since: 1.2)
+/// @GST_VIDEO_FORMAT_Y444_10LE: planar 4:4:4 YUV, 10 bits per channel (Since: 1.2)
+/// @GST_VIDEO_FORMAT_GBR: planar 4:4:4 RGB, 8 bits per channel (Since: 1.2)
+/// @GST_VIDEO_FORMAT_GBR_10BE: planar 4:4:4 RGB, 10 bits per channel (Since: 1.2)
+/// @GST_VIDEO_FORMAT_GBR_10LE: planar 4:4:4 RGB, 10 bits per channel (Since: 1.2)
+/// @GST_VIDEO_FORMAT_NV16: planar 4:2:2 YUV with interleaved UV plane (Since: 1.2)
+/// @GST_VIDEO_FORMAT_NV16_10LE32: 10-bit variant of @GST_VIDEO_FORMAT_NV16, packed into 32bit words (MSB 2 bits padding) (Since: 1.14)
+/// @GST_VIDEO_FORMAT_NV24: planar 4:4:4 YUV with interleaved UV plane (Since: 1.2)
+/// @GST_VIDEO_FORMAT_NV12_64Z32: NV12 with 64x32 tiling in zigzag pattern (Since: 1.4)
+/// @GST_VIDEO_FORMAT_A420_10BE: planar 4:4:2:0 YUV, 10 bits per channel (Since: 1.6)
+/// @GST_VIDEO_FORMAT_A420_10LE: planar 4:4:2:0 YUV, 10 bits per channel (Since: 1.6)
+/// @GST_VIDEO_FORMAT_A422_10BE: planar 4:4:2:2 YUV, 10 bits per channel (Since: 1.6)
+/// @GST_VIDEO_FORMAT_A422_10LE: planar 4:4:2:2 YUV, 10 bits per channel (Since: 1.6)
+/// @GST_VIDEO_FORMAT_A444_10BE: planar 4:4:4:4 YUV, 10 bits per channel (Since: 1.6)
+/// @GST_VIDEO_FORMAT_A444_10LE: planar 4:4:4:4 YUV, 10 bits per channel (Since: 1.6)
+/// @GST_VIDEO_FORMAT_NV61: planar 4:2:2 YUV with interleaved VU plane (Since: 1.6)
+/// @GST_VIDEO_FORMAT_P010_10BE: planar 4:2:0 YUV with interleaved UV plane, 10 bits per channel (Since: 1.10)
+/// @GST_VIDEO_FORMAT_P010_10LE: planar 4:2:0 YUV with interleaved UV plane, 10 bits per channel (Since: 1.10)
+/// @GST_VIDEO_FORMAT_GBRA: planar 4:4:4:4 ARGB, 8 bits per channel (Since: 1.12)
+/// @GST_VIDEO_FORMAT_GBRA_10BE: planar 4:4:4:4 ARGB, 10 bits per channel (Since: 1.12)
+/// @GST_VIDEO_FORMAT_GBRA_10LE: planar 4:4:4:4 ARGB, 10 bits per channel (Since: 1.12)
+/// @GST_VIDEO_FORMAT_GBR_12BE: planar 4:4:4 RGB, 12 bits per channel (Since: 1.12)
+/// @GST_VIDEO_FORMAT_GBR_12LE: planar 4:4:4 RGB, 12 bits per channel (Since: 1.12)
+/// @GST_VIDEO_FORMAT_GBRA_12BE: planar 4:4:4:4 ARGB, 12 bits per channel (Since: 1.12)
+/// @GST_VIDEO_FORMAT_GBRA_12LE: planar 4:4:4:4 ARGB, 12 bits per channel (Since: 1.12)
+/// @GST_VIDEO_FORMAT_I420_12BE: planar 4:2:0 YUV, 12 bits per channel (Since: 1.12)
+/// @GST_VIDEO_FORMAT_I420_12LE: planar 4:2:0 YUV, 12 bits per channel (Since: 1.12)
+/// @GST_VIDEO_FORMAT_I422_12BE: planar 4:2:2 YUV, 12 bits per channel (Since: 1.12)
+/// @GST_VIDEO_FORMAT_I422_12LE: planar 4:2:2 YUV, 12 bits per channel (Since: 1.12)
+/// @GST_VIDEO_FORMAT_Y444_12BE: planar 4:4:4 YUV, 12 bits per channel (Since: 1.12)
+/// @GST_VIDEO_FORMAT_Y444_12LE: planar 4:4:4 YUV, 12 bits per channel (Since: 1.12)
+/// @GST_VIDEO_FORMAT_NV12_10LE40: Fully packed variant of NV12_10LE32 (Since: 1.16)
+/// @GST_VIDEO_FORMAT_Y210: packed 4:2:2 YUV, 10 bits per channel (Since: 1.16)
+/// @GST_VIDEO_FORMAT_Y410: packed 4:4:4 YUV, 10 bits per channel(A-V-Y-U...) (Since: 1.16)
+/// @GST_VIDEO_FORMAT_VUYA: packed 4:4:4 YUV with alpha channel (V0-U0-Y0-A0...) (Since: 1.16)
+/// @GST_VIDEO_FORMAT_BGR10A2_LE: packed 4:4:4 RGB with alpha channel(B-G-R-A), 10 bits for R/G/B channel and MSB 2 bits for alpha channel (Since: 1.16)
+/// @GST_VIDEO_FORMAT_RGB10A2_LE: packed 4:4:4 RGB with alpha channel(R-G-B-A), 10 bits for R/G/B channel and MSB 2 bits for alpha channel (Since: 1.18)
+/// @GST_VIDEO_FORMAT_Y444_16BE: planar 4:4:4 YUV, 16 bits per channel (Since: 1.18)
+/// @GST_VIDEO_FORMAT_Y444_16LE: planar 4:4:4 YUV, 16 bits per channel (Since: 1.18)
+/// @GST_VIDEO_FORMAT_P016_BE: planar 4:2:0 YUV with interleaved UV plane, 16 bits per channel (Since: 1.18)
+/// @GST_VIDEO_FORMAT_P016_LE: planar 4:2:0 YUV with interleaved UV plane, 16 bits per channel (Since: 1.18)
+/// @GST_VIDEO_FORMAT_P012_BE: planar 4:2:0 YUV with interleaved UV plane, 12 bits per channel (Since: 1.18)
+/// @GST_VIDEO_FORMAT_P012_LE: planar 4:2:0 YUV with interleaved UV plane, 12 bits per channel (Since: 1.18)
+/// @GST_VIDEO_FORMAT_Y212_BE: packed 4:2:2 YUV, 12 bits per channel (Y-U-Y-V) (Since: 1.18)
+/// @GST_VIDEO_FORMAT_Y212_LE: packed 4:2:2 YUV, 12 bits per channel (Y-U-Y-V) (Since: 1.18)
+/// @GST_VIDEO_FORMAT_Y412_BE: packed 4:4:4:4 YUV, 12 bits per channel(U-Y-V-A...) (Since: 1.18)
+/// @GST_VIDEO_FORMAT_Y412_LE: packed 4:4:4:4 YUV, 12 bits per channel(U-Y-V-A...) (Since: 1.18)
+/// @GST_VIDEO_FORMAT_NV12_4L4: NV12 with 4x4 tiles in linear order (Since: 1.18)
+/// @GST_VIDEO_FORMAT_NV12_32L32: NV12 with 32x32 tiles in linear order (Since: 1.18)
+/// @GST_VIDEO_FORMAT_RGBP: planar 4:4:4 RGB, 8 bits per channel (Since: 1.20)
+/// @GST_VIDEO_FORMAT_BGRP: planar 4:4:4 RGB, 8 bits per channel (Since: 1.20)
+/// @GST_VIDEO_FORMAT_AV12: Planar 4:2:0 YUV with interleaved UV plane with alpha as 3rd plane (Since: 1.20)
+/// @GST_VIDEO_FORMAT_ARGB64_LE: RGB with alpha channel first, 16 bits per channel
+/// @GST_VIDEO_FORMAT_ARGB64_BE: RGB with alpha channel first, 16 bits per channel
+/// @GST_VIDEO_FORMAT_RGBA64_LE: RGB with alpha channel last, 16 bits per channel
+/// @GST_VIDEO_FORMAT_RGBA64_BE: RGB with alpha channel last, 16 bits per channel
+/// @GST_VIDEO_FORMAT_BGRA64_LE: reverse RGB with alpha channel last, 16 bits per channel
+/// @GST_VIDEO_FORMAT_BGRA64_BE: reverse RGB with alpha channel last, 16 bits per channel
+/// @GST_VIDEO_FORMAT_ABGR64_LE: reverse RGB with alpha channel first, 16 bits per channel
+/// @GST_VIDEO_FORMAT_ABGR64_BE: reverse RGB with alpha channel first, 16 bits per channel
+/// @GST_VIDEO_FORMAT_NV12_16L32S: NV12 with 16x32 Y tiles and 16x16 UV tiles. (Since: 1.22)
+/// @GST_VIDEO_FORMAT_NV12_8L128 : NV12 with 8x128 tiles in linear order (Since: 1.22)
+/// @GST_VIDEO_FORMAT_NV12_10BE_8L128 : NV12 10bit big endian with 8x128 tiles in linear order (Since: 1.22)
+/// @GST_VIDEO_FORMAT_NV12_10LE40_4L4: @GST_VIDEO_FORMAT_NV12_10LE40 with 4x4 pixels tiles (5 bytes per tile row) (Since: 1.24)
+/// @GST_VIDEO_FORMAT_DMA_DRM: DMA DRM special format. It's only used with
+/// memory:DMABuf #GstCapsFeatures, where an extra
+/// parameter (drm-format) is required to define the
+/// image format and its memory layout.
+/// @GST_VIDEO_FORMAT_MT2110T : Mediatek 10bit NV12 little endian with 16x32 tiles in linear order, tiled 2 bits (Since: 1.24)
+/// @GST_VIDEO_FORMAT_MT2110R : Mediatek 10bit NV12 little endian with 16x32 tiles in linear order, raster 2 bits (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A422: planar 4:4:2:2 YUV, 8 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A444: planar 4:4:4:4 YUV, 8 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A444_12LE: planar 4:4:4:4 YUV, 12 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A444_12BE: planar 4:4:4:4 YUV, 12 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A422_12LE: planar 4:4:2:2 YUV, 12 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A422_12BE: planar 4:4:2:2 YUV, 12 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A420_12LE: planar 4:4:2:0 YUV, 12 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A420_12BE: planar 4:4:2:0 YUV, 12 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A444_16LE: planar 4:4:4:4 YUV, 16 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A444_16BE: planar 4:4:4:4 YUV, 16 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A422_16LE: planar 4:4:2:2 YUV, 16 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A422_16BE: planar 4:4:2:2 YUV, 16 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A420_16LE: planar 4:4:2:0 YUV, 16 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_A420_16BE: planar 4:4:2:0 YUV, 16 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_GBR_16LE: planar 4:4:4 RGB, 16 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_GBR_16BE: planar 4:4:4 RGB, 16 bits per channel (Since: 1.24)
+/// @GST_VIDEO_FORMAT_RBGA: packed RGB with alpha, 8 bits per channel (Since: 1.24)
+///
+/// Enum value describing the most common video formats.
+///
+/// See the [GStreamer raw video format design document](https://gstreamer.freedesktop.org/documentation/additional/design/mediatype-video-raw.html#formats)
+/// for details about the layout and packing of these formats in memory.
+abstract class GstVideoFormat {
+  static const int GST_VIDEO_FORMAT_UNKNOWN = 0;
+  static const int GST_VIDEO_FORMAT_ENCODED = 1;
+  static const int GST_VIDEO_FORMAT_I420 = 2;
+  static const int GST_VIDEO_FORMAT_YV12 = 3;
+  static const int GST_VIDEO_FORMAT_YUY2 = 4;
+  static const int GST_VIDEO_FORMAT_UYVY = 5;
+  static const int GST_VIDEO_FORMAT_AYUV = 6;
+  static const int GST_VIDEO_FORMAT_RGBx = 7;
+  static const int GST_VIDEO_FORMAT_BGRx = 8;
+  static const int GST_VIDEO_FORMAT_xRGB = 9;
+  static const int GST_VIDEO_FORMAT_xBGR = 10;
+  static const int GST_VIDEO_FORMAT_RGBA = 11;
+  static const int GST_VIDEO_FORMAT_BGRA = 12;
+  static const int GST_VIDEO_FORMAT_ARGB = 13;
+  static const int GST_VIDEO_FORMAT_ABGR = 14;
+  static const int GST_VIDEO_FORMAT_RGB = 15;
+  static const int GST_VIDEO_FORMAT_BGR = 16;
+  static const int GST_VIDEO_FORMAT_Y41B = 17;
+  static const int GST_VIDEO_FORMAT_Y42B = 18;
+  static const int GST_VIDEO_FORMAT_YVYU = 19;
+  static const int GST_VIDEO_FORMAT_Y444 = 20;
+  static const int GST_VIDEO_FORMAT_v210 = 21;
+  static const int GST_VIDEO_FORMAT_v216 = 22;
+  static const int GST_VIDEO_FORMAT_NV12 = 23;
+  static const int GST_VIDEO_FORMAT_NV21 = 24;
+  static const int GST_VIDEO_FORMAT_GRAY8 = 25;
+  static const int GST_VIDEO_FORMAT_GRAY16_BE = 26;
+  static const int GST_VIDEO_FORMAT_GRAY16_LE = 27;
+  static const int GST_VIDEO_FORMAT_v308 = 28;
+  static const int GST_VIDEO_FORMAT_RGB16 = 29;
+  static const int GST_VIDEO_FORMAT_BGR16 = 30;
+  static const int GST_VIDEO_FORMAT_RGB15 = 31;
+  static const int GST_VIDEO_FORMAT_BGR15 = 32;
+  static const int GST_VIDEO_FORMAT_UYVP = 33;
+  static const int GST_VIDEO_FORMAT_A420 = 34;
+  static const int GST_VIDEO_FORMAT_RGB8P = 35;
+  static const int GST_VIDEO_FORMAT_YUV9 = 36;
+  static const int GST_VIDEO_FORMAT_YVU9 = 37;
+  static const int GST_VIDEO_FORMAT_IYU1 = 38;
+  static const int GST_VIDEO_FORMAT_ARGB64 = 39;
+  static const int GST_VIDEO_FORMAT_AYUV64 = 40;
+  static const int GST_VIDEO_FORMAT_r210 = 41;
+  static const int GST_VIDEO_FORMAT_I420_10BE = 42;
+  static const int GST_VIDEO_FORMAT_I420_10LE = 43;
+  static const int GST_VIDEO_FORMAT_I422_10BE = 44;
+  static const int GST_VIDEO_FORMAT_I422_10LE = 45;
+  static const int GST_VIDEO_FORMAT_Y444_10BE = 46;
+  static const int GST_VIDEO_FORMAT_Y444_10LE = 47;
+  static const int GST_VIDEO_FORMAT_GBR = 48;
+  static const int GST_VIDEO_FORMAT_GBR_10BE = 49;
+  static const int GST_VIDEO_FORMAT_GBR_10LE = 50;
+  static const int GST_VIDEO_FORMAT_NV16 = 51;
+  static const int GST_VIDEO_FORMAT_NV24 = 52;
+  static const int GST_VIDEO_FORMAT_NV12_64Z32 = 53;
+  static const int GST_VIDEO_FORMAT_A420_10BE = 54;
+  static const int GST_VIDEO_FORMAT_A420_10LE = 55;
+  static const int GST_VIDEO_FORMAT_A422_10BE = 56;
+  static const int GST_VIDEO_FORMAT_A422_10LE = 57;
+  static const int GST_VIDEO_FORMAT_A444_10BE = 58;
+  static const int GST_VIDEO_FORMAT_A444_10LE = 59;
+  static const int GST_VIDEO_FORMAT_NV61 = 60;
+  static const int GST_VIDEO_FORMAT_P010_10BE = 61;
+  static const int GST_VIDEO_FORMAT_P010_10LE = 62;
+  static const int GST_VIDEO_FORMAT_IYU2 = 63;
+  static const int GST_VIDEO_FORMAT_VYUY = 64;
+  static const int GST_VIDEO_FORMAT_GBRA = 65;
+  static const int GST_VIDEO_FORMAT_GBRA_10BE = 66;
+  static const int GST_VIDEO_FORMAT_GBRA_10LE = 67;
+  static const int GST_VIDEO_FORMAT_GBR_12BE = 68;
+  static const int GST_VIDEO_FORMAT_GBR_12LE = 69;
+  static const int GST_VIDEO_FORMAT_GBRA_12BE = 70;
+  static const int GST_VIDEO_FORMAT_GBRA_12LE = 71;
+  static const int GST_VIDEO_FORMAT_I420_12BE = 72;
+  static const int GST_VIDEO_FORMAT_I420_12LE = 73;
+  static const int GST_VIDEO_FORMAT_I422_12BE = 74;
+  static const int GST_VIDEO_FORMAT_I422_12LE = 75;
+  static const int GST_VIDEO_FORMAT_Y444_12BE = 76;
+  static const int GST_VIDEO_FORMAT_Y444_12LE = 77;
+  static const int GST_VIDEO_FORMAT_GRAY10_LE32 = 78;
+  static const int GST_VIDEO_FORMAT_NV12_10LE32 = 79;
+  static const int GST_VIDEO_FORMAT_NV16_10LE32 = 80;
+  static const int GST_VIDEO_FORMAT_NV12_10LE40 = 81;
+  static const int GST_VIDEO_FORMAT_Y210 = 82;
+  static const int GST_VIDEO_FORMAT_Y410 = 83;
+  static const int GST_VIDEO_FORMAT_VUYA = 84;
+  static const int GST_VIDEO_FORMAT_BGR10A2_LE = 85;
+  static const int GST_VIDEO_FORMAT_RGB10A2_LE = 86;
+  static const int GST_VIDEO_FORMAT_Y444_16BE = 87;
+  static const int GST_VIDEO_FORMAT_Y444_16LE = 88;
+  static const int GST_VIDEO_FORMAT_P016_BE = 89;
+  static const int GST_VIDEO_FORMAT_P016_LE = 90;
+  static const int GST_VIDEO_FORMAT_P012_BE = 91;
+  static const int GST_VIDEO_FORMAT_P012_LE = 92;
+  static const int GST_VIDEO_FORMAT_Y212_BE = 93;
+  static const int GST_VIDEO_FORMAT_Y212_LE = 94;
+  static const int GST_VIDEO_FORMAT_Y412_BE = 95;
+  static const int GST_VIDEO_FORMAT_Y412_LE = 96;
+
+  /// GST_VIDEO_FORMAT_NV12_4L4:
+  ///
+  /// NV12 with 4x4 tiles in linear order.
+  ///
+  /// Since: 1.18
+  static const int GST_VIDEO_FORMAT_NV12_4L4 = 97;
+
+  /// GST_VIDEO_FORMAT_NV12_32L32:
+  ///
+  /// NV12 with 32x32 tiles in linear order.
+  ///
+  /// Since: 1.18
+  static const int GST_VIDEO_FORMAT_NV12_32L32 = 98;
+
+  /// GST_VIDEO_FORMAT_RGBP:
+  ///
+  /// Planar 4:4:4 RGB, R-G-B order
+  ///
+  /// Since: 1.20
+  static const int GST_VIDEO_FORMAT_RGBP = 99;
+
+  /// GST_VIDEO_FORMAT_BGRP:
+  ///
+  /// Planar 4:4:4 RGB, B-G-R order
+  ///
+  /// Since: 1.20
+  static const int GST_VIDEO_FORMAT_BGRP = 100;
+
+  /// GST_VIDEO_FORMAT_AV12:
+  ///
+  /// Planar 4:2:0 YUV with interleaved UV plane with alpha as
+  /// 3rd plane.
+  ///
+  /// Since: 1.20
+  static const int GST_VIDEO_FORMAT_AV12 = 101;
+
+  /// GST_VIDEO_FORMAT_ARGB64_LE:
+  ///
+  /// RGB with alpha channel first, 16 bits (little endian)
+  /// per channel.
+  ///
+  /// Since: 1.20
+  static const int GST_VIDEO_FORMAT_ARGB64_LE = 102;
+
+  /// GST_VIDEO_FORMAT_ARGB64_BE:
+  ///
+  /// RGB with alpha channel first, 16 bits (big endian)
+  /// per channel.
+  ///
+  /// Since: 1.20
+  static const int GST_VIDEO_FORMAT_ARGB64_BE = 103;
+
+  /// GST_VIDEO_FORMAT_RGBA64_LE:
+  ///
+  /// RGB with alpha channel last, 16 bits (little endian)
+  /// per channel.
+  ///
+  /// Since: 1.20
+  static const int GST_VIDEO_FORMAT_RGBA64_LE = 104;
+
+  /// GST_VIDEO_FORMAT_RGBA64_BE:
+  ///
+  /// RGB with alpha channel last, 16 bits (big endian)
+  /// per channel.
+  ///
+  /// Since: 1.20
+  static const int GST_VIDEO_FORMAT_RGBA64_BE = 105;
+
+  /// GST_VIDEO_FORMAT_BGRA64_LE:
+  ///
+  /// Reverse RGB with alpha channel last, 16 bits (little endian)
+  /// per channel.
+  ///
+  /// Since: 1.20
+  static const int GST_VIDEO_FORMAT_BGRA64_LE = 106;
+
+  /// GST_VIDEO_FORMAT_BGRA64_BE:
+  ///
+  /// Reverse RGB with alpha channel last, 16 bits (big endian)
+  /// per channel.
+  ///
+  /// Since: 1.20
+  static const int GST_VIDEO_FORMAT_BGRA64_BE = 107;
+
+  /// GST_VIDEO_FORMAT_ABGR64_LE:
+  ///
+  /// Reverse RGB with alpha channel first, 16 bits (little endian)
+  /// per channel.
+  ///
+  /// Since: 1.20
+  static const int GST_VIDEO_FORMAT_ABGR64_LE = 108;
+
+  /// GST_VIDEO_FORMAT_ABGR64_BE:
+  ///
+  /// Reverse RGB with alpha channel first, 16 bits (big endian)
+  /// per channel.
+  ///
+  /// Since: 1.20
+  static const int GST_VIDEO_FORMAT_ABGR64_BE = 109;
+
+  /// GST_VIDEO_FORMAT_NV12_16L32S:
+  ///
+  /// NV12 with 16x32 Y tiles and 16x16 UV tiles.
+  ///
+  /// Since: 1.22
+  static const int GST_VIDEO_FORMAT_NV12_16L32S = 110;
+
+  /// GST_VIDEO_FORMAT_NV12_8L128:
+  ///
+  /// NV12 with 8x128 tiles in linear order.
+  ///
+  /// Since: 1.22
+  static const int GST_VIDEO_FORMAT_NV12_8L128 = 111;
+
+  /// GST_VIDEO_FORMAT_NV12_10BE_8L128:
+  ///
+  /// NV12 10bit big endian with 8x128 tiles in linear order.
+  ///
+  /// Since: 1.22
+  static const int GST_VIDEO_FORMAT_NV12_10BE_8L128 = 112;
+
+  /// GST_VIDEO_FORMAT_NV12_10LE40_4L4:
+  ///
+  /// @GST_VIDEO_FORMAT_NV12_10LE40 with 4x4 pixels tiles (5 bytes
+  /// per tile row). This format is produced by Verisilicon/Hantro decoders.
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_NV12_10LE40_4L4 = 113;
+
+  /// GST_VIDEO_FORMAT_DMA_DRM:
+  ///
+  /// @GST_VIDEO_FORMAT_DMA_DRM represent the DMA DRM special format. It's
+  /// only used with memory:DMABuf #GstCapsFeatures, where an extra
+  /// parameter (drm-format) is required to define the image format and
+  /// its memory layout.
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_DMA_DRM = 114;
+
+  /// GST_VIDEO_FORMAT_MT2110T:
+  ///
+  /// Mediatek 10bit NV12 little endian with 16x32 tiles in linear order, tile 2
+  /// bits.
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_MT2110T = 115;
+
+  /// GST_VIDEO_FORMAT_MT2110R:
+  ///
+  /// Mediatek 10bit NV12 little endian with 16x32 tiles in linear order, raster
+  /// 2 bits.
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_MT2110R = 116;
+
+  /// GST_VIDEO_FORMAT_A422:
+  ///
+  /// planar 4:4:2:2 YUV, 8 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A422 = 117;
+
+  /// GST_VIDEO_FORMAT_A444:
+  ///
+  /// planar 4:4:4:4 YUV, 8 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A444 = 118;
+
+  /// GST_VIDEO_FORMAT_A444_12LE:
+  ///
+  /// planar 4:4:4:4 YUV, 12 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A444_12LE = 119;
+
+  /// GST_VIDEO_FORMAT_A444_12BE:
+  ///
+  /// planar 4:4:4:4 YUV, 12 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A444_12BE = 120;
+
+  /// GST_VIDEO_FORMAT_A422_12LE:
+  ///
+  /// planar 4:4:2:2 YUV, 12 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A422_12LE = 121;
+
+  /// GST_VIDEO_FORMAT_A422_12BE:
+  ///
+  /// planar 4:4:2:2 YUV, 12 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A422_12BE = 122;
+
+  /// GST_VIDEO_FORMAT_A420_12LE:
+  ///
+  /// planar 4:4:2:0 YUV, 12 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A420_12LE = 123;
+
+  /// GST_VIDEO_FORMAT_A420_12BE:
+  ///
+  /// planar 4:4:2:0 YUV, 12 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A420_12BE = 124;
+
+  /// GST_VIDEO_FORMAT_A444_16LE:
+  ///
+  /// planar 4:4:4:4 YUV, 16 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A444_16LE = 125;
+
+  /// GST_VIDEO_FORMAT_A444_16BE:
+  ///
+  /// planar 4:4:4:4 YUV, 16 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A444_16BE = 126;
+
+  /// GST_VIDEO_FORMAT_A422_16LE:
+  ///
+  /// planar 4:4:2:2 YUV, 16 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A422_16LE = 127;
+
+  /// GST_VIDEO_FORMAT_A422_16BE:
+  ///
+  /// planar 4:4:2:2 YUV, 16 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A422_16BE = 128;
+
+  /// GST_VIDEO_FORMAT_A420_16LE:
+  ///
+  /// planar 4:4:2:0 YUV, 16 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A420_16LE = 129;
+
+  /// GST_VIDEO_FORMAT_A420_16BE:
+  ///
+  /// planar 4:4:2:0 YUV, 16 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_A420_16BE = 130;
+
+  /// GST_VIDEO_FORMAT_GBR_16LE:
+  ///
+  /// planar 4:4:4 RGB, 16 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_GBR_16LE = 131;
+
+  /// GST_VIDEO_FORMAT_GBR_16BE:
+  ///
+  /// planar 4:4:4 RGB, 16 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_GBR_16BE = 132;
+
+  /// GST_VIDEO_FORMAT_RBGA:
+  ///
+  /// packed RGB with alpha, 8 bits per channel
+  ///
+  /// Since: 1.24
+  static const int GST_VIDEO_FORMAT_RBGA = 133;
+}
+
+/// GstVideoFormatInfo:
+/// @format: #GstVideoFormat
+/// @name: string representation of the format
+/// @description: use readable description of the format
+/// @flags: #GstVideoFormatFlags
+/// @bits: The number of bits used to pack data items. This can be less than 8
+/// when multiple pixels are stored in a byte. for values > 8 multiple bytes
+/// should be read according to the endianness flag before applying the shift
+/// and mask.
+/// @n_components: the number of components in the video format.
+/// @shift: the number of bits to shift away to get the component data
+/// @depth: the depth in bits for each component
+/// @pixel_stride: the pixel stride of each component. This is the amount of
+/// bytes to the pixel immediately to the right. When bits < 8, the stride is
+/// expressed in bits. For 24-bit RGB, this would be 3 bytes, for example,
+/// while it would be 4 bytes for RGBx or ARGB.
+/// @n_planes: the number of planes for this format. The number of planes can be
+/// less than the amount of components when multiple components are packed into
+/// one plane.
+/// @plane: the plane number where a component can be found
+/// @poffset: the offset in the plane where the first pixel of the components
+/// can be found.
+/// @w_sub: subsampling factor of the width for the component. Use
+/// GST_VIDEO_SUB_SCALE to scale a width.
+/// @h_sub: subsampling factor of the height for the component. Use
+/// GST_VIDEO_SUB_SCALE to scale a height.
+/// @unpack_format: the format of the unpacked pixels. This format must have the
+/// #GST_VIDEO_FORMAT_FLAG_UNPACK flag set.
+/// @unpack_func: an unpack function for this format
+/// @pack_lines: the amount of lines that will be packed
+/// @pack_func: an pack function for this format
+/// @tile_mode: The tiling mode
+/// @tile_ws: The width of a tile, in bytes, represented as a shift. DEPRECATED,
+/// use tile_info[] array instead.
+/// @tile_hs: The height of a tile, in bytes, represented as a shift. DEPREACTED,
+/// use tile_info[] array instead.
+/// @tile_info: Per-plane tile information
+///
+/// Information for a video format.
+final class _GstVideoFormatInfo extends ffi.Struct {
+  @ffi.Int32()
+  external int format;
+
+  external ffi.Pointer<ffi.Char> name;
+
+  external ffi.Pointer<ffi.Char> description;
+
+  @ffi.Int32()
+  external int flags;
+
+  @ffi.UnsignedInt()
+  external int bits;
+
+  @ffi.UnsignedInt()
+  external int n_components;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.UnsignedInt> shift;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.UnsignedInt> depth;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Int> pixel_stride;
+
+  @ffi.UnsignedInt()
+  external int n_planes;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.UnsignedInt> plane;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.UnsignedInt> poffset;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.UnsignedInt> w_sub;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.UnsignedInt> h_sub;
+
+  @ffi.Int32()
+  external int unpack_format;
+
+  external GstVideoFormatUnpack unpack_func;
+
+  @ffi.Int()
+  external int pack_lines;
+
+  external GstVideoFormatPack pack_func;
+
+  @ffi.Int32()
+  external int tile_mode;
+
+  @ffi.UnsignedInt()
+  external int tile_ws;
+
+  @ffi.UnsignedInt()
+  external int tile_hs;
+
+  /// GstVideoFormatInfo.tile_info:
+  ///
+  /// Information about the tiles for each of the planes.
+  ///
+  /// Since: 1.22
+  @ffi.Array.multi([4])
+  external ffi.Array<GstVideoTileInfo> tile_info;
+}
+
+/// GstVideoFormatFlags:
+/// @GST_VIDEO_FORMAT_FLAG_YUV: The video format is YUV, components are numbered
+/// 0=Y, 1=U, 2=V.
+/// @GST_VIDEO_FORMAT_FLAG_RGB: The video format is RGB, components are numbered
+/// 0=R, 1=G, 2=B.
+/// @GST_VIDEO_FORMAT_FLAG_GRAY: The video is gray, there is one gray component
+/// with index 0.
+/// @GST_VIDEO_FORMAT_FLAG_ALPHA: The video format has an alpha components with
+/// the number 3.
+/// @GST_VIDEO_FORMAT_FLAG_LE: The video format has data stored in little
+/// endianness.
+/// @GST_VIDEO_FORMAT_FLAG_PALETTE: The video format has a palette. The palette
+/// is stored in the second plane and indexes are stored in the first plane.
+/// @GST_VIDEO_FORMAT_FLAG_COMPLEX: The video format has a complex layout that
+/// can't be described with the usual information in the #GstVideoFormatInfo.
+/// @GST_VIDEO_FORMAT_FLAG_UNPACK: This format can be used in a
+/// #GstVideoFormatUnpack and #GstVideoFormatPack function.
+/// @GST_VIDEO_FORMAT_FLAG_TILED: The format is tiled, there is tiling information
+/// in the last plane.
+/// @GST_VIDEO_FORMAT_FLAG_SUBTILES: The tile size varies per plane
+/// according to the subsampling. (Since: 1.22)
+///
+/// The different video flags that a format info can have.
+abstract class GstVideoFormatFlags {
+  static const int GST_VIDEO_FORMAT_FLAG_YUV = 1;
+  static const int GST_VIDEO_FORMAT_FLAG_RGB = 2;
+  static const int GST_VIDEO_FORMAT_FLAG_GRAY = 4;
+  static const int GST_VIDEO_FORMAT_FLAG_ALPHA = 8;
+  static const int GST_VIDEO_FORMAT_FLAG_LE = 16;
+  static const int GST_VIDEO_FORMAT_FLAG_PALETTE = 32;
+  static const int GST_VIDEO_FORMAT_FLAG_COMPLEX = 64;
+  static const int GST_VIDEO_FORMAT_FLAG_UNPACK = 128;
+  static const int GST_VIDEO_FORMAT_FLAG_TILED = 256;
+
+  /// GST_VIDEO_FORMAT_FLAG_SUBTILES:
+  ///
+  /// The tile size varies per plane according to the subsampling.
+  ///
+  /// Since: 1.22
+  static const int GST_VIDEO_FORMAT_FLAG_SUBTILES = 512;
+}
+
+/// GstVideoFormatUnpack:
+/// @info: a #GstVideoFormatInfo
+/// @flags: flags to control the unpacking
+/// @dest: a destination array
+/// @data: pointers to the data planes
+/// @stride: strides of the planes
+/// @x: the x position in the image to start from
+/// @y: the y position in the image to start from
+/// @width: the amount of pixels to unpack.
+///
+/// Unpacks @width pixels from the given planes and strides containing data of
+/// format @info. The pixels will be unpacked into @dest with each component
+/// interleaved as per @info's unpack_format, which will usually be one of
+/// #GST_VIDEO_FORMAT_ARGB, #GST_VIDEO_FORMAT_AYUV, #GST_VIDEO_FORMAT_ARGB64 or
+/// #GST_VIDEO_FORMAT_AYUV64 depending on the format to unpack.
+/// @dest should at least be big enough to hold @width * bytes_per_pixel bytes
+/// where bytes_per_pixel relates to the unpack format and will usually be
+/// either 4 or 8 depending on the unpack format. bytes_per_pixel will be
+/// the same as the pixel stride for plane 0 for the above formats.
+///
+/// For subsampled formats, the components will be duplicated in the destination
+/// array. Reconstruction of the missing components can be performed in a
+/// separate step after unpacking.
+typedef GstVideoFormatUnpack
+    = ffi.Pointer<ffi.NativeFunction<GstVideoFormatUnpackFunction>>;
+typedef GstVideoFormatUnpackFunction = ffi.Void Function(
+    ffi.Pointer<GstVideoFormatInfo> info,
+    ffi.Int32 flags,
+    ffi.Pointer dest,
+    ffi.Pointer<ffi.Pointer> data,
+    ffi.Pointer<ffi.Int> stride,
+    ffi.Int x,
+    ffi.Int y,
+    ffi.Int width);
+typedef DartGstVideoFormatUnpackFunction = void Function(
+    ffi.Pointer<GstVideoFormatInfo> info,
+    int flags,
+    ffi.Pointer dest,
+    ffi.Pointer<ffi.Pointer> data,
+    ffi.Pointer<ffi.Int> stride,
+    int x,
+    int y,
+    int width);
+typedef GstVideoFormatInfo = _GstVideoFormatInfo;
+
+/// GstVideoPackFlags:
+/// @GST_VIDEO_PACK_FLAG_NONE: No flag
+/// @GST_VIDEO_PACK_FLAG_TRUNCATE_RANGE: When the source has a smaller depth
+/// than the target format, set the least significant bits of the target
+/// to 0. This is likely slightly faster but less accurate. When this flag
+/// is not specified, the most significant bits of the source are duplicated
+/// in the least significant bits of the destination.
+/// @GST_VIDEO_PACK_FLAG_INTERLACED: The source is interlaced. The unpacked
+/// format will be interlaced as well with each line containing
+/// information from alternating fields. (Since: 1.2)
+///
+/// The different flags that can be used when packing and unpacking.
+abstract class GstVideoPackFlags {
+  static const int GST_VIDEO_PACK_FLAG_NONE = 0;
+  static const int GST_VIDEO_PACK_FLAG_TRUNCATE_RANGE = 1;
+  static const int GST_VIDEO_PACK_FLAG_INTERLACED = 2;
+}
+
+/// GstVideoFormatPack:
+/// @info: a #GstVideoFormatInfo
+/// @flags: flags to control the packing
+/// @src: a source array
+/// @sstride: the source array stride
+/// @data: pointers to the destination data planes
+/// @stride: strides of the destination planes
+/// @chroma_site: the chroma siting of the target when subsampled (not used)
+/// @y: the y position in the image to pack to
+/// @width: the amount of pixels to pack.
+///
+/// Packs @width pixels from @src to the given planes and strides in the
+/// format @info. The pixels from source have each component interleaved
+/// and will be packed into the planes in @data.
+///
+/// This function operates on pack_lines lines, meaning that @src should
+/// contain at least pack_lines lines with a stride of @sstride and @y
+/// should be a multiple of pack_lines.
+///
+/// Subsampled formats will use the horizontally and vertically cosited
+/// component from the source. Subsampling should be performed before
+/// packing.
+///
+/// Because this function does not have a x coordinate, it is not possible to
+/// pack pixels starting from an unaligned position. For tiled images this
+/// means that packing should start from a tile coordinate. For subsampled
+/// formats this means that a complete pixel needs to be packed.
+typedef GstVideoFormatPack
+    = ffi.Pointer<ffi.NativeFunction<GstVideoFormatPackFunction>>;
+typedef GstVideoFormatPackFunction = ffi.Void Function(
+    ffi.Pointer<GstVideoFormatInfo> info,
+    ffi.Int32 flags,
+    ffi.Pointer src,
+    ffi.Int sstride,
+    ffi.Pointer<ffi.Pointer> data,
+    ffi.Pointer<ffi.Int> stride,
+    ffi.Int32 chroma_site,
+    ffi.Int y,
+    ffi.Int width);
+typedef DartGstVideoFormatPackFunction = void Function(
+    ffi.Pointer<GstVideoFormatInfo> info,
+    int flags,
+    ffi.Pointer src,
+    int sstride,
+    ffi.Pointer<ffi.Pointer> data,
+    ffi.Pointer<ffi.Int> stride,
+    int chroma_site,
+    int y,
+    int width);
+
+/// GstVideoChromaSite:
+/// @GST_VIDEO_CHROMA_SITE_UNKNOWN: unknown cositing
+/// @GST_VIDEO_CHROMA_SITE_NONE: no cositing
+/// @GST_VIDEO_CHROMA_SITE_H_COSITED: chroma is horizontally cosited
+/// @GST_VIDEO_CHROMA_SITE_V_COSITED: chroma is vertically cosited
+/// @GST_VIDEO_CHROMA_SITE_ALT_LINE: choma samples are sited on alternate lines
+/// @GST_VIDEO_CHROMA_SITE_COSITED: chroma samples cosited with luma samples
+/// @GST_VIDEO_CHROMA_SITE_JPEG: jpeg style cositing, also for mpeg1 and mjpeg
+/// @GST_VIDEO_CHROMA_SITE_MPEG2: mpeg2 style cositing
+/// @GST_VIDEO_CHROMA_SITE_DV: DV style cositing
+///
+/// Various Chroma sitings.
+abstract class GstVideoChromaSite {
+  static const int GST_VIDEO_CHROMA_SITE_UNKNOWN = 0;
+  static const int GST_VIDEO_CHROMA_SITE_NONE = 1;
+  static const int GST_VIDEO_CHROMA_SITE_H_COSITED = 2;
+  static const int GST_VIDEO_CHROMA_SITE_V_COSITED = 4;
+  static const int GST_VIDEO_CHROMA_SITE_ALT_LINE = 8;
+  static const int GST_VIDEO_CHROMA_SITE_COSITED = 6;
+  static const int GST_VIDEO_CHROMA_SITE_JPEG = 1;
+  static const int GST_VIDEO_CHROMA_SITE_MPEG2 = 2;
+  static const int GST_VIDEO_CHROMA_SITE_DV = 14;
+}
+
+typedef GstVideoTileInfo = _GstVideoTileInfo;
+
+/// GstVideoChromaMethod:
+/// @GST_VIDEO_CHROMA_METHOD_NEAREST: Duplicates the chroma samples when
+/// upsampling and drops when subsampling
+/// @GST_VIDEO_CHROMA_METHOD_LINEAR: Uses linear interpolation to reconstruct
+/// missing chroma and averaging to subsample
+///
+/// Different subsampling and upsampling methods
+abstract class GstVideoChromaMethod {
+  static const int GST_VIDEO_CHROMA_METHOD_NEAREST = 0;
+  static const int GST_VIDEO_CHROMA_METHOD_LINEAR = 1;
+}
+
+/// GstVideoChromaFlags:
+/// @GST_VIDEO_CHROMA_FLAG_NONE: no flags
+/// @GST_VIDEO_CHROMA_FLAG_INTERLACED: the input is interlaced
+///
+/// Extra flags that influence the result from gst_video_chroma_resample_new().
+abstract class GstVideoChromaFlags {
+  static const int GST_VIDEO_CHROMA_FLAG_NONE = 0;
+  static const int GST_VIDEO_CHROMA_FLAG_INTERLACED = 1;
+}
+
+final class _GstVideoChromaResample extends ffi.Opaque {}
+
+typedef GstVideoChromaResample = _GstVideoChromaResample;
+
+/// GstVideoColorRange:
+/// @GST_VIDEO_COLOR_RANGE_UNKNOWN: unknown range
+/// @GST_VIDEO_COLOR_RANGE_0_255: [0..255] for 8 bit components
+/// @GST_VIDEO_COLOR_RANGE_16_235: [16..235] for 8 bit components. Chroma has
+/// [16..240] range.
+///
+/// Possible color range values. These constants are defined for 8 bit color
+/// values and can be scaled for other bit depths.
+abstract class GstVideoColorRange {
+  static const int GST_VIDEO_COLOR_RANGE_UNKNOWN = 0;
+  static const int GST_VIDEO_COLOR_RANGE_0_255 = 1;
+  static const int GST_VIDEO_COLOR_RANGE_16_235 = 2;
+}
+
+/// GstVideoColorMatrix:
+/// @GST_VIDEO_COLOR_MATRIX_UNKNOWN: unknown matrix
+/// @GST_VIDEO_COLOR_MATRIX_RGB: identity matrix. Order of coefficients is
+/// actually GBR, also IEC 61966-2-1 (sRGB)
+/// @GST_VIDEO_COLOR_MATRIX_FCC: FCC Title 47 Code of Federal Regulations 73.682 (a)(20)
+/// @GST_VIDEO_COLOR_MATRIX_BT709: ITU-R BT.709 color matrix, also ITU-R BT1361
+/// / IEC 61966-2-4 xvYCC709 / SMPTE RP177 Annex B
+/// @GST_VIDEO_COLOR_MATRIX_BT601: ITU-R BT.601 color matrix, also SMPTE170M / ITU-R BT1358 525 / ITU-R BT1700 NTSC
+/// @GST_VIDEO_COLOR_MATRIX_SMPTE240M: SMPTE 240M color matrix
+/// @GST_VIDEO_COLOR_MATRIX_BT2020: ITU-R BT.2020 color matrix. Since: 1.6
+///
+/// The color matrix is used to convert between Y'PbPr and
+/// non-linear RGB (R'G'B')
+abstract class GstVideoColorMatrix {
+  static const int GST_VIDEO_COLOR_MATRIX_UNKNOWN = 0;
+  static const int GST_VIDEO_COLOR_MATRIX_RGB = 1;
+  static const int GST_VIDEO_COLOR_MATRIX_FCC = 2;
+  static const int GST_VIDEO_COLOR_MATRIX_BT709 = 3;
+  static const int GST_VIDEO_COLOR_MATRIX_BT601 = 4;
+  static const int GST_VIDEO_COLOR_MATRIX_SMPTE240M = 5;
+  static const int GST_VIDEO_COLOR_MATRIX_BT2020 = 6;
+}
+
+/// GstVideoTransferFunction:
+/// @GST_VIDEO_TRANSFER_UNKNOWN: unknown transfer function
+/// @GST_VIDEO_TRANSFER_GAMMA10: linear RGB, gamma 1.0 curve
+/// @GST_VIDEO_TRANSFER_GAMMA18: Gamma 1.8 curve
+/// @GST_VIDEO_TRANSFER_GAMMA20: Gamma 2.0 curve
+/// @GST_VIDEO_TRANSFER_GAMMA22: Gamma 2.2 curve
+/// @GST_VIDEO_TRANSFER_BT709: Gamma 2.2 curve with a linear segment in the lower
+/// range, also ITU-R BT470M / ITU-R BT1700 625 PAL &
+/// SECAM / ITU-R BT1361
+/// @GST_VIDEO_TRANSFER_SMPTE240M: Gamma 2.2 curve with a linear segment in the
+/// lower range
+/// @GST_VIDEO_TRANSFER_SRGB: Gamma 2.4 curve with a linear segment in the lower
+/// range. IEC 61966-2-1 (sRGB or sYCC)
+/// @GST_VIDEO_TRANSFER_GAMMA28: Gamma 2.8 curve, also ITU-R BT470BG
+/// @GST_VIDEO_TRANSFER_LOG100: Logarithmic transfer characteristic
+/// 100:1 range
+/// @GST_VIDEO_TRANSFER_LOG316: Logarithmic transfer characteristic
+/// 316.22777:1 range (100 * sqrt(10) : 1)
+/// @GST_VIDEO_TRANSFER_BT2020_12: Gamma 2.2 curve with a linear segment in the lower
+/// range. Used for BT.2020 with 12 bits per
+/// component. Since: 1.6
+/// @GST_VIDEO_TRANSFER_ADOBERGB: Gamma 2.19921875. Since: 1.8
+/// @GST_VIDEO_TRANSFER_BT2020_10: Rec. ITU-R BT.2020-2 with 10 bits per component.
+/// (functionally the same as the values
+/// GST_VIDEO_TRANSFER_BT709 and GST_VIDEO_TRANSFER_BT601).
+/// Since: 1.18
+/// @GST_VIDEO_TRANSFER_SMPTE2084: SMPTE ST 2084 for 10, 12, 14, and 16-bit systems.
+/// Known as perceptual quantization (PQ)
+/// Since: 1.18
+/// @GST_VIDEO_TRANSFER_ARIB_STD_B67: Association of Radio Industries and Businesses (ARIB)
+/// STD-B67 and Rec. ITU-R BT.2100-1 hybrid loggamma (HLG) system
+/// Since: 1.18
+/// @GST_VIDEO_TRANSFER_BT601: also known as SMPTE170M / ITU-R BT1358 525 or 625 / ITU-R BT1700 NTSC
+/// Functionally the same as the values
+/// GST_VIDEO_TRANSFER_BT709, and GST_VIDEO_TRANSFER_BT2020_10.
+/// Since: 1.18
+///
+/// The video transfer function defines the formula for converting between
+/// non-linear RGB (R'G'B') and linear RGB
+abstract class GstVideoTransferFunction {
+  static const int GST_VIDEO_TRANSFER_UNKNOWN = 0;
+  static const int GST_VIDEO_TRANSFER_GAMMA10 = 1;
+  static const int GST_VIDEO_TRANSFER_GAMMA18 = 2;
+  static const int GST_VIDEO_TRANSFER_GAMMA20 = 3;
+  static const int GST_VIDEO_TRANSFER_GAMMA22 = 4;
+  static const int GST_VIDEO_TRANSFER_BT709 = 5;
+  static const int GST_VIDEO_TRANSFER_SMPTE240M = 6;
+  static const int GST_VIDEO_TRANSFER_SRGB = 7;
+  static const int GST_VIDEO_TRANSFER_GAMMA28 = 8;
+  static const int GST_VIDEO_TRANSFER_LOG100 = 9;
+  static const int GST_VIDEO_TRANSFER_LOG316 = 10;
+  static const int GST_VIDEO_TRANSFER_BT2020_12 = 11;
+  static const int GST_VIDEO_TRANSFER_ADOBERGB = 12;
+  static const int GST_VIDEO_TRANSFER_BT2020_10 = 13;
+  static const int GST_VIDEO_TRANSFER_SMPTE2084 = 14;
+  static const int GST_VIDEO_TRANSFER_ARIB_STD_B67 = 15;
+
+  /// GST_VIDEO_TRANSFER_BT601:
+  ///
+  /// also known as SMPTE170M / ITU-R BT1358 525 or 625 / ITU-R BT1700 NTSC
+  ///
+  /// Since: 1.18
+  static const int GST_VIDEO_TRANSFER_BT601 = 16;
+}
+
+/// GstVideoColorPrimaries:
+/// @GST_VIDEO_COLOR_PRIMARIES_UNKNOWN: unknown color primaries
+/// @GST_VIDEO_COLOR_PRIMARIES_BT709: BT709 primaries, also ITU-R BT1361 / IEC
+/// 61966-2-4 / SMPTE RP177 Annex B
+/// @GST_VIDEO_COLOR_PRIMARIES_BT470M: BT470M primaries, also FCC Title 47 Code
+/// of Federal Regulations 73.682 (a)(20)
+/// @GST_VIDEO_COLOR_PRIMARIES_BT470BG: BT470BG primaries, also ITU-R BT601-6
+/// 625 / ITU-R BT1358 625 / ITU-R BT1700 625 PAL & SECAM
+/// @GST_VIDEO_COLOR_PRIMARIES_SMPTE170M: SMPTE170M primaries, also ITU-R
+/// BT601-6 525 / ITU-R BT1358 525 / ITU-R BT1700 NTSC
+/// @GST_VIDEO_COLOR_PRIMARIES_SMPTE240M: SMPTE240M primaries
+/// @GST_VIDEO_COLOR_PRIMARIES_FILM: Generic film (colour filters using
+/// Illuminant C)
+/// @GST_VIDEO_COLOR_PRIMARIES_BT2020: ITU-R BT2020 primaries. Since: 1.6
+/// @GST_VIDEO_COLOR_PRIMARIES_ADOBERGB: Adobe RGB primaries. Since: 1.8
+/// @GST_VIDEO_COLOR_PRIMARIES_SMPTEST428: SMPTE ST 428 primaries (CIE 1931
+/// XYZ). Since: 1.16
+/// @GST_VIDEO_COLOR_PRIMARIES_SMPTERP431: SMPTE RP 431 primaries (ST 431-2
+/// (2011) / DCI P3). Since: 1.16
+/// @GST_VIDEO_COLOR_PRIMARIES_SMPTEEG432: SMPTE EG 432 primaries (ST 432-1
+/// (2010) / P3 D65). Since: 1.16
+/// @GST_VIDEO_COLOR_PRIMARIES_EBU3213: EBU 3213 primaries (JEDEC P22
+/// phosphors). Since: 1.16
+///
+/// The color primaries define the how to transform linear RGB values to and from
+/// the CIE XYZ colorspace.
+abstract class GstVideoColorPrimaries {
+  static const int GST_VIDEO_COLOR_PRIMARIES_UNKNOWN = 0;
+  static const int GST_VIDEO_COLOR_PRIMARIES_BT709 = 1;
+  static const int GST_VIDEO_COLOR_PRIMARIES_BT470M = 2;
+  static const int GST_VIDEO_COLOR_PRIMARIES_BT470BG = 3;
+  static const int GST_VIDEO_COLOR_PRIMARIES_SMPTE170M = 4;
+  static const int GST_VIDEO_COLOR_PRIMARIES_SMPTE240M = 5;
+  static const int GST_VIDEO_COLOR_PRIMARIES_FILM = 6;
+  static const int GST_VIDEO_COLOR_PRIMARIES_BT2020 = 7;
+  static const int GST_VIDEO_COLOR_PRIMARIES_ADOBERGB = 8;
+  static const int GST_VIDEO_COLOR_PRIMARIES_SMPTEST428 = 9;
+  static const int GST_VIDEO_COLOR_PRIMARIES_SMPTERP431 = 10;
+  static const int GST_VIDEO_COLOR_PRIMARIES_SMPTEEG432 = 11;
+  static const int GST_VIDEO_COLOR_PRIMARIES_EBU3213 = 12;
+}
+
+/// GstVideoColorPrimariesInfo:
+/// @primaries: a #GstVideoColorPrimaries
+/// @Wx: reference white x coordinate
+/// @Wy: reference white y coordinate
+/// @Rx: red x coordinate
+/// @Ry: red y coordinate
+/// @Gx: green x coordinate
+/// @Gy: green y coordinate
+/// @Bx: blue x coordinate
+/// @By: blue y coordinate
+///
+/// Structure describing the chromaticity coordinates of an RGB system. These
+/// values can be used to construct a matrix to transform RGB to and from the
+/// XYZ colorspace.
+///
+/// Since: 1.6
+final class GstVideoColorPrimariesInfo extends ffi.Struct {
+  @ffi.Int32()
+  external int primaries;
+
+  @ffi.Double()
+  external double Wx;
+
+  @ffi.Double()
+  external double Wy;
+
+  @ffi.Double()
+  external double Rx;
+
+  @ffi.Double()
+  external double Ry;
+
+  @ffi.Double()
+  external double Gx;
+
+  @ffi.Double()
+  external double Gy;
+
+  @ffi.Double()
+  external double Bx;
+
+  @ffi.Double()
+  external double By;
+}
+
+/// GstVideoColorimetry:
+/// @range: the color range. This is the valid range for the samples.
+/// It is used to convert the samples to Y'PbPr values.
+/// @matrix: the color matrix. Used to convert between Y'PbPr and
+/// non-linear RGB (R'G'B')
+/// @transfer: the transfer function. used to convert between R'G'B' and RGB
+/// @primaries: color primaries. used to convert between R'G'B' and CIE XYZ
+///
+/// Structure describing the color info.
+final class GstVideoColorimetry extends ffi.Struct {
+  @ffi.Int32()
+  external int range;
+
+  @ffi.Int32()
+  external int matrix;
+
+  @ffi.Int32()
+  external int transfer;
+
+  @ffi.Int32()
+  external int primaries;
+}
+
+/// GstVideoDitherMethod:
+/// @GST_VIDEO_DITHER_NONE: no dithering
+/// @GST_VIDEO_DITHER_VERTERR: propagate rounding errors downwards
+/// @GST_VIDEO_DITHER_FLOYD_STEINBERG: Dither with floyd-steinberg error diffusion
+/// @GST_VIDEO_DITHER_SIERRA_LITE: Dither with Sierra Lite error diffusion
+/// @GST_VIDEO_DITHER_BAYER: ordered dither using a bayer pattern
+///
+/// Different dithering methods to use.
+abstract class GstVideoDitherMethod {
+  static const int GST_VIDEO_DITHER_NONE = 0;
+  static const int GST_VIDEO_DITHER_VERTERR = 1;
+  static const int GST_VIDEO_DITHER_FLOYD_STEINBERG = 2;
+  static const int GST_VIDEO_DITHER_SIERRA_LITE = 3;
+  static const int GST_VIDEO_DITHER_BAYER = 4;
+}
+
+/// GstVideoDitherFlags:
+/// @GST_VIDEO_DITHER_FLAG_NONE: no flags
+/// @GST_VIDEO_DITHER_FLAG_INTERLACED: the input is interlaced
+/// @GST_VIDEO_DITHER_FLAG_QUANTIZE: quantize values in addition to adding dither.
+///
+/// Extra flags that influence the result from gst_video_chroma_resample_new().
+abstract class GstVideoDitherFlags {
+  static const int GST_VIDEO_DITHER_FLAG_NONE = 0;
+  static const int GST_VIDEO_DITHER_FLAG_INTERLACED = 1;
+  static const int GST_VIDEO_DITHER_FLAG_QUANTIZE = 2;
+}
+
+final class _GstVideoDither extends ffi.Opaque {}
+
+typedef GstVideoDither = _GstVideoDither;
+
+/// GstVideoInfo:
+/// @finfo: the format info of the video
+/// @interlace_mode: the interlace mode
+/// @flags: additional video flags
+/// @width: the width of the video
+/// @height: the height of the video
+/// @views: the number of views for multiview video
+/// @size: the default size of one frame
+/// @chroma_site: a #GstVideoChromaSite.
+/// @colorimetry: the colorimetry info
+/// @par_n: the pixel-aspect-ratio numerator
+/// @par_d: the pixel-aspect-ratio denominator
+/// @fps_n: the framerate numerator
+/// @fps_d: the framerate denominator
+/// @offset: offsets of the planes
+/// @stride: strides of the planes
+/// @multiview_mode: delivery mode for multiple views. (Since: 1.6)
+/// @multiview_flags: flags for multiple views configuration (Since: 1.6)
+///
+/// Information describing image properties. This information can be filled
+/// in from GstCaps with gst_video_info_from_caps(). The information is also used
+/// to store the specific video info when mapping a video frame with
+/// gst_video_frame_map().
+///
+/// Use the provided macros to access the info in this structure.
+final class _GstVideoInfo extends ffi.Struct {
+  external ffi.Pointer<GstVideoFormatInfo> finfo;
+
+  @ffi.Int32()
+  external int interlace_mode;
+
+  @ffi.Int32()
+  external int flags;
+
+  @ffi.Int()
+  external int width;
+
+  @ffi.Int()
+  external int height;
+
+  @ffi.Size()
+  external int size;
+
+  @ffi.Int()
+  external int views;
+
+  @ffi.Int32()
+  external int chroma_site;
+
+  external GstVideoColorimetry colorimetry;
+
+  @ffi.Int()
+  external int par_n;
+
+  @ffi.Int()
+  external int par_d;
+
+  @ffi.Int()
+  external int fps_n;
+
+  @ffi.Int()
+  external int fps_d;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Size> offset;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Int> stride;
+
+  external UnnamedUnion15 ABI;
+}
+
+/// GstVideoInterlaceMode:
+/// @GST_VIDEO_INTERLACE_MODE_PROGRESSIVE: all frames are progressive
+/// @GST_VIDEO_INTERLACE_MODE_INTERLEAVED: 2 fields are interleaved in one video
+/// frame. Extra buffer flags describe the field order.
+/// @GST_VIDEO_INTERLACE_MODE_MIXED: frames contains both interlaced and
+/// progressive video, the buffer flags describe the frame and fields.
+/// @GST_VIDEO_INTERLACE_MODE_FIELDS: 2 fields are stored in one buffer, use the
+/// frame ID to get access to the required field. For multiview (the
+/// 'views' property > 1) the fields of view N can be found at frame ID
+/// (N * 2) and (N * 2) + 1.
+/// Each field has only half the amount of lines as noted in the
+/// height property. This mode requires multiple GstVideoMeta metadata
+/// to describe the fields.
+/// @GST_VIDEO_INTERLACE_MODE_ALTERNATE: 1 field is stored in one buffer,
+/// @GST_VIDEO_BUFFER_FLAG_TF or @GST_VIDEO_BUFFER_FLAG_BF indicates if
+/// the buffer is carrying the top or bottom field, respectively. The top and
+/// bottom buffers must alternate in the pipeline, with this mode
+/// (Since: 1.16).
+///
+/// The possible values of the #GstVideoInterlaceMode describing the interlace
+/// mode of the stream.
+abstract class GstVideoInterlaceMode {
+  static const int GST_VIDEO_INTERLACE_MODE_PROGRESSIVE = 0;
+  static const int GST_VIDEO_INTERLACE_MODE_INTERLEAVED = 1;
+  static const int GST_VIDEO_INTERLACE_MODE_MIXED = 2;
+  static const int GST_VIDEO_INTERLACE_MODE_FIELDS = 3;
+  static const int GST_VIDEO_INTERLACE_MODE_ALTERNATE = 4;
+}
+
+/// GstVideoFlags:
+/// @GST_VIDEO_FLAG_NONE: no flags
+/// @GST_VIDEO_FLAG_VARIABLE_FPS: a variable fps is selected, fps_n and fps_d
+/// denote the maximum fps of the video
+/// @GST_VIDEO_FLAG_PREMULTIPLIED_ALPHA: Each color has been scaled by the alpha
+/// value.
+///
+/// Extra video flags
+abstract class GstVideoFlags {
+  static const int GST_VIDEO_FLAG_NONE = 0;
+  static const int GST_VIDEO_FLAG_VARIABLE_FPS = 1;
+  static const int GST_VIDEO_FLAG_PREMULTIPLIED_ALPHA = 2;
+}
+
+final class UnnamedUnion15 extends ffi.Union {
+  external UnnamedStruct19 abi;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+final class UnnamedStruct19 extends ffi.Struct {
+  @ffi.Int32()
+  external int multiview_mode;
+
+  @ffi.Int32()
+  external int multiview_flags;
+
+  @ffi.Int32()
+  external int field_order;
+}
+
+/// GstVideoMultiviewMode:
+/// @GST_VIDEO_MULTIVIEW_MODE_NONE: A special value indicating
+/// no multiview information. Used in GstVideoInfo and other places to
+/// indicate that no specific multiview handling has been requested or
+/// provided. This value is never carried on caps.
+/// @GST_VIDEO_MULTIVIEW_MODE_MONO: All frames are monoscopic.
+/// @GST_VIDEO_MULTIVIEW_MODE_LEFT: All frames represent a left-eye view.
+/// @GST_VIDEO_MULTIVIEW_MODE_RIGHT: All frames represent a right-eye view.
+/// @GST_VIDEO_MULTIVIEW_MODE_SIDE_BY_SIDE: Left and right eye views are
+/// provided in the left and right half of the frame respectively.
+/// @GST_VIDEO_MULTIVIEW_MODE_SIDE_BY_SIDE_QUINCUNX: Left and right eye
+/// views are provided in the left and right half of the frame, but
+/// have been sampled using quincunx method, with half-pixel offset
+/// between the 2 views.
+/// @GST_VIDEO_MULTIVIEW_MODE_COLUMN_INTERLEAVED: Alternating vertical
+/// columns of pixels represent the left and right eye view respectively.
+/// @GST_VIDEO_MULTIVIEW_MODE_ROW_INTERLEAVED: Alternating horizontal
+/// rows of pixels represent the left and right eye view respectively.
+/// @GST_VIDEO_MULTIVIEW_MODE_TOP_BOTTOM: The top half of the frame
+/// contains the left eye, and the bottom half the right eye.
+/// @GST_VIDEO_MULTIVIEW_MODE_CHECKERBOARD: Pixels are arranged with
+/// alternating pixels representing left and right eye views in a
+/// checkerboard fashion.
+/// @GST_VIDEO_MULTIVIEW_MODE_FRAME_BY_FRAME: Left and right eye views
+/// are provided in separate frames alternately.
+/// @GST_VIDEO_MULTIVIEW_MODE_MULTIVIEW_FRAME_BY_FRAME: Multiple
+/// independent views are provided in separate frames in sequence.
+/// This method only applies to raw video buffers at the moment.
+/// Specific view identification is via the `GstVideoMultiviewMeta`
+/// and #GstVideoMeta(s) on raw video buffers.
+/// @GST_VIDEO_MULTIVIEW_MODE_SEPARATED: Multiple views are
+/// provided as separate #GstMemory framebuffers attached to each
+/// #GstBuffer, described by the `GstVideoMultiviewMeta`
+/// and #GstVideoMeta(s)
+///
+/// All possible stereoscopic 3D and multiview representations.
+/// In conjunction with #GstVideoMultiviewFlags, describes how
+/// multiview content is being transported in the stream.
+abstract class GstVideoMultiviewMode {
+  static const int GST_VIDEO_MULTIVIEW_MODE_NONE = -1;
+  static const int GST_VIDEO_MULTIVIEW_MODE_MONO = 0;
+  static const int GST_VIDEO_MULTIVIEW_MODE_LEFT = 1;
+  static const int GST_VIDEO_MULTIVIEW_MODE_RIGHT = 2;
+  static const int GST_VIDEO_MULTIVIEW_MODE_SIDE_BY_SIDE = 3;
+  static const int GST_VIDEO_MULTIVIEW_MODE_SIDE_BY_SIDE_QUINCUNX = 4;
+  static const int GST_VIDEO_MULTIVIEW_MODE_COLUMN_INTERLEAVED = 5;
+  static const int GST_VIDEO_MULTIVIEW_MODE_ROW_INTERLEAVED = 6;
+  static const int GST_VIDEO_MULTIVIEW_MODE_TOP_BOTTOM = 7;
+  static const int GST_VIDEO_MULTIVIEW_MODE_CHECKERBOARD = 8;
+  static const int GST_VIDEO_MULTIVIEW_MODE_FRAME_BY_FRAME = 32;
+  static const int GST_VIDEO_MULTIVIEW_MODE_MULTIVIEW_FRAME_BY_FRAME = 33;
+  static const int GST_VIDEO_MULTIVIEW_MODE_SEPARATED = 34;
+}
+
+/// GstVideoMultiviewFlags:
+/// @GST_VIDEO_MULTIVIEW_FLAGS_NONE: No flags
+/// @GST_VIDEO_MULTIVIEW_FLAGS_RIGHT_VIEW_FIRST: For stereo streams, the
+/// normal arrangement of left and right views is reversed.
+/// @GST_VIDEO_MULTIVIEW_FLAGS_LEFT_FLIPPED: The left view is vertically
+/// mirrored.
+/// @GST_VIDEO_MULTIVIEW_FLAGS_LEFT_FLOPPED: The left view is horizontally
+/// mirrored.
+/// @GST_VIDEO_MULTIVIEW_FLAGS_RIGHT_FLIPPED: The right view is
+/// vertically mirrored.
+/// @GST_VIDEO_MULTIVIEW_FLAGS_RIGHT_FLOPPED: The right view is
+/// horizontally mirrored.
+/// @GST_VIDEO_MULTIVIEW_FLAGS_HALF_ASPECT: For frame-packed
+/// multiview modes, indicates that the individual
+/// views have been encoded with half the true width or height
+/// and should be scaled back up for display. This flag
+/// is used for overriding input layout interpretation
+/// by adjusting pixel-aspect-ratio.
+/// For side-by-side, column interleaved or checkerboard packings, the
+/// pixel width will be doubled. For row interleaved and top-bottom
+/// encodings, pixel height will be doubled.
+/// @GST_VIDEO_MULTIVIEW_FLAGS_MIXED_MONO: The video stream contains both
+/// mono and multiview portions, signalled on each buffer by the
+/// absence or presence of the @GST_VIDEO_BUFFER_FLAG_MULTIPLE_VIEW
+/// buffer flag.
+///
+/// GstVideoMultiviewFlags are used to indicate extra properties of a
+/// stereo/multiview stream beyond the frame layout and buffer mapping
+/// that is conveyed in the #GstVideoMultiviewMode.
+abstract class GstVideoMultiviewFlags {
+  static const int GST_VIDEO_MULTIVIEW_FLAGS_NONE = 0;
+  static const int GST_VIDEO_MULTIVIEW_FLAGS_RIGHT_VIEW_FIRST = 1;
+  static const int GST_VIDEO_MULTIVIEW_FLAGS_LEFT_FLIPPED = 2;
+  static const int GST_VIDEO_MULTIVIEW_FLAGS_LEFT_FLOPPED = 4;
+  static const int GST_VIDEO_MULTIVIEW_FLAGS_RIGHT_FLIPPED = 8;
+  static const int GST_VIDEO_MULTIVIEW_FLAGS_RIGHT_FLOPPED = 16;
+  static const int GST_VIDEO_MULTIVIEW_FLAGS_HALF_ASPECT = 16384;
+  static const int GST_VIDEO_MULTIVIEW_FLAGS_MIXED_MONO = 32768;
+}
+
+/// GstVideoFieldOrder:
+/// @GST_VIDEO_FIELD_ORDER_UNKNOWN: unknown field order for interlaced content.
+/// The actual field order is signalled via buffer flags.
+/// @GST_VIDEO_FIELD_ORDER_TOP_FIELD_FIRST: top field is first
+/// @GST_VIDEO_FIELD_ORDER_BOTTOM_FIELD_FIRST: bottom field is first
+///
+/// Field order of interlaced content. This is only valid for
+/// interlace-mode=interleaved and not interlace-mode=mixed. In the case of
+/// mixed or GST_VIDEO_FIELD_ORDER_UNKOWN, the field order is signalled via
+/// buffer flags.
+///
+/// Since: 1.12
+abstract class GstVideoFieldOrder {
+  static const int GST_VIDEO_FIELD_ORDER_UNKNOWN = 0;
+  static const int GST_VIDEO_FIELD_ORDER_TOP_FIELD_FIRST = 1;
+  static const int GST_VIDEO_FIELD_ORDER_BOTTOM_FIELD_FIRST = 2;
+}
+
+/// GstVideoMultiviewFramePacking:
+/// @GST_VIDEO_MULTIVIEW_FRAME_PACKING_NONE: A special value indicating
+/// no frame packing info.
+/// @GST_VIDEO_MULTIVIEW_FRAME_PACKING_MONO: All frames are monoscopic.
+/// @GST_VIDEO_MULTIVIEW_FRAME_PACKING_LEFT: All frames represent a left-eye view.
+/// @GST_VIDEO_MULTIVIEW_FRAME_PACKING_RIGHT: All frames represent a right-eye view.
+/// @GST_VIDEO_MULTIVIEW_FRAME_PACKING_SIDE_BY_SIDE: Left and right eye views are
+/// provided in the left and right half of the frame respectively.
+/// @GST_VIDEO_MULTIVIEW_FRAME_PACKING_SIDE_BY_SIDE_QUINCUNX: Left and right eye
+/// views are provided in the left and right half of the frame, but
+/// have been sampled using quincunx method, with half-pixel offset
+/// between the 2 views.
+/// @GST_VIDEO_MULTIVIEW_FRAME_PACKING_COLUMN_INTERLEAVED: Alternating vertical
+/// columns of pixels represent the left and right eye view respectively.
+/// @GST_VIDEO_MULTIVIEW_FRAME_PACKING_ROW_INTERLEAVED: Alternating horizontal
+/// rows of pixels represent the left and right eye view respectively.
+/// @GST_VIDEO_MULTIVIEW_FRAME_PACKING_TOP_BOTTOM: The top half of the frame
+/// contains the left eye, and the bottom half the right eye.
+/// @GST_VIDEO_MULTIVIEW_FRAME_PACKING_CHECKERBOARD: Pixels are arranged with
+/// alternating pixels representing left and right eye views in a
+/// checkerboard fashion.
+///
+/// #GstVideoMultiviewFramePacking represents the subset of #GstVideoMultiviewMode
+/// values that can be applied to any video frame without needing extra metadata.
+/// It can be used by elements that provide a property to override the
+/// multiview interpretation of a video stream when the video doesn't contain
+/// any markers.
+///
+/// This enum is used (for example) on playbin, to re-interpret a played
+/// video stream as a stereoscopic video. The individual enum values are
+/// equivalent to and have the same value as the matching #GstVideoMultiviewMode.
+abstract class GstVideoMultiviewFramePacking {
+  static const int GST_VIDEO_MULTIVIEW_FRAME_PACKING_NONE = -1;
+  static const int GST_VIDEO_MULTIVIEW_FRAME_PACKING_MONO = 0;
+  static const int GST_VIDEO_MULTIVIEW_FRAME_PACKING_LEFT = 1;
+  static const int GST_VIDEO_MULTIVIEW_FRAME_PACKING_RIGHT = 2;
+  static const int GST_VIDEO_MULTIVIEW_FRAME_PACKING_SIDE_BY_SIDE = 3;
+  static const int GST_VIDEO_MULTIVIEW_FRAME_PACKING_SIDE_BY_SIDE_QUINCUNX = 4;
+  static const int GST_VIDEO_MULTIVIEW_FRAME_PACKING_COLUMN_INTERLEAVED = 5;
+  static const int GST_VIDEO_MULTIVIEW_FRAME_PACKING_ROW_INTERLEAVED = 6;
+  static const int GST_VIDEO_MULTIVIEW_FRAME_PACKING_TOP_BOTTOM = 7;
+  static const int GST_VIDEO_MULTIVIEW_FRAME_PACKING_CHECKERBOARD = 8;
+}
+
+typedef GstVideoInfo = _GstVideoInfo;
+typedef GstVideoAlignment = _GstVideoAlignment;
+
+/// GstVideoFrame:
+/// @info: the #GstVideoInfo
+/// @flags: #GstVideoFrameFlags for the frame
+/// @buffer: the mapped buffer
+/// @meta: pointer to metadata if any
+/// @id: id of the mapped frame. the id can for example be used to
+/// identify the frame in case of multiview video.
+/// @data: pointers to the plane data
+/// @map: mappings of the planes
+///
+/// A video frame obtained from gst_video_frame_map()
+final class _GstVideoFrame extends ffi.Struct {
+  external GstVideoInfo info;
+
+  @ffi.Int32()
+  external int flags;
+
+  external ffi.Pointer<GstBuffer> buffer;
+
+  external ffi.Pointer meta;
+
+  @ffi.Int()
+  external int id;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> data;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<GstMapInfo> map;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+/// GstVideoFrameFlags:
+/// @GST_VIDEO_FRAME_FLAG_NONE: no flags
+/// @GST_VIDEO_FRAME_FLAG_INTERLACED: The video frame is interlaced. In mixed
+/// interlace-mode, this flag specifies if the frame is interlaced or
+/// progressive.
+/// @GST_VIDEO_FRAME_FLAG_TFF: The video frame has the top field first
+/// @GST_VIDEO_FRAME_FLAG_RFF: The video frame has the repeat flag
+/// @GST_VIDEO_FRAME_FLAG_ONEFIELD: The video frame has one field
+/// @GST_VIDEO_FRAME_FLAG_MULTIPLE_VIEW: The video contains one or
+/// more non-mono views
+/// @GST_VIDEO_FRAME_FLAG_FIRST_IN_BUNDLE: The video frame is the first
+/// in a set of corresponding views provided as sequential frames.
+/// @GST_VIDEO_FRAME_FLAG_TOP_FIELD: The video frame has the top field only. This
+/// is the same as GST_VIDEO_FRAME_FLAG_TFF | GST_VIDEO_FRAME_FLAG_ONEFIELD
+/// (Since: 1.16).
+/// @GST_VIDEO_FRAME_FLAG_BOTTOM_FIELD: The video frame has the bottom field
+/// only. This is the same as GST_VIDEO_FRAME_FLAG_ONEFIELD
+/// (GST_VIDEO_FRAME_FLAG_TFF flag unset) (Since: 1.16).
+///
+/// Extra video frame flags
+abstract class GstVideoFrameFlags {
+  static const int GST_VIDEO_FRAME_FLAG_NONE = 0;
+  static const int GST_VIDEO_FRAME_FLAG_INTERLACED = 1;
+  static const int GST_VIDEO_FRAME_FLAG_TFF = 2;
+  static const int GST_VIDEO_FRAME_FLAG_RFF = 4;
+  static const int GST_VIDEO_FRAME_FLAG_ONEFIELD = 8;
+  static const int GST_VIDEO_FRAME_FLAG_MULTIPLE_VIEW = 16;
+  static const int GST_VIDEO_FRAME_FLAG_FIRST_IN_BUNDLE = 32;
+  static const int GST_VIDEO_FRAME_FLAG_TOP_FIELD = 10;
+  static const int GST_VIDEO_FRAME_FLAG_BOTTOM_FIELD = 8;
+}
+
+typedef GstVideoFrame = _GstVideoFrame;
+
+/// GstVideoBufferFlags:
+/// @GST_VIDEO_BUFFER_FLAG_INTERLACED:  If the #GstBuffer is interlaced. In mixed
+/// interlace-mode, this flags specifies if the frame is
+/// interlaced or progressive.
+/// @GST_VIDEO_BUFFER_FLAG_TFF:         If the #GstBuffer is interlaced, then the first field
+/// in the video frame is the top field.  If unset, the
+/// bottom field is first.
+/// @GST_VIDEO_BUFFER_FLAG_RFF:         If the #GstBuffer is interlaced, then the first field
+/// (as defined by the %GST_VIDEO_BUFFER_FLAG_TFF flag setting)
+/// is repeated.
+/// @GST_VIDEO_BUFFER_FLAG_ONEFIELD:    If the #GstBuffer is interlaced, then only the
+/// first field (as defined by the %GST_VIDEO_BUFFER_FLAG_TFF
+/// flag setting) is to be displayed (Since: 1.16).
+/// @GST_VIDEO_BUFFER_FLAG_MULTIPLE_VIEW: The #GstBuffer contains one or more specific views,
+/// such as left or right eye view. This flags is set on
+/// any buffer that contains non-mono content - even for
+/// streams that contain only a single viewpoint. In mixed
+/// mono / non-mono streams, the absence of the flag marks
+/// mono buffers.
+/// @GST_VIDEO_BUFFER_FLAG_FIRST_IN_BUNDLE: When conveying stereo/multiview content with
+/// frame-by-frame methods, this flag marks the first buffer
+/// in a bundle of frames that belong together.
+/// @GST_VIDEO_BUFFER_FLAG_TOP_FIELD:   The video frame has the top field only. This is the
+/// same as GST_VIDEO_BUFFER_FLAG_TFF |
+/// GST_VIDEO_BUFFER_FLAG_ONEFIELD (Since: 1.16).
+/// Use GST_VIDEO_BUFFER_IS_TOP_FIELD() to check for this flag.
+/// @GST_VIDEO_BUFFER_FLAG_BOTTOM_FIELD: The video frame has the bottom field only. This is
+/// the same as GST_VIDEO_BUFFER_FLAG_ONEFIELD
+/// (GST_VIDEO_BUFFER_FLAG_TFF flag unset) (Since: 1.16).
+/// Use GST_VIDEO_BUFFER_IS_BOTTOM_FIELD() to check for this flag.
+/// @GST_VIDEO_BUFFER_FLAG_MARKER:      The #GstBuffer contains the end of a video field or frame
+/// boundary such as the last subframe or packet (Since: 1.18).
+/// @GST_VIDEO_BUFFER_FLAG_LAST:        Offset to define more flags
+///
+/// Additional video buffer flags. These flags can potentially be used on any
+/// buffers carrying closed caption data, or video data - even encoded data.
+///
+/// Note that these are only valid for #GstCaps of type: video/... and caption/...
+/// They can conflict with other extended buffer flags.
+abstract class GstVideoBufferFlags {
+  static const int GST_VIDEO_BUFFER_FLAG_INTERLACED = 1048576;
+  static const int GST_VIDEO_BUFFER_FLAG_TFF = 2097152;
+  static const int GST_VIDEO_BUFFER_FLAG_RFF = 4194304;
+  static const int GST_VIDEO_BUFFER_FLAG_ONEFIELD = 8388608;
+  static const int GST_VIDEO_BUFFER_FLAG_MULTIPLE_VIEW = 16777216;
+  static const int GST_VIDEO_BUFFER_FLAG_FIRST_IN_BUNDLE = 33554432;
+  static const int GST_VIDEO_BUFFER_FLAG_TOP_FIELD = 10485760;
+  static const int GST_VIDEO_BUFFER_FLAG_BOTTOM_FIELD = 8388608;
+  static const int GST_VIDEO_BUFFER_FLAG_MARKER = 512;
+  static const int GST_VIDEO_BUFFER_FLAG_LAST = 268435456;
+}
+
+/// GstVideoFrameMapFlags:
+/// @GST_VIDEO_FRAME_MAP_FLAG_NO_REF:  Don't take another reference of the buffer and store it in
+/// the GstVideoFrame. This makes sure that the buffer stays
+/// writable while the frame is mapped, but requires that the
+/// buffer reference stays valid until the frame is unmapped again.
+/// @GST_VIDEO_FRAME_MAP_FLAG_LAST:    Offset to define more flags
+///
+/// Additional mapping flags for gst_video_frame_map().
+///
+/// Since: 1.6
+abstract class GstVideoFrameMapFlags {
+  static const int GST_VIDEO_FRAME_MAP_FLAG_NO_REF = 65536;
+  static const int GST_VIDEO_FRAME_MAP_FLAG_LAST = 16777216;
+}
+
+/// GstVideoAlphaMode:
+/// @GST_VIDEO_ALPHA_MODE_COPY: When input and output have alpha, it will be copied.
+/// When the input has no alpha, alpha will be set to
+/// #GST_VIDEO_CONVERTER_OPT_ALPHA_VALUE
+/// @GST_VIDEO_ALPHA_MODE_SET: set all alpha to
+/// #GST_VIDEO_CONVERTER_OPT_ALPHA_VALUE
+/// @GST_VIDEO_ALPHA_MODE_MULT:  multiply all alpha with
+/// #GST_VIDEO_CONVERTER_OPT_ALPHA_VALUE.
+/// When the input format has no alpha but the output format has, the
+/// alpha value will be set to #GST_VIDEO_CONVERTER_OPT_ALPHA_VALUE
+///
+/// Different alpha modes.
+///
+/// Since: 1.6
+abstract class GstVideoAlphaMode {
+  static const int GST_VIDEO_ALPHA_MODE_COPY = 0;
+  static const int GST_VIDEO_ALPHA_MODE_SET = 1;
+  static const int GST_VIDEO_ALPHA_MODE_MULT = 2;
+}
+
+/// GstVideoChromaMode:
+/// @GST_VIDEO_CHROMA_MODE_FULL: do full chroma up and down sampling
+/// @GST_VIDEO_CHROMA_MODE_UPSAMPLE_ONLY: only perform chroma upsampling
+/// @GST_VIDEO_CHROMA_MODE_DOWNSAMPLE_ONLY: only perform chroma downsampling
+/// @GST_VIDEO_CHROMA_MODE_NONE: disable chroma resampling
+///
+/// Different chroma downsampling and upsampling modes
+///
+/// Since: 1.6
+abstract class GstVideoChromaMode {
+  static const int GST_VIDEO_CHROMA_MODE_FULL = 0;
+  static const int GST_VIDEO_CHROMA_MODE_UPSAMPLE_ONLY = 1;
+  static const int GST_VIDEO_CHROMA_MODE_DOWNSAMPLE_ONLY = 2;
+  static const int GST_VIDEO_CHROMA_MODE_NONE = 3;
+}
+
+/// GstVideoMatrixMode:
+/// @GST_VIDEO_MATRIX_MODE_FULL: do conversion between color matrices
+/// @GST_VIDEO_MATRIX_MODE_INPUT_ONLY:  use the input color matrix to convert
+/// to and from R'G'B
+/// @GST_VIDEO_MATRIX_MODE_OUTPUT_ONLY: use the output color matrix to convert
+/// to and from R'G'B
+/// @GST_VIDEO_MATRIX_MODE_NONE: disable color matrix conversion.
+///
+/// Different color matrix conversion modes
+///
+/// Since: 1.6
+abstract class GstVideoMatrixMode {
+  static const int GST_VIDEO_MATRIX_MODE_FULL = 0;
+  static const int GST_VIDEO_MATRIX_MODE_INPUT_ONLY = 1;
+  static const int GST_VIDEO_MATRIX_MODE_OUTPUT_ONLY = 2;
+  static const int GST_VIDEO_MATRIX_MODE_NONE = 3;
+}
+
+/// GstVideoGammaMode:
+/// @GST_VIDEO_GAMMA_MODE_NONE: disable gamma handling
+/// @GST_VIDEO_GAMMA_MODE_REMAP: convert between input and output gamma
+/// Different gamma conversion modes
+///
+/// Since: 1.6
+abstract class GstVideoGammaMode {
+  static const int GST_VIDEO_GAMMA_MODE_NONE = 0;
+  static const int GST_VIDEO_GAMMA_MODE_REMAP = 1;
+}
+
+/// GstVideoPrimariesMode:
+/// @GST_VIDEO_PRIMARIES_MODE_NONE: disable conversion between primaries
+/// @GST_VIDEO_PRIMARIES_MODE_MERGE_ONLY: do conversion between primaries only
+/// when it can be merged with color matrix conversion.
+/// @GST_VIDEO_PRIMARIES_MODE_FAST: fast conversion between primaries
+///
+/// Different primaries conversion modes
+///
+/// Since: 1.6
+abstract class GstVideoPrimariesMode {
+  static const int GST_VIDEO_PRIMARIES_MODE_NONE = 0;
+  static const int GST_VIDEO_PRIMARIES_MODE_MERGE_ONLY = 1;
+  static const int GST_VIDEO_PRIMARIES_MODE_FAST = 2;
+}
+
+final class _GstVideoConverter extends ffi.Opaque {}
+
+typedef GstVideoConverter = _GstVideoConverter;
+
+/// GstVideoResampler:
+/// @in_size: the input size
+/// @out_size: the output size
+/// @max_taps: the maximum number of taps
+/// @n_phases: the number of phases
+/// @offset: array with the source offset for each output element
+/// @phase: array with the phase to use for each output element
+/// @n_taps: array with new number of taps for each phase
+/// @taps: the taps for all phases
+///
+/// A structure holding resampler information.
+///
+/// Since: 1.6
+final class _GstVideoResampler extends ffi.Struct {
+  @ffi.Int()
+  external int in_size;
+
+  @ffi.Int()
+  external int out_size;
+
+  @ffi.UnsignedInt()
+  external int max_taps;
+
+  @ffi.UnsignedInt()
+  external int n_phases;
+
+  external ffi.Pointer<ffi.Uint32> offset;
+
+  external ffi.Pointer<ffi.Uint32> phase;
+
+  external ffi.Pointer<ffi.Uint32> n_taps;
+
+  external ffi.Pointer<ffi.Double> taps;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+/// GstVideoResamplerMethod:
+/// @GST_VIDEO_RESAMPLER_METHOD_NEAREST: Duplicates the samples when
+/// upsampling and drops when downsampling
+/// @GST_VIDEO_RESAMPLER_METHOD_LINEAR: Uses linear interpolation to reconstruct
+/// missing samples and averaging to downsample
+/// @GST_VIDEO_RESAMPLER_METHOD_CUBIC: Uses cubic interpolation
+/// @GST_VIDEO_RESAMPLER_METHOD_SINC: Uses sinc interpolation
+/// @GST_VIDEO_RESAMPLER_METHOD_LANCZOS: Uses lanczos interpolation
+///
+/// Different subsampling and upsampling methods
+///
+/// Since: 1.6
+abstract class GstVideoResamplerMethod {
+  static const int GST_VIDEO_RESAMPLER_METHOD_NEAREST = 0;
+  static const int GST_VIDEO_RESAMPLER_METHOD_LINEAR = 1;
+  static const int GST_VIDEO_RESAMPLER_METHOD_CUBIC = 2;
+  static const int GST_VIDEO_RESAMPLER_METHOD_SINC = 3;
+  static const int GST_VIDEO_RESAMPLER_METHOD_LANCZOS = 4;
+}
+
+/// GstVideoResamplerFlags:
+/// @GST_VIDEO_RESAMPLER_FLAG_NONE: no flags
+/// @GST_VIDEO_RESAMPLER_FLAG_HALF_TAPS: when no taps are given, half the
+/// number of calculated taps. This can be used when making scalers
+/// for the different fields of an interlaced picture. Since: 1.10
+///
+/// Different resampler flags.
+///
+/// Since: 1.6
+abstract class GstVideoResamplerFlags {
+  static const int GST_VIDEO_RESAMPLER_FLAG_NONE = 0;
+  static const int GST_VIDEO_RESAMPLER_FLAG_HALF_TAPS = 1;
+}
+
+typedef GstVideoResampler = _GstVideoResampler;
+
+/// GstVideoScalerFlags:
+/// @GST_VIDEO_SCALER_FLAG_NONE: no flags
+/// @GST_VIDEO_SCALER_FLAG_INTERLACED: Set up a scaler for interlaced content
+///
+/// Different scale flags.
+abstract class GstVideoScalerFlags {
+  static const int GST_VIDEO_SCALER_FLAG_NONE = 0;
+  static const int GST_VIDEO_SCALER_FLAG_INTERLACED = 1;
+}
+
+final class _GstVideoScaler extends ffi.Opaque {}
+
+typedef GstVideoScaler = _GstVideoScaler;
+
+/// GstVideoInfoDmaDrm:
+/// @vinfo: the associated #GstVideoInfo
+/// @drm_fourcc: the fourcc defined by drm
+/// @drm_modifier: the drm modifier
+///
+/// Information describing a DMABuf image properties. It wraps #GstVideoInfo and
+/// adds DRM information such as drm-fourcc and drm-modifier, required for
+/// negotiation and mapping.
+///
+/// Since: 1.24
+final class _GstVideoInfoDmaDrm extends ffi.Struct {
+  external GstVideoInfo vinfo;
+
+  @ffi.Uint32()
+  external int drm_fourcc;
+
+  @ffi.Uint64()
+  external int drm_modifier;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Uint32> _gst_reserved;
+}
+
+typedef GstVideoInfoDmaDrm = _GstVideoInfoDmaDrm;
+
+/// GstVideoOrientationMethod:
+/// @GST_VIDEO_ORIENTATION_IDENTITY: Identity (no rotation)
+/// @GST_VIDEO_ORIENTATION_90R: Rotate clockwise 90 degrees
+/// @GST_VIDEO_ORIENTATION_180: Rotate 180 degrees
+/// @GST_VIDEO_ORIENTATION_90L: Rotate counter-clockwise 90 degrees
+/// @GST_VIDEO_ORIENTATION_HORIZ: Flip horizontally
+/// @GST_VIDEO_ORIENTATION_VERT: Flip vertically
+/// @GST_VIDEO_ORIENTATION_UL_LR: Flip across upper left/lower right diagonal
+/// @GST_VIDEO_ORIENTATION_UR_LL: Flip across upper right/lower left diagonal
+/// @GST_VIDEO_ORIENTATION_AUTO: Select flip method based on image-orientation tag
+/// @GST_VIDEO_ORIENTATION_CUSTOM: Current status depends on plugin internal setup
+///
+/// The different video orientation methods.
+///
+/// Since: 1.10
+abstract class GstVideoOrientationMethod {
+  static const int GST_VIDEO_ORIENTATION_IDENTITY = 0;
+  static const int GST_VIDEO_ORIENTATION_90R = 1;
+  static const int GST_VIDEO_ORIENTATION_180 = 2;
+  static const int GST_VIDEO_ORIENTATION_90L = 3;
+  static const int GST_VIDEO_ORIENTATION_HORIZ = 4;
+  static const int GST_VIDEO_ORIENTATION_VERT = 5;
+  static const int GST_VIDEO_ORIENTATION_UL_LR = 6;
+  static const int GST_VIDEO_ORIENTATION_UR_LL = 7;
+  static const int GST_VIDEO_ORIENTATION_AUTO = 8;
+  static const int GST_VIDEO_ORIENTATION_CUSTOM = 9;
+}
+
+typedef GstVideoConvertSampleCallback
+    = ffi.Pointer<ffi.NativeFunction<GstVideoConvertSampleCallbackFunction>>;
+typedef GstVideoConvertSampleCallbackFunction = ffi.Void Function(
+    ffi.Pointer<GstSample> sample,
+    ffi.Pointer<GError> error,
+    ffi.Pointer user_data);
+typedef DartGstVideoConvertSampleCallbackFunction = void Function(
+    ffi.Pointer<GstSample> sample,
+    ffi.Pointer<GError> error,
+    ffi.Pointer user_data);
+
+/// GstColorBalanceChannel:
+/// @label: A string containing a descriptive name for this channel
+/// @min_value: The minimum valid value for this channel.
+/// @max_value: The maximum valid value for this channel.
+final class _GstColorBalanceChannel extends ffi.Struct {
+  external GObject parent;
+
+  external ffi.Pointer<ffi.Char> label;
+
+  @ffi.Int()
+  external int min_value;
+
+  @ffi.Int()
+  external int max_value;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+/// GstColorBalanceChannelClass:
+/// @parent: the parent class
+/// @value_changed: default handler for value changed notification
+///
+/// Color-balance channel class.
+final class _GstColorBalanceChannelClass extends ffi.Struct {
+  external GObjectClass parent;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  ffi.Pointer<GstColorBalanceChannel> channel, ffi.Int value)>>
+      value_changed;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstColorBalanceChannel = _GstColorBalanceChannel;
+
+final class _GstColorBalance extends ffi.Opaque {}
+
+/// GstColorBalanceInterface:
+/// @iface: the parent interface
+/// @get_balance_type: implementation type
+/// @list_channels: list handled channels
+/// @set_value: set a channel value
+/// @get_value: get a channel value
+/// @value_changed: default handler for value changed notification
+///
+/// Color-balance interface.
+final class _GstColorBalanceInterface extends ffi.Struct {
+  external GTypeInterface iface;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<GList> Function(
+              ffi.Pointer<GstColorBalance> balance)>> list_channels;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstColorBalance> balance,
+              ffi.Pointer<GstColorBalanceChannel> channel,
+              ffi.Int value)>> set_value;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstColorBalance> balance,
+              ffi.Pointer<GstColorBalanceChannel> channel)>> get_value;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int32 Function(ffi.Pointer<GstColorBalance> balance)>>
+      get_balance_type;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstColorBalance> balance,
+              ffi.Pointer<GstColorBalanceChannel> channel,
+              ffi.Int value)>> value_changed;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstColorBalance = _GstColorBalance;
+
+/// GstColorBalanceType:
+/// @GST_COLOR_BALANCE_HARDWARE: Color balance is implemented with dedicated
+/// hardware.
+/// @GST_COLOR_BALANCE_SOFTWARE: Color balance is implemented via software
+/// processing.
+///
+/// An enumeration indicating whether an element implements color balancing
+/// operations in software or in dedicated hardware. In general, dedicated
+/// hardware implementations (such as those provided by xvimagesink) are
+/// preferred.
+abstract class GstColorBalanceType {
+  static const int GST_COLOR_BALANCE_HARDWARE = 0;
+  static const int GST_COLOR_BALANCE_SOFTWARE = 1;
+}
+
+/// GstVideoAffineTransformationMeta:
+/// @meta: parent #GstMeta
+/// @matrix: the column-major 4x4 transformation matrix
+///
+/// Extra buffer metadata for performing an affine transformation using a 4x4
+/// matrix. The transformation matrix can be composed with
+/// gst_video_affine_transformation_meta_apply_matrix().
+///
+/// The vertices operated on are all in the range 0 to 1, not in
+/// Normalized Device Coordinates (-1 to +1). Transforming points in this space
+/// are assumed to have an origin at (0.5, 0.5, 0.5) in a left-handed coordinate
+/// system with the x-axis moving horizontally (positive values to the right),
+/// the y-axis moving vertically (positive values up the screen) and the z-axis
+/// perpendicular to the screen (positive values into the screen).
+///
+/// Since: 1.8
+final class _GstVideoAffineTransformationMeta extends ffi.Struct {
+  external GstMeta meta;
+
+  @ffi.Array.multi([16])
+  external ffi.Array<ffi.Float> matrix;
+}
+
+typedef GstVideoAffineTransformationMeta = _GstVideoAffineTransformationMeta;
+
+/// GstAggregator:
+/// @srcpad: the aggregator's source pad
+///
+/// Aggregator base class object structure.
+///
+/// Since: 1.14
+final class _GstAggregator extends ffi.Struct {
+  external GstElement parent;
+
+  external ffi.Pointer<GstPad> srcpad;
+
+  external ffi.Pointer<GstAggregatorPrivate> priv;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstAggregatorPrivate = _GstAggregatorPrivate;
+
+final class _GstAggregatorPrivate extends ffi.Opaque {}
+
+/// GstAggregatorClass:
+/// @flush:          Optional.
+/// Called after a successful flushing seek, once all the flush
+/// stops have been received. Flush pad-specific data in
+/// #GstAggregatorPad->flush.
+/// @clip:           Optional.
+/// Called when a buffer is received on a sink pad, the task of
+/// clipping it and translating it to the current segment falls
+/// on the subclass. The function should use the segment of data
+/// and the negotiated media type on the pad to perform
+/// clipping of input buffer. This function takes ownership of
+/// buf and should output a buffer or return NULL in
+/// if the buffer should be dropped.
+/// @finish_buffer:  Optional.
+/// Called when a subclass calls gst_aggregator_finish_buffer()
+/// from their aggregate function to push out a buffer.
+/// Subclasses can override this to modify or decorate buffers
+/// before they get pushed out. This function takes ownership
+/// of the buffer passed. Subclasses that override this method
+/// should always chain up to the parent class virtual method.
+/// @sink_event:     Optional.
+/// Called when an event is received on a sink pad, the subclass
+/// should always chain up.
+/// @sink_query:     Optional.
+/// Called when a query is received on a sink pad, the subclass
+/// should always chain up.
+/// @src_event:      Optional.
+/// Called when an event is received on the src pad, the subclass
+/// should always chain up.
+/// @src_query:      Optional.
+/// Called when a query is received on the src pad, the subclass
+/// should always chain up.
+/// @src_activate:   Optional.
+/// Called when the src pad is activated, it will start/stop its
+/// pad task right after that call.
+/// @aggregate:      Mandatory.
+/// Called when buffers are queued on all sinkpads. Classes
+/// should iterate the GstElement->sinkpads and peek or steal
+/// buffers from the #GstAggregatorPads. If the subclass returns
+/// GST_FLOW_EOS, sending of the eos event will be taken care
+/// of. Once / if a buffer has been constructed from the
+/// aggregated buffers, the subclass should call _finish_buffer.
+/// @stop:           Optional.
+/// Called when the element goes from PAUSED to READY.
+/// The subclass should free all resources and reset its state.
+/// @start:          Optional.
+/// Called when the element goes from READY to PAUSED.
+/// The subclass should get ready to process
+/// aggregated buffers.
+/// @get_next_time:  Optional.
+/// Called when the element needs to know the running time of the next
+/// rendered buffer for live pipelines. This causes deadline
+/// based aggregation to occur. Defaults to returning
+/// GST_CLOCK_TIME_NONE causing the element to wait for buffers
+/// on all sink pads before aggregating.
+/// @create_new_pad: Optional.
+/// Called when a new pad needs to be created. Allows subclass that
+/// don't have a single sink pad template to provide a pad based
+/// on the provided information.
+/// @update_src_caps: Lets subclasses update the #GstCaps representing
+/// the src pad caps before usage.  The result should end up
+/// in @ret. Return %GST_AGGREGATOR_FLOW_NEED_DATA to indicate that the
+/// element needs more information (caps, a buffer, etc) to
+/// choose the correct caps. Should return ANY caps if the
+/// stream has not caps at all.
+/// @fixate_src_caps: Optional.
+/// Fixate and return the src pad caps provided.  The function takes
+/// ownership of @caps and returns a fixated version of
+/// @caps. @caps is not guaranteed to be writable.
+/// @negotiated_src_caps: Optional.
+/// Notifies subclasses what caps format has been negotiated
+/// @decide_allocation: Optional.
+/// Allows the subclass to influence the allocation choices.
+/// Setup the allocation parameters for allocating output
+/// buffers. The passed in query contains the result of the
+/// downstream allocation query.
+/// @propose_allocation: Optional.
+/// Allows the subclass to handle the allocation query from upstream.
+/// @negotiate: Optional.
+/// Negotiate the caps with the peer (Since: 1.18).
+/// @sink_event_pre_queue: Optional.
+/// Called when an event is received on a sink pad before queueing up
+/// serialized events. The subclass should always chain up (Since: 1.18).
+/// @sink_query_pre_queue: Optional.
+/// Called when a query is received on a sink pad before queueing up
+/// serialized queries. The subclass should always chain up (Since: 1.18).
+///
+/// The aggregator base class will handle in a thread-safe way all manners of
+/// concurrent flushes, seeks, pad additions and removals, leaving to the
+/// subclass the responsibility of clipping buffers, and aggregating buffers in
+/// the way the implementor sees fit.
+///
+/// It will also take care of event ordering (stream-start, segment, eos).
+///
+/// Basically, a simple implementation will override @aggregate, and call
+/// _finish_buffer from inside that function.
+///
+/// Since: 1.14
+final class _GstAggregatorClass extends ffi.Struct {
+  external GstElementClass parent_class;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstAggregator> aggregator)>> flush;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBuffer> Function(
+              ffi.Pointer<GstAggregator> aggregator,
+              ffi.Pointer<GstAggregatorPad> aggregator_pad,
+              ffi.Pointer<GstBuffer> buf)>> clip;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstAggregator> aggregator,
+              ffi.Pointer<GstBuffer> buffer)>> finish_buffer;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstAggregator> aggregator,
+              ffi.Pointer<GstAggregatorPad> aggregator_pad,
+              ffi.Pointer<GstEvent> event)>> sink_event;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstAggregator> aggregator,
+              ffi.Pointer<GstAggregatorPad> aggregator_pad,
+              ffi.Pointer<GstQuery> query)>> sink_query;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstAggregator> aggregator,
+              ffi.Pointer<GstEvent> event)>> src_event;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstAggregator> aggregator,
+              ffi.Pointer<GstQuery> query)>> src_query;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstAggregator> aggregator,
+              ffi.Int32 mode, ffi.Int active)>> src_activate;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int32 Function(
+                  ffi.Pointer<GstAggregator> aggregator, ffi.Int timeout)>>
+      aggregate;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstAggregator> aggregator)>> stop;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstAggregator> aggregator)>> start;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              GstClockTime Function(ffi.Pointer<GstAggregator> aggregator)>>
+      get_next_time;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<GstAggregatorPad> Function(
+              ffi.Pointer<GstAggregator> self,
+              ffi.Pointer<GstPadTemplate> templ,
+              ffi.Pointer<ffi.Char> req_name,
+              ffi.Pointer<GstCaps> caps)>> create_new_pad;
+
+  /// GstAggregatorClass::update_src_caps:
+  /// @ret: (out) (allow-none):
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<GstAggregator> self,
+              ffi.Pointer<GstCaps> caps,
+              ffi.Pointer<ffi.Pointer<GstCaps>> ret)>> update_src_caps;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Pointer<GstCaps> Function(
+                  ffi.Pointer<GstAggregator> self, ffi.Pointer<GstCaps> caps)>>
+      fixate_src_caps;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstAggregator> self, ffi.Pointer<GstCaps> caps)>>
+      negotiated_src_caps;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstAggregator> self,
+              ffi.Pointer<GstQuery> query)>> decide_allocation;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstAggregator> self,
+              ffi.Pointer<GstAggregatorPad> pad,
+              ffi.Pointer<GstQuery> decide_query,
+              ffi.Pointer<GstQuery> query)>> propose_allocation;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAggregator> self)>>
+      negotiate;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<GstAggregator> aggregator,
+              ffi.Pointer<GstAggregatorPad> aggregator_pad,
+              ffi.Pointer<GstEvent> event)>> sink_event_pre_queue;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstAggregator> aggregator,
+              ffi.Pointer<GstAggregatorPad> aggregator_pad,
+              ffi.Pointer<GstQuery> query)>> sink_query_pre_queue;
+
+  /// GstAggregatorClass::finish_buffer_list:
+  ///
+  /// Optional. Equivalent of #GstAggregatorClass::finish_buffer for
+  /// buffer lists.
+  ///
+  /// Since: 1.18
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstAggregator> aggregator,
+              ffi.Pointer<GstBufferList> bufferlist)>> finish_buffer_list;
+
+  /// GstAggregatorClass::peek_next_sample:
+  ///
+  /// See gst_aggregator_peek_next_sample().
+  ///
+  /// Since: 1.18
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<GstSample> Function(ffi.Pointer<GstAggregator> aggregator,
+              ffi.Pointer<GstAggregatorPad> aggregator_pad)>> peek_next_sample;
+
+  @ffi.Array.multi([15])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+/// GstAggregator Structs  *
+typedef GstAggregator = _GstAggregator;
+
+/// GstAggregatorPad Structs *
+typedef GstAggregatorPad = _GstAggregatorPad;
+
+/// GstAggregatorPad:
+/// @segment: last segment received.
+///
+/// The implementation the GstPad to use with #GstAggregator
+///
+/// Since: 1.14
+final class _GstAggregatorPad extends ffi.Opaque {}
+
+/// GstAggregatorPadClass:
+/// @flush:       Optional
+/// Called when the pad has received a flush stop, this is the place
+/// to flush any information specific to the pad, it allows for individual
+/// pads to be flushed while others might not be.
+/// @skip_buffer: Optional
+/// Called before input buffers are queued in the pad, return %TRUE
+/// if the buffer should be skipped.
+///
+/// Since: 1.14
+final class _GstAggregatorPadClass extends ffi.Struct {
+  external GstPadClass parent_class;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstAggregatorPad> aggpad,
+              ffi.Pointer<GstAggregator> aggregator)>> flush;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstAggregatorPad> aggpad,
+              ffi.Pointer<GstAggregator> aggregator,
+              ffi.Pointer<GstBuffer> buffer)>> skip_buffer;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+final class _GstAggregatorPadPrivate extends ffi.Opaque {}
+
+/// GstAggregatorStartTimeSelection:
+/// @GST_AGGREGATOR_START_TIME_SELECTION_ZERO: Start at running time 0.
+/// @GST_AGGREGATOR_START_TIME_SELECTION_FIRST: Start at the running time of
+/// the first buffer that is received.
+/// @GST_AGGREGATOR_START_TIME_SELECTION_SET: Start at the running time
+/// selected by the `start-time` property.
+///
+/// Since: 1.18
+abstract class GstAggregatorStartTimeSelection {
+  static const int GST_AGGREGATOR_START_TIME_SELECTION_ZERO = 0;
+  static const int GST_AGGREGATOR_START_TIME_SELECTION_FIRST = 1;
+  static const int GST_AGGREGATOR_START_TIME_SELECTION_SET = 2;
+}
+
+/// GstVideoAggregator:
+/// @info: The #GstVideoInfo representing the currently set
+/// srcpad caps.
+///
+/// Since: 1.16
+final class _GstVideoAggregator extends ffi.Struct {
+  external GstAggregator aggregator;
+
+  external GstVideoInfo info;
+
+  external ffi.Pointer<GstVideoAggregatorPrivate> priv;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstVideoAggregatorPrivate = _GstVideoAggregatorPrivate;
+
+final class _GstVideoAggregatorPrivate extends ffi.Opaque {}
+
+/// GstVideoAggregatorClass:
+/// @update_caps:              Optional.
+/// Lets subclasses update the #GstCaps representing
+/// the src pad caps before usage.  Return %NULL to indicate failure.
+/// @aggregate_frames:         Lets subclasses aggregate frames that are ready. Subclasses
+/// should iterate the GstElement.sinkpads and use the already
+/// mapped #GstVideoFrame from gst_video_aggregator_pad_get_prepared_frame()
+/// or directly use the #GstBuffer from gst_video_aggregator_pad_get_current_buffer()
+/// if it needs to map the buffer in a special way. The result of the
+/// aggregation should land in @outbuffer.
+/// @create_output_buffer:     Optional.
+/// Lets subclasses provide a #GstBuffer to be used as @outbuffer of
+/// the #aggregate_frames vmethod.
+/// @find_best_format:         Optional.
+/// Lets subclasses decide of the best common format to use.
+///
+/// Since: 1.16
+final class _GstVideoAggregatorClass extends ffi.Struct {
+  external GstAggregatorClass parent_class;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<GstCaps> Function(
+              ffi.Pointer<GstVideoAggregator> videoaggregator,
+              ffi.Pointer<GstCaps> caps)>> update_caps;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstVideoAggregator> videoaggregator,
+              ffi.Pointer<GstBuffer> outbuffer)>> aggregate_frames;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int32 Function(
+                  ffi.Pointer<GstVideoAggregator> videoaggregator,
+                  ffi.Pointer<ffi.Pointer<GstBuffer>> outbuffer)>>
+      create_output_buffer;
+
+  /// GstVideoAggregatorClass::find_best_format:
+  /// @at_least_one_alpha: (out):
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoAggregator> vagg,
+              ffi.Pointer<GstCaps> downstream_caps,
+              ffi.Pointer<GstVideoInfo> best_info,
+              ffi.Pointer<ffi.Int> at_least_one_alpha)>> find_best_format;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstAggregatorClass = _GstAggregatorClass;
+typedef GstVideoAggregator = _GstVideoAggregator;
+
+/// GstVideoAggregatorPad:
+/// @info: The #GstVideoInfo currently set on the pad
+///
+/// Since: 1.16
+final class _GstVideoAggregatorPad extends ffi.Opaque {}
+
+/// GstVideoAggregatorPadClass:
+/// @update_conversion_info: Called when either the input or output formats
+/// have changed.
+/// @prepare_frame: Prepare the frame from the pad buffer and sets it to prepared_frame.
+/// Implementations should always return TRUE.  Returning FALSE will cease
+/// iteration over subsequent pads.
+/// @clean_frame:   clean the frame previously prepared in prepare_frame
+///
+/// Since: 1.16
+/// /
+/// /**
+/// GstVideoAggregatorPadClass::prepare_frame_start:
+/// @pad: the #GstVideoAggregatorPad
+/// @videoaggregator: the parent #GstVideoAggregator
+/// @buffer: the input #GstBuffer to prepare
+/// @prepared_frame: the #GstVideoFrame to prepare into
+///
+/// Begin preparing the frame from the pad buffer and sets it to prepared_frame.
+///
+/// If overriden, `prepare_frame_finish` must also be overriden.
+///
+/// Since: 1.20
+/// /
+/// /**
+/// GstVideoAggregatorPadClass::prepare_frame_finish:
+/// @pad: the #GstVideoAggregatorPad
+/// @videoaggregator: the parent #GstVideoAggregator
+/// @prepared_frame: the #GstVideoFrame to prepare into
+///
+/// Finish preparing @prepared_frame.
+///
+/// If overriden, `prepare_frame_start` must also be overriden.
+///
+/// Since: 1.20
+final class _GstVideoAggregatorPadClass extends ffi.Struct {
+  external GstAggregatorPadClass parent_class;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Void Function(ffi.Pointer<GstVideoAggregatorPad> pad)>>
+      update_conversion_info;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoAggregatorPad> pad,
+              ffi.Pointer<GstVideoAggregator> videoaggregator,
+              ffi.Pointer<GstBuffer> buffer,
+              ffi.Pointer<GstVideoFrame> prepared_frame)>> prepare_frame;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoAggregatorPad> pad,
+              ffi.Pointer<GstVideoAggregator> videoaggregator,
+              ffi.Pointer<GstVideoFrame> prepared_frame)>> clean_frame;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoAggregatorPad> pad,
+              ffi.Pointer<GstVideoAggregator> videoaggregator,
+              ffi.Pointer<GstBuffer> buffer,
+              ffi.Pointer<GstVideoFrame> prepared_frame)>> prepare_frame_start;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstVideoAggregatorPad> pad,
+              ffi.Pointer<GstVideoAggregator> videoaggregator,
+              ffi.Pointer<GstVideoFrame> prepared_frame)>> prepare_frame_finish;
+
+  @ffi.Array.multi([18])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstAggregatorPadClass = _GstAggregatorPadClass;
+typedef GstVideoAggregatorPad = _GstVideoAggregatorPad;
+
+final class _GstVideoAggregatorPadPrivate extends ffi.Opaque {}
+
+/// GstVideoAggregatorConvertPad:
+///
+/// An implementation of GstPad that can be used with #GstVideoAggregator.
+///
+/// See #GstVideoAggregator for more details.
+///
+/// Since: 1.16
+final class _GstVideoAggregatorConvertPad extends ffi.Opaque {}
+
+/// GstVideoAggregatorConvertPadClass:
+///
+/// Since: 1.16
+final class _GstVideoAggregatorConvertPadClass extends ffi.Struct {
+  external GstVideoAggregatorPadClass parent_class;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  ffi.Pointer<GstVideoAggregatorConvertPad> pad,
+                  ffi.Pointer<GstVideoAggregator> agg,
+                  ffi.Pointer<GstVideoInfo> conversion_info)>>
+      create_conversion_info;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstVideoAggregatorPadClass = _GstVideoAggregatorPadClass;
+typedef GstVideoAggregatorConvertPad = _GstVideoAggregatorConvertPad;
+
+final class _GstVideoAggregatorConvertPadPrivate extends ffi.Opaque {}
+
+final class _GstVideoAggregatorParallelConvertPad extends ffi.Opaque {}
+
+/// GstVideoAggregatorParallelConvertPadClass:
+///
+/// Since: 1.20
+final class _GstVideoAggregatorParallelConvertPadClass extends ffi.Struct {
+  external GstVideoAggregatorConvertPadClass parent_class;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstVideoAggregatorConvertPadClass = _GstVideoAggregatorConvertPadClass;
+
+/// GstVideoCodecAlphaMeta:
+/// @meta: parent #GstMeta
+/// @buffer: the encoded alpha frame
+///
+/// Encapsulate an extra frame containing the encoded alpha channel for the
+/// currently negotiated CODEC. The streams must be of the same dimention as
+/// the original one.
+///
+/// Since: 1.20
+final class _GstVideoCodecAlphaMeta extends ffi.Struct {
+  external GstMeta meta;
+
+  external ffi.Pointer<GstBuffer> buffer;
+}
+
+typedef GstVideoCodecAlphaMeta = _GstVideoCodecAlphaMeta;
+
+final class _GstAdapter extends ffi.Opaque {}
+
+final class _GstAdapterClass extends ffi.Opaque {}
+
+/// GstAdapter:
+///
+/// The opaque #GstAdapter data structure.
+typedef GstAdapter = _GstAdapter;
+
+/// GstVideoMasteringDisplayInfoCoordinates:
+/// @x: the x coordinate of CIE 1931 color space in unit of 0.00002.
+/// @y: the y coordinate of CIE 1931 color space in unit of 0.00002.
+///
+/// Used to represent display_primaries and white_point of
+/// #GstVideoMasteringDisplayInfo struct. See #GstVideoMasteringDisplayInfo
+///
+/// Since: 1.18
+final class _GstVideoMasteringDisplayInfoCoordinates extends ffi.Struct {
+  @ffi.Uint16()
+  external int x;
+
+  @ffi.Uint16()
+  external int y;
+}
+
+/// GstVideoMasteringDisplayInfo:
+/// @display_primaries: the xy coordinates of primaries in the CIE 1931 color space.
+/// the index 0 contains red, 1 is for green and 2 is for blue.
+/// each value is normalized to 50000 (meaning that in unit of 0.00002)
+/// @white_point: the xy coordinates of white point in the CIE 1931 color space.
+/// each value is normalized to 50000 (meaning that in unit of 0.00002)
+/// @max_display_mastering_luminance: the maximum value of display luminance
+/// in unit of 0.0001 candelas per square metre (cd/m^2 and nit)
+/// @min_display_mastering_luminance: the minimum value of display luminance
+/// in unit of 0.0001 candelas per square metre (cd/m^2 and nit)
+///
+/// Mastering display color volume information defined by SMPTE ST 2086
+/// (a.k.a static HDR metadata).
+///
+/// Since: 1.18
+final class _GstVideoMasteringDisplayInfo extends ffi.Struct {
+  @ffi.Array.multi([3])
+  external ffi.Array<GstVideoMasteringDisplayInfoCoordinates> display_primaries;
+
+  external GstVideoMasteringDisplayInfoCoordinates white_point;
+
+  @ffi.Uint32()
+  external int max_display_mastering_luminance;
+
+  @ffi.Uint32()
+  external int min_display_mastering_luminance;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstVideoMasteringDisplayInfoCoordinates
+    = _GstVideoMasteringDisplayInfoCoordinates;
+
+/// GstVideoContentLightLevel:
+/// @max_content_light_level: the maximum content light level
+/// (abbreviated to MaxCLL) in candelas per square meter (cd/m^2 and nit)
+/// @max_frame_average_light_level: the maximum frame average light level
+/// (abbreviated to MaxFLL) in candelas per square meter (cd/m^2 and nit)
+///
+/// Content light level information specified in CEA-861.3, Appendix A.
+///
+/// Since: 1.18
+final class _GstVideoContentLightLevel extends ffi.Struct {
+  @ffi.Uint16()
+  external int max_content_light_level;
+
+  @ffi.Uint16()
+  external int max_frame_average_light_level;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstVideoMasteringDisplayInfo = _GstVideoMasteringDisplayInfo;
+typedef GstVideoContentLightLevel = _GstVideoContentLightLevel;
+
+/// GstVideoCodecState:
+/// @info: The #GstVideoInfo describing the stream
+/// @caps: The #GstCaps used in the caps negotiation of the pad.
+/// @codec_data: a #GstBuffer corresponding to the
+/// 'codec_data' field of a stream, or NULL.
+/// @allocation_caps: The #GstCaps for allocation query and pool
+/// negotiation. Since: 1.10
+/// @mastering_display_info: Mastering display color volume information
+/// (HDR metadata) for the stream. Since: 1.20
+/// @content_light_level: Content light level information for the stream.
+/// Since: 1.20
+///
+/// Structure representing the state of an incoming or outgoing video
+/// stream for encoders and decoders.
+///
+/// Decoders and encoders will receive such a state through their
+/// respective @set_format vmethods.
+///
+/// Decoders and encoders can set the downstream state, by using the
+/// gst_video_decoder_set_output_state() or
+/// gst_video_encoder_set_output_state() methods.
+/// /
+/// /**
+/// GstVideoCodecState.mastering_display_info:
+///
+/// Mastering display color volume information (HDR metadata) for the stream.
+///
+/// Since: 1.20
+/// /
+/// /**
+/// GstVideoCodecState.content_light_level:
+///
+/// Content light level information for the stream.
+///
+/// Since: 1.20
+final class _GstVideoCodecState extends ffi.Struct {
+  @ffi.Int()
+  external int ref_count;
+
+  external GstVideoInfo info;
+
+  external ffi.Pointer<GstCaps> caps;
+
+  external ffi.Pointer<GstBuffer> codec_data;
+
+  external ffi.Pointer<GstCaps> allocation_caps;
+
+  external ffi.Pointer<GstVideoMasteringDisplayInfo> mastering_display_info;
+
+  external ffi.Pointer<GstVideoContentLightLevel> content_light_level;
+
+  @ffi.Array.multi([17])
+  external ffi.Array<ffi.Pointer> padding;
+}
+
+/// GstVideoCodecFrame:
+/// @pts: Presentation timestamp
+/// @dts: Decoding timestamp
+/// @duration: Duration of the frame
+/// @system_frame_number: Unique identifier for the frame. Use this if you need
+/// to get hold of the frame later (like when data is being decoded).
+/// Typical usage in decoders is to set this on the opaque value provided
+/// to the library and get back the frame using gst_video_decoder_get_frame()
+/// @distance_from_sync: Distance in frames from the last synchronization point.
+/// @input_buffer: the input #GstBuffer that created this frame. The buffer is owned
+/// by the frame and references to the frame instead of the buffer should
+/// be kept.
+/// @output_buffer: the output #GstBuffer. Implementations should set this either
+/// directly, or by using the
+/// gst_video_decoder_allocate_output_frame() or
+/// gst_video_decoder_allocate_output_buffer() methods. The buffer is
+/// owned by the frame and references to the frame instead of the
+/// buffer should be kept.
+/// @deadline: Running time when the frame will be used.
+///
+/// A #GstVideoCodecFrame represents a video frame both in raw and
+/// encoded form.
+final class _GstVideoCodecFrame extends ffi.Struct {
+  @ffi.Int()
+  external int ref_count;
+
+  @ffi.Uint32()
+  external int flags;
+
+  @ffi.Uint32()
+  external int system_frame_number;
+
+  @ffi.Uint32()
+  external int decode_frame_number;
+
+  @ffi.Uint32()
+  external int presentation_frame_number;
+
+  @GstClockTime()
+  external int dts;
+
+  @GstClockTime()
+  external int pts;
+
+  @GstClockTime()
+  external int duration;
+
+  @ffi.Int()
+  external int distance_from_sync;
+
+  external ffi.Pointer<GstBuffer> input_buffer;
+
+  external ffi.Pointer<GstBuffer> output_buffer;
+
+  @GstClockTime()
+  external int deadline;
+
+  external ffi.Pointer<GList> events;
+
+  external ffi.Pointer user_data;
+
+  external GDestroyNotify user_data_destroy_notify;
+
+  external UnnamedUnion16 abidata;
+}
+
+final class UnnamedUnion16 extends ffi.Union {
+  external UnnamedStruct20 ABI;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Pointer> padding;
+}
+
+final class UnnamedStruct20 extends ffi.Struct {
+  @GstClockTime()
+  external int ts;
+
+  @GstClockTime()
+  external int ts2;
+
+  @ffi.UnsignedInt()
+  external int num_subframes;
+
+  @ffi.UnsignedInt()
+  external int subframes_processed;
+}
+
+/// GstVideoCodecFrameFlags:
+/// @GST_VIDEO_CODEC_FRAME_FLAG_DECODE_ONLY: is the frame only meant to be decoded
+/// @GST_VIDEO_CODEC_FRAME_FLAG_SYNC_POINT: is the frame a synchronization point (keyframe)
+/// @GST_VIDEO_CODEC_FRAME_FLAG_FORCE_KEYFRAME: should the output frame be made a keyframe
+/// @GST_VIDEO_CODEC_FRAME_FLAG_FORCE_KEYFRAME_HEADERS: should the encoder output stream headers
+/// @GST_VIDEO_CODEC_FRAME_FLAG_CORRUPTED: the buffer data is corrupted (Since: 1.20)
+///
+/// Flags for #GstVideoCodecFrame
+abstract class GstVideoCodecFrameFlags {
+  static const int GST_VIDEO_CODEC_FRAME_FLAG_DECODE_ONLY = 1;
+  static const int GST_VIDEO_CODEC_FRAME_FLAG_SYNC_POINT = 2;
+  static const int GST_VIDEO_CODEC_FRAME_FLAG_FORCE_KEYFRAME = 4;
+  static const int GST_VIDEO_CODEC_FRAME_FLAG_FORCE_KEYFRAME_HEADERS = 8;
+
+  /// GST_VIDEO_CODEC_FRAME_FLAG_CORRUPTED:
+  ///
+  /// The buffer data is corrupted.
+  ///
+  /// Since: 1.20
+  static const int GST_VIDEO_CODEC_FRAME_FLAG_CORRUPTED = 16;
+}
+
+typedef GstVideoCodecState = _GstVideoCodecState;
+typedef GstVideoCodecFrame = _GstVideoCodecFrame;
+
+/// GstVideoDecoder:
+///
+/// The opaque #GstVideoDecoder data structure.
+final class _GstVideoDecoder extends ffi.Struct {
+  external GstElement element;
+
+  external ffi.Pointer<GstPad> sinkpad;
+
+  external ffi.Pointer<GstPad> srcpad;
+
+  external GRecMutex stream_lock;
+
+  external GstSegment input_segment;
+
+  external GstSegment output_segment;
+
+  external ffi.Pointer<GstVideoDecoderPrivate> priv;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Pointer> padding;
+}
+
+typedef GstVideoDecoderPrivate = _GstVideoDecoderPrivate;
+
+final class _GstVideoDecoderPrivate extends ffi.Opaque {}
+
+/// GstVideoDecoderClass:
+/// @open:           Optional.
+/// Called when the element changes to GST_STATE_READY.
+/// Allows opening external resources.
+/// @close:          Optional.
+/// Called when the element changes to GST_STATE_NULL.
+/// Allows closing external resources.
+/// @start:          Optional.
+/// Called when the element starts processing.
+/// Allows opening external resources.
+/// @stop:           Optional.
+/// Called when the element stops processing.
+/// Allows closing external resources.
+/// @set_format:     Notifies subclass of incoming data format (caps).
+/// @parse:          Required for non-packetized input.
+/// Allows chopping incoming data into manageable units (frames)
+/// for subsequent decoding.
+/// @reset:          Optional.
+/// Allows subclass (decoder) to perform post-seek semantics reset.
+/// Deprecated.
+/// @handle_frame:   Provides input data frame to subclass. In subframe mode, the subclass needs
+/// to take ownership of @GstVideoCodecFrame.input_buffer as it will be modified
+/// by the base class on the next subframe buffer receiving.
+/// @finish:         Optional.
+/// Called to request subclass to dispatch any pending remaining
+/// data at EOS. Sub-classes can refuse to decode new data after.
+/// @drain:	    Optional.
+/// Called to request subclass to decode any data it can at this
+/// point, but that more data may arrive after. (e.g. at segment end).
+/// Sub-classes should be prepared to handle new data afterward,
+/// or seamless segment processing will break. Since: 1.6
+/// @sink_event:     Optional.
+/// Event handler on the sink pad. This function should return
+/// TRUE if the event was handled and should be discarded
+/// (i.e. not unref'ed).
+/// Subclasses should chain up to the parent implementation to
+/// invoke the default handler.
+/// @src_event:      Optional.
+/// Event handler on the source pad. This function should return
+/// TRUE if the event was handled and should be discarded
+/// (i.e. not unref'ed).
+/// Subclasses should chain up to the parent implementation to
+/// invoke the default handler.
+/// @negotiate:      Optional.
+/// Negotiate with downstream and configure buffer pools, etc.
+/// Subclasses should chain up to the parent implementation to
+/// invoke the default handler.
+/// @decide_allocation: Optional.
+/// Setup the allocation parameters for allocating output
+/// buffers. The passed in query contains the result of the
+/// downstream allocation query.
+/// Subclasses should chain up to the parent implementation to
+/// invoke the default handler.
+/// @propose_allocation: Optional.
+/// Propose buffer allocation parameters for upstream elements.
+/// Subclasses should chain up to the parent implementation to
+/// invoke the default handler.
+/// @flush:              Optional.
+/// Flush all remaining data from the decoder without
+/// pushing it downstream. Since: 1.2
+/// @sink_query:     Optional.
+/// Query handler on the sink pad. This function should
+/// return TRUE if the query could be performed. Subclasses
+/// should chain up to the parent implementation to invoke the
+/// default handler. Since: 1.4
+/// @src_query:      Optional.
+/// Query handler on the source pad. This function should
+/// return TRUE if the query could be performed. Subclasses
+/// should chain up to the parent implementation to invoke the
+/// default handler. Since: 1.4
+/// @getcaps:        Optional.
+/// Allows for a custom sink getcaps implementation.
+/// If not implemented, default returns
+/// gst_video_decoder_proxy_getcaps
+/// applied to sink template caps.
+/// @transform_meta: Optional. Transform the metadata on the input buffer to the
+/// output buffer. By default this method is copies all meta without
+/// tags and meta with only the "video" tag. subclasses can
+/// implement this method and return %TRUE if the metadata is to be
+/// copied. Since: 1.6
+///
+/// Subclasses can override any of the available virtual methods or not, as
+/// needed. At minimum @handle_frame needs to be overridden, and @set_format
+/// and likely as well.  If non-packetized input is supported or expected,
+/// @parse needs to be overridden as well.
+final class _GstVideoDecoderClass extends ffi.Struct {
+  external GstElementClass element_class;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoDecoder> decoder)>> open;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoDecoder> decoder)>> close;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoDecoder> decoder)>> start;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoDecoder> decoder)>> stop;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<GstVideoDecoder> decoder,
+              ffi.Pointer<GstVideoCodecFrame> frame,
+              ffi.Pointer<GstAdapter> adapter,
+              ffi.Int at_eos)>> parse;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoDecoder> decoder,
+              ffi.Pointer<GstVideoCodecState> state)>> set_format;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoDecoder> decoder, ffi.Int hard)>> reset;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstVideoDecoder> decoder)>> finish;
+
+  /// GstVideoDecoderClass::handle_frame:
+  /// @decoder: The #GstVideoDecoder
+  /// @frame: (transfer full): The frame to handle
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstVideoDecoder> decoder,
+              ffi.Pointer<GstVideoCodecFrame> frame)>> handle_frame;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoDecoder> decoder,
+              ffi.Pointer<GstEvent> event)>> sink_event;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoDecoder> decoder,
+              ffi.Pointer<GstEvent> event)>> src_event;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoDecoder> decoder)>> negotiate;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoDecoder> decoder,
+              ffi.Pointer<GstQuery> query)>> decide_allocation;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoDecoder> decoder,
+              ffi.Pointer<GstQuery> query)>> propose_allocation;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoDecoder> decoder)>> flush;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoDecoder> decoder,
+              ffi.Pointer<GstQuery> query)>> sink_query;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoDecoder> decoder,
+              ffi.Pointer<GstQuery> query)>> src_query;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<GstCaps> Function(ffi.Pointer<GstVideoDecoder> decoder,
+              ffi.Pointer<GstCaps> filter)>> getcaps;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstVideoDecoder> decoder)>> drain;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoDecoder> decoder,
+              ffi.Pointer<GstVideoCodecFrame> frame,
+              ffi.Pointer<GstMeta> meta)>> transform_meta;
+
+  /// GstVideoDecoderClass::handle_missing_data:
+  /// @decoder: The #GstVideoDecoder
+  /// @timestamp: Timestamp of the missing data
+  /// @duration: Duration of the missing data
+  ///
+  /// Returns: %TRUE if the decoder should be drained afterwards.
+  ///
+  /// Since: 1.20
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoDecoder> decoder,
+              GstClockTime timestamp,
+              GstClockTime duration)>> handle_missing_data;
+
+  @ffi.Array.multi([13])
+  external ffi.Array<ffi.Pointer> padding;
+}
+
+typedef GstVideoDecoder = _GstVideoDecoder;
+
+/// GstVideoDecoderRequestSyncPointFlags:
+/// @GST_VIDEO_DECODER_REQUEST_SYNC_POINT_DISCARD_INPUT: discard all following
+/// input until the next sync point.
+/// @GST_VIDEO_DECODER_REQUEST_SYNC_POINT_CORRUPT_OUTPUT: discard all following
+/// output until the next sync point.
+///
+/// Flags to be used in combination with gst_video_decoder_request_sync_point().
+/// See the function documentation for more details.
+///
+/// Since: 1.20
+abstract class GstVideoDecoderRequestSyncPointFlags {
+  static const int GST_VIDEO_DECODER_REQUEST_SYNC_POINT_DISCARD_INPUT = 1;
+  static const int GST_VIDEO_DECODER_REQUEST_SYNC_POINT_CORRUPT_OUTPUT = 2;
+}
+
+/// GstVideoEncoder:
+///
+/// The opaque #GstVideoEncoder data structure.
+final class _GstVideoEncoder extends ffi.Struct {
+  external GstElement element;
+
+  external ffi.Pointer<GstPad> sinkpad;
+
+  external ffi.Pointer<GstPad> srcpad;
+
+  external GRecMutex stream_lock;
+
+  external GstSegment input_segment;
+
+  external GstSegment output_segment;
+
+  external ffi.Pointer<GstVideoEncoderPrivate> priv;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Pointer> padding;
+}
+
+typedef GstVideoEncoderPrivate = _GstVideoEncoderPrivate;
+
+final class _GstVideoEncoderPrivate extends ffi.Opaque {}
+
+/// GstVideoEncoderClass:
+/// @open:           Optional.
+/// Called when the element changes to GST_STATE_READY.
+/// Allows opening external resources.
+/// @close:          Optional.
+/// Called when the element changes to GST_STATE_NULL.
+/// Allows closing external resources.
+/// @start:          Optional.
+/// Called when the element starts processing.
+/// Allows opening external resources.
+/// @stop:           Optional.
+/// Called when the element stops processing.
+/// Allows closing external resources.
+/// @set_format:     Optional.
+/// Notifies subclass of incoming data format.
+/// GstVideoCodecState fields have already been
+/// set according to provided caps.
+/// @handle_frame:   Provides input frame to subclass.
+/// @reset:          Optional.
+/// Allows subclass (encoder) to perform post-seek semantics reset.
+/// Deprecated.
+/// @finish:         Optional.
+/// Called to request subclass to dispatch any pending remaining
+/// data (e.g. at EOS).
+/// @pre_push:   Optional.
+/// Allows subclass to push frame downstream in whatever
+/// shape or form it deems appropriate.  If not provided,
+/// provided encoded frame data is simply pushed downstream.
+/// @getcaps:        Optional.
+/// Allows for a custom sink getcaps implementation (e.g.
+/// for multichannel input specification).  If not implemented,
+/// default returns gst_video_encoder_proxy_getcaps
+/// applied to sink template caps.
+/// @sink_event:     Optional.
+/// Event handler on the sink pad. This function should return
+/// TRUE if the event was handled and should be discarded
+/// (i.e. not unref'ed).
+/// Subclasses should chain up to the parent implementation to
+/// invoke the default handler.
+/// @src_event:      Optional.
+/// Event handler on the source pad. This function should return
+/// TRUE if the event was handled and should be discarded
+/// (i.e. not unref'ed).
+/// Subclasses should chain up to the parent implementation to
+/// invoke the default handler.
+/// @negotiate:      Optional.
+/// Negotiate with downstream and configure buffer pools, etc.
+/// Subclasses should chain up to the parent implementation to
+/// invoke the default handler.
+/// @decide_allocation: Optional.
+/// Setup the allocation parameters for allocating output
+/// buffers. The passed in query contains the result of the
+/// downstream allocation query.
+/// Subclasses should chain up to the parent implementation to
+/// invoke the default handler.
+/// @propose_allocation: Optional.
+/// Propose buffer allocation parameters for upstream elements.
+/// Subclasses should chain up to the parent implementation to
+/// invoke the default handler.
+/// @flush:              Optional.
+/// Flush all remaining data from the encoder without
+/// pushing it downstream. Since: 1.2
+/// @sink_query:     Optional.
+/// Query handler on the sink pad. This function should
+/// return TRUE if the query could be performed. Subclasses
+/// should chain up to the parent implementation to invoke the
+/// default handler. Since: 1.4
+/// @src_query:      Optional.
+/// Query handler on the source pad. This function should
+/// return TRUE if the query could be performed. Subclasses
+/// should chain up to the parent implementation to invoke the
+/// default handler. Since: 1.4
+/// @transform_meta: Optional. Transform the metadata on the input buffer to the
+/// output buffer. By default this method is copies all meta without
+/// tags and meta with only the "video" tag. subclasses can
+/// implement this method and return %TRUE if the metadata is to be
+/// copied. Since: 1.6
+///
+/// Subclasses can override any of the available virtual methods or not, as
+/// needed. At minimum @handle_frame needs to be overridden, and @set_format
+/// and @get_caps are likely needed as well.
+final class _GstVideoEncoderClass extends ffi.Struct {
+  external GstElementClass element_class;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoEncoder> encoder)>> open;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoEncoder> encoder)>> close;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoEncoder> encoder)>> start;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoEncoder> encoder)>> stop;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoEncoder> encoder,
+              ffi.Pointer<GstVideoCodecState> state)>> set_format;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstVideoEncoder> encoder,
+              ffi.Pointer<GstVideoCodecFrame> frame)>> handle_frame;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoEncoder> encoder, ffi.Int hard)>> reset;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstVideoEncoder> encoder)>> finish;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstVideoEncoder> encoder,
+              ffi.Pointer<GstVideoCodecFrame> frame)>> pre_push;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<GstCaps> Function(ffi.Pointer<GstVideoEncoder> enc,
+              ffi.Pointer<GstCaps> filter)>> getcaps;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoEncoder> encoder,
+              ffi.Pointer<GstEvent> event)>> sink_event;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoEncoder> encoder,
+              ffi.Pointer<GstEvent> event)>> src_event;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoEncoder> encoder)>> negotiate;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoEncoder> encoder,
+              ffi.Pointer<GstQuery> query)>> decide_allocation;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoEncoder> encoder,
+              ffi.Pointer<GstQuery> query)>> propose_allocation;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoEncoder> encoder)>> flush;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoEncoder> encoder,
+              ffi.Pointer<GstQuery> query)>> sink_query;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoEncoder> encoder,
+              ffi.Pointer<GstQuery> query)>> src_query;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoEncoder> encoder,
+              ffi.Pointer<GstVideoCodecFrame> frame,
+              ffi.Pointer<GstMeta> meta)>> transform_meta;
+
+  @ffi.Array.multi([16])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstVideoEncoder = _GstVideoEncoder;
+
+/// GstBaseTransform:
+///
+/// The opaque #GstBaseTransform data structure.
+final class _GstBaseTransform extends ffi.Struct {
+  external GstElement element;
+
+  external ffi.Pointer<GstPad> sinkpad;
+
+  external ffi.Pointer<GstPad> srcpad;
+
+  @ffi.Int()
+  external int have_segment;
+
+  external GstSegment segment;
+
+  external ffi.Pointer<GstBuffer> queued_buf;
+
+  external ffi.Pointer<GstBaseTransformPrivate> priv;
+
+  @ffi.Array.multi([19])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstBaseTransformPrivate = _GstBaseTransformPrivate;
+
+final class _GstBaseTransformPrivate extends ffi.Opaque {}
+
+/// GstBaseTransformClass:
+/// @parent_class:   Element parent class
+/// @passthrough_on_same_caps: If set to %TRUE, passthrough mode will be
+/// automatically enabled if the caps are the same.
+/// Set to %FALSE by default.
+/// @transform_ip_on_passthrough: If set to %TRUE, @transform_ip will be called in
+/// passthrough mode. The passed buffer might not be
+/// writable. When %FALSE, neither @transform nor
+/// @transform_ip will be called in passthrough mode.
+/// Set to %TRUE by default.
+/// @transform_caps: Optional.  Given the pad in this direction and the given
+/// caps, what caps are allowed on the other pad in this
+/// element ?
+/// @fixate_caps:    Optional. Given the pad in this direction and the given
+/// caps, fixate the caps on the other pad. The function takes
+/// ownership of @othercaps and returns a fixated version of
+/// @othercaps. @othercaps is not guaranteed to be writable.
+/// @accept_caps:    Optional.
+/// Subclasses can override this method to check if @caps can be
+/// handled by the element. The default implementation might not be
+/// the most optimal way to check this in all cases.
+/// @set_caps:       Allows the subclass to be notified of the actual caps set.
+/// @query:          Optional.
+/// Handle a requested query. Subclasses that implement this
+/// must chain up to the parent if they didn't handle the
+/// query
+/// @decide_allocation: Setup the allocation parameters for allocating output
+/// buffers. The passed in query contains the result of the
+/// downstream allocation query. This function is only called
+/// when not operating in passthrough mode. The default
+/// implementation will remove all memory dependent metadata.
+/// If there is a @filter_meta method implementation, it will
+/// be called for all metadata API in the downstream query,
+/// otherwise the metadata API is removed.
+/// @filter_meta: Return %TRUE if the metadata API should be proposed in the
+/// upstream allocation query. The default implementation is %NULL
+/// and will cause all metadata to be removed.
+/// @propose_allocation: Propose buffer allocation parameters for upstream elements.
+/// This function must be implemented if the element reads or
+/// writes the buffer content. The query that was passed to
+/// the decide_allocation is passed in this method (or %NULL
+/// when the element is in passthrough mode). The default
+/// implementation will pass the query downstream when in
+/// passthrough mode and will copy all the filtered metadata
+/// API in non-passthrough mode.
+/// @transform_size: Optional. Given the size of a buffer in the given direction
+/// with the given caps, calculate the size in bytes of a buffer
+/// on the other pad with the given other caps.
+/// The default implementation uses get_unit_size and keeps
+/// the number of units the same.
+/// @get_unit_size:  Required if the transform is not in-place.
+/// Get the size in bytes of one unit for the given caps.
+/// @start:          Optional.
+/// Called when the element starts processing.
+/// Allows opening external resources.
+/// @stop:           Optional.
+/// Called when the element stops processing.
+/// Allows closing external resources.
+/// @sink_event:     Optional.
+/// Event handler on the sink pad. The default implementation
+/// handles the event and forwards it downstream.
+/// @src_event:      Optional.
+/// Event handler on the source pad. The default implementation
+/// handles the event and forwards it upstream.
+/// @prepare_output_buffer: Optional.
+/// Subclasses can override this to do their own
+/// allocation of output buffers.  Elements that only do
+/// analysis can return a subbuffer or even just
+/// return a reference to the input buffer (if in
+/// passthrough mode). The default implementation will
+/// use the negotiated allocator or bufferpool and
+/// transform_size to allocate an output buffer or it
+/// will return the input buffer in passthrough mode.
+/// @copy_metadata: Optional.
+/// Copy the metadata from the input buffer to the output buffer.
+/// The default implementation will copy the flags, timestamps and
+/// offsets of the buffer.
+/// @transform_meta: Optional. Transform the metadata on the input buffer to the
+/// output buffer. By default this method copies all meta without
+/// tags. Subclasses can implement this method and return %TRUE if
+/// the metadata is to be copied.
+/// @before_transform: Optional.
+/// This method is called right before the base class will
+/// start processing. Dynamic properties or other delayed
+/// configuration could be performed in this method.
+/// @transform:      Required if the element does not operate in-place.
+/// Transforms one incoming buffer to one outgoing buffer.
+/// The function is allowed to change size/timestamp/duration
+/// of the outgoing buffer.
+/// @transform_ip:   Required if the element operates in-place.
+/// Transform the incoming buffer in-place.
+/// @submit_input_buffer: Function which accepts a new input buffer and pre-processes it.
+/// The default implementation performs caps (re)negotiation, then
+/// QoS if needed, and places the input buffer into the @queued_buf
+/// member variable. If the buffer is dropped due to QoS, it returns
+/// GST_BASE_TRANSFORM_FLOW_DROPPED. If this input buffer is not
+/// contiguous with any previous input buffer, then @is_discont
+/// is set to %TRUE. (Since: 1.6)
+/// @generate_output: Called after each new input buffer is submitted repeatedly
+/// until it either generates an error or fails to generate an output
+/// buffer. The default implementation takes the contents of the
+/// @queued_buf variable, generates an output buffer if needed
+/// by calling the class @prepare_output_buffer, and then
+/// calls either @transform or @transform_ip. Elements that don't
+/// do 1-to-1 transformations of input to output buffers can either
+/// return GST_BASE_TRANSFORM_FLOW_DROPPED or simply not generate
+/// an output buffer until they are ready to do so. (Since: 1.6)
+///
+/// Subclasses can override any of the available virtual methods or not, as
+/// needed. At minimum either @transform or @transform_ip need to be overridden.
+/// If the element can overwrite the input data with the results (data is of the
+/// same type and quantity) it should provide @transform_ip.
+final class _GstBaseTransformClass extends ffi.Struct {
+  external GstElementClass parent_class;
+
+  @ffi.Int()
+  external int passthrough_on_same_caps;
+
+  @ffi.Int()
+  external int transform_ip_on_passthrough;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<GstCaps> Function(
+              ffi.Pointer<GstBaseTransform> trans,
+              ffi.Int32 direction,
+              ffi.Pointer<GstCaps> caps,
+              ffi.Pointer<GstCaps> filter)>> transform_caps;
+
+  /// GstBaseTransformClass::fixate_caps:
+  /// @othercaps: (transfer full):
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<GstCaps> Function(
+              ffi.Pointer<GstBaseTransform> trans,
+              ffi.Int32 direction,
+              ffi.Pointer<GstCaps> caps,
+              ffi.Pointer<GstCaps> othercaps)>> fixate_caps;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstBaseTransform> trans,
+              ffi.Int32 direction, ffi.Pointer<GstCaps> caps)>> accept_caps;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstBaseTransform> trans,
+              ffi.Pointer<GstCaps> incaps,
+              ffi.Pointer<GstCaps> outcaps)>> set_caps;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstBaseTransform> trans,
+              ffi.Int32 direction, ffi.Pointer<GstQuery> query)>> query;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstBaseTransform> trans,
+              ffi.Pointer<GstQuery> query)>> decide_allocation;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstBaseTransform> trans,
+              ffi.Pointer<GstQuery> query,
+              GType api,
+              ffi.Pointer<GstStructure> params)>> filter_meta;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstBaseTransform> trans,
+              ffi.Pointer<GstQuery> decide_query,
+              ffi.Pointer<GstQuery> query)>> propose_allocation;
+
+  /// GstBaseTransformClass::transform_size:
+  /// @othersize: (out):
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstBaseTransform> trans,
+              ffi.Int32 direction,
+              ffi.Pointer<GstCaps> caps,
+              ffi.Size size,
+              ffi.Pointer<GstCaps> othercaps,
+              ffi.Pointer<ffi.Size> othersize)>> transform_size;
+
+  /// GstBaseTransformClass::get_unit_size:
+  /// @size: (out):
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstBaseTransform> trans,
+              ffi.Pointer<GstCaps> caps,
+              ffi.Pointer<ffi.Size> size)>> get_unit_size;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstBaseTransform> trans)>> start;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstBaseTransform> trans)>> stop;
+
+  /// GstBaseTransformClass::sink_event:
+  /// @event: (transfer full):
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstBaseTransform> trans,
+              ffi.Pointer<GstEvent> event)>> sink_event;
+
+  /// GstBaseTransformClass::src_event:
+  /// @event: (transfer full):
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstBaseTransform> trans,
+              ffi.Pointer<GstEvent> event)>> src_event;
+
+  /// GstBaseTransformClass::prepare_output_buffer:
+  /// @outbuf: (out):
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int32 Function(
+                  ffi.Pointer<GstBaseTransform> trans,
+                  ffi.Pointer<GstBuffer> input,
+                  ffi.Pointer<ffi.Pointer<GstBuffer>> outbuf)>>
+      prepare_output_buffer;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstBaseTransform> trans,
+              ffi.Pointer<GstBuffer> input,
+              ffi.Pointer<GstBuffer> outbuf)>> copy_metadata;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstBaseTransform> trans,
+              ffi.Pointer<GstBuffer> outbuf,
+              ffi.Pointer<GstMeta> meta,
+              ffi.Pointer<GstBuffer> inbuf)>> transform_meta;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseTransform> trans,
+              ffi.Pointer<GstBuffer> buffer)>> before_transform;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<GstBaseTransform> trans,
+              ffi.Pointer<GstBuffer> inbuf,
+              ffi.Pointer<GstBuffer> outbuf)>> transform;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseTransform> trans,
+              ffi.Pointer<GstBuffer> buf)>> transform_ip;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<GstBaseTransform> trans,
+              ffi.Int is_discont,
+              ffi.Pointer<GstBuffer> input)>> submit_input_buffer;
+
+  /// GstBaseTransformClass::generate_output:
+  /// @outbuf: (out):
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseTransform> trans,
+              ffi.Pointer<ffi.Pointer<GstBuffer>> outbuf)>> generate_output;
+
+  @ffi.Array.multi([18])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstBaseTransform = _GstBaseTransform;
+
+final class _GstVideoFilter extends ffi.Struct {
+  external GstBaseTransform element;
+
+  @ffi.Int()
+  external int negotiated;
+
+  external GstVideoInfo in_info;
+
+  external GstVideoInfo out_info;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+/// GstVideoFilterClass:
+/// @parent_class: the parent class structure
+/// @set_info: function to be called with the negotiated caps and video infos
+/// @transform_frame: transform a video frame
+/// @transform_frame_ip: transform a video frame in place
+///
+/// The video filter class structure.
+final class _GstVideoFilterClass extends ffi.Struct {
+  external GstBaseTransformClass parent_class;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoFilter> filter,
+              ffi.Pointer<GstCaps> incaps,
+              ffi.Pointer<GstVideoInfo> in_info,
+              ffi.Pointer<GstCaps> outcaps,
+              ffi.Pointer<GstVideoInfo> out_info)>> set_info;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<GstVideoFilter> filter,
+              ffi.Pointer<GstVideoFrame> inframe,
+              ffi.Pointer<GstVideoFrame> outframe)>> transform_frame;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstVideoFilter> trans,
+              ffi.Pointer<GstVideoFrame> frame)>> transform_frame_ip;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstBaseTransformClass = _GstBaseTransformClass;
+typedef GstVideoFilter = _GstVideoFilter;
+
+/// GstVideoTimeCodeConfig:
+/// @fps_n: Numerator of the frame rate
+/// @fps_d: Denominator of the frame rate
+/// @flags: the corresponding #GstVideoTimeCodeFlags
+/// @latest_daily_jam: The latest daily jam information, if present, or NULL
+///
+/// Supported frame rates: 30000/1001, 60000/1001 (both with and without drop
+/// frame), and integer frame rates e.g. 25/1, 30/1, 50/1, 60/1.
+///
+/// The configuration of the time code.
+///
+/// Since: 1.10
+final class _GstVideoTimeCodeConfig extends ffi.Struct {
+  @ffi.UnsignedInt()
+  external int fps_n;
+
+  @ffi.UnsignedInt()
+  external int fps_d;
+
+  @ffi.Int32()
+  external int flags;
+
+  external ffi.Pointer<GDateTime> latest_daily_jam;
+}
+
+/// GstVideoTimeCodeFlags:
+/// @GST_VIDEO_TIME_CODE_FLAGS_NONE: No flags
+/// @GST_VIDEO_TIME_CODE_FLAGS_DROP_FRAME: Whether we have drop frame rate
+/// @GST_VIDEO_TIME_CODE_FLAGS_INTERLACED: Whether we have interlaced video
+///
+/// Flags related to the time code information.
+/// For drop frame, only 30000/1001 and 60000/1001 frame rates are supported.
+///
+/// Since: 1.10
+abstract class GstVideoTimeCodeFlags {
+  static const int GST_VIDEO_TIME_CODE_FLAGS_NONE = 0;
+  static const int GST_VIDEO_TIME_CODE_FLAGS_DROP_FRAME = 1;
+  static const int GST_VIDEO_TIME_CODE_FLAGS_INTERLACED = 2;
+}
+
+/// GstVideoTimeCode:
+/// @hours: the hours field of #GstVideoTimeCode
+/// @minutes: the minutes field of #GstVideoTimeCode
+/// @seconds: the seconds field of #GstVideoTimeCode
+/// @frames: the frames field of #GstVideoTimeCode
+/// @field_count: Interlaced video field count
+/// @config: the corresponding #GstVideoTimeCodeConfig
+///
+/// @field_count must be 0 for progressive video and 1 or 2 for interlaced.
+///
+/// A representation of a SMPTE time code.
+///
+/// @hours must be positive and less than 24. Will wrap around otherwise.
+/// @minutes and @seconds must be positive and less than 60.
+/// @frames must be less than or equal to @config.fps_n / @config.fps_d
+/// These values are *NOT* automatically normalized.
+///
+/// Since: 1.10
+final class _GstVideoTimeCode extends ffi.Struct {
+  external GstVideoTimeCodeConfig config;
+
+  @ffi.UnsignedInt()
+  external int hours;
+
+  @ffi.UnsignedInt()
+  external int minutes;
+
+  @ffi.UnsignedInt()
+  external int seconds;
+
+  @ffi.UnsignedInt()
+  external int frames;
+
+  @ffi.UnsignedInt()
+  external int field_count;
+}
+
+typedef GstVideoTimeCodeConfig = _GstVideoTimeCodeConfig;
+
+/// GstVideoTimeCodeInterval:
+/// @hours: the hours field of #GstVideoTimeCodeInterval
+/// @minutes: the minutes field of #GstVideoTimeCodeInterval
+/// @seconds: the seconds field of #GstVideoTimeCodeInterval
+/// @frames: the frames field of #GstVideoTimeCodeInterval
+///
+/// A representation of a difference between two #GstVideoTimeCode instances.
+/// Will not necessarily correspond to a real timecode (e.g. 00:00:10;00)
+///
+/// Since: 1.12
+final class _GstVideoTimeCodeInterval extends ffi.Struct {
+  @ffi.UnsignedInt()
+  external int hours;
+
+  @ffi.UnsignedInt()
+  external int minutes;
+
+  @ffi.UnsignedInt()
+  external int seconds;
+
+  @ffi.UnsignedInt()
+  external int frames;
+}
+
+typedef GstVideoTimeCode = _GstVideoTimeCode;
+typedef GstVideoTimeCodeInterval = _GstVideoTimeCodeInterval;
+
+/// GstVideoMeta:
+/// @meta: parent #GstMeta
+/// @buffer: the buffer this metadata belongs to
+/// @flags: additional video flags
+/// @format: the video format
+/// @id: identifier of the frame
+/// @width: the video width
+/// @height: the video height
+/// @n_planes: the number of planes in the image
+/// @offset: array of offsets for the planes. This field might not always be
+/// valid, it is used by the default implementation of @map.
+/// @stride: array of strides for the planes. This field might not always be
+/// valid, it is used by the default implementation of @map.
+/// @map: map the memory of a plane
+/// @unmap: unmap the memory of a plane
+/// @alignment: the paddings and alignment constraints of the video buffer.
+/// It is up to the caller of `gst_buffer_add_video_meta_full()` to set it
+/// using gst_video_meta_set_alignment(), if they did not it defaults
+/// to no padding and no alignment. Since: 1.18
+///
+/// Extra buffer metadata describing image properties
+///
+/// This meta can also be used by downstream elements to specifiy their
+/// buffer layout requirements for upstream. Upstream should try to
+/// fit those requirements, if possible, in order to prevent buffer copies.
+///
+/// This is done by passing a custom #GstStructure to
+/// gst_query_add_allocation_meta() when handling the ALLOCATION query.
+/// This structure should be named 'video-meta' and can have the following
+/// fields:
+/// - padding-top (uint): extra pixels on the top
+/// - padding-bottom (uint): extra pixels on the bottom
+/// - padding-left (uint): extra pixels on the left side
+/// - padding-right (uint): extra pixels on the right side
+/// The padding fields have the same semantic as #GstVideoMeta.alignment
+/// and so represent the paddings requested on produced video buffers.
+///
+/// Since 1.24 it can be serialized using gst_meta_serialize() and
+/// gst_meta_deserialize().
+final class _GstVideoMeta extends ffi.Struct {
+  external GstMeta meta;
+
+  external ffi.Pointer<GstBuffer> buffer;
+
+  @ffi.Int32()
+  external int flags;
+
+  @ffi.Int32()
+  external int format;
+
+  @ffi.Int()
+  external int id;
+
+  @ffi.UnsignedInt()
+  external int width;
+
+  @ffi.UnsignedInt()
+  external int height;
+
+  @ffi.UnsignedInt()
+  external int n_planes;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Size> offset;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Int> stride;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoMeta> meta,
+              ffi.UnsignedInt plane,
+              ffi.Pointer<GstMapInfo> info,
+              ffi.Pointer<ffi.Pointer> data,
+              ffi.Pointer<ffi.Int> stride,
+              ffi.Int32 flags)>> map;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoMeta> meta,
+              ffi.UnsignedInt plane, ffi.Pointer<GstMapInfo> info)>> unmap;
+
+  external GstVideoAlignment alignment;
+}
+
+typedef GstVideoMeta = _GstVideoMeta;
+
+/// GstVideoCropMeta:
+/// @meta: parent #GstMeta
+/// @x: the horizontal offset
+/// @y: the vertical offset
+/// @width: the cropped width
+/// @height: the cropped height
+///
+/// Extra buffer metadata describing image cropping.
+final class _GstVideoCropMeta extends ffi.Struct {
+  external GstMeta meta;
+
+  @ffi.UnsignedInt()
+  external int x;
+
+  @ffi.UnsignedInt()
+  external int y;
+
+  @ffi.UnsignedInt()
+  external int width;
+
+  @ffi.UnsignedInt()
+  external int height;
+}
+
+/// GstVideoMetaTransform:
+/// @in_info: the input #GstVideoInfo
+/// @out_info: the output #GstVideoInfo
+///
+/// Extra data passed to a video transform #GstMetaTransformFunction such as:
+/// "gst-video-scale".
+final class GstVideoMetaTransform extends ffi.Struct {
+  external ffi.Pointer<GstVideoInfo> in_info;
+
+  external ffi.Pointer<GstVideoInfo> out_info;
+}
+
+/// GstVideoGLTextureType:
+/// @GST_VIDEO_GL_TEXTURE_TYPE_LUMINANCE: Luminance texture, GL_LUMINANCE
+/// @GST_VIDEO_GL_TEXTURE_TYPE_LUMINANCE_ALPHA: Luminance-alpha texture, GL_LUMINANCE_ALPHA
+/// @GST_VIDEO_GL_TEXTURE_TYPE_RGB16: RGB 565 texture, GL_RGB
+/// @GST_VIDEO_GL_TEXTURE_TYPE_RGB: RGB texture, GL_RGB
+/// @GST_VIDEO_GL_TEXTURE_TYPE_RGBA: RGBA texture, GL_RGBA
+/// @GST_VIDEO_GL_TEXTURE_TYPE_R: R texture, GL_RED_EXT
+/// @GST_VIDEO_GL_TEXTURE_TYPE_RG: RG texture, GL_RG_EXT
+///
+/// The GL texture type.
+abstract class GstVideoGLTextureType {
+  static const int GST_VIDEO_GL_TEXTURE_TYPE_LUMINANCE = 0;
+  static const int GST_VIDEO_GL_TEXTURE_TYPE_LUMINANCE_ALPHA = 1;
+  static const int GST_VIDEO_GL_TEXTURE_TYPE_RGB16 = 2;
+  static const int GST_VIDEO_GL_TEXTURE_TYPE_RGB = 3;
+  static const int GST_VIDEO_GL_TEXTURE_TYPE_RGBA = 4;
+  static const int GST_VIDEO_GL_TEXTURE_TYPE_R = 5;
+  static const int GST_VIDEO_GL_TEXTURE_TYPE_RG = 6;
+}
+
+/// GstVideoGLTextureOrientation:
+/// @GST_VIDEO_GL_TEXTURE_ORIENTATION_X_NORMAL_Y_NORMAL: Top line first in memory, left row first
+/// @GST_VIDEO_GL_TEXTURE_ORIENTATION_X_NORMAL_Y_FLIP: Bottom line first in memory, left row first
+/// @GST_VIDEO_GL_TEXTURE_ORIENTATION_X_FLIP_Y_NORMAL: Top line first in memory, right row first
+/// @GST_VIDEO_GL_TEXTURE_ORIENTATION_X_FLIP_Y_FLIP: Bottom line first in memory, right row first
+///
+/// The orientation of the GL texture.
+abstract class GstVideoGLTextureOrientation {
+  static const int GST_VIDEO_GL_TEXTURE_ORIENTATION_X_NORMAL_Y_NORMAL = 0;
+  static const int GST_VIDEO_GL_TEXTURE_ORIENTATION_X_NORMAL_Y_FLIP = 1;
+  static const int GST_VIDEO_GL_TEXTURE_ORIENTATION_X_FLIP_Y_NORMAL = 2;
+  static const int GST_VIDEO_GL_TEXTURE_ORIENTATION_X_FLIP_Y_FLIP = 3;
+}
+
+/// GstVideoGLTextureUploadMeta:
+/// @meta: parent #GstMeta
+/// @texture_orientation: Orientation of the textures
+/// @n_textures: Number of textures that are generated
+/// @texture_type: Type of each texture
+///
+/// Extra buffer metadata for uploading a buffer to an OpenGL texture
+/// ID. The caller of gst_video_gl_texture_upload_meta_upload() must
+/// have OpenGL set up and call this from a thread where it is valid
+/// to upload something to an OpenGL texture.
+final class _GstVideoGLTextureUploadMeta extends ffi.Struct {
+  external GstMeta meta;
+
+  @ffi.Int32()
+  external int texture_orientation;
+
+  @ffi.UnsignedInt()
+  external int n_textures;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Int32> texture_type;
+
+  external ffi.Pointer<GstBuffer> buffer;
+
+  external GstVideoGLTextureUpload upload;
+
+  external ffi.Pointer user_data;
+
+  external GBoxedCopyFunc user_data_copy;
+
+  external GBoxedFreeFunc user_data_free;
+}
+
+typedef GstVideoGLTextureUpload
+    = ffi.Pointer<ffi.NativeFunction<GstVideoGLTextureUploadFunction>>;
+typedef GstVideoGLTextureUploadFunction = ffi.Int Function(
+    ffi.Pointer<GstVideoGLTextureUploadMeta> meta,
+    ffi.Pointer<ffi.UnsignedInt> texture_id);
+typedef DartGstVideoGLTextureUploadFunction = int Function(
+    ffi.Pointer<GstVideoGLTextureUploadMeta> meta,
+    ffi.Pointer<ffi.UnsignedInt> texture_id);
+typedef GstVideoGLTextureUploadMeta = _GstVideoGLTextureUploadMeta;
+
+/// GstVideoRegionOfInterestMeta:
+/// @meta: parent #GstMeta
+/// @roi_type: GQuark describing the semantic of the Roi (f.i. a face, a pedestrian)
+/// @id: identifier of this particular ROI
+/// @parent_id: identifier of its parent ROI, used f.i. for ROI hierarchisation.
+/// @x: x component of upper-left corner
+/// @y: y component of upper-left corner
+/// @w: bounding box width
+/// @h: bounding box height
+/// @params: list of #GstStructure containing element-specific params for downstream,
+/// see gst_video_region_of_interest_meta_add_param(). (Since: 1.14)
+///
+/// Extra buffer metadata describing an image region of interest
+final class GstVideoRegionOfInterestMeta extends ffi.Struct {
+  external GstMeta meta;
+
+  @GQuark()
+  external int roi_type;
+
+  @ffi.Int()
+  external int id;
+
+  @ffi.Int()
+  external int parent_id;
+
+  @ffi.UnsignedInt()
+  external int x;
+
+  @ffi.UnsignedInt()
+  external int y;
+
+  @ffi.UnsignedInt()
+  external int w;
+
+  @ffi.UnsignedInt()
+  external int h;
+
+  external ffi.Pointer<GList> params;
+}
+
+/// GstVideoTimeCodeMeta:
+/// @meta: parent #GstMeta
+/// @tc: the GstVideoTimeCode to attach
+///
+/// Extra buffer metadata describing the GstVideoTimeCode of the frame.
+///
+/// Each frame is assumed to have its own timecode, i.e. they are not
+/// automatically incremented/interpolated.
+///
+/// Since: 1.10
+final class GstVideoTimeCodeMeta extends ffi.Struct {
+  external GstMeta meta;
+
+  external GstVideoTimeCode tc;
+}
+
+final class _GstVideoBufferPool extends ffi.Struct {
+  external GstBufferPool bufferpool;
+
+  external ffi.Pointer<GstVideoBufferPoolPrivate> priv;
+}
+
+typedef GstVideoBufferPoolPrivate = _GstVideoBufferPoolPrivate;
+
+final class _GstVideoBufferPoolPrivate extends ffi.Opaque {}
+
+final class _GstVideoBufferPoolClass extends ffi.Struct {
+  external GstBufferPoolClass parent_class;
+}
+
+typedef GstBufferPoolClass = _GstBufferPoolClass;
+
+/// GstBaseSink:
+///
+/// The opaque #GstBaseSink data structure.
+final class _GstBaseSink extends ffi.Struct {
+  external GstElement element;
+
+  external ffi.Pointer<GstPad> sinkpad;
+
+  @ffi.Int32()
+  external int pad_mode;
+
+  @ffi.Uint64()
+  external int offset;
+
+  @ffi.Int()
+  external int can_activate_pull;
+
+  @ffi.Int()
+  external int can_activate_push;
+
+  external GMutex preroll_lock;
+
+  external GCond preroll_cond;
+
+  @ffi.Int()
+  external int eos;
+
+  @ffi.Int()
+  external int need_preroll;
+
+  @ffi.Int()
+  external int have_preroll;
+
+  @ffi.Int()
+  external int playing_async;
+
+  @ffi.Int()
+  external int have_newsegment;
+
+  external GstSegment segment;
+
+  external GstClockID clock_id;
+
+  @ffi.Int()
+  external int sync1;
+
+  @ffi.Int()
+  external int flushing;
+
+  @ffi.Int()
+  external int running;
+
+  @ffi.Int64()
+  external int max_lateness;
+
+  external ffi.Pointer<GstBaseSinkPrivate> priv;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstBaseSinkPrivate = _GstBaseSinkPrivate;
+
+final class _GstBaseSinkPrivate extends ffi.Opaque {}
+
+/// GstBaseSinkClass:
+/// @parent_class: Element parent class
+/// @get_caps: Called to get sink pad caps from the subclass
+/// @set_caps: Notify subclass of changed caps
+/// @fixate: Only useful in pull mode. Implement if you have
+/// ideas about what should be the default values for the caps you support.
+/// @activate_pull: Subclasses should override this when they can provide an
+/// alternate method of spawning a thread to drive the pipeline in pull mode.
+/// Should start or stop the pulling thread, depending on the value of the
+/// "active" argument. Called after actually activating the sink pad in pull
+/// mode. The default implementation starts a task on the sink pad.
+/// @get_times: Called to get the start and end times for synchronising
+/// the passed buffer to the clock
+/// @propose_allocation: configure the allocation query
+/// @start: Start processing. Ideal for opening resources in the subclass
+/// @stop: Stop processing. Subclasses should use this to close resources.
+/// @unlock: Unlock any pending access to the resource. Subclasses should
+/// unblock any blocked function ASAP and call gst_base_sink_wait_preroll()
+/// @unlock_stop: Clear the previous unlock request. Subclasses should clear
+/// any state they set during #GstBaseSinkClass::unlock, and be ready to
+/// continue where they left off after gst_base_sink_wait_preroll(),
+/// gst_base_sink_wait() or gst_wait_sink_wait_clock() return or
+/// #GstBaseSinkClass::render is called again.
+/// @query: perform a #GstQuery on the element.
+/// @event: Override this to handle events arriving on the sink pad
+/// @wait_event: Override this to implement custom logic to wait for the event
+/// time (for events like EOS and GAP). Subclasses should always first
+/// chain up to the default implementation.
+/// @prepare: Called to prepare the buffer for @render and @preroll. This
+/// function is called before synchronisation is performed.
+/// @prepare_list: Called to prepare the buffer list for @render_list. This
+/// function is called before synchronisation is performed.
+/// @preroll: Called to present the preroll buffer if desired.
+/// @render: Called when a buffer should be presented or output, at the
+/// correct moment if the #GstBaseSink has been set to sync to the clock.
+/// @render_list: Same as @render but used with buffer lists instead of
+/// buffers.
+///
+/// Subclasses can override any of the available virtual methods or not, as
+/// needed. At the minimum, the @render method should be overridden to
+/// output/present buffers.
+final class _GstBaseSinkClass extends ffi.Struct {
+  external GstElementClass parent_class;
+
+  /// GstBaseSinkClass::get_caps:
+  /// @filter: (in) (nullable):
+  ///
+  /// Called to get sink pad caps from the subclass.
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Pointer<GstCaps> Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstCaps> filter)>>
+      get_caps;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstCaps> caps)>>
+      set_caps;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Pointer<GstCaps> Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstCaps> caps)>>
+      fixate;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstBaseSink> sink, ffi.Int active)>>
+      activate_pull;
+
+  /// GstBaseSinkClass::get_times:
+  /// @start: (out): the start #GstClockTime
+  /// @end: (out): the end #GstClockTime
+  ///
+  /// Get the start and end times for syncing on this buffer.
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstBaseSink> sink,
+              ffi.Pointer<GstBuffer> buffer,
+              ffi.Pointer<GstClockTime> start,
+              ffi.Pointer<GstClockTime> end)>> get_times;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstQuery> query)>>
+      propose_allocation;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink> sink)>>
+      start;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink> sink)>> stop;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink> sink)>>
+      unlock;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink> sink)>>
+      unlock_stop;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstQuery> query)>>
+      query;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstEvent> event)>>
+      event;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int32 Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstEvent> event)>>
+      wait_event;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink> sink,
+              ffi.Pointer<GstBuffer> buffer)>> prepare;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink> sink,
+              ffi.Pointer<GstBufferList> buffer_list)>> prepare_list;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink> sink,
+              ffi.Pointer<GstBuffer> buffer)>> preroll;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink> sink,
+              ffi.Pointer<GstBuffer> buffer)>> render;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink> sink,
+              ffi.Pointer<GstBufferList> buffer_list)>> render_list;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstBaseSink = _GstBaseSink;
+
+/// GstVideoSink:
+/// @height: video height (derived class needs to set this)
+/// @width: video width (derived class needs to set this)
+///
+/// The video sink instance structure. Derived video sinks should set the
+/// @height and @width members.
+final class _GstVideoSink extends ffi.Struct {
+  external GstBaseSink element;
+
+  @ffi.Int()
+  external int width;
+
+  @ffi.Int()
+  external int height;
+
+  external ffi.Pointer<GstVideoSinkPrivate> priv;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstVideoSinkPrivate = _GstVideoSinkPrivate;
+
+final class _GstVideoSinkPrivate extends ffi.Opaque {}
+
+/// GstVideoSinkClass:
+/// @parent_class: the parent class structure
+/// @show_frame: render a video frame. Maps to #GstBaseSinkClass.render() and
+/// #GstBaseSinkClass.preroll() vfuncs. Rendering during preroll will be
+/// suppressed if the #GstVideoSink:show-preroll-frame property is set to
+/// %FALSE.
+///
+/// The video sink class structure. Derived classes should override the
+/// @show_frame virtual function.
+final class _GstVideoSinkClass extends ffi.Struct {
+  external GstBaseSinkClass parent_class;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstVideoSink> video_sink,
+              ffi.Pointer<GstBuffer> buf)>> show_frame;
+
+  /// GstVideoSinkClass::set_info:
+  /// @caps: A #GstCaps.
+  /// @info: A #GstVideoInfo corresponding to @caps.
+  ///
+  /// Notifies the subclass of changed #GstVideoInfo.
+  ///
+  /// Since: 1.20
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstVideoSink> video_sink,
+              ffi.Pointer<GstCaps> caps,
+              ffi.Pointer<GstVideoInfo> info)>> set_info;
+
+  @ffi.Array.multi([3])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstBaseSinkClass = _GstBaseSinkClass;
+typedef GstVideoSink = _GstVideoSink;
+
+/// GstVideoRectangle:
+/// @x: X coordinate of rectangle's top-left point
+/// @y: Y coordinate of rectangle's top-left point
+/// @w: width of the rectangle
+/// @h: height of the rectangle
+///
+/// Helper structure representing a rectangular area.
+final class _GstVideoRectangle extends ffi.Struct {
+  @ffi.Int()
+  external int x;
+
+  @ffi.Int()
+  external int y;
+
+  @ffi.Int()
+  external int w;
+
+  @ffi.Int()
+  external int h;
+}
+
+typedef GstVideoRectangle = _GstVideoRectangle;
+
+final class _GstNavigation extends ffi.Opaque {}
+
+/// GstNavigationInterface:
+/// @iface: the parent interface
+/// @send_event: sending a navigation event
+/// @send_event_simple: sending a navigation event (Since: 1.22)
+///
+/// Navigation interface.
+final class _GstNavigationInterface extends ffi.Struct {
+  external GTypeInterface iface;
+
+  /// GstNavigationInterface::send_event:
+  ///
+  /// sending a navigation event.
+  ///
+  /// Deprecated: 1.22: Use #GstNavigationInterface.send_event_simple() instead.
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstNavigation> navigation,
+              ffi.Pointer<GstStructure> structure)>> send_event;
+
+  /// GstNavigationInterface::send_event_simple:
+  /// @navigation: The navigation interface instance
+  /// @event: (transfer full): The event to send
+  ///
+  /// sending a navigation event.
+  ///
+  /// Since: 1.22
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstNavigation> navigation,
+              ffi.Pointer<GstEvent> event)>> send_event_simple;
+}
+
+typedef GstNavigation = _GstNavigation;
+
+/// GstNavigationModifierType:
+/// @GST_NAVIGATION_MODIFIER_SHIFT_MASK: the Shift key.
+/// @GST_NAVIGATION_MODIFIER_CONTROL_MASK: the Control key.
+/// @GST_NAVIGATION_MODIFIER_MOD1_MASK: the third modifier key
+/// @GST_NAVIGATION_MODIFIER_MOD2_MASK: the fourth modifier key
+/// @GST_NAVIGATION_MODIFIER_MOD3_MASK: the fifth modifier key
+/// @GST_NAVIGATION_MODIFIER_MOD4_MASK: the sixth modifier key
+/// @GST_NAVIGATION_MODIFIER_MOD5_MASK: the seventh modifier key
+/// @GST_NAVIGATION_MODIFIER_BUTTON1_MASK: the first mouse button (usually the left button).
+/// @GST_NAVIGATION_MODIFIER_BUTTON2_MASK: the second mouse button (usually the right button).
+/// @GST_NAVIGATION_MODIFIER_BUTTON3_MASK: the third mouse button (usually the mouse wheel button or middle button).
+/// @GST_NAVIGATION_MODIFIER_BUTTON4_MASK: the fourth mouse button (typically the "Back" button).
+/// @GST_NAVIGATION_MODIFIER_BUTTON5_MASK: the fifth mouse button (typically the "forward" button).
+/// @GST_NAVIGATION_MODIFIER_SUPER_MASK: the Super modifier
+/// @GST_NAVIGATION_MODIFIER_HYPER_MASK: the Hyper modifier
+/// @GST_NAVIGATION_MODIFIER_META_MASK: the Meta modifier
+/// @GST_NAVIGATION_MODIFIER_MASK: A mask covering all entries in #GdkModifierType.
+///
+/// Flags to indicate the state of modifier keys and mouse buttons
+/// in events.
+///
+/// Typical modifier keys are Shift, Control, Meta, Super, Hyper, Alt, Compose,
+/// Apple, CapsLock or ShiftLock.
+///
+/// Since: 1.22
+abstract class GstNavigationModifierType {
+  static const int GST_NAVIGATION_MODIFIER_NONE = 0;
+  static const int GST_NAVIGATION_MODIFIER_SHIFT_MASK = 1;
+  static const int GST_NAVIGATION_MODIFIER_LOCK_MASK = 2;
+  static const int GST_NAVIGATION_MODIFIER_CONTROL_MASK = 4;
+  static const int GST_NAVIGATION_MODIFIER_MOD1_MASK = 8;
+  static const int GST_NAVIGATION_MODIFIER_MOD2_MASK = 16;
+  static const int GST_NAVIGATION_MODIFIER_MOD3_MASK = 32;
+  static const int GST_NAVIGATION_MODIFIER_MOD4_MASK = 64;
+  static const int GST_NAVIGATION_MODIFIER_MOD5_MASK = 128;
+  static const int GST_NAVIGATION_MODIFIER_BUTTON1_MASK = 256;
+  static const int GST_NAVIGATION_MODIFIER_BUTTON2_MASK = 512;
+  static const int GST_NAVIGATION_MODIFIER_BUTTON3_MASK = 1024;
+  static const int GST_NAVIGATION_MODIFIER_BUTTON4_MASK = 2048;
+  static const int GST_NAVIGATION_MODIFIER_BUTTON5_MASK = 4096;
+  static const int GST_NAVIGATION_MODIFIER_SUPER_MASK = 67108864;
+  static const int GST_NAVIGATION_MODIFIER_HYPER_MASK = 134217728;
+  static const int GST_NAVIGATION_MODIFIER_META_MASK = 268435456;
+  static const int GST_NAVIGATION_MODIFIER_MASK = 469770239;
+}
+
+/// GstNavigationCommand:
+/// @GST_NAVIGATION_COMMAND_INVALID: An invalid command entry
+/// @GST_NAVIGATION_COMMAND_MENU1: Execute navigation menu command 1. For DVD,
+/// this enters the DVD root menu, or exits back to the title from the menu.
+/// @GST_NAVIGATION_COMMAND_MENU2: Execute navigation menu command 2. For DVD,
+/// this jumps to the DVD title menu.
+/// @GST_NAVIGATION_COMMAND_MENU3: Execute navigation menu command 3. For DVD,
+/// this jumps into the DVD root menu.
+/// @GST_NAVIGATION_COMMAND_MENU4: Execute navigation menu command 4. For DVD,
+/// this jumps to the Subpicture menu.
+/// @GST_NAVIGATION_COMMAND_MENU5: Execute navigation menu command 5. For DVD,
+/// the jumps to the audio menu.
+/// @GST_NAVIGATION_COMMAND_MENU6: Execute navigation menu command 6. For DVD,
+/// this jumps to the angles menu.
+/// @GST_NAVIGATION_COMMAND_MENU7: Execute navigation menu command 7. For DVD,
+/// this jumps to the chapter menu.
+/// @GST_NAVIGATION_COMMAND_LEFT: Select the next button to the left in a menu,
+/// if such a button exists.
+/// @GST_NAVIGATION_COMMAND_RIGHT: Select the next button to the right in a menu,
+/// if such a button exists.
+/// @GST_NAVIGATION_COMMAND_UP: Select the button above the current one in a
+/// menu, if such a button exists.
+/// @GST_NAVIGATION_COMMAND_DOWN: Select the button below the current one in a
+/// menu, if such a button exists.
+/// @GST_NAVIGATION_COMMAND_ACTIVATE: Activate (click) the currently selected
+/// button in a menu, if such a button exists.
+/// @GST_NAVIGATION_COMMAND_PREV_ANGLE: Switch to the previous angle in a
+/// multiangle feature.
+/// @GST_NAVIGATION_COMMAND_NEXT_ANGLE: Switch to the next angle in a multiangle
+/// feature.
+///
+/// A set of commands that may be issued to an element providing the
+/// #GstNavigation interface. The available commands can be queried via
+/// the gst_navigation_query_new_commands() query.
+///
+/// For convenience in handling DVD navigation, the MENU commands are aliased as:
+/// GST_NAVIGATION_COMMAND_DVD_MENU            = @GST_NAVIGATION_COMMAND_MENU1
+/// GST_NAVIGATION_COMMAND_DVD_TITLE_MENU      = @GST_NAVIGATION_COMMAND_MENU2
+/// GST_NAVIGATION_COMMAND_DVD_ROOT_MENU       = @GST_NAVIGATION_COMMAND_MENU3
+/// GST_NAVIGATION_COMMAND_DVD_SUBPICTURE_MENU = @GST_NAVIGATION_COMMAND_MENU4
+/// GST_NAVIGATION_COMMAND_DVD_AUDIO_MENU      = @GST_NAVIGATION_COMMAND_MENU5
+/// GST_NAVIGATION_COMMAND_DVD_ANGLE_MENU      = @GST_NAVIGATION_COMMAND_MENU6
+/// GST_NAVIGATION_COMMAND_DVD_CHAPTER_MENU    = @GST_NAVIGATION_COMMAND_MENU7
+abstract class GstNavigationCommand {
+  static const int GST_NAVIGATION_COMMAND_INVALID = 0;
+  static const int GST_NAVIGATION_COMMAND_MENU1 = 1;
+  static const int GST_NAVIGATION_COMMAND_MENU2 = 2;
+  static const int GST_NAVIGATION_COMMAND_MENU3 = 3;
+  static const int GST_NAVIGATION_COMMAND_MENU4 = 4;
+  static const int GST_NAVIGATION_COMMAND_MENU5 = 5;
+  static const int GST_NAVIGATION_COMMAND_MENU6 = 6;
+  static const int GST_NAVIGATION_COMMAND_MENU7 = 7;
+  static const int GST_NAVIGATION_COMMAND_LEFT = 20;
+  static const int GST_NAVIGATION_COMMAND_RIGHT = 21;
+  static const int GST_NAVIGATION_COMMAND_UP = 22;
+  static const int GST_NAVIGATION_COMMAND_DOWN = 23;
+  static const int GST_NAVIGATION_COMMAND_ACTIVATE = 24;
+  static const int GST_NAVIGATION_COMMAND_PREV_ANGLE = 30;
+  static const int GST_NAVIGATION_COMMAND_NEXT_ANGLE = 31;
+}
+
+/// GstNavigationQueryType:
+/// @GST_NAVIGATION_QUERY_INVALID: invalid query
+/// @GST_NAVIGATION_QUERY_COMMANDS: command query
+/// @GST_NAVIGATION_QUERY_ANGLES: viewing angle query
+///
+/// Types of navigation interface queries.
+abstract class GstNavigationQueryType {
+  static const int GST_NAVIGATION_QUERY_INVALID = 0;
+  static const int GST_NAVIGATION_QUERY_COMMANDS = 1;
+  static const int GST_NAVIGATION_QUERY_ANGLES = 2;
+}
+
+/// GstNavigationMessageType:
+/// @GST_NAVIGATION_MESSAGE_INVALID: Returned from
+/// gst_navigation_message_get_type() when the passed message is not a
+/// navigation message.
+/// @GST_NAVIGATION_MESSAGE_MOUSE_OVER: Sent when the mouse moves over or leaves a
+/// clickable region of the output, such as a DVD menu button.
+/// @GST_NAVIGATION_MESSAGE_COMMANDS_CHANGED: Sent when the set of available commands
+/// changes and should re-queried by interested applications.
+/// @GST_NAVIGATION_MESSAGE_ANGLES_CHANGED: Sent when display angles in a multi-angle
+/// feature (such as a multiangle DVD) change - either angles have appeared or
+/// disappeared.
+/// @GST_NAVIGATION_MESSAGE_EVENT: Sent when a navigation event was not handled
+/// by any element in the pipeline (Since: 1.6)
+///
+/// A set of notifications that may be received on the bus when navigation
+/// related status changes.
+abstract class GstNavigationMessageType {
+  static const int GST_NAVIGATION_MESSAGE_INVALID = 0;
+  static const int GST_NAVIGATION_MESSAGE_MOUSE_OVER = 1;
+  static const int GST_NAVIGATION_MESSAGE_COMMANDS_CHANGED = 2;
+  static const int GST_NAVIGATION_MESSAGE_ANGLES_CHANGED = 3;
+  static const int GST_NAVIGATION_MESSAGE_EVENT = 4;
+}
+
+/// GstNavigationEventType:
+/// @GST_NAVIGATION_EVENT_INVALID: Returned from
+/// gst_navigation_event_get_type() when the passed event is not a navigation event.
+/// @GST_NAVIGATION_EVENT_KEY_PRESS: A key press event. Use
+/// gst_navigation_event_parse_key_event() to extract the details from the event.
+/// @GST_NAVIGATION_EVENT_KEY_RELEASE: A key release event. Use
+/// gst_navigation_event_parse_key_event() to extract the details from the event.
+/// @GST_NAVIGATION_EVENT_MOUSE_BUTTON_PRESS: A mouse button press event. Use
+/// gst_navigation_event_parse_mouse_button_event() to extract the details from the
+/// event.
+/// @GST_NAVIGATION_EVENT_MOUSE_BUTTON_RELEASE: A mouse button release event. Use
+/// gst_navigation_event_parse_mouse_button_event() to extract the details from the
+/// event.
+/// @GST_NAVIGATION_EVENT_MOUSE_MOVE: A mouse movement event. Use
+/// gst_navigation_event_parse_mouse_move_event() to extract the details from the
+/// event.
+/// @GST_NAVIGATION_EVENT_COMMAND: A navigation command event. Use
+/// gst_navigation_event_parse_command() to extract the details from the event.
+/// @GST_NAVIGATION_EVENT_MOUSE_SCROLL: A mouse scroll event. Use
+/// gst_navigation_event_parse_mouse_scroll_event() to extract the details from
+/// the event. (Since: 1.18)
+/// @GST_NAVIGATION_EVENT_TOUCH_DOWN: An event describing a new touch point,
+/// which will be assigned an identifier that is unique to it for the duration
+/// of its movement on the screen. Use gst_navigation_event_parse_touch_event()
+/// to extract the details from the event. (Since: 1.22)
+/// @GST_NAVIGATION_EVENT_TOUCH_MOTION: An event describing the movement of an
+/// active touch point across the screen. Use
+/// gst_navigation_event_parse_touch_event() to extract the details from the
+/// event. (Since: 1.22)
+/// @GST_NAVIGATION_EVENT_TOUCH_UP: An event describing a removed touch point.
+/// After this event, its identifier may be reused for any new touch points. Use
+/// gst_navigation_event_parse_touch_up_event() to extract the details from the
+/// event. (Since: 1.22)
+/// @GST_NAVIGATION_EVENT_TOUCH_FRAME: An event signaling the end of a sequence
+/// of simultaneous touch events. (Since: 1.22)
+/// @GST_NAVIGATION_EVENT_TOUCH_CANCEL: An event cancelling all currently active
+/// touch points. (Since: 1.22)
+///
+/// Enum values for the various events that an element implementing the
+/// GstNavigation interface might send up the pipeline. Touch events have been
+/// inspired by the libinput API, and have the same meaning here.
+abstract class GstNavigationEventType {
+  static const int GST_NAVIGATION_EVENT_INVALID = 0;
+  static const int GST_NAVIGATION_EVENT_KEY_PRESS = 1;
+  static const int GST_NAVIGATION_EVENT_KEY_RELEASE = 2;
+  static const int GST_NAVIGATION_EVENT_MOUSE_BUTTON_PRESS = 3;
+  static const int GST_NAVIGATION_EVENT_MOUSE_BUTTON_RELEASE = 4;
+  static const int GST_NAVIGATION_EVENT_MOUSE_MOVE = 5;
+  static const int GST_NAVIGATION_EVENT_COMMAND = 6;
+
+  /// GST_NAVIGATION_EVENT_MOUSE_SCROLL:
+  ///
+  /// A mouse scroll event. Use gst_navigation_event_parse_mouse_scroll_event()
+  /// to extract the details from the event.
+  ///
+  /// Since: 1.18
+  static const int GST_NAVIGATION_EVENT_MOUSE_SCROLL = 7;
+
+  /// GST_NAVIGATION_EVENT_TOUCH_DOWN:
+  ///
+  /// An event describing a new touch point, which will be assigned an identifier
+  /// that is unique to it for the duration of its movement on the screen.
+  /// Use gst_navigation_event_parse_touch_event() to extract the details
+  /// from the event.
+  ///
+  /// Since: 1.22
+  static const int GST_NAVIGATION_EVENT_TOUCH_DOWN = 8;
+
+  /// GST_NAVIGATION_EVENT_TOUCH_MOTION:
+  ///
+  /// An event describing the movement of an active touch point across
+  /// the screen. Use gst_navigation_event_parse_touch_event() to extract
+  /// the details from the event.
+  ///
+  /// Since: 1.22
+  static const int GST_NAVIGATION_EVENT_TOUCH_MOTION = 9;
+
+  /// GST_NAVIGATION_EVENT_TOUCH_UP:
+  ///
+  /// An event describing a removed touch point. After this event,
+  /// its identifier may be reused for any new touch points.
+  /// Use gst_navigation_event_parse_touch_up_event() to extract the details
+  /// from the event.
+  ///
+  /// Since: 1.22
+  static const int GST_NAVIGATION_EVENT_TOUCH_UP = 10;
+
+  /// GST_NAVIGATION_EVENT_TOUCH_FRAME:
+  ///
+  /// An event signaling the end of a sequence of simultaneous touch events.
+  ///
+  /// Since: 1.22
+  static const int GST_NAVIGATION_EVENT_TOUCH_FRAME = 11;
+
+  /// GST_NAVIGATION_EVENT_TOUCH_CANCEL:
+  ///
+  /// An event cancelling all currently active touch points.
+  ///
+  /// Since: 1.22
+  static const int GST_NAVIGATION_EVENT_TOUCH_CANCEL = 12;
+}
+
+/// GstVideoAncillary:
+/// @DID: The Data Identifier
+/// @SDID_block_number: The Secondary Data Identifier (if type 2) or the Data
+/// Block Number (if type 1)
+/// @data_count: The amount of data (in bytes) in @data (max 255 bytes)
+/// @data: (array length=data_count): The user data content of the Ancillary packet.
+/// Does not contain the ADF, DID, SDID nor CS.
+///
+/// Video Ancillary data, according to SMPTE-291M specification.
+///
+/// Note that the contents of the data are always stored as 8bit data (i.e. do not contain
+/// the parity check bits).
+///
+/// Since: 1.16
+final class _GstVideoAncillary extends ffi.Struct {
+  @ffi.Uint8()
+  external int DID;
+
+  @ffi.Uint8()
+  external int SDID_block_number;
+
+  @ffi.Uint8()
+  external int data_count;
+
+  @ffi.Array.multi([256])
+  external ffi.Array<ffi.Uint8> data;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+/// GstVideoAncillaryDID:
+///
+/// Since: 1.16
+abstract class GstVideoAncillaryDID {
+  static const int GST_VIDEO_ANCILLARY_DID_UNDEFINED = 0;
+  static const int GST_VIDEO_ANCILLARY_DID_DELETION = 128;
+  static const int GST_VIDEO_ANCILLARY_DID_HANC_3G_AUDIO_DATA_FIRST = 160;
+  static const int GST_VIDEO_ANCILLARY_DID_HANC_3G_AUDIO_DATA_LAST = 167;
+  static const int GST_VIDEO_ANCILLARY_DID_HANC_HDTV_AUDIO_DATA_FIRST = 224;
+  static const int GST_VIDEO_ANCILLARY_DID_HANC_HDTV_AUDIO_DATA_LAST = 231;
+  static const int GST_VIDEO_ANCILLARY_DID_HANC_SDTV_AUDIO_DATA_1_FIRST = 236;
+  static const int GST_VIDEO_ANCILLARY_DID_HANC_SDTV_AUDIO_DATA_1_LAST = 239;
+  static const int GST_VIDEO_ANCILLARY_DID_CAMERA_POSITION = 240;
+  static const int GST_VIDEO_ANCILLARY_DID_HANC_ERROR_DETECTION = 244;
+  static const int GST_VIDEO_ANCILLARY_DID_HANC_SDTV_AUDIO_DATA_2_FIRST = 248;
+  static const int GST_VIDEO_ANCILLARY_DID_HANC_SDTV_AUDIO_DATA_2_LAST = 255;
+}
+
+/// GstVideoAncillaryDID16:
+/// @GST_VIDEO_ANCILLARY_DID16_S334_EIA_708: CEA 708 Ancillary data according to SMPTE 334
+/// @GST_VIDEO_ANCILLARY_DID16_S334_EIA_608: CEA 608 Ancillary data according to SMPTE 334
+/// @GST_VIDEO_ANCILLARY_DID16_S2016_3_AFD_BAR: AFD/Bar Ancillary data according to SMPTE 2016-3 (Since: 1.18)
+///
+/// Some know types of Ancillary Data identifiers.
+///
+/// Since: 1.16
+abstract class GstVideoAncillaryDID16 {
+  static const int GST_VIDEO_ANCILLARY_DID16_S334_EIA_708 = 24833;
+  static const int GST_VIDEO_ANCILLARY_DID16_S334_EIA_608 = 24834;
+  static const int GST_VIDEO_ANCILLARY_DID16_S2016_3_AFD_BAR = 16645;
+}
+
+/// GstAncillaryMetaField:
+/// @GST_ANCILLARY_META_FIELD_PROGRESSIVE: Progressive or no field specified (default)
+/// @GST_ANCILLARY_META_FIELD_INTERLACED_FIRST: Interlaced first field
+/// @GST_ANCILLARY_META_FIELD_INTERLACED_SECOND: Interlaced second field
+///
+/// Location of a @GstAncillaryMeta.
+///
+/// Since: 1.24
+abstract class GstAncillaryMetaField {
+  static const int GST_ANCILLARY_META_FIELD_PROGRESSIVE = 0;
+  static const int GST_ANCILLARY_META_FIELD_INTERLACED_FIRST = 16;
+  static const int GST_ANCILLARY_META_FIELD_INTERLACED_SECOND = 17;
+}
+
+/// GstAncillaryMeta:
+/// @meta: Parent #GstMeta
+/// @field: The field where the ancillary data is located
+/// @c_not_y_channel: Which channel (luminance or chrominance) the ancillary
+/// data is located. 0 if content is SD or stored in the luminance channel
+/// (default). 1 if HD and stored in the chrominance channel.
+/// @line: The line on which the ancillary data is located (max 11bit). There
+/// are two special values: 0x7ff if no line is specified (default), 0x7fe
+/// to specify the ancillary data is on any valid line before active video
+/// @offset: The location of the ancillary data packet in a SDI raster relative
+/// to the start of active video (max 12bits). A value of 0 means the ADF of
+/// the ancillary packet starts immediately following SAV. There are 3
+/// special values: 0xfff: No specified location (default), 0xffe: within
+/// HANC data space, 0xffd: within the ancillary data space located between
+/// SAV and EAV
+/// @DID: Data Identified
+/// @SDID_block_number: Secondary Data identification (if type 2) or Data block
+/// number (if type 1)
+/// @data_count: The amount of user data
+/// @data: The User data
+/// @checksum: The checksum of the ADF
+///
+/// #GstMeta for carrying SMPTE-291M Ancillary data. Note that all the ADF fields
+/// (@DID to @checksum) are 10bit values with parity/non-parity high-bits set.
+///
+/// Since: 1.24
+final class GstAncillaryMeta extends ffi.Struct {
+  external GstMeta meta;
+
+  @ffi.Int32()
+  external int field;
+
+  @ffi.Int()
+  external int c_not_y_channel;
+
+  @ffi.Uint16()
+  external int line;
+
+  @ffi.Uint16()
+  external int offset;
+
+  @ffi.Uint16()
+  external int DID;
+
+  @ffi.Uint16()
+  external int SDID_block_number;
+
+  @ffi.Uint16()
+  external int data_count;
+
+  external ffi.Pointer<ffi.Uint16> data;
+
+  @ffi.Uint16()
+  external int checksum;
+}
+
+/// GstVideoAFDValue:
+/// @GST_VIDEO_AFD_UNAVAILABLE: Unavailable (see note 0 below).
+/// @GST_VIDEO_AFD_16_9_TOP_ALIGNED: For 4:3 coded frame, letterbox 16:9 image,
+/// at top of the coded frame. For 16:9 coded frame, full frame 16:9 image,
+/// the same as the coded frame.
+/// @GST_VIDEO_AFD_14_9_TOP_ALIGNED: For 4:3 coded frame, letterbox 14:9 image,
+/// at top of the coded frame. For 16:9 coded frame, pillarbox 14:9 image,
+/// horizontally centered in the coded frame.
+/// @GST_VIDEO_AFD_GREATER_THAN_16_9: For 4:3 coded frame, letterbox image with an aspect ratio
+/// greater than 16:9, vertically centered in the coded frame. For 16:9 coded frame,
+/// letterbox image with an aspect ratio greater than 16:9.
+/// @GST_VIDEO_AFD_4_3_FULL_16_9_FULL: For 4:3 coded frame, full frame 4:3 image,
+/// the same as the coded frame. For 16:9 coded frame, full frame 16:9 image, the same as
+/// the coded frame.
+/// @GST_VIDEO_AFD_4_3_FULL_4_3_PILLAR: For 4:3 coded frame, full frame 4:3 image, the same as
+/// the coded frame. For 16:9 coded frame, pillarbox 4:3 image, horizontally centered in the
+/// coded frame.
+/// @GST_VIDEO_AFD_16_9_LETTER_16_9_FULL: For 4:3 coded frame, letterbox 16:9 image, vertically centered in
+/// the coded frame with all image areas protected. For 16:9 coded frame, full frame 16:9 image,
+/// with all image areas protected.
+/// @GST_VIDEO_AFD_14_9_LETTER_14_9_PILLAR: For 4:3 coded frame, letterbox 14:9 image, vertically centered in
+/// the coded frame. For 16:9 coded frame, pillarbox 14:9 image, horizontally centered in the
+/// coded frame.
+/// @GST_VIDEO_AFD_4_3_FULL_14_9_CENTER: For 4:3 coded frame, full frame 4:3 image, with alternative 14:9
+/// center. For 16:9 coded frame, pillarbox 4:3 image, with alternative 14:9 center.
+/// @GST_VIDEO_AFD_16_9_LETTER_14_9_CENTER: For 4:3 coded frame, letterbox 16:9 image, with alternative 14:9
+/// center. For 16:9 coded frame, full frame 16:9 image, with alternative 14:9 center.
+/// @GST_VIDEO_AFD_16_9_LETTER_4_3_CENTER: For 4:3 coded frame, letterbox 16:9 image, with alternative 4:3
+/// center. For 16:9 coded frame, full frame 16:9 image, with alternative 4:3 center.
+///
+/// Enumeration of the various values for Active Format Description (AFD)
+///
+/// AFD should be included in video user data whenever the rectangular
+/// picture area containing useful information does not extend to the full height or width of the coded
+/// frame. AFD data may also be included in user data when the rectangular picture area containing
+/// useful information extends to the full height and width of the coded frame.
+///
+/// For details, see Table 6.14 Active Format in:
+///
+/// ATSC Digital Television Standard:
+/// Part 4 – MPEG-2 Video System Characteristics
+///
+/// https://www.atsc.org/wp-content/uploads/2015/03/a_53-Part-4-2009.pdf
+///
+/// and Active Format Description in Complete list of AFD codes
+///
+/// https://en.wikipedia.org/wiki/Active_Format_Description#Complete_list_of_AFD_codes
+///
+/// and SMPTE ST2016-1
+///
+/// Notes:
+///
+/// 1) AFD 0 is undefined for ATSC and SMPTE ST2016-1, indicating that AFD data is not available:
+/// If Bar Data is not present, AFD '0000' indicates that exact information
+/// is not available and the active image should be assumed to be the same as the coded frame. AFD '0000'.
+/// AFD '0000' accompanied by Bar Data signals that the active image’s aspect ratio is narrower than 16:9,
+/// but is not 4:3 or 14:9. As the exact aspect ratio cannot be conveyed by AFD alone, wherever possible,
+/// AFD ‘0000’ should be accompanied by Bar Data to define the exact vertical or horizontal extent
+/// of the active image.
+/// 2) AFD 0 is reserved for DVB/ETSI
+/// 3) values 1, 5, 6, 7, and 12 are reserved for both ATSC and DVB/ETSI
+/// 4) values 2 and 3 are not recommended for ATSC, but are valid for DVB/ETSI
+///
+/// Since: 1.18
+abstract class GstVideoAFDValue {
+  static const int GST_VIDEO_AFD_UNAVAILABLE = 0;
+  static const int GST_VIDEO_AFD_16_9_TOP_ALIGNED = 2;
+  static const int GST_VIDEO_AFD_14_9_TOP_ALIGNED = 3;
+  static const int GST_VIDEO_AFD_GREATER_THAN_16_9 = 4;
+  static const int GST_VIDEO_AFD_4_3_FULL_16_9_FULL = 8;
+  static const int GST_VIDEO_AFD_4_3_FULL_4_3_PILLAR = 9;
+  static const int GST_VIDEO_AFD_16_9_LETTER_16_9_FULL = 10;
+  static const int GST_VIDEO_AFD_14_9_LETTER_14_9_PILLAR = 11;
+  static const int GST_VIDEO_AFD_4_3_FULL_14_9_CENTER = 13;
+  static const int GST_VIDEO_AFD_16_9_LETTER_14_9_CENTER = 14;
+  static const int GST_VIDEO_AFD_16_9_LETTER_4_3_CENTER = 15;
+}
+
+/// GstVideoAFDSpec:
+/// @GST_VIDEO_AFD_SPEC_DVB_ETSI: AFD value is from DVB/ETSI standard
+/// @GST_VIDEO_AFD_SPEC_ATSC_A53: AFD value is from ATSC A/53 standard
+/// @GST_VIDEO_AFD_SPEC_SMPT_ST2016_1 : AFD value is from SMPTE ST2016-1 standard
+///
+/// Enumeration of the different standards that may apply to AFD data:
+///
+/// 0) ETSI/DVB:
+/// https://www.etsi.org/deliver/etsi_ts/101100_101199/101154/02.01.01_60/ts_101154v020101p.pdf
+///
+/// 1) ATSC A/53:
+/// https://www.atsc.org/wp-content/uploads/2015/03/a_53-Part-4-2009.pdf
+///
+/// 2) SMPTE ST2016-1:
+///
+/// Since: 1.18
+abstract class GstVideoAFDSpec {
+  static const int GST_VIDEO_AFD_SPEC_DVB_ETSI = 0;
+  static const int GST_VIDEO_AFD_SPEC_ATSC_A53 = 1;
+  static const int GST_VIDEO_AFD_SPEC_SMPTE_ST2016_1 = 2;
+}
+
+/// GstVideoAFDMeta:
+/// @meta: parent #GstMeta
+/// @field: 0 for progressive or field 1 and 1 for field 2
+/// @spec: #GstVideoAFDSpec that applies to @afd
+/// @afd: #GstVideoAFDValue AFD value
+///
+/// Active Format Description (AFD)
+///
+/// For details, see Table 6.14 Active Format in:
+///
+/// ATSC Digital Television Standard:
+/// Part 4 – MPEG-2 Video System Characteristics
+///
+/// https://www.atsc.org/wp-content/uploads/2015/03/a_53-Part-4-2009.pdf
+///
+/// and Active Format Description in Complete list of AFD codes
+///
+/// https://en.wikipedia.org/wiki/Active_Format_Description#Complete_list_of_AFD_codes
+///
+/// and SMPTE ST2016-1
+///
+/// Since: 1.18
+final class GstVideoAFDMeta extends ffi.Struct {
+  external GstMeta meta;
+
+  @ffi.Uint8()
+  external int field;
+
+  @ffi.Int32()
+  external int spec;
+
+  @ffi.Int32()
+  external int afd;
+}
+
+/// GstVideoBarMeta:
+/// @meta: parent #GstMeta
+/// @field: 0 for progressive or field 1 and 1 for field 2
+/// @is_letterbox: if true then bar data specifies letterbox, otherwise pillarbox
+/// @bar_data1: If @is_letterbox is true, then the value specifies the
+/// last line of a horizontal letterbox bar area at top of reconstructed frame.
+/// Otherwise, it specifies the last horizontal luminance sample of a vertical pillarbox
+/// bar area at the left side of the reconstructed frame
+/// @bar_data2: If @is_letterbox is true, then the value specifies the
+/// first line of a horizontal letterbox bar area at bottom of reconstructed frame.
+/// Otherwise, it specifies the first horizontal
+/// luminance sample of a vertical pillarbox bar area at the right side of the reconstructed frame.
+///
+/// Bar data should be included in video user data
+/// whenever the rectangular picture area containing useful information
+/// does not extend to the full height or width of the coded frame
+/// and AFD alone is insufficient to describe the extent of the image.
+///
+/// Note: either vertical or horizontal bars are specified, but not both.
+///
+/// For more details, see:
+///
+/// https://www.atsc.org/wp-content/uploads/2015/03/a_53-Part-4-2009.pdf
+///
+/// and SMPTE ST2016-1
+///
+/// Since: 1.18
+final class GstVideoBarMeta extends ffi.Struct {
+  external GstMeta meta;
+
+  @ffi.Uint8()
+  external int field;
+
+  @ffi.Int()
+  external int is_letterbox;
+
+  @ffi.UnsignedInt()
+  external int bar_data1;
+
+  @ffi.UnsignedInt()
+  external int bar_data2;
+}
+
+/// GstVideoCaptionType:
+/// @GST_VIDEO_CAPTION_TYPE_UNKNOWN: Unknown type of CC
+/// @GST_VIDEO_CAPTION_TYPE_CEA608_RAW: CEA-608 as byte pairs. Note that
+/// this format is not recommended since is does not specify to
+/// which field the caption comes from and therefore assumes
+/// it comes from the first field (and that there is no information
+/// on the second field). Use @GST_VIDEO_CAPTION_TYPE_CEA708_RAW
+/// if you wish to store CEA-608 from two fields and prefix each byte pair
+/// with 0xFC for the first field and 0xFD for the second field.
+/// @GST_VIDEO_CAPTION_TYPE_CEA608_S334_1A: CEA-608 as byte triplets as defined
+/// in SMPTE S334-1 Annex A. The second and third byte of the byte triplet
+/// is the raw CEA608 data, the first byte is a bitfield: The top/7th bit is
+/// 0 for the second field, 1 for the first field, bit 6 and 5 are 0 and
+/// bits 4 to 0 are a 5 bit unsigned integer that represents the line
+/// offset relative to the base-line of the original image format (line 9
+/// for 525-line field 1, line 272 for 525-line field 2, line 5 for
+/// 625-line field 1 and line 318 for 625-line field 2).
+/// @GST_VIDEO_CAPTION_TYPE_CEA708_RAW: CEA-708 as cc_data byte triplets. They
+/// can also contain 608-in-708 and the first byte of each triplet has to
+/// be inspected for detecting the type.
+/// @GST_VIDEO_CAPTION_TYPE_CEA708_CDP: CEA-708 (and optionally CEA-608) in
+/// a CDP (Caption Distribution Packet) defined by SMPTE S-334-2.
+/// Contains the whole CDP (starting with 0x9669).
+///
+/// The various known types of Closed Caption (CC).
+///
+/// Since: 1.16
+abstract class GstVideoCaptionType {
+  static const int GST_VIDEO_CAPTION_TYPE_UNKNOWN = 0;
+  static const int GST_VIDEO_CAPTION_TYPE_CEA608_RAW = 1;
+  static const int GST_VIDEO_CAPTION_TYPE_CEA608_S334_1A = 2;
+  static const int GST_VIDEO_CAPTION_TYPE_CEA708_RAW = 3;
+  static const int GST_VIDEO_CAPTION_TYPE_CEA708_CDP = 4;
+}
+
+/// GstVideoCaptionMeta:
+/// @meta: parent #GstMeta
+/// @caption_type: The type of Closed Caption contained in the meta.
+/// @data: (array length=size): The Closed Caption data.
+/// @size: The size in bytes of @data
+///
+/// Extra buffer metadata providing Closed Caption.
+///
+/// Since: 1.16
+final class GstVideoCaptionMeta extends ffi.Struct {
+  external GstMeta meta;
+
+  @ffi.Int32()
+  external int caption_type;
+
+  external ffi.Pointer<ffi.Uint8> data;
+
+  @ffi.Size()
+  external int size;
+}
+
+final class _GstVideoVBIParser extends ffi.Opaque {}
+
+/// GstVideoVBIParserResult:
+/// @GST_VIDEO_VBI_PARSER_RESULT_DONE: No line were provided, or no more Ancillary data was found.
+/// @GST_VIDEO_VBI_PARSER_RESULT_OK: A #GstVideoAncillary was found.
+/// @GST_VIDEO_VBI_PARSER_RESULT_ERROR: An error occurred
+///
+/// Return values for #GstVideoVBIParser
+///
+/// Since: 1.16
+abstract class GstVideoVBIParserResult {
+  static const int GST_VIDEO_VBI_PARSER_RESULT_DONE = 0;
+  static const int GST_VIDEO_VBI_PARSER_RESULT_OK = 1;
+  static const int GST_VIDEO_VBI_PARSER_RESULT_ERROR = 2;
+}
+
+/// GstVideoVBIParser:
+///
+/// A parser for detecting and extracting @GstVideoAncillary data from
+/// Vertical Blanking Interval lines of component signals.
+///
+/// Since: 1.16
+typedef GstVideoVBIParser = _GstVideoVBIParser;
+typedef GstVideoAncillary = _GstVideoAncillary;
+
+final class _GstVideoVBIEncoder extends ffi.Opaque {}
+
+/// GstVideoVBIEncoder:
+///
+/// An encoder for writing ancillary data to the
+/// Vertical Blanking Interval lines of component signals.
+///
+/// Since: 1.16
+typedef GstVideoVBIEncoder = _GstVideoVBIEncoder;
+
+final class _GstVideoDirection extends ffi.Opaque {}
+
+/// GstVideoDirectionInterface:
+/// @iface: parent interface type.
+///
+/// #GstVideoDirectionInterface interface.
+///
+/// Since: 1.10
+final class _GstVideoDirectionInterface extends ffi.Struct {
+  external GTypeInterface iface;
+}
+
+final class _GstVideoOrientation extends ffi.Opaque {}
+
+/// GstVideoOrientationInterface:
+/// @iface: parent interface type.
+/// @get_hflip: virtual method to get horizontal flipping state
+/// @get_vflip: virtual method to get vertical flipping state
+/// @get_hcenter: virtual method to get horizontal centering state
+/// @get_vcenter: virtual method to get vertical centering state
+/// @set_hflip: virtual method to set horizontal flipping state
+/// @set_vflip: virtual method to set vertical flipping state
+/// @set_hcenter: virtual method to set horizontal centering state
+/// @set_vcenter: virtual method to set vertical centering state
+///
+/// #GstVideoOrientationInterface interface.
+final class _GstVideoOrientationInterface extends ffi.Struct {
+  external GTypeInterface iface;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation> video_orientation,
+              ffi.Pointer<ffi.Int> flip)>> get_hflip;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation> video_orientation,
+              ffi.Pointer<ffi.Int> flip)>> get_vflip;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation> video_orientation,
+              ffi.Pointer<ffi.Int> center)>> get_hcenter;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation> video_orientation,
+              ffi.Pointer<ffi.Int> center)>> get_vcenter;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation> video_orientation,
+              ffi.Int flip)>> set_hflip;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation> video_orientation,
+              ffi.Int flip)>> set_vflip;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation> video_orientation,
+              ffi.Int center)>> set_hcenter;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstVideoOrientation> video_orientation,
+              ffi.Int center)>> set_vcenter;
+}
+
+/// GstVideoOrientation:
+///
+/// Opaque #GstVideoOrientation data structure.
+typedef GstVideoOrientation = _GstVideoOrientation;
+
+final class _GstVideoOverlayRectangle extends ffi.Opaque {}
+
+/// GstVideoOverlayFormatFlags:
+/// @GST_VIDEO_OVERLAY_FORMAT_FLAG_NONE: no flags
+/// @GST_VIDEO_OVERLAY_FORMAT_FLAG_PREMULTIPLIED_ALPHA: RGB are premultiplied by A/255.
+/// @GST_VIDEO_OVERLAY_FORMAT_FLAG_GLOBAL_ALPHA: a global-alpha value != 1 is set.
+///
+/// Overlay format flags.
+abstract class GstVideoOverlayFormatFlags {
+  static const int GST_VIDEO_OVERLAY_FORMAT_FLAG_NONE = 0;
+  static const int GST_VIDEO_OVERLAY_FORMAT_FLAG_PREMULTIPLIED_ALPHA = 1;
+  static const int GST_VIDEO_OVERLAY_FORMAT_FLAG_GLOBAL_ALPHA = 2;
+}
+
+typedef GstVideoOverlayRectangle = _GstVideoOverlayRectangle;
+
+final class _GstVideoOverlayComposition extends ffi.Opaque {}
+
+typedef GstVideoOverlayComposition = _GstVideoOverlayComposition;
+
+/// GstVideoOverlayCompositionMeta:
+/// @meta: parent #GstMeta
+/// @overlay: the attached #GstVideoOverlayComposition
+///
+/// Extra buffer metadata describing image overlay data.
+final class _GstVideoOverlayCompositionMeta extends ffi.Struct {
+  external GstMeta meta;
+
+  external ffi.Pointer<GstVideoOverlayComposition> overlay;
+}
+
+typedef GstVideoOverlayCompositionMeta = _GstVideoOverlayCompositionMeta;
+
+final class _GstVideoOverlay extends ffi.Opaque {}
+
+/// GstVideoOverlayInterface:
+/// @iface: parent interface type.
+/// @expose: virtual method to handle expose events
+/// @handle_events: virtual method to handle events
+/// @set_render_rectangle: virtual method to set the render rectangle
+/// @set_window_handle: virtual method to configure the window handle
+///
+/// #GstVideoOverlay interface
+final class _GstVideoOverlayInterface extends ffi.Struct {
+  external GTypeInterface iface;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoOverlay> overlay)>> expose;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  ffi.Pointer<GstVideoOverlay> overlay, ffi.Int handle_events)>>
+      handle_events;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstVideoOverlay> overlay, ffi.Int x,
+              ffi.Int y, ffi.Int width, ffi.Int height)>> set_render_rectangle;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  ffi.Pointer<GstVideoOverlay> overlay, ffi.UintPtr handle)>>
+      set_window_handle;
+}
+
+/// GstVideoOverlay:
+///
+/// Opaque #GstVideoOverlay interface structure
+typedef GstVideoOverlay = _GstVideoOverlay;
+
+/// GstVideoSEIUserDataUnregisteredMeta:
+/// @meta: parent #GstMeta
+/// @uuid: User Data Unregistered UUID
+/// @data: Unparsed data buffer
+/// @size: Size of the data buffer
+///
+/// H.264 H.265 metadata from SEI User Data Unregistered messages
+///
+/// Since: 1.22
+final class GstVideoSEIUserDataUnregisteredMeta extends ffi.Struct {
+  external GstMeta meta;
+
+  @ffi.Array.multi([16])
+  external ffi.Array<ffi.Uint8> uuid;
+
+  external ffi.Pointer<ffi.Uint8> data;
+
+  @ffi.Size()
+  external int size;
+}
+
 const int SI_ASYNCNL = -60;
 
 const int SI_DETHREAD = -7;
@@ -91330,7 +106842,7 @@ const String G_GNUC_PRETTY_FUNCTION = '';
 
 const int G_ANALYZER_ANALYZING = 0;
 
-const String G_STRLOC = '/tmp/JBYBXU/temp_for_macros.hpp:46';
+const String G_STRLOC = '/tmp/CLZCEJ/temp_for_macros.hpp:47';
 
 const int FALSE = 0;
 
@@ -93460,3 +108972,231 @@ const int GST_SEQNUM_INVALID = 0;
 const int GST_GROUP_ID_INVALID = 0;
 
 const int GST_MESSAGE_DURATION = 262144;
+
+const int GST_VIDEO_TILE_TYPE_SHIFT = 16;
+
+const int GST_VIDEO_TILE_TYPE_MASK = 65535;
+
+const int GST_VIDEO_TILE_Y_TILES_SHIFT = 16;
+
+const int GST_VIDEO_TILE_X_TILES_MASK = 65535;
+
+const int GST_VIDEO_MAX_PLANES = 4;
+
+const int GST_VIDEO_MAX_COMPONENTS = 4;
+
+const int GST_VIDEO_COMP_Y = 0;
+
+const int GST_VIDEO_COMP_U = 1;
+
+const int GST_VIDEO_COMP_V = 2;
+
+const int GST_VIDEO_COMP_R = 0;
+
+const int GST_VIDEO_COMP_G = 1;
+
+const int GST_VIDEO_COMP_B = 2;
+
+const int GST_VIDEO_COMP_A = 3;
+
+const int GST_VIDEO_COMP_INDEX = 0;
+
+const int GST_VIDEO_COMP_PALETTE = 1;
+
+const String GST_VIDEO_SIZE_RANGE = '(int) [ 1, max ]';
+
+const String GST_VIDEO_FPS_RANGE = '(fraction) [ 0, max ]';
+
+const String GST_VIDEO_FORMATS_ALL_STR =
+    'A444_16LE, A444_16BE, AYUV64, RGBA64_LE, ARGB64, ARGB64_LE, BGRA64_LE, ABGR64_LE, RGBA64_BE, ARGB64_BE, BGRA64_BE, ABGR64_BE, A422_16LE, A422_16BE, A420_16LE, A420_16BE, A444_12LE, GBRA_12LE, A444_12BE, GBRA_12BE, Y412_LE, Y412_BE, A422_12LE, A422_12BE, A420_12LE, A420_12BE, A444_10LE, GBRA_10LE, A444_10BE, GBRA_10BE, A422_10LE, A422_10BE, A420_10LE, A420_10BE, BGR10A2_LE, RGB10A2_LE, Y410, A444, GBRA, AYUV, VUYA, RGBA, RBGA, ARGB, BGRA, ABGR, A422, A420, AV12, Y444_16LE, GBR_16LE, Y444_16BE, GBR_16BE, v216, P016_LE, P016_BE, Y444_12LE, GBR_12LE, Y444_12BE, GBR_12BE, I422_12LE, I422_12BE, Y212_LE, Y212_BE, I420_12LE, I420_12BE, P012_LE, P012_BE, Y444_10LE, GBR_10LE, Y444_10BE, GBR_10BE, r210, I422_10LE, I422_10BE, NV16_10LE32, Y210, UYVP, v210, I420_10LE, I420_10BE, P010_10LE, NV12_10LE40, NV12_10LE32, P010_10BE, MT2110R, MT2110T, NV12_10BE_8L128, NV12_10LE40_4L4, Y444, BGRP, GBR, RGBP, NV24, v308, IYU2, RGBx, xRGB, BGRx, xBGR, RGB, BGR, Y42B, NV16, NV61, YUY2, YVYU, UYVY, VYUY, I420, YV12, NV12, NV21, NV12_16L32S, NV12_32L32, NV12_4L4, NV12_64Z32, NV12_8L128, Y41B, IYU1, YUV9, YVU9, BGR16, RGB16, BGR15, RGB15, RGB8P, GRAY16_LE, GRAY16_BE, GRAY10_LE32, GRAY8';
+
+const String GST_VIDEO_FORMATS_ANY_STR =
+    'DMA_DRM, A444_16LE, A444_16BE, AYUV64, RGBA64_LE, ARGB64, ARGB64_LE, BGRA64_LE, ABGR64_LE, RGBA64_BE, ARGB64_BE, BGRA64_BE, ABGR64_BE, A422_16LE, A422_16BE, A420_16LE, A420_16BE, A444_12LE, GBRA_12LE, A444_12BE, GBRA_12BE, Y412_LE, Y412_BE, A422_12LE, A422_12BE, A420_12LE, A420_12BE, A444_10LE, GBRA_10LE, A444_10BE, GBRA_10BE, A422_10LE, A422_10BE, A420_10LE, A420_10BE, BGR10A2_LE, RGB10A2_LE, Y410, A444, GBRA, AYUV, VUYA, RGBA, RBGA, ARGB, BGRA, ABGR, A422, A420, AV12, Y444_16LE, GBR_16LE, Y444_16BE, GBR_16BE, v216, P016_LE, P016_BE, Y444_12LE, GBR_12LE, Y444_12BE, GBR_12BE, I422_12LE, I422_12BE, Y212_LE, Y212_BE, I420_12LE, I420_12BE, P012_LE, P012_BE, Y444_10LE, GBR_10LE, Y444_10BE, GBR_10BE, r210, I422_10LE, I422_10BE, NV16_10LE32, Y210, UYVP, v210, I420_10LE, I420_10BE, P010_10LE, NV12_10LE40, NV12_10LE32, P010_10BE, MT2110R, MT2110T, NV12_10BE_8L128, NV12_10LE40_4L4, Y444, BGRP, GBR, RGBP, NV24, v308, IYU2, RGBx, xRGB, BGRx, xBGR, RGB, BGR, Y42B, NV16, NV61, YUY2, YVYU, UYVY, VYUY, I420, YV12, NV12, NV21, NV12_16L32S, NV12_32L32, NV12_4L4, NV12_64Z32, NV12_8L128, Y41B, IYU1, YUV9, YVU9, BGR16, RGB16, BGR15, RGB15, RGB8P, GRAY16_LE, GRAY16_BE, GRAY10_LE32, GRAY8';
+
+const String GST_VIDEO_FORMATS_ALL =
+    '{ A444_16LE, A444_16BE, AYUV64, RGBA64_LE, ARGB64, ARGB64_LE, BGRA64_LE, ABGR64_LE, RGBA64_BE, ARGB64_BE, BGRA64_BE, ABGR64_BE, A422_16LE, A422_16BE, A420_16LE, A420_16BE, A444_12LE, GBRA_12LE, A444_12BE, GBRA_12BE, Y412_LE, Y412_BE, A422_12LE, A422_12BE, A420_12LE, A420_12BE, A444_10LE, GBRA_10LE, A444_10BE, GBRA_10BE, A422_10LE, A422_10BE, A420_10LE, A420_10BE, BGR10A2_LE, RGB10A2_LE, Y410, A444, GBRA, AYUV, VUYA, RGBA, RBGA, ARGB, BGRA, ABGR, A422, A420, AV12, Y444_16LE, GBR_16LE, Y444_16BE, GBR_16BE, v216, P016_LE, P016_BE, Y444_12LE, GBR_12LE, Y444_12BE, GBR_12BE, I422_12LE, I422_12BE, Y212_LE, Y212_BE, I420_12LE, I420_12BE, P012_LE, P012_BE, Y444_10LE, GBR_10LE, Y444_10BE, GBR_10BE, r210, I422_10LE, I422_10BE, NV16_10LE32, Y210, UYVP, v210, I420_10LE, I420_10BE, P010_10LE, NV12_10LE40, NV12_10LE32, P010_10BE, MT2110R, MT2110T, NV12_10BE_8L128, NV12_10LE40_4L4, Y444, BGRP, GBR, RGBP, NV24, v308, IYU2, RGBx, xRGB, BGRx, xBGR, RGB, BGR, Y42B, NV16, NV61, YUY2, YVYU, UYVY, VYUY, I420, YV12, NV12, NV21, NV12_16L32S, NV12_32L32, NV12_4L4, NV12_64Z32, NV12_8L128, Y41B, IYU1, YUV9, YVU9, BGR16, RGB16, BGR15, RGB15, RGB8P, GRAY16_LE, GRAY16_BE, GRAY10_LE32, GRAY8 }';
+
+const String GST_VIDEO_FORMATS_ANY =
+    '{ DMA_DRM, A444_16LE, A444_16BE, AYUV64, RGBA64_LE, ARGB64, ARGB64_LE, BGRA64_LE, ABGR64_LE, RGBA64_BE, ARGB64_BE, BGRA64_BE, ABGR64_BE, A422_16LE, A422_16BE, A420_16LE, A420_16BE, A444_12LE, GBRA_12LE, A444_12BE, GBRA_12BE, Y412_LE, Y412_BE, A422_12LE, A422_12BE, A420_12LE, A420_12BE, A444_10LE, GBRA_10LE, A444_10BE, GBRA_10BE, A422_10LE, A422_10BE, A420_10LE, A420_10BE, BGR10A2_LE, RGB10A2_LE, Y410, A444, GBRA, AYUV, VUYA, RGBA, RBGA, ARGB, BGRA, ABGR, A422, A420, AV12, Y444_16LE, GBR_16LE, Y444_16BE, GBR_16BE, v216, P016_LE, P016_BE, Y444_12LE, GBR_12LE, Y444_12BE, GBR_12BE, I422_12LE, I422_12BE, Y212_LE, Y212_BE, I420_12LE, I420_12BE, P012_LE, P012_BE, Y444_10LE, GBR_10LE, Y444_10BE, GBR_10BE, r210, I422_10LE, I422_10BE, NV16_10LE32, Y210, UYVP, v210, I420_10LE, I420_10BE, P010_10LE, NV12_10LE40, NV12_10LE32, P010_10BE, MT2110R, MT2110T, NV12_10BE_8L128, NV12_10LE40_4L4, Y444, BGRP, GBR, RGBP, NV24, v308, IYU2, RGBx, xRGB, BGRx, xBGR, RGB, BGR, Y42B, NV16, NV61, YUY2, YVYU, UYVY, VYUY, I420, YV12, NV12, NV21, NV12_16L32S, NV12_32L32, NV12_4L4, NV12_64Z32, NV12_8L128, Y41B, IYU1, YUV9, YVU9, BGR16, RGB16, BGR15, RGB15, RGB8P, GRAY16_LE, GRAY16_BE, GRAY10_LE32, GRAY8 }';
+
+const String GST_VIDEO_COLORIMETRY_BT601 = 'bt601';
+
+const String GST_VIDEO_COLORIMETRY_BT709 = 'bt709';
+
+const String GST_VIDEO_COLORIMETRY_SMPTE240M = 'smpte240m';
+
+const String GST_VIDEO_COLORIMETRY_SRGB = 'sRGB';
+
+const String GST_VIDEO_COLORIMETRY_BT2020 = 'bt2020';
+
+const String GST_VIDEO_COLORIMETRY_BT2020_10 = 'bt2020-10';
+
+const String GST_VIDEO_COLORIMETRY_BT2100_PQ = 'bt2100-pq';
+
+const String GST_VIDEO_COLORIMETRY_BT2100_HLG = 'bt2100-hlg';
+
+const String GST_CAPS_FEATURE_FORMAT_INTERLACED = 'format:Interlaced';
+
+const int GST_VIDEO_MULTIVIEW_MAX_FRAME_PACKING = 8;
+
+const int _GST_VIDEO_FRAME_FLAG_FIELD_MASK = 10;
+
+const int _GST_VIDEO_BUFFER_FLAG_FIELD_MASK = 10485760;
+
+const String GST_VIDEO_CONVERTER_OPT_RESAMPLER_METHOD =
+    'GstVideoConverter.resampler-method';
+
+const String GST_VIDEO_CONVERTER_OPT_CHROMA_RESAMPLER_METHOD =
+    'GstVideoConverter.chroma-resampler-method';
+
+const String GST_VIDEO_CONVERTER_OPT_RESAMPLER_TAPS =
+    'GstVideoConverter.resampler-taps';
+
+const String GST_VIDEO_CONVERTER_OPT_DITHER_METHOD =
+    'GstVideoConverter.dither-method';
+
+const String GST_VIDEO_CONVERTER_OPT_DITHER_QUANTIZATION =
+    'GstVideoConverter.dither-quantization';
+
+const String GST_VIDEO_CONVERTER_OPT_SRC_X = 'GstVideoConverter.src-x';
+
+const String GST_VIDEO_CONVERTER_OPT_SRC_Y = 'GstVideoConverter.src-y';
+
+const String GST_VIDEO_CONVERTER_OPT_SRC_WIDTH = 'GstVideoConverter.src-width';
+
+const String GST_VIDEO_CONVERTER_OPT_SRC_HEIGHT =
+    'GstVideoConverter.src-height';
+
+const String GST_VIDEO_CONVERTER_OPT_DEST_X = 'GstVideoConverter.dest-x';
+
+const String GST_VIDEO_CONVERTER_OPT_DEST_Y = 'GstVideoConverter.dest-y';
+
+const String GST_VIDEO_CONVERTER_OPT_DEST_WIDTH =
+    'GstVideoConverter.dest-width';
+
+const String GST_VIDEO_CONVERTER_OPT_DEST_HEIGHT =
+    'GstVideoConverter.dest-height';
+
+const String GST_VIDEO_CONVERTER_OPT_FILL_BORDER =
+    'GstVideoConverter.fill-border';
+
+const String GST_VIDEO_CONVERTER_OPT_ALPHA_VALUE =
+    'GstVideoConverter.alpha-value';
+
+const String GST_VIDEO_CONVERTER_OPT_ALPHA_MODE =
+    'GstVideoConverter.alpha-mode';
+
+const String GST_VIDEO_CONVERTER_OPT_BORDER_ARGB =
+    'GstVideoConverter.border-argb';
+
+const String GST_VIDEO_CONVERTER_OPT_CHROMA_MODE =
+    'GstVideoConverter.chroma-mode';
+
+const String GST_VIDEO_CONVERTER_OPT_MATRIX_MODE =
+    'GstVideoConverter.matrix-mode';
+
+const String GST_VIDEO_CONVERTER_OPT_GAMMA_MODE =
+    'GstVideoConverter.gamma-mode';
+
+const String GST_VIDEO_CONVERTER_OPT_PRIMARIES_MODE =
+    'GstVideoConverter.primaries-mode';
+
+const String GST_VIDEO_CONVERTER_OPT_THREADS = 'GstVideoConverter.threads';
+
+const String GST_VIDEO_CONVERTER_OPT_ASYNC_TASKS =
+    'GstVideoConverter.async-tasks';
+
+const String GST_VIDEO_RESAMPLER_OPT_CUBIC_B = 'GstVideoResampler.cubic-b';
+
+const String GST_VIDEO_RESAMPLER_OPT_CUBIC_C = 'GstVideoResampler.cubic-c';
+
+const String GST_VIDEO_RESAMPLER_OPT_ENVELOPE = 'GstVideoResampler.envelope';
+
+const String GST_VIDEO_RESAMPLER_OPT_SHARPNESS = 'GstVideoResampler.sharpness';
+
+const String GST_VIDEO_RESAMPLER_OPT_SHARPEN = 'GstVideoResampler.sharpen';
+
+const String GST_VIDEO_RESAMPLER_OPT_MAX_TAPS = 'GstVideoResampler.max-taps';
+
+const String GST_VIDEO_SCALER_OPT_DITHER_METHOD =
+    'GstVideoScaler.dither-method';
+
+const String GST_VIDEO_DMA_DRM_CAPS_MAKE =
+    'video/x-raw(memory:DMABuf), format = (string) DMA_DRM, width = (int) [ 1, max ], height = (int) [ 1, max ], framerate = (fraction) [ 0, max ]';
+
+const String GST_META_TAG_VIDEO_STR = 'video';
+
+const String GST_META_TAG_VIDEO_ORIENTATION_STR = 'orientation';
+
+const String GST_META_TAG_VIDEO_SIZE_STR = 'size';
+
+const String GST_META_TAG_VIDEO_COLORSPACE_STR = 'colorspace';
+
+const String GST_CAPS_FEATURE_META_GST_VIDEO_AFFINE_TRANSFORMATION_META =
+    'meta:GstVideoAffineTransformation';
+
+const String GST_BUFFER_POOL_OPTION_VIDEO_AFFINE_TRANSFORMATION_META =
+    'GstBufferPoolOptionVideoAffineTransformation';
+
+const int GST_AGGREGATOR_FLOW_NEED_DATA = -100;
+
+const String GST_VIDEO_DECODER_SINK_NAME = 'sink';
+
+const String GST_VIDEO_DECODER_SRC_NAME = 'src';
+
+const int GST_VIDEO_DECODER_FLOW_NEED_DATA = 100;
+
+const int GST_VIDEO_DECODER_MAX_ERRORS = -1;
+
+const String GST_VIDEO_ENCODER_SINK_NAME = 'sink';
+
+const String GST_VIDEO_ENCODER_SRC_NAME = 'src';
+
+const int GST_VIDEO_ENCODER_FLOW_NEED_DATA = 100;
+
+const int GST_VIDEO_ENCODER_FLOW_DROPPED = 101;
+
+const String GST_BASE_TRANSFORM_SINK_NAME = 'sink';
+
+const String GST_BASE_TRANSFORM_SRC_NAME = 'src';
+
+const int GST_BASE_TRANSFORM_FLOW_DROPPED = 100;
+
+const String GST_CAPS_FEATURE_META_GST_VIDEO_META = 'meta:GstVideoMeta';
+
+const String GST_CAPS_FEATURE_META_GST_VIDEO_GL_TEXTURE_UPLOAD_META =
+    'meta:GstVideoGLTextureUploadMeta';
+
+const String GST_BUFFER_POOL_OPTION_VIDEO_GL_TEXTURE_UPLOAD_META =
+    'GstBufferPoolOptionVideoGLTextureUploadMeta';
+
+const String GST_BUFFER_POOL_OPTION_VIDEO_META = 'GstBufferPoolOptionVideoMeta';
+
+const String GST_BUFFER_POOL_OPTION_VIDEO_ALIGNMENT =
+    'GstBufferPoolOptionVideoAlignment';
+
+const int GST_BASE_SINK_FLOW_DROPPED = 100;
+
+const int GST_NAVIGATION_COMMAND_DVD_MENU = 1;
+
+const int GST_NAVIGATION_COMMAND_DVD_TITLE_MENU = 2;
+
+const int GST_NAVIGATION_COMMAND_DVD_ROOT_MENU = 3;
+
+const int GST_NAVIGATION_COMMAND_DVD_SUBPICTURE_MENU = 4;
+
+const int GST_NAVIGATION_COMMAND_DVD_AUDIO_MENU = 5;
+
+const int GST_NAVIGATION_COMMAND_DVD_ANGLE_MENU = 6;
+
+const int GST_NAVIGATION_COMMAND_DVD_CHAPTER_MENU = 7;
+
+const String GST_CAPS_FEATURE_META_GST_VIDEO_OVERLAY_COMPOSITION =
+    'meta:GstVideoOverlayComposition';
+
+const int GST_VIDEO_OVERLAY_COMPOSITION_FORMAT_RGB = 12;
+
+const int GST_VIDEO_OVERLAY_COMPOSITION_FORMAT_YUV = 6;
+
+const String GST_VIDEO_OVERLAY_COMPOSITION_BLEND_FORMATS =
+    '{ A444_16LE, A444_16BE, AYUV64, RGBA64_LE, ARGB64, ARGB64_LE, BGRA64_LE, ABGR64_LE, RGBA64_BE, ARGB64_BE, BGRA64_BE, ABGR64_BE, A422_16LE, A422_16BE, A420_16LE, A420_16BE, A444_12LE, GBRA_12LE, A444_12BE, GBRA_12BE, Y412_LE, Y412_BE, A422_12LE, A422_12BE, A420_12LE, A420_12BE, A444_10LE, GBRA_10LE, A444_10BE, GBRA_10BE, A422_10LE, A422_10BE, A420_10LE, A420_10BE, BGR10A2_LE, RGB10A2_LE, Y410, A444, GBRA, AYUV, VUYA, RGBA, RBGA, ARGB, BGRA, ABGR, A422, A420, AV12, Y444_16LE, GBR_16LE, Y444_16BE, GBR_16BE, v216, P016_LE, P016_BE, Y444_12LE, GBR_12LE, Y444_12BE, GBR_12BE, I422_12LE, I422_12BE, Y212_LE, Y212_BE, I420_12LE, I420_12BE, P012_LE, P012_BE, Y444_10LE, GBR_10LE, Y444_10BE, GBR_10BE, r210, I422_10LE, I422_10BE, NV16_10LE32, Y210, UYVP, v210, I420_10LE, I420_10BE, P010_10LE, NV12_10LE40, NV12_10LE32, P010_10BE, MT2110R, MT2110T, NV12_10BE_8L128, NV12_10LE40_4L4, Y444, BGRP, GBR, RGBP, NV24, v308, IYU2, RGBx, xRGB, BGRx, xBGR, RGB, BGR, Y42B, NV16, NV61, YUY2, YVYU, UYVY, VYUY, I420, YV12, NV12, NV21, NV12_16L32S, NV12_32L32, NV12_4L4, NV12_64Z32, NV12_8L128, Y41B, IYU1, YUV9, YVU9, BGR16, RGB16, BGR15, RGB15, RGB8P, GRAY16_LE, GRAY16_BE, GRAY10_LE32, GRAY8 }';

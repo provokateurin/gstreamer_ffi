@@ -4,18 +4,18 @@
 // ignore_for_file: type=lint
 import 'dart:ffi' as ffi;
 
-/// Bindings to libgstreamer
-class LibGStreamer {
+/// Bindings to libgstapp
+class LibGstApp {
   /// Holds the symbol lookup function.
   final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
       _lookup;
 
   /// The symbols are looked up in [dynamicLibrary].
-  LibGStreamer(ffi.DynamicLibrary dynamicLibrary)
+  LibGstApp(ffi.DynamicLibrary dynamicLibrary)
       : _lookup = dynamicLibrary.lookup;
 
   /// The symbols are looked up with [lookup].
-  LibGStreamer.fromLookup(
+  LibGstApp.fromLookup(
       ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
           lookup)
       : _lookup = lookup;
@@ -77447,6 +77447,1853 @@ class LibGStreamer {
           'gst_get_main_executable_path');
   late final _gst_get_main_executable_path = _gst_get_main_executable_pathPtr
       .asFunction<ffi.Pointer<ffi.Char> Function()>();
+
+  int gst_base_src_get_type() {
+    return _gst_base_src_get_type();
+  }
+
+  late final _gst_base_src_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('gst_base_src_get_type');
+  late final _gst_base_src_get_type =
+      _gst_base_src_get_typePtr.asFunction<int Function()>();
+
+  int gst_base_src_wait_playing(
+    ffi.Pointer<GstBaseSrc> src,
+  ) {
+    return _gst_base_src_wait_playing(
+      src,
+    );
+  }
+
+  late final _gst_base_src_wait_playingPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstBaseSrc>)>>(
+          'gst_base_src_wait_playing');
+  late final _gst_base_src_wait_playing = _gst_base_src_wait_playingPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSrc>)>();
+
+  void gst_base_src_set_live(
+    ffi.Pointer<GstBaseSrc> src,
+    int live,
+  ) {
+    return _gst_base_src_set_live(
+      src,
+      live,
+    );
+  }
+
+  late final _gst_base_src_set_livePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstBaseSrc>, ffi.Int)>>(
+      'gst_base_src_set_live');
+  late final _gst_base_src_set_live = _gst_base_src_set_livePtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSrc>, int)>();
+
+  int gst_base_src_is_live(
+    ffi.Pointer<GstBaseSrc> src,
+  ) {
+    return _gst_base_src_is_live(
+      src,
+    );
+  }
+
+  late final _gst_base_src_is_livePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSrc>)>>(
+          'gst_base_src_is_live');
+  late final _gst_base_src_is_live = _gst_base_src_is_livePtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSrc>)>();
+
+  void gst_base_src_set_format(
+    ffi.Pointer<GstBaseSrc> src,
+    int format,
+  ) {
+    return _gst_base_src_set_format(
+      src,
+      format,
+    );
+  }
+
+  late final _gst_base_src_set_formatPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstBaseSrc>, ffi.Int32)>>('gst_base_src_set_format');
+  late final _gst_base_src_set_format = _gst_base_src_set_formatPtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSrc>, int)>();
+
+  void gst_base_src_set_dynamic_size(
+    ffi.Pointer<GstBaseSrc> src,
+    int dynamic1,
+  ) {
+    return _gst_base_src_set_dynamic_size(
+      src,
+      dynamic1,
+    );
+  }
+
+  late final _gst_base_src_set_dynamic_sizePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstBaseSrc>, ffi.Int)>>(
+      'gst_base_src_set_dynamic_size');
+  late final _gst_base_src_set_dynamic_size = _gst_base_src_set_dynamic_sizePtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSrc>, int)>();
+
+  void gst_base_src_set_automatic_eos(
+    ffi.Pointer<GstBaseSrc> src,
+    int automatic_eos,
+  ) {
+    return _gst_base_src_set_automatic_eos(
+      src,
+      automatic_eos,
+    );
+  }
+
+  late final _gst_base_src_set_automatic_eosPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstBaseSrc>, ffi.Int)>>(
+      'gst_base_src_set_automatic_eos');
+  late final _gst_base_src_set_automatic_eos =
+      _gst_base_src_set_automatic_eosPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSrc>, int)>();
+
+  void gst_base_src_set_async(
+    ffi.Pointer<GstBaseSrc> src,
+    int async1,
+  ) {
+    return _gst_base_src_set_async(
+      src,
+      async1,
+    );
+  }
+
+  late final _gst_base_src_set_asyncPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstBaseSrc>, ffi.Int)>>(
+      'gst_base_src_set_async');
+  late final _gst_base_src_set_async = _gst_base_src_set_asyncPtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSrc>, int)>();
+
+  int gst_base_src_is_async(
+    ffi.Pointer<GstBaseSrc> src,
+  ) {
+    return _gst_base_src_is_async(
+      src,
+    );
+  }
+
+  late final _gst_base_src_is_asyncPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSrc>)>>(
+          'gst_base_src_is_async');
+  late final _gst_base_src_is_async = _gst_base_src_is_asyncPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSrc>)>();
+
+  int gst_base_src_negotiate(
+    ffi.Pointer<GstBaseSrc> src,
+  ) {
+    return _gst_base_src_negotiate(
+      src,
+    );
+  }
+
+  late final _gst_base_src_negotiatePtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSrc>)>>(
+          'gst_base_src_negotiate');
+  late final _gst_base_src_negotiate = _gst_base_src_negotiatePtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSrc>)>();
+
+  void gst_base_src_start_complete(
+    ffi.Pointer<GstBaseSrc> basesrc,
+    int ret,
+  ) {
+    return _gst_base_src_start_complete(
+      basesrc,
+      ret,
+    );
+  }
+
+  late final _gst_base_src_start_completePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSrc>,
+              ffi.Int32)>>('gst_base_src_start_complete');
+  late final _gst_base_src_start_complete = _gst_base_src_start_completePtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSrc>, int)>();
+
+  int gst_base_src_start_wait(
+    ffi.Pointer<GstBaseSrc> basesrc,
+  ) {
+    return _gst_base_src_start_wait(
+      basesrc,
+    );
+  }
+
+  late final _gst_base_src_start_waitPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstBaseSrc>)>>(
+          'gst_base_src_start_wait');
+  late final _gst_base_src_start_wait = _gst_base_src_start_waitPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSrc>)>();
+
+  int gst_base_src_query_latency(
+    ffi.Pointer<GstBaseSrc> src,
+    ffi.Pointer<ffi.Int> live,
+    ffi.Pointer<GstClockTime> min_latency,
+    ffi.Pointer<GstClockTime> max_latency,
+  ) {
+    return _gst_base_src_query_latency(
+      src,
+      live,
+      min_latency,
+      max_latency,
+    );
+  }
+
+  late final _gst_base_src_query_latencyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstBaseSrc>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<GstClockTime>,
+              ffi.Pointer<GstClockTime>)>>('gst_base_src_query_latency');
+  late final _gst_base_src_query_latency =
+      _gst_base_src_query_latencyPtr.asFunction<
+          int Function(ffi.Pointer<GstBaseSrc>, ffi.Pointer<ffi.Int>,
+              ffi.Pointer<GstClockTime>, ffi.Pointer<GstClockTime>)>();
+
+  void gst_base_src_set_blocksize(
+    ffi.Pointer<GstBaseSrc> src,
+    int blocksize,
+  ) {
+    return _gst_base_src_set_blocksize(
+      src,
+      blocksize,
+    );
+  }
+
+  late final _gst_base_src_set_blocksizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSrc>,
+              ffi.UnsignedInt)>>('gst_base_src_set_blocksize');
+  late final _gst_base_src_set_blocksize = _gst_base_src_set_blocksizePtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSrc>, int)>();
+
+  int gst_base_src_get_blocksize(
+    ffi.Pointer<GstBaseSrc> src,
+  ) {
+    return _gst_base_src_get_blocksize(
+      src,
+    );
+  }
+
+  late final _gst_base_src_get_blocksizePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.UnsignedInt Function(ffi.Pointer<GstBaseSrc>)>>(
+      'gst_base_src_get_blocksize');
+  late final _gst_base_src_get_blocksize = _gst_base_src_get_blocksizePtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSrc>)>();
+
+  void gst_base_src_set_do_timestamp(
+    ffi.Pointer<GstBaseSrc> src,
+    int timestamp,
+  ) {
+    return _gst_base_src_set_do_timestamp(
+      src,
+      timestamp,
+    );
+  }
+
+  late final _gst_base_src_set_do_timestampPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstBaseSrc>, ffi.Int)>>(
+      'gst_base_src_set_do_timestamp');
+  late final _gst_base_src_set_do_timestamp = _gst_base_src_set_do_timestampPtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSrc>, int)>();
+
+  int gst_base_src_get_do_timestamp(
+    ffi.Pointer<GstBaseSrc> src,
+  ) {
+    return _gst_base_src_get_do_timestamp(
+      src,
+    );
+  }
+
+  late final _gst_base_src_get_do_timestampPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSrc>)>>(
+          'gst_base_src_get_do_timestamp');
+  late final _gst_base_src_get_do_timestamp = _gst_base_src_get_do_timestampPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSrc>)>();
+
+  int gst_base_src_new_seamless_segment(
+    ffi.Pointer<GstBaseSrc> src,
+    int start,
+    int stop,
+    int time,
+  ) {
+    return _gst_base_src_new_seamless_segment(
+      src,
+      start,
+      stop,
+      time,
+    );
+  }
+
+  late final _gst_base_src_new_seamless_segmentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstBaseSrc>, ffi.Int64, ffi.Int64,
+              ffi.Int64)>>('gst_base_src_new_seamless_segment');
+  late final _gst_base_src_new_seamless_segment =
+      _gst_base_src_new_seamless_segmentPtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSrc>, int, int, int)>();
+
+  int gst_base_src_new_segment(
+    ffi.Pointer<GstBaseSrc> src,
+    ffi.Pointer<GstSegment> segment,
+  ) {
+    return _gst_base_src_new_segment(
+      src,
+      segment,
+    );
+  }
+
+  late final _gst_base_src_new_segmentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstBaseSrc>,
+              ffi.Pointer<GstSegment>)>>('gst_base_src_new_segment');
+  late final _gst_base_src_new_segment =
+      _gst_base_src_new_segmentPtr.asFunction<
+          int Function(ffi.Pointer<GstBaseSrc>, ffi.Pointer<GstSegment>)>();
+
+  int gst_base_src_set_caps(
+    ffi.Pointer<GstBaseSrc> src,
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_base_src_set_caps(
+      src,
+      caps,
+    );
+  }
+
+  late final _gst_base_src_set_capsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstBaseSrc>,
+              ffi.Pointer<GstCaps>)>>('gst_base_src_set_caps');
+  late final _gst_base_src_set_caps = _gst_base_src_set_capsPtr.asFunction<
+      int Function(ffi.Pointer<GstBaseSrc>, ffi.Pointer<GstCaps>)>();
+
+  ffi.Pointer<GstBufferPool> gst_base_src_get_buffer_pool(
+    ffi.Pointer<GstBaseSrc> src,
+  ) {
+    return _gst_base_src_get_buffer_pool(
+      src,
+    );
+  }
+
+  late final _gst_base_src_get_buffer_poolPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstBufferPool> Function(
+              ffi.Pointer<GstBaseSrc>)>>('gst_base_src_get_buffer_pool');
+  late final _gst_base_src_get_buffer_pool =
+      _gst_base_src_get_buffer_poolPtr.asFunction<
+          ffi.Pointer<GstBufferPool> Function(ffi.Pointer<GstBaseSrc>)>();
+
+  void gst_base_src_get_allocator(
+    ffi.Pointer<GstBaseSrc> src,
+    ffi.Pointer<ffi.Pointer<GstAllocator>> allocator,
+    ffi.Pointer<GstAllocationParams> params,
+  ) {
+    return _gst_base_src_get_allocator(
+      src,
+      allocator,
+      params,
+    );
+  }
+
+  late final _gst_base_src_get_allocatorPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstBaseSrc>,
+              ffi.Pointer<ffi.Pointer<GstAllocator>>,
+              ffi.Pointer<GstAllocationParams>)>>('gst_base_src_get_allocator');
+  late final _gst_base_src_get_allocator =
+      _gst_base_src_get_allocatorPtr.asFunction<
+          void Function(
+              ffi.Pointer<GstBaseSrc>,
+              ffi.Pointer<ffi.Pointer<GstAllocator>>,
+              ffi.Pointer<GstAllocationParams>)>();
+
+  void gst_base_src_submit_buffer_list(
+    ffi.Pointer<GstBaseSrc> src,
+    ffi.Pointer<GstBufferList> buffer_list,
+  ) {
+    return _gst_base_src_submit_buffer_list(
+      src,
+      buffer_list,
+    );
+  }
+
+  late final _gst_base_src_submit_buffer_listPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSrc>,
+              ffi.Pointer<GstBufferList>)>>('gst_base_src_submit_buffer_list');
+  late final _gst_base_src_submit_buffer_list =
+      _gst_base_src_submit_buffer_listPtr.asFunction<
+          void Function(ffi.Pointer<GstBaseSrc>, ffi.Pointer<GstBufferList>)>();
+
+  int gst_base_src_push_segment(
+    ffi.Pointer<GstBaseSrc> src,
+    ffi.Pointer<GstSegment> segment,
+  ) {
+    return _gst_base_src_push_segment(
+      src,
+      segment,
+    );
+  }
+
+  late final _gst_base_src_push_segmentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstBaseSrc>,
+              ffi.Pointer<GstSegment>)>>('gst_base_src_push_segment');
+  late final _gst_base_src_push_segment =
+      _gst_base_src_push_segmentPtr.asFunction<
+          int Function(ffi.Pointer<GstBaseSrc>, ffi.Pointer<GstSegment>)>();
+
+  int gst_push_src_get_type() {
+    return _gst_push_src_get_type();
+  }
+
+  late final _gst_push_src_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('gst_push_src_get_type');
+  late final _gst_push_src_get_type =
+      _gst_push_src_get_typePtr.asFunction<int Function()>();
+
+  int gst_app_stream_type_get_type() {
+    return _gst_app_stream_type_get_type();
+  }
+
+  late final _gst_app_stream_type_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_app_stream_type_get_type');
+  late final _gst_app_stream_type_get_type =
+      _gst_app_stream_type_get_typePtr.asFunction<int Function()>();
+
+  int gst_app_leaky_type_get_type() {
+    return _gst_app_leaky_type_get_type();
+  }
+
+  late final _gst_app_leaky_type_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>(
+          'gst_app_leaky_type_get_type');
+  late final _gst_app_leaky_type_get_type =
+      _gst_app_leaky_type_get_typePtr.asFunction<int Function()>();
+
+  int gst_app_src_get_type() {
+    return _gst_app_src_get_type();
+  }
+
+  late final _gst_app_src_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('gst_app_src_get_type');
+  late final _gst_app_src_get_type =
+      _gst_app_src_get_typePtr.asFunction<int Function()>();
+
+  void gst_app_src_set_caps(
+    ffi.Pointer<GstAppSrc> appsrc,
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_app_src_set_caps(
+      appsrc,
+      caps,
+    );
+  }
+
+  late final _gst_app_src_set_capsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSrc>,
+              ffi.Pointer<GstCaps>)>>('gst_app_src_set_caps');
+  late final _gst_app_src_set_caps = _gst_app_src_set_capsPtr.asFunction<
+      void Function(ffi.Pointer<GstAppSrc>, ffi.Pointer<GstCaps>)>();
+
+  ffi.Pointer<GstCaps> gst_app_src_get_caps(
+    ffi.Pointer<GstAppSrc> appsrc,
+  ) {
+    return _gst_app_src_get_caps(
+      appsrc,
+    );
+  }
+
+  late final _gst_app_src_get_capsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstCaps> Function(
+              ffi.Pointer<GstAppSrc>)>>('gst_app_src_get_caps');
+  late final _gst_app_src_get_caps = _gst_app_src_get_capsPtr
+      .asFunction<ffi.Pointer<GstCaps> Function(ffi.Pointer<GstAppSrc>)>();
+
+  void gst_app_src_set_size(
+    ffi.Pointer<GstAppSrc> appsrc,
+    int size,
+  ) {
+    return _gst_app_src_set_size(
+      appsrc,
+      size,
+    );
+  }
+
+  late final _gst_app_src_set_sizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstAppSrc>, ffi.Int64)>>('gst_app_src_set_size');
+  late final _gst_app_src_set_size = _gst_app_src_set_sizePtr
+      .asFunction<void Function(ffi.Pointer<GstAppSrc>, int)>();
+
+  int gst_app_src_get_size(
+    ffi.Pointer<GstAppSrc> appsrc,
+  ) {
+    return _gst_app_src_get_size(
+      appsrc,
+    );
+  }
+
+  late final _gst_app_src_get_sizePtr =
+      _lookup<ffi.NativeFunction<ffi.Int64 Function(ffi.Pointer<GstAppSrc>)>>(
+          'gst_app_src_get_size');
+  late final _gst_app_src_get_size = _gst_app_src_get_sizePtr
+      .asFunction<int Function(ffi.Pointer<GstAppSrc>)>();
+
+  void gst_app_src_set_duration(
+    ffi.Pointer<GstAppSrc> appsrc,
+    int duration,
+  ) {
+    return _gst_app_src_set_duration(
+      appsrc,
+      duration,
+    );
+  }
+
+  late final _gst_app_src_set_durationPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSrc>,
+              GstClockTime)>>('gst_app_src_set_duration');
+  late final _gst_app_src_set_duration = _gst_app_src_set_durationPtr
+      .asFunction<void Function(ffi.Pointer<GstAppSrc>, int)>();
+
+  int gst_app_src_get_duration(
+    ffi.Pointer<GstAppSrc> appsrc,
+  ) {
+    return _gst_app_src_get_duration(
+      appsrc,
+    );
+  }
+
+  late final _gst_app_src_get_durationPtr = _lookup<
+          ffi.NativeFunction<GstClockTime Function(ffi.Pointer<GstAppSrc>)>>(
+      'gst_app_src_get_duration');
+  late final _gst_app_src_get_duration = _gst_app_src_get_durationPtr
+      .asFunction<int Function(ffi.Pointer<GstAppSrc>)>();
+
+  void gst_app_src_set_stream_type(
+    ffi.Pointer<GstAppSrc> appsrc,
+    int type,
+  ) {
+    return _gst_app_src_set_stream_type(
+      appsrc,
+      type,
+    );
+  }
+
+  late final _gst_app_src_set_stream_typePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSrc>,
+              ffi.Int32)>>('gst_app_src_set_stream_type');
+  late final _gst_app_src_set_stream_type = _gst_app_src_set_stream_typePtr
+      .asFunction<void Function(ffi.Pointer<GstAppSrc>, int)>();
+
+  int gst_app_src_get_stream_type(
+    ffi.Pointer<GstAppSrc> appsrc,
+  ) {
+    return _gst_app_src_get_stream_type(
+      appsrc,
+    );
+  }
+
+  late final _gst_app_src_get_stream_typePtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstAppSrc>)>>(
+          'gst_app_src_get_stream_type');
+  late final _gst_app_src_get_stream_type = _gst_app_src_get_stream_typePtr
+      .asFunction<int Function(ffi.Pointer<GstAppSrc>)>();
+
+  void gst_app_src_set_max_bytes(
+    ffi.Pointer<GstAppSrc> appsrc,
+    int max,
+  ) {
+    return _gst_app_src_set_max_bytes(
+      appsrc,
+      max,
+    );
+  }
+
+  late final _gst_app_src_set_max_bytesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSrc>,
+              ffi.Uint64)>>('gst_app_src_set_max_bytes');
+  late final _gst_app_src_set_max_bytes = _gst_app_src_set_max_bytesPtr
+      .asFunction<void Function(ffi.Pointer<GstAppSrc>, int)>();
+
+  int gst_app_src_get_max_bytes(
+    ffi.Pointer<GstAppSrc> appsrc,
+  ) {
+    return _gst_app_src_get_max_bytes(
+      appsrc,
+    );
+  }
+
+  late final _gst_app_src_get_max_bytesPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<GstAppSrc>)>>(
+          'gst_app_src_get_max_bytes');
+  late final _gst_app_src_get_max_bytes = _gst_app_src_get_max_bytesPtr
+      .asFunction<int Function(ffi.Pointer<GstAppSrc>)>();
+
+  int gst_app_src_get_current_level_bytes(
+    ffi.Pointer<GstAppSrc> appsrc,
+  ) {
+    return _gst_app_src_get_current_level_bytes(
+      appsrc,
+    );
+  }
+
+  late final _gst_app_src_get_current_level_bytesPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<GstAppSrc>)>>(
+          'gst_app_src_get_current_level_bytes');
+  late final _gst_app_src_get_current_level_bytes =
+      _gst_app_src_get_current_level_bytesPtr
+          .asFunction<int Function(ffi.Pointer<GstAppSrc>)>();
+
+  void gst_app_src_set_max_buffers(
+    ffi.Pointer<GstAppSrc> appsrc,
+    int max,
+  ) {
+    return _gst_app_src_set_max_buffers(
+      appsrc,
+      max,
+    );
+  }
+
+  late final _gst_app_src_set_max_buffersPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSrc>,
+              ffi.Uint64)>>('gst_app_src_set_max_buffers');
+  late final _gst_app_src_set_max_buffers = _gst_app_src_set_max_buffersPtr
+      .asFunction<void Function(ffi.Pointer<GstAppSrc>, int)>();
+
+  int gst_app_src_get_max_buffers(
+    ffi.Pointer<GstAppSrc> appsrc,
+  ) {
+    return _gst_app_src_get_max_buffers(
+      appsrc,
+    );
+  }
+
+  late final _gst_app_src_get_max_buffersPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<GstAppSrc>)>>(
+          'gst_app_src_get_max_buffers');
+  late final _gst_app_src_get_max_buffers = _gst_app_src_get_max_buffersPtr
+      .asFunction<int Function(ffi.Pointer<GstAppSrc>)>();
+
+  int gst_app_src_get_current_level_buffers(
+    ffi.Pointer<GstAppSrc> appsrc,
+  ) {
+    return _gst_app_src_get_current_level_buffers(
+      appsrc,
+    );
+  }
+
+  late final _gst_app_src_get_current_level_buffersPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<GstAppSrc>)>>(
+          'gst_app_src_get_current_level_buffers');
+  late final _gst_app_src_get_current_level_buffers =
+      _gst_app_src_get_current_level_buffersPtr
+          .asFunction<int Function(ffi.Pointer<GstAppSrc>)>();
+
+  void gst_app_src_set_max_time(
+    ffi.Pointer<GstAppSrc> appsrc,
+    int max,
+  ) {
+    return _gst_app_src_set_max_time(
+      appsrc,
+      max,
+    );
+  }
+
+  late final _gst_app_src_set_max_timePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSrc>,
+              GstClockTime)>>('gst_app_src_set_max_time');
+  late final _gst_app_src_set_max_time = _gst_app_src_set_max_timePtr
+      .asFunction<void Function(ffi.Pointer<GstAppSrc>, int)>();
+
+  int gst_app_src_get_max_time(
+    ffi.Pointer<GstAppSrc> appsrc,
+  ) {
+    return _gst_app_src_get_max_time(
+      appsrc,
+    );
+  }
+
+  late final _gst_app_src_get_max_timePtr = _lookup<
+          ffi.NativeFunction<GstClockTime Function(ffi.Pointer<GstAppSrc>)>>(
+      'gst_app_src_get_max_time');
+  late final _gst_app_src_get_max_time = _gst_app_src_get_max_timePtr
+      .asFunction<int Function(ffi.Pointer<GstAppSrc>)>();
+
+  int gst_app_src_get_current_level_time(
+    ffi.Pointer<GstAppSrc> appsrc,
+  ) {
+    return _gst_app_src_get_current_level_time(
+      appsrc,
+    );
+  }
+
+  late final _gst_app_src_get_current_level_timePtr = _lookup<
+          ffi.NativeFunction<GstClockTime Function(ffi.Pointer<GstAppSrc>)>>(
+      'gst_app_src_get_current_level_time');
+  late final _gst_app_src_get_current_level_time =
+      _gst_app_src_get_current_level_timePtr
+          .asFunction<int Function(ffi.Pointer<GstAppSrc>)>();
+
+  void gst_app_src_set_leaky_type(
+    ffi.Pointer<GstAppSrc> appsrc,
+    int leaky,
+  ) {
+    return _gst_app_src_set_leaky_type(
+      appsrc,
+      leaky,
+    );
+  }
+
+  late final _gst_app_src_set_leaky_typePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSrc>,
+              ffi.Int32)>>('gst_app_src_set_leaky_type');
+  late final _gst_app_src_set_leaky_type = _gst_app_src_set_leaky_typePtr
+      .asFunction<void Function(ffi.Pointer<GstAppSrc>, int)>();
+
+  int gst_app_src_get_leaky_type(
+    ffi.Pointer<GstAppSrc> appsrc,
+  ) {
+    return _gst_app_src_get_leaky_type(
+      appsrc,
+    );
+  }
+
+  late final _gst_app_src_get_leaky_typePtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstAppSrc>)>>(
+          'gst_app_src_get_leaky_type');
+  late final _gst_app_src_get_leaky_type = _gst_app_src_get_leaky_typePtr
+      .asFunction<int Function(ffi.Pointer<GstAppSrc>)>();
+
+  void gst_app_src_set_latency(
+    ffi.Pointer<GstAppSrc> appsrc,
+    int min,
+    int max,
+  ) {
+    return _gst_app_src_set_latency(
+      appsrc,
+      min,
+      max,
+    );
+  }
+
+  late final _gst_app_src_set_latencyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSrc>, ffi.Uint64,
+              ffi.Uint64)>>('gst_app_src_set_latency');
+  late final _gst_app_src_set_latency = _gst_app_src_set_latencyPtr
+      .asFunction<void Function(ffi.Pointer<GstAppSrc>, int, int)>();
+
+  void gst_app_src_get_latency(
+    ffi.Pointer<GstAppSrc> appsrc,
+    ffi.Pointer<ffi.Uint64> min,
+    ffi.Pointer<ffi.Uint64> max,
+  ) {
+    return _gst_app_src_get_latency(
+      appsrc,
+      min,
+      max,
+    );
+  }
+
+  late final _gst_app_src_get_latencyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSrc>, ffi.Pointer<ffi.Uint64>,
+              ffi.Pointer<ffi.Uint64>)>>('gst_app_src_get_latency');
+  late final _gst_app_src_get_latency = _gst_app_src_get_latencyPtr.asFunction<
+      void Function(ffi.Pointer<GstAppSrc>, ffi.Pointer<ffi.Uint64>,
+          ffi.Pointer<ffi.Uint64>)>();
+
+  void gst_app_src_set_emit_signals(
+    ffi.Pointer<GstAppSrc> appsrc,
+    int emit,
+  ) {
+    return _gst_app_src_set_emit_signals(
+      appsrc,
+      emit,
+    );
+  }
+
+  late final _gst_app_src_set_emit_signalsPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstAppSrc>, ffi.Int)>>(
+      'gst_app_src_set_emit_signals');
+  late final _gst_app_src_set_emit_signals = _gst_app_src_set_emit_signalsPtr
+      .asFunction<void Function(ffi.Pointer<GstAppSrc>, int)>();
+
+  int gst_app_src_get_emit_signals(
+    ffi.Pointer<GstAppSrc> appsrc,
+  ) {
+    return _gst_app_src_get_emit_signals(
+      appsrc,
+    );
+  }
+
+  late final _gst_app_src_get_emit_signalsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAppSrc>)>>(
+          'gst_app_src_get_emit_signals');
+  late final _gst_app_src_get_emit_signals = _gst_app_src_get_emit_signalsPtr
+      .asFunction<int Function(ffi.Pointer<GstAppSrc>)>();
+
+  int gst_app_src_push_buffer(
+    ffi.Pointer<GstAppSrc> appsrc,
+    ffi.Pointer<GstBuffer> buffer,
+  ) {
+    return _gst_app_src_push_buffer(
+      appsrc,
+      buffer,
+    );
+  }
+
+  late final _gst_app_src_push_bufferPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstAppSrc>,
+              ffi.Pointer<GstBuffer>)>>('gst_app_src_push_buffer');
+  late final _gst_app_src_push_buffer = _gst_app_src_push_bufferPtr.asFunction<
+      int Function(ffi.Pointer<GstAppSrc>, ffi.Pointer<GstBuffer>)>();
+
+  int gst_app_src_push_buffer_list(
+    ffi.Pointer<GstAppSrc> appsrc,
+    ffi.Pointer<GstBufferList> buffer_list,
+  ) {
+    return _gst_app_src_push_buffer_list(
+      appsrc,
+      buffer_list,
+    );
+  }
+
+  late final _gst_app_src_push_buffer_listPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstAppSrc>,
+              ffi.Pointer<GstBufferList>)>>('gst_app_src_push_buffer_list');
+  late final _gst_app_src_push_buffer_list =
+      _gst_app_src_push_buffer_listPtr.asFunction<
+          int Function(ffi.Pointer<GstAppSrc>, ffi.Pointer<GstBufferList>)>();
+
+  int gst_app_src_end_of_stream(
+    ffi.Pointer<GstAppSrc> appsrc,
+  ) {
+    return _gst_app_src_end_of_stream(
+      appsrc,
+    );
+  }
+
+  late final _gst_app_src_end_of_streamPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstAppSrc>)>>(
+          'gst_app_src_end_of_stream');
+  late final _gst_app_src_end_of_stream = _gst_app_src_end_of_streamPtr
+      .asFunction<int Function(ffi.Pointer<GstAppSrc>)>();
+
+  int gst_app_src_push_sample(
+    ffi.Pointer<GstAppSrc> appsrc,
+    ffi.Pointer<GstSample> sample,
+  ) {
+    return _gst_app_src_push_sample(
+      appsrc,
+      sample,
+    );
+  }
+
+  late final _gst_app_src_push_samplePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstAppSrc>,
+              ffi.Pointer<GstSample>)>>('gst_app_src_push_sample');
+  late final _gst_app_src_push_sample = _gst_app_src_push_samplePtr.asFunction<
+      int Function(ffi.Pointer<GstAppSrc>, ffi.Pointer<GstSample>)>();
+
+  void gst_app_src_set_callbacks(
+    ffi.Pointer<GstAppSrc> appsrc,
+    ffi.Pointer<GstAppSrcCallbacks> callbacks,
+    ffi.Pointer user_data,
+    GDestroyNotify notify,
+  ) {
+    return _gst_app_src_set_callbacks(
+      appsrc,
+      callbacks,
+      user_data,
+      notify,
+    );
+  }
+
+  late final _gst_app_src_set_callbacksPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstAppSrc>,
+              ffi.Pointer<GstAppSrcCallbacks>,
+              ffi.Pointer,
+              GDestroyNotify)>>('gst_app_src_set_callbacks');
+  late final _gst_app_src_set_callbacks =
+      _gst_app_src_set_callbacksPtr.asFunction<
+          void Function(ffi.Pointer<GstAppSrc>, ffi.Pointer<GstAppSrcCallbacks>,
+              ffi.Pointer, GDestroyNotify)>();
+
+  int gst_base_sink_get_type() {
+    return _gst_base_sink_get_type();
+  }
+
+  late final _gst_base_sink_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('gst_base_sink_get_type');
+  late final _gst_base_sink_get_type =
+      _gst_base_sink_get_typePtr.asFunction<int Function()>();
+
+  int gst_base_sink_do_preroll(
+    ffi.Pointer<GstBaseSink> sink,
+    ffi.Pointer<GstMiniObject> obj,
+  ) {
+    return _gst_base_sink_do_preroll(
+      sink,
+      obj,
+    );
+  }
+
+  late final _gst_base_sink_do_prerollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink>,
+              ffi.Pointer<GstMiniObject>)>>('gst_base_sink_do_preroll');
+  late final _gst_base_sink_do_preroll =
+      _gst_base_sink_do_prerollPtr.asFunction<
+          int Function(ffi.Pointer<GstBaseSink>, ffi.Pointer<GstMiniObject>)>();
+
+  int gst_base_sink_wait_preroll(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_wait_preroll(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_wait_prerollPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_wait_preroll');
+  late final _gst_base_sink_wait_preroll = _gst_base_sink_wait_prerollPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_sync(
+    ffi.Pointer<GstBaseSink> sink,
+    int sync1,
+  ) {
+    return _gst_base_sink_set_sync(
+      sink,
+      sync1,
+    );
+  }
+
+  late final _gst_base_sink_set_syncPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstBaseSink>, ffi.Int)>>('gst_base_sink_set_sync');
+  late final _gst_base_sink_set_sync = _gst_base_sink_set_syncPtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_sync(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_sync(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_syncPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_get_sync');
+  late final _gst_base_sink_get_sync = _gst_base_sink_get_syncPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_drop_out_of_segment(
+    ffi.Pointer<GstBaseSink> sink,
+    int drop_out_of_segment,
+  ) {
+    return _gst_base_sink_set_drop_out_of_segment(
+      sink,
+      drop_out_of_segment,
+    );
+  }
+
+  late final _gst_base_sink_set_drop_out_of_segmentPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Int)>>('gst_base_sink_set_drop_out_of_segment');
+  late final _gst_base_sink_set_drop_out_of_segment =
+      _gst_base_sink_set_drop_out_of_segmentPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_drop_out_of_segment(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_drop_out_of_segment(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_drop_out_of_segmentPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_get_drop_out_of_segment');
+  late final _gst_base_sink_get_drop_out_of_segment =
+      _gst_base_sink_get_drop_out_of_segmentPtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_max_lateness(
+    ffi.Pointer<GstBaseSink> sink,
+    int max_lateness,
+  ) {
+    return _gst_base_sink_set_max_lateness(
+      sink,
+      max_lateness,
+    );
+  }
+
+  late final _gst_base_sink_set_max_latenessPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Int64)>>('gst_base_sink_set_max_lateness');
+  late final _gst_base_sink_set_max_lateness =
+      _gst_base_sink_set_max_latenessPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_max_lateness(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_max_lateness(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_max_latenessPtr =
+      _lookup<ffi.NativeFunction<ffi.Int64 Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_get_max_lateness');
+  late final _gst_base_sink_get_max_lateness =
+      _gst_base_sink_get_max_latenessPtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_qos_enabled(
+    ffi.Pointer<GstBaseSink> sink,
+    int enabled,
+  ) {
+    return _gst_base_sink_set_qos_enabled(
+      sink,
+      enabled,
+    );
+  }
+
+  late final _gst_base_sink_set_qos_enabledPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Int)>>('gst_base_sink_set_qos_enabled');
+  late final _gst_base_sink_set_qos_enabled = _gst_base_sink_set_qos_enabledPtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_is_qos_enabled(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_is_qos_enabled(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_is_qos_enabledPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_is_qos_enabled');
+  late final _gst_base_sink_is_qos_enabled = _gst_base_sink_is_qos_enabledPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_async_enabled(
+    ffi.Pointer<GstBaseSink> sink,
+    int enabled,
+  ) {
+    return _gst_base_sink_set_async_enabled(
+      sink,
+      enabled,
+    );
+  }
+
+  late final _gst_base_sink_set_async_enabledPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Int)>>('gst_base_sink_set_async_enabled');
+  late final _gst_base_sink_set_async_enabled =
+      _gst_base_sink_set_async_enabledPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_is_async_enabled(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_is_async_enabled(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_is_async_enabledPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_is_async_enabled');
+  late final _gst_base_sink_is_async_enabled =
+      _gst_base_sink_is_async_enabledPtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_ts_offset(
+    ffi.Pointer<GstBaseSink> sink,
+    int offset,
+  ) {
+    return _gst_base_sink_set_ts_offset(
+      sink,
+      offset,
+    );
+  }
+
+  late final _gst_base_sink_set_ts_offsetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              GstClockTimeDiff)>>('gst_base_sink_set_ts_offset');
+  late final _gst_base_sink_set_ts_offset = _gst_base_sink_set_ts_offsetPtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_ts_offset(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_ts_offset(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_ts_offsetPtr = _lookup<
+          ffi
+          .NativeFunction<GstClockTimeDiff Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_ts_offset');
+  late final _gst_base_sink_get_ts_offset = _gst_base_sink_get_ts_offsetPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  ffi.Pointer<GstSample> gst_base_sink_get_last_sample(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_last_sample(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_last_samplePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstSample> Function(
+              ffi.Pointer<GstBaseSink>)>>('gst_base_sink_get_last_sample');
+  late final _gst_base_sink_get_last_sample = _gst_base_sink_get_last_samplePtr
+      .asFunction<ffi.Pointer<GstSample> Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_last_sample_enabled(
+    ffi.Pointer<GstBaseSink> sink,
+    int enabled,
+  ) {
+    return _gst_base_sink_set_last_sample_enabled(
+      sink,
+      enabled,
+    );
+  }
+
+  late final _gst_base_sink_set_last_sample_enabledPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Int)>>('gst_base_sink_set_last_sample_enabled');
+  late final _gst_base_sink_set_last_sample_enabled =
+      _gst_base_sink_set_last_sample_enabledPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_is_last_sample_enabled(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_is_last_sample_enabled(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_is_last_sample_enabledPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink>)>>(
+          'gst_base_sink_is_last_sample_enabled');
+  late final _gst_base_sink_is_last_sample_enabled =
+      _gst_base_sink_is_last_sample_enabledPtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  int gst_base_sink_query_latency(
+    ffi.Pointer<GstBaseSink> sink,
+    ffi.Pointer<ffi.Int> live,
+    ffi.Pointer<ffi.Int> upstream_live,
+    ffi.Pointer<GstClockTime> min_latency,
+    ffi.Pointer<GstClockTime> max_latency,
+  ) {
+    return _gst_base_sink_query_latency(
+      sink,
+      live,
+      upstream_live,
+      min_latency,
+      max_latency,
+    );
+  }
+
+  late final _gst_base_sink_query_latencyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstBaseSink>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<GstClockTime>,
+              ffi.Pointer<GstClockTime>)>>('gst_base_sink_query_latency');
+  late final _gst_base_sink_query_latency =
+      _gst_base_sink_query_latencyPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstBaseSink>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<ffi.Int>,
+              ffi.Pointer<GstClockTime>,
+              ffi.Pointer<GstClockTime>)>();
+
+  int gst_base_sink_get_latency(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_latency(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_latencyPtr = _lookup<
+          ffi.NativeFunction<GstClockTime Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_latency');
+  late final _gst_base_sink_get_latency = _gst_base_sink_get_latencyPtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_render_delay(
+    ffi.Pointer<GstBaseSink> sink,
+    int delay,
+  ) {
+    return _gst_base_sink_set_render_delay(
+      sink,
+      delay,
+    );
+  }
+
+  late final _gst_base_sink_set_render_delayPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              GstClockTime)>>('gst_base_sink_set_render_delay');
+  late final _gst_base_sink_set_render_delay =
+      _gst_base_sink_set_render_delayPtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_render_delay(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_render_delay(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_render_delayPtr = _lookup<
+          ffi.NativeFunction<GstClockTime Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_render_delay');
+  late final _gst_base_sink_get_render_delay =
+      _gst_base_sink_get_render_delayPtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_blocksize(
+    ffi.Pointer<GstBaseSink> sink,
+    int blocksize,
+  ) {
+    return _gst_base_sink_set_blocksize(
+      sink,
+      blocksize,
+    );
+  }
+
+  late final _gst_base_sink_set_blocksizePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.UnsignedInt)>>('gst_base_sink_set_blocksize');
+  late final _gst_base_sink_set_blocksize = _gst_base_sink_set_blocksizePtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_blocksize(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_blocksize(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_blocksizePtr = _lookup<
+          ffi
+          .NativeFunction<ffi.UnsignedInt Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_blocksize');
+  late final _gst_base_sink_get_blocksize = _gst_base_sink_get_blocksizePtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_throttle_time(
+    ffi.Pointer<GstBaseSink> sink,
+    int throttle,
+  ) {
+    return _gst_base_sink_set_throttle_time(
+      sink,
+      throttle,
+    );
+  }
+
+  late final _gst_base_sink_set_throttle_timePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Uint64)>>('gst_base_sink_set_throttle_time');
+  late final _gst_base_sink_set_throttle_time =
+      _gst_base_sink_set_throttle_timePtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_throttle_time(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_throttle_time(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_throttle_timePtr = _lookup<
+          ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_throttle_time');
+  late final _gst_base_sink_get_throttle_time =
+      _gst_base_sink_get_throttle_timePtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_max_bitrate(
+    ffi.Pointer<GstBaseSink> sink,
+    int max_bitrate,
+  ) {
+    return _gst_base_sink_set_max_bitrate(
+      sink,
+      max_bitrate,
+    );
+  }
+
+  late final _gst_base_sink_set_max_bitratePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              ffi.Uint64)>>('gst_base_sink_set_max_bitrate');
+  late final _gst_base_sink_set_max_bitrate = _gst_base_sink_set_max_bitratePtr
+      .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_max_bitrate(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_max_bitrate(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_max_bitratePtr = _lookup<
+          ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_max_bitrate');
+  late final _gst_base_sink_get_max_bitrate = _gst_base_sink_get_max_bitratePtr
+      .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  void gst_base_sink_set_processing_deadline(
+    ffi.Pointer<GstBaseSink> sink,
+    int processing_deadline,
+  ) {
+    return _gst_base_sink_set_processing_deadline(
+      sink,
+      processing_deadline,
+    );
+  }
+
+  late final _gst_base_sink_set_processing_deadlinePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstBaseSink>,
+              GstClockTime)>>('gst_base_sink_set_processing_deadline');
+  late final _gst_base_sink_set_processing_deadline =
+      _gst_base_sink_set_processing_deadlinePtr
+          .asFunction<void Function(ffi.Pointer<GstBaseSink>, int)>();
+
+  int gst_base_sink_get_processing_deadline(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_processing_deadline(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_processing_deadlinePtr = _lookup<
+          ffi.NativeFunction<GstClockTime Function(ffi.Pointer<GstBaseSink>)>>(
+      'gst_base_sink_get_processing_deadline');
+  late final _gst_base_sink_get_processing_deadline =
+      _gst_base_sink_get_processing_deadlinePtr
+          .asFunction<int Function(ffi.Pointer<GstBaseSink>)>();
+
+  int gst_base_sink_wait_clock(
+    ffi.Pointer<GstBaseSink> sink,
+    int time,
+    ffi.Pointer<GstClockTimeDiff> jitter,
+  ) {
+    return _gst_base_sink_wait_clock(
+      sink,
+      time,
+      jitter,
+    );
+  }
+
+  late final _gst_base_sink_wait_clockPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink>, GstClockTime,
+              ffi.Pointer<GstClockTimeDiff>)>>('gst_base_sink_wait_clock');
+  late final _gst_base_sink_wait_clock =
+      _gst_base_sink_wait_clockPtr.asFunction<
+          int Function(
+              ffi.Pointer<GstBaseSink>, int, ffi.Pointer<GstClockTimeDiff>)>();
+
+  int gst_base_sink_wait(
+    ffi.Pointer<GstBaseSink> sink,
+    int time,
+    ffi.Pointer<GstClockTimeDiff> jitter,
+  ) {
+    return _gst_base_sink_wait(
+      sink,
+      time,
+      jitter,
+    );
+  }
+
+  late final _gst_base_sink_waitPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink>, GstClockTime,
+              ffi.Pointer<GstClockTimeDiff>)>>('gst_base_sink_wait');
+  late final _gst_base_sink_wait = _gst_base_sink_waitPtr.asFunction<
+      int Function(
+          ffi.Pointer<GstBaseSink>, int, ffi.Pointer<GstClockTimeDiff>)>();
+
+  ffi.Pointer<GstStructure> gst_base_sink_get_stats(
+    ffi.Pointer<GstBaseSink> sink,
+  ) {
+    return _gst_base_sink_get_stats(
+      sink,
+    );
+  }
+
+  late final _gst_base_sink_get_statsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstStructure> Function(
+              ffi.Pointer<GstBaseSink>)>>('gst_base_sink_get_stats');
+  late final _gst_base_sink_get_stats = _gst_base_sink_get_statsPtr.asFunction<
+      ffi.Pointer<GstStructure> Function(ffi.Pointer<GstBaseSink>)>();
+
+  int gst_app_sink_get_type() {
+    return _gst_app_sink_get_type();
+  }
+
+  late final _gst_app_sink_get_typePtr =
+      _lookup<ffi.NativeFunction<GType Function()>>('gst_app_sink_get_type');
+  late final _gst_app_sink_get_type =
+      _gst_app_sink_get_typePtr.asFunction<int Function()>();
+
+  void gst_app_sink_set_caps(
+    ffi.Pointer<GstAppSink> appsink,
+    ffi.Pointer<GstCaps> caps,
+  ) {
+    return _gst_app_sink_set_caps(
+      appsink,
+      caps,
+    );
+  }
+
+  late final _gst_app_sink_set_capsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSink>,
+              ffi.Pointer<GstCaps>)>>('gst_app_sink_set_caps');
+  late final _gst_app_sink_set_caps = _gst_app_sink_set_capsPtr.asFunction<
+      void Function(ffi.Pointer<GstAppSink>, ffi.Pointer<GstCaps>)>();
+
+  ffi.Pointer<GstCaps> gst_app_sink_get_caps(
+    ffi.Pointer<GstAppSink> appsink,
+  ) {
+    return _gst_app_sink_get_caps(
+      appsink,
+    );
+  }
+
+  late final _gst_app_sink_get_capsPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstCaps> Function(
+              ffi.Pointer<GstAppSink>)>>('gst_app_sink_get_caps');
+  late final _gst_app_sink_get_caps = _gst_app_sink_get_capsPtr
+      .asFunction<ffi.Pointer<GstCaps> Function(ffi.Pointer<GstAppSink>)>();
+
+  int gst_app_sink_is_eos(
+    ffi.Pointer<GstAppSink> appsink,
+  ) {
+    return _gst_app_sink_is_eos(
+      appsink,
+    );
+  }
+
+  late final _gst_app_sink_is_eosPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAppSink>)>>(
+          'gst_app_sink_is_eos');
+  late final _gst_app_sink_is_eos = _gst_app_sink_is_eosPtr
+      .asFunction<int Function(ffi.Pointer<GstAppSink>)>();
+
+  void gst_app_sink_set_emit_signals(
+    ffi.Pointer<GstAppSink> appsink,
+    int emit,
+  ) {
+    return _gst_app_sink_set_emit_signals(
+      appsink,
+      emit,
+    );
+  }
+
+  late final _gst_app_sink_set_emit_signalsPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstAppSink>, ffi.Int)>>(
+      'gst_app_sink_set_emit_signals');
+  late final _gst_app_sink_set_emit_signals = _gst_app_sink_set_emit_signalsPtr
+      .asFunction<void Function(ffi.Pointer<GstAppSink>, int)>();
+
+  int gst_app_sink_get_emit_signals(
+    ffi.Pointer<GstAppSink> appsink,
+  ) {
+    return _gst_app_sink_get_emit_signals(
+      appsink,
+    );
+  }
+
+  late final _gst_app_sink_get_emit_signalsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAppSink>)>>(
+          'gst_app_sink_get_emit_signals');
+  late final _gst_app_sink_get_emit_signals = _gst_app_sink_get_emit_signalsPtr
+      .asFunction<int Function(ffi.Pointer<GstAppSink>)>();
+
+  void gst_app_sink_set_max_buffers(
+    ffi.Pointer<GstAppSink> appsink,
+    int max,
+  ) {
+    return _gst_app_sink_set_max_buffers(
+      appsink,
+      max,
+    );
+  }
+
+  late final _gst_app_sink_set_max_buffersPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSink>,
+              ffi.UnsignedInt)>>('gst_app_sink_set_max_buffers');
+  late final _gst_app_sink_set_max_buffers = _gst_app_sink_set_max_buffersPtr
+      .asFunction<void Function(ffi.Pointer<GstAppSink>, int)>();
+
+  int gst_app_sink_get_max_buffers(
+    ffi.Pointer<GstAppSink> appsink,
+  ) {
+    return _gst_app_sink_get_max_buffers(
+      appsink,
+    );
+  }
+
+  late final _gst_app_sink_get_max_buffersPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.UnsignedInt Function(ffi.Pointer<GstAppSink>)>>(
+      'gst_app_sink_get_max_buffers');
+  late final _gst_app_sink_get_max_buffers = _gst_app_sink_get_max_buffersPtr
+      .asFunction<int Function(ffi.Pointer<GstAppSink>)>();
+
+  void gst_app_sink_set_max_time(
+    ffi.Pointer<GstAppSink> appsink,
+    int max,
+  ) {
+    return _gst_app_sink_set_max_time(
+      appsink,
+      max,
+    );
+  }
+
+  late final _gst_app_sink_set_max_timePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSink>,
+              GstClockTime)>>('gst_app_sink_set_max_time');
+  late final _gst_app_sink_set_max_time = _gst_app_sink_set_max_timePtr
+      .asFunction<void Function(ffi.Pointer<GstAppSink>, int)>();
+
+  int gst_app_sink_get_max_time(
+    ffi.Pointer<GstAppSink> appsink,
+  ) {
+    return _gst_app_sink_get_max_time(
+      appsink,
+    );
+  }
+
+  late final _gst_app_sink_get_max_timePtr = _lookup<
+          ffi.NativeFunction<GstClockTime Function(ffi.Pointer<GstAppSink>)>>(
+      'gst_app_sink_get_max_time');
+  late final _gst_app_sink_get_max_time = _gst_app_sink_get_max_timePtr
+      .asFunction<int Function(ffi.Pointer<GstAppSink>)>();
+
+  void gst_app_sink_set_max_bytes(
+    ffi.Pointer<GstAppSink> appsink,
+    int max,
+  ) {
+    return _gst_app_sink_set_max_bytes(
+      appsink,
+      max,
+    );
+  }
+
+  late final _gst_app_sink_set_max_bytesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSink>,
+              ffi.Uint64)>>('gst_app_sink_set_max_bytes');
+  late final _gst_app_sink_set_max_bytes = _gst_app_sink_set_max_bytesPtr
+      .asFunction<void Function(ffi.Pointer<GstAppSink>, int)>();
+
+  int gst_app_sink_get_max_bytes(
+    ffi.Pointer<GstAppSink> appsink,
+  ) {
+    return _gst_app_sink_get_max_bytes(
+      appsink,
+    );
+  }
+
+  late final _gst_app_sink_get_max_bytesPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<GstAppSink>)>>(
+          'gst_app_sink_get_max_bytes');
+  late final _gst_app_sink_get_max_bytes = _gst_app_sink_get_max_bytesPtr
+      .asFunction<int Function(ffi.Pointer<GstAppSink>)>();
+
+  void gst_app_sink_set_drop(
+    ffi.Pointer<GstAppSink> appsink,
+    int drop,
+  ) {
+    return _gst_app_sink_set_drop(
+      appsink,
+      drop,
+    );
+  }
+
+  late final _gst_app_sink_set_dropPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstAppSink>, ffi.Int)>>(
+      'gst_app_sink_set_drop');
+  late final _gst_app_sink_set_drop = _gst_app_sink_set_dropPtr
+      .asFunction<void Function(ffi.Pointer<GstAppSink>, int)>();
+
+  int gst_app_sink_get_drop(
+    ffi.Pointer<GstAppSink> appsink,
+  ) {
+    return _gst_app_sink_get_drop(
+      appsink,
+    );
+  }
+
+  late final _gst_app_sink_get_dropPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAppSink>)>>(
+          'gst_app_sink_get_drop');
+  late final _gst_app_sink_get_drop = _gst_app_sink_get_dropPtr
+      .asFunction<int Function(ffi.Pointer<GstAppSink>)>();
+
+  void gst_app_sink_set_buffer_list_support(
+    ffi.Pointer<GstAppSink> appsink,
+    int enable_lists,
+  ) {
+    return _gst_app_sink_set_buffer_list_support(
+      appsink,
+      enable_lists,
+    );
+  }
+
+  late final _gst_app_sink_set_buffer_list_supportPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstAppSink>, ffi.Int)>>(
+      'gst_app_sink_set_buffer_list_support');
+  late final _gst_app_sink_set_buffer_list_support =
+      _gst_app_sink_set_buffer_list_supportPtr
+          .asFunction<void Function(ffi.Pointer<GstAppSink>, int)>();
+
+  int gst_app_sink_get_buffer_list_support(
+    ffi.Pointer<GstAppSink> appsink,
+  ) {
+    return _gst_app_sink_get_buffer_list_support(
+      appsink,
+    );
+  }
+
+  late final _gst_app_sink_get_buffer_list_supportPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAppSink>)>>(
+          'gst_app_sink_get_buffer_list_support');
+  late final _gst_app_sink_get_buffer_list_support =
+      _gst_app_sink_get_buffer_list_supportPtr
+          .asFunction<int Function(ffi.Pointer<GstAppSink>)>();
+
+  void gst_app_sink_set_wait_on_eos(
+    ffi.Pointer<GstAppSink> appsink,
+    int wait,
+  ) {
+    return _gst_app_sink_set_wait_on_eos(
+      appsink,
+      wait,
+    );
+  }
+
+  late final _gst_app_sink_set_wait_on_eosPtr = _lookup<
+          ffi
+          .NativeFunction<ffi.Void Function(ffi.Pointer<GstAppSink>, ffi.Int)>>(
+      'gst_app_sink_set_wait_on_eos');
+  late final _gst_app_sink_set_wait_on_eos = _gst_app_sink_set_wait_on_eosPtr
+      .asFunction<void Function(ffi.Pointer<GstAppSink>, int)>();
+
+  int gst_app_sink_get_wait_on_eos(
+    ffi.Pointer<GstAppSink> appsink,
+  ) {
+    return _gst_app_sink_get_wait_on_eos(
+      appsink,
+    );
+  }
+
+  late final _gst_app_sink_get_wait_on_eosPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstAppSink>)>>(
+          'gst_app_sink_get_wait_on_eos');
+  late final _gst_app_sink_get_wait_on_eos = _gst_app_sink_get_wait_on_eosPtr
+      .asFunction<int Function(ffi.Pointer<GstAppSink>)>();
+
+  ffi.Pointer<GstSample> gst_app_sink_pull_preroll(
+    ffi.Pointer<GstAppSink> appsink,
+  ) {
+    return _gst_app_sink_pull_preroll(
+      appsink,
+    );
+  }
+
+  late final _gst_app_sink_pull_prerollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstSample> Function(
+              ffi.Pointer<GstAppSink>)>>('gst_app_sink_pull_preroll');
+  late final _gst_app_sink_pull_preroll = _gst_app_sink_pull_prerollPtr
+      .asFunction<ffi.Pointer<GstSample> Function(ffi.Pointer<GstAppSink>)>();
+
+  ffi.Pointer<GstSample> gst_app_sink_pull_sample(
+    ffi.Pointer<GstAppSink> appsink,
+  ) {
+    return _gst_app_sink_pull_sample(
+      appsink,
+    );
+  }
+
+  late final _gst_app_sink_pull_samplePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstSample> Function(
+              ffi.Pointer<GstAppSink>)>>('gst_app_sink_pull_sample');
+  late final _gst_app_sink_pull_sample = _gst_app_sink_pull_samplePtr
+      .asFunction<ffi.Pointer<GstSample> Function(ffi.Pointer<GstAppSink>)>();
+
+  ffi.Pointer<GstMiniObject> gst_app_sink_pull_object(
+    ffi.Pointer<GstAppSink> appsink,
+  ) {
+    return _gst_app_sink_pull_object(
+      appsink,
+    );
+  }
+
+  late final _gst_app_sink_pull_objectPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstMiniObject> Function(
+              ffi.Pointer<GstAppSink>)>>('gst_app_sink_pull_object');
+  late final _gst_app_sink_pull_object =
+      _gst_app_sink_pull_objectPtr.asFunction<
+          ffi.Pointer<GstMiniObject> Function(ffi.Pointer<GstAppSink>)>();
+
+  ffi.Pointer<GstSample> gst_app_sink_try_pull_preroll(
+    ffi.Pointer<GstAppSink> appsink,
+    int timeout,
+  ) {
+    return _gst_app_sink_try_pull_preroll(
+      appsink,
+      timeout,
+    );
+  }
+
+  late final _gst_app_sink_try_pull_prerollPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstSample> Function(ffi.Pointer<GstAppSink>,
+              GstClockTime)>>('gst_app_sink_try_pull_preroll');
+  late final _gst_app_sink_try_pull_preroll =
+      _gst_app_sink_try_pull_prerollPtr.asFunction<
+          ffi.Pointer<GstSample> Function(ffi.Pointer<GstAppSink>, int)>();
+
+  ffi.Pointer<GstSample> gst_app_sink_try_pull_sample(
+    ffi.Pointer<GstAppSink> appsink,
+    int timeout,
+  ) {
+    return _gst_app_sink_try_pull_sample(
+      appsink,
+      timeout,
+    );
+  }
+
+  late final _gst_app_sink_try_pull_samplePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstSample> Function(ffi.Pointer<GstAppSink>,
+              GstClockTime)>>('gst_app_sink_try_pull_sample');
+  late final _gst_app_sink_try_pull_sample =
+      _gst_app_sink_try_pull_samplePtr.asFunction<
+          ffi.Pointer<GstSample> Function(ffi.Pointer<GstAppSink>, int)>();
+
+  ffi.Pointer<GstMiniObject> gst_app_sink_try_pull_object(
+    ffi.Pointer<GstAppSink> appsink,
+    int timeout,
+  ) {
+    return _gst_app_sink_try_pull_object(
+      appsink,
+      timeout,
+    );
+  }
+
+  late final _gst_app_sink_try_pull_objectPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<GstMiniObject> Function(ffi.Pointer<GstAppSink>,
+              GstClockTime)>>('gst_app_sink_try_pull_object');
+  late final _gst_app_sink_try_pull_object =
+      _gst_app_sink_try_pull_objectPtr.asFunction<
+          ffi.Pointer<GstMiniObject> Function(ffi.Pointer<GstAppSink>, int)>();
+
+  void gst_app_sink_set_callbacks(
+    ffi.Pointer<GstAppSink> appsink,
+    ffi.Pointer<GstAppSinkCallbacks> callbacks,
+    ffi.Pointer user_data,
+    GDestroyNotify notify,
+  ) {
+    return _gst_app_sink_set_callbacks(
+      appsink,
+      callbacks,
+      user_data,
+      notify,
+    );
+  }
+
+  late final _gst_app_sink_set_callbacksPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstAppSink>,
+              ffi.Pointer<GstAppSinkCallbacks>,
+              ffi.Pointer,
+              GDestroyNotify)>>('gst_app_sink_set_callbacks');
+  late final _gst_app_sink_set_callbacks =
+      _gst_app_sink_set_callbacksPtr.asFunction<
+          void Function(ffi.Pointer<GstAppSink>,
+              ffi.Pointer<GstAppSinkCallbacks>, ffi.Pointer, GDestroyNotify)>();
 }
 
 final class max_align_t extends ffi.Opaque {}
@@ -91110,6 +92957,802 @@ abstract class GstPluginAPIFlags {
   static const int GST_PLUGIN_API_FLAG_IGNORE_ENUM_MEMBERS = 1;
 }
 
+/// GstBaseSrcFlags:
+/// @GST_BASE_SRC_FLAG_STARTING: has source is starting
+/// @GST_BASE_SRC_FLAG_STARTED: has source been started
+/// @GST_BASE_SRC_FLAG_LAST: offset to define more flags
+///
+/// The #GstElement flags that a basesrc element may have.
+abstract class GstBaseSrcFlags {
+  static const int GST_BASE_SRC_FLAG_STARTING = 16384;
+  static const int GST_BASE_SRC_FLAG_STARTED = 32768;
+  static const int GST_BASE_SRC_FLAG_LAST = 1048576;
+}
+
+/// GstBaseSrc:
+///
+/// The opaque #GstBaseSrc data structure.
+final class _GstBaseSrc extends ffi.Struct {
+  external GstElement element;
+
+  external ffi.Pointer<GstPad> srcpad;
+
+  external GMutex live_lock;
+
+  external GCond live_cond;
+
+  @ffi.Int()
+  external int is_live;
+
+  @ffi.Int()
+  external int live_running;
+
+  @ffi.UnsignedInt()
+  external int blocksize;
+
+  @ffi.Int()
+  external int can_activate_push;
+
+  @ffi.Int()
+  external int random_access;
+
+  external GstClockID clock_id;
+
+  external GstSegment segment;
+
+  @ffi.Int()
+  external int need_newsegment;
+
+  @ffi.Int()
+  external int num_buffers;
+
+  @ffi.Int()
+  external int num_buffers_left;
+
+  @ffi.Int()
+  external int typefind;
+
+  @ffi.Int()
+  external int running;
+
+  external ffi.Pointer<GstEvent> pending_seek;
+
+  external ffi.Pointer<GstBaseSrcPrivate> priv;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstBaseSrcPrivate = _GstBaseSrcPrivate;
+
+final class _GstBaseSrcPrivate extends ffi.Opaque {}
+
+/// GstBaseSrcClass:
+/// @parent_class: Element parent class
+/// @get_caps: Called to get the caps to report
+/// @negotiate: Negotiated the caps with the peer.
+/// @fixate: Called during negotiation if caps need fixating. Implement instead of
+/// setting a fixate function on the source pad.
+/// @set_caps: Notify subclass of changed output caps
+/// @decide_allocation: configure the allocation query
+/// @start: Start processing. Subclasses should open resources and prepare
+/// to produce data. Implementation should call gst_base_src_start_complete()
+/// when the operation completes, either from the current thread or any other
+/// thread that finishes the start operation asynchronously.
+/// @stop: Stop processing. Subclasses should use this to close resources.
+/// @get_times: Given a buffer, return the start and stop time when it
+/// should be pushed out. The base class will sync on the clock using
+/// these times.
+/// @get_size: Return the total size of the resource, in the format set by
+/// gst_base_src_set_format().
+/// @is_seekable: Check if the source can seek
+/// @prepare_seek_segment: Prepare the #GstSegment that will be passed to the
+/// #GstBaseSrcClass::do_seek vmethod for executing a seek
+/// request. Sub-classes should override this if they support seeking in
+/// formats other than the configured native format. By default, it tries to
+/// convert the seek arguments to the configured native format and prepare a
+/// segment in that format.
+/// @do_seek: Perform seeking on the resource to the indicated segment.
+/// @unlock: Unlock any pending access to the resource. Subclasses should unblock
+/// any blocked function ASAP. In particular, any `create()` function in
+/// progress should be unblocked and should return GST_FLOW_FLUSHING. Any
+/// future #GstBaseSrcClass::create function call should also return
+/// GST_FLOW_FLUSHING until the #GstBaseSrcClass::unlock_stop function has
+/// been called.
+/// @unlock_stop: Clear the previous unlock request. Subclasses should clear any
+/// state they set during #GstBaseSrcClass::unlock, such as clearing command
+/// queues.
+/// @query: Handle a requested query.
+/// @event: Override this to implement custom event handling.
+/// @create: Ask the subclass to create a buffer with offset and size.  When the
+/// subclass returns GST_FLOW_OK, it MUST return a buffer of the requested size
+/// unless fewer bytes are available because an EOS condition is near. No
+/// buffer should be returned when the return value is different from
+/// GST_FLOW_OK. A return value of GST_FLOW_EOS signifies that the end of
+/// stream is reached. The default implementation will call
+/// #GstBaseSrcClass::alloc and then call #GstBaseSrcClass::fill.
+/// @alloc: Ask the subclass to allocate a buffer with for offset and size. The
+/// default implementation will create a new buffer from the negotiated allocator.
+/// @fill: Ask the subclass to fill the buffer with data for offset and size. The
+/// passed buffer is guaranteed to hold the requested amount of bytes.
+///
+/// Subclasses can override any of the available virtual methods or not, as
+/// needed. At the minimum, the @create method should be overridden to produce
+/// buffers.
+final class _GstBaseSrcClass extends ffi.Struct {
+  external GstElementClass parent_class;
+
+  /// GstBaseSrcClass::get_caps:
+  /// @filter: (in) (nullable):
+  ///
+  /// Called to get the caps to report.
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Pointer<GstCaps> Function(
+                  ffi.Pointer<GstBaseSrc> src, ffi.Pointer<GstCaps> filter)>>
+      get_caps;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSrc> src)>>
+      negotiate;
+
+  /// GstBaseSrcClass::fixate:
+  /// @caps: (transfer full):
+  ///
+  /// Called if, in negotiation, caps need fixating.
+  ///
+  /// Returns: (transfer full): the fixated caps
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Pointer<GstCaps> Function(
+              ffi.Pointer<GstBaseSrc> src, ffi.Pointer<GstCaps> caps)>> fixate;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstBaseSrc> src, ffi.Pointer<GstCaps> caps)>>
+      set_caps;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstBaseSrc> src, ffi.Pointer<GstQuery> query)>>
+      decide_allocation;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSrc> src)>> start;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSrc> src)>> stop;
+
+  /// GstBaseSrcClass::get_times:
+  /// @start: (out):
+  /// @end: (out):
+  ///
+  /// Given @buffer, return @start and @end time when it should be pushed
+  /// out. The base class will sync on the clock using these times.
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstBaseSrc> src,
+              ffi.Pointer<GstBuffer> buffer,
+              ffi.Pointer<GstClockTime> start,
+              ffi.Pointer<GstClockTime> end)>> get_times;
+
+  /// GstBaseSrcClass::get_size:
+  /// @size: (out):
+  ///
+  /// Get the total size of the resource in the format set by
+  /// gst_base_src_set_format().
+  ///
+  /// Returns: %TRUE if the size is available and has been set.
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstBaseSrc> src, ffi.Pointer<ffi.Uint64> size)>>
+      get_size;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSrc> src)>>
+      is_seekable;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstBaseSrc> src,
+              ffi.Pointer<GstEvent> seek,
+              ffi.Pointer<GstSegment> segment)>> prepare_seek_segment;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstBaseSrc> src,
+              ffi.Pointer<GstSegment> segment)>> do_seek;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSrc> src)>> unlock;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSrc> src)>>
+      unlock_stop;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstBaseSrc> src, ffi.Pointer<GstQuery> query)>> query;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstBaseSrc> src, ffi.Pointer<GstEvent> event)>> event;
+
+  /// GstBaseSrcClass::create:
+  /// @buf: (inout) (nullable):
+  ///
+  /// Ask the subclass to create a buffer with @offset and @size, the default
+  /// implementation will call alloc if no allocated @buf is provided and then call fill.
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<GstBaseSrc> src,
+              ffi.Uint64 offset,
+              ffi.UnsignedInt size,
+              ffi.Pointer<ffi.Pointer<GstBuffer>> buf)>> create;
+
+  /// GstBaseSrcClass::alloc:
+  /// @buf: (out) (nullable):
+  ///
+  /// Ask the subclass to allocate an output buffer with @offset and @size, the default
+  /// implementation will use the negotiated allocator.
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<GstBaseSrc> src,
+              ffi.Uint64 offset,
+              ffi.UnsignedInt size,
+              ffi.Pointer<ffi.Pointer<GstBuffer>> buf)>> alloc;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSrc> src, ffi.Uint64 offset,
+              ffi.UnsignedInt size, ffi.Pointer<GstBuffer> buf)>> fill;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstBaseSrc = _GstBaseSrc;
+
+/// GstPushSrc:
+///
+/// The opaque #GstPushSrc data structure.
+final class _GstPushSrc extends ffi.Struct {
+  external GstBaseSrc parent;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+/// GstPushSrcClass:
+/// @parent_class: Element parent class
+/// @create: Ask the subclass to create a buffer. The subclass decides which
+/// size this buffer should be. Other then that, refer to
+/// #GstBaseSrc<!-- -->.create() for more details. If this method is
+/// not implemented, @alloc followed by @fill will be called.
+/// @alloc: Ask the subclass to allocate a buffer. The subclass decides which
+/// size this buffer should be. The default implementation will create
+/// a new buffer from the negotiated allocator.
+/// @fill: Ask the subclass to fill the buffer with data.
+///
+/// Subclasses can override any of the available virtual methods or not, as
+/// needed. At the minimum, the @fill method should be overridden to produce
+/// buffers.
+final class _GstPushSrcClass extends ffi.Struct {
+  external GstBaseSrcClass parent_class;
+
+  /// GstPushSrcClass::create:
+  /// @buf: (inout) (nullable):
+  ///
+  /// Ask the subclass to create a buffer, the default implementation will call alloc if
+  /// no allocated @buf is provided and then call fill.
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstPushSrc> src,
+              ffi.Pointer<ffi.Pointer<GstBuffer>> buf)>> create;
+
+  /// GstPushSrcClass::alloc:
+  /// @buf: (out) (nullable):
+  ///
+  /// Allocate memory for a buffer.
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstPushSrc> src,
+              ffi.Pointer<ffi.Pointer<GstBuffer>> buf)>> alloc;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(
+              ffi.Pointer<GstPushSrc> src, ffi.Pointer<GstBuffer> buf)>> fill;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstBaseSrcClass = _GstBaseSrcClass;
+typedef GstPushSrc = _GstPushSrc;
+
+final class _GstAppSrc extends ffi.Struct {
+  external GstBaseSrc basesrc;
+
+  external ffi.Pointer<GstAppSrcPrivate> priv;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstAppSrcPrivate = _GstAppSrcPrivate;
+
+final class _GstAppSrcPrivate extends ffi.Opaque {}
+
+final class _GstAppSrcClass extends ffi.Struct {
+  external GstBaseSrcClass basesrc_class;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Void Function(
+                  ffi.Pointer<GstAppSrc> appsrc, ffi.UnsignedInt length)>>
+      need_data;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GstAppSrc> appsrc)>>
+      enough_data;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstAppSrc> appsrc, ffi.Uint64 offset)>> seek_data;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstAppSrc> appsrc,
+              ffi.Pointer<GstBuffer> buffer)>> push_buffer;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<GstAppSrc> appsrc)>>
+      end_of_stream;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstAppSrc> appsrc,
+              ffi.Pointer<GstSample> sample)>> push_sample;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstAppSrc> appsrc,
+              ffi.Pointer<GstBufferList> buffer_list)>> push_buffer_list;
+
+  @ffi.Array.multi([2])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstAppSrc = _GstAppSrc;
+
+/// GstAppSrcCallbacks: (skip)
+/// @need_data: Called when the appsrc needs more data. A buffer or EOS should be
+/// pushed to appsrc from this thread or another thread. @length is just a hint
+/// and when it is set to -1, any number of bytes can be pushed into @appsrc.
+/// @enough_data: Called when appsrc has enough data. It is recommended that the
+/// application stops calling push-buffer until the need_data callback is
+/// emitted again to avoid excessive buffer queueing.
+/// @seek_data: Called when a seek should be performed to the offset.
+/// The next push-buffer should produce buffers from the new @offset.
+/// This callback is only called for seekable stream types.
+///
+/// A set of callbacks that can be installed on the appsrc with
+/// gst_app_src_set_callbacks().
+final class GstAppSrcCallbacks extends ffi.Struct {
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<GstAppSrc> src, ffi.UnsignedInt length,
+              ffi.Pointer user_data)>> need_data;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstAppSrc> src, ffi.Pointer user_data)>> enough_data;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(ffi.Pointer<GstAppSrc> src, ffi.Uint64 offset,
+              ffi.Pointer user_data)>> seek_data;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+/// GstAppStreamType:
+/// @GST_APP_STREAM_TYPE_STREAM: No seeking is supported in the stream, such as a
+/// live stream.
+/// @GST_APP_STREAM_TYPE_SEEKABLE: The stream is seekable but seeking might not
+/// be very fast, such as data from a webserver.
+/// @GST_APP_STREAM_TYPE_RANDOM_ACCESS: The stream is seekable and seeking is fast,
+/// such as in a local file.
+///
+/// The stream type.
+abstract class GstAppStreamType {
+  static const int GST_APP_STREAM_TYPE_STREAM = 0;
+  static const int GST_APP_STREAM_TYPE_SEEKABLE = 1;
+  static const int GST_APP_STREAM_TYPE_RANDOM_ACCESS = 2;
+}
+
+/// GstAppLeakyType:
+/// @GST_APP_LEAKY_TYPE_NONE: Not Leaky
+/// @GST_APP_LEAKY_TYPE_UPSTREAM: Leaky on upstream (new buffers)
+/// @GST_APP_LEAKY_TYPE_DOWNSTREAM: Leaky on downstream (old buffers)
+///
+/// Buffer dropping scheme to avoid the element's internal queue to block when
+/// full.
+///
+/// Since: 1.20
+abstract class GstAppLeakyType {
+  static const int GST_APP_LEAKY_TYPE_NONE = 0;
+  static const int GST_APP_LEAKY_TYPE_UPSTREAM = 1;
+  static const int GST_APP_LEAKY_TYPE_DOWNSTREAM = 2;
+}
+
+/// GstBaseSink:
+///
+/// The opaque #GstBaseSink data structure.
+final class _GstBaseSink extends ffi.Struct {
+  external GstElement element;
+
+  external ffi.Pointer<GstPad> sinkpad;
+
+  @ffi.Int32()
+  external int pad_mode;
+
+  @ffi.Uint64()
+  external int offset;
+
+  @ffi.Int()
+  external int can_activate_pull;
+
+  @ffi.Int()
+  external int can_activate_push;
+
+  external GMutex preroll_lock;
+
+  external GCond preroll_cond;
+
+  @ffi.Int()
+  external int eos;
+
+  @ffi.Int()
+  external int need_preroll;
+
+  @ffi.Int()
+  external int have_preroll;
+
+  @ffi.Int()
+  external int playing_async;
+
+  @ffi.Int()
+  external int have_newsegment;
+
+  external GstSegment segment;
+
+  external GstClockID clock_id;
+
+  @ffi.Int()
+  external int sync1;
+
+  @ffi.Int()
+  external int flushing;
+
+  @ffi.Int()
+  external int running;
+
+  @ffi.Int64()
+  external int max_lateness;
+
+  external ffi.Pointer<GstBaseSinkPrivate> priv;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstBaseSinkPrivate = _GstBaseSinkPrivate;
+
+final class _GstBaseSinkPrivate extends ffi.Opaque {}
+
+/// GstBaseSinkClass:
+/// @parent_class: Element parent class
+/// @get_caps: Called to get sink pad caps from the subclass
+/// @set_caps: Notify subclass of changed caps
+/// @fixate: Only useful in pull mode. Implement if you have
+/// ideas about what should be the default values for the caps you support.
+/// @activate_pull: Subclasses should override this when they can provide an
+/// alternate method of spawning a thread to drive the pipeline in pull mode.
+/// Should start or stop the pulling thread, depending on the value of the
+/// "active" argument. Called after actually activating the sink pad in pull
+/// mode. The default implementation starts a task on the sink pad.
+/// @get_times: Called to get the start and end times for synchronising
+/// the passed buffer to the clock
+/// @propose_allocation: configure the allocation query
+/// @start: Start processing. Ideal for opening resources in the subclass
+/// @stop: Stop processing. Subclasses should use this to close resources.
+/// @unlock: Unlock any pending access to the resource. Subclasses should
+/// unblock any blocked function ASAP and call gst_base_sink_wait_preroll()
+/// @unlock_stop: Clear the previous unlock request. Subclasses should clear
+/// any state they set during #GstBaseSinkClass::unlock, and be ready to
+/// continue where they left off after gst_base_sink_wait_preroll(),
+/// gst_base_sink_wait() or gst_wait_sink_wait_clock() return or
+/// #GstBaseSinkClass::render is called again.
+/// @query: perform a #GstQuery on the element.
+/// @event: Override this to handle events arriving on the sink pad
+/// @wait_event: Override this to implement custom logic to wait for the event
+/// time (for events like EOS and GAP). Subclasses should always first
+/// chain up to the default implementation.
+/// @prepare: Called to prepare the buffer for @render and @preroll. This
+/// function is called before synchronisation is performed.
+/// @prepare_list: Called to prepare the buffer list for @render_list. This
+/// function is called before synchronisation is performed.
+/// @preroll: Called to present the preroll buffer if desired.
+/// @render: Called when a buffer should be presented or output, at the
+/// correct moment if the #GstBaseSink has been set to sync to the clock.
+/// @render_list: Same as @render but used with buffer lists instead of
+/// buffers.
+///
+/// Subclasses can override any of the available virtual methods or not, as
+/// needed. At the minimum, the @render method should be overridden to
+/// output/present buffers.
+final class _GstBaseSinkClass extends ffi.Struct {
+  external GstElementClass parent_class;
+
+  /// GstBaseSinkClass::get_caps:
+  /// @filter: (in) (nullable):
+  ///
+  /// Called to get sink pad caps from the subclass.
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Pointer<GstCaps> Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstCaps> filter)>>
+      get_caps;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstCaps> caps)>>
+      set_caps;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Pointer<GstCaps> Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstCaps> caps)>>
+      fixate;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(ffi.Pointer<GstBaseSink> sink, ffi.Int active)>>
+      activate_pull;
+
+  /// GstBaseSinkClass::get_times:
+  /// @start: (out): the start #GstClockTime
+  /// @end: (out): the end #GstClockTime
+  ///
+  /// Get the start and end times for syncing on this buffer.
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstBaseSink> sink,
+              ffi.Pointer<GstBuffer> buffer,
+              ffi.Pointer<GstClockTime> start,
+              ffi.Pointer<GstClockTime> end)>> get_times;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstQuery> query)>>
+      propose_allocation;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink> sink)>>
+      start;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink> sink)>> stop;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink> sink)>>
+      unlock;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GstBaseSink> sink)>>
+      unlock_stop;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstQuery> query)>>
+      query;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstEvent> event)>>
+      event;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int32 Function(
+                  ffi.Pointer<GstBaseSink> sink, ffi.Pointer<GstEvent> event)>>
+      wait_event;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink> sink,
+              ffi.Pointer<GstBuffer> buffer)>> prepare;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink> sink,
+              ffi.Pointer<GstBufferList> buffer_list)>> prepare_list;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink> sink,
+              ffi.Pointer<GstBuffer> buffer)>> preroll;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink> sink,
+              ffi.Pointer<GstBuffer> buffer)>> render;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int32 Function(ffi.Pointer<GstBaseSink> sink,
+              ffi.Pointer<GstBufferList> buffer_list)>> render_list;
+
+  @ffi.Array.multi([20])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstBaseSink = _GstBaseSink;
+
+final class _GstAppSink extends ffi.Struct {
+  external GstBaseSink basesink;
+
+  external ffi.Pointer<GstAppSinkPrivate> priv;
+
+  @ffi.Array.multi([4])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstAppSinkPrivate = _GstAppSinkPrivate;
+
+final class _GstAppSinkPrivate extends ffi.Opaque {}
+
+final class _GstAppSinkClass extends ffi.Struct {
+  external GstBaseSinkClass basesink_class;
+
+  external ffi.Pointer<
+      ffi
+      .NativeFunction<ffi.Void Function(ffi.Pointer<GstAppSink> appsink)>> eos;
+
+  external ffi.Pointer<
+          ffi
+          .NativeFunction<ffi.Int32 Function(ffi.Pointer<GstAppSink> appsink)>>
+      new_preroll;
+
+  external ffi.Pointer<
+          ffi
+          .NativeFunction<ffi.Int32 Function(ffi.Pointer<GstAppSink> appsink)>>
+      new_sample;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Pointer<GstSample> Function(ffi.Pointer<GstAppSink> appsink)>>
+      pull_preroll;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Pointer<GstSample> Function(ffi.Pointer<GstAppSink> appsink)>>
+      pull_sample;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Pointer<GstSample> Function(
+                  ffi.Pointer<GstAppSink> appsink, GstClockTime timeout)>>
+      try_pull_preroll;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Pointer<GstSample> Function(
+                  ffi.Pointer<GstAppSink> appsink, GstClockTime timeout)>>
+      try_pull_sample;
+
+  /// GstAppSinkClass::try_pull_object:
+  ///
+  /// See #GstAppSink::try-pull-object: signal.
+  ///
+  /// Since: 1.20
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Pointer<GstMiniObject> Function(
+                  ffi.Pointer<GstAppSink> appsink, GstClockTime timeout)>>
+      try_pull_object;
+
+  @ffi.Array.multi([1])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
+typedef GstBaseSinkClass = _GstBaseSinkClass;
+typedef GstAppSink = _GstAppSink;
+
+/// GstAppSinkCallbacks: (skip)
+/// @eos: Called when the end-of-stream has been reached. This callback
+/// is called from the streaming thread.
+/// @new_preroll: Called when a new preroll sample is available.
+/// This callback is called from the streaming thread.
+/// The new preroll sample can be retrieved with
+/// gst_app_sink_pull_preroll() either from this callback
+/// or from any other thread.
+/// @new_sample: Called when a new sample is available.
+/// This callback is called from the streaming thread.
+/// The new sample can be retrieved with
+/// gst_app_sink_pull_sample() either from this callback
+/// or from any other thread.
+/// @new_event: Called when a new event is available.
+/// This callback is called from the streaming thread.
+/// The new event can be retrieved with
+/// gst_app_sink_pull_event() either from this callback
+/// or from any other thread.
+/// The callback should return %TRUE if the event has been handled,
+/// %FALSE otherwise.
+/// Since: 1.20
+/// @propose_allocation: Called when the propose_allocation query is available.
+/// This callback is called from the streaming thread.
+/// The allocation query can be retrieved with
+/// gst_app_sink_propose_allocation() either from this callback
+/// or from any other thread.
+/// Since: 1.24
+///
+/// A set of callbacks that can be installed on the appsink with
+/// gst_app_sink_set_callbacks().
+final class GstAppSinkCallbacks extends ffi.Struct {
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Void Function(
+              ffi.Pointer<GstAppSink> appsink, ffi.Pointer user_data)>> eos;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int32 Function(
+                  ffi.Pointer<GstAppSink> appsink, ffi.Pointer user_data)>>
+      new_preroll;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int32 Function(
+                  ffi.Pointer<GstAppSink> appsink, ffi.Pointer user_data)>>
+      new_sample;
+
+  external ffi.Pointer<
+          ffi.NativeFunction<
+              ffi.Int Function(
+                  ffi.Pointer<GstAppSink> appsink, ffi.Pointer user_data)>>
+      new_event;
+
+  external ffi.Pointer<
+      ffi.NativeFunction<
+          ffi.Int Function(
+              ffi.Pointer<GstAppSink> appsink,
+              ffi.Pointer<GstQuery> query,
+              ffi.Pointer user_data)>> propose_allocation;
+
+  @ffi.Array.multi([2])
+  external ffi.Array<ffi.Pointer> _gst_reserved;
+}
+
 const int SI_ASYNCNL = -60;
 
 const int SI_DETHREAD = -7;
@@ -91330,7 +93973,7 @@ const String G_GNUC_PRETTY_FUNCTION = '';
 
 const int G_ANALYZER_ANALYZING = 0;
 
-const String G_STRLOC = '/tmp/JBYBXU/temp_for_macros.hpp:46';
+const String G_STRLOC = '/tmp/TIHUOR/temp_for_macros.hpp:48';
 
 const int FALSE = 0;
 
@@ -93460,3 +96103,5 @@ const int GST_SEQNUM_INVALID = 0;
 const int GST_GROUP_ID_INVALID = 0;
 
 const int GST_MESSAGE_DURATION = 262144;
+
+const int GST_BASE_SINK_FLOW_DROPPED = 100;

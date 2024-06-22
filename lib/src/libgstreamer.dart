@@ -91065,7 +91065,7 @@ const String G_GNUC_PRETTY_FUNCTION = '';
 
 const int G_ANALYZER_ANALYZING = 0;
 
-const String G_STRLOC = '/tmp/WWQCID/temp_for_macros.hpp:46';
+const String G_STRLOC = '/tmp/YXQSOM/temp_for_macros.hpp:46';
 
 const int FALSE = 0;
 
@@ -92801,7 +92801,7 @@ const int GST_VERSION_MAJOR = 1;
 
 const int GST_VERSION_MINOR = 24;
 
-const int GST_VERSION_MICRO = 3;
+const int GST_VERSION_MICRO = 5;
 
 const int GST_VERSION_NANO = 0;
 

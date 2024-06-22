@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
+set -euxo pipefail
 
-dart run ffigen --config libgstreamer.yaml
+for file in lib/src/*.yaml; do
+  dart run ffigen --config "$file"
+done

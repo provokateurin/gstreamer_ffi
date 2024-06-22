@@ -1,6 +1,6 @@
 name: LibGStreamer
 description: Bindings to libgstreamer
-output: 'lib/src/libgstreamer.dart'
+output: 'libgstreamer.dart'
 headers:
   entry-points:
     - '/usr/include/gstreamer-1.0/gst/gst.h'

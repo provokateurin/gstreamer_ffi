@@ -12,6 +12,12 @@ compiler-opts:
 macros:
   exclude:
     - G_STRLOC # Changes every time
+silence-enum-warning: true
+enums:
+  as-int:
+    include:
+      - GstMessageType
+      - GstDebugLevel
 type-map:
   'typedefs':
      # GLib mappings from https://docs.gtk.org/glib/types.html

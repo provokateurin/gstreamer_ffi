@@ -9,4 +9,4 @@ dependencies:
   image: ^4.2.0
 
 dev_dependencies:
-  ffigen: ^12.0.0
+  ffigen: ^16.1.0

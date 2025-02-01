@@ -46,7 +46,8 @@ class LibGStreamer {
     _gst.gst_object_unref(object);
   }
 
-  int gst_element_set_state(Pointer<libgstreamer.GstElement> element, int state) {
+  libgstreamer.GstStateChangeReturn gst_element_set_state(
+      Pointer<libgstreamer.GstElement> element, libgstreamer.GstState state) {
     return _gst.gst_element_set_state(element, state);
   }
 
@@ -97,7 +98,7 @@ class LibGStreamer {
     Pointer<libgstreamer.GstMapInfo> info,
   }) gst_buffer_map(
     Pointer<libgstreamer.GstBuffer> buffer,
-    int flags,
+    libgstreamer.GstMapFlags flags,
   ) {
     final _info = malloc<libgstreamer.GstMapInfo>();
 

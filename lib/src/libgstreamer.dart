@@ -91460,8 +91460,6 @@ const String G_GNUC_PRETTY_FUNCTION = '';
 
 const int G_ANALYZER_ANALYZING = 0;
 
-const String G_STRLOC = '/tmp/USLZCO/temp_for_macros.hpp:47';
-
 const int FALSE = 0;
 
 const int TRUE = 1;

@@ -106972,8 +106972,6 @@ const String G_GNUC_PRETTY_FUNCTION = '';
 
 const int G_ANALYZER_ANALYZING = 0;
 
-const String G_STRLOC = '/tmp/EAYLLO/temp_for_macros.hpp:48';
-
 const int FALSE = 0;
 
 const int TRUE = 1;

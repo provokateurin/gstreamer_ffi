@@ -1,7 +1,9 @@
 let
-  pkgs = import (fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/44c08bcfd7a9cd4886eac068b81d94f58275de75.zip";
-  }) {};
+  pkgs = import
+    (fetchTarball {
+      url = "https://github.com/NixOS/nixpkgs/archive/44c08bcfd7a9cd4886eac068b81d94f58275de75.zip";
+    })
+    { };
 in
 with pkgs; stdenv.mkDerivation {
   name = "gstreamer_ffi";
@@ -37,17 +39,17 @@ with pkgs; stdenv.mkDerivation {
       cd $out
 
       ${lib.strings.concatStringsSep "\n" (
-        lib.attrsets.mapAttrsToList(name: entrypoint:
+        map(item:
          let config_file = pkgs.writeText "config.yaml" ''
-           name: ${name}
-           description: Bindings to ${name}
-           output: '/tmp/${name}.dart'
+           name: ${item.name}
+           description: Bindings to ${item.name}
+           output: '/tmp/${item.name}.dart'
            silence-enum-warning: true
            llvm-path:
              - '${pkgs.libclang.lib}/lib/libclang.so'
            headers:
              entry-points:
-               - "${entrypoint}"
+               - "${item.entrypoint}"
            macros:
              exclude:
                - G_STRLOC # Changes every time
@@ -162,15 +164,24 @@ with pkgs; stdenv.mkDerivation {
                  'dart-type': 'int'
          '';
        in ''
-        # ${name}
+        # ${item.name}
         ${lib.getExe ffigen} --compiler-opts='${compiler_opts}' --config ${config_file}
-        cp /tmp/${name}.dart $out
+        cp /tmp/${item.name}.dart $out
         '')
-          {
-            libgstreamer = "${pkgs.gst_all_1.gstreamer.dev}/include/gstreamer-1.0/gst/gst.h";
-            libgstapp = "${pkgs.gst_all_1.gst-plugins-base.dev}/include/gstreamer-1.0/gst/app/app.h";
-            libgstvideo = "${pkgs.gst_all_1.gst-plugins-base.dev}/include/gstreamer-1.0/gst/video/video.h";
-          }
+          [
+            {
+              name = "libgstreamer";
+              entrypoint = "${pkgs.gst_all_1.gstreamer.dev}/include/gstreamer-1.0/gst/gst.h";
+            }
+            {
+              name = "libgstapp";
+              entrypoint = "${pkgs.gst_all_1.gst-plugins-base.dev}/include/gstreamer-1.0/gst/app/app.h";
+            }
+            {
+              name = "libgstvideo";
+              entrypoint = "${pkgs.gst_all_1.gst-plugins-base.dev}/include/gstreamer-1.0/gst/video/video.h";
+            }
+          ]
       )}
     '';
 }

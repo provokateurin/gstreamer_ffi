@@ -8,9 +8,9 @@ export 'src/libgstreamer.dart'
     show GstState, GST_CLOCK_TIME_NONE, GstMessageType, GstBin, GstElement, GstSample, GstMapFlags, GstMiniObject;
 
 class LibGStreamer {
-  LibGStreamer(DynamicLibrary dylib) : _gst = libgstreamer.LibGStreamer(dylib);
+  LibGStreamer(DynamicLibrary dylib) : _gst = libgstreamer.libgstreamer(dylib);
 
-  final libgstreamer.LibGStreamer _gst;
+  final libgstreamer.libgstreamer _gst;
 
   void gst_init() {
     // TODO: Allow passing args

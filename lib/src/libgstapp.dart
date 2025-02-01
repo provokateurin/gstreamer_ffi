@@ -5,17 +5,17 @@
 import 'dart:ffi' as ffi;
 
 /// Bindings to libgstapp
-class LibGstApp {
+class libgstapp {
   /// Holds the symbol lookup function.
   final ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
       _lookup;
 
   /// The symbols are looked up in [dynamicLibrary].
-  LibGstApp(ffi.DynamicLibrary dynamicLibrary)
+  libgstapp(ffi.DynamicLibrary dynamicLibrary)
       : _lookup = dynamicLibrary.lookup;
 
   /// The symbols are looked up with [lookup].
-  LibGstApp.fromLookup(
+  libgstapp.fromLookup(
       ffi.Pointer<T> Function<T extends ffi.NativeType>(String symbolName)
           lookup)
       : _lookup = lookup;
@@ -99617,7 +99617,7 @@ const int GST_PADDING = 4;
 
 const int GST_PADDING_LARGE = 20;
 
-const int GST_DISABLE_CAST_CHECKS = 1;
+const int GST_DISABLE_CAST_CHECKS = 0;
 
 const int GST_DISABLE_GLIB_ASSERTS = 0;
 
@@ -99629,7 +99629,7 @@ const int GST_VERSION_MAJOR = 1;
 
 const int GST_VERSION_MINOR = 24;
 
-const int GST_VERSION_MICRO = 12;
+const int GST_VERSION_MICRO = 10;
 
 const int GST_VERSION_NANO = 0;
 

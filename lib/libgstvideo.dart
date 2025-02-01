@@ -7,9 +7,9 @@ import 'src/libgstvideo.dart' as libgstvideo;
 export 'src/libgstvideo.dart' show GstCaps;
 
 class LibGstVideo {
-  LibGstVideo(DynamicLibrary dylib) : _gstvideo = libgstvideo.LibGstVideo(dylib);
+  LibGstVideo(DynamicLibrary dylib) : _gstvideo = libgstvideo.libgstvideo(dylib);
 
-  final libgstvideo.LibGstVideo _gstvideo;
+  final libgstvideo.libgstvideo _gstvideo;
 
   ({
     int success,

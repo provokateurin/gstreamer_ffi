@@ -71109,7 +71109,7 @@ class libgstvideo {
 
   void gst_debug_log(
     ffi.Pointer<GstDebugCategory> category,
-    int level,
+    GstDebugLevel level,
     ffi.Pointer<ffi.Char> file,
     ffi.Pointer<ffi.Char> function,
     int line,
@@ -71118,7 +71118,7 @@ class libgstvideo {
   ) {
     return _gst_debug_log(
       category,
-      level,
+      level.value,
       file,
       function,
       line,
@@ -71149,7 +71149,7 @@ class libgstvideo {
 
   void gst_debug_log_valist(
     ffi.Pointer<GstDebugCategory> category,
-    int level,
+    GstDebugLevel level,
     ffi.Pointer<ffi.Char> file,
     ffi.Pointer<ffi.Char> function,
     int line,
@@ -71159,7 +71159,7 @@ class libgstvideo {
   ) {
     return _gst_debug_log_valist(
       category,
-      level,
+      level.value,
       file,
       function,
       line,
@@ -71193,7 +71193,7 @@ class libgstvideo {
 
   void gst_debug_log_literal(
     ffi.Pointer<GstDebugCategory> category,
-    int level,
+    GstDebugLevel level,
     ffi.Pointer<ffi.Char> file,
     ffi.Pointer<ffi.Char> function,
     int line,
@@ -71202,7 +71202,7 @@ class libgstvideo {
   ) {
     return _gst_debug_log_literal(
       category,
-      level,
+      level.value,
       file,
       function,
       line,
@@ -71233,7 +71233,7 @@ class libgstvideo {
 
   void gst_debug_log_id(
     ffi.Pointer<GstDebugCategory> category,
-    int level,
+    GstDebugLevel level,
     ffi.Pointer<ffi.Char> file,
     ffi.Pointer<ffi.Char> function,
     int line,
@@ -71242,7 +71242,7 @@ class libgstvideo {
   ) {
     return _gst_debug_log_id(
       category,
-      level,
+      level.value,
       file,
       function,
       line,
@@ -71273,7 +71273,7 @@ class libgstvideo {
 
   void gst_debug_log_id_valist(
     ffi.Pointer<GstDebugCategory> category,
-    int level,
+    GstDebugLevel level,
     ffi.Pointer<ffi.Char> file,
     ffi.Pointer<ffi.Char> function,
     int line,
@@ -71283,7 +71283,7 @@ class libgstvideo {
   ) {
     return _gst_debug_log_id_valist(
       category,
-      level,
+      level.value,
       file,
       function,
       line,
@@ -71317,7 +71317,7 @@ class libgstvideo {
 
   void gst_debug_log_id_literal(
     ffi.Pointer<GstDebugCategory> category,
-    int level,
+    GstDebugLevel level,
     ffi.Pointer<ffi.Char> file,
     ffi.Pointer<ffi.Char> function,
     int line,
@@ -71326,7 +71326,7 @@ class libgstvideo {
   ) {
     return _gst_debug_log_id_literal(
       category,
-      level,
+      level.value,
       file,
       function,
       line,
@@ -71545,7 +71545,7 @@ class libgstvideo {
 
   ffi.Pointer<ffi.Char> gst_debug_log_get_line(
     ffi.Pointer<GstDebugCategory> category,
-    int level,
+    GstDebugLevel level,
     ffi.Pointer<ffi.Char> file,
     ffi.Pointer<ffi.Char> function,
     int line,
@@ -71554,7 +71554,7 @@ class libgstvideo {
   ) {
     return _gst_debug_log_get_line(
       category,
-      level,
+      level.value,
       file,
       function,
       line,
@@ -71585,7 +71585,7 @@ class libgstvideo {
 
   void gst_debug_log_default(
     ffi.Pointer<GstDebugCategory> category,
-    int level,
+    GstDebugLevel level,
     ffi.Pointer<ffi.Char> file,
     ffi.Pointer<ffi.Char> function,
     int line,
@@ -71595,7 +71595,7 @@ class libgstvideo {
   ) {
     return _gst_debug_log_default(
       category,
-      level,
+      level.value,
       file,
       function,
       line,
@@ -71628,10 +71628,10 @@ class libgstvideo {
           ffi.Pointer)>();
 
   ffi.Pointer<ffi.Char> gst_debug_level_get_name(
-    int level,
+    GstDebugLevel level,
   ) {
     return _gst_debug_level_get_name(
-      level,
+      level.value,
     );
   }
 
@@ -71775,10 +71775,10 @@ class libgstvideo {
       _gst_debug_get_color_modePtr.asFunction<int Function()>();
 
   void gst_debug_set_default_threshold(
-    int level,
+    GstDebugLevel level,
   ) {
     return _gst_debug_set_default_threshold(
-      level,
+      level.value,
     );
   }
 
@@ -71788,8 +71788,8 @@ class libgstvideo {
   late final _gst_debug_set_default_threshold =
       _gst_debug_set_default_thresholdPtr.asFunction<void Function(int)>();
 
-  int gst_debug_get_default_threshold() {
-    return _gst_debug_get_default_threshold();
+  GstDebugLevel gst_debug_get_default_threshold() {
+    return GstDebugLevel.fromValue(_gst_debug_get_default_threshold());
   }
 
   late final _gst_debug_get_default_thresholdPtr =
@@ -71800,11 +71800,11 @@ class libgstvideo {
 
   void gst_debug_set_threshold_for_name(
     ffi.Pointer<ffi.Char> name,
-    int level,
+    GstDebugLevel level,
   ) {
     return _gst_debug_set_threshold_for_name(
       name,
-      level,
+      level.value,
     );
   }
 
@@ -71865,11 +71865,11 @@ class libgstvideo {
 
   void gst_debug_category_set_threshold(
     ffi.Pointer<GstDebugCategory> category,
-    int level,
+    GstDebugLevel level,
   ) {
     return _gst_debug_category_set_threshold(
       category,
-      level,
+      level.value,
     );
   }
 
@@ -71896,12 +71896,12 @@ class libgstvideo {
       _gst_debug_category_reset_thresholdPtr
           .asFunction<void Function(ffi.Pointer<GstDebugCategory>)>();
 
-  int gst_debug_category_get_threshold(
+  GstDebugLevel gst_debug_category_get_threshold(
     ffi.Pointer<GstDebugCategory> category,
   ) {
-    return _gst_debug_category_get_threshold(
+    return GstDebugLevel.fromValue(_gst_debug_category_get_threshold(
       category,
-    );
+    ));
   }
 
   late final _gst_debug_category_get_thresholdPtr = _lookup<
@@ -72130,9 +72130,13 @@ class libgstvideo {
   late final ffi.Pointer<ffi.UnsignedInt> __gst_debug_min =
       _lookup<ffi.UnsignedInt>('_gst_debug_min');
 
-  int get _gst_debug_min => __gst_debug_min.value;
+  GstDebugLevel get _gst_debug_min =>
+      GstDebugLevel.fromValue(__gst_debug_min.value);
 
-  set _gst_debug_min(int value) => __gst_debug_min.value = value;
+  set _gst_debug_min(GstDebugLevel value) {
+    //GstDebugLevel.fromValue(__gst_debug_min.value).ref.release();
+    __gst_debug_min.value = value.value;
+  }
 
   void gst_debug_print_stack_trace() {
     return _gst_debug_print_stack_trace();
@@ -104335,17 +104339,34 @@ typedef GstProxyPad_queueautoptr = ffi.Pointer<GQueue>;
 ///
 /// The level defines the importance of a debugging message. The more important a
 /// message is, the greater the probability that the debugging system outputs it.
-sealed class GstDebugLevel {
-  static const GST_LEVEL_NONE = 0;
-  static const GST_LEVEL_ERROR = 1;
-  static const GST_LEVEL_WARNING = 2;
-  static const GST_LEVEL_FIXME = 3;
-  static const GST_LEVEL_INFO = 4;
-  static const GST_LEVEL_DEBUG = 5;
-  static const GST_LEVEL_LOG = 6;
-  static const GST_LEVEL_TRACE = 7;
-  static const GST_LEVEL_MEMDUMP = 9;
-  static const GST_LEVEL_COUNT = 10;
+enum GstDebugLevel {
+  GST_LEVEL_NONE(0),
+  GST_LEVEL_ERROR(1),
+  GST_LEVEL_WARNING(2),
+  GST_LEVEL_FIXME(3),
+  GST_LEVEL_INFO(4),
+  GST_LEVEL_DEBUG(5),
+  GST_LEVEL_LOG(6),
+  GST_LEVEL_TRACE(7),
+  GST_LEVEL_MEMDUMP(9),
+  GST_LEVEL_COUNT(10);
+
+  final int value;
+  const GstDebugLevel(this.value);
+
+  static GstDebugLevel fromValue(int value) => switch (value) {
+        0 => GST_LEVEL_NONE,
+        1 => GST_LEVEL_ERROR,
+        2 => GST_LEVEL_WARNING,
+        3 => GST_LEVEL_FIXME,
+        4 => GST_LEVEL_INFO,
+        5 => GST_LEVEL_DEBUG,
+        6 => GST_LEVEL_LOG,
+        7 => GST_LEVEL_TRACE,
+        9 => GST_LEVEL_MEMDUMP,
+        10 => GST_LEVEL_COUNT,
+        _ => throw ArgumentError("Unknown value for GstDebugLevel: $value"),
+      };
 }
 
 /// GstDebugColorFlags:
@@ -104501,7 +104522,7 @@ typedef GstLogFunctionFunction = ffi.Void Function(
     ffi.Pointer user_data);
 typedef DartGstLogFunctionFunction = void Function(
     ffi.Pointer<GstDebugCategory> category,
-    int level,
+    GstDebugLevel level,
     ffi.Pointer<ffi.Char> file,
     ffi.Pointer<ffi.Char> function,
     int line,

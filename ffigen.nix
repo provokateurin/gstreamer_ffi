@@ -57,7 +57,6 @@ with pkgs; stdenv.mkDerivation {
              as-int:
                include:
                  - GstMessageType
-                 - GstDebugLevel
            type-map:
              'typedefs':
                 # GLib mappings from https://docs.gtk.org/glib/types.html
@@ -166,6 +165,7 @@ with pkgs; stdenv.mkDerivation {
        in ''
         # ${item.name}
         ${lib.getExe ffigen} --compiler-opts='${compiler_opts}' --config ${config_file}
+        sed -i "s#GstDebugLevel.fromValue(__gst_debug_min.value).ref.release();#//GstDebugLevel.fromValue(__gst_debug_min.value).ref.release();#g" /tmp/${item.name}.dart
         cp /tmp/${item.name}.dart $out
         '')
           [

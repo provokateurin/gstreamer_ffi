@@ -70,7 +70,7 @@ appsink name=sink
       }
 
       final caps = gst.gst_sample_get_caps(sample);
-      final videoInfoResult = gstvideo.gst_video_info_from_caps(caps.cast<libgstvideo.GstCaps>());
+      final videoInfoResult = gstvideo.gst_video_info_from_caps(caps);
       if (videoInfoResult.success != 1) {
         throw Exception('Failed to get video info from caps');
       }

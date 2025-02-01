@@ -43,7 +43,13 @@ with pkgs; stdenv.mkDerivation {
          let config_file = pkgs.writeText "config.yaml" ''
            name: ${item.name}
            description: Bindings to ${item.name}
-           output: '/tmp/${item.name}.dart'
+           output:
+             bindings: '/tmp/${item.name}.dart'
+             symbol-file:
+               output: '/tmp/${item.name}.yaml'
+               import-path: '${item.name}.dart'
+           import:
+             symbol-files: [${if item.name == "libgstreamer" then "" else "\"/tmp/libgstreamer.yaml\""}]
            silence-enum-warning: true
            llvm-path:
              - '${pkgs.libclang.lib}/lib/libclang.so'
@@ -54,9 +60,35 @@ with pkgs; stdenv.mkDerivation {
              exclude:
                - G_STRLOC # Changes every time
            enums:
+             rename:
+               '(_+)(.*)': '$2_'
+             member-rename:
+               '.*':
+                 '(_+)(.*)': '$2_'
              as-int:
                include:
                  - GstMessageType
+           functions:
+             rename:
+               '(_+)(.*)': '$2_'
+           structs:
+             rename:
+               '(_+)(.*)': '$2_'
+             member-rename:
+               '.*':
+                 '(_+)(.*)': '$2_'
+           unions:
+             rename:
+               '(_+)(.*)': '$2_'
+             member-rename:
+               '.*':
+                 '(_+)(.*)': '$2_'
+           typedefs:
+             rename:
+               '(_+)(.*)': '$2_'
+           globals:
+             rename:
+               '(_+)(.*)': '$2_'
            type-map:
              'typedefs':
                 # GLib mappings from https://docs.gtk.org/glib/types.html
@@ -165,8 +197,9 @@ with pkgs; stdenv.mkDerivation {
        in ''
         # ${item.name}
         ${lib.getExe ffigen} --compiler-opts='${compiler_opts}' --config ${config_file}
-        sed -i "s#GstDebugLevel.fromValue(__gst_debug_min.value).ref.release();#//GstDebugLevel.fromValue(__gst_debug_min.value).ref.release();#g" /tmp/${item.name}.dart
+        sed -i "s#GstDebugLevel.fromValue(_gst_debug_min_.value).ref.release();#//GstDebugLevel.fromValue(_gst_debug_min_.value).ref.release();#g" /tmp/${item.name}.dart
         cp /tmp/${item.name}.dart $out
+        cp /tmp/${item.name}.yaml $out
         '')
           [
             {
@@ -183,5 +216,6 @@ with pkgs; stdenv.mkDerivation {
             }
           ]
       )}
+      sed -i "s#external imp1.GstPad parent;#//external imp1.GstPad parent;#g" $out/libgstvideo.dart
     '';
 }

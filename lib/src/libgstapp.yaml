@@ -1,0 +1,418 @@
+format_version: 1.0.0
+files:
+  libgstapp.dart:
+    used-config:
+      ffi-native: false
+    symbols:
+      c:@EA@GstAppLeakyType:
+        name: GstAppLeakyType
+      c:@EA@GstAppStreamType:
+        name: GstAppStreamType
+      c:@EA@GstBaseSrcFlags:
+        name: GstBaseSrcFlags
+      c:@EA@GstClockReturn:
+        name: GstClockReturn
+      c:@EA@GstFlowReturn:
+        name: GstFlowReturn
+      c:@EA@GstFormat:
+        name: GstFormat
+      c:@EA@GstPadMode:
+        name: GstPadMode
+      c:@F@gst_app_leaky_type_get_type:
+        name: gst_app_leaky_type_get_type
+      c:@F@gst_app_sink_get_buffer_list_support:
+        name: gst_app_sink_get_buffer_list_support
+      c:@F@gst_app_sink_get_caps:
+        name: gst_app_sink_get_caps
+      c:@F@gst_app_sink_get_drop:
+        name: gst_app_sink_get_drop
+      c:@F@gst_app_sink_get_emit_signals:
+        name: gst_app_sink_get_emit_signals
+      c:@F@gst_app_sink_get_max_buffers:
+        name: gst_app_sink_get_max_buffers
+      c:@F@gst_app_sink_get_max_bytes:
+        name: gst_app_sink_get_max_bytes
+      c:@F@gst_app_sink_get_max_time:
+        name: gst_app_sink_get_max_time
+      c:@F@gst_app_sink_get_type:
+        name: gst_app_sink_get_type
+      c:@F@gst_app_sink_get_wait_on_eos:
+        name: gst_app_sink_get_wait_on_eos
+      c:@F@gst_app_sink_is_eos:
+        name: gst_app_sink_is_eos
+      c:@F@gst_app_sink_pull_object:
+        name: gst_app_sink_pull_object
+      c:@F@gst_app_sink_pull_preroll:
+        name: gst_app_sink_pull_preroll
+      c:@F@gst_app_sink_pull_sample:
+        name: gst_app_sink_pull_sample
+      c:@F@gst_app_sink_set_buffer_list_support:
+        name: gst_app_sink_set_buffer_list_support
+      c:@F@gst_app_sink_set_callbacks:
+        name: gst_app_sink_set_callbacks
+      c:@F@gst_app_sink_set_caps:
+        name: gst_app_sink_set_caps
+      c:@F@gst_app_sink_set_drop:
+        name: gst_app_sink_set_drop
+      c:@F@gst_app_sink_set_emit_signals:
+        name: gst_app_sink_set_emit_signals
+      c:@F@gst_app_sink_set_max_buffers:
+        name: gst_app_sink_set_max_buffers
+      c:@F@gst_app_sink_set_max_bytes:
+        name: gst_app_sink_set_max_bytes
+      c:@F@gst_app_sink_set_max_time:
+        name: gst_app_sink_set_max_time
+      c:@F@gst_app_sink_set_wait_on_eos:
+        name: gst_app_sink_set_wait_on_eos
+      c:@F@gst_app_sink_try_pull_object:
+        name: gst_app_sink_try_pull_object
+      c:@F@gst_app_sink_try_pull_preroll:
+        name: gst_app_sink_try_pull_preroll
+      c:@F@gst_app_sink_try_pull_sample:
+        name: gst_app_sink_try_pull_sample
+      c:@F@gst_app_src_end_of_stream:
+        name: gst_app_src_end_of_stream
+      c:@F@gst_app_src_get_caps:
+        name: gst_app_src_get_caps
+      c:@F@gst_app_src_get_current_level_buffers:
+        name: gst_app_src_get_current_level_buffers
+      c:@F@gst_app_src_get_current_level_bytes:
+        name: gst_app_src_get_current_level_bytes
+      c:@F@gst_app_src_get_current_level_time:
+        name: gst_app_src_get_current_level_time
+      c:@F@gst_app_src_get_duration:
+        name: gst_app_src_get_duration
+      c:@F@gst_app_src_get_emit_signals:
+        name: gst_app_src_get_emit_signals
+      c:@F@gst_app_src_get_latency:
+        name: gst_app_src_get_latency
+      c:@F@gst_app_src_get_leaky_type:
+        name: gst_app_src_get_leaky_type
+      c:@F@gst_app_src_get_max_buffers:
+        name: gst_app_src_get_max_buffers
+      c:@F@gst_app_src_get_max_bytes:
+        name: gst_app_src_get_max_bytes
+      c:@F@gst_app_src_get_max_time:
+        name: gst_app_src_get_max_time
+      c:@F@gst_app_src_get_size:
+        name: gst_app_src_get_size
+      c:@F@gst_app_src_get_stream_type:
+        name: gst_app_src_get_stream_type
+      c:@F@gst_app_src_get_type:
+        name: gst_app_src_get_type
+      c:@F@gst_app_src_push_buffer:
+        name: gst_app_src_push_buffer
+      c:@F@gst_app_src_push_buffer_list:
+        name: gst_app_src_push_buffer_list
+      c:@F@gst_app_src_push_sample:
+        name: gst_app_src_push_sample
+      c:@F@gst_app_src_set_callbacks:
+        name: gst_app_src_set_callbacks
+      c:@F@gst_app_src_set_caps:
+        name: gst_app_src_set_caps
+      c:@F@gst_app_src_set_duration:
+        name: gst_app_src_set_duration
+      c:@F@gst_app_src_set_emit_signals:
+        name: gst_app_src_set_emit_signals
+      c:@F@gst_app_src_set_latency:
+        name: gst_app_src_set_latency
+      c:@F@gst_app_src_set_leaky_type:
+        name: gst_app_src_set_leaky_type
+      c:@F@gst_app_src_set_max_buffers:
+        name: gst_app_src_set_max_buffers
+      c:@F@gst_app_src_set_max_bytes:
+        name: gst_app_src_set_max_bytes
+      c:@F@gst_app_src_set_max_time:
+        name: gst_app_src_set_max_time
+      c:@F@gst_app_src_set_size:
+        name: gst_app_src_set_size
+      c:@F@gst_app_src_set_stream_type:
+        name: gst_app_src_set_stream_type
+      c:@F@gst_app_stream_type_get_type:
+        name: gst_app_stream_type_get_type
+      c:@F@gst_base_sink_do_preroll:
+        name: gst_base_sink_do_preroll
+      c:@F@gst_base_sink_get_blocksize:
+        name: gst_base_sink_get_blocksize
+      c:@F@gst_base_sink_get_drop_out_of_segment:
+        name: gst_base_sink_get_drop_out_of_segment
+      c:@F@gst_base_sink_get_last_sample:
+        name: gst_base_sink_get_last_sample
+      c:@F@gst_base_sink_get_latency:
+        name: gst_base_sink_get_latency
+      c:@F@gst_base_sink_get_max_bitrate:
+        name: gst_base_sink_get_max_bitrate
+      c:@F@gst_base_sink_get_max_lateness:
+        name: gst_base_sink_get_max_lateness
+      c:@F@gst_base_sink_get_processing_deadline:
+        name: gst_base_sink_get_processing_deadline
+      c:@F@gst_base_sink_get_render_delay:
+        name: gst_base_sink_get_render_delay
+      c:@F@gst_base_sink_get_stats:
+        name: gst_base_sink_get_stats
+      c:@F@gst_base_sink_get_sync:
+        name: gst_base_sink_get_sync
+      c:@F@gst_base_sink_get_throttle_time:
+        name: gst_base_sink_get_throttle_time
+      c:@F@gst_base_sink_get_ts_offset:
+        name: gst_base_sink_get_ts_offset
+      c:@F@gst_base_sink_get_type:
+        name: gst_base_sink_get_type
+      c:@F@gst_base_sink_is_async_enabled:
+        name: gst_base_sink_is_async_enabled
+      c:@F@gst_base_sink_is_last_sample_enabled:
+        name: gst_base_sink_is_last_sample_enabled
+      c:@F@gst_base_sink_is_qos_enabled:
+        name: gst_base_sink_is_qos_enabled
+      c:@F@gst_base_sink_query_latency:
+        name: gst_base_sink_query_latency
+      c:@F@gst_base_sink_set_async_enabled:
+        name: gst_base_sink_set_async_enabled
+      c:@F@gst_base_sink_set_blocksize:
+        name: gst_base_sink_set_blocksize
+      c:@F@gst_base_sink_set_drop_out_of_segment:
+        name: gst_base_sink_set_drop_out_of_segment
+      c:@F@gst_base_sink_set_last_sample_enabled:
+        name: gst_base_sink_set_last_sample_enabled
+      c:@F@gst_base_sink_set_max_bitrate:
+        name: gst_base_sink_set_max_bitrate
+      c:@F@gst_base_sink_set_max_lateness:
+        name: gst_base_sink_set_max_lateness
+      c:@F@gst_base_sink_set_processing_deadline:
+        name: gst_base_sink_set_processing_deadline
+      c:@F@gst_base_sink_set_qos_enabled:
+        name: gst_base_sink_set_qos_enabled
+      c:@F@gst_base_sink_set_render_delay:
+        name: gst_base_sink_set_render_delay
+      c:@F@gst_base_sink_set_sync:
+        name: gst_base_sink_set_sync
+      c:@F@gst_base_sink_set_throttle_time:
+        name: gst_base_sink_set_throttle_time
+      c:@F@gst_base_sink_set_ts_offset:
+        name: gst_base_sink_set_ts_offset
+      c:@F@gst_base_sink_wait:
+        name: gst_base_sink_wait
+      c:@F@gst_base_sink_wait_clock:
+        name: gst_base_sink_wait_clock
+      c:@F@gst_base_sink_wait_preroll:
+        name: gst_base_sink_wait_preroll
+      c:@F@gst_base_src_get_allocator:
+        name: gst_base_src_get_allocator
+      c:@F@gst_base_src_get_blocksize:
+        name: gst_base_src_get_blocksize
+      c:@F@gst_base_src_get_buffer_pool:
+        name: gst_base_src_get_buffer_pool
+      c:@F@gst_base_src_get_do_timestamp:
+        name: gst_base_src_get_do_timestamp
+      c:@F@gst_base_src_get_type:
+        name: gst_base_src_get_type
+      c:@F@gst_base_src_is_async:
+        name: gst_base_src_is_async
+      c:@F@gst_base_src_is_live:
+        name: gst_base_src_is_live
+      c:@F@gst_base_src_negotiate:
+        name: gst_base_src_negotiate
+      c:@F@gst_base_src_new_seamless_segment:
+        name: gst_base_src_new_seamless_segment
+      c:@F@gst_base_src_new_segment:
+        name: gst_base_src_new_segment
+      c:@F@gst_base_src_push_segment:
+        name: gst_base_src_push_segment
+      c:@F@gst_base_src_query_latency:
+        name: gst_base_src_query_latency
+      c:@F@gst_base_src_set_async:
+        name: gst_base_src_set_async
+      c:@F@gst_base_src_set_automatic_eos:
+        name: gst_base_src_set_automatic_eos
+      c:@F@gst_base_src_set_blocksize:
+        name: gst_base_src_set_blocksize
+      c:@F@gst_base_src_set_caps:
+        name: gst_base_src_set_caps
+      c:@F@gst_base_src_set_do_timestamp:
+        name: gst_base_src_set_do_timestamp
+      c:@F@gst_base_src_set_dynamic_size:
+        name: gst_base_src_set_dynamic_size
+      c:@F@gst_base_src_set_format:
+        name: gst_base_src_set_format
+      c:@F@gst_base_src_set_live:
+        name: gst_base_src_set_live
+      c:@F@gst_base_src_start_complete:
+        name: gst_base_src_start_complete
+      c:@F@gst_base_src_start_wait:
+        name: gst_base_src_start_wait
+      c:@F@gst_base_src_submit_buffer_list:
+        name: gst_base_src_submit_buffer_list
+      c:@F@gst_base_src_wait_playing:
+        name: gst_base_src_wait_playing
+      c:@F@gst_push_src_get_type:
+        name: gst_push_src_get_type
+      c:@S@_GstAppSink:
+        name: GstAppSink_
+      c:@S@_GstAppSinkClass:
+        name: GstAppSinkClass_
+      c:@S@_GstAppSinkPrivate:
+        name: GstAppSinkPrivate_
+      c:@S@_GstAppSrc:
+        name: GstAppSrc_
+      c:@S@_GstAppSrcClass:
+        name: GstAppSrcClass_
+      c:@S@_GstAppSrcPrivate:
+        name: GstAppSrcPrivate_
+      c:@S@_GstBaseSink:
+        name: GstBaseSink_
+      c:@S@_GstBaseSinkClass:
+        name: GstBaseSinkClass_
+      c:@S@_GstBaseSinkPrivate:
+        name: GstBaseSinkPrivate_
+      c:@S@_GstBaseSrc:
+        name: GstBaseSrc_
+      c:@S@_GstBaseSrcClass:
+        name: GstBaseSrcClass_
+      c:@S@_GstBaseSrcPrivate:
+        name: GstBaseSrcPrivate_
+      c:@S@_GstPushSrc:
+        name: GstPushSrc_
+      c:@S@_GstPushSrcClass:
+        name: GstPushSrcClass_
+      c:@SA@GstAppSinkCallbacks:
+        name: GstAppSinkCallbacks
+      c:@SA@GstAppSrcCallbacks:
+        name: GstAppSrcCallbacks
+      c:@T@GStaticMutex:
+        name: GStaticMutex
+      c:@T@GTestConfig:
+        name: GTestConfig
+      c:@T@GTestLogBuffer:
+        name: GTestLogBuffer
+      c:@T@GTestLogMsg:
+        name: GTestLogMsg
+      c:@T@GWeakRef:
+        name: GWeakRef
+      c:@T@GstCustomMeta:
+        name: GstCustomMeta
+      c:@T@GstMapInfo:
+        name: GstMapInfo
+      c:@T@GstMetaTransformCopy:
+        name: GstMetaTransformCopy
+      c:@T@GstPollFD:
+        name: GstPollFD
+      c:@T@__atomic_wide_counter:
+        name: atomic_wide_counter_
+      c:@T@__fsid_t:
+        name: fsid_t_
+      c:@T@__once_flag:
+        name: once_flag_
+      c:@T@__pthread_unwind_buf_t:
+        name: pthread_unwind_buf_t_
+      c:@T@__sigset_t:
+        name: sigset_t_
+      c:@T@cpu_set_t:
+        name: cpu_set_t
+      c:@T@div_t:
+        name: div_t
+      c:@T@fd_set:
+        name: fd_set
+      c:@T@ldiv_t:
+        name: ldiv_t
+      c:@T@lldiv_t:
+        name: lldiv_t
+      c:@T@max_align_t:
+        name: max_align_t
+      c:@T@mcontext_t:
+        name: mcontext_t
+      c:@T@pthread_barrier_t:
+        name: pthread_barrier_t
+      c:@T@pthread_barrierattr_t:
+        name: pthread_barrierattr_t
+      c:@T@pthread_cond_t:
+        name: pthread_cond_t
+      c:@T@pthread_condattr_t:
+        name: pthread_condattr_t
+      c:@T@pthread_mutex_t:
+        name: pthread_mutex_t
+      c:@T@pthread_mutexattr_t:
+        name: pthread_mutexattr_t
+      c:@T@pthread_rwlock_t:
+        name: pthread_rwlock_t
+      c:@T@pthread_rwlockattr_t:
+        name: pthread_rwlockattr_t
+      c:@T@siginfo_t:
+        name: siginfo_t
+      c:@T@stack_t:
+        name: stack_t
+      c:gstappsink.h@T@GstAppSink:
+        name: GstAppSink
+      c:gstappsink.h@T@GstAppSinkClass:
+        name: GstAppSinkClass
+      c:gstappsink.h@T@GstAppSinkPrivate:
+        name: GstAppSinkPrivate
+      c:gstappsink.h@T@GstAppSink_autoptr:
+        name: GstAppSink_autoptr
+      c:gstappsink.h@T@GstAppSink_listautoptr:
+        name: GstAppSink_listautoptr
+      c:gstappsink.h@T@GstAppSink_queueautoptr:
+        name: GstAppSink_queueautoptr
+      c:gstappsink.h@T@GstAppSink_slistautoptr:
+        name: GstAppSink_slistautoptr
+      c:gstappsrc.h@T@GstAppSrc:
+        name: GstAppSrc
+      c:gstappsrc.h@T@GstAppSrcClass:
+        name: GstAppSrcClass
+      c:gstappsrc.h@T@GstAppSrcPrivate:
+        name: GstAppSrcPrivate
+      c:gstappsrc.h@T@GstAppSrc_autoptr:
+        name: GstAppSrc_autoptr
+      c:gstappsrc.h@T@GstAppSrc_listautoptr:
+        name: GstAppSrc_listautoptr
+      c:gstappsrc.h@T@GstAppSrc_queueautoptr:
+        name: GstAppSrc_queueautoptr
+      c:gstappsrc.h@T@GstAppSrc_slistautoptr:
+        name: GstAppSrc_slistautoptr
+      c:gstbasesink.h@T@GstBaseSink:
+        name: GstBaseSink
+      c:gstbasesink.h@T@GstBaseSinkClass:
+        name: GstBaseSinkClass
+      c:gstbasesink.h@T@GstBaseSinkPrivate:
+        name: GstBaseSinkPrivate
+      c:gstbasesink.h@T@GstBaseSink_autoptr:
+        name: GstBaseSink_autoptr
+      c:gstbasesink.h@T@GstBaseSink_listautoptr:
+        name: GstBaseSink_listautoptr
+      c:gstbasesink.h@T@GstBaseSink_queueautoptr:
+        name: GstBaseSink_queueautoptr
+      c:gstbasesink.h@T@GstBaseSink_slistautoptr:
+        name: GstBaseSink_slistautoptr
+      c:gstbasesrc.h@T@GstBaseSrc:
+        name: GstBaseSrc
+      c:gstbasesrc.h@T@GstBaseSrcClass:
+        name: GstBaseSrcClass
+      c:gstbasesrc.h@T@GstBaseSrcPrivate:
+        name: GstBaseSrcPrivate
+      c:gstbasesrc.h@T@GstBaseSrc_autoptr:
+        name: GstBaseSrc_autoptr
+      c:gstbasesrc.h@T@GstBaseSrc_listautoptr:
+        name: GstBaseSrc_listautoptr
+      c:gstbasesrc.h@T@GstBaseSrc_queueautoptr:
+        name: GstBaseSrc_queueautoptr
+      c:gstbasesrc.h@T@GstBaseSrc_slistautoptr:
+        name: GstBaseSrc_slistautoptr
+      c:gstpushsrc.h@T@GstPushSrc:
+        name: GstPushSrc
+      c:gstpushsrc.h@T@GstPushSrcClass:
+        name: GstPushSrcClass
+      c:gstpushsrc.h@T@GstPushSrc_autoptr:
+        name: GstPushSrc_autoptr
+      c:gstpushsrc.h@T@GstPushSrc_listautoptr:
+        name: GstPushSrc_listautoptr
+      c:gstpushsrc.h@T@GstPushSrc_queueautoptr:
+        name: GstPushSrc_queueautoptr
+      c:gstpushsrc.h@T@GstPushSrc_slistautoptr:
+        name: GstPushSrc_slistautoptr
+      c:gtestutils.h@T@GTestCase:
+        name: GTestCase
+      c:gtestutils.h@T@GTestSuite:
+        name: GTestSuite
+      c:pthreadtypes.h@T@pthread_attr_t:
+        name: pthread_attr_t
+      c:ucontext.h@T@ucontext_t:
+        name: ucontext_t

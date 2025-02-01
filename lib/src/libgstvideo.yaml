@@ -1,0 +1,1917 @@
+format_version: 1.0.0
+files:
+  libgstvideo.dart:
+    used-config:
+      ffi-native: false
+    symbols:
+      GstVideoAffineTransformationGetMatrixFunction:
+        name: GstVideoAffineTransformationGetMatrixFunction
+        dart-name: DartGstVideoAffineTransformationGetMatrixFunction
+      GstVideoConvertSampleCallbackFunction:
+        name: GstVideoConvertSampleCallbackFunction
+        dart-name: DartGstVideoConvertSampleCallbackFunction
+      GstVideoFormatPackFunction:
+        name: GstVideoFormatPackFunction
+        dart-name: DartGstVideoFormatPackFunction
+      GstVideoFormatUnpackFunction:
+        name: GstVideoFormatUnpackFunction
+        dart-name: DartGstVideoFormatUnpackFunction
+      GstVideoGLTextureUploadFunction:
+        name: GstVideoGLTextureUploadFunction
+        dart-name: DartGstVideoGLTextureUploadFunction
+      c:@EA@GstAggregatorStartTimeSelection:
+        name: GstAggregatorStartTimeSelection
+      c:@EA@GstAncillaryMetaField:
+        name: GstAncillaryMetaField
+      c:@EA@GstClockReturn:
+        name: GstClockReturn
+      c:@EA@GstColorBalanceType:
+        name: GstColorBalanceType
+      c:@EA@GstFlowReturn:
+        name: GstFlowReturn
+      c:@EA@GstFormat:
+        name: GstFormat
+      c:@EA@GstMapFlags:
+        name: GstMapFlags
+      c:@EA@GstNavigationCommand:
+        name: GstNavigationCommand
+      c:@EA@GstNavigationEventType:
+        name: GstNavigationEventType
+      c:@EA@GstNavigationMessageType:
+        name: GstNavigationMessageType
+      c:@EA@GstNavigationModifierType:
+        name: GstNavigationModifierType
+      c:@EA@GstNavigationQueryType:
+        name: GstNavigationQueryType
+      c:@EA@GstPadDirection:
+        name: GstPadDirection
+      c:@EA@GstPadMode:
+        name: GstPadMode
+      c:@EA@GstTagMergeMode:
+        name: GstTagMergeMode
+      c:@EA@GstVideoAFDSpec:
+        name: GstVideoAFDSpec
+      c:@EA@GstVideoAFDValue:
+        name: GstVideoAFDValue
+      c:@EA@GstVideoAlphaMode:
+        name: GstVideoAlphaMode
+      c:@EA@GstVideoAncillaryDID:
+        name: GstVideoAncillaryDID
+      c:@EA@GstVideoAncillaryDID16:
+        name: GstVideoAncillaryDID16
+      c:@EA@GstVideoBufferFlags:
+        name: GstVideoBufferFlags
+      c:@EA@GstVideoCaptionType:
+        name: GstVideoCaptionType
+      c:@EA@GstVideoChromaFlags:
+        name: GstVideoChromaFlags
+      c:@EA@GstVideoChromaMethod:
+        name: GstVideoChromaMethod
+      c:@EA@GstVideoChromaMode:
+        name: GstVideoChromaMode
+      c:@EA@GstVideoChromaSite:
+        name: GstVideoChromaSite
+      c:@EA@GstVideoCodecFrameFlags:
+        name: GstVideoCodecFrameFlags
+      c:@EA@GstVideoColorMatrix:
+        name: GstVideoColorMatrix
+      c:@EA@GstVideoColorPrimaries:
+        name: GstVideoColorPrimaries
+      c:@EA@GstVideoColorRange:
+        name: GstVideoColorRange
+      c:@EA@GstVideoDecoderRequestSyncPointFlags:
+        name: GstVideoDecoderRequestSyncPointFlags
+      c:@EA@GstVideoDitherFlags:
+        name: GstVideoDitherFlags
+      c:@EA@GstVideoDitherMethod:
+        name: GstVideoDitherMethod
+      c:@EA@GstVideoFieldOrder:
+        name: GstVideoFieldOrder
+      c:@EA@GstVideoFlags:
+        name: GstVideoFlags
+      c:@EA@GstVideoFormat:
+        name: GstVideoFormat
+      c:@EA@GstVideoFormatFlags:
+        name: GstVideoFormatFlags
+      c:@EA@GstVideoFrameFlags:
+        name: GstVideoFrameFlags
+      c:@EA@GstVideoFrameMapFlags:
+        name: GstVideoFrameMapFlags
+      c:@EA@GstVideoGLTextureOrientation:
+        name: GstVideoGLTextureOrientation
+      c:@EA@GstVideoGLTextureType:
+        name: GstVideoGLTextureType
+      c:@EA@GstVideoGammaMode:
+        name: GstVideoGammaMode
+      c:@EA@GstVideoInterlaceMode:
+        name: GstVideoInterlaceMode
+      c:@EA@GstVideoMatrixMode:
+        name: GstVideoMatrixMode
+      c:@EA@GstVideoMultiviewFlags:
+        name: GstVideoMultiviewFlags
+      c:@EA@GstVideoMultiviewFramePacking:
+        name: GstVideoMultiviewFramePacking
+      c:@EA@GstVideoMultiviewMode:
+        name: GstVideoMultiviewMode
+      c:@EA@GstVideoOrientationMethod:
+        name: GstVideoOrientationMethod
+      c:@EA@GstVideoOverlayFormatFlags:
+        name: GstVideoOverlayFormatFlags
+      c:@EA@GstVideoPackFlags:
+        name: GstVideoPackFlags
+      c:@EA@GstVideoPrimariesMode:
+        name: GstVideoPrimariesMode
+      c:@EA@GstVideoResamplerFlags:
+        name: GstVideoResamplerFlags
+      c:@EA@GstVideoResamplerMethod:
+        name: GstVideoResamplerMethod
+      c:@EA@GstVideoScalerFlags:
+        name: GstVideoScalerFlags
+      c:@EA@GstVideoTileMode:
+        name: GstVideoTileMode
+      c:@EA@GstVideoTileType:
+        name: GstVideoTileType
+      c:@EA@GstVideoTimeCodeFlags:
+        name: GstVideoTimeCodeFlags
+      c:@EA@GstVideoTransferFunction:
+        name: GstVideoTransferFunction
+      c:@EA@GstVideoVBIParserResult:
+        name: GstVideoVBIParserResult
+      c:@F@_gst_video_decoder_error:
+        name: gst_video_decoder_error_
+      c:@F@gst_adapter_available:
+        name: gst_adapter_available
+      c:@F@gst_adapter_available_fast:
+        name: gst_adapter_available_fast
+      c:@F@gst_adapter_clear:
+        name: gst_adapter_clear
+      c:@F@gst_adapter_copy:
+        name: gst_adapter_copy
+      c:@F@gst_adapter_copy_bytes:
+        name: gst_adapter_copy_bytes
+      c:@F@gst_adapter_distance_from_discont:
+        name: gst_adapter_distance_from_discont
+      c:@F@gst_adapter_dts_at_discont:
+        name: gst_adapter_dts_at_discont
+      c:@F@gst_adapter_flush:
+        name: gst_adapter_flush
+      c:@F@gst_adapter_get_buffer:
+        name: gst_adapter_get_buffer
+      c:@F@gst_adapter_get_buffer_fast:
+        name: gst_adapter_get_buffer_fast
+      c:@F@gst_adapter_get_buffer_list:
+        name: gst_adapter_get_buffer_list
+      c:@F@gst_adapter_get_list:
+        name: gst_adapter_get_list
+      c:@F@gst_adapter_get_type:
+        name: gst_adapter_get_type
+      c:@F@gst_adapter_map:
+        name: gst_adapter_map
+      c:@F@gst_adapter_masked_scan_uint32:
+        name: gst_adapter_masked_scan_uint32
+      c:@F@gst_adapter_masked_scan_uint32_peek:
+        name: gst_adapter_masked_scan_uint32_peek
+      c:@F@gst_adapter_new:
+        name: gst_adapter_new
+      c:@F@gst_adapter_offset_at_discont:
+        name: gst_adapter_offset_at_discont
+      c:@F@gst_adapter_prev_dts:
+        name: gst_adapter_prev_dts
+      c:@F@gst_adapter_prev_dts_at_offset:
+        name: gst_adapter_prev_dts_at_offset
+      c:@F@gst_adapter_prev_offset:
+        name: gst_adapter_prev_offset
+      c:@F@gst_adapter_prev_pts:
+        name: gst_adapter_prev_pts
+      c:@F@gst_adapter_prev_pts_at_offset:
+        name: gst_adapter_prev_pts_at_offset
+      c:@F@gst_adapter_pts_at_discont:
+        name: gst_adapter_pts_at_discont
+      c:@F@gst_adapter_push:
+        name: gst_adapter_push
+      c:@F@gst_adapter_take:
+        name: gst_adapter_take
+      c:@F@gst_adapter_take_buffer:
+        name: gst_adapter_take_buffer
+      c:@F@gst_adapter_take_buffer_fast:
+        name: gst_adapter_take_buffer_fast
+      c:@F@gst_adapter_take_buffer_list:
+        name: gst_adapter_take_buffer_list
+      c:@F@gst_adapter_take_list:
+        name: gst_adapter_take_list
+      c:@F@gst_adapter_unmap:
+        name: gst_adapter_unmap
+      c:@F@gst_aggregator_finish_buffer:
+        name: gst_aggregator_finish_buffer
+      c:@F@gst_aggregator_finish_buffer_list:
+        name: gst_aggregator_finish_buffer_list
+      c:@F@gst_aggregator_get_allocator:
+        name: gst_aggregator_get_allocator
+      c:@F@gst_aggregator_get_buffer_pool:
+        name: gst_aggregator_get_buffer_pool
+      c:@F@gst_aggregator_get_force_live:
+        name: gst_aggregator_get_force_live
+      c:@F@gst_aggregator_get_ignore_inactive_pads:
+        name: gst_aggregator_get_ignore_inactive_pads
+      c:@F@gst_aggregator_get_latency:
+        name: gst_aggregator_get_latency
+      c:@F@gst_aggregator_get_type:
+        name: gst_aggregator_get_type
+      c:@F@gst_aggregator_negotiate:
+        name: gst_aggregator_negotiate
+      c:@F@gst_aggregator_pad_drop_buffer:
+        name: gst_aggregator_pad_drop_buffer
+      c:@F@gst_aggregator_pad_get_type:
+        name: gst_aggregator_pad_get_type
+      c:@F@gst_aggregator_pad_has_buffer:
+        name: gst_aggregator_pad_has_buffer
+      c:@F@gst_aggregator_pad_is_eos:
+        name: gst_aggregator_pad_is_eos
+      c:@F@gst_aggregator_pad_is_inactive:
+        name: gst_aggregator_pad_is_inactive
+      c:@F@gst_aggregator_pad_peek_buffer:
+        name: gst_aggregator_pad_peek_buffer
+      c:@F@gst_aggregator_pad_pop_buffer:
+        name: gst_aggregator_pad_pop_buffer
+      c:@F@gst_aggregator_peek_next_sample:
+        name: gst_aggregator_peek_next_sample
+      c:@F@gst_aggregator_selected_samples:
+        name: gst_aggregator_selected_samples
+      c:@F@gst_aggregator_set_force_live:
+        name: gst_aggregator_set_force_live
+      c:@F@gst_aggregator_set_ignore_inactive_pads:
+        name: gst_aggregator_set_ignore_inactive_pads
+      c:@F@gst_aggregator_set_latency:
+        name: gst_aggregator_set_latency
+      c:@F@gst_aggregator_set_src_caps:
+        name: gst_aggregator_set_src_caps
+      c:@F@gst_aggregator_simple_get_next_time:
+        name: gst_aggregator_simple_get_next_time
+      c:@F@gst_aggregator_start_time_selection_get_type:
+        name: gst_aggregator_start_time_selection_get_type
+      c:@F@gst_aggregator_update_segment:
+        name: gst_aggregator_update_segment
+      c:@F@gst_ancillary_meta_api_get_type:
+        name: gst_ancillary_meta_api_get_type
+      c:@F@gst_ancillary_meta_field_get_type:
+        name: gst_ancillary_meta_field_get_type
+      c:@F@gst_ancillary_meta_get_info:
+        name: gst_ancillary_meta_get_info
+      c:@F@gst_base_sink_do_preroll:
+        name: gst_base_sink_do_preroll
+      c:@F@gst_base_sink_get_blocksize:
+        name: gst_base_sink_get_blocksize
+      c:@F@gst_base_sink_get_drop_out_of_segment:
+        name: gst_base_sink_get_drop_out_of_segment
+      c:@F@gst_base_sink_get_last_sample:
+        name: gst_base_sink_get_last_sample
+      c:@F@gst_base_sink_get_latency:
+        name: gst_base_sink_get_latency
+      c:@F@gst_base_sink_get_max_bitrate:
+        name: gst_base_sink_get_max_bitrate
+      c:@F@gst_base_sink_get_max_lateness:
+        name: gst_base_sink_get_max_lateness
+      c:@F@gst_base_sink_get_processing_deadline:
+        name: gst_base_sink_get_processing_deadline
+      c:@F@gst_base_sink_get_render_delay:
+        name: gst_base_sink_get_render_delay
+      c:@F@gst_base_sink_get_stats:
+        name: gst_base_sink_get_stats
+      c:@F@gst_base_sink_get_sync:
+        name: gst_base_sink_get_sync
+      c:@F@gst_base_sink_get_throttle_time:
+        name: gst_base_sink_get_throttle_time
+      c:@F@gst_base_sink_get_ts_offset:
+        name: gst_base_sink_get_ts_offset
+      c:@F@gst_base_sink_get_type:
+        name: gst_base_sink_get_type
+      c:@F@gst_base_sink_is_async_enabled:
+        name: gst_base_sink_is_async_enabled
+      c:@F@gst_base_sink_is_last_sample_enabled:
+        name: gst_base_sink_is_last_sample_enabled
+      c:@F@gst_base_sink_is_qos_enabled:
+        name: gst_base_sink_is_qos_enabled
+      c:@F@gst_base_sink_query_latency:
+        name: gst_base_sink_query_latency
+      c:@F@gst_base_sink_set_async_enabled:
+        name: gst_base_sink_set_async_enabled
+      c:@F@gst_base_sink_set_blocksize:
+        name: gst_base_sink_set_blocksize
+      c:@F@gst_base_sink_set_drop_out_of_segment:
+        name: gst_base_sink_set_drop_out_of_segment
+      c:@F@gst_base_sink_set_last_sample_enabled:
+        name: gst_base_sink_set_last_sample_enabled
+      c:@F@gst_base_sink_set_max_bitrate:
+        name: gst_base_sink_set_max_bitrate
+      c:@F@gst_base_sink_set_max_lateness:
+        name: gst_base_sink_set_max_lateness
+      c:@F@gst_base_sink_set_processing_deadline:
+        name: gst_base_sink_set_processing_deadline
+      c:@F@gst_base_sink_set_qos_enabled:
+        name: gst_base_sink_set_qos_enabled
+      c:@F@gst_base_sink_set_render_delay:
+        name: gst_base_sink_set_render_delay
+      c:@F@gst_base_sink_set_sync:
+        name: gst_base_sink_set_sync
+      c:@F@gst_base_sink_set_throttle_time:
+        name: gst_base_sink_set_throttle_time
+      c:@F@gst_base_sink_set_ts_offset:
+        name: gst_base_sink_set_ts_offset
+      c:@F@gst_base_sink_wait:
+        name: gst_base_sink_wait
+      c:@F@gst_base_sink_wait_clock:
+        name: gst_base_sink_wait_clock
+      c:@F@gst_base_sink_wait_preroll:
+        name: gst_base_sink_wait_preroll
+      c:@F@gst_base_transform_get_allocator:
+        name: gst_base_transform_get_allocator
+      c:@F@gst_base_transform_get_buffer_pool:
+        name: gst_base_transform_get_buffer_pool
+      c:@F@gst_base_transform_get_type:
+        name: gst_base_transform_get_type
+      c:@F@gst_base_transform_is_in_place:
+        name: gst_base_transform_is_in_place
+      c:@F@gst_base_transform_is_passthrough:
+        name: gst_base_transform_is_passthrough
+      c:@F@gst_base_transform_is_qos_enabled:
+        name: gst_base_transform_is_qos_enabled
+      c:@F@gst_base_transform_reconfigure:
+        name: gst_base_transform_reconfigure
+      c:@F@gst_base_transform_reconfigure_sink:
+        name: gst_base_transform_reconfigure_sink
+      c:@F@gst_base_transform_reconfigure_src:
+        name: gst_base_transform_reconfigure_src
+      c:@F@gst_base_transform_set_gap_aware:
+        name: gst_base_transform_set_gap_aware
+      c:@F@gst_base_transform_set_in_place:
+        name: gst_base_transform_set_in_place
+      c:@F@gst_base_transform_set_passthrough:
+        name: gst_base_transform_set_passthrough
+      c:@F@gst_base_transform_set_prefer_passthrough:
+        name: gst_base_transform_set_prefer_passthrough
+      c:@F@gst_base_transform_set_qos_enabled:
+        name: gst_base_transform_set_qos_enabled
+      c:@F@gst_base_transform_update_qos:
+        name: gst_base_transform_update_qos
+      c:@F@gst_base_transform_update_src_caps:
+        name: gst_base_transform_update_src_caps
+      c:@F@gst_buffer_add_ancillary_meta:
+        name: gst_buffer_add_ancillary_meta
+      c:@F@gst_buffer_add_video_afd_meta:
+        name: gst_buffer_add_video_afd_meta
+      c:@F@gst_buffer_add_video_affine_transformation_meta:
+        name: gst_buffer_add_video_affine_transformation_meta
+      c:@F@gst_buffer_add_video_bar_meta:
+        name: gst_buffer_add_video_bar_meta
+      c:@F@gst_buffer_add_video_caption_meta:
+        name: gst_buffer_add_video_caption_meta
+      c:@F@gst_buffer_add_video_codec_alpha_meta:
+        name: gst_buffer_add_video_codec_alpha_meta
+      c:@F@gst_buffer_add_video_gl_texture_upload_meta:
+        name: gst_buffer_add_video_gl_texture_upload_meta
+      c:@F@gst_buffer_add_video_meta:
+        name: gst_buffer_add_video_meta
+      c:@F@gst_buffer_add_video_meta_full:
+        name: gst_buffer_add_video_meta_full
+      c:@F@gst_buffer_add_video_overlay_composition_meta:
+        name: gst_buffer_add_video_overlay_composition_meta
+      c:@F@gst_buffer_add_video_region_of_interest_meta:
+        name: gst_buffer_add_video_region_of_interest_meta
+      c:@F@gst_buffer_add_video_region_of_interest_meta_id:
+        name: gst_buffer_add_video_region_of_interest_meta_id
+      c:@F@gst_buffer_add_video_sei_user_data_unregistered_meta:
+        name: gst_buffer_add_video_sei_user_data_unregistered_meta
+      c:@F@gst_buffer_add_video_time_code_meta:
+        name: gst_buffer_add_video_time_code_meta
+      c:@F@gst_buffer_add_video_time_code_meta_full:
+        name: gst_buffer_add_video_time_code_meta_full
+      c:@F@gst_buffer_get_video_meta:
+        name: gst_buffer_get_video_meta
+      c:@F@gst_buffer_get_video_meta_id:
+        name: gst_buffer_get_video_meta_id
+      c:@F@gst_buffer_get_video_region_of_interest_meta_id:
+        name: gst_buffer_get_video_region_of_interest_meta_id
+      c:@F@gst_buffer_pool_config_get_video_alignment:
+        name: gst_buffer_pool_config_get_video_alignment
+      c:@F@gst_buffer_pool_config_set_video_alignment:
+        name: gst_buffer_pool_config_set_video_alignment
+      c:@F@gst_color_balance_channel_get_type:
+        name: gst_color_balance_channel_get_type
+      c:@F@gst_color_balance_get_balance_type:
+        name: gst_color_balance_get_balance_type
+      c:@F@gst_color_balance_get_type:
+        name: gst_color_balance_get_type
+      c:@F@gst_color_balance_get_value:
+        name: gst_color_balance_get_value
+      c:@F@gst_color_balance_list_channels:
+        name: gst_color_balance_list_channels
+      c:@F@gst_color_balance_set_value:
+        name: gst_color_balance_set_value
+      c:@F@gst_color_balance_type_get_type:
+        name: gst_color_balance_type_get_type
+      c:@F@gst_color_balance_value_changed:
+        name: gst_color_balance_value_changed
+      c:@F@gst_is_video_overlay_prepare_window_handle_message:
+        name: gst_is_video_overlay_prepare_window_handle_message
+      c:@F@gst_navigation_command_get_type:
+        name: gst_navigation_command_get_type
+      c:@F@gst_navigation_event_get_coordinates:
+        name: gst_navigation_event_get_coordinates
+      c:@F@gst_navigation_event_get_type:
+        name: gst_navigation_event_get_type
+      c:@F@gst_navigation_event_new_command:
+        name: gst_navigation_event_new_command
+      c:@F@gst_navigation_event_new_key_press:
+        name: gst_navigation_event_new_key_press
+      c:@F@gst_navigation_event_new_key_release:
+        name: gst_navigation_event_new_key_release
+      c:@F@gst_navigation_event_new_mouse_button_press:
+        name: gst_navigation_event_new_mouse_button_press
+      c:@F@gst_navigation_event_new_mouse_button_release:
+        name: gst_navigation_event_new_mouse_button_release
+      c:@F@gst_navigation_event_new_mouse_move:
+        name: gst_navigation_event_new_mouse_move
+      c:@F@gst_navigation_event_new_mouse_scroll:
+        name: gst_navigation_event_new_mouse_scroll
+      c:@F@gst_navigation_event_new_touch_cancel:
+        name: gst_navigation_event_new_touch_cancel
+      c:@F@gst_navigation_event_new_touch_down:
+        name: gst_navigation_event_new_touch_down
+      c:@F@gst_navigation_event_new_touch_frame:
+        name: gst_navigation_event_new_touch_frame
+      c:@F@gst_navigation_event_new_touch_motion:
+        name: gst_navigation_event_new_touch_motion
+      c:@F@gst_navigation_event_new_touch_up:
+        name: gst_navigation_event_new_touch_up
+      c:@F@gst_navigation_event_parse_command:
+        name: gst_navigation_event_parse_command
+      c:@F@gst_navigation_event_parse_key_event:
+        name: gst_navigation_event_parse_key_event
+      c:@F@gst_navigation_event_parse_modifier_state:
+        name: gst_navigation_event_parse_modifier_state
+      c:@F@gst_navigation_event_parse_mouse_button_event:
+        name: gst_navigation_event_parse_mouse_button_event
+      c:@F@gst_navigation_event_parse_mouse_move_event:
+        name: gst_navigation_event_parse_mouse_move_event
+      c:@F@gst_navigation_event_parse_mouse_scroll_event:
+        name: gst_navigation_event_parse_mouse_scroll_event
+      c:@F@gst_navigation_event_parse_touch_event:
+        name: gst_navigation_event_parse_touch_event
+      c:@F@gst_navigation_event_parse_touch_up_event:
+        name: gst_navigation_event_parse_touch_up_event
+      c:@F@gst_navigation_event_set_coordinates:
+        name: gst_navigation_event_set_coordinates
+      c:@F@gst_navigation_event_type_get_type:
+        name: gst_navigation_event_type_get_type
+      c:@F@gst_navigation_get_type:
+        name: gst_navigation_get_type
+      c:@F@gst_navigation_message_get_type:
+        name: gst_navigation_message_get_type
+      c:@F@gst_navigation_message_new_angles_changed:
+        name: gst_navigation_message_new_angles_changed
+      c:@F@gst_navigation_message_new_commands_changed:
+        name: gst_navigation_message_new_commands_changed
+      c:@F@gst_navigation_message_new_event:
+        name: gst_navigation_message_new_event
+      c:@F@gst_navigation_message_new_mouse_over:
+        name: gst_navigation_message_new_mouse_over
+      c:@F@gst_navigation_message_parse_angles_changed:
+        name: gst_navigation_message_parse_angles_changed
+      c:@F@gst_navigation_message_parse_event:
+        name: gst_navigation_message_parse_event
+      c:@F@gst_navigation_message_parse_mouse_over:
+        name: gst_navigation_message_parse_mouse_over
+      c:@F@gst_navigation_message_type_get_type:
+        name: gst_navigation_message_type_get_type
+      c:@F@gst_navigation_modifier_type_get_type:
+        name: gst_navigation_modifier_type_get_type
+      c:@F@gst_navigation_query_get_type:
+        name: gst_navigation_query_get_type
+      c:@F@gst_navigation_query_new_angles:
+        name: gst_navigation_query_new_angles
+      c:@F@gst_navigation_query_new_commands:
+        name: gst_navigation_query_new_commands
+      c:@F@gst_navigation_query_parse_angles:
+        name: gst_navigation_query_parse_angles
+      c:@F@gst_navigation_query_parse_commands_length:
+        name: gst_navigation_query_parse_commands_length
+      c:@F@gst_navigation_query_parse_commands_nth:
+        name: gst_navigation_query_parse_commands_nth
+      c:@F@gst_navigation_query_set_angles:
+        name: gst_navigation_query_set_angles
+      c:@F@gst_navigation_query_set_commands:
+        name: gst_navigation_query_set_commands
+      c:@F@gst_navigation_query_set_commandsv:
+        name: gst_navigation_query_set_commandsv
+      c:@F@gst_navigation_query_type_get_type:
+        name: gst_navigation_query_type_get_type
+      c:@F@gst_navigation_send_command:
+        name: gst_navigation_send_command
+      c:@F@gst_navigation_send_event:
+        name: gst_navigation_send_event
+      c:@F@gst_navigation_send_event_simple:
+        name: gst_navigation_send_event_simple
+      c:@F@gst_navigation_send_key_event:
+        name: gst_navigation_send_key_event
+      c:@F@gst_navigation_send_mouse_event:
+        name: gst_navigation_send_mouse_event
+      c:@F@gst_navigation_send_mouse_scroll_event:
+        name: gst_navigation_send_mouse_scroll_event
+      c:@F@gst_video_afd_meta_api_get_type:
+        name: gst_video_afd_meta_api_get_type
+      c:@F@gst_video_afd_meta_get_info:
+        name: gst_video_afd_meta_get_info
+      c:@F@gst_video_afd_spec_get_type:
+        name: gst_video_afd_spec_get_type
+      c:@F@gst_video_afd_value_get_type:
+        name: gst_video_afd_value_get_type
+      c:@F@gst_video_affine_transformation_meta_api_get_type:
+        name: gst_video_affine_transformation_meta_api_get_type
+      c:@F@gst_video_affine_transformation_meta_apply_matrix:
+        name: gst_video_affine_transformation_meta_apply_matrix
+      c:@F@gst_video_affine_transformation_meta_get_info:
+        name: gst_video_affine_transformation_meta_get_info
+      c:@F@gst_video_aggregator_convert_pad_get_type:
+        name: gst_video_aggregator_convert_pad_get_type
+      c:@F@gst_video_aggregator_convert_pad_update_conversion_info:
+        name: gst_video_aggregator_convert_pad_update_conversion_info
+      c:@F@gst_video_aggregator_get_execution_task_pool:
+        name: gst_video_aggregator_get_execution_task_pool
+      c:@F@gst_video_aggregator_get_type:
+        name: gst_video_aggregator_get_type
+      c:@F@gst_video_aggregator_pad_get_current_buffer:
+        name: gst_video_aggregator_pad_get_current_buffer
+      c:@F@gst_video_aggregator_pad_get_prepared_frame:
+        name: gst_video_aggregator_pad_get_prepared_frame
+      c:@F@gst_video_aggregator_pad_get_type:
+        name: gst_video_aggregator_pad_get_type
+      c:@F@gst_video_aggregator_pad_has_current_buffer:
+        name: gst_video_aggregator_pad_has_current_buffer
+      c:@F@gst_video_aggregator_pad_set_needs_alpha:
+        name: gst_video_aggregator_pad_set_needs_alpha
+      c:@F@gst_video_aggregator_parallel_convert_pad_get_type:
+        name: gst_video_aggregator_parallel_convert_pad_get_type
+      c:@F@gst_video_alignment_reset:
+        name: gst_video_alignment_reset
+      c:@F@gst_video_alpha_mode_get_type:
+        name: gst_video_alpha_mode_get_type
+      c:@F@gst_video_ancillary_di_d16_get_type:
+        name: gst_video_ancillary_di_d16_get_type
+      c:@F@gst_video_ancillary_did_get_type:
+        name: gst_video_ancillary_did_get_type
+      c:@F@gst_video_bar_meta_api_get_type:
+        name: gst_video_bar_meta_api_get_type
+      c:@F@gst_video_bar_meta_get_info:
+        name: gst_video_bar_meta_get_info
+      c:@F@gst_video_blend:
+        name: gst_video_blend
+      c:@F@gst_video_blend_scale_linear_RGBA:
+        name: gst_video_blend_scale_linear_RGBA
+      c:@F@gst_video_buffer_flags_get_type:
+        name: gst_video_buffer_flags_get_type
+      c:@F@gst_video_buffer_pool_get_type:
+        name: gst_video_buffer_pool_get_type
+      c:@F@gst_video_buffer_pool_new:
+        name: gst_video_buffer_pool_new
+      c:@F@gst_video_calculate_display_ratio:
+        name: gst_video_calculate_display_ratio
+      c:@F@gst_video_caption_meta_api_get_type:
+        name: gst_video_caption_meta_api_get_type
+      c:@F@gst_video_caption_meta_get_info:
+        name: gst_video_caption_meta_get_info
+      c:@F@gst_video_caption_type_from_caps:
+        name: gst_video_caption_type_from_caps
+      c:@F@gst_video_caption_type_get_type:
+        name: gst_video_caption_type_get_type
+      c:@F@gst_video_caption_type_to_caps:
+        name: gst_video_caption_type_to_caps
+      c:@F@gst_video_center_rect:
+        name: gst_video_center_rect
+      c:@F@gst_video_chroma_flags_get_type:
+        name: gst_video_chroma_flags_get_type
+      c:@F@gst_video_chroma_from_string:
+        name: gst_video_chroma_from_string
+      c:@F@gst_video_chroma_method_get_type:
+        name: gst_video_chroma_method_get_type
+      c:@F@gst_video_chroma_mode_get_type:
+        name: gst_video_chroma_mode_get_type
+      c:@F@gst_video_chroma_resample:
+        name: gst_video_chroma_resample
+      c:@F@gst_video_chroma_resample_free:
+        name: gst_video_chroma_resample_free
+      c:@F@gst_video_chroma_resample_get_info:
+        name: gst_video_chroma_resample_get_info
+      c:@F@gst_video_chroma_resample_new:
+        name: gst_video_chroma_resample_new
+      c:@F@gst_video_chroma_site_from_string:
+        name: gst_video_chroma_site_from_string
+      c:@F@gst_video_chroma_site_get_type:
+        name: gst_video_chroma_site_get_type
+      c:@F@gst_video_chroma_site_to_string:
+        name: gst_video_chroma_site_to_string
+      c:@F@gst_video_chroma_to_string:
+        name: gst_video_chroma_to_string
+      c:@F@gst_video_codec_alpha_meta_api_get_type:
+        name: gst_video_codec_alpha_meta_api_get_type
+      c:@F@gst_video_codec_alpha_meta_get_info:
+        name: gst_video_codec_alpha_meta_get_info
+      c:@F@gst_video_codec_frame_flags_get_type:
+        name: gst_video_codec_frame_flags_get_type
+      c:@F@gst_video_codec_frame_get_type:
+        name: gst_video_codec_frame_get_type
+      c:@F@gst_video_codec_frame_get_user_data:
+        name: gst_video_codec_frame_get_user_data
+      c:@F@gst_video_codec_frame_ref:
+        name: gst_video_codec_frame_ref
+      c:@F@gst_video_codec_frame_set_user_data:
+        name: gst_video_codec_frame_set_user_data
+      c:@F@gst_video_codec_frame_unref:
+        name: gst_video_codec_frame_unref
+      c:@F@gst_video_codec_state_get_type:
+        name: gst_video_codec_state_get_type
+      c:@F@gst_video_codec_state_ref:
+        name: gst_video_codec_state_ref
+      c:@F@gst_video_codec_state_unref:
+        name: gst_video_codec_state_unref
+      c:@F@gst_video_color_matrix_from_iso:
+        name: gst_video_color_matrix_from_iso
+      c:@F@gst_video_color_matrix_get_Kr_Kb:
+        name: gst_video_color_matrix_get_Kr_Kb
+      c:@F@gst_video_color_matrix_get_type:
+        name: gst_video_color_matrix_get_type
+      c:@F@gst_video_color_matrix_to_iso:
+        name: gst_video_color_matrix_to_iso
+      c:@F@gst_video_color_primaries_from_iso:
+        name: gst_video_color_primaries_from_iso
+      c:@F@gst_video_color_primaries_get_info:
+        name: gst_video_color_primaries_get_info
+      c:@F@gst_video_color_primaries_get_type:
+        name: gst_video_color_primaries_get_type
+      c:@F@gst_video_color_primaries_is_equivalent:
+        name: gst_video_color_primaries_is_equivalent
+      c:@F@gst_video_color_primaries_to_iso:
+        name: gst_video_color_primaries_to_iso
+      c:@F@gst_video_color_range_get_type:
+        name: gst_video_color_range_get_type
+      c:@F@gst_video_color_range_offsets:
+        name: gst_video_color_range_offsets
+      c:@F@gst_video_color_transfer_decode:
+        name: gst_video_color_transfer_decode
+      c:@F@gst_video_color_transfer_encode:
+        name: gst_video_color_transfer_encode
+      c:@F@gst_video_colorimetry_from_string:
+        name: gst_video_colorimetry_from_string
+      c:@F@gst_video_colorimetry_is_equal:
+        name: gst_video_colorimetry_is_equal
+      c:@F@gst_video_colorimetry_is_equivalent:
+        name: gst_video_colorimetry_is_equivalent
+      c:@F@gst_video_colorimetry_matches:
+        name: gst_video_colorimetry_matches
+      c:@F@gst_video_colorimetry_to_string:
+        name: gst_video_colorimetry_to_string
+      c:@F@gst_video_content_light_level_add_to_caps:
+        name: gst_video_content_light_level_add_to_caps
+      c:@F@gst_video_content_light_level_from_caps:
+        name: gst_video_content_light_level_from_caps
+      c:@F@gst_video_content_light_level_from_string:
+        name: gst_video_content_light_level_from_string
+      c:@F@gst_video_content_light_level_init:
+        name: gst_video_content_light_level_init
+      c:@F@gst_video_content_light_level_is_equal:
+        name: gst_video_content_light_level_is_equal
+      c:@F@gst_video_content_light_level_to_string:
+        name: gst_video_content_light_level_to_string
+      c:@F@gst_video_convert_sample:
+        name: gst_video_convert_sample
+      c:@F@gst_video_convert_sample_async:
+        name: gst_video_convert_sample_async
+      c:@F@gst_video_converter_frame:
+        name: gst_video_converter_frame
+      c:@F@gst_video_converter_frame_finish:
+        name: gst_video_converter_frame_finish
+      c:@F@gst_video_converter_free:
+        name: gst_video_converter_free
+      c:@F@gst_video_converter_get_config:
+        name: gst_video_converter_get_config
+      c:@F@gst_video_converter_get_in_info:
+        name: gst_video_converter_get_in_info
+      c:@F@gst_video_converter_get_out_info:
+        name: gst_video_converter_get_out_info
+      c:@F@gst_video_converter_new:
+        name: gst_video_converter_new
+      c:@F@gst_video_converter_new_with_pool:
+        name: gst_video_converter_new_with_pool
+      c:@F@gst_video_converter_set_config:
+        name: gst_video_converter_set_config
+      c:@F@gst_video_crop_meta_api_get_type:
+        name: gst_video_crop_meta_api_get_type
+      c:@F@gst_video_crop_meta_get_info:
+        name: gst_video_crop_meta_get_info
+      c:@F@gst_video_decoder_add_to_frame:
+        name: gst_video_decoder_add_to_frame
+      c:@F@gst_video_decoder_allocate_output_buffer:
+        name: gst_video_decoder_allocate_output_buffer
+      c:@F@gst_video_decoder_allocate_output_frame:
+        name: gst_video_decoder_allocate_output_frame
+      c:@F@gst_video_decoder_allocate_output_frame_with_params:
+        name: gst_video_decoder_allocate_output_frame_with_params
+      c:@F@gst_video_decoder_drop_frame:
+        name: gst_video_decoder_drop_frame
+      c:@F@gst_video_decoder_drop_subframe:
+        name: gst_video_decoder_drop_subframe
+      c:@F@gst_video_decoder_finish_frame:
+        name: gst_video_decoder_finish_frame
+      c:@F@gst_video_decoder_finish_subframe:
+        name: gst_video_decoder_finish_subframe
+      c:@F@gst_video_decoder_get_allocator:
+        name: gst_video_decoder_get_allocator
+      c:@F@gst_video_decoder_get_buffer_pool:
+        name: gst_video_decoder_get_buffer_pool
+      c:@F@gst_video_decoder_get_estimate_rate:
+        name: gst_video_decoder_get_estimate_rate
+      c:@F@gst_video_decoder_get_frame:
+        name: gst_video_decoder_get_frame
+      c:@F@gst_video_decoder_get_frames:
+        name: gst_video_decoder_get_frames
+      c:@F@gst_video_decoder_get_input_subframe_index:
+        name: gst_video_decoder_get_input_subframe_index
+      c:@F@gst_video_decoder_get_latency:
+        name: gst_video_decoder_get_latency
+      c:@F@gst_video_decoder_get_max_decode_time:
+        name: gst_video_decoder_get_max_decode_time
+      c:@F@gst_video_decoder_get_max_errors:
+        name: gst_video_decoder_get_max_errors
+      c:@F@gst_video_decoder_get_needs_format:
+        name: gst_video_decoder_get_needs_format
+      c:@F@gst_video_decoder_get_needs_sync_point:
+        name: gst_video_decoder_get_needs_sync_point
+      c:@F@gst_video_decoder_get_oldest_frame:
+        name: gst_video_decoder_get_oldest_frame
+      c:@F@gst_video_decoder_get_output_state:
+        name: gst_video_decoder_get_output_state
+      c:@F@gst_video_decoder_get_packetized:
+        name: gst_video_decoder_get_packetized
+      c:@F@gst_video_decoder_get_pending_frame_size:
+        name: gst_video_decoder_get_pending_frame_size
+      c:@F@gst_video_decoder_get_processed_subframe_index:
+        name: gst_video_decoder_get_processed_subframe_index
+      c:@F@gst_video_decoder_get_qos_proportion:
+        name: gst_video_decoder_get_qos_proportion
+      c:@F@gst_video_decoder_get_subframe_mode:
+        name: gst_video_decoder_get_subframe_mode
+      c:@F@gst_video_decoder_get_type:
+        name: gst_video_decoder_get_type
+      c:@F@gst_video_decoder_have_frame:
+        name: gst_video_decoder_have_frame
+      c:@F@gst_video_decoder_have_last_subframe:
+        name: gst_video_decoder_have_last_subframe
+      c:@F@gst_video_decoder_merge_tags:
+        name: gst_video_decoder_merge_tags
+      c:@F@gst_video_decoder_negotiate:
+        name: gst_video_decoder_negotiate
+      c:@F@gst_video_decoder_proxy_getcaps:
+        name: gst_video_decoder_proxy_getcaps
+      c:@F@gst_video_decoder_release_frame:
+        name: gst_video_decoder_release_frame
+      c:@F@gst_video_decoder_request_sync_point:
+        name: gst_video_decoder_request_sync_point
+      c:@F@gst_video_decoder_request_sync_point_flags_get_type:
+        name: gst_video_decoder_request_sync_point_flags_get_type
+      c:@F@gst_video_decoder_set_estimate_rate:
+        name: gst_video_decoder_set_estimate_rate
+      c:@F@gst_video_decoder_set_interlaced_output_state:
+        name: gst_video_decoder_set_interlaced_output_state
+      c:@F@gst_video_decoder_set_latency:
+        name: gst_video_decoder_set_latency
+      c:@F@gst_video_decoder_set_max_errors:
+        name: gst_video_decoder_set_max_errors
+      c:@F@gst_video_decoder_set_needs_format:
+        name: gst_video_decoder_set_needs_format
+      c:@F@gst_video_decoder_set_needs_sync_point:
+        name: gst_video_decoder_set_needs_sync_point
+      c:@F@gst_video_decoder_set_output_state:
+        name: gst_video_decoder_set_output_state
+      c:@F@gst_video_decoder_set_packetized:
+        name: gst_video_decoder_set_packetized
+      c:@F@gst_video_decoder_set_subframe_mode:
+        name: gst_video_decoder_set_subframe_mode
+      c:@F@gst_video_decoder_set_use_default_pad_acceptcaps:
+        name: gst_video_decoder_set_use_default_pad_acceptcaps
+      c:@F@gst_video_direction_get_type:
+        name: gst_video_direction_get_type
+      c:@F@gst_video_dither_flags_get_type:
+        name: gst_video_dither_flags_get_type
+      c:@F@gst_video_dither_free:
+        name: gst_video_dither_free
+      c:@F@gst_video_dither_line:
+        name: gst_video_dither_line
+      c:@F@gst_video_dither_method_get_type:
+        name: gst_video_dither_method_get_type
+      c:@F@gst_video_dither_new:
+        name: gst_video_dither_new
+      c:@F@gst_video_dma_drm_fourcc_from_format:
+        name: gst_video_dma_drm_fourcc_from_format
+      c:@F@gst_video_dma_drm_fourcc_from_string:
+        name: gst_video_dma_drm_fourcc_from_string
+      c:@F@gst_video_dma_drm_fourcc_to_format:
+        name: gst_video_dma_drm_fourcc_to_format
+      c:@F@gst_video_dma_drm_fourcc_to_string:
+        name: gst_video_dma_drm_fourcc_to_string
+      c:@F@gst_video_encoder_allocate_output_buffer:
+        name: gst_video_encoder_allocate_output_buffer
+      c:@F@gst_video_encoder_allocate_output_frame:
+        name: gst_video_encoder_allocate_output_frame
+      c:@F@gst_video_encoder_finish_frame:
+        name: gst_video_encoder_finish_frame
+      c:@F@gst_video_encoder_finish_subframe:
+        name: gst_video_encoder_finish_subframe
+      c:@F@gst_video_encoder_get_allocator:
+        name: gst_video_encoder_get_allocator
+      c:@F@gst_video_encoder_get_frame:
+        name: gst_video_encoder_get_frame
+      c:@F@gst_video_encoder_get_frames:
+        name: gst_video_encoder_get_frames
+      c:@F@gst_video_encoder_get_latency:
+        name: gst_video_encoder_get_latency
+      c:@F@gst_video_encoder_get_max_encode_time:
+        name: gst_video_encoder_get_max_encode_time
+      c:@F@gst_video_encoder_get_min_force_key_unit_interval:
+        name: gst_video_encoder_get_min_force_key_unit_interval
+      c:@F@gst_video_encoder_get_oldest_frame:
+        name: gst_video_encoder_get_oldest_frame
+      c:@F@gst_video_encoder_get_output_state:
+        name: gst_video_encoder_get_output_state
+      c:@F@gst_video_encoder_get_type:
+        name: gst_video_encoder_get_type
+      c:@F@gst_video_encoder_is_qos_enabled:
+        name: gst_video_encoder_is_qos_enabled
+      c:@F@gst_video_encoder_merge_tags:
+        name: gst_video_encoder_merge_tags
+      c:@F@gst_video_encoder_negotiate:
+        name: gst_video_encoder_negotiate
+      c:@F@gst_video_encoder_proxy_getcaps:
+        name: gst_video_encoder_proxy_getcaps
+      c:@F@gst_video_encoder_set_headers:
+        name: gst_video_encoder_set_headers
+      c:@F@gst_video_encoder_set_latency:
+        name: gst_video_encoder_set_latency
+      c:@F@gst_video_encoder_set_min_force_key_unit_interval:
+        name: gst_video_encoder_set_min_force_key_unit_interval
+      c:@F@gst_video_encoder_set_min_pts:
+        name: gst_video_encoder_set_min_pts
+      c:@F@gst_video_encoder_set_output_state:
+        name: gst_video_encoder_set_output_state
+      c:@F@gst_video_encoder_set_qos_enabled:
+        name: gst_video_encoder_set_qos_enabled
+      c:@F@gst_video_event_is_force_key_unit:
+        name: gst_video_event_is_force_key_unit
+      c:@F@gst_video_event_new_downstream_force_key_unit:
+        name: gst_video_event_new_downstream_force_key_unit
+      c:@F@gst_video_event_new_still_frame:
+        name: gst_video_event_new_still_frame
+      c:@F@gst_video_event_new_upstream_force_key_unit:
+        name: gst_video_event_new_upstream_force_key_unit
+      c:@F@gst_video_event_parse_downstream_force_key_unit:
+        name: gst_video_event_parse_downstream_force_key_unit
+      c:@F@gst_video_event_parse_still_frame:
+        name: gst_video_event_parse_still_frame
+      c:@F@gst_video_event_parse_upstream_force_key_unit:
+        name: gst_video_event_parse_upstream_force_key_unit
+      c:@F@gst_video_field_order_from_string:
+        name: gst_video_field_order_from_string
+      c:@F@gst_video_field_order_get_type:
+        name: gst_video_field_order_get_type
+      c:@F@gst_video_field_order_to_string:
+        name: gst_video_field_order_to_string
+      c:@F@gst_video_filter_get_type:
+        name: gst_video_filter_get_type
+      c:@F@gst_video_flags_get_type:
+        name: gst_video_flags_get_type
+      c:@F@gst_video_format_flags_get_type:
+        name: gst_video_format_flags_get_type
+      c:@F@gst_video_format_from_fourcc:
+        name: gst_video_format_from_fourcc
+      c:@F@gst_video_format_from_masks:
+        name: gst_video_format_from_masks
+      c:@F@gst_video_format_from_string:
+        name: gst_video_format_from_string
+      c:@F@gst_video_format_get_info:
+        name: gst_video_format_get_info
+      c:@F@gst_video_format_get_palette:
+        name: gst_video_format_get_palette
+      c:@F@gst_video_format_get_type:
+        name: gst_video_format_get_type
+      c:@F@gst_video_format_info_component:
+        name: gst_video_format_info_component
+      c:@F@gst_video_format_info_extrapolate_stride:
+        name: gst_video_format_info_extrapolate_stride
+      c:@F@gst_video_format_to_fourcc:
+        name: gst_video_format_to_fourcc
+      c:@F@gst_video_format_to_string:
+        name: gst_video_format_to_string
+      c:@F@gst_video_formats_any:
+        name: gst_video_formats_any
+      c:@F@gst_video_formats_raw:
+        name: gst_video_formats_raw
+      c:@F@gst_video_frame_copy:
+        name: gst_video_frame_copy
+      c:@F@gst_video_frame_copy_plane:
+        name: gst_video_frame_copy_plane
+      c:@F@gst_video_frame_flags_get_type:
+        name: gst_video_frame_flags_get_type
+      c:@F@gst_video_frame_map:
+        name: gst_video_frame_map
+      c:@F@gst_video_frame_map_flags_get_type:
+        name: gst_video_frame_map_flags_get_type
+      c:@F@gst_video_frame_map_id:
+        name: gst_video_frame_map_id
+      c:@F@gst_video_frame_unmap:
+        name: gst_video_frame_unmap
+      c:@F@gst_video_gamma_mode_get_type:
+        name: gst_video_gamma_mode_get_type
+      c:@F@gst_video_gl_texture_orientation_get_type:
+        name: gst_video_gl_texture_orientation_get_type
+      c:@F@gst_video_gl_texture_type_get_type:
+        name: gst_video_gl_texture_type_get_type
+      c:@F@gst_video_gl_texture_upload_meta_api_get_type:
+        name: gst_video_gl_texture_upload_meta_api_get_type
+      c:@F@gst_video_gl_texture_upload_meta_get_info:
+        name: gst_video_gl_texture_upload_meta_get_info
+      c:@F@gst_video_gl_texture_upload_meta_upload:
+        name: gst_video_gl_texture_upload_meta_upload
+      c:@F@gst_video_guess_framerate:
+        name: gst_video_guess_framerate
+      c:@F@gst_video_info_align:
+        name: gst_video_info_align
+      c:@F@gst_video_info_align_full:
+        name: gst_video_info_align_full
+      c:@F@gst_video_info_convert:
+        name: gst_video_info_convert
+      c:@F@gst_video_info_copy:
+        name: gst_video_info_copy
+      c:@F@gst_video_info_dma_drm_free:
+        name: gst_video_info_dma_drm_free
+      c:@F@gst_video_info_dma_drm_from_caps:
+        name: gst_video_info_dma_drm_from_caps
+      c:@F@gst_video_info_dma_drm_from_video_info:
+        name: gst_video_info_dma_drm_from_video_info
+      c:@F@gst_video_info_dma_drm_get_type:
+        name: gst_video_info_dma_drm_get_type
+      c:@F@gst_video_info_dma_drm_init:
+        name: gst_video_info_dma_drm_init
+      c:@F@gst_video_info_dma_drm_new:
+        name: gst_video_info_dma_drm_new
+      c:@F@gst_video_info_dma_drm_new_from_caps:
+        name: gst_video_info_dma_drm_new_from_caps
+      c:@F@gst_video_info_dma_drm_to_caps:
+        name: gst_video_info_dma_drm_to_caps
+      c:@F@gst_video_info_dma_drm_to_video_info:
+        name: gst_video_info_dma_drm_to_video_info
+      c:@F@gst_video_info_free:
+        name: gst_video_info_free
+      c:@F@gst_video_info_from_caps:
+        name: gst_video_info_from_caps
+      c:@F@gst_video_info_get_type:
+        name: gst_video_info_get_type
+      c:@F@gst_video_info_init:
+        name: gst_video_info_init
+      c:@F@gst_video_info_is_equal:
+        name: gst_video_info_is_equal
+      c:@F@gst_video_info_new:
+        name: gst_video_info_new
+      c:@F@gst_video_info_new_from_caps:
+        name: gst_video_info_new_from_caps
+      c:@F@gst_video_info_set_format:
+        name: gst_video_info_set_format
+      c:@F@gst_video_info_set_interlaced_format:
+        name: gst_video_info_set_interlaced_format
+      c:@F@gst_video_info_to_caps:
+        name: gst_video_info_to_caps
+      c:@F@gst_video_interlace_mode_from_string:
+        name: gst_video_interlace_mode_from_string
+      c:@F@gst_video_interlace_mode_get_type:
+        name: gst_video_interlace_mode_get_type
+      c:@F@gst_video_interlace_mode_to_string:
+        name: gst_video_interlace_mode_to_string
+      c:@F@gst_video_is_common_aspect_ratio:
+        name: gst_video_is_common_aspect_ratio
+      c:@F@gst_video_is_dma_drm_caps:
+        name: gst_video_is_dma_drm_caps
+      c:@F@gst_video_make_raw_caps:
+        name: gst_video_make_raw_caps
+      c:@F@gst_video_make_raw_caps_with_features:
+        name: gst_video_make_raw_caps_with_features
+      c:@F@gst_video_mastering_display_info_add_to_caps:
+        name: gst_video_mastering_display_info_add_to_caps
+      c:@F@gst_video_mastering_display_info_from_caps:
+        name: gst_video_mastering_display_info_from_caps
+      c:@F@gst_video_mastering_display_info_from_string:
+        name: gst_video_mastering_display_info_from_string
+      c:@F@gst_video_mastering_display_info_init:
+        name: gst_video_mastering_display_info_init
+      c:@F@gst_video_mastering_display_info_is_equal:
+        name: gst_video_mastering_display_info_is_equal
+      c:@F@gst_video_mastering_display_info_to_string:
+        name: gst_video_mastering_display_info_to_string
+      c:@F@gst_video_matrix_mode_get_type:
+        name: gst_video_matrix_mode_get_type
+      c:@F@gst_video_meta_api_get_type:
+        name: gst_video_meta_api_get_type
+      c:@F@gst_video_meta_get_info:
+        name: gst_video_meta_get_info
+      c:@F@gst_video_meta_get_plane_height:
+        name: gst_video_meta_get_plane_height
+      c:@F@gst_video_meta_get_plane_size:
+        name: gst_video_meta_get_plane_size
+      c:@F@gst_video_meta_map:
+        name: gst_video_meta_map
+      c:@F@gst_video_meta_set_alignment:
+        name: gst_video_meta_set_alignment
+      c:@F@gst_video_meta_transform_scale_get_quark:
+        name: gst_video_meta_transform_scale_get_quark
+      c:@F@gst_video_meta_unmap:
+        name: gst_video_meta_unmap
+      c:@F@gst_video_multiview_flags_get_type:
+        name: gst_video_multiview_flags_get_type
+      c:@F@gst_video_multiview_flagset_get_type:
+        name: gst_video_multiview_flagset_get_type
+      c:@F@gst_video_multiview_frame_packing_get_type:
+        name: gst_video_multiview_frame_packing_get_type
+      c:@F@gst_video_multiview_get_doubled_height_modes:
+        name: gst_video_multiview_get_doubled_height_modes
+      c:@F@gst_video_multiview_get_doubled_size_modes:
+        name: gst_video_multiview_get_doubled_size_modes
+      c:@F@gst_video_multiview_get_doubled_width_modes:
+        name: gst_video_multiview_get_doubled_width_modes
+      c:@F@gst_video_multiview_get_mono_modes:
+        name: gst_video_multiview_get_mono_modes
+      c:@F@gst_video_multiview_get_unpacked_modes:
+        name: gst_video_multiview_get_unpacked_modes
+      c:@F@gst_video_multiview_guess_half_aspect:
+        name: gst_video_multiview_guess_half_aspect
+      c:@F@gst_video_multiview_mode_from_caps_string:
+        name: gst_video_multiview_mode_from_caps_string
+      c:@F@gst_video_multiview_mode_get_type:
+        name: gst_video_multiview_mode_get_type
+      c:@F@gst_video_multiview_mode_to_caps_string:
+        name: gst_video_multiview_mode_to_caps_string
+      c:@F@gst_video_multiview_video_info_change_mode:
+        name: gst_video_multiview_video_info_change_mode
+      c:@F@gst_video_orientation_from_tag:
+        name: gst_video_orientation_from_tag
+      c:@F@gst_video_orientation_get_hcenter:
+        name: gst_video_orientation_get_hcenter
+      c:@F@gst_video_orientation_get_hflip:
+        name: gst_video_orientation_get_hflip
+      c:@F@gst_video_orientation_get_type:
+        name: gst_video_orientation_get_type
+      c:@F@gst_video_orientation_get_vcenter:
+        name: gst_video_orientation_get_vcenter
+      c:@F@gst_video_orientation_get_vflip:
+        name: gst_video_orientation_get_vflip
+      c:@F@gst_video_orientation_method_get_type:
+        name: gst_video_orientation_method_get_type
+      c:@F@gst_video_orientation_set_hcenter:
+        name: gst_video_orientation_set_hcenter
+      c:@F@gst_video_orientation_set_hflip:
+        name: gst_video_orientation_set_hflip
+      c:@F@gst_video_orientation_set_vcenter:
+        name: gst_video_orientation_set_vcenter
+      c:@F@gst_video_orientation_set_vflip:
+        name: gst_video_orientation_set_vflip
+      c:@F@gst_video_overlay_composition_add_rectangle:
+        name: gst_video_overlay_composition_add_rectangle
+      c:@F@gst_video_overlay_composition_blend:
+        name: gst_video_overlay_composition_blend
+      c:@F@gst_video_overlay_composition_copy:
+        name: gst_video_overlay_composition_copy
+      c:@F@gst_video_overlay_composition_get_rectangle:
+        name: gst_video_overlay_composition_get_rectangle
+      c:@F@gst_video_overlay_composition_get_seqnum:
+        name: gst_video_overlay_composition_get_seqnum
+      c:@F@gst_video_overlay_composition_get_type:
+        name: gst_video_overlay_composition_get_type
+      c:@F@gst_video_overlay_composition_make_writable:
+        name: gst_video_overlay_composition_make_writable
+      c:@F@gst_video_overlay_composition_meta_api_get_type:
+        name: gst_video_overlay_composition_meta_api_get_type
+      c:@F@gst_video_overlay_composition_meta_get_info:
+        name: gst_video_overlay_composition_meta_get_info
+      c:@F@gst_video_overlay_composition_n_rectangles:
+        name: gst_video_overlay_composition_n_rectangles
+      c:@F@gst_video_overlay_composition_new:
+        name: gst_video_overlay_composition_new
+      c:@F@gst_video_overlay_expose:
+        name: gst_video_overlay_expose
+      c:@F@gst_video_overlay_format_flags_get_type:
+        name: gst_video_overlay_format_flags_get_type
+      c:@F@gst_video_overlay_get_type:
+        name: gst_video_overlay_get_type
+      c:@F@gst_video_overlay_got_window_handle:
+        name: gst_video_overlay_got_window_handle
+      c:@F@gst_video_overlay_handle_events:
+        name: gst_video_overlay_handle_events
+      c:@F@gst_video_overlay_install_properties:
+        name: gst_video_overlay_install_properties
+      c:@F@gst_video_overlay_prepare_window_handle:
+        name: gst_video_overlay_prepare_window_handle
+      c:@F@gst_video_overlay_rectangle_copy:
+        name: gst_video_overlay_rectangle_copy
+      c:@F@gst_video_overlay_rectangle_get_flags:
+        name: gst_video_overlay_rectangle_get_flags
+      c:@F@gst_video_overlay_rectangle_get_global_alpha:
+        name: gst_video_overlay_rectangle_get_global_alpha
+      c:@F@gst_video_overlay_rectangle_get_pixels_argb:
+        name: gst_video_overlay_rectangle_get_pixels_argb
+      c:@F@gst_video_overlay_rectangle_get_pixels_ayuv:
+        name: gst_video_overlay_rectangle_get_pixels_ayuv
+      c:@F@gst_video_overlay_rectangle_get_pixels_raw:
+        name: gst_video_overlay_rectangle_get_pixels_raw
+      c:@F@gst_video_overlay_rectangle_get_pixels_unscaled_argb:
+        name: gst_video_overlay_rectangle_get_pixels_unscaled_argb
+      c:@F@gst_video_overlay_rectangle_get_pixels_unscaled_ayuv:
+        name: gst_video_overlay_rectangle_get_pixels_unscaled_ayuv
+      c:@F@gst_video_overlay_rectangle_get_pixels_unscaled_raw:
+        name: gst_video_overlay_rectangle_get_pixels_unscaled_raw
+      c:@F@gst_video_overlay_rectangle_get_render_rectangle:
+        name: gst_video_overlay_rectangle_get_render_rectangle
+      c:@F@gst_video_overlay_rectangle_get_seqnum:
+        name: gst_video_overlay_rectangle_get_seqnum
+      c:@F@gst_video_overlay_rectangle_get_type:
+        name: gst_video_overlay_rectangle_get_type
+      c:@F@gst_video_overlay_rectangle_new_raw:
+        name: gst_video_overlay_rectangle_new_raw
+      c:@F@gst_video_overlay_rectangle_set_global_alpha:
+        name: gst_video_overlay_rectangle_set_global_alpha
+      c:@F@gst_video_overlay_rectangle_set_render_rectangle:
+        name: gst_video_overlay_rectangle_set_render_rectangle
+      c:@F@gst_video_overlay_set_property:
+        name: gst_video_overlay_set_property
+      c:@F@gst_video_overlay_set_render_rectangle:
+        name: gst_video_overlay_set_render_rectangle
+      c:@F@gst_video_overlay_set_window_handle:
+        name: gst_video_overlay_set_window_handle
+      c:@F@gst_video_pack_flags_get_type:
+        name: gst_video_pack_flags_get_type
+      c:@F@gst_video_primaries_mode_get_type:
+        name: gst_video_primaries_mode_get_type
+      c:@F@gst_video_region_of_interest_meta_add_param:
+        name: gst_video_region_of_interest_meta_add_param
+      c:@F@gst_video_region_of_interest_meta_api_get_type:
+        name: gst_video_region_of_interest_meta_api_get_type
+      c:@F@gst_video_region_of_interest_meta_get_info:
+        name: gst_video_region_of_interest_meta_get_info
+      c:@F@gst_video_region_of_interest_meta_get_param:
+        name: gst_video_region_of_interest_meta_get_param
+      c:@F@gst_video_resampler_clear:
+        name: gst_video_resampler_clear
+      c:@F@gst_video_resampler_flags_get_type:
+        name: gst_video_resampler_flags_get_type
+      c:@F@gst_video_resampler_init:
+        name: gst_video_resampler_init
+      c:@F@gst_video_resampler_method_get_type:
+        name: gst_video_resampler_method_get_type
+      c:@F@gst_video_scaler_2d:
+        name: gst_video_scaler_2d
+      c:@F@gst_video_scaler_combine_packed_YUV:
+        name: gst_video_scaler_combine_packed_YUV
+      c:@F@gst_video_scaler_flags_get_type:
+        name: gst_video_scaler_flags_get_type
+      c:@F@gst_video_scaler_free:
+        name: gst_video_scaler_free
+      c:@F@gst_video_scaler_get_coeff:
+        name: gst_video_scaler_get_coeff
+      c:@F@gst_video_scaler_get_max_taps:
+        name: gst_video_scaler_get_max_taps
+      c:@F@gst_video_scaler_horizontal:
+        name: gst_video_scaler_horizontal
+      c:@F@gst_video_scaler_new:
+        name: gst_video_scaler_new
+      c:@F@gst_video_scaler_vertical:
+        name: gst_video_scaler_vertical
+      c:@F@gst_video_sei_user_data_unregistered_meta_api_get_type:
+        name: gst_video_sei_user_data_unregistered_meta_api_get_type
+      c:@F@gst_video_sei_user_data_unregistered_meta_get_info:
+        name: gst_video_sei_user_data_unregistered_meta_get_info
+      c:@F@gst_video_sei_user_data_unregistered_parse_precision_time_stamp:
+        name: gst_video_sei_user_data_unregistered_parse_precision_time_stamp
+      c:@F@gst_video_sink_center_rect:
+        name: gst_video_sink_center_rect
+      c:@F@gst_video_sink_get_type:
+        name: gst_video_sink_get_type
+      c:@F@gst_video_tile_get_index:
+        name: gst_video_tile_get_index
+      c:@F@gst_video_tile_mode_get_type:
+        name: gst_video_tile_mode_get_type
+      c:@F@gst_video_tile_type_get_type:
+        name: gst_video_tile_type_get_type
+      c:@F@gst_video_time_code_add_frames:
+        name: gst_video_time_code_add_frames
+      c:@F@gst_video_time_code_add_interval:
+        name: gst_video_time_code_add_interval
+      c:@F@gst_video_time_code_clear:
+        name: gst_video_time_code_clear
+      c:@F@gst_video_time_code_compare:
+        name: gst_video_time_code_compare
+      c:@F@gst_video_time_code_copy:
+        name: gst_video_time_code_copy
+      c:@F@gst_video_time_code_flags_get_type:
+        name: gst_video_time_code_flags_get_type
+      c:@F@gst_video_time_code_frames_since_daily_jam:
+        name: gst_video_time_code_frames_since_daily_jam
+      c:@F@gst_video_time_code_free:
+        name: gst_video_time_code_free
+      c:@F@gst_video_time_code_get_type:
+        name: gst_video_time_code_get_type
+      c:@F@gst_video_time_code_increment_frame:
+        name: gst_video_time_code_increment_frame
+      c:@F@gst_video_time_code_init:
+        name: gst_video_time_code_init
+      c:@F@gst_video_time_code_init_from_date_time:
+        name: gst_video_time_code_init_from_date_time
+      c:@F@gst_video_time_code_init_from_date_time_full:
+        name: gst_video_time_code_init_from_date_time_full
+      c:@F@gst_video_time_code_interval_clear:
+        name: gst_video_time_code_interval_clear
+      c:@F@gst_video_time_code_interval_copy:
+        name: gst_video_time_code_interval_copy
+      c:@F@gst_video_time_code_interval_free:
+        name: gst_video_time_code_interval_free
+      c:@F@gst_video_time_code_interval_get_type:
+        name: gst_video_time_code_interval_get_type
+      c:@F@gst_video_time_code_interval_init:
+        name: gst_video_time_code_interval_init
+      c:@F@gst_video_time_code_interval_new:
+        name: gst_video_time_code_interval_new
+      c:@F@gst_video_time_code_interval_new_from_string:
+        name: gst_video_time_code_interval_new_from_string
+      c:@F@gst_video_time_code_is_valid:
+        name: gst_video_time_code_is_valid
+      c:@F@gst_video_time_code_meta_api_get_type:
+        name: gst_video_time_code_meta_api_get_type
+      c:@F@gst_video_time_code_meta_get_info:
+        name: gst_video_time_code_meta_get_info
+      c:@F@gst_video_time_code_new:
+        name: gst_video_time_code_new
+      c:@F@gst_video_time_code_new_empty:
+        name: gst_video_time_code_new_empty
+      c:@F@gst_video_time_code_new_from_date_time:
+        name: gst_video_time_code_new_from_date_time
+      c:@F@gst_video_time_code_new_from_date_time_full:
+        name: gst_video_time_code_new_from_date_time_full
+      c:@F@gst_video_time_code_new_from_string:
+        name: gst_video_time_code_new_from_string
+      c:@F@gst_video_time_code_nsec_since_daily_jam:
+        name: gst_video_time_code_nsec_since_daily_jam
+      c:@F@gst_video_time_code_to_date_time:
+        name: gst_video_time_code_to_date_time
+      c:@F@gst_video_time_code_to_string:
+        name: gst_video_time_code_to_string
+      c:@F@gst_video_transfer_function_decode:
+        name: gst_video_transfer_function_decode
+      c:@F@gst_video_transfer_function_encode:
+        name: gst_video_transfer_function_encode
+      c:@F@gst_video_transfer_function_from_iso:
+        name: gst_video_transfer_function_from_iso
+      c:@F@gst_video_transfer_function_get_type:
+        name: gst_video_transfer_function_get_type
+      c:@F@gst_video_transfer_function_is_equivalent:
+        name: gst_video_transfer_function_is_equivalent
+      c:@F@gst_video_transfer_function_to_iso:
+        name: gst_video_transfer_function_to_iso
+      c:@F@gst_video_vbi_encoder_add_ancillary:
+        name: gst_video_vbi_encoder_add_ancillary
+      c:@F@gst_video_vbi_encoder_copy:
+        name: gst_video_vbi_encoder_copy
+      c:@F@gst_video_vbi_encoder_free:
+        name: gst_video_vbi_encoder_free
+      c:@F@gst_video_vbi_encoder_get_type:
+        name: gst_video_vbi_encoder_get_type
+      c:@F@gst_video_vbi_encoder_new:
+        name: gst_video_vbi_encoder_new
+      c:@F@gst_video_vbi_encoder_write_line:
+        name: gst_video_vbi_encoder_write_line
+      c:@F@gst_video_vbi_parser_add_line:
+        name: gst_video_vbi_parser_add_line
+      c:@F@gst_video_vbi_parser_copy:
+        name: gst_video_vbi_parser_copy
+      c:@F@gst_video_vbi_parser_free:
+        name: gst_video_vbi_parser_free
+      c:@F@gst_video_vbi_parser_get_ancillary:
+        name: gst_video_vbi_parser_get_ancillary
+      c:@F@gst_video_vbi_parser_get_type:
+        name: gst_video_vbi_parser_get_type
+      c:@F@gst_video_vbi_parser_new:
+        name: gst_video_vbi_parser_new
+      c:@F@gst_video_vbi_parser_result_get_type:
+        name: gst_video_vbi_parser_result_get_type
+      c:@S@_GstAdapter:
+        name: GstAdapter_
+      c:@S@_GstAdapterClass:
+        name: GstAdapterClass_
+      c:@S@_GstAggregator:
+        name: GstAggregator_
+      c:@S@_GstAggregatorClass:
+        name: GstAggregatorClass_
+      c:@S@_GstAggregatorPad:
+        name: GstAggregatorPad_
+      c:@S@_GstAggregatorPadClass:
+        name: GstAggregatorPadClass_
+      c:@S@_GstAggregatorPadPrivate:
+        name: GstAggregatorPadPrivate_
+      c:@S@_GstAggregatorPrivate:
+        name: GstAggregatorPrivate_
+      c:@S@_GstBaseSink:
+        name: GstBaseSink_
+      c:@S@_GstBaseSinkClass:
+        name: GstBaseSinkClass_
+      c:@S@_GstBaseSinkPrivate:
+        name: GstBaseSinkPrivate_
+      c:@S@_GstBaseTransform:
+        name: GstBaseTransform_
+      c:@S@_GstBaseTransformClass:
+        name: GstBaseTransformClass_
+      c:@S@_GstBaseTransformPrivate:
+        name: GstBaseTransformPrivate_
+      c:@S@_GstColorBalance:
+        name: GstColorBalance_
+      c:@S@_GstColorBalanceChannel:
+        name: GstColorBalanceChannel_
+      c:@S@_GstColorBalanceChannelClass:
+        name: GstColorBalanceChannelClass_
+      c:@S@_GstColorBalanceInterface:
+        name: GstColorBalanceInterface_
+      c:@S@_GstNavigation:
+        name: GstNavigation_
+      c:@S@_GstNavigationInterface:
+        name: GstNavigationInterface_
+      c:@S@_GstVideoAffineTransformationMeta:
+        name: GstVideoAffineTransformationMeta_
+      c:@S@_GstVideoAggregator:
+        name: GstVideoAggregator_
+      c:@S@_GstVideoAggregatorClass:
+        name: GstVideoAggregatorClass_
+      c:@S@_GstVideoAggregatorConvertPad:
+        name: GstVideoAggregatorConvertPad_
+      c:@S@_GstVideoAggregatorConvertPadClass:
+        name: GstVideoAggregatorConvertPadClass_
+      c:@S@_GstVideoAggregatorConvertPadPrivate:
+        name: GstVideoAggregatorConvertPadPrivate_
+      c:@S@_GstVideoAggregatorPad:
+        name: GstVideoAggregatorPad_
+      c:@S@_GstVideoAggregatorPadClass:
+        name: GstVideoAggregatorPadClass_
+      c:@S@_GstVideoAggregatorPadPrivate:
+        name: GstVideoAggregatorPadPrivate_
+      c:@S@_GstVideoAggregatorParallelConvertPad:
+        name: GstVideoAggregatorParallelConvertPad_
+      c:@S@_GstVideoAggregatorParallelConvertPadClass:
+        name: GstVideoAggregatorParallelConvertPadClass_
+      c:@S@_GstVideoAggregatorPrivate:
+        name: GstVideoAggregatorPrivate_
+      c:@S@_GstVideoAlignment:
+        name: GstVideoAlignment_
+      c:@S@_GstVideoAncillary:
+        name: GstVideoAncillary_
+      c:@S@_GstVideoBufferPool:
+        name: GstVideoBufferPool_
+      c:@S@_GstVideoBufferPoolClass:
+        name: GstVideoBufferPoolClass_
+      c:@S@_GstVideoBufferPoolPrivate:
+        name: GstVideoBufferPoolPrivate_
+      c:@S@_GstVideoChromaResample:
+        name: GstVideoChromaResample_
+      c:@S@_GstVideoCodecAlphaMeta:
+        name: GstVideoCodecAlphaMeta_
+      c:@S@_GstVideoCodecFrame:
+        name: GstVideoCodecFrame_
+      c:@S@_GstVideoCodecFrame@U@gstvideoutils.h@9985:
+        name: UnnamedUnion2
+      c:@S@_GstVideoCodecFrame@U@gstvideoutils.h@9985@S@gstvideoutils.h@9997:
+        name: UnnamedStruct2
+      c:@S@_GstVideoCodecState:
+        name: GstVideoCodecState_
+      c:@S@_GstVideoContentLightLevel:
+        name: GstVideoContentLightLevel_
+      c:@S@_GstVideoConverter:
+        name: GstVideoConverter_
+      c:@S@_GstVideoCropMeta:
+        name: GstVideoCropMeta_
+      c:@S@_GstVideoDecoder:
+        name: GstVideoDecoder_
+      c:@S@_GstVideoDecoderClass:
+        name: GstVideoDecoderClass_
+      c:@S@_GstVideoDecoderPrivate:
+        name: GstVideoDecoderPrivate_
+      c:@S@_GstVideoDirection:
+        name: GstVideoDirection_
+      c:@S@_GstVideoDirectionInterface:
+        name: GstVideoDirectionInterface_
+      c:@S@_GstVideoDither:
+        name: GstVideoDither_
+      c:@S@_GstVideoEncoder:
+        name: GstVideoEncoder_
+      c:@S@_GstVideoEncoderClass:
+        name: GstVideoEncoderClass_
+      c:@S@_GstVideoEncoderPrivate:
+        name: GstVideoEncoderPrivate_
+      c:@S@_GstVideoFilter:
+        name: GstVideoFilter_
+      c:@S@_GstVideoFilterClass:
+        name: GstVideoFilterClass_
+      c:@S@_GstVideoFormatInfo:
+        name: GstVideoFormatInfo_
+      c:@S@_GstVideoFrame:
+        name: GstVideoFrame_
+      c:@S@_GstVideoGLTextureUploadMeta:
+        name: GstVideoGLTextureUploadMeta_
+      c:@S@_GstVideoInfo:
+        name: GstVideoInfo_
+      c:@S@_GstVideoInfo@U@video-info.h@14822:
+        name: UnnamedUnion1
+      c:@S@_GstVideoInfo@U@video-info.h@14822@S@video-info.h@14834:
+        name: UnnamedStruct1
+      c:@S@_GstVideoInfoDmaDrm:
+        name: GstVideoInfoDmaDrm_
+      c:@S@_GstVideoMasteringDisplayInfo:
+        name: GstVideoMasteringDisplayInfo_
+      c:@S@_GstVideoMasteringDisplayInfoCoordinates:
+        name: GstVideoMasteringDisplayInfoCoordinates_
+      c:@S@_GstVideoMeta:
+        name: GstVideoMeta_
+      c:@S@_GstVideoOrientation:
+        name: GstVideoOrientation_
+      c:@S@_GstVideoOrientationInterface:
+        name: GstVideoOrientationInterface_
+      c:@S@_GstVideoOverlay:
+        name: GstVideoOverlay_
+      c:@S@_GstVideoOverlayComposition:
+        name: GstVideoOverlayComposition_
+      c:@S@_GstVideoOverlayCompositionMeta:
+        name: GstVideoOverlayCompositionMeta_
+      c:@S@_GstVideoOverlayInterface:
+        name: GstVideoOverlayInterface_
+      c:@S@_GstVideoOverlayRectangle:
+        name: GstVideoOverlayRectangle_
+      c:@S@_GstVideoRectangle:
+        name: GstVideoRectangle_
+      c:@S@_GstVideoResampler:
+        name: GstVideoResampler_
+      c:@S@_GstVideoScaler:
+        name: GstVideoScaler_
+      c:@S@_GstVideoSink:
+        name: GstVideoSink_
+      c:@S@_GstVideoSinkClass:
+        name: GstVideoSinkClass_
+      c:@S@_GstVideoSinkPrivate:
+        name: GstVideoSinkPrivate_
+      c:@S@_GstVideoTileInfo:
+        name: GstVideoTileInfo_
+      c:@S@_GstVideoTimeCode:
+        name: GstVideoTimeCode_
+      c:@S@_GstVideoTimeCodeConfig:
+        name: GstVideoTimeCodeConfig_
+      c:@S@_GstVideoTimeCodeInterval:
+        name: GstVideoTimeCodeInterval_
+      c:@S@_GstVideoVBIEncoder:
+        name: GstVideoVBIEncoder_
+      c:@S@_GstVideoVBIParser:
+        name: GstVideoVBIParser_
+      c:@SA@GstAncillaryMeta:
+        name: GstAncillaryMeta
+      c:@SA@GstVideoAFDMeta:
+        name: GstVideoAFDMeta
+      c:@SA@GstVideoBarMeta:
+        name: GstVideoBarMeta
+      c:@SA@GstVideoCaptionMeta:
+        name: GstVideoCaptionMeta
+      c:@SA@GstVideoColorPrimariesInfo:
+        name: GstVideoColorPrimariesInfo
+      c:@SA@GstVideoColorimetry:
+        name: GstVideoColorimetry
+      c:@SA@GstVideoMetaTransform:
+        name: GstVideoMetaTransform
+      c:@SA@GstVideoRegionOfInterestMeta:
+        name: GstVideoRegionOfInterestMeta
+      c:@SA@GstVideoSEIUserDataUnregisteredMeta:
+        name: GstVideoSEIUserDataUnregisteredMeta
+      c:@SA@GstVideoTimeCodeMeta:
+        name: GstVideoTimeCodeMeta
+      c:@T@GStaticMutex:
+        name: GStaticMutex
+      c:@T@GTestConfig:
+        name: GTestConfig
+      c:@T@GTestLogBuffer:
+        name: GTestLogBuffer
+      c:@T@GTestLogMsg:
+        name: GTestLogMsg
+      c:@T@GWeakRef:
+        name: GWeakRef
+      c:@T@GstCustomMeta:
+        name: GstCustomMeta
+      c:@T@GstMapInfo:
+        name: GstMapInfo
+      c:@T@GstMetaTransformCopy:
+        name: GstMetaTransformCopy
+      c:@T@GstPollFD:
+        name: GstPollFD
+      c:@T@__atomic_wide_counter:
+        name: atomic_wide_counter_
+      c:@T@__fsid_t:
+        name: fsid_t_
+      c:@T@__once_flag:
+        name: once_flag_
+      c:@T@__pthread_unwind_buf_t:
+        name: pthread_unwind_buf_t_
+      c:@T@__sigset_t:
+        name: sigset_t_
+      c:@T@cpu_set_t:
+        name: cpu_set_t
+      c:@T@div_t:
+        name: div_t
+      c:@T@fd_set:
+        name: fd_set
+      c:@T@ldiv_t:
+        name: ldiv_t
+      c:@T@lldiv_t:
+        name: lldiv_t
+      c:@T@max_align_t:
+        name: max_align_t
+      c:@T@mcontext_t:
+        name: mcontext_t
+      c:@T@pthread_barrier_t:
+        name: pthread_barrier_t
+      c:@T@pthread_barrierattr_t:
+        name: pthread_barrierattr_t
+      c:@T@pthread_cond_t:
+        name: pthread_cond_t
+      c:@T@pthread_condattr_t:
+        name: pthread_condattr_t
+      c:@T@pthread_mutex_t:
+        name: pthread_mutex_t
+      c:@T@pthread_mutexattr_t:
+        name: pthread_mutexattr_t
+      c:@T@pthread_rwlock_t:
+        name: pthread_rwlock_t
+      c:@T@pthread_rwlockattr_t:
+        name: pthread_rwlockattr_t
+      c:@T@siginfo_t:
+        name: siginfo_t
+      c:@T@stack_t:
+        name: stack_t
+      c:colorbalance.h@T@GstColorBalance:
+        name: GstColorBalance
+      c:colorbalance.h@T@GstColorBalanceInterface:
+        name: GstColorBalanceInterface
+      c:colorbalancechannel.h@T@GstColorBalanceChannel:
+        name: GstColorBalanceChannel
+      c:colorbalancechannel.h@T@GstColorBalanceChannelClass:
+        name: GstColorBalanceChannelClass
+      c:colorbalancechannel.h@T@GstColorBalanceChannel_autoptr:
+        name: GstColorBalanceChannel_autoptr
+      c:colorbalancechannel.h@T@GstColorBalanceChannel_listautoptr:
+        name: GstColorBalanceChannel_listautoptr
+      c:colorbalancechannel.h@T@GstColorBalanceChannel_queueautoptr:
+        name: GstColorBalanceChannel_queueautoptr
+      c:colorbalancechannel.h@T@GstColorBalanceChannel_slistautoptr:
+        name: GstColorBalanceChannel_slistautoptr
+      c:gstadapter.h@T@GstAdapter:
+        name: GstAdapter
+      c:gstadapter.h@T@GstAdapterClass:
+        name: GstAdapterClass
+      c:gstadapter.h@T@GstAdapter_autoptr:
+        name: GstAdapter_autoptr
+      c:gstadapter.h@T@GstAdapter_listautoptr:
+        name: GstAdapter_listautoptr
+      c:gstadapter.h@T@GstAdapter_queueautoptr:
+        name: GstAdapter_queueautoptr
+      c:gstadapter.h@T@GstAdapter_slistautoptr:
+        name: GstAdapter_slistautoptr
+      c:gstaggregator.h@T@GstAggregator:
+        name: GstAggregator
+      c:gstaggregator.h@T@GstAggregatorClass:
+        name: GstAggregatorClass
+      c:gstaggregator.h@T@GstAggregatorPad:
+        name: GstAggregatorPad
+      c:gstaggregator.h@T@GstAggregatorPadClass:
+        name: GstAggregatorPadClass
+      c:gstaggregator.h@T@GstAggregatorPadPrivate:
+        name: GstAggregatorPadPrivate
+      c:gstaggregator.h@T@GstAggregatorPad_autoptr:
+        name: GstAggregatorPad_autoptr
+      c:gstaggregator.h@T@GstAggregatorPad_listautoptr:
+        name: GstAggregatorPad_listautoptr
+      c:gstaggregator.h@T@GstAggregatorPad_queueautoptr:
+        name: GstAggregatorPad_queueautoptr
+      c:gstaggregator.h@T@GstAggregatorPad_slistautoptr:
+        name: GstAggregatorPad_slistautoptr
+      c:gstaggregator.h@T@GstAggregatorPrivate:
+        name: GstAggregatorPrivate
+      c:gstaggregator.h@T@GstAggregator_autoptr:
+        name: GstAggregator_autoptr
+      c:gstaggregator.h@T@GstAggregator_listautoptr:
+        name: GstAggregator_listautoptr
+      c:gstaggregator.h@T@GstAggregator_queueautoptr:
+        name: GstAggregator_queueautoptr
+      c:gstaggregator.h@T@GstAggregator_slistautoptr:
+        name: GstAggregator_slistautoptr
+      c:gstbasesink.h@T@GstBaseSink:
+        name: GstBaseSink
+      c:gstbasesink.h@T@GstBaseSinkClass:
+        name: GstBaseSinkClass
+      c:gstbasesink.h@T@GstBaseSinkPrivate:
+        name: GstBaseSinkPrivate
+      c:gstbasesink.h@T@GstBaseSink_autoptr:
+        name: GstBaseSink_autoptr
+      c:gstbasesink.h@T@GstBaseSink_listautoptr:
+        name: GstBaseSink_listautoptr
+      c:gstbasesink.h@T@GstBaseSink_queueautoptr:
+        name: GstBaseSink_queueautoptr
+      c:gstbasesink.h@T@GstBaseSink_slistautoptr:
+        name: GstBaseSink_slistautoptr
+      c:gstbasetransform.h@T@GstBaseTransform:
+        name: GstBaseTransform
+      c:gstbasetransform.h@T@GstBaseTransformClass:
+        name: GstBaseTransformClass
+      c:gstbasetransform.h@T@GstBaseTransformPrivate:
+        name: GstBaseTransformPrivate
+      c:gstbasetransform.h@T@GstBaseTransform_autoptr:
+        name: GstBaseTransform_autoptr
+      c:gstbasetransform.h@T@GstBaseTransform_listautoptr:
+        name: GstBaseTransform_listautoptr
+      c:gstbasetransform.h@T@GstBaseTransform_queueautoptr:
+        name: GstBaseTransform_queueautoptr
+      c:gstbasetransform.h@T@GstBaseTransform_slistautoptr:
+        name: GstBaseTransform_slistautoptr
+      c:gstvideoaffinetransformationmeta.h@T@GstVideoAffineTransformationGetMatrix:
+        name: GstVideoAffineTransformationGetMatrix
+      c:gstvideoaffinetransformationmeta.h@T@GstVideoAffineTransformationMeta:
+        name: GstVideoAffineTransformationMeta
+      c:gstvideoaggregator.h@T@GstVideoAggregator:
+        name: GstVideoAggregator
+      c:gstvideoaggregator.h@T@GstVideoAggregatorClass:
+        name: GstVideoAggregatorClass
+      c:gstvideoaggregator.h@T@GstVideoAggregatorConvertPad:
+        name: GstVideoAggregatorConvertPad
+      c:gstvideoaggregator.h@T@GstVideoAggregatorConvertPadClass:
+        name: GstVideoAggregatorConvertPadClass
+      c:gstvideoaggregator.h@T@GstVideoAggregatorConvertPadPrivate:
+        name: GstVideoAggregatorConvertPadPrivate
+      c:gstvideoaggregator.h@T@GstVideoAggregatorConvertPad_autoptr:
+        name: GstVideoAggregatorConvertPad_autoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorConvertPad_listautoptr:
+        name: GstVideoAggregatorConvertPad_listautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorConvertPad_queueautoptr:
+        name: GstVideoAggregatorConvertPad_queueautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorConvertPad_slistautoptr:
+        name: GstVideoAggregatorConvertPad_slistautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorPad:
+        name: GstVideoAggregatorPad
+      c:gstvideoaggregator.h@T@GstVideoAggregatorPadClass:
+        name: GstVideoAggregatorPadClass
+      c:gstvideoaggregator.h@T@GstVideoAggregatorPadPrivate:
+        name: GstVideoAggregatorPadPrivate
+      c:gstvideoaggregator.h@T@GstVideoAggregatorPad_autoptr:
+        name: GstVideoAggregatorPad_autoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorPad_listautoptr:
+        name: GstVideoAggregatorPad_listautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorPad_queueautoptr:
+        name: GstVideoAggregatorPad_queueautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorPad_slistautoptr:
+        name: GstVideoAggregatorPad_slistautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorParallelConvertPad:
+        name: GstVideoAggregatorParallelConvertPad
+      c:gstvideoaggregator.h@T@GstVideoAggregatorParallelConvertPadClass:
+        name: GstVideoAggregatorParallelConvertPadClass
+      c:gstvideoaggregator.h@T@GstVideoAggregatorParallelConvertPadClass_autoptr:
+        name: GstVideoAggregatorParallelConvertPadClass_autoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorParallelConvertPadClass_listautoptr:
+        name: GstVideoAggregatorParallelConvertPadClass_listautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorParallelConvertPadClass_queueautoptr:
+        name: GstVideoAggregatorParallelConvertPadClass_queueautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorParallelConvertPadClass_slistautoptr:
+        name: GstVideoAggregatorParallelConvertPadClass_slistautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorParallelConvertPad_autoptr:
+        name: GstVideoAggregatorParallelConvertPad_autoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorParallelConvertPad_listautoptr:
+        name: GstVideoAggregatorParallelConvertPad_listautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorParallelConvertPad_queueautoptr:
+        name: GstVideoAggregatorParallelConvertPad_queueautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorParallelConvertPad_slistautoptr:
+        name: GstVideoAggregatorParallelConvertPad_slistautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregatorPrivate:
+        name: GstVideoAggregatorPrivate
+      c:gstvideoaggregator.h@T@GstVideoAggregator_autoptr:
+        name: GstVideoAggregator_autoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregator_listautoptr:
+        name: GstVideoAggregator_listautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregator_queueautoptr:
+        name: GstVideoAggregator_queueautoptr
+      c:gstvideoaggregator.h@T@GstVideoAggregator_slistautoptr:
+        name: GstVideoAggregator_slistautoptr
+      c:gstvideocodecalphameta.h@T@GstVideoCodecAlphaMeta:
+        name: GstVideoCodecAlphaMeta
+      c:gstvideodecoder.h@T@GstVideoDecoder:
+        name: GstVideoDecoder
+      c:gstvideodecoder.h@T@GstVideoDecoderClass:
+        name: GstVideoDecoderClass
+      c:gstvideodecoder.h@T@GstVideoDecoderPrivate:
+        name: GstVideoDecoderPrivate
+      c:gstvideodecoder.h@T@GstVideoDecoder_autoptr:
+        name: GstVideoDecoder_autoptr
+      c:gstvideodecoder.h@T@GstVideoDecoder_listautoptr:
+        name: GstVideoDecoder_listautoptr
+      c:gstvideodecoder.h@T@GstVideoDecoder_queueautoptr:
+        name: GstVideoDecoder_queueautoptr
+      c:gstvideodecoder.h@T@GstVideoDecoder_slistautoptr:
+        name: GstVideoDecoder_slistautoptr
+      c:gstvideoencoder.h@T@GstVideoEncoder:
+        name: GstVideoEncoder
+      c:gstvideoencoder.h@T@GstVideoEncoderClass:
+        name: GstVideoEncoderClass
+      c:gstvideoencoder.h@T@GstVideoEncoderPrivate:
+        name: GstVideoEncoderPrivate
+      c:gstvideoencoder.h@T@GstVideoEncoder_autoptr:
+        name: GstVideoEncoder_autoptr
+      c:gstvideoencoder.h@T@GstVideoEncoder_listautoptr:
+        name: GstVideoEncoder_listautoptr
+      c:gstvideoencoder.h@T@GstVideoEncoder_queueautoptr:
+        name: GstVideoEncoder_queueautoptr
+      c:gstvideoencoder.h@T@GstVideoEncoder_slistautoptr:
+        name: GstVideoEncoder_slistautoptr
+      c:gstvideofilter.h@T@GstVideoFilter:
+        name: GstVideoFilter
+      c:gstvideofilter.h@T@GstVideoFilterClass:
+        name: GstVideoFilterClass
+      c:gstvideofilter.h@T@GstVideoFilter_autoptr:
+        name: GstVideoFilter_autoptr
+      c:gstvideofilter.h@T@GstVideoFilter_listautoptr:
+        name: GstVideoFilter_listautoptr
+      c:gstvideofilter.h@T@GstVideoFilter_queueautoptr:
+        name: GstVideoFilter_queueautoptr
+      c:gstvideofilter.h@T@GstVideoFilter_slistautoptr:
+        name: GstVideoFilter_slistautoptr
+      c:gstvideometa.h@T@GstVideoCropMeta:
+        name: GstVideoCropMeta
+      c:gstvideometa.h@T@GstVideoGLTextureUpload:
+        name: GstVideoGLTextureUpload
+      c:gstvideometa.h@T@GstVideoGLTextureUploadMeta:
+        name: GstVideoGLTextureUploadMeta
+      c:gstvideometa.h@T@GstVideoMeta:
+        name: GstVideoMeta
+      c:gstvideopool.h@T@GstVideoBufferPool:
+        name: GstVideoBufferPool
+      c:gstvideopool.h@T@GstVideoBufferPoolClass:
+        name: GstVideoBufferPoolClass
+      c:gstvideopool.h@T@GstVideoBufferPoolPrivate:
+        name: GstVideoBufferPoolPrivate
+      c:gstvideopool.h@T@GstVideoBufferPool_autoptr:
+        name: GstVideoBufferPool_autoptr
+      c:gstvideopool.h@T@GstVideoBufferPool_listautoptr:
+        name: GstVideoBufferPool_listautoptr
+      c:gstvideopool.h@T@GstVideoBufferPool_queueautoptr:
+        name: GstVideoBufferPool_queueautoptr
+      c:gstvideopool.h@T@GstVideoBufferPool_slistautoptr:
+        name: GstVideoBufferPool_slistautoptr
+      c:gstvideosink.h@T@GstVideoRectangle:
+        name: GstVideoRectangle
+      c:gstvideosink.h@T@GstVideoSink:
+        name: GstVideoSink
+      c:gstvideosink.h@T@GstVideoSinkClass:
+        name: GstVideoSinkClass
+      c:gstvideosink.h@T@GstVideoSinkPrivate:
+        name: GstVideoSinkPrivate
+      c:gstvideosink.h@T@GstVideoSink_autoptr:
+        name: GstVideoSink_autoptr
+      c:gstvideosink.h@T@GstVideoSink_listautoptr:
+        name: GstVideoSink_listautoptr
+      c:gstvideosink.h@T@GstVideoSink_queueautoptr:
+        name: GstVideoSink_queueautoptr
+      c:gstvideosink.h@T@GstVideoSink_slistautoptr:
+        name: GstVideoSink_slistautoptr
+      c:gstvideotimecode.h@T@GstVideoTimeCode:
+        name: GstVideoTimeCode
+      c:gstvideotimecode.h@T@GstVideoTimeCodeConfig:
+        name: GstVideoTimeCodeConfig
+      c:gstvideotimecode.h@T@GstVideoTimeCodeInterval:
+        name: GstVideoTimeCodeInterval
+      c:gstvideoutils.h@T@GstVideoCodecFrame:
+        name: GstVideoCodecFrame
+      c:gstvideoutils.h@T@GstVideoCodecFrame_autoptr:
+        name: GstVideoCodecFrame_autoptr
+      c:gstvideoutils.h@T@GstVideoCodecFrame_listautoptr:
+        name: GstVideoCodecFrame_listautoptr
+      c:gstvideoutils.h@T@GstVideoCodecFrame_queueautoptr:
+        name: GstVideoCodecFrame_queueautoptr
+      c:gstvideoutils.h@T@GstVideoCodecFrame_slistautoptr:
+        name: GstVideoCodecFrame_slistautoptr
+      c:gstvideoutils.h@T@GstVideoCodecState:
+        name: GstVideoCodecState
+      c:gstvideoutils.h@T@GstVideoCodecState_autoptr:
+        name: GstVideoCodecState_autoptr
+      c:gstvideoutils.h@T@GstVideoCodecState_listautoptr:
+        name: GstVideoCodecState_listautoptr
+      c:gstvideoutils.h@T@GstVideoCodecState_queueautoptr:
+        name: GstVideoCodecState_queueautoptr
+      c:gstvideoutils.h@T@GstVideoCodecState_slistautoptr:
+        name: GstVideoCodecState_slistautoptr
+      c:gtestutils.h@T@GTestCase:
+        name: GTestCase
+      c:gtestutils.h@T@GTestSuite:
+        name: GTestSuite
+      c:navigation.h@T@GstNavigation:
+        name: GstNavigation
+      c:navigation.h@T@GstNavigationInterface:
+        name: GstNavigationInterface
+      c:pthreadtypes.h@T@pthread_attr_t:
+        name: pthread_attr_t
+      c:ucontext.h@T@ucontext_t:
+        name: ucontext_t
+      c:video-anc.h@T@GstVideoAncillary:
+        name: GstVideoAncillary
+      c:video-anc.h@T@GstVideoVBIEncoder:
+        name: GstVideoVBIEncoder
+      c:video-anc.h@T@GstVideoVBIParser:
+        name: GstVideoVBIParser
+      c:video-chroma.h@T@GstVideoChromaResample:
+        name: GstVideoChromaResample
+      c:video-converter.h@T@GstVideoConverter:
+        name: GstVideoConverter
+      c:video-dither.h@T@GstVideoDither:
+        name: GstVideoDither
+      c:video-format.h@T@GstVideoFormatInfo:
+        name: GstVideoFormatInfo
+      c:video-format.h@T@GstVideoFormatPack:
+        name: GstVideoFormatPack
+      c:video-format.h@T@GstVideoFormatUnpack:
+        name: GstVideoFormatUnpack
+      c:video-frame.h@T@GstVideoFrame:
+        name: GstVideoFrame
+      c:video-hdr.h@T@GstVideoContentLightLevel:
+        name: GstVideoContentLightLevel
+      c:video-hdr.h@T@GstVideoMasteringDisplayInfo:
+        name: GstVideoMasteringDisplayInfo
+      c:video-hdr.h@T@GstVideoMasteringDisplayInfoCoordinates:
+        name: GstVideoMasteringDisplayInfoCoordinates
+      c:video-info-dma.h@T@GstVideoInfoDmaDrm:
+        name: GstVideoInfoDmaDrm
+      c:video-info.h@T@GstVideoInfo:
+        name: GstVideoInfo
+      c:video-info.h@T@GstVideoInfo_autoptr:
+        name: GstVideoInfo_autoptr
+      c:video-info.h@T@GstVideoInfo_listautoptr:
+        name: GstVideoInfo_listautoptr
+      c:video-info.h@T@GstVideoInfo_queueautoptr:
+        name: GstVideoInfo_queueautoptr
+      c:video-info.h@T@GstVideoInfo_slistautoptr:
+        name: GstVideoInfo_slistautoptr
+      c:video-overlay-composition.h@T@GstVideoOverlayComposition:
+        name: GstVideoOverlayComposition
+      c:video-overlay-composition.h@T@GstVideoOverlayCompositionMeta:
+        name: GstVideoOverlayCompositionMeta
+      c:video-overlay-composition.h@T@GstVideoOverlayComposition_autoptr:
+        name: GstVideoOverlayComposition_autoptr
+      c:video-overlay-composition.h@T@GstVideoOverlayComposition_listautoptr:
+        name: GstVideoOverlayComposition_listautoptr
+      c:video-overlay-composition.h@T@GstVideoOverlayComposition_queueautoptr:
+        name: GstVideoOverlayComposition_queueautoptr
+      c:video-overlay-composition.h@T@GstVideoOverlayComposition_slistautoptr:
+        name: GstVideoOverlayComposition_slistautoptr
+      c:video-overlay-composition.h@T@GstVideoOverlayRectangle:
+        name: GstVideoOverlayRectangle
+      c:video-overlay-composition.h@T@GstVideoOverlayRectangle_autoptr:
+        name: GstVideoOverlayRectangle_autoptr
+      c:video-overlay-composition.h@T@GstVideoOverlayRectangle_listautoptr:
+        name: GstVideoOverlayRectangle_listautoptr
+      c:video-overlay-composition.h@T@GstVideoOverlayRectangle_queueautoptr:
+        name: GstVideoOverlayRectangle_queueautoptr
+      c:video-overlay-composition.h@T@GstVideoOverlayRectangle_slistautoptr:
+        name: GstVideoOverlayRectangle_slistautoptr
+      c:video-resampler.h@T@GstVideoResampler:
+        name: GstVideoResampler
+      c:video-scaler.h@T@GstVideoScaler:
+        name: GstVideoScaler
+      c:video-sei.h@H264_MISP_MICROSECTIME:
+        name: H264_MISP_MICROSECTIME
+      c:video-sei.h@H265_MISP_MICROSECONDS:
+        name: H265_MISP_MICROSECONDS
+      c:video-sei.h@H265_MISP_NANOSECONDS:
+        name: H265_MISP_NANOSECONDS
+      c:video-tile.h@T@GstVideoTileInfo:
+        name: GstVideoTileInfo
+      c:video.h@T@GstVideoAlignment:
+        name: GstVideoAlignment
+      c:video.h@T@GstVideoConvertSampleCallback:
+        name: GstVideoConvertSampleCallback
+      c:videodirection.h@T@GstVideoDirection:
+        name: GstVideoDirection
+      c:videodirection.h@T@GstVideoDirectionInterface:
+        name: GstVideoDirectionInterface
+      c:videoorientation.h@T@GstVideoOrientation:
+        name: GstVideoOrientation
+      c:videoorientation.h@T@GstVideoOrientationInterface:
+        name: GstVideoOrientationInterface
+      c:videooverlay.h@T@GstVideoOverlay:
+        name: GstVideoOverlay
+      c:videooverlay.h@T@GstVideoOverlayInterface:
+        name: GstVideoOverlayInterface

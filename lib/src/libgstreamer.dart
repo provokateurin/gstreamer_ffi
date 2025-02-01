@@ -238,26 +238,25 @@ class libgstreamer {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<time_t>, ffi.Pointer<ffi.Char>)>();
 
-  late final ffi.Pointer<ffi.Pointer<ffi.Pointer<ffi.Char>>> ___tzname =
+  late final ffi.Pointer<ffi.Pointer<ffi.Pointer<ffi.Char>>> _tzname_ =
       _lookup<ffi.Pointer<ffi.Pointer<ffi.Char>>>('__tzname');
 
-  ffi.Pointer<ffi.Pointer<ffi.Char>> get __tzname => ___tzname.value;
+  ffi.Pointer<ffi.Pointer<ffi.Char>> get tzname_ => _tzname_.value;
 
-  set __tzname(ffi.Pointer<ffi.Pointer<ffi.Char>> value) =>
-      ___tzname.value = value;
+  set tzname_(ffi.Pointer<ffi.Pointer<ffi.Char>> value) =>
+      _tzname_.value = value;
 
-  late final ffi.Pointer<ffi.Int> ___daylight = _lookup<ffi.Int>('__daylight');
+  late final ffi.Pointer<ffi.Int> _daylight_ = _lookup<ffi.Int>('__daylight');
 
-  int get __daylight => ___daylight.value;
+  int get daylight_ => _daylight_.value;
 
-  set __daylight(int value) => ___daylight.value = value;
+  set daylight_(int value) => _daylight_.value = value;
 
-  late final ffi.Pointer<ffi.Long> ___timezone =
-      _lookup<ffi.Long>('__timezone');
+  late final ffi.Pointer<ffi.Long> _timezone_ = _lookup<ffi.Long>('__timezone');
 
-  int get __timezone => ___timezone.value;
+  int get timezone_ => _timezone_.value;
 
-  set __timezone(int value) => ___timezone.value = value;
+  set timezone_(int value) => _timezone_.value = value;
 
   late final ffi.Pointer<ffi.Pointer<ffi.Pointer<ffi.Char>>> _tzname =
       _lookup<ffi.Pointer<ffi.Pointer<ffi.Char>>>('tzname');
@@ -626,23 +625,23 @@ class libgstreamer {
   late final _memcmp = _memcmpPtr.asFunction<
       int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
-  int __memcmpeq(
+  int memcmpeq_(
     ffi.Pointer<ffi.Void> __s1,
     ffi.Pointer<ffi.Void> __s2,
     int __n,
   ) {
-    return ___memcmpeq(
+    return _memcmpeq_(
       __s1,
       __s2,
       __n,
     );
   }
 
-  late final ___memcmpeqPtr = _lookup<
+  late final _memcmpeq_Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>,
               ffi.Size)>>('__memcmpeq');
-  late final ___memcmpeq = ___memcmpeqPtr.asFunction<
+  late final _memcmpeq_ = _memcmpeq_Ptr.asFunction<
       int Function(ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
   ffi.Pointer<ffi.Void> memchr(
@@ -1023,25 +1022,25 @@ class libgstreamer {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> __strtok_r(
+  ffi.Pointer<ffi.Char> strtok_r_(
     ffi.Pointer<ffi.Char> __s,
     ffi.Pointer<ffi.Char> __delim,
     ffi.Pointer<ffi.Pointer<ffi.Char>> __save_ptr,
   ) {
-    return ___strtok_r(
+    return _strtok_r_(
       __s,
       __delim,
       __save_ptr,
     );
   }
 
-  late final ___strtok_rPtr = _lookup<
+  late final _strtok_r_Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Pointer<ffi.Char>>)>>('__strtok_r');
-  late final ___strtok_r = ___strtok_rPtr.asFunction<
+  late final _strtok_r_ = _strtok_r_Ptr.asFunction<
       ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<ffi.Char>>)>();
 
@@ -1107,23 +1106,23 @@ class libgstreamer {
       ffi.Pointer<ffi.Void> Function(
           ffi.Pointer<ffi.Void>, int, ffi.Pointer<ffi.Void>, int)>();
 
-  ffi.Pointer<ffi.Void> __mempcpy(
+  ffi.Pointer<ffi.Void> mempcpy_(
     ffi.Pointer<ffi.Void> __dest,
     ffi.Pointer<ffi.Void> __src,
     int __n,
   ) {
-    return ___mempcpy(
+    return _mempcpy_(
       __dest,
       __src,
       __n,
     );
   }
 
-  late final ___mempcpyPtr = _lookup<
+  late final _mempcpy_Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
               ffi.Pointer<ffi.Void>, ffi.Size)>>('__mempcpy');
-  late final ___mempcpy = ___mempcpyPtr.asFunction<
+  late final _mempcpy_ = _mempcpy_Ptr.asFunction<
       ffi.Pointer<ffi.Void> Function(
           ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>, int)>();
 
@@ -1476,21 +1475,21 @@ class libgstreamer {
   late final _strsignal =
       _strsignalPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
-  ffi.Pointer<ffi.Char> __stpcpy(
+  ffi.Pointer<ffi.Char> stpcpy_(
     ffi.Pointer<ffi.Char> __dest,
     ffi.Pointer<ffi.Char> __src,
   ) {
-    return ___stpcpy(
+    return _stpcpy_(
       __dest,
       __src,
     );
   }
 
-  late final ___stpcpyPtr = _lookup<
+  late final _stpcpy_Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>>('__stpcpy');
-  late final ___stpcpy = ___stpcpyPtr.asFunction<
+  late final _stpcpy_ = _stpcpy_Ptr.asFunction<
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
@@ -1512,23 +1511,23 @@ class libgstreamer {
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> __stpncpy(
+  ffi.Pointer<ffi.Char> stpncpy_(
     ffi.Pointer<ffi.Char> __dest,
     ffi.Pointer<ffi.Char> __src,
     int __n,
   ) {
-    return ___stpncpy(
+    return _stpncpy_(
       __dest,
       __src,
       __n,
     );
   }
 
-  late final ___stpncpyPtr = _lookup<
+  late final _stpncpy_Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>, ffi.Size)>>('__stpncpy');
-  late final ___stpncpy = ___stpncpyPtr.asFunction<
+  late final _stpncpy_ = _stpncpy_Ptr.asFunction<
       ffi.Pointer<ffi.Char> Function(
           ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Char>, int)>();
 
@@ -3302,7 +3301,7 @@ class libgstreamer {
     int domain,
     int code,
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _g_error_new_valist(
       domain,
@@ -3315,10 +3314,10 @@ class libgstreamer {
   late final _g_error_new_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GError> Function(GQuark, ffi.Int, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('g_error_new_valist');
+              ffi.Pointer<va_list_tag_>)>>('g_error_new_valist');
   late final _g_error_new_valist = _g_error_new_valistPtr.asFunction<
       ffi.Pointer<GError> Function(
-          int, int, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+          int, int, ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>();
 
   void g_error_free(
     ffi.Pointer<GError> error,
@@ -3751,7 +3750,7 @@ class libgstreamer {
     ffi.Pointer<ffi.Char> string,
     int n,
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _g_vsnprintf(
       string,
@@ -3767,10 +3766,10 @@ class libgstreamer {
               ffi.Pointer<ffi.Char>,
               ffi.UnsignedLong,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('g_vsnprintf');
+              ffi.Pointer<va_list_tag_>)>>('g_vsnprintf');
   late final _g_vsnprintf = _g_vsnprintfPtr.asFunction<
       int Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>,
-          ffi.Pointer<__va_list_tag>)>();
+          ffi.Pointer<va_list_tag_>)>();
 
   void g_nullify_pointer(
     ffi.Pointer<ffi.Pointer> nullify_location,
@@ -3903,15 +3902,15 @@ class libgstreamer {
           'g_bit_storage');
   late final _g_bit_storage = _g_bit_storagePtr.asFunction<int Function(int)>();
 
-  int __ctype_get_mb_cur_max() {
-    return ___ctype_get_mb_cur_max();
+  int ctype_get_mb_cur_max_() {
+    return _ctype_get_mb_cur_max_();
   }
 
-  late final ___ctype_get_mb_cur_maxPtr =
+  late final _ctype_get_mb_cur_max_Ptr =
       _lookup<ffi.NativeFunction<ffi.Size Function()>>(
           '__ctype_get_mb_cur_max');
-  late final ___ctype_get_mb_cur_max =
-      ___ctype_get_mb_cur_maxPtr.asFunction<int Function()>();
+  late final _ctype_get_mb_cur_max_ =
+      _ctype_get_mb_cur_max_Ptr.asFunction<int Function()>();
 
   double atof(
     ffi.Pointer<ffi.Char> __nptr,
@@ -4179,7 +4178,7 @@ class libgstreamer {
     ffi.Pointer<fd_set> __writefds,
     ffi.Pointer<fd_set> __exceptfds,
     ffi.Pointer<timespec> __timeout,
-    ffi.Pointer<__sigset_t> __sigmask,
+    ffi.Pointer<sigset_t_> __sigmask,
   ) {
     return _pselect(
       __nfds,
@@ -4199,7 +4198,7 @@ class libgstreamer {
               ffi.Pointer<fd_set>,
               ffi.Pointer<fd_set>,
               ffi.Pointer<timespec>,
-              ffi.Pointer<__sigset_t>)>>('pselect');
+              ffi.Pointer<sigset_t_>)>>('pselect');
   late final _pselect = _pselectPtr.asFunction<
       int Function(
           int,
@@ -4207,7 +4206,7 @@ class libgstreamer {
           ffi.Pointer<fd_set>,
           ffi.Pointer<fd_set>,
           ffi.Pointer<timespec>,
-          ffi.Pointer<__sigset_t>)>();
+          ffi.Pointer<sigset_t_>)>();
 
   int random() {
     return _random();
@@ -4647,7 +4646,7 @@ class libgstreamer {
   }
 
   late final _arc4randomPtr =
-      _lookup<ffi.NativeFunction<__uint32_t Function()>>('arc4random');
+      _lookup<ffi.NativeFunction<uint32_t_ Function()>>('arc4random');
   late final _arc4random = _arc4randomPtr.asFunction<int Function()>();
 
   void arc4random_buf(
@@ -4676,7 +4675,7 @@ class libgstreamer {
   }
 
   late final _arc4random_uniformPtr =
-      _lookup<ffi.NativeFunction<__uint32_t Function(__uint32_t)>>(
+      _lookup<ffi.NativeFunction<uint32_t_ Function(uint32_t_)>>(
           'arc4random_uniform');
   late final _arc4random_uniform =
       _arc4random_uniformPtr.asFunction<int Function(int)>();
@@ -4917,17 +4916,17 @@ class libgstreamer {
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>('quick_exit');
   late final _quick_exit = _quick_exitPtr.asFunction<void Function(int)>();
 
-  void _Exit(
+  void Exit_(
     int __status,
   ) {
-    return __Exit(
+    return _Exit_(
       __status,
     );
   }
 
-  late final __ExitPtr =
+  late final _Exit_Ptr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Int)>>('_Exit');
-  late final __Exit = __ExitPtr.asFunction<void Function(int)>();
+  late final _Exit_ = _Exit_Ptr.asFunction<void Function(int)>();
 
   ffi.Pointer<ffi.Char> getenv(
     ffi.Pointer<ffi.Char> __name,
@@ -5093,7 +5092,7 @@ class libgstreamer {
     ffi.Pointer<ffi.Void> __base,
     int __nmemb,
     int __size,
-    __compar_fn_t __compar,
+    compar_fn_t_ __compar,
   ) {
     return _bsearch(
       __key,
@@ -5111,16 +5110,16 @@ class libgstreamer {
               ffi.Pointer<ffi.Void>,
               ffi.Size,
               ffi.Size,
-              __compar_fn_t)>>('bsearch');
+              compar_fn_t_)>>('bsearch');
   late final _bsearch = _bsearchPtr.asFunction<
       ffi.Pointer<ffi.Void> Function(ffi.Pointer<ffi.Void>,
-          ffi.Pointer<ffi.Void>, int, int, __compar_fn_t)>();
+          ffi.Pointer<ffi.Void>, int, int, compar_fn_t_)>();
 
   void qsort(
     ffi.Pointer<ffi.Void> __base,
     int __nmemb,
     int __size,
-    __compar_fn_t __compar,
+    compar_fn_t_ __compar,
   ) {
     return _qsort(
       __base,
@@ -5133,9 +5132,9 @@ class libgstreamer {
   late final _qsortPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size,
-              __compar_fn_t)>>('qsort');
+              compar_fn_t_)>>('qsort');
   late final _qsort = _qsortPtr.asFunction<
-      void Function(ffi.Pointer<ffi.Void>, int, int, __compar_fn_t)>();
+      void Function(ffi.Pointer<ffi.Void>, int, int, compar_fn_t_)>();
 
   int abs(
     int __x,
@@ -6523,25 +6522,25 @@ class libgstreamer {
           ffi.Pointer Function(
               ffi.Pointer<GAsyncQueue>, ffi.Pointer<GTimeVal>)>();
 
-  __sighandler_t __sysv_signal(
+  sighandler_t_ sysv_signal_(
     int __sig,
-    __sighandler_t __handler,
+    sighandler_t_ __handler,
   ) {
-    return ___sysv_signal(
+    return _sysv_signal_(
       __sig,
       __handler,
     );
   }
 
-  late final ___sysv_signalPtr = _lookup<
-          ffi.NativeFunction<__sighandler_t Function(ffi.Int, __sighandler_t)>>(
+  late final _sysv_signal_Ptr = _lookup<
+          ffi.NativeFunction<sighandler_t_ Function(ffi.Int, sighandler_t_)>>(
       '__sysv_signal');
-  late final ___sysv_signal = ___sysv_signalPtr
-      .asFunction<__sighandler_t Function(int, __sighandler_t)>();
+  late final _sysv_signal_ =
+      _sysv_signal_Ptr.asFunction<sighandler_t_ Function(int, sighandler_t_)>();
 
-  __sighandler_t signal(
+  sighandler_t_ signal(
     int __sig,
-    __sighandler_t __handler,
+    sighandler_t_ __handler,
   ) {
     return _signal(
       __sig,
@@ -6550,10 +6549,10 @@ class libgstreamer {
   }
 
   late final _signalPtr = _lookup<
-          ffi.NativeFunction<__sighandler_t Function(ffi.Int, __sighandler_t)>>(
+          ffi.NativeFunction<sighandler_t_ Function(ffi.Int, sighandler_t_)>>(
       'signal');
   late final _signal =
-      _signalPtr.asFunction<__sighandler_t Function(int, __sighandler_t)>();
+      _signalPtr.asFunction<sighandler_t_ Function(int, sighandler_t_)>();
 
   int kill(
     int __pid,
@@ -6566,7 +6565,7 @@ class libgstreamer {
   }
 
   late final _killPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(__pid_t, ffi.Int)>>('kill');
+      _lookup<ffi.NativeFunction<ffi.Int Function(pid_t_, ffi.Int)>>('kill');
   late final _kill = _killPtr.asFunction<int Function(int, int)>();
 
   int killpg(
@@ -6580,7 +6579,7 @@ class libgstreamer {
   }
 
   late final _killpgPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(__pid_t, ffi.Int)>>('killpg');
+      _lookup<ffi.NativeFunction<ffi.Int Function(pid_t_, ffi.Int)>>('killpg');
   late final _killpg = _killpgPtr.asFunction<int Function(int, int)>();
 
   int raise(
@@ -6595,9 +6594,9 @@ class libgstreamer {
       _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int)>>('raise');
   late final _raise = _raisePtr.asFunction<int Function(int)>();
 
-  __sighandler_t ssignal(
+  sighandler_t_ ssignal(
     int __sig,
-    __sighandler_t __handler,
+    sighandler_t_ __handler,
   ) {
     return _ssignal(
       __sig,
@@ -6606,10 +6605,10 @@ class libgstreamer {
   }
 
   late final _ssignalPtr = _lookup<
-          ffi.NativeFunction<__sighandler_t Function(ffi.Int, __sighandler_t)>>(
+          ffi.NativeFunction<sighandler_t_ Function(ffi.Int, sighandler_t_)>>(
       'ssignal');
   late final _ssignal =
-      _ssignalPtr.asFunction<__sighandler_t Function(int, __sighandler_t)>();
+      _ssignalPtr.asFunction<sighandler_t_ Function(int, sighandler_t_)>();
 
   int gsignal(
     int __sig,
@@ -6897,7 +6896,7 @@ class libgstreamer {
   }
 
   late final _sigqueuePtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(__pid_t, ffi.Int, sigval)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(pid_t_, ffi.Int, sigval)>>(
           'sigqueue');
   late final _sigqueue =
       _sigqueuePtr.asFunction<int Function(int, int, sigval)>();
@@ -6968,8 +6967,8 @@ class libgstreamer {
 
   int pthread_sigmask(
     int __how,
-    ffi.Pointer<__sigset_t> __newmask,
-    ffi.Pointer<__sigset_t> __oldmask,
+    ffi.Pointer<sigset_t_> __newmask,
+    ffi.Pointer<sigset_t_> __oldmask,
   ) {
     return _pthread_sigmask(
       __how,
@@ -6980,10 +6979,10 @@ class libgstreamer {
 
   late final _pthread_sigmaskPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(ffi.Int, ffi.Pointer<__sigset_t>,
-              ffi.Pointer<__sigset_t>)>>('pthread_sigmask');
+          ffi.Int Function(ffi.Int, ffi.Pointer<sigset_t_>,
+              ffi.Pointer<sigset_t_>)>>('pthread_sigmask');
   late final _pthread_sigmask = _pthread_sigmaskPtr.asFunction<
-      int Function(int, ffi.Pointer<__sigset_t>, ffi.Pointer<__sigset_t>)>();
+      int Function(int, ffi.Pointer<sigset_t_>, ffi.Pointer<sigset_t_>)>();
 
   int pthread_kill(
     int __threadid,
@@ -7001,25 +7000,25 @@ class libgstreamer {
   late final _pthread_kill =
       _pthread_killPtr.asFunction<int Function(int, int)>();
 
-  int __libc_current_sigrtmin() {
-    return ___libc_current_sigrtmin();
+  int libc_current_sigrtmin_() {
+    return _libc_current_sigrtmin_();
   }
 
-  late final ___libc_current_sigrtminPtr =
+  late final _libc_current_sigrtmin_Ptr =
       _lookup<ffi.NativeFunction<ffi.Int Function()>>(
           '__libc_current_sigrtmin');
-  late final ___libc_current_sigrtmin =
-      ___libc_current_sigrtminPtr.asFunction<int Function()>();
+  late final _libc_current_sigrtmin_ =
+      _libc_current_sigrtmin_Ptr.asFunction<int Function()>();
 
-  int __libc_current_sigrtmax() {
-    return ___libc_current_sigrtmax();
+  int libc_current_sigrtmax_() {
+    return _libc_current_sigrtmax_();
   }
 
-  late final ___libc_current_sigrtmaxPtr =
+  late final _libc_current_sigrtmax_Ptr =
       _lookup<ffi.NativeFunction<ffi.Int Function()>>(
           '__libc_current_sigrtmax');
-  late final ___libc_current_sigrtmax =
-      ___libc_current_sigrtmaxPtr.asFunction<int Function()>();
+  late final _libc_current_sigrtmax_ =
+      _libc_current_sigrtmax_Ptr.asFunction<int Function()>();
 
   void g_on_error_query(
     ffi.Pointer<ffi.Char> prg_name,
@@ -11781,7 +11780,7 @@ class libgstreamer {
     int __fd,
     ffi.Pointer<ffi.Char> __buf,
     int __nbytes,
-    ffi.Pointer<__off_t> __basep,
+    ffi.Pointer<off_t_> __basep,
   ) {
     return _getdirentries(
       __fd,
@@ -11793,10 +11792,10 @@ class libgstreamer {
 
   late final _getdirentriesPtr = _lookup<
       ffi.NativeFunction<
-          __ssize_t Function(ffi.Int, ffi.Pointer<ffi.Char>, ffi.Size,
-              ffi.Pointer<__off_t>)>>('getdirentries');
+          ssize_t_ Function(ffi.Int, ffi.Pointer<ffi.Char>, ffi.Size,
+              ffi.Pointer<off_t_>)>>('getdirentries');
   late final _getdirentries = _getdirentriesPtr.asFunction<
-      int Function(int, ffi.Pointer<ffi.Char>, int, ffi.Pointer<__off_t>)>();
+      int Function(int, ffi.Pointer<ffi.Char>, int, ffi.Pointer<off_t_>)>();
 
   ffi.Pointer<GDir> g_dir_open(
     ffi.Pointer<ffi.Char> path,
@@ -12330,7 +12329,7 @@ class libgstreamer {
 
   ffi.Pointer<ffi.Char> g_build_filename_valist(
     ffi.Pointer<ffi.Char> first_element,
-    ffi.Pointer<ffi.Pointer<__va_list_tag>> args,
+    ffi.Pointer<ffi.Pointer<va_list_tag_>> args,
   ) {
     return _g_build_filename_valist(
       first_element,
@@ -12341,11 +12340,11 @@ class libgstreamer {
   late final _g_build_filename_valistPtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
-                  ffi.Pointer<ffi.Pointer<__va_list_tag>>)>>(
+                  ffi.Pointer<ffi.Pointer<va_list_tag_>>)>>(
       'g_build_filename_valist');
   late final _g_build_filename_valist = _g_build_filename_valistPtr.asFunction<
       ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<__va_list_tag>>)>();
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<va_list_tag_>>)>();
 
   int g_mkdir_with_parents(
     ffi.Pointer<ffi.Char> pathname,
@@ -19216,7 +19215,7 @@ class libgstreamer {
 
   ffi.Pointer<ffi.Char> g_strdup_vprintf(
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _g_strdup_vprintf(
       format,
@@ -19227,10 +19226,10 @@ class libgstreamer {
   late final _g_strdup_vprintfPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('g_strdup_vprintf');
+              ffi.Pointer<va_list_tag_>)>>('g_strdup_vprintf');
   late final _g_strdup_vprintf = _g_strdup_vprintfPtr.asFunction<
       ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+          ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>();
 
   ffi.Pointer<ffi.Char> g_strndup(
     ffi.Pointer<ffi.Char> str,
@@ -20183,7 +20182,7 @@ class libgstreamer {
   void g_string_vprintf(
     ffi.Pointer<GString> string,
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _g_string_vprintf(
       string,
@@ -20195,10 +20194,10 @@ class libgstreamer {
   late final _g_string_vprintfPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GString>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('g_string_vprintf');
+              ffi.Pointer<va_list_tag_>)>>('g_string_vprintf');
   late final _g_string_vprintf = _g_string_vprintfPtr.asFunction<
       void Function(ffi.Pointer<GString>, ffi.Pointer<ffi.Char>,
-          ffi.Pointer<__va_list_tag>)>();
+          ffi.Pointer<va_list_tag_>)>();
 
   void g_string_printf(
     ffi.Pointer<GString> string,
@@ -20220,7 +20219,7 @@ class libgstreamer {
   void g_string_append_vprintf(
     ffi.Pointer<GString> string,
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _g_string_append_vprintf(
       string,
@@ -20232,10 +20231,10 @@ class libgstreamer {
   late final _g_string_append_vprintfPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GString>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('g_string_append_vprintf');
+              ffi.Pointer<va_list_tag_>)>>('g_string_append_vprintf');
   late final _g_string_append_vprintf = _g_string_append_vprintfPtr.asFunction<
       void Function(ffi.Pointer<GString>, ffi.Pointer<ffi.Char>,
-          ffi.Pointer<__va_list_tag>)>();
+          ffi.Pointer<va_list_tag_>)>();
 
   void g_string_append_printf(
     ffi.Pointer<GString> string,
@@ -22733,7 +22732,7 @@ class libgstreamer {
 
   ffi.Pointer<ffi.Char> g_markup_vprintf_escaped(
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _g_markup_vprintf_escaped(
       format,
@@ -22744,11 +22743,11 @@ class libgstreamer {
   late final _g_markup_vprintf_escapedPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('g_markup_vprintf_escaped');
+              ffi.Pointer<va_list_tag_>)>>('g_markup_vprintf_escaped');
   late final _g_markup_vprintf_escaped =
       _g_markup_vprintf_escapedPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>();
 
   int g_markup_collect_attributes(
     ffi.Pointer<ffi.Char> element_name,
@@ -24878,7 +24877,7 @@ class libgstreamer {
   ffi.Pointer<GVariant> g_variant_new_va(
     ffi.Pointer<ffi.Char> format_string,
     ffi.Pointer<ffi.Pointer<ffi.Char>> endptr,
-    ffi.Pointer<ffi.Pointer<__va_list_tag>> app,
+    ffi.Pointer<ffi.Pointer<va_list_tag_>> app,
   ) {
     return _g_variant_new_va(
       format_string,
@@ -24892,18 +24891,18 @@ class libgstreamer {
           ffi.Pointer<GVariant> Function(
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
-              ffi.Pointer<ffi.Pointer<__va_list_tag>>)>>('g_variant_new_va');
+              ffi.Pointer<ffi.Pointer<va_list_tag_>>)>>('g_variant_new_va');
   late final _g_variant_new_va = _g_variant_new_vaPtr.asFunction<
       ffi.Pointer<GVariant> Function(
           ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Pointer<ffi.Char>>,
-          ffi.Pointer<ffi.Pointer<__va_list_tag>>)>();
+          ffi.Pointer<ffi.Pointer<va_list_tag_>>)>();
 
   void g_variant_get_va(
     ffi.Pointer<GVariant> value,
     ffi.Pointer<ffi.Char> format_string,
     ffi.Pointer<ffi.Pointer<ffi.Char>> endptr,
-    ffi.Pointer<ffi.Pointer<__va_list_tag>> app,
+    ffi.Pointer<ffi.Pointer<va_list_tag_>> app,
   ) {
     return _g_variant_get_va(
       value,
@@ -24919,13 +24918,13 @@ class libgstreamer {
               ffi.Pointer<GVariant>,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
-              ffi.Pointer<ffi.Pointer<__va_list_tag>>)>>('g_variant_get_va');
+              ffi.Pointer<ffi.Pointer<va_list_tag_>>)>>('g_variant_get_va');
   late final _g_variant_get_va = _g_variant_get_vaPtr.asFunction<
       void Function(
           ffi.Pointer<GVariant>,
           ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Pointer<ffi.Char>>,
-          ffi.Pointer<ffi.Pointer<__va_list_tag>>)>();
+          ffi.Pointer<ffi.Pointer<va_list_tag_>>)>();
 
   int g_variant_check_format_string(
     ffi.Pointer<GVariant> value,
@@ -24996,7 +24995,7 @@ class libgstreamer {
 
   ffi.Pointer<GVariant> g_variant_new_parsed_va(
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<ffi.Pointer<__va_list_tag>> app,
+    ffi.Pointer<ffi.Pointer<va_list_tag_>> app,
   ) {
     return _g_variant_new_parsed_va(
       format,
@@ -25007,11 +25006,11 @@ class libgstreamer {
   late final _g_variant_new_parsed_vaPtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<GVariant> Function(ffi.Pointer<ffi.Char>,
-                  ffi.Pointer<ffi.Pointer<__va_list_tag>>)>>(
+                  ffi.Pointer<ffi.Pointer<va_list_tag_>>)>>(
       'g_variant_new_parsed_va');
   late final _g_variant_new_parsed_va = _g_variant_new_parsed_vaPtr.asFunction<
       ffi.Pointer<GVariant> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<__va_list_tag>>)>();
+          ffi.Pointer<ffi.Char>, ffi.Pointer<ffi.Pointer<va_list_tag_>>)>();
 
   ffi.Pointer<ffi.Char> g_variant_parse_error_print_context(
     ffi.Pointer<GError> error,
@@ -25258,7 +25257,7 @@ class libgstreamer {
 
   int g_printf_string_upper_bound(
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _g_printf_string_upper_bound(
       format,
@@ -25269,10 +25268,10 @@ class libgstreamer {
   late final _g_printf_string_upper_boundPtr = _lookup<
       ffi.NativeFunction<
           ffi.Size Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('g_printf_string_upper_bound');
+              ffi.Pointer<va_list_tag_>)>>('g_printf_string_upper_bound');
   late final _g_printf_string_upper_bound =
       _g_printf_string_upper_boundPtr.asFunction<
-          int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+          int Function(ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>();
 
   int g_log_set_handler(
     ffi.Pointer<ffi.Char> log_domain,
@@ -25397,7 +25396,7 @@ class libgstreamer {
     ffi.Pointer<ffi.Char> log_domain,
     GLogLevelFlags log_level,
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _g_logv(
       log_domain,
@@ -25410,10 +25409,10 @@ class libgstreamer {
   late final _g_logvPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Char>, ffi.Int,
-              ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>('g_logv');
+              ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>>('g_logv');
   late final _g_logv = _g_logvPtr.asFunction<
       void Function(ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>,
-          ffi.Pointer<__va_list_tag>)>();
+          ffi.Pointer<va_list_tag_>)>();
 
   GLogLevelFlags g_log_set_fatal_mask(
     ffi.Pointer<ffi.Char> log_domain,
@@ -25726,13 +25725,13 @@ class libgstreamer {
   late final _g_log_set_debug_enabled =
       _g_log_set_debug_enabledPtr.asFunction<void Function(int)>();
 
-  void _g_log_fallback_handler(
+  void g_log_fallback_handler_(
     ffi.Pointer<ffi.Char> log_domain,
     GLogLevelFlags log_level,
     ffi.Pointer<ffi.Char> message,
     ffi.Pointer unused_data,
   ) {
-    return __g_log_fallback_handler(
+    return _g_log_fallback_handler_(
       log_domain,
       log_level.value,
       message,
@@ -25740,11 +25739,11 @@ class libgstreamer {
     );
   }
 
-  late final __g_log_fallback_handlerPtr = _lookup<
+  late final _g_log_fallback_handler_Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<ffi.Char>, ffi.Int,
               ffi.Pointer<ffi.Char>, ffi.Pointer)>>('_g_log_fallback_handler');
-  late final __g_log_fallback_handler = __g_log_fallback_handlerPtr.asFunction<
+  late final _g_log_fallback_handler_ = _g_log_fallback_handler_Ptr.asFunction<
       void Function(
           ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>, ffi.Pointer)>();
 
@@ -31065,15 +31064,15 @@ class libgstreamer {
   late final _g_strv_builder_end = _g_strv_builder_endPtr
       .asFunction<GStrv Function(ffi.Pointer<GStrvBuilder>)>();
 
-  ffi.Pointer<ffi.Int> __errno_location() {
-    return ___errno_location();
+  ffi.Pointer<ffi.Int> errno_location_() {
+    return _errno_location_();
   }
 
-  late final ___errno_locationPtr =
+  late final _errno_location_Ptr =
       _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Int> Function()>>(
           '__errno_location');
-  late final ___errno_location =
-      ___errno_locationPtr.asFunction<ffi.Pointer<ffi.Int> Function()>();
+  late final _errno_location_ =
+      _errno_location_Ptr.asFunction<ffi.Pointer<ffi.Int> Function()>();
 
   int g_strcmp0(
     ffi.Pointer<ffi.Char> str1,
@@ -34990,50 +34989,50 @@ class libgstreamer {
   late final _g_thread_foreach =
       _g_thread_foreachPtr.asFunction<void Function(GFunc, ffi.Pointer)>();
 
-  int __sched_cpucount(
+  int sched_cpucount_(
     int __setsize,
     ffi.Pointer<cpu_set_t> __setp,
   ) {
-    return ___sched_cpucount(
+    return _sched_cpucount_(
       __setsize,
       __setp,
     );
   }
 
-  late final ___sched_cpucountPtr = _lookup<
+  late final _sched_cpucount_Ptr = _lookup<
           ffi
           .NativeFunction<ffi.Int Function(ffi.Size, ffi.Pointer<cpu_set_t>)>>(
       '__sched_cpucount');
-  late final ___sched_cpucount = ___sched_cpucountPtr
+  late final _sched_cpucount_ = _sched_cpucount_Ptr
       .asFunction<int Function(int, ffi.Pointer<cpu_set_t>)>();
 
-  ffi.Pointer<cpu_set_t> __sched_cpualloc(
+  ffi.Pointer<cpu_set_t> sched_cpualloc_(
     int __count,
   ) {
-    return ___sched_cpualloc(
+    return _sched_cpualloc_(
       __count,
     );
   }
 
-  late final ___sched_cpuallocPtr =
+  late final _sched_cpualloc_Ptr =
       _lookup<ffi.NativeFunction<ffi.Pointer<cpu_set_t> Function(ffi.Size)>>(
           '__sched_cpualloc');
-  late final ___sched_cpualloc =
-      ___sched_cpuallocPtr.asFunction<ffi.Pointer<cpu_set_t> Function(int)>();
+  late final _sched_cpualloc_ =
+      _sched_cpualloc_Ptr.asFunction<ffi.Pointer<cpu_set_t> Function(int)>();
 
-  void __sched_cpufree(
+  void sched_cpufree_(
     ffi.Pointer<cpu_set_t> __set,
   ) {
-    return ___sched_cpufree(
+    return _sched_cpufree_(
       __set,
     );
   }
 
-  late final ___sched_cpufreePtr =
+  late final _sched_cpufree_Ptr =
       _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<cpu_set_t>)>>(
           '__sched_cpufree');
-  late final ___sched_cpufree =
-      ___sched_cpufreePtr.asFunction<void Function(ffi.Pointer<cpu_set_t>)>();
+  late final _sched_cpufree_ =
+      _sched_cpufree_Ptr.asFunction<void Function(ffi.Pointer<cpu_set_t>)>();
 
   int sched_setparam(
     int __pid,
@@ -35047,7 +35046,7 @@ class libgstreamer {
 
   late final _sched_setparamPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(__pid_t, ffi.Pointer<sched_param>)>>(
+          .NativeFunction<ffi.Int Function(pid_t_, ffi.Pointer<sched_param>)>>(
       'sched_setparam');
   late final _sched_setparam = _sched_setparamPtr
       .asFunction<int Function(int, ffi.Pointer<sched_param>)>();
@@ -35064,7 +35063,7 @@ class libgstreamer {
 
   late final _sched_getparamPtr = _lookup<
           ffi
-          .NativeFunction<ffi.Int Function(__pid_t, ffi.Pointer<sched_param>)>>(
+          .NativeFunction<ffi.Int Function(pid_t_, ffi.Pointer<sched_param>)>>(
       'sched_getparam');
   late final _sched_getparam = _sched_getparamPtr
       .asFunction<int Function(int, ffi.Pointer<sched_param>)>();
@@ -35083,7 +35082,7 @@ class libgstreamer {
 
   late final _sched_setschedulerPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(__pid_t, ffi.Int,
+          ffi.Int Function(pid_t_, ffi.Int,
               ffi.Pointer<sched_param>)>>('sched_setscheduler');
   late final _sched_setscheduler = _sched_setschedulerPtr
       .asFunction<int Function(int, int, ffi.Pointer<sched_param>)>();
@@ -35097,7 +35096,7 @@ class libgstreamer {
   }
 
   late final _sched_getschedulerPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(__pid_t)>>(
+      _lookup<ffi.NativeFunction<ffi.Int Function(pid_t_)>>(
           'sched_getscheduler');
   late final _sched_getscheduler =
       _sched_getschedulerPtr.asFunction<int Function(int)>();
@@ -35149,7 +35148,7 @@ class libgstreamer {
   }
 
   late final _sched_rr_get_intervalPtr = _lookup<
-          ffi.NativeFunction<ffi.Int Function(__pid_t, ffi.Pointer<timespec>)>>(
+          ffi.NativeFunction<ffi.Int Function(pid_t_, ffi.Pointer<timespec>)>>(
       'sched_rr_get_interval');
   late final _sched_rr_get_interval = _sched_rr_get_intervalPtr
       .asFunction<int Function(int, ffi.Pointer<timespec>)>();
@@ -35740,67 +35739,66 @@ class libgstreamer {
   late final _pthread_testcancel =
       _pthread_testcancelPtr.asFunction<void Function()>();
 
-  void __pthread_register_cancel(
-    ffi.Pointer<__pthread_unwind_buf_t> __buf,
+  void pthread_register_cancel_(
+    ffi.Pointer<pthread_unwind_buf_t_> __buf,
   ) {
-    return ___pthread_register_cancel(
+    return _pthread_register_cancel_(
       __buf,
     );
   }
 
-  late final ___pthread_register_cancelPtr = _lookup<
+  late final _pthread_register_cancel_Ptr = _lookup<
           ffi.NativeFunction<
-              ffi.Void Function(ffi.Pointer<__pthread_unwind_buf_t>)>>(
+              ffi.Void Function(ffi.Pointer<pthread_unwind_buf_t_>)>>(
       '__pthread_register_cancel');
-  late final ___pthread_register_cancel = ___pthread_register_cancelPtr
-      .asFunction<void Function(ffi.Pointer<__pthread_unwind_buf_t>)>();
+  late final _pthread_register_cancel_ = _pthread_register_cancel_Ptr
+      .asFunction<void Function(ffi.Pointer<pthread_unwind_buf_t_>)>();
 
-  void __pthread_unregister_cancel(
-    ffi.Pointer<__pthread_unwind_buf_t> __buf,
+  void pthread_unregister_cancel_(
+    ffi.Pointer<pthread_unwind_buf_t_> __buf,
   ) {
-    return ___pthread_unregister_cancel(
+    return _pthread_unregister_cancel_(
       __buf,
     );
   }
 
-  late final ___pthread_unregister_cancelPtr = _lookup<
+  late final _pthread_unregister_cancel_Ptr = _lookup<
           ffi.NativeFunction<
-              ffi.Void Function(ffi.Pointer<__pthread_unwind_buf_t>)>>(
+              ffi.Void Function(ffi.Pointer<pthread_unwind_buf_t_>)>>(
       '__pthread_unregister_cancel');
-  late final ___pthread_unregister_cancel = ___pthread_unregister_cancelPtr
-      .asFunction<void Function(ffi.Pointer<__pthread_unwind_buf_t>)>();
+  late final _pthread_unregister_cancel_ = _pthread_unregister_cancel_Ptr
+      .asFunction<void Function(ffi.Pointer<pthread_unwind_buf_t_>)>();
 
-  void __pthread_unwind_next(
-    ffi.Pointer<__pthread_unwind_buf_t> __buf,
+  void pthread_unwind_next_(
+    ffi.Pointer<pthread_unwind_buf_t_> __buf,
   ) {
-    return ___pthread_unwind_next(
+    return _pthread_unwind_next_(
       __buf,
     );
   }
 
-  late final ___pthread_unwind_nextPtr = _lookup<
+  late final _pthread_unwind_next_Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
-              ffi.Pointer<__pthread_unwind_buf_t>)>>('__pthread_unwind_next');
-  late final ___pthread_unwind_next = ___pthread_unwind_nextPtr
-      .asFunction<void Function(ffi.Pointer<__pthread_unwind_buf_t>)>();
+              ffi.Pointer<pthread_unwind_buf_t_>)>>('__pthread_unwind_next');
+  late final _pthread_unwind_next_ = _pthread_unwind_next_Ptr
+      .asFunction<void Function(ffi.Pointer<pthread_unwind_buf_t_>)>();
 
-  int __sigsetjmp(
-    ffi.Pointer<__jmp_buf_tag> __env,
+  int sigsetjmp_(
+    ffi.Pointer<jmp_buf_tag_> __env,
     int __savemask,
   ) {
-    return ___sigsetjmp(
+    return _sigsetjmp_(
       __env,
       __savemask,
     );
   }
 
-  late final ___sigsetjmpPtr = _lookup<
+  late final _sigsetjmp_Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Int Function(
-              ffi.Pointer<__jmp_buf_tag>, ffi.Int)>>('__sigsetjmp');
-  late final ___sigsetjmp = ___sigsetjmpPtr
-      .asFunction<int Function(ffi.Pointer<__jmp_buf_tag>, int)>();
+          ffi.Int Function(ffi.Pointer<jmp_buf_tag_>, ffi.Int)>>('__sigsetjmp');
+  late final _sigsetjmp_ =
+      _sigsetjmp_Ptr.asFunction<int Function(ffi.Pointer<jmp_buf_tag_>, int)>();
 
   int pthread_mutex_init(
     ffi.Pointer<pthread_mutex_t> __mutex,
@@ -36565,7 +36563,7 @@ class libgstreamer {
 
   int pthread_condattr_getclock(
     ffi.Pointer<pthread_condattr_t> __attr,
-    ffi.Pointer<__clockid_t> __clock_id,
+    ffi.Pointer<clockid_t_> __clock_id,
   ) {
     return _pthread_condattr_getclock(
       __attr,
@@ -36576,11 +36574,11 @@ class libgstreamer {
   late final _pthread_condattr_getclockPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<pthread_condattr_t>,
-              ffi.Pointer<__clockid_t>)>>('pthread_condattr_getclock');
+              ffi.Pointer<clockid_t_>)>>('pthread_condattr_getclock');
   late final _pthread_condattr_getclock =
       _pthread_condattr_getclockPtr.asFunction<
           int Function(
-              ffi.Pointer<pthread_condattr_t>, ffi.Pointer<__clockid_t>)>();
+              ffi.Pointer<pthread_condattr_t>, ffi.Pointer<clockid_t_>)>();
 
   int pthread_condattr_setclock(
     ffi.Pointer<pthread_condattr_t> __attr,
@@ -36595,7 +36593,7 @@ class libgstreamer {
   late final _pthread_condattr_setclockPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<pthread_condattr_t>,
-              __clockid_t)>>('pthread_condattr_setclock');
+              clockid_t_)>>('pthread_condattr_setclock');
   late final _pthread_condattr_setclock = _pthread_condattr_setclockPtr
       .asFunction<int Function(ffi.Pointer<pthread_condattr_t>, int)>();
 
@@ -36788,7 +36786,7 @@ class libgstreamer {
 
   int pthread_getcpuclockid(
     int __thread_id,
-    ffi.Pointer<__clockid_t> __clock_id,
+    ffi.Pointer<clockid_t_> __clock_id,
   ) {
     return _pthread_getcpuclockid(
       __thread_id,
@@ -36799,9 +36797,9 @@ class libgstreamer {
   late final _pthread_getcpuclockidPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(
-              pthread_t, ffi.Pointer<__clockid_t>)>>('pthread_getcpuclockid');
+              pthread_t, ffi.Pointer<clockid_t_>)>>('pthread_getcpuclockid');
   late final _pthread_getcpuclockid = _pthread_getcpuclockidPtr
-      .asFunction<int Function(int, ffi.Pointer<__clockid_t>)>();
+      .asFunction<int Function(int, ffi.Pointer<clockid_t_>)>();
 
   int pthread_atfork(
     ffi.Pointer<ffi.NativeFunction<ffi.Void Function()>> __prepare,
@@ -39000,24 +38998,24 @@ class libgstreamer {
   late final _g_param_spec_is_valid_name = _g_param_spec_is_valid_namePtr
       .asFunction<int Function(ffi.Pointer<ffi.Char>)>();
 
-  int _g_param_type_register_static_constant(
+  int g_param_type_register_static_constant_(
     ffi.Pointer<ffi.Char> name,
     ffi.Pointer<GParamSpecTypeInfo> pspec_info,
     int opt_type,
   ) {
-    return __g_param_type_register_static_constant(
+    return _g_param_type_register_static_constant_(
       name,
       pspec_info,
       opt_type,
     );
   }
 
-  late final __g_param_type_register_static_constantPtr = _lookup<
+  late final _g_param_type_register_static_constant_Ptr = _lookup<
       ffi.NativeFunction<
           GType Function(ffi.Pointer<ffi.Char>, ffi.Pointer<GParamSpecTypeInfo>,
               GType)>>('_g_param_type_register_static_constant');
-  late final __g_param_type_register_static_constant =
-      __g_param_type_register_static_constantPtr.asFunction<
+  late final _g_param_type_register_static_constant_ =
+      _g_param_type_register_static_constant_Ptr.asFunction<
           int Function(
               ffi.Pointer<ffi.Char>, ffi.Pointer<GParamSpecTypeInfo>, int)>();
 
@@ -39518,7 +39516,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args_list,
+    ffi.Pointer<va_list_tag_> args_list,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -39540,7 +39538,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_generic_va');
@@ -39550,7 +39548,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -39591,7 +39589,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -39613,7 +39611,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__VOIDv');
@@ -39623,7 +39621,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -39664,7 +39662,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -39686,7 +39684,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__BOOLEANv');
@@ -39696,7 +39694,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -39737,7 +39735,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -39759,7 +39757,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__CHARv');
@@ -39769,7 +39767,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -39810,7 +39808,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -39832,7 +39830,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__UCHARv');
@@ -39842,7 +39840,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -39883,7 +39881,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -39905,7 +39903,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__INTv');
@@ -39915,7 +39913,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -39956,7 +39954,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -39978,7 +39976,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__UINTv');
@@ -39988,7 +39986,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40029,7 +40027,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -40051,7 +40049,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__LONGv');
@@ -40061,7 +40059,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40102,7 +40100,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -40124,7 +40122,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__ULONGv');
@@ -40134,7 +40132,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40175,7 +40173,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -40197,7 +40195,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__ENUMv');
@@ -40207,7 +40205,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40248,7 +40246,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -40270,7 +40268,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__FLAGSv');
@@ -40280,7 +40278,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40321,7 +40319,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -40343,7 +40341,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__FLOATv');
@@ -40353,7 +40351,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40394,7 +40392,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -40416,7 +40414,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__DOUBLEv');
@@ -40426,7 +40424,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40467,7 +40465,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -40489,7 +40487,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__STRINGv');
@@ -40499,7 +40497,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40540,7 +40538,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -40562,7 +40560,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__PARAMv');
@@ -40572,7 +40570,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40613,7 +40611,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -40635,7 +40633,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__BOXEDv');
@@ -40645,7 +40643,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40686,7 +40684,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -40708,7 +40706,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__POINTERv');
@@ -40718,7 +40716,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40759,7 +40757,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -40781,7 +40779,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__OBJECTv');
@@ -40791,7 +40789,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40832,7 +40830,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -40854,7 +40852,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__VARIANTv');
@@ -40864,7 +40862,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40905,7 +40903,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -40927,7 +40925,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_VOID__UINT_POINTERv');
@@ -40937,7 +40935,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -40978,7 +40976,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -41000,7 +40998,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_BOOLEAN__FLAGSv');
@@ -41010,7 +41008,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -41051,7 +41049,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -41073,7 +41071,7 @@ class libgstreamer {
                   ffi.Pointer<GClosure>,
                   ffi.Pointer<GValue>,
                   ffi.Pointer,
-                  ffi.Pointer<__va_list_tag>,
+                  ffi.Pointer<va_list_tag_>,
                   ffi.Pointer,
                   ffi.Int,
                   ffi.Pointer<GType>)>>(
@@ -41084,7 +41082,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -41125,7 +41123,7 @@ class libgstreamer {
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types,
@@ -41147,7 +41145,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               ffi.Int,
               ffi.Pointer<GType>)>>('g_cclosure_marshal_BOOLEAN__BOXED_BOXEDv');
@@ -41157,7 +41155,7 @@ class libgstreamer {
               ffi.Pointer<GClosure>,
               ffi.Pointer<GValue>,
               ffi.Pointer,
-              ffi.Pointer<__va_list_tag>,
+              ffi.Pointer<va_list_tag_>,
               ffi.Pointer,
               int,
               ffi.Pointer<GType>)>();
@@ -41224,7 +41222,7 @@ class libgstreamer {
     GSignalCMarshaller c_marshaller,
     DartGType return_type,
     int n_params,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _g_signal_new_valist(
       signal_name,
@@ -41252,7 +41250,7 @@ class libgstreamer {
               GSignalCMarshaller,
               GType,
               ffi.UnsignedInt,
-              ffi.Pointer<__va_list_tag>)>>('g_signal_new_valist');
+              ffi.Pointer<va_list_tag_>)>>('g_signal_new_valist');
   late final _g_signal_new_valist = _g_signal_new_valistPtr.asFunction<
       int Function(
           ffi.Pointer<ffi.Char>,
@@ -41264,7 +41262,7 @@ class libgstreamer {
           GSignalCMarshaller,
           int,
           int,
-          ffi.Pointer<__va_list_tag>)>();
+          ffi.Pointer<va_list_tag_>)>();
 
   int g_signal_new(
     ffi.Pointer<ffi.Char> signal_name,
@@ -41391,7 +41389,7 @@ class libgstreamer {
     ffi.Pointer instance,
     int signal_id,
     int detail,
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _g_signal_emit_valist(
       instance,
@@ -41404,9 +41402,9 @@ class libgstreamer {
   late final _g_signal_emit_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer, ffi.UnsignedInt, GQuark,
-              ffi.Pointer<__va_list_tag>)>>('g_signal_emit_valist');
+              ffi.Pointer<va_list_tag_>)>>('g_signal_emit_valist');
   late final _g_signal_emit_valist = _g_signal_emit_valistPtr.asFunction<
-      void Function(ffi.Pointer, int, int, ffi.Pointer<__va_list_tag>)>();
+      void Function(ffi.Pointer, int, int, ffi.Pointer<va_list_tag_>)>();
 
   void g_signal_emit(
     ffi.Pointer instance,
@@ -42112,19 +42110,19 @@ class libgstreamer {
   late final _g_signal_handlers_destroy =
       _g_signal_handlers_destroyPtr.asFunction<void Function(ffi.Pointer)>();
 
-  void _g_signals_destroy(
+  void g_signals_destroy_(
     int itype,
   ) {
-    return __g_signals_destroy(
+    return _g_signals_destroy_(
       itype,
     );
   }
 
-  late final __g_signals_destroyPtr =
+  late final _g_signals_destroy_Ptr =
       _lookup<ffi.NativeFunction<ffi.Void Function(GType)>>(
           '_g_signals_destroy');
-  late final __g_signals_destroy =
-      __g_signals_destroyPtr.asFunction<void Function(int)>();
+  late final _g_signals_destroy_ =
+      _g_signals_destroy_Ptr.asFunction<void Function(int)>();
 
   int g_date_get_type() {
     return _g_date_get_type();
@@ -42881,7 +42879,7 @@ class libgstreamer {
   ffi.Pointer<GObject> g_object_new_valist(
     int object_type,
     ffi.Pointer<ffi.Char> first_property_name,
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _g_object_new_valist(
       object_type,
@@ -42893,10 +42891,10 @@ class libgstreamer {
   late final _g_object_new_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GObject> Function(GType, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('g_object_new_valist');
+              ffi.Pointer<va_list_tag_>)>>('g_object_new_valist');
   late final _g_object_new_valist = _g_object_new_valistPtr.asFunction<
       ffi.Pointer<GObject> Function(
-          int, ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+          int, ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>();
 
   void g_object_set(
     ffi.Pointer object,
@@ -42994,7 +42992,7 @@ class libgstreamer {
   void g_object_set_valist(
     ffi.Pointer<GObject> object,
     ffi.Pointer<ffi.Char> first_property_name,
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _g_object_set_valist(
       object,
@@ -43006,10 +43004,10 @@ class libgstreamer {
   late final _g_object_set_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('g_object_set_valist');
+              ffi.Pointer<va_list_tag_>)>>('g_object_set_valist');
   late final _g_object_set_valist = _g_object_set_valistPtr.asFunction<
       void Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>,
-          ffi.Pointer<__va_list_tag>)>();
+          ffi.Pointer<va_list_tag_>)>();
 
   void g_object_getv(
     ffi.Pointer<GObject> object,
@@ -43039,7 +43037,7 @@ class libgstreamer {
   void g_object_get_valist(
     ffi.Pointer<GObject> object,
     ffi.Pointer<ffi.Char> first_property_name,
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _g_object_get_valist(
       object,
@@ -43051,10 +43049,10 @@ class libgstreamer {
   late final _g_object_get_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('g_object_get_valist');
+              ffi.Pointer<va_list_tag_>)>>('g_object_get_valist');
   late final _g_object_get_valist = _g_object_get_valistPtr.asFunction<
       void Function(ffi.Pointer<GObject>, ffi.Pointer<ffi.Char>,
-          ffi.Pointer<__va_list_tag>)>();
+          ffi.Pointer<va_list_tag_>)>();
 
   void g_object_set_property(
     ffi.Pointer<GObject> object,
@@ -49019,13 +49017,13 @@ class libgstreamer {
   late final _gst_pad_mode_get_name = _gst_pad_mode_get_namePtr
       .asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
-  late final ffi.Pointer<GType> __gst_mini_object_type =
+  late final ffi.Pointer<GType> _gst_mini_object_type_ =
       _lookup<GType>('_gst_mini_object_type');
 
-  DartGType get _gst_mini_object_type => __gst_mini_object_type.value;
+  DartGType get gst_mini_object_type_ => _gst_mini_object_type_.value;
 
-  set _gst_mini_object_type(DartGType value) =>
-      __gst_mini_object_type.value = value;
+  set gst_mini_object_type_(DartGType value) =>
+      _gst_mini_object_type_.value = value;
 
   int gst_mini_object_get_type() {
     return _gst_mini_object_get_type();
@@ -49385,12 +49383,12 @@ class libgstreamer {
       ffi.Pointer<GstMiniObject1> Function(
           ffi.Pointer<ffi.Pointer<GstMiniObject1>>)>();
 
-  late final ffi.Pointer<GType> __gst_memory_type =
+  late final ffi.Pointer<GType> _gst_memory_type_ =
       _lookup<GType>('_gst_memory_type');
 
-  DartGType get _gst_memory_type => __gst_memory_type.value;
+  DartGType get gst_memory_type_ => _gst_memory_type_.value;
 
-  set _gst_memory_type(DartGType value) => __gst_memory_type.value = value;
+  set gst_memory_type_(DartGType value) => _gst_memory_type_.value = value;
 
   int gst_memory_get_type() {
     return _gst_memory_get_type();
@@ -49814,13 +49812,13 @@ class libgstreamer {
       ffi.Pointer<GstMemory> Function(
           int, ffi.Pointer, int, int, int, ffi.Pointer, GDestroyNotify)>();
 
-  late final ffi.Pointer<GType> __gst_date_time_type =
+  late final ffi.Pointer<GType> _gst_date_time_type_ =
       _lookup<GType>('_gst_date_time_type');
 
-  DartGType get _gst_date_time_type => __gst_date_time_type.value;
+  DartGType get gst_date_time_type_ => _gst_date_time_type_.value;
 
-  set _gst_date_time_type(DartGType value) =>
-      __gst_date_time_type.value = value;
+  set gst_date_time_type_(DartGType value) =>
+      _gst_date_time_type_.value = value;
 
   int gst_date_time_get_type() {
     return _gst_date_time_get_type();
@@ -50291,13 +50289,13 @@ class libgstreamer {
   late final _gst_date_time_unref = _gst_date_time_unrefPtr
       .asFunction<void Function(ffi.Pointer<GstDateTime>)>();
 
-  late final ffi.Pointer<GType> __gst_structure_type =
+  late final ffi.Pointer<GType> _gst_structure_type_ =
       _lookup<GType>('_gst_structure_type');
 
-  DartGType get _gst_structure_type => __gst_structure_type.value;
+  DartGType get gst_structure_type_ => _gst_structure_type_.value;
 
-  set _gst_structure_type(DartGType value) =>
-      __gst_structure_type.value = value;
+  set gst_structure_type_(DartGType value) =>
+      _gst_structure_type_.value = value;
 
   int gst_structure_get_type() {
     return _gst_structure_get_type();
@@ -50358,7 +50356,7 @@ class libgstreamer {
   ffi.Pointer<GstStructure> gst_structure_new_valist(
     ffi.Pointer<ffi.Char> name,
     ffi.Pointer<ffi.Char> firstfield,
-    ffi.Pointer<__va_list_tag> varargs,
+    ffi.Pointer<va_list_tag_> varargs,
   ) {
     return _gst_structure_new_valist(
       name,
@@ -50372,11 +50370,11 @@ class libgstreamer {
           ffi.Pointer<GstStructure> Function(
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_structure_new_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_structure_new_valist');
   late final _gst_structure_new_valist =
       _gst_structure_new_valistPtr.asFunction<
           ffi.Pointer<GstStructure> Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>();
 
   ffi.Pointer<GstStructure> gst_structure_new_id(
     int name_quark,
@@ -50694,7 +50692,7 @@ class libgstreamer {
   void gst_structure_set_valist(
     ffi.Pointer<GstStructure> structure,
     ffi.Pointer<ffi.Char> fieldname,
-    ffi.Pointer<__va_list_tag> varargs,
+    ffi.Pointer<va_list_tag_> varargs,
   ) {
     return _gst_structure_set_valist(
       structure,
@@ -50706,11 +50704,11 @@ class libgstreamer {
   late final _gst_structure_set_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GstStructure>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_structure_set_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_structure_set_valist');
   late final _gst_structure_set_valist =
       _gst_structure_set_valistPtr.asFunction<
           void Function(ffi.Pointer<GstStructure>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<va_list_tag_>)>();
 
   void gst_structure_id_set(
     ffi.Pointer<GstStructure> structure,
@@ -50732,7 +50730,7 @@ class libgstreamer {
   void gst_structure_id_set_valist(
     ffi.Pointer<GstStructure> structure,
     int fieldname,
-    ffi.Pointer<__va_list_tag> varargs,
+    ffi.Pointer<va_list_tag_> varargs,
   ) {
     return _gst_structure_id_set_valist(
       structure,
@@ -50744,16 +50742,16 @@ class libgstreamer {
   late final _gst_structure_id_set_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GstStructure>, GQuark,
-              ffi.Pointer<__va_list_tag>)>>('gst_structure_id_set_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_structure_id_set_valist');
   late final _gst_structure_id_set_valist =
       _gst_structure_id_set_valistPtr.asFunction<
           void Function(
-              ffi.Pointer<GstStructure>, int, ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<GstStructure>, int, ffi.Pointer<va_list_tag_>)>();
 
   int gst_structure_get_valist(
     ffi.Pointer<GstStructure> structure,
     ffi.Pointer<ffi.Char> first_fieldname,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _gst_structure_get_valist(
       structure,
@@ -50765,11 +50763,11 @@ class libgstreamer {
   late final _gst_structure_get_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<GstStructure>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_structure_get_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_structure_get_valist');
   late final _gst_structure_get_valist =
       _gst_structure_get_valistPtr.asFunction<
           int Function(ffi.Pointer<GstStructure>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<va_list_tag_>)>();
 
   int gst_structure_get(
     ffi.Pointer<GstStructure> structure,
@@ -50791,7 +50789,7 @@ class libgstreamer {
   int gst_structure_id_get_valist(
     ffi.Pointer<GstStructure> structure,
     int first_field_id,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _gst_structure_id_get_valist(
       structure,
@@ -50803,11 +50801,11 @@ class libgstreamer {
   late final _gst_structure_id_get_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Int Function(ffi.Pointer<GstStructure>, GQuark,
-              ffi.Pointer<__va_list_tag>)>>('gst_structure_id_get_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_structure_id_get_valist');
   late final _gst_structure_id_get_valist =
       _gst_structure_id_get_valistPtr.asFunction<
           int Function(
-              ffi.Pointer<GstStructure>, int, ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<GstStructure>, int, ffi.Pointer<va_list_tag_>)>();
 
   int gst_structure_id_get(
     ffi.Pointer<GstStructure> structure,
@@ -50901,7 +50899,7 @@ class libgstreamer {
   void gst_structure_remove_fields_valist(
     ffi.Pointer<GstStructure> structure,
     ffi.Pointer<ffi.Char> fieldname,
-    ffi.Pointer<__va_list_tag> varargs,
+    ffi.Pointer<va_list_tag_> varargs,
   ) {
     return _gst_structure_remove_fields_valist(
       structure,
@@ -50913,12 +50911,12 @@ class libgstreamer {
   late final _gst_structure_remove_fields_valistPtr = _lookup<
           ffi.NativeFunction<
               ffi.Void Function(ffi.Pointer<GstStructure>,
-                  ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>(
+                  ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>>(
       'gst_structure_remove_fields_valist');
   late final _gst_structure_remove_fields_valist =
       _gst_structure_remove_fields_valistPtr.asFunction<
           void Function(ffi.Pointer<GstStructure>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<va_list_tag_>)>();
 
   void gst_structure_remove_all_fields(
     ffi.Pointer<GstStructure> structure,
@@ -51749,34 +51747,34 @@ class libgstreamer {
       ffi.Pointer<GstStructure> Function(
           ffi.Pointer<GstStructure>, ffi.Pointer<GstStructure>)>();
 
-  late final ffi.Pointer<GType> __gst_caps_features_type =
+  late final ffi.Pointer<GType> _gst_caps_features_type_ =
       _lookup<GType>('_gst_caps_features_type');
 
-  DartGType get _gst_caps_features_type => __gst_caps_features_type.value;
+  DartGType get gst_caps_features_type_ => _gst_caps_features_type_.value;
 
-  set _gst_caps_features_type(DartGType value) =>
-      __gst_caps_features_type.value = value;
+  set gst_caps_features_type_(DartGType value) =>
+      _gst_caps_features_type_.value = value;
 
-  late final ffi.Pointer<ffi.Pointer<GstCapsFeatures>> __gst_caps_features_any =
+  late final ffi.Pointer<ffi.Pointer<GstCapsFeatures>> _gst_caps_features_any_ =
       _lookup<ffi.Pointer<GstCapsFeatures>>('_gst_caps_features_any');
 
-  ffi.Pointer<GstCapsFeatures> get _gst_caps_features_any =>
-      __gst_caps_features_any.value;
+  ffi.Pointer<GstCapsFeatures> get gst_caps_features_any_ =>
+      _gst_caps_features_any_.value;
 
-  set _gst_caps_features_any(ffi.Pointer<GstCapsFeatures> value) =>
-      __gst_caps_features_any.value = value;
+  set gst_caps_features_any_(ffi.Pointer<GstCapsFeatures> value) =>
+      _gst_caps_features_any_.value = value;
 
   late final ffi.Pointer<ffi.Pointer<GstCapsFeatures>>
-      __gst_caps_features_memory_system_memory =
+      _gst_caps_features_memory_system_memory_ =
       _lookup<ffi.Pointer<GstCapsFeatures>>(
           '_gst_caps_features_memory_system_memory');
 
-  ffi.Pointer<GstCapsFeatures> get _gst_caps_features_memory_system_memory =>
-      __gst_caps_features_memory_system_memory.value;
+  ffi.Pointer<GstCapsFeatures> get gst_caps_features_memory_system_memory_ =>
+      _gst_caps_features_memory_system_memory_.value;
 
-  set _gst_caps_features_memory_system_memory(
+  set gst_caps_features_memory_system_memory_(
           ffi.Pointer<GstCapsFeatures> value) =>
-      __gst_caps_features_memory_system_memory.value = value;
+      _gst_caps_features_memory_system_memory_.value = value;
 
   int gst_caps_features_get_type() {
     return _gst_caps_features_get_type();
@@ -51855,7 +51853,7 @@ class libgstreamer {
 
   ffi.Pointer<GstCapsFeatures> gst_caps_features_new_valist(
     ffi.Pointer<ffi.Char> feature1,
-    ffi.Pointer<__va_list_tag> varargs,
+    ffi.Pointer<va_list_tag_> varargs,
   ) {
     return _gst_caps_features_new_valist(
       feature1,
@@ -51866,11 +51864,11 @@ class libgstreamer {
   late final _gst_caps_features_new_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GstCapsFeatures> Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_caps_features_new_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_caps_features_new_valist');
   late final _gst_caps_features_new_valist =
       _gst_caps_features_new_valistPtr.asFunction<
           ffi.Pointer<GstCapsFeatures> Function(
-              ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>();
 
   ffi.Pointer<GstCapsFeatures> gst_caps_features_new_id(
     int feature1,
@@ -51888,7 +51886,7 @@ class libgstreamer {
 
   ffi.Pointer<GstCapsFeatures> gst_caps_features_new_id_valist(
     int feature1,
-    ffi.Pointer<__va_list_tag> varargs,
+    ffi.Pointer<va_list_tag_> varargs,
   ) {
     return _gst_caps_features_new_id_valist(
       feature1,
@@ -51899,11 +51897,11 @@ class libgstreamer {
   late final _gst_caps_features_new_id_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GstCapsFeatures> Function(GQuark,
-              ffi.Pointer<__va_list_tag>)>>('gst_caps_features_new_id_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_caps_features_new_id_valist');
   late final _gst_caps_features_new_id_valist =
       _gst_caps_features_new_id_valistPtr.asFunction<
           ffi.Pointer<GstCapsFeatures> Function(
-              int, ffi.Pointer<__va_list_tag>)>();
+              int, ffi.Pointer<va_list_tag_>)>();
 
   int gst_caps_features_set_parent_refcount(
     ffi.Pointer<GstCapsFeatures> features,
@@ -52171,27 +52169,27 @@ class libgstreamer {
   late final _gst_caps_features_remove_id = _gst_caps_features_remove_idPtr
       .asFunction<void Function(ffi.Pointer<GstCapsFeatures>, int)>();
 
-  late final ffi.Pointer<GType> __gst_caps_type =
+  late final ffi.Pointer<GType> _gst_caps_type_ =
       _lookup<GType>('_gst_caps_type');
 
-  DartGType get _gst_caps_type => __gst_caps_type.value;
+  DartGType get gst_caps_type_ => _gst_caps_type_.value;
 
-  set _gst_caps_type(DartGType value) => __gst_caps_type.value = value;
+  set gst_caps_type_(DartGType value) => _gst_caps_type_.value = value;
 
-  late final ffi.Pointer<ffi.Pointer<GstCaps>> __gst_caps_any =
+  late final ffi.Pointer<ffi.Pointer<GstCaps>> _gst_caps_any_ =
       _lookup<ffi.Pointer<GstCaps>>('_gst_caps_any');
 
-  ffi.Pointer<GstCaps> get _gst_caps_any => __gst_caps_any.value;
+  ffi.Pointer<GstCaps> get gst_caps_any_ => _gst_caps_any_.value;
 
-  set _gst_caps_any(ffi.Pointer<GstCaps> value) => __gst_caps_any.value = value;
+  set gst_caps_any_(ffi.Pointer<GstCaps> value) => _gst_caps_any_.value = value;
 
-  late final ffi.Pointer<ffi.Pointer<GstCaps>> __gst_caps_none =
+  late final ffi.Pointer<ffi.Pointer<GstCaps>> _gst_caps_none_ =
       _lookup<ffi.Pointer<GstCaps>>('_gst_caps_none');
 
-  ffi.Pointer<GstCaps> get _gst_caps_none => __gst_caps_none.value;
+  ffi.Pointer<GstCaps> get gst_caps_none_ => _gst_caps_none_.value;
 
-  set _gst_caps_none(ffi.Pointer<GstCaps> value) =>
-      __gst_caps_none.value = value;
+  set gst_caps_none_(ffi.Pointer<GstCaps> value) =>
+      _gst_caps_none_.value = value;
 
   ffi.Pointer<GstCaps> gst_caps_copy(
     ffi.Pointer<GstCaps> caps,
@@ -52287,7 +52285,7 @@ class libgstreamer {
 
   ffi.Pointer<GstCaps> gst_caps_new_full_valist(
     ffi.Pointer<GstStructure> structure,
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _gst_caps_new_full_valist(
       structure,
@@ -52298,11 +52296,11 @@ class libgstreamer {
   late final _gst_caps_new_full_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GstCaps> Function(ffi.Pointer<GstStructure>,
-              ffi.Pointer<__va_list_tag>)>>('gst_caps_new_full_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_caps_new_full_valist');
   late final _gst_caps_new_full_valist =
       _gst_caps_new_full_valistPtr.asFunction<
           ffi.Pointer<GstCaps> Function(
-              ffi.Pointer<GstStructure>, ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<GstStructure>, ffi.Pointer<va_list_tag_>)>();
 
   /// gst_static_caps_get_type: (attributes doc.skip=true)
   int gst_static_caps_get_type() {
@@ -52651,7 +52649,7 @@ class libgstreamer {
   void gst_caps_set_simple_valist(
     ffi.Pointer<GstCaps> caps,
     ffi.Pointer<ffi.Char> field,
-    ffi.Pointer<__va_list_tag> varargs,
+    ffi.Pointer<va_list_tag_> varargs,
   ) {
     return _gst_caps_set_simple_valist(
       caps,
@@ -52663,11 +52661,11 @@ class libgstreamer {
   late final _gst_caps_set_simple_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GstCaps>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_caps_set_simple_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_caps_set_simple_valist');
   late final _gst_caps_set_simple_valist =
       _gst_caps_set_simple_valistPtr.asFunction<
           void Function(ffi.Pointer<GstCaps>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<va_list_tag_>)>();
 
   int gst_caps_foreach(
     ffi.Pointer<GstCaps> caps,
@@ -53062,23 +53060,23 @@ class libgstreamer {
   late final _gst_caps_from_string = _gst_caps_from_stringPtr
       .asFunction<ffi.Pointer<GstCaps> Function(ffi.Pointer<ffi.Char>)>();
 
-  late final ffi.Pointer<GType> __gst_buffer_type =
+  late final ffi.Pointer<GType> _gst_buffer_type_ =
       _lookup<GType>('_gst_buffer_type');
 
-  DartGType get _gst_buffer_type => __gst_buffer_type.value;
+  DartGType get gst_buffer_type_ => _gst_buffer_type_.value;
 
-  set _gst_buffer_type(DartGType value) => __gst_buffer_type.value = value;
+  set gst_buffer_type_(DartGType value) => _gst_buffer_type_.value = value;
 
   /// gst_meta_transform_copy:
   ///
   /// GQuark for the "gst-copy" transform.
-  late final ffi.Pointer<GQuark> __gst_meta_transform_copy =
+  late final ffi.Pointer<GQuark> _gst_meta_transform_copy_ =
       _lookup<GQuark>('_gst_meta_transform_copy');
 
-  DartGQuark get _gst_meta_transform_copy => __gst_meta_transform_copy.value;
+  DartGQuark get gst_meta_transform_copy_ => _gst_meta_transform_copy_.value;
 
-  set _gst_meta_transform_copy(DartGQuark value) =>
-      __gst_meta_transform_copy.value = value;
+  set gst_meta_transform_copy_(DartGQuark value) =>
+      _gst_meta_transform_copy_.value = value;
 
   int gst_meta_api_type_register(
     ffi.Pointer<ffi.Char> api,
@@ -53404,22 +53402,22 @@ class libgstreamer {
       ffi.Pointer<GstMeta> Function(ffi.Pointer<GstBuffer>,
           ffi.Pointer<ffi.Uint8>, int, ffi.Pointer<ffi.Uint32>)>();
 
-  late final ffi.Pointer<GQuark> __gst_meta_tag_memory =
+  late final ffi.Pointer<GQuark> _gst_meta_tag_memory_ =
       _lookup<GQuark>('_gst_meta_tag_memory');
 
-  DartGQuark get _gst_meta_tag_memory => __gst_meta_tag_memory.value;
+  DartGQuark get gst_meta_tag_memory_ => _gst_meta_tag_memory_.value;
 
-  set _gst_meta_tag_memory(DartGQuark value) =>
-      __gst_meta_tag_memory.value = value;
+  set gst_meta_tag_memory_(DartGQuark value) =>
+      _gst_meta_tag_memory_.value = value;
 
-  late final ffi.Pointer<GQuark> __gst_meta_tag_memory_reference =
+  late final ffi.Pointer<GQuark> _gst_meta_tag_memory_reference_ =
       _lookup<GQuark>('_gst_meta_tag_memory_reference');
 
-  DartGQuark get _gst_meta_tag_memory_reference =>
-      __gst_meta_tag_memory_reference.value;
+  DartGQuark get gst_meta_tag_memory_reference_ =>
+      _gst_meta_tag_memory_reference_.value;
 
-  set _gst_meta_tag_memory_reference(DartGQuark value) =>
-      __gst_meta_tag_memory_reference.value = value;
+  set gst_meta_tag_memory_reference_(DartGQuark value) =>
+      _gst_meta_tag_memory_reference_.value = value;
 
   int gst_buffer_get_type() {
     return _gst_buffer_get_type();
@@ -54623,13 +54621,13 @@ class libgstreamer {
           ffi.Pointer<GstReferenceTimestampMeta> Function(
               ffi.Pointer<GstBuffer>, ffi.Pointer<GstCaps>)>();
 
-  late final ffi.Pointer<GType> __gst_buffer_list_type =
+  late final ffi.Pointer<GType> _gst_buffer_list_type_ =
       _lookup<GType>('_gst_buffer_list_type');
 
-  DartGType get _gst_buffer_list_type => __gst_buffer_list_type.value;
+  DartGType get gst_buffer_list_type_ => _gst_buffer_list_type_.value;
 
-  set _gst_buffer_list_type(DartGType value) =>
-      __gst_buffer_list_type.value = value;
+  set gst_buffer_list_type_(DartGType value) =>
+      _gst_buffer_list_type_.value = value;
 
   int gst_buffer_list_get_type() {
     return _gst_buffer_list_get_type();
@@ -55583,12 +55581,12 @@ class libgstreamer {
   late final _gst_segment_is_equal = _gst_segment_is_equalPtr.asFunction<
       int Function(ffi.Pointer<GstSegment>, ffi.Pointer<GstSegment>)>();
 
-  late final ffi.Pointer<GType> __gst_sample_type =
+  late final ffi.Pointer<GType> _gst_sample_type_ =
       _lookup<GType>('_gst_sample_type');
 
-  DartGType get _gst_sample_type => __gst_sample_type.value;
+  DartGType get gst_sample_type_ => _gst_sample_type_.value;
 
-  set _gst_sample_type(DartGType value) => __gst_sample_type.value = value;
+  set gst_sample_type_(DartGType value) => _gst_sample_type_.value = value;
 
   int gst_sample_get_type() {
     return _gst_sample_get_type();
@@ -55789,12 +55787,12 @@ class libgstreamer {
   late final _gst_sample_set_info = _gst_sample_set_infoPtr.asFunction<
       int Function(ffi.Pointer<GstSample>, ffi.Pointer<GstStructure>)>();
 
-  late final ffi.Pointer<GType> __gst_tag_list_type =
+  late final ffi.Pointer<GType> _gst_tag_list_type_ =
       _lookup<GType>('_gst_tag_list_type');
 
-  DartGType get _gst_tag_list_type => __gst_tag_list_type.value;
+  DartGType get gst_tag_list_type_ => _gst_tag_list_type_.value;
 
-  set _gst_tag_list_type(DartGType value) => __gst_tag_list_type.value = value;
+  set gst_tag_list_type_(DartGType value) => _gst_tag_list_type_.value = value;
 
   int gst_tag_list_get_type() {
     return _gst_tag_list_get_type();
@@ -56014,7 +56012,7 @@ class libgstreamer {
       .asFunction<ffi.Pointer<GstTagList> Function(ffi.Pointer<ffi.Char>)>();
 
   ffi.Pointer<GstTagList> gst_tag_list_new_valist(
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _gst_tag_list_new_valist(
       var_args,
@@ -56024,9 +56022,9 @@ class libgstreamer {
   late final _gst_tag_list_new_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GstTagList> Function(
-              ffi.Pointer<__va_list_tag>)>>('gst_tag_list_new_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_tag_list_new_valist');
   late final _gst_tag_list_new_valist = _gst_tag_list_new_valistPtr.asFunction<
-      ffi.Pointer<GstTagList> Function(ffi.Pointer<__va_list_tag>)>();
+      ffi.Pointer<GstTagList> Function(ffi.Pointer<va_list_tag_>)>();
 
   void gst_tag_list_set_scope(
     ffi.Pointer<GstTagList> list,
@@ -56252,7 +56250,7 @@ class libgstreamer {
     ffi.Pointer<GstTagList> list,
     GstTagMergeMode mode,
     ffi.Pointer<ffi.Char> tag,
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _gst_tag_list_add_valist(
       list,
@@ -56268,16 +56266,16 @@ class libgstreamer {
               ffi.Pointer<GstTagList>,
               ffi.UnsignedInt,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_tag_list_add_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_tag_list_add_valist');
   late final _gst_tag_list_add_valist = _gst_tag_list_add_valistPtr.asFunction<
       void Function(ffi.Pointer<GstTagList>, int, ffi.Pointer<ffi.Char>,
-          ffi.Pointer<__va_list_tag>)>();
+          ffi.Pointer<va_list_tag_>)>();
 
   void gst_tag_list_add_valist_values(
     ffi.Pointer<GstTagList> list,
     GstTagMergeMode mode,
     ffi.Pointer<ffi.Char> tag,
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _gst_tag_list_add_valist_values(
       list,
@@ -56293,11 +56291,11 @@ class libgstreamer {
               ffi.Pointer<GstTagList>,
               ffi.UnsignedInt,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_tag_list_add_valist_values');
+              ffi.Pointer<va_list_tag_>)>>('gst_tag_list_add_valist_values');
   late final _gst_tag_list_add_valist_values =
       _gst_tag_list_add_valist_valuesPtr.asFunction<
           void Function(ffi.Pointer<GstTagList>, int, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<va_list_tag_>)>();
 
   void gst_tag_list_add_value(
     ffi.Pointer<GstTagList> list,
@@ -56992,27 +56990,27 @@ class libgstreamer {
   late final _gst_tag_list_copy = _gst_tag_list_copyPtr
       .asFunction<ffi.Pointer<GstTagList> Function(ffi.Pointer<GstTagList>)>();
 
-  late final ffi.Pointer<GType> __gst_query_type =
+  late final ffi.Pointer<GType> _gst_query_type_ =
       _lookup<GType>('_gst_query_type');
 
-  DartGType get _gst_query_type => __gst_query_type.value;
+  DartGType get gst_query_type_ => _gst_query_type_.value;
 
-  set _gst_query_type(DartGType value) => __gst_query_type.value = value;
+  set gst_query_type_(DartGType value) => _gst_query_type_.value = value;
 
-  late final ffi.Pointer<GType> __gst_toc_type =
+  late final ffi.Pointer<GType> _gst_toc_type_ =
       _lookup<GType>('_gst_toc_type');
 
-  DartGType get _gst_toc_type => __gst_toc_type.value;
+  DartGType get gst_toc_type_ => _gst_toc_type_.value;
 
-  set _gst_toc_type(DartGType value) => __gst_toc_type.value = value;
+  set gst_toc_type_(DartGType value) => _gst_toc_type_.value = value;
 
-  late final ffi.Pointer<GType> __gst_toc_entry_type =
+  late final ffi.Pointer<GType> _gst_toc_entry_type_ =
       _lookup<GType>('_gst_toc_entry_type');
 
-  DartGType get _gst_toc_entry_type => __gst_toc_entry_type.value;
+  DartGType get gst_toc_entry_type_ => _gst_toc_entry_type_.value;
 
-  set _gst_toc_entry_type(DartGType value) =>
-      __gst_toc_entry_type.value = value;
+  set gst_toc_entry_type_(DartGType value) =>
+      _gst_toc_entry_type_.value = value;
 
   int gst_toc_get_type() {
     return _gst_toc_get_type();
@@ -57461,12 +57459,12 @@ class libgstreamer {
   late final _gst_toc_entry_type_get_nick = _gst_toc_entry_type_get_nickPtr
       .asFunction<ffi.Pointer<ffi.Char> Function(int)>();
 
-  late final ffi.Pointer<GType> __gst_context_type =
+  late final ffi.Pointer<GType> _gst_context_type_ =
       _lookup<GType>('_gst_context_type');
 
-  DartGType get _gst_context_type => __gst_context_type.value;
+  DartGType get gst_context_type_ => _gst_context_type_.value;
 
-  set _gst_context_type(DartGType value) => __gst_context_type.value = value;
+  set gst_context_type_(DartGType value) => _gst_context_type_.value = value;
 
   int gst_context_get_type() {
     return _gst_context_get_type();
@@ -59752,12 +59750,12 @@ class libgstreamer {
           int Function(
               ffi.Pointer<GstStreamCollection>, ffi.Pointer<GstStream>)>();
 
-  late final ffi.Pointer<GType> __gst_message_type =
+  late final ffi.Pointer<GType> _gst_message_type_ =
       _lookup<GType>('_gst_message_type');
 
-  DartGType get _gst_message_type => __gst_message_type.value;
+  DartGType get gst_message_type_ => _gst_message_type_.value;
 
-  set _gst_message_type(DartGType value) => __gst_message_type.value = value;
+  set gst_message_type_(DartGType value) => _gst_message_type_.value = value;
 
   int gst_message_get_type() {
     return _gst_message_get_type();
@@ -61931,12 +61929,12 @@ class libgstreamer {
       _gst_message_parse_instant_rate_requestPtr.asFunction<
           void Function(ffi.Pointer<GstMessage>, ffi.Pointer<ffi.Double>)>();
 
-  late final ffi.Pointer<GType> __gst_event_type =
+  late final ffi.Pointer<GType> _gst_event_type_ =
       _lookup<GType>('_gst_event_type');
 
-  DartGType get _gst_event_type => __gst_event_type.value;
+  DartGType get gst_event_type_ => _gst_event_type_.value;
 
-  set _gst_event_type(DartGType value) => __gst_event_type.value = value;
+  set gst_event_type_(DartGType value) => _gst_event_type_.value = value;
 
   ffi.Pointer<ffi.Char> gst_event_type_get_name(
     GstEventType type,
@@ -67457,7 +67455,7 @@ class libgstreamer {
   ffi.Pointer<GstElement> gst_element_factory_create_valist(
     ffi.Pointer<GstElementFactory> factory1,
     ffi.Pointer<ffi.Char> first,
-    ffi.Pointer<__va_list_tag> properties,
+    ffi.Pointer<va_list_tag_> properties,
   ) {
     return _gst_element_factory_create_valist(
       factory1,
@@ -67467,14 +67465,15 @@ class libgstreamer {
   }
 
   late final _gst_element_factory_create_valistPtr = _lookup<
-          ffi.NativeFunction<
-              ffi.Pointer<GstElement> Function(ffi.Pointer<GstElementFactory>,
-                  ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>(
-      'gst_element_factory_create_valist');
+      ffi.NativeFunction<
+          ffi.Pointer<GstElement> Function(
+              ffi.Pointer<GstElementFactory>,
+              ffi.Pointer<ffi.Char>,
+              ffi.Pointer<va_list_tag_>)>>('gst_element_factory_create_valist');
   late final _gst_element_factory_create_valist =
       _gst_element_factory_create_valistPtr.asFunction<
           ffi.Pointer<GstElement> Function(ffi.Pointer<GstElementFactory>,
-              ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>();
 
   ffi.Pointer<GstElement> gst_element_factory_create_with_properties(
     ffi.Pointer<GstElementFactory> factory1,
@@ -67544,7 +67543,7 @@ class libgstreamer {
   ffi.Pointer<GstElement> gst_element_factory_make_valist(
     ffi.Pointer<ffi.Char> factoryname,
     ffi.Pointer<ffi.Char> first,
-    ffi.Pointer<__va_list_tag> properties,
+    ffi.Pointer<va_list_tag_> properties,
   ) {
     return _gst_element_factory_make_valist(
       factoryname,
@@ -67558,11 +67557,11 @@ class libgstreamer {
           ffi.Pointer<GstElement> Function(
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_element_factory_make_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_element_factory_make_valist');
   late final _gst_element_factory_make_valist =
       _gst_element_factory_make_valistPtr.asFunction<
           ffi.Pointer<GstElement> Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>();
 
   ffi.Pointer<GstElement> gst_element_factory_make_with_properties(
     ffi.Pointer<ffi.Char> factoryname,
@@ -68541,19 +68540,19 @@ class libgstreamer {
       _gst_element_post_messagePtr.asFunction<
           int Function(ffi.Pointer<GstElement>, ffi.Pointer<GstMessage>)>();
 
-  ffi.Pointer<ffi.Char> _gst_element_error_printf(
+  ffi.Pointer<ffi.Char> gst_element_error_printf_(
     ffi.Pointer<ffi.Char> format,
   ) {
-    return __gst_element_error_printf(
+    return _gst_element_error_printf_(
       format,
     );
   }
 
-  late final __gst_element_error_printfPtr = _lookup<
+  late final _gst_element_error_printf_Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(
               ffi.Pointer<ffi.Char>)>>('_gst_element_error_printf');
-  late final __gst_element_error_printf = __gst_element_error_printfPtr
+  late final _gst_element_error_printf_ = _gst_element_error_printf_Ptr
       .asFunction<ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>)>();
 
   void gst_element_message_full(
@@ -69759,7 +69758,7 @@ class libgstreamer {
   void gst_child_proxy_get_valist(
     ffi.Pointer<GstChildProxy> object,
     ffi.Pointer<ffi.Char> first_property_name,
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _gst_child_proxy_get_valist(
       object,
@@ -69771,11 +69770,11 @@ class libgstreamer {
   late final _gst_child_proxy_get_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GstChildProxy>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_child_proxy_get_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_child_proxy_get_valist');
   late final _gst_child_proxy_get_valist =
       _gst_child_proxy_get_valistPtr.asFunction<
           void Function(ffi.Pointer<GstChildProxy>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<va_list_tag_>)>();
 
   void gst_child_proxy_get(
     ffi.Pointer<GstChildProxy> object,
@@ -69818,7 +69817,7 @@ class libgstreamer {
   void gst_child_proxy_set_valist(
     ffi.Pointer<GstChildProxy> object,
     ffi.Pointer<ffi.Char> first_property_name,
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _gst_child_proxy_set_valist(
       object,
@@ -69830,11 +69829,11 @@ class libgstreamer {
   late final _gst_child_proxy_set_valistPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<GstChildProxy>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_child_proxy_set_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_child_proxy_set_valist');
   late final _gst_child_proxy_set_valist =
       _gst_child_proxy_set_valistPtr.asFunction<
           void Function(ffi.Pointer<GstChildProxy>, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<va_list_tag_>)>();
 
   void gst_child_proxy_set(
     ffi.Pointer<GstChildProxy> object,
@@ -71155,7 +71154,7 @@ class libgstreamer {
     int line,
     ffi.Pointer<GObject> object,
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _gst_debug_log_valist(
       category,
@@ -71179,7 +71178,7 @@ class libgstreamer {
               ffi.Int,
               ffi.Pointer<GObject>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_debug_log_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_debug_log_valist');
   late final _gst_debug_log_valist = _gst_debug_log_valistPtr.asFunction<
       void Function(
           ffi.Pointer<GstDebugCategory>,
@@ -71189,7 +71188,7 @@ class libgstreamer {
           int,
           ffi.Pointer<GObject>,
           ffi.Pointer<ffi.Char>,
-          ffi.Pointer<__va_list_tag>)>();
+          ffi.Pointer<va_list_tag_>)>();
 
   void gst_debug_log_literal(
     ffi.Pointer<GstDebugCategory> category,
@@ -71279,7 +71278,7 @@ class libgstreamer {
     int line,
     ffi.Pointer<ffi.Char> id,
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _gst_debug_log_id_valist(
       category,
@@ -71303,7 +71302,7 @@ class libgstreamer {
               ffi.Int,
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_debug_log_id_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_debug_log_id_valist');
   late final _gst_debug_log_id_valist = _gst_debug_log_id_valistPtr.asFunction<
       void Function(
           ffi.Pointer<GstDebugCategory>,
@@ -71313,7 +71312,7 @@ class libgstreamer {
           int,
           ffi.Pointer<ffi.Char>,
           ffi.Pointer<ffi.Char>,
-          ffi.Pointer<__va_list_tag>)>();
+          ffi.Pointer<va_list_tag_>)>();
 
   void gst_debug_log_id_literal(
     ffi.Pointer<GstDebugCategory> category,
@@ -71356,44 +71355,44 @@ class libgstreamer {
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<GstDebugCategory> _gst_debug_category_new(
+  ffi.Pointer<GstDebugCategory> gst_debug_category_new_(
     ffi.Pointer<ffi.Char> name,
     int color,
     ffi.Pointer<ffi.Char> description,
   ) {
-    return __gst_debug_category_new(
+    return _gst_debug_category_new_(
       name,
       color,
       description,
     );
   }
 
-  late final __gst_debug_category_newPtr = _lookup<
+  late final _gst_debug_category_new_Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GstDebugCategory> Function(
               ffi.Pointer<ffi.Char>,
               ffi.UnsignedInt,
               ffi.Pointer<ffi.Char>)>>('_gst_debug_category_new');
-  late final __gst_debug_category_new = __gst_debug_category_newPtr.asFunction<
+  late final _gst_debug_category_new_ = _gst_debug_category_new_Ptr.asFunction<
       ffi.Pointer<GstDebugCategory> Function(
           ffi.Pointer<ffi.Char>, int, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<GstDebugCategory> _gst_debug_get_category(
+  ffi.Pointer<GstDebugCategory> gst_debug_get_category_(
     ffi.Pointer<ffi.Char> name,
   ) {
-    return __gst_debug_get_category(
+    return _gst_debug_get_category_(
       name,
     );
   }
 
-  late final __gst_debug_get_categoryPtr = _lookup<
+  late final _gst_debug_get_category_Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<GstDebugCategory> Function(
               ffi.Pointer<ffi.Char>)>>('_gst_debug_get_category');
-  late final __gst_debug_get_category = __gst_debug_get_categoryPtr.asFunction<
+  late final _gst_debug_get_category_ = _gst_debug_get_category_Ptr.asFunction<
       ffi.Pointer<GstDebugCategory> Function(ffi.Pointer<ffi.Char>)>();
 
-  void _gst_debug_dump_mem(
+  void gst_debug_dump_mem_(
     ffi.Pointer<GstDebugCategory> cat,
     ffi.Pointer<ffi.Char> file,
     ffi.Pointer<ffi.Char> func,
@@ -71403,7 +71402,7 @@ class libgstreamer {
     ffi.Pointer<ffi.Uint8> data,
     int length,
   ) {
-    return __gst_debug_dump_mem(
+    return _gst_debug_dump_mem_(
       cat,
       file,
       func,
@@ -71415,7 +71414,7 @@ class libgstreamer {
     );
   }
 
-  late final __gst_debug_dump_memPtr = _lookup<
+  late final _gst_debug_dump_mem_Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
               ffi.Pointer<GstDebugCategory>,
@@ -71426,7 +71425,7 @@ class libgstreamer {
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Uint8>,
               ffi.UnsignedInt)>>('_gst_debug_dump_mem');
-  late final __gst_debug_dump_mem = __gst_debug_dump_memPtr.asFunction<
+  late final _gst_debug_dump_mem_ = _gst_debug_dump_mem_Ptr.asFunction<
       void Function(
           ffi.Pointer<GstDebugCategory>,
           ffi.Pointer<ffi.Char>,
@@ -71437,7 +71436,7 @@ class libgstreamer {
           ffi.Pointer<ffi.Uint8>,
           int)>();
 
-  void _gst_debug_dump_mem_id(
+  void gst_debug_dump_mem_id_(
     ffi.Pointer<GstDebugCategory> cat,
     ffi.Pointer<ffi.Char> file,
     ffi.Pointer<ffi.Char> func,
@@ -71447,7 +71446,7 @@ class libgstreamer {
     ffi.Pointer<ffi.Uint8> data,
     int length,
   ) {
-    return __gst_debug_dump_mem_id(
+    return _gst_debug_dump_mem_id_(
       cat,
       file,
       func,
@@ -71459,7 +71458,7 @@ class libgstreamer {
     );
   }
 
-  late final __gst_debug_dump_mem_idPtr = _lookup<
+  late final _gst_debug_dump_mem_id_Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(
               ffi.Pointer<GstDebugCategory>,
@@ -71470,7 +71469,7 @@ class libgstreamer {
               ffi.Pointer<ffi.Char>,
               ffi.Pointer<ffi.Uint8>,
               ffi.UnsignedInt)>>('_gst_debug_dump_mem_id');
-  late final __gst_debug_dump_mem_id = __gst_debug_dump_mem_idPtr.asFunction<
+  late final _gst_debug_dump_mem_id_ = _gst_debug_dump_mem_id_Ptr.asFunction<
       void Function(
           ffi.Pointer<GstDebugCategory>,
           ffi.Pointer<ffi.Char>,
@@ -71481,35 +71480,35 @@ class libgstreamer {
           ffi.Pointer<ffi.Uint8>,
           int)>();
 
-  void _gst_debug_register_funcptr(
+  void gst_debug_register_funcptr_(
     GstDebugFuncPtr func,
     ffi.Pointer<ffi.Char> ptrname,
   ) {
-    return __gst_debug_register_funcptr(
+    return _gst_debug_register_funcptr_(
       func,
       ptrname,
     );
   }
 
-  late final __gst_debug_register_funcptrPtr = _lookup<
+  late final _gst_debug_register_funcptr_Ptr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(GstDebugFuncPtr,
               ffi.Pointer<ffi.Char>)>>('_gst_debug_register_funcptr');
-  late final __gst_debug_register_funcptr = __gst_debug_register_funcptrPtr
+  late final _gst_debug_register_funcptr_ = _gst_debug_register_funcptr_Ptr
       .asFunction<void Function(GstDebugFuncPtr, ffi.Pointer<ffi.Char>)>();
 
-  ffi.Pointer<ffi.Char> _gst_debug_nameof_funcptr(
+  ffi.Pointer<ffi.Char> gst_debug_nameof_funcptr_(
     GstDebugFuncPtr func,
   ) {
-    return __gst_debug_nameof_funcptr(
+    return _gst_debug_nameof_funcptr_(
       func,
     );
   }
 
-  late final __gst_debug_nameof_funcptrPtr = _lookup<
+  late final _gst_debug_nameof_funcptr_Ptr = _lookup<
           ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(GstDebugFuncPtr)>>(
       '_gst_debug_nameof_funcptr');
-  late final __gst_debug_nameof_funcptr = __gst_debug_nameof_funcptrPtr
+  late final _gst_debug_nameof_funcptr_ = _gst_debug_nameof_funcptr_Ptr
       .asFunction<ffi.Pointer<ffi.Char> Function(GstDebugFuncPtr)>();
 
   ffi.Pointer<ffi.Char> gst_debug_message_get(
@@ -72001,7 +72000,7 @@ class libgstreamer {
   int gst_info_vasprintf(
     ffi.Pointer<ffi.Pointer<ffi.Char>> result,
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _gst_info_vasprintf(
       result,
@@ -72015,14 +72014,14 @@ class libgstreamer {
           ffi.Int Function(
               ffi.Pointer<ffi.Pointer<ffi.Char>>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_info_vasprintf');
+              ffi.Pointer<va_list_tag_>)>>('gst_info_vasprintf');
   late final _gst_info_vasprintf = _gst_info_vasprintfPtr.asFunction<
       int Function(ffi.Pointer<ffi.Pointer<ffi.Char>>, ffi.Pointer<ffi.Char>,
-          ffi.Pointer<__va_list_tag>)>();
+          ffi.Pointer<va_list_tag_>)>();
 
   ffi.Pointer<ffi.Char> gst_info_strdup_vprintf(
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
   ) {
     return _gst_info_strdup_vprintf(
       format,
@@ -72033,10 +72032,10 @@ class libgstreamer {
   late final _gst_info_strdup_vprintfPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_info_strdup_vprintf');
+              ffi.Pointer<va_list_tag_>)>>('gst_info_strdup_vprintf');
   late final _gst_info_strdup_vprintf = _gst_info_strdup_vprintfPtr.asFunction<
       ffi.Pointer<ffi.Char> Function(
-          ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+          ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>();
 
   ffi.Pointer<ffi.Char> gst_info_strdup_printf(
     ffi.Pointer<ffi.Char> format,
@@ -72120,22 +72119,22 @@ class libgstreamer {
   set GST_CAT_DEFAULT(ffi.Pointer<GstDebugCategory> value) =>
       _GST_CAT_DEFAULT.value = value;
 
-  late final ffi.Pointer<ffi.Int> __gst_debug_enabled =
+  late final ffi.Pointer<ffi.Int> _gst_debug_enabled_ =
       _lookup<ffi.Int>('_gst_debug_enabled');
 
-  int get _gst_debug_enabled => __gst_debug_enabled.value;
+  int get gst_debug_enabled_ => _gst_debug_enabled_.value;
 
-  set _gst_debug_enabled(int value) => __gst_debug_enabled.value = value;
+  set gst_debug_enabled_(int value) => _gst_debug_enabled_.value = value;
 
-  late final ffi.Pointer<ffi.UnsignedInt> __gst_debug_min =
+  late final ffi.Pointer<ffi.UnsignedInt> _gst_debug_min_ =
       _lookup<ffi.UnsignedInt>('_gst_debug_min');
 
-  GstDebugLevel get _gst_debug_min =>
-      GstDebugLevel.fromValue(__gst_debug_min.value);
+  GstDebugLevel get gst_debug_min_ =>
+      GstDebugLevel.fromValue(_gst_debug_min_.value);
 
-  set _gst_debug_min(GstDebugLevel value) {
-    //GstDebugLevel.fromValue(__gst_debug_min.value).ref.release();
-    __gst_debug_min.value = value.value;
+  set gst_debug_min_(GstDebugLevel value) {
+    //GstDebugLevel.fromValue(_gst_debug_min_.value).ref.release();
+    _gst_debug_min_.value = value.value;
   }
 
   void gst_debug_print_stack_trace() {
@@ -72201,74 +72200,74 @@ class libgstreamer {
       _gst_debug_ring_buffer_logger_get_logsPtr
           .asFunction<ffi.Pointer<ffi.Pointer<ffi.Char>> Function()>();
 
-  late final ffi.Pointer<GType> __gst_int_range_type =
+  late final ffi.Pointer<GType> _gst_int_range_type_ =
       _lookup<GType>('_gst_int_range_type');
 
-  DartGType get _gst_int_range_type => __gst_int_range_type.value;
+  DartGType get gst_int_range_type_ => _gst_int_range_type_.value;
 
-  set _gst_int_range_type(DartGType value) =>
-      __gst_int_range_type.value = value;
+  set gst_int_range_type_(DartGType value) =>
+      _gst_int_range_type_.value = value;
 
-  late final ffi.Pointer<GType> __gst_int64_range_type =
+  late final ffi.Pointer<GType> _gst_int64_range_type_ =
       _lookup<GType>('_gst_int64_range_type');
 
-  DartGType get _gst_int64_range_type => __gst_int64_range_type.value;
+  DartGType get gst_int64_range_type_ => _gst_int64_range_type_.value;
 
-  set _gst_int64_range_type(DartGType value) =>
-      __gst_int64_range_type.value = value;
+  set gst_int64_range_type_(DartGType value) =>
+      _gst_int64_range_type_.value = value;
 
-  late final ffi.Pointer<GType> __gst_double_range_type =
+  late final ffi.Pointer<GType> _gst_double_range_type_ =
       _lookup<GType>('_gst_double_range_type');
 
-  DartGType get _gst_double_range_type => __gst_double_range_type.value;
+  DartGType get gst_double_range_type_ => _gst_double_range_type_.value;
 
-  set _gst_double_range_type(DartGType value) =>
-      __gst_double_range_type.value = value;
+  set gst_double_range_type_(DartGType value) =>
+      _gst_double_range_type_.value = value;
 
-  late final ffi.Pointer<GType> __gst_fraction_range_type =
+  late final ffi.Pointer<GType> _gst_fraction_range_type_ =
       _lookup<GType>('_gst_fraction_range_type');
 
-  DartGType get _gst_fraction_range_type => __gst_fraction_range_type.value;
+  DartGType get gst_fraction_range_type_ => _gst_fraction_range_type_.value;
 
-  set _gst_fraction_range_type(DartGType value) =>
-      __gst_fraction_range_type.value = value;
+  set gst_fraction_range_type_(DartGType value) =>
+      _gst_fraction_range_type_.value = value;
 
-  late final ffi.Pointer<GType> __gst_value_list_type =
+  late final ffi.Pointer<GType> _gst_value_list_type_ =
       _lookup<GType>('_gst_value_list_type');
 
-  DartGType get _gst_value_list_type => __gst_value_list_type.value;
+  DartGType get gst_value_list_type_ => _gst_value_list_type_.value;
 
-  set _gst_value_list_type(DartGType value) =>
-      __gst_value_list_type.value = value;
+  set gst_value_list_type_(DartGType value) =>
+      _gst_value_list_type_.value = value;
 
-  late final ffi.Pointer<GType> __gst_value_array_type =
+  late final ffi.Pointer<GType> _gst_value_array_type_ =
       _lookup<GType>('_gst_value_array_type');
 
-  DartGType get _gst_value_array_type => __gst_value_array_type.value;
+  DartGType get gst_value_array_type_ => _gst_value_array_type_.value;
 
-  set _gst_value_array_type(DartGType value) =>
-      __gst_value_array_type.value = value;
+  set gst_value_array_type_(DartGType value) =>
+      _gst_value_array_type_.value = value;
 
-  late final ffi.Pointer<GType> __gst_fraction_type =
+  late final ffi.Pointer<GType> _gst_fraction_type_ =
       _lookup<GType>('_gst_fraction_type');
 
-  DartGType get _gst_fraction_type => __gst_fraction_type.value;
+  DartGType get gst_fraction_type_ => _gst_fraction_type_.value;
 
-  set _gst_fraction_type(DartGType value) => __gst_fraction_type.value = value;
+  set gst_fraction_type_(DartGType value) => _gst_fraction_type_.value = value;
 
-  late final ffi.Pointer<GType> __gst_bitmask_type =
+  late final ffi.Pointer<GType> _gst_bitmask_type_ =
       _lookup<GType>('_gst_bitmask_type');
 
-  DartGType get _gst_bitmask_type => __gst_bitmask_type.value;
+  DartGType get gst_bitmask_type_ => _gst_bitmask_type_.value;
 
-  set _gst_bitmask_type(DartGType value) => __gst_bitmask_type.value = value;
+  set gst_bitmask_type_(DartGType value) => _gst_bitmask_type_.value = value;
 
-  late final ffi.Pointer<GType> __gst_flagset_type =
+  late final ffi.Pointer<GType> _gst_flagset_type_ =
       _lookup<GType>('_gst_flagset_type');
 
-  DartGType get _gst_flagset_type => __gst_flagset_type.value;
+  DartGType get gst_flagset_type_ => _gst_flagset_type_.value;
 
-  set _gst_flagset_type(DartGType value) => __gst_flagset_type.value = value;
+  set gst_flagset_type_(DartGType value) => _gst_flagset_type_.value = value;
 
   int gst_int_range_get_type() {
     return _gst_int_range_get_type();
@@ -74999,7 +74998,7 @@ class libgstreamer {
     ffi.Pointer<GstTagSetter> setter,
     GstTagMergeMode mode,
     ffi.Pointer<ffi.Char> tag,
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _gst_tag_setter_add_tag_valist(
       setter,
@@ -75015,17 +75014,17 @@ class libgstreamer {
               ffi.Pointer<GstTagSetter>,
               ffi.UnsignedInt,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>>('gst_tag_setter_add_tag_valist');
+              ffi.Pointer<va_list_tag_>)>>('gst_tag_setter_add_tag_valist');
   late final _gst_tag_setter_add_tag_valist =
       _gst_tag_setter_add_tag_valistPtr.asFunction<
           void Function(ffi.Pointer<GstTagSetter>, int, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<va_list_tag_>)>();
 
   void gst_tag_setter_add_tag_valist_values(
     ffi.Pointer<GstTagSetter> setter,
     GstTagMergeMode mode,
     ffi.Pointer<ffi.Char> tag,
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _gst_tag_setter_add_tag_valist_values(
       setter,
@@ -75038,12 +75037,12 @@ class libgstreamer {
   late final _gst_tag_setter_add_tag_valist_valuesPtr = _lookup<
           ffi.NativeFunction<
               ffi.Void Function(ffi.Pointer<GstTagSetter>, ffi.UnsignedInt,
-                  ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>(
+                  ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>>(
       'gst_tag_setter_add_tag_valist_values');
   late final _gst_tag_setter_add_tag_valist_values =
       _gst_tag_setter_add_tag_valist_valuesPtr.asFunction<
           void Function(ffi.Pointer<GstTagSetter>, int, ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<va_list_tag_>)>();
 
   void gst_tag_setter_add_tag_value(
     ffi.Pointer<GstTagSetter> setter,
@@ -76382,7 +76381,7 @@ class libgstreamer {
   ffi.Pointer<ffi.Char> gst_element_decorate_stream_id_printf_valist(
     ffi.Pointer<GstElement> element,
     ffi.Pointer<ffi.Char> format,
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _gst_element_decorate_stream_id_printf_valist(
       element,
@@ -76394,12 +76393,12 @@ class libgstreamer {
   late final _gst_element_decorate_stream_id_printf_valistPtr = _lookup<
           ffi.NativeFunction<
               ffi.Pointer<ffi.Char> Function(ffi.Pointer<GstElement>,
-                  ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>>(
+                  ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>>(
       'gst_element_decorate_stream_id_printf_valist');
   late final _gst_element_decorate_stream_id_printf_valist =
       _gst_element_decorate_stream_id_printf_valistPtr.asFunction<
           ffi.Pointer<ffi.Char> Function(ffi.Pointer<GstElement>,
-              ffi.Pointer<ffi.Char>, ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<ffi.Char>, ffi.Pointer<va_list_tag_>)>();
 
   ffi.Pointer<ffi.Char> gst_element_decorate_stream_id_printf(
     ffi.Pointer<GstElement> element,
@@ -76918,7 +76917,7 @@ class libgstreamer {
     ffi.Pointer<GstPad> pad,
     ffi.Pointer<GstElement> parent,
     ffi.Pointer<ffi.Char> stream_id,
-    ffi.Pointer<__va_list_tag> var_args,
+    ffi.Pointer<va_list_tag_> var_args,
   ) {
     return _gst_pad_create_stream_id_printf_valist(
       pad,
@@ -76934,7 +76933,7 @@ class libgstreamer {
                   ffi.Pointer<GstPad>,
                   ffi.Pointer<GstElement>,
                   ffi.Pointer<ffi.Char>,
-                  ffi.Pointer<__va_list_tag>)>>(
+                  ffi.Pointer<va_list_tag_>)>>(
       'gst_pad_create_stream_id_printf_valist');
   late final _gst_pad_create_stream_id_printf_valist =
       _gst_pad_create_stream_id_printf_valistPtr.asFunction<
@@ -76942,7 +76941,7 @@ class libgstreamer {
               ffi.Pointer<GstPad>,
               ffi.Pointer<GstElement>,
               ffi.Pointer<ffi.Char>,
-              ffi.Pointer<__va_list_tag>)>();
+              ffi.Pointer<va_list_tag_>)>();
 
   ffi.Pointer<ffi.Char> gst_pad_get_stream_id(
     ffi.Pointer<GstPad> pad,
@@ -77608,127 +77607,127 @@ typedef gssize = ffi.Long;
 typedef Dartgssize = int;
 typedef GPid = ffi.Int;
 typedef DartGPid = int;
-typedef __u_char = ffi.UnsignedChar;
-typedef Dart__u_char = int;
-typedef __u_short = ffi.UnsignedShort;
-typedef Dart__u_short = int;
-typedef __u_int = ffi.UnsignedInt;
-typedef Dart__u_int = int;
-typedef __u_long = ffi.UnsignedLong;
-typedef Dart__u_long = int;
-typedef __int8_t = ffi.SignedChar;
-typedef Dart__int8_t = int;
-typedef __uint8_t = ffi.UnsignedChar;
-typedef Dart__uint8_t = int;
-typedef __int16_t = ffi.Short;
-typedef Dart__int16_t = int;
-typedef __uint16_t = ffi.UnsignedShort;
-typedef Dart__uint16_t = int;
-typedef __int32_t = ffi.Int;
-typedef Dart__int32_t = int;
-typedef __uint32_t = ffi.UnsignedInt;
-typedef Dart__uint32_t = int;
-typedef __int64_t = ffi.Long;
-typedef Dart__int64_t = int;
-typedef __uint64_t = ffi.UnsignedLong;
-typedef Dart__uint64_t = int;
-typedef __int_least8_t = __int8_t;
-typedef __uint_least8_t = __uint8_t;
-typedef __int_least16_t = __int16_t;
-typedef __uint_least16_t = __uint16_t;
-typedef __int_least32_t = __int32_t;
-typedef __uint_least32_t = __uint32_t;
-typedef __int_least64_t = __int64_t;
-typedef __uint_least64_t = __uint64_t;
-typedef __quad_t = ffi.Long;
-typedef Dart__quad_t = int;
-typedef __u_quad_t = ffi.UnsignedLong;
-typedef Dart__u_quad_t = int;
-typedef __intmax_t = ffi.Long;
-typedef Dart__intmax_t = int;
-typedef __uintmax_t = ffi.UnsignedLong;
-typedef Dart__uintmax_t = int;
-typedef __dev_t = ffi.UnsignedLong;
-typedef Dart__dev_t = int;
-typedef __uid_t = ffi.UnsignedInt;
-typedef Dart__uid_t = int;
-typedef __gid_t = ffi.UnsignedInt;
-typedef Dart__gid_t = int;
-typedef __ino_t = ffi.UnsignedLong;
-typedef Dart__ino_t = int;
-typedef __ino64_t = ffi.UnsignedLong;
-typedef Dart__ino64_t = int;
-typedef __mode_t = ffi.UnsignedInt;
-typedef Dart__mode_t = int;
-typedef __nlink_t = ffi.UnsignedLong;
-typedef Dart__nlink_t = int;
-typedef __off_t = ffi.Long;
-typedef Dart__off_t = int;
-typedef __off64_t = ffi.Long;
-typedef Dart__off64_t = int;
-typedef __pid_t = ffi.Int;
-typedef Dart__pid_t = int;
+typedef u_char_ = ffi.UnsignedChar;
+typedef Dartu_char_ = int;
+typedef u_short_ = ffi.UnsignedShort;
+typedef Dartu_short_ = int;
+typedef u_int_ = ffi.UnsignedInt;
+typedef Dartu_int_ = int;
+typedef u_long_ = ffi.UnsignedLong;
+typedef Dartu_long_ = int;
+typedef int8_t_ = ffi.SignedChar;
+typedef Dartint8_t_ = int;
+typedef uint8_t_ = ffi.UnsignedChar;
+typedef Dartuint8_t_ = int;
+typedef int16_t_ = ffi.Short;
+typedef Dartint16_t_ = int;
+typedef uint16_t_ = ffi.UnsignedShort;
+typedef Dartuint16_t_ = int;
+typedef int32_t_ = ffi.Int;
+typedef Dartint32_t_ = int;
+typedef uint32_t_ = ffi.UnsignedInt;
+typedef Dartuint32_t_ = int;
+typedef int64_t_ = ffi.Long;
+typedef Dartint64_t_ = int;
+typedef uint64_t_ = ffi.UnsignedLong;
+typedef Dartuint64_t_ = int;
+typedef int_least8_t_ = int8_t_;
+typedef uint_least8_t_ = uint8_t_;
+typedef int_least16_t_ = int16_t_;
+typedef uint_least16_t_ = uint16_t_;
+typedef int_least32_t_ = int32_t_;
+typedef uint_least32_t_ = uint32_t_;
+typedef int_least64_t_ = int64_t_;
+typedef uint_least64_t_ = uint64_t_;
+typedef quad_t_ = ffi.Long;
+typedef Dartquad_t_ = int;
+typedef u_quad_t_ = ffi.UnsignedLong;
+typedef Dartu_quad_t_ = int;
+typedef intmax_t_ = ffi.Long;
+typedef Dartintmax_t_ = int;
+typedef uintmax_t_ = ffi.UnsignedLong;
+typedef Dartuintmax_t_ = int;
+typedef dev_t_ = ffi.UnsignedLong;
+typedef Dartdev_t_ = int;
+typedef uid_t_ = ffi.UnsignedInt;
+typedef Dartuid_t_ = int;
+typedef gid_t_ = ffi.UnsignedInt;
+typedef Dartgid_t_ = int;
+typedef ino_t_ = ffi.UnsignedLong;
+typedef Dartino_t_ = int;
+typedef ino64_t_ = ffi.UnsignedLong;
+typedef Dartino64_t_ = int;
+typedef mode_t_ = ffi.UnsignedInt;
+typedef Dartmode_t_ = int;
+typedef nlink_t_ = ffi.UnsignedLong;
+typedef Dartnlink_t_ = int;
+typedef off_t_ = ffi.Long;
+typedef Dartoff_t_ = int;
+typedef off64_t_ = ffi.Long;
+typedef Dartoff64_t_ = int;
+typedef pid_t_ = ffi.Int;
+typedef Dartpid_t_ = int;
 
-final class __fsid_t extends ffi.Struct {
+final class fsid_t_ extends ffi.Struct {
   @ffi.Array.multi([2])
-  external ffi.Array<ffi.Int> __val;
+  external ffi.Array<ffi.Int> val_;
 }
 
-typedef __clock_t = ffi.Long;
-typedef Dart__clock_t = int;
-typedef __rlim_t = ffi.UnsignedLong;
-typedef Dart__rlim_t = int;
-typedef __rlim64_t = ffi.UnsignedLong;
-typedef Dart__rlim64_t = int;
-typedef __id_t = ffi.UnsignedInt;
-typedef Dart__id_t = int;
-typedef __time_t = ffi.Long;
-typedef Dart__time_t = int;
-typedef __useconds_t = ffi.UnsignedInt;
-typedef Dart__useconds_t = int;
-typedef __suseconds_t = ffi.Long;
-typedef Dart__suseconds_t = int;
-typedef __suseconds64_t = ffi.Long;
-typedef Dart__suseconds64_t = int;
-typedef __daddr_t = ffi.Int;
-typedef Dart__daddr_t = int;
-typedef __key_t = ffi.Int;
-typedef Dart__key_t = int;
-typedef __clockid_t = ffi.Int;
-typedef Dart__clockid_t = int;
-typedef __timer_t = ffi.Pointer<ffi.Void>;
-typedef __blksize_t = ffi.Long;
-typedef Dart__blksize_t = int;
-typedef __blkcnt_t = ffi.Long;
-typedef Dart__blkcnt_t = int;
-typedef __blkcnt64_t = ffi.Long;
-typedef Dart__blkcnt64_t = int;
-typedef __fsblkcnt_t = ffi.UnsignedLong;
-typedef Dart__fsblkcnt_t = int;
-typedef __fsblkcnt64_t = ffi.UnsignedLong;
-typedef Dart__fsblkcnt64_t = int;
-typedef __fsfilcnt_t = ffi.UnsignedLong;
-typedef Dart__fsfilcnt_t = int;
-typedef __fsfilcnt64_t = ffi.UnsignedLong;
-typedef Dart__fsfilcnt64_t = int;
-typedef __fsword_t = ffi.Long;
-typedef Dart__fsword_t = int;
-typedef __ssize_t = ffi.Long;
-typedef Dart__ssize_t = int;
-typedef __syscall_slong_t = ffi.Long;
-typedef Dart__syscall_slong_t = int;
-typedef __syscall_ulong_t = ffi.UnsignedLong;
-typedef Dart__syscall_ulong_t = int;
-typedef __loff_t = __off64_t;
-typedef __caddr_t = ffi.Pointer<ffi.Char>;
-typedef __intptr_t = ffi.Long;
-typedef Dart__intptr_t = int;
-typedef __socklen_t = ffi.UnsignedInt;
-typedef Dart__socklen_t = int;
-typedef __sig_atomic_t = ffi.Int;
-typedef Dart__sig_atomic_t = int;
-typedef clock_t = __clock_t;
-typedef time_t = __time_t;
+typedef clock_t_ = ffi.Long;
+typedef Dartclock_t_ = int;
+typedef rlim_t_ = ffi.UnsignedLong;
+typedef Dartrlim_t_ = int;
+typedef rlim64_t_ = ffi.UnsignedLong;
+typedef Dartrlim64_t_ = int;
+typedef id_t_ = ffi.UnsignedInt;
+typedef Dartid_t_ = int;
+typedef time_t_ = ffi.Long;
+typedef Darttime_t_ = int;
+typedef useconds_t_ = ffi.UnsignedInt;
+typedef Dartuseconds_t_ = int;
+typedef suseconds_t_ = ffi.Long;
+typedef Dartsuseconds_t_ = int;
+typedef suseconds64_t_ = ffi.Long;
+typedef Dartsuseconds64_t_ = int;
+typedef daddr_t_ = ffi.Int;
+typedef Dartdaddr_t_ = int;
+typedef key_t_ = ffi.Int;
+typedef Dartkey_t_ = int;
+typedef clockid_t_ = ffi.Int;
+typedef Dartclockid_t_ = int;
+typedef timer_t_ = ffi.Pointer<ffi.Void>;
+typedef blksize_t_ = ffi.Long;
+typedef Dartblksize_t_ = int;
+typedef blkcnt_t_ = ffi.Long;
+typedef Dartblkcnt_t_ = int;
+typedef blkcnt64_t_ = ffi.Long;
+typedef Dartblkcnt64_t_ = int;
+typedef fsblkcnt_t_ = ffi.UnsignedLong;
+typedef Dartfsblkcnt_t_ = int;
+typedef fsblkcnt64_t_ = ffi.UnsignedLong;
+typedef Dartfsblkcnt64_t_ = int;
+typedef fsfilcnt_t_ = ffi.UnsignedLong;
+typedef Dartfsfilcnt_t_ = int;
+typedef fsfilcnt64_t_ = ffi.UnsignedLong;
+typedef Dartfsfilcnt64_t_ = int;
+typedef fsword_t_ = ffi.Long;
+typedef Dartfsword_t_ = int;
+typedef ssize_t_ = ffi.Long;
+typedef Dartssize_t_ = int;
+typedef syscall_slong_t_ = ffi.Long;
+typedef Dartsyscall_slong_t_ = int;
+typedef syscall_ulong_t_ = ffi.UnsignedLong;
+typedef Dartsyscall_ulong_t_ = int;
+typedef loff_t_ = off64_t_;
+typedef caddr_t_ = ffi.Pointer<ffi.Char>;
+typedef intptr_t_ = ffi.Long;
+typedef Dartintptr_t_ = int;
+typedef socklen_t_ = ffi.UnsignedInt;
+typedef Dartsocklen_t_ = int;
+typedef sig_atomic_t_ = ffi.Int;
+typedef Dartsig_atomic_t_ = int;
+typedef clock_t = clock_t_;
+typedef time_t = time_t_;
 
 final class tm extends ffi.Struct {
   @ffi.Int()
@@ -77765,15 +77764,15 @@ final class tm extends ffi.Struct {
 }
 
 final class timespec extends ffi.Struct {
-  @__time_t()
+  @time_t_()
   external int tv_sec;
 
-  @__syscall_slong_t()
+  @syscall_slong_t_()
   external int tv_nsec;
 }
 
-typedef clockid_t = __clockid_t;
-typedef timer_t = __timer_t;
+typedef clockid_t = clockid_t_;
+typedef timer_t = timer_t_;
 
 final class itimerspec extends ffi.Struct {
   external timespec it_interval;
@@ -77788,35 +77787,35 @@ final class sigval extends ffi.Union {
   external ffi.Pointer<ffi.Void> sival_ptr;
 }
 
-typedef __sigval_t = sigval;
+typedef sigval_t_ = sigval;
 
 final class pthread_attr_t extends ffi.Union {
   @ffi.Array.multi([56])
-  external ffi.Array<ffi.Char> __size;
+  external ffi.Array<ffi.Char> size_;
 
   @ffi.Long()
-  external int __align;
+  external int align_;
 }
 
 final class UnnamedStruct1 extends ffi.Struct {
-  external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(__sigval_t)>>
-      _function;
+  external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(sigval_t_)>>
+      function_;
 
-  external ffi.Pointer<pthread_attr_t> _attribute;
+  external ffi.Pointer<pthread_attr_t> attribute_;
 }
 
 final class UnnamedUnion1 extends ffi.Union {
   @ffi.Array.multi([12])
-  external ffi.Array<ffi.Int> _pad;
+  external ffi.Array<ffi.Int> pad_;
 
-  @__pid_t()
-  external int _tid;
+  @pid_t_()
+  external int tid_;
 
-  external UnnamedStruct1 _sigev_thread;
+  external UnnamedStruct1 sigev_thread_;
 }
 
 final class sigevent extends ffi.Struct {
-  external __sigval_t sigev_value;
+  external sigval_t_ sigev_value;
 
   @ffi.Int()
   external int sigev_signo;
@@ -77824,29 +77823,29 @@ final class sigevent extends ffi.Struct {
   @ffi.Int()
   external int sigev_notify;
 
-  external UnnamedUnion1 _sigev_un;
+  external UnnamedUnion1 sigev_un_;
 }
 
-typedef pid_t = __pid_t;
+typedef pid_t = pid_t_;
 
-final class __locale_data extends ffi.Opaque {}
+final class locale_data_ extends ffi.Opaque {}
 
-final class __locale_struct extends ffi.Struct {
+final class locale_struct_ extends ffi.Struct {
   @ffi.Array.multi([13])
-  external ffi.Array<ffi.Pointer<__locale_data>> __locales;
+  external ffi.Array<ffi.Pointer<locale_data_>> locales_;
 
-  external ffi.Pointer<ffi.UnsignedShort> __ctype_b;
+  external ffi.Pointer<ffi.UnsignedShort> ctype_b_;
 
-  external ffi.Pointer<ffi.Int> __ctype_tolower;
+  external ffi.Pointer<ffi.Int> ctype_tolower_;
 
-  external ffi.Pointer<ffi.Int> __ctype_toupper;
+  external ffi.Pointer<ffi.Int> ctype_toupper_;
 
   @ffi.Array.multi([13])
-  external ffi.Array<ffi.Pointer<ffi.Char>> __names;
+  external ffi.Array<ffi.Pointer<ffi.Char>> names_;
 }
 
-typedef __locale_t = ffi.Pointer<__locale_struct>;
-typedef locale_t = __locale_t;
+typedef locale_t_ = ffi.Pointer<locale_struct_>;
+typedef locale_t = locale_t_;
 typedef GCompareFuncFunction = ffi.Int Function(ffi.Pointer a, ffi.Pointer b);
 typedef DartGCompareFuncFunction = int Function(ffi.Pointer a, ffi.Pointer b);
 typedef GCompareFunc = ffi.Pointer<ffi.NativeFunction<GCompareFuncFunction>>;
@@ -77937,15 +77936,15 @@ typedef GTranslateFuncFunction = ffi.Pointer<ffi.Char> Function(
 typedef GTranslateFunc
     = ffi.Pointer<ffi.NativeFunction<GTranslateFuncFunction>>;
 
-final class _GDoubleIEEE754 extends ffi.Opaque {}
+final class GDoubleIEEE754_ extends ffi.Opaque {}
 
-typedef GDoubleIEEE754 = _GDoubleIEEE754;
+typedef GDoubleIEEE754 = GDoubleIEEE754_;
 
-final class _GFloatIEEE754 extends ffi.Opaque {}
+final class GFloatIEEE754_ extends ffi.Opaque {}
 
-typedef GFloatIEEE754 = _GFloatIEEE754;
+typedef GFloatIEEE754 = GFloatIEEE754_;
 
-final class _GTimeVal extends ffi.Struct {
+final class GTimeVal_ extends ffi.Struct {
   @ffi.Long()
   external int tv_sec;
 
@@ -77953,46 +77952,46 @@ final class _GTimeVal extends ffi.Struct {
   external int tv_usec;
 }
 
-typedef GTimeVal = _GTimeVal;
+typedef GTimeVal = GTimeVal_;
 typedef grefcount = ffi.Int;
 typedef Dartgrefcount = int;
 typedef gatomicrefcount = ffi.Int;
 typedef Dartgatomicrefcount = int;
 
-final class _GBytes extends ffi.Opaque {}
+final class GBytes_ extends ffi.Opaque {}
 
-typedef GBytes = _GBytes;
+typedef GBytes = GBytes_;
 
-final class _GArray extends ffi.Struct {
+final class GArray_ extends ffi.Struct {
   external ffi.Pointer<ffi.Char> data;
 
   @ffi.UnsignedInt()
   external int len;
 }
 
-typedef GArray = _GArray;
+typedef GArray = GArray_;
 
-final class _GByteArray extends ffi.Struct {
+final class GByteArray_ extends ffi.Struct {
   external ffi.Pointer<ffi.Uint8> data;
 
   @ffi.UnsignedInt()
   external int len;
 }
 
-typedef GByteArray = _GByteArray;
+typedef GByteArray = GByteArray_;
 
-final class _GPtrArray extends ffi.Struct {
+final class GPtrArray_ extends ffi.Struct {
   external ffi.Pointer<ffi.Pointer> pdata;
 
   @ffi.UnsignedInt()
   external int len;
 }
 
-typedef GPtrArray = _GPtrArray;
+typedef GPtrArray = GPtrArray_;
 typedef GQuark = ffi.Uint32;
 typedef DartGQuark = int;
 
-final class _GError extends ffi.Struct {
+final class GError_ extends ffi.Struct {
   @GQuark()
   external int domain;
 
@@ -78009,7 +78008,7 @@ final class _GError extends ffi.Struct {
 ///
 /// The `GError` structure contains information about
 /// an error that has occurred.
-typedef GError = _GError;
+typedef GError = GError_;
 typedef GErrorInitFuncFunction = ffi.Void Function(ffi.Pointer<GError> error);
 typedef DartGErrorInitFuncFunction = void Function(ffi.Pointer<GError> error);
 
@@ -78065,7 +78064,7 @@ typedef DartGErrorClearFuncFunction = void Function(ffi.Pointer<GError> error);
 typedef GErrorClearFunc
     = ffi.Pointer<ffi.NativeFunction<GErrorClearFuncFunction>>;
 
-final class __va_list_tag extends ffi.Struct {
+final class va_list_tag_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int gp_offset;
 
@@ -78125,7 +78124,7 @@ enum GUserDirectory {
       };
 }
 
-final class _GDebugKey extends ffi.Struct {
+final class GDebugKey_ extends ffi.Struct {
   external ffi.Pointer<ffi.Char> key;
 
   @ffi.UnsignedInt()
@@ -78138,7 +78137,7 @@ final class _GDebugKey extends ffi.Struct {
 ///
 /// Associates a string with a bit flag.
 /// Used in g_parse_debug_string().
-typedef GDebugKey = _GDebugKey;
+typedef GDebugKey = GDebugKey_;
 
 enum GFormatSizeFlags {
   G_FORMAT_SIZE_DEFAULT(0),
@@ -78171,12 +78170,12 @@ typedef DartGVoidFuncFunction = void Function();
 /// and has no return value. It is used to specify the type
 /// function passed to g_atexit().
 typedef GVoidFunc = ffi.Pointer<ffi.NativeFunction<GVoidFuncFunction>>;
-typedef _Float32 = ffi.Float;
-typedef Dart_Float32 = double;
-typedef _Float64 = ffi.Double;
-typedef Dart_Float64 = double;
-typedef _Float32x = ffi.Double;
-typedef Dart_Float32x = double;
+typedef Float32_ = ffi.Float;
+typedef DartFloat32_ = double;
+typedef Float64_ = ffi.Double;
+typedef DartFloat64_ = double;
+typedef Float32x_ = ffi.Double;
+typedef DartFloat32x_ = double;
 
 final class div_t extends ffi.Struct {
   @ffi.Int()
@@ -78202,190 +78201,190 @@ final class lldiv_t extends ffi.Struct {
   external int rem;
 }
 
-typedef u_char = __u_char;
-typedef u_short = __u_short;
-typedef u_int = __u_int;
-typedef u_long = __u_long;
-typedef quad_t = __quad_t;
-typedef u_quad_t = __u_quad_t;
-typedef fsid_t = __fsid_t;
-typedef loff_t = __loff_t;
-typedef ino_t = __ino_t;
-typedef dev_t = __dev_t;
-typedef gid_t = __gid_t;
-typedef mode_t = __mode_t;
-typedef nlink_t = __nlink_t;
-typedef uid_t = __uid_t;
-typedef off_t = __off_t;
-typedef id_t = __id_t;
-typedef ssize_t = __ssize_t;
-typedef daddr_t = __daddr_t;
-typedef caddr_t = __caddr_t;
-typedef key_t = __key_t;
+typedef u_char = u_char_;
+typedef u_short = u_short_;
+typedef u_int = u_int_;
+typedef u_long = u_long_;
+typedef quad_t = quad_t_;
+typedef u_quad_t = u_quad_t_;
+typedef fsid_t = fsid_t_;
+typedef loff_t = loff_t_;
+typedef ino_t = ino_t_;
+typedef dev_t = dev_t_;
+typedef gid_t = gid_t_;
+typedef mode_t = mode_t_;
+typedef nlink_t = nlink_t_;
+typedef uid_t = uid_t_;
+typedef off_t = off_t_;
+typedef id_t = id_t_;
+typedef ssize_t = ssize_t_;
+typedef daddr_t = daddr_t_;
+typedef caddr_t = caddr_t_;
+typedef key_t = key_t_;
 typedef ulong = ffi.UnsignedLong;
 typedef Dartulong = int;
 typedef ushort = ffi.UnsignedShort;
 typedef Dartushort = int;
 typedef uint = ffi.UnsignedInt;
 typedef Dartuint = int;
-typedef u_int8_t = __uint8_t;
-typedef u_int16_t = __uint16_t;
-typedef u_int32_t = __uint32_t;
-typedef u_int64_t = __uint64_t;
+typedef u_int8_t = uint8_t_;
+typedef u_int16_t = uint16_t_;
+typedef u_int32_t = uint32_t_;
+typedef u_int64_t = uint64_t_;
 typedef register_t = ffi.Long;
 typedef Dartregister_t = int;
 
-final class __sigset_t extends ffi.Struct {
+final class sigset_t_ extends ffi.Struct {
   @ffi.Array.multi([16])
-  external ffi.Array<ffi.UnsignedLong> __val;
+  external ffi.Array<ffi.UnsignedLong> val_;
 }
 
-typedef sigset_t = __sigset_t;
+typedef sigset_t = sigset_t_;
 
 final class timeval extends ffi.Struct {
-  @__time_t()
+  @time_t_()
   external int tv_sec;
 
-  @__suseconds_t()
+  @suseconds_t_()
   external int tv_usec;
 }
 
-typedef suseconds_t = __suseconds_t;
-typedef __fd_mask = ffi.Long;
-typedef Dart__fd_mask = int;
+typedef suseconds_t = suseconds_t_;
+typedef fd_mask_ = ffi.Long;
+typedef Dartfd_mask_ = int;
 
 final class fd_set extends ffi.Struct {
   @ffi.Array.multi([16])
-  external ffi.Array<__fd_mask> __fds_bits;
+  external ffi.Array<fd_mask_> fds_bits_;
 }
 
-typedef fd_mask = __fd_mask;
-typedef blksize_t = __blksize_t;
-typedef blkcnt_t = __blkcnt_t;
-typedef fsblkcnt_t = __fsblkcnt_t;
-typedef fsfilcnt_t = __fsfilcnt_t;
+typedef fd_mask = fd_mask_;
+typedef blksize_t = blksize_t_;
+typedef blkcnt_t = blkcnt_t_;
+typedef fsblkcnt_t = fsblkcnt_t_;
+typedef fsfilcnt_t = fsfilcnt_t_;
 
 final class UnnamedStruct4 extends ffi.Struct {
   @ffi.UnsignedInt()
-  external int __low;
+  external int low_;
 
   @ffi.UnsignedInt()
-  external int __high;
+  external int high_;
 }
 
-final class __atomic_wide_counter extends ffi.Union {
+final class atomic_wide_counter_ extends ffi.Union {
   @ffi.UnsignedLongLong()
-  external int __value64;
+  external int value64_;
 
-  external UnnamedStruct4 __value32;
+  external UnnamedStruct4 value32_;
 }
 
-final class __pthread_internal_list extends ffi.Struct {
-  external ffi.Pointer<__pthread_internal_list> __prev;
+final class pthread_internal_list_ extends ffi.Struct {
+  external ffi.Pointer<pthread_internal_list_> prev_;
 
-  external ffi.Pointer<__pthread_internal_list> __next;
+  external ffi.Pointer<pthread_internal_list_> next_;
 }
 
-typedef __pthread_list_t = __pthread_internal_list;
+typedef pthread_list_t_ = pthread_internal_list_;
 
-final class __pthread_internal_slist extends ffi.Struct {
-  external ffi.Pointer<__pthread_internal_slist> __next;
+final class pthread_internal_slist_ extends ffi.Struct {
+  external ffi.Pointer<pthread_internal_slist_> next_;
 }
 
-typedef __pthread_slist_t = __pthread_internal_slist;
+typedef pthread_slist_t_ = pthread_internal_slist_;
 
-final class __pthread_mutex_s extends ffi.Struct {
+final class pthread_mutex_s_ extends ffi.Struct {
   @ffi.Int()
-  external int __lock;
+  external int lock_;
 
   @ffi.UnsignedInt()
-  external int __count;
+  external int count_;
 
   @ffi.Int()
-  external int __owner;
+  external int owner_;
 
   @ffi.UnsignedInt()
-  external int __nusers;
+  external int nusers_;
 
   @ffi.Int()
-  external int __kind;
+  external int kind_;
 
   @ffi.Short()
-  external int __spins;
+  external int spins_;
 
   @ffi.Short()
-  external int __elision;
+  external int elision_;
 
-  external __pthread_list_t __list;
+  external pthread_list_t_ list_;
 }
 
-final class __pthread_rwlock_arch_t extends ffi.Struct {
+final class pthread_rwlock_arch_t_ extends ffi.Struct {
   @ffi.UnsignedInt()
-  external int __readers;
+  external int readers_;
 
   @ffi.UnsignedInt()
-  external int __writers;
+  external int writers_;
 
   @ffi.UnsignedInt()
-  external int __wrphase_futex;
+  external int wrphase_futex_;
 
   @ffi.UnsignedInt()
-  external int __writers_futex;
+  external int writers_futex_;
 
   @ffi.UnsignedInt()
-  external int __pad3;
+  external int pad3_;
 
   @ffi.UnsignedInt()
-  external int __pad4;
+  external int pad4_;
 
   @ffi.Int()
-  external int __cur_writer;
+  external int cur_writer_;
 
   @ffi.Int()
-  external int __shared;
+  external int shared_;
 
   @ffi.SignedChar()
-  external int __rwelision;
+  external int rwelision_;
 
   @ffi.Array.multi([7])
-  external ffi.Array<ffi.UnsignedChar> __pad1;
+  external ffi.Array<ffi.UnsignedChar> pad1_;
 
   @ffi.UnsignedLong()
-  external int __pad2;
+  external int pad2_;
 
   @ffi.UnsignedInt()
-  external int __flags;
+  external int flags_;
 }
 
-final class __pthread_cond_s extends ffi.Struct {
-  external __atomic_wide_counter __wseq;
+final class pthread_cond_s_ extends ffi.Struct {
+  external atomic_wide_counter_ wseq_;
 
-  external __atomic_wide_counter __g1_start;
-
-  @ffi.Array.multi([2])
-  external ffi.Array<ffi.UnsignedInt> __g_refs;
+  external atomic_wide_counter_ g1_start_;
 
   @ffi.Array.multi([2])
-  external ffi.Array<ffi.UnsignedInt> __g_size;
+  external ffi.Array<ffi.UnsignedInt> g_refs_;
+
+  @ffi.Array.multi([2])
+  external ffi.Array<ffi.UnsignedInt> g_size_;
 
   @ffi.UnsignedInt()
-  external int __g1_orig_size;
+  external int g1_orig_size_;
 
   @ffi.UnsignedInt()
-  external int __wrefs;
+  external int wrefs_;
 
   @ffi.Array.multi([2])
-  external ffi.Array<ffi.UnsignedInt> __g_signals;
+  external ffi.Array<ffi.UnsignedInt> g_signals_;
 }
 
-typedef __tss_t = ffi.UnsignedInt;
-typedef Dart__tss_t = int;
-typedef __thrd_t = ffi.UnsignedLong;
-typedef Dart__thrd_t = int;
+typedef tss_t_ = ffi.UnsignedInt;
+typedef Darttss_t_ = int;
+typedef thrd_t_ = ffi.UnsignedLong;
+typedef Dartthrd_t_ = int;
 
-final class __once_flag extends ffi.Struct {
+final class once_flag_ extends ffi.Struct {
   @ffi.Int()
-  external int __data;
+  external int data_;
 }
 
 typedef pthread_t = ffi.UnsignedLong;
@@ -78393,18 +78392,18 @@ typedef Dartpthread_t = int;
 
 final class pthread_mutexattr_t extends ffi.Union {
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Char> __size;
+  external ffi.Array<ffi.Char> size_;
 
   @ffi.Int()
-  external int __align;
+  external int align_;
 }
 
 final class pthread_condattr_t extends ffi.Union {
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Char> __size;
+  external ffi.Array<ffi.Char> size_;
 
   @ffi.Int()
-  external int __align;
+  external int align_;
 }
 
 typedef pthread_key_t = ffi.UnsignedInt;
@@ -78413,57 +78412,57 @@ typedef pthread_once_t = ffi.Int;
 typedef Dartpthread_once_t = int;
 
 final class pthread_mutex_t extends ffi.Union {
-  external __pthread_mutex_s __data;
+  external pthread_mutex_s_ data_;
 
   @ffi.Array.multi([40])
-  external ffi.Array<ffi.Char> __size;
+  external ffi.Array<ffi.Char> size_;
 
   @ffi.Long()
-  external int __align;
+  external int align_;
 }
 
 final class pthread_cond_t extends ffi.Union {
-  external __pthread_cond_s __data;
+  external pthread_cond_s_ data_;
 
   @ffi.Array.multi([48])
-  external ffi.Array<ffi.Char> __size;
+  external ffi.Array<ffi.Char> size_;
 
   @ffi.LongLong()
-  external int __align;
+  external int align_;
 }
 
 final class pthread_rwlock_t extends ffi.Union {
-  external __pthread_rwlock_arch_t __data;
+  external pthread_rwlock_arch_t_ data_;
 
   @ffi.Array.multi([56])
-  external ffi.Array<ffi.Char> __size;
+  external ffi.Array<ffi.Char> size_;
 
   @ffi.Long()
-  external int __align;
+  external int align_;
 }
 
 final class pthread_rwlockattr_t extends ffi.Union {
   @ffi.Array.multi([8])
-  external ffi.Array<ffi.Char> __size;
+  external ffi.Array<ffi.Char> size_;
 
   @ffi.Long()
-  external int __align;
+  external int align_;
 }
 
 final class pthread_barrier_t extends ffi.Union {
   @ffi.Array.multi([32])
-  external ffi.Array<ffi.Char> __size;
+  external ffi.Array<ffi.Char> size_;
 
   @ffi.Long()
-  external int __align;
+  external int align_;
 }
 
 final class pthread_barrierattr_t extends ffi.Union {
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Char> __size;
+  external ffi.Array<ffi.Char> size_;
 
   @ffi.Int()
-  external int __align;
+  external int align_;
 }
 
 final class random_data extends ffi.Struct {
@@ -78487,26 +78486,26 @@ final class random_data extends ffi.Struct {
 
 final class drand48_data extends ffi.Struct {
   @ffi.Array.multi([3])
-  external ffi.Array<ffi.UnsignedShort> __x;
+  external ffi.Array<ffi.UnsignedShort> x_;
 
   @ffi.Array.multi([3])
-  external ffi.Array<ffi.UnsignedShort> __old_x;
+  external ffi.Array<ffi.UnsignedShort> old_x_;
 
   @ffi.UnsignedShort()
-  external int __c;
+  external int c_;
 
   @ffi.UnsignedShort()
-  external int __init;
+  external int init_;
 
   @ffi.UnsignedLongLong()
-  external int __a;
+  external int a_;
 }
 
-typedef __compar_fn_tFunction = ffi.Int Function(
+typedef compar_fn_t_Function = ffi.Int Function(
     ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>);
-typedef Dart__compar_fn_tFunction = int Function(
+typedef Dartcompar_fn_t_Function = int Function(
     ffi.Pointer<ffi.Void>, ffi.Pointer<ffi.Void>);
-typedef __compar_fn_t = ffi.Pointer<ffi.NativeFunction<__compar_fn_tFunction>>;
+typedef compar_fn_t_ = ffi.Pointer<ffi.NativeFunction<compar_fn_t_Function>>;
 
 enum GThreadError {
   G_THREAD_ERROR_AGAIN(0);
@@ -78541,7 +78540,7 @@ enum GThreadPriority {
       };
 }
 
-final class _GThread extends ffi.Struct {
+final class GThread_ extends ffi.Struct {
   external GThreadFunc func;
 
   external ffi.Pointer data;
@@ -78555,45 +78554,45 @@ final class _GThread extends ffi.Struct {
   GThreadPriority get priority => GThreadPriority.fromValue(priorityAsInt);
 }
 
-typedef GThread = _GThread;
+typedef GThread = GThread_;
 
-final class _GMutex extends ffi.Union {
+final class GMutex_ extends ffi.Union {
   external ffi.Pointer p;
 
   @ffi.Array.multi([2])
   external ffi.Array<ffi.UnsignedInt> i;
 }
 
-typedef GMutex = _GMutex;
+typedef GMutex = GMutex_;
 
-final class _GRecMutex extends ffi.Struct {
+final class GRecMutex_ extends ffi.Struct {
   external ffi.Pointer p;
 
   @ffi.Array.multi([2])
   external ffi.Array<ffi.UnsignedInt> i;
 }
 
-typedef GRecMutex = _GRecMutex;
+typedef GRecMutex = GRecMutex_;
 
-final class _GRWLock extends ffi.Struct {
+final class GRWLock_ extends ffi.Struct {
   external ffi.Pointer p;
 
   @ffi.Array.multi([2])
   external ffi.Array<ffi.UnsignedInt> i;
 }
 
-typedef GRWLock = _GRWLock;
+typedef GRWLock = GRWLock_;
 
-final class _GCond extends ffi.Struct {
+final class GCond_ extends ffi.Struct {
   external ffi.Pointer p;
 
   @ffi.Array.multi([2])
   external ffi.Array<ffi.UnsignedInt> i;
 }
 
-typedef GCond = _GCond;
+typedef GCond = GCond_;
 
-final class _GPrivate extends ffi.Struct {
+final class GPrivate_ extends ffi.Struct {
   external ffi.Pointer p;
 
   external GDestroyNotify notify;
@@ -78602,7 +78601,7 @@ final class _GPrivate extends ffi.Struct {
   external ffi.Array<ffi.Pointer> future;
 }
 
-typedef GPrivate = _GPrivate;
+typedef GPrivate = GPrivate_;
 
 enum GOnceStatus {
   G_ONCE_STATUS_NOTCALLED(0),
@@ -78620,7 +78619,7 @@ enum GOnceStatus {
       };
 }
 
-final class _GOnce extends ffi.Struct {
+final class GOnce_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int statusAsInt;
 
@@ -78629,7 +78628,7 @@ final class _GOnce extends ffi.Struct {
   external ffi.Pointer retval;
 }
 
-typedef GOnce = _GOnce;
+typedef GOnce = GOnce_;
 
 /// GMutexLocker:
 ///
@@ -78659,16 +78658,16 @@ typedef DartGRWLockWriterLocker = void;
 typedef GRWLockReaderLocker = ffi.Void;
 typedef DartGRWLockReaderLocker = void;
 
-final class _GAsyncQueue extends ffi.Opaque {}
+final class GAsyncQueue_ extends ffi.Opaque {}
 
-typedef GAsyncQueue = _GAsyncQueue;
-typedef sig_atomic_t = __sig_atomic_t;
+typedef GAsyncQueue = GAsyncQueue_;
+typedef sig_atomic_t = sig_atomic_t_;
 
 final class UnnamedStruct5 extends ffi.Struct {
-  @__pid_t()
+  @pid_t_()
   external int si_pid;
 
-  @__uid_t()
+  @uid_t_()
   external int si_uid;
 }
 
@@ -78679,47 +78678,47 @@ final class UnnamedStruct6 extends ffi.Struct {
   @ffi.Int()
   external int si_overrun;
 
-  external __sigval_t si_sigval;
+  external sigval_t_ si_sigval;
 }
 
 final class UnnamedStruct7 extends ffi.Struct {
-  @__pid_t()
+  @pid_t_()
   external int si_pid;
 
-  @__uid_t()
+  @uid_t_()
   external int si_uid;
 
-  external __sigval_t si_sigval;
+  external sigval_t_ si_sigval;
 }
 
 final class UnnamedStruct8 extends ffi.Struct {
-  @__pid_t()
+  @pid_t_()
   external int si_pid;
 
-  @__uid_t()
+  @uid_t_()
   external int si_uid;
 
   @ffi.Int()
   external int si_status;
 
-  @__clock_t()
+  @clock_t_()
   external int si_utime;
 
-  @__clock_t()
+  @clock_t_()
   external int si_stime;
 }
 
 final class UnnamedStruct10 extends ffi.Struct {
-  external ffi.Pointer<ffi.Void> _lower;
+  external ffi.Pointer<ffi.Void> lower_;
 
-  external ffi.Pointer<ffi.Void> _upper;
+  external ffi.Pointer<ffi.Void> upper_;
 }
 
 final class UnnamedUnion3 extends ffi.Union {
-  external UnnamedStruct10 _addr_bnd;
+  external UnnamedStruct10 addr_bnd_;
 
-  @__uint32_t()
-  external int _pkey;
+  @uint32_t_()
+  external int pkey_;
 }
 
 final class UnnamedStruct9 extends ffi.Struct {
@@ -78728,7 +78727,7 @@ final class UnnamedStruct9 extends ffi.Struct {
   @ffi.Short()
   external int si_addr_lsb;
 
-  external UnnamedUnion3 _bounds;
+  external UnnamedUnion3 bounds_;
 }
 
 final class UnnamedStruct11 extends ffi.Struct {
@@ -78740,32 +78739,32 @@ final class UnnamedStruct11 extends ffi.Struct {
 }
 
 final class UnnamedStruct12 extends ffi.Struct {
-  external ffi.Pointer<ffi.Void> _call_addr;
+  external ffi.Pointer<ffi.Void> call_addr_;
 
   @ffi.Int()
-  external int _syscall;
+  external int syscall_;
 
   @ffi.UnsignedInt()
-  external int _arch;
+  external int arch_;
 }
 
 final class UnnamedUnion2 extends ffi.Union {
   @ffi.Array.multi([28])
-  external ffi.Array<ffi.Int> _pad;
+  external ffi.Array<ffi.Int> pad_;
 
-  external UnnamedStruct5 _kill;
+  external UnnamedStruct5 kill_;
 
-  external UnnamedStruct6 _timer;
+  external UnnamedStruct6 timer_;
 
-  external UnnamedStruct7 _rt;
+  external UnnamedStruct7 rt_;
 
-  external UnnamedStruct8 _sigchld;
+  external UnnamedStruct8 sigchld_;
 
-  external UnnamedStruct9 _sigfault;
+  external UnnamedStruct9 sigfault_;
 
-  external UnnamedStruct11 _sigpoll;
+  external UnnamedStruct11 sigpoll_;
 
-  external UnnamedStruct12 _sigsys;
+  external UnnamedStruct12 sigsys_;
 }
 
 final class siginfo_t extends ffi.Struct {
@@ -78779,21 +78778,20 @@ final class siginfo_t extends ffi.Struct {
   external int si_code;
 
   @ffi.Int()
-  external int __pad0;
+  external int pad0_;
 
-  external UnnamedUnion2 _sifields;
+  external UnnamedUnion2 sifields_;
 }
 
-typedef sigval_t = __sigval_t;
+typedef sigval_t = sigval_t_;
 typedef sigevent_t = sigevent;
-typedef __sighandler_tFunction = ffi.Void Function(ffi.Int);
-typedef Dart__sighandler_tFunction = void Function(int);
-typedef __sighandler_t
-    = ffi.Pointer<ffi.NativeFunction<__sighandler_tFunction>>;
-typedef sig_t = __sighandler_t;
+typedef sighandler_t_Function = ffi.Void Function(ffi.Int);
+typedef Dartsighandler_t_Function = void Function(int);
+typedef sighandler_t_ = ffi.Pointer<ffi.NativeFunction<sighandler_t_Function>>;
+typedef sig_t = sighandler_t_;
 
 final class UnnamedUnion4 extends ffi.Union {
-  external __sighandler_t sa_handler;
+  external sighandler_t_ sa_handler;
 
   external ffi.Pointer<
           ffi.NativeFunction<
@@ -78803,9 +78801,9 @@ final class UnnamedUnion4 extends ffi.Union {
 }
 
 final class sigaction extends ffi.Struct {
-  external UnnamedUnion4 __sigaction_handler;
+  external UnnamedUnion4 sigaction_handler_;
 
-  external __sigset_t sa_mask;
+  external sigset_t_ sa_mask;
 
   @ffi.Int()
   external int sa_flags;
@@ -78813,24 +78811,24 @@ final class sigaction extends ffi.Struct {
   external ffi.Pointer<ffi.NativeFunction<ffi.Void Function()>> sa_restorer;
 }
 
-final class _fpx_sw_bytes extends ffi.Struct {
-  @__uint32_t()
+final class fpx_sw_bytes_ extends ffi.Struct {
+  @uint32_t_()
   external int magic1;
 
-  @__uint32_t()
+  @uint32_t_()
   external int extended_size;
 
-  @__uint64_t()
+  @uint64_t_()
   external int xstate_bv;
 
-  @__uint32_t()
+  @uint32_t_()
   external int xstate_size;
 
   @ffi.Array.multi([7])
-  external ffi.Array<__uint32_t> __glibc_reserved1;
+  external ffi.Array<uint32_t_> glibc_reserved1_;
 }
 
-final class _fpreg extends ffi.Struct {
+final class fpreg_ extends ffi.Struct {
   @ffi.Array.multi([4])
   external ffi.Array<ffi.UnsignedShort> significand;
 
@@ -78838,7 +78836,7 @@ final class _fpreg extends ffi.Struct {
   external int exponent;
 }
 
-final class _fpxreg extends ffi.Struct {
+final class fpxreg_ extends ffi.Struct {
   @ffi.Array.multi([4])
   external ffi.Array<ffi.UnsignedShort> significand;
 
@@ -78846,109 +78844,109 @@ final class _fpxreg extends ffi.Struct {
   external int exponent;
 
   @ffi.Array.multi([3])
-  external ffi.Array<ffi.UnsignedShort> __glibc_reserved1;
+  external ffi.Array<ffi.UnsignedShort> glibc_reserved1_;
 }
 
-final class _xmmreg extends ffi.Struct {
+final class xmmreg_ extends ffi.Struct {
   @ffi.Array.multi([4])
-  external ffi.Array<__uint32_t> element;
+  external ffi.Array<uint32_t_> element;
 }
 
-final class _fpstate extends ffi.Struct {
-  @__uint16_t()
+final class fpstate_ extends ffi.Struct {
+  @uint16_t_()
   external int cwd;
 
-  @__uint16_t()
+  @uint16_t_()
   external int swd;
 
-  @__uint16_t()
+  @uint16_t_()
   external int ftw;
 
-  @__uint16_t()
+  @uint16_t_()
   external int fop;
 
-  @__uint64_t()
+  @uint64_t_()
   external int rip;
 
-  @__uint64_t()
+  @uint64_t_()
   external int rdp;
 
-  @__uint32_t()
+  @uint32_t_()
   external int mxcsr;
 
-  @__uint32_t()
+  @uint32_t_()
   external int mxcr_mask;
 
   @ffi.Array.multi([8])
-  external ffi.Array<_fpxreg> _st;
+  external ffi.Array<fpxreg_> st_;
 
   @ffi.Array.multi([16])
-  external ffi.Array<_xmmreg> _xmm;
+  external ffi.Array<xmmreg_> xmm_;
 
   @ffi.Array.multi([24])
-  external ffi.Array<__uint32_t> __glibc_reserved1;
+  external ffi.Array<uint32_t_> glibc_reserved1_;
 }
 
 final class UnnamedUnion5 extends ffi.Union {
-  external ffi.Pointer<_fpstate> fpstate;
+  external ffi.Pointer<fpstate_> fpstate;
 
-  @__uint64_t()
-  external int __fpstate_word;
+  @uint64_t_()
+  external int fpstate_word_;
 }
 
 final class sigcontext extends ffi.Struct {
-  @__uint64_t()
+  @uint64_t_()
   external int r8;
 
-  @__uint64_t()
+  @uint64_t_()
   external int r9;
 
-  @__uint64_t()
+  @uint64_t_()
   external int r10;
 
-  @__uint64_t()
+  @uint64_t_()
   external int r11;
 
-  @__uint64_t()
+  @uint64_t_()
   external int r12;
 
-  @__uint64_t()
+  @uint64_t_()
   external int r13;
 
-  @__uint64_t()
+  @uint64_t_()
   external int r14;
 
-  @__uint64_t()
+  @uint64_t_()
   external int r15;
 
-  @__uint64_t()
+  @uint64_t_()
   external int rdi;
 
-  @__uint64_t()
+  @uint64_t_()
   external int rsi;
 
-  @__uint64_t()
+  @uint64_t_()
   external int rbp;
 
-  @__uint64_t()
+  @uint64_t_()
   external int rbx;
 
-  @__uint64_t()
+  @uint64_t_()
   external int rdx;
 
-  @__uint64_t()
+  @uint64_t_()
   external int rax;
 
-  @__uint64_t()
+  @uint64_t_()
   external int rcx;
 
-  @__uint64_t()
+  @uint64_t_()
   external int rsp;
 
-  @__uint64_t()
+  @uint64_t_()
   external int rip;
 
-  @__uint64_t()
+  @uint64_t_()
   external int eflags;
 
   @ffi.UnsignedShort()
@@ -78961,48 +78959,48 @@ final class sigcontext extends ffi.Struct {
   external int fs;
 
   @ffi.UnsignedShort()
-  external int __pad0;
+  external int pad0_;
 
-  @__uint64_t()
+  @uint64_t_()
   external int err;
 
-  @__uint64_t()
+  @uint64_t_()
   external int trapno;
 
-  @__uint64_t()
+  @uint64_t_()
   external int oldmask;
 
-  @__uint64_t()
+  @uint64_t_()
   external int cr2;
 
   external UnnamedUnion5 unnamed;
 
   @ffi.Array.multi([8])
-  external ffi.Array<__uint64_t> __reserved1;
+  external ffi.Array<uint64_t_> reserved1_;
 }
 
-final class _xsave_hdr extends ffi.Struct {
-  @__uint64_t()
+final class xsave_hdr_ extends ffi.Struct {
+  @uint64_t_()
   external int xstate_bv;
 
   @ffi.Array.multi([2])
-  external ffi.Array<__uint64_t> __glibc_reserved1;
+  external ffi.Array<uint64_t_> glibc_reserved1_;
 
   @ffi.Array.multi([5])
-  external ffi.Array<__uint64_t> __glibc_reserved2;
+  external ffi.Array<uint64_t_> glibc_reserved2_;
 }
 
-final class _ymmh_state extends ffi.Struct {
+final class ymmh_state_ extends ffi.Struct {
   @ffi.Array.multi([64])
-  external ffi.Array<__uint32_t> ymmh_space;
+  external ffi.Array<uint32_t_> ymmh_space;
 }
 
-final class _xstate extends ffi.Struct {
-  external _fpstate fpstate;
+final class xstate_ extends ffi.Struct {
+  external fpstate_ fpstate;
 
-  external _xsave_hdr xstate_hdr;
+  external xsave_hdr_ xstate_hdr;
 
-  external _ymmh_state ymmh;
+  external ymmh_state_ ymmh;
 }
 
 final class stack_t extends ffi.Struct {
@@ -79018,7 +79016,7 @@ final class stack_t extends ffi.Struct {
 typedef greg_t = ffi.LongLong;
 typedef Dartgreg_t = int;
 
-final class _libc_fpxreg extends ffi.Struct {
+final class libc_fpxreg_ extends ffi.Struct {
   @ffi.Array.multi([4])
   external ffi.Array<ffi.UnsignedShort> significand;
 
@@ -79026,50 +79024,50 @@ final class _libc_fpxreg extends ffi.Struct {
   external int exponent;
 
   @ffi.Array.multi([3])
-  external ffi.Array<ffi.UnsignedShort> __glibc_reserved1;
+  external ffi.Array<ffi.UnsignedShort> glibc_reserved1_;
 }
 
-final class _libc_xmmreg extends ffi.Struct {
+final class libc_xmmreg_ extends ffi.Struct {
   @ffi.Array.multi([4])
-  external ffi.Array<__uint32_t> element;
+  external ffi.Array<uint32_t_> element;
 }
 
-final class _libc_fpstate extends ffi.Struct {
-  @__uint16_t()
+final class libc_fpstate_ extends ffi.Struct {
+  @uint16_t_()
   external int cwd;
 
-  @__uint16_t()
+  @uint16_t_()
   external int swd;
 
-  @__uint16_t()
+  @uint16_t_()
   external int ftw;
 
-  @__uint16_t()
+  @uint16_t_()
   external int fop;
 
-  @__uint64_t()
+  @uint64_t_()
   external int rip;
 
-  @__uint64_t()
+  @uint64_t_()
   external int rdp;
 
-  @__uint32_t()
+  @uint32_t_()
   external int mxcsr;
 
-  @__uint32_t()
+  @uint32_t_()
   external int mxcr_mask;
 
   @ffi.Array.multi([8])
-  external ffi.Array<_libc_fpxreg> _st;
+  external ffi.Array<libc_fpxreg_> st_;
 
   @ffi.Array.multi([16])
-  external ffi.Array<_libc_xmmreg> _xmm;
+  external ffi.Array<libc_xmmreg_> xmm_;
 
   @ffi.Array.multi([24])
-  external ffi.Array<__uint32_t> __glibc_reserved1;
+  external ffi.Array<uint32_t_> glibc_reserved1_;
 }
 
-typedef fpregset_t = ffi.Pointer<_libc_fpstate>;
+typedef fpregset_t = ffi.Pointer<libc_fpstate_>;
 
 final class mcontext_t extends ffi.Struct {
   @ffi.Array.multi([23])
@@ -79078,7 +79076,7 @@ final class mcontext_t extends ffi.Struct {
   external fpregset_t fpregs;
 
   @ffi.Array.multi([8])
-  external ffi.Array<ffi.UnsignedLongLong> __reserved1;
+  external ffi.Array<ffi.UnsignedLongLong> reserved1_;
 }
 
 final class ucontext_t extends ffi.Struct {
@@ -79093,10 +79091,10 @@ final class ucontext_t extends ffi.Struct {
 
   external sigset_t uc_sigmask;
 
-  external _libc_fpstate __fpregs_mem;
+  external libc_fpstate_ fpregs_mem_;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.UnsignedLongLong> __ssp;
+  external ffi.Array<ffi.UnsignedLongLong> ssp_;
 }
 
 final class sigstack extends ffi.Struct {
@@ -79106,9 +79104,9 @@ final class sigstack extends ffi.Struct {
   external int ss_onstack;
 }
 
-final class _GTimeZone extends ffi.Opaque {}
+final class GTimeZone_ extends ffi.Opaque {}
 
-typedef GTimeZone = _GTimeZone;
+typedef GTimeZone = GTimeZone_;
 
 /// GTimeType:
 /// @G_TIME_TYPE_STANDARD: the time is in local standard time
@@ -79147,7 +79145,7 @@ enum GTimeType {
 typedef GTimeSpan = ffi.Int64;
 typedef DartGTimeSpan = int;
 
-final class _GDateTime extends ffi.Opaque {}
+final class GDateTime_ extends ffi.Opaque {}
 
 /// GDateTime:
 ///
@@ -79178,7 +79176,7 @@ final class _GDateTime extends ffi.Opaque {}
 /// savings time transitions are either 23 or 25 hours in length).
 ///
 /// Since: 2.26
-typedef GDateTime = _GDateTime;
+typedef GDateTime = GDateTime_;
 
 /// GBookmarkFileError:
 /// @G_BOOKMARK_FILE_ERROR_INVALID_URI: URI was ill-formed
@@ -79220,7 +79218,7 @@ enum GBookmarkFileError {
       };
 }
 
-final class _GBookmarkFile extends ffi.Opaque {}
+final class GBookmarkFile_ extends ffi.Opaque {}
 
 /// GBookmarkFile:
 ///
@@ -79263,7 +79261,7 @@ final class _GBookmarkFile extends ffi.Opaque {}
 /// [method@GLib.BookmarkFile.to_file].
 ///
 /// Since: 2.12
-typedef GBookmarkFile = _GBookmarkFile;
+typedef GBookmarkFile = GBookmarkFile_;
 
 /// GChecksumType:
 /// @G_CHECKSUM_MD5: Use the MD5 hashing algorithm
@@ -79299,9 +79297,9 @@ enum GChecksumType {
       };
 }
 
-final class _GChecksum extends ffi.Opaque {}
+final class GChecksum_ extends ffi.Opaque {}
 
-typedef GChecksum = _GChecksum;
+typedef GChecksum = GChecksum_;
 
 /// GConvertError:
 /// @G_CONVERT_ERROR_NO_CONVERSION: Conversion between the requested character
@@ -79345,17 +79343,17 @@ enum GConvertError {
       };
 }
 
-final class _GIConv extends ffi.Opaque {}
+final class GIConv_ extends ffi.Opaque {}
 
 /// GIConv: (skip)
 ///
 /// The GIConv struct wraps an iconv() conversion descriptor. It contains
 /// private data and should only be accessed using the following functions.
-typedef GIConv = ffi.Pointer<_GIConv>;
+typedef GIConv = ffi.Pointer<GIConv_>;
 
-final class _GData extends ffi.Opaque {}
+final class GData_ extends ffi.Opaque {}
 
-typedef GData = _GData;
+typedef GData = GData_;
 typedef GDataForeachFuncFunction = ffi.Void Function(
     GQuark key_id, ffi.Pointer data, ffi.Pointer user_data);
 typedef DartGDataForeachFuncFunction = void Function(
@@ -79373,9 +79371,9 @@ typedef DartGDateYear = int;
 typedef GDateDay = ffi.Uint8;
 typedef DartGDateDay = int;
 
-final class _GDate extends ffi.Opaque {}
+final class GDate_ extends ffi.Opaque {}
 
-typedef GDate = _GDate;
+typedef GDate = GDate_;
 
 enum GDateDMY {
   G_DATE_DAY(0),
@@ -79456,10 +79454,10 @@ enum GDateMonth {
 }
 
 final class dirent extends ffi.Struct {
-  @__ino_t()
+  @ino_t_()
   external int d_ino;
 
-  @__off_t()
+  @off_t_()
   external int d_off;
 
   @ffi.UnsignedShort()
@@ -79472,13 +79470,13 @@ final class dirent extends ffi.Struct {
   external ffi.Array<ffi.Char> d_name;
 }
 
-final class __dirstream extends ffi.Opaque {}
+final class dirstream_ extends ffi.Opaque {}
 
-typedef DIR = __dirstream;
+typedef DIR = dirstream_;
 
-final class _GDir extends ffi.Opaque {}
+final class GDir_ extends ffi.Opaque {}
 
-typedef GDir = _GDir;
+typedef GDir = GDir_;
 
 enum GFileError {
   G_FILE_ERROR_EXIST(0),
@@ -79601,7 +79599,7 @@ enum GFileSetContentsFlags {
       };
 }
 
-final class _GMemVTable extends ffi.Struct {
+final class GMemVTable_ extends ffi.Struct {
   external ffi
       .Pointer<ffi.NativeFunction<ffi.Pointer Function(ffi.Size n_bytes)>>
       malloc;
@@ -79640,10 +79638,10 @@ final class _GMemVTable extends ffi.Struct {
 /// if it exists, should be prior to any use of GLib.
 ///
 /// This functions related to this has been deprecated in 2.46, and no longer work.
-typedef GMemVTable = _GMemVTable;
-typedef GNode = _GNode;
+typedef GMemVTable = GMemVTable_;
+typedef GNode = GNode_;
 
-final class _GNode extends ffi.Struct {
+final class GNode_ extends ffi.Struct {
   external ffi.Pointer data;
 
   external ffi.Pointer<GNode> next;
@@ -79716,9 +79714,9 @@ typedef DartGNodeForeachFuncFunction = void Function(
     ffi.Pointer<GNode> node, ffi.Pointer data);
 typedef GNodeForeachFunc
     = ffi.Pointer<ffi.NativeFunction<GNodeForeachFuncFunction>>;
-typedef GList = _GList;
+typedef GList = GList_;
 
-final class _GList extends ffi.Struct {
+final class GList_ extends ffi.Struct {
   external ffi.Pointer data;
 
   external ffi.Pointer<GList> next;
@@ -79726,16 +79724,16 @@ final class _GList extends ffi.Struct {
   external ffi.Pointer<GList> prev;
 }
 
-final class _GHashTable extends ffi.Opaque {}
+final class GHashTable_ extends ffi.Opaque {}
 
-typedef GHashTable = _GHashTable;
+typedef GHashTable = GHashTable_;
 typedef GHRFuncFunction = ffi.Int Function(
     ffi.Pointer key, ffi.Pointer value, ffi.Pointer user_data);
 typedef DartGHRFuncFunction = int Function(
     ffi.Pointer key, ffi.Pointer value, ffi.Pointer user_data);
 typedef GHRFunc = ffi.Pointer<ffi.NativeFunction<GHRFuncFunction>>;
 
-final class _GHashTableIter extends ffi.Struct {
+final class GHashTableIter_ extends ffi.Struct {
   external ffi.Pointer dummy1;
 
   external ffi.Pointer dummy2;
@@ -79751,14 +79749,14 @@ final class _GHashTableIter extends ffi.Struct {
   external ffi.Pointer dummy6;
 }
 
-typedef GHashTableIter = _GHashTableIter;
+typedef GHashTableIter = GHashTableIter_;
 
-final class _GHmac extends ffi.Opaque {}
+final class GHmac_ extends ffi.Opaque {}
 
-typedef GHmac = _GHmac;
-typedef GHook = _GHook;
+typedef GHmac = GHmac_;
+typedef GHook = GHook_;
 
-final class _GHook extends ffi.Struct {
+final class GHook_ extends ffi.Struct {
   external ffi.Pointer data;
 
   external ffi.Pointer<GHook> next;
@@ -79779,9 +79777,9 @@ final class _GHook extends ffi.Struct {
   external GDestroyNotify destroy;
 }
 
-final class _GHookList extends ffi.Opaque {}
+final class GHookList_ extends ffi.Opaque {}
 
-typedef GHookList = _GHookList;
+typedef GHookList = GHookList_;
 typedef GHookCompareFuncFunction = ffi.Int Function(
     ffi.Pointer<GHook> new_hook, ffi.Pointer<GHook> sibling);
 typedef DartGHookCompareFuncFunction = int Function(
@@ -79846,7 +79844,7 @@ enum GHookFlagMask {
 ///
 /// Represents a file descriptor, which events to poll for, and which events
 /// occurred.
-final class _GPollFD extends ffi.Struct {
+final class GPollFD_ extends ffi.Struct {
   @ffi.Int()
   external int fd;
 
@@ -79857,7 +79855,7 @@ final class _GPollFD extends ffi.Struct {
   external int revents;
 }
 
-typedef GPollFD = _GPollFD;
+typedef GPollFD = GPollFD_;
 typedef GPollFuncFunction = ffi.Int Function(
     ffi.Pointer<GPollFD> ufds, ffi.UnsignedInt nfsd, ffi.Int timeout_);
 typedef DartGPollFuncFunction = int Function(
@@ -79875,9 +79873,9 @@ typedef DartGPollFuncFunction = int Function(
 /// Returns: the number of #GPollFD elements which have events or errors
 /// reported, or -1 if an error occurred.
 typedef GPollFunc = ffi.Pointer<ffi.NativeFunction<GPollFuncFunction>>;
-typedef GSList = _GSList;
+typedef GSList = GSList_;
 
-final class _GSList extends ffi.Struct {
+final class GSList_ extends ffi.Struct {
   external ffi.Pointer data;
 
   external ffi.Pointer<GSList> next;
@@ -79930,27 +79928,27 @@ enum GMainContextFlags {
       };
 }
 
-final class _GMainContext extends ffi.Opaque {}
+final class GMainContext_ extends ffi.Opaque {}
 
 /// GMainContext:
 ///
 /// The `GMainContext` struct is an opaque data
 /// type representing a set of sources to be handled in a main loop.
-typedef GMainContext = _GMainContext;
+typedef GMainContext = GMainContext_;
 
-final class _GMainLoop extends ffi.Opaque {}
+final class GMainLoop_ extends ffi.Opaque {}
 
 /// GMainLoop:
 ///
 /// The `GMainLoop` struct is an opaque data type
 /// representing the main event loop of a GLib or GTK application.
-typedef GMainLoop = _GMainLoop;
+typedef GMainLoop = GMainLoop_;
 
 /// GSource:
 ///
 /// The `GSource` struct is an opaque data type
 /// representing an event source.
-typedef GSource = _GSource;
+typedef GSource = GSource_;
 typedef GSourceFuncFunction = ffi.Int Function(ffi.Pointer user_data);
 typedef DartGSourceFuncFunction = int Function(ffi.Pointer user_data);
 
@@ -79971,7 +79969,7 @@ typedef DartGSourceFuncFunction = int Function(ffi.Pointer user_data);
 /// memorable names for the return value.
 typedef GSourceFunc = ffi.Pointer<ffi.NativeFunction<GSourceFuncFunction>>;
 
-final class _GSourceCallbackFuncs extends ffi.Struct {
+final class GSourceCallbackFuncs_ extends ffi.Struct {
   external ffi
       .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer cb_data)>> ref;
 
@@ -79996,7 +79994,7 @@ final class _GSourceCallbackFuncs extends ffi.Struct {
 ///
 /// The `GSourceCallbackFuncs` struct contains
 /// functions for managing callback objects.
-typedef GSourceCallbackFuncs = _GSourceCallbackFuncs;
+typedef GSourceCallbackFuncs = GSourceCallbackFuncs_;
 typedef GSourceFuncsPrepareFuncFunction = ffi.Int Function(
     ffi.Pointer<GSource> source, ffi.Pointer<ffi.Int> timeout_);
 typedef DartGSourceFuncsPrepareFuncFunction = int Function(
@@ -80105,7 +80103,7 @@ typedef DartGSourceDummyMarshalFunction = void Function();
 typedef GSourceDummyMarshal
     = ffi.Pointer<ffi.NativeFunction<GSourceDummyMarshalFunction>>;
 
-final class _GSourceFuncs extends ffi.Struct {
+final class GSourceFuncs_ extends ffi.Struct {
   external GSourceFuncsPrepareFunc prepare;
 
   external GSourceFuncsCheckFunc check;
@@ -80173,13 +80171,13 @@ final class _GSourceFuncs extends ffi.Struct {
 /// indicate that it doesn't mind how long the poll() call blocks. In the
 /// check function, it tests the results of the poll() call to see if the
 /// required condition has been met, and returns %TRUE if so.
-typedef GSourceFuncs = _GSourceFuncs;
+typedef GSourceFuncs = GSourceFuncs_;
 
-final class _GSourcePrivate extends ffi.Opaque {}
+final class GSourcePrivate_ extends ffi.Opaque {}
 
-typedef GSourcePrivate = _GSourcePrivate;
+typedef GSourcePrivate = GSourcePrivate_;
 
-final class _GSource extends ffi.Struct {
+final class GSource_ extends ffi.Struct {
   external ffi.Pointer callback_data;
 
   external ffi.Pointer<GSourceCallbackFuncs> callback_funcs;
@@ -81250,7 +81248,7 @@ enum GNumberParserError {
       };
 }
 
-final class _GString extends ffi.Struct {
+final class GString_ extends ffi.Struct {
   external ffi.Pointer<ffi.Char> str;
 
   @ffi.Size()
@@ -81260,11 +81258,11 @@ final class _GString extends ffi.Struct {
   external int allocated_len;
 }
 
-typedef GString = _GString;
+typedef GString = GString_;
 
-final class _GIOChannel extends ffi.Opaque {}
+final class GIOChannel_ extends ffi.Opaque {}
 
-typedef GIOChannel = _GIOChannel;
+typedef GIOChannel = GIOChannel_;
 
 enum GIOStatus {
   G_IO_STATUS_ERROR(0),
@@ -81338,7 +81336,7 @@ enum GIOFlags {
   }
 }
 
-final class _GIOFuncs extends ffi.Struct {
+final class GIOFuncs_ extends ffi.Struct {
   external ffi.Pointer<
       ffi.NativeFunction<
           ffi.UnsignedInt Function(
@@ -81394,7 +81392,7 @@ final class _GIOFuncs extends ffi.Struct {
       io_get_flags;
 }
 
-typedef GIOFuncs = _GIOFuncs;
+typedef GIOFuncs = GIOFuncs_;
 
 enum GIOError {
   G_IO_ERROR_NONE(0),
@@ -81470,9 +81468,9 @@ enum GKeyFileError {
       };
 }
 
-final class _GKeyFile extends ffi.Opaque {}
+final class GKeyFile_ extends ffi.Opaque {}
 
-typedef GKeyFile = _GKeyFile;
+typedef GKeyFile = GKeyFile_;
 
 enum GKeyFileFlags {
   G_KEY_FILE_NONE(0),
@@ -81490,9 +81488,9 @@ enum GKeyFileFlags {
       };
 }
 
-final class _GMappedFile extends ffi.Opaque {}
+final class GMappedFile_ extends ffi.Opaque {}
 
-typedef GMappedFile = _GMappedFile;
+typedef GMappedFile = GMappedFile_;
 
 /// GMarkupError:
 /// @G_MARKUP_ERROR_BAD_UTF8: text being parsed was not valid UTF-8
@@ -81571,7 +81569,7 @@ enum GMarkupParseFlags {
       };
 }
 
-final class _GMarkupParseContext extends ffi.Opaque {}
+final class GMarkupParseContext_ extends ffi.Opaque {}
 
 /// GMarkupParseContext:
 ///
@@ -81580,7 +81578,7 @@ final class _GMarkupParseContext extends ffi.Opaque {}
 ///
 /// See g_markup_parse_context_new(), #GMarkupParser, and so
 /// on for more details.
-typedef GMarkupParseContext = _GMarkupParseContext;
+typedef GMarkupParseContext = GMarkupParseContext_;
 
 /// GMarkupParser:
 /// @start_element: Callback to invoke when the opening tag of an element
@@ -81608,7 +81606,7 @@ typedef GMarkupParseContext = _GMarkupParseContext;
 /// errors are intended to be set from these callbacks. If you set an error
 /// from a callback, g_markup_parse_context_parse() will report that error
 /// back to its caller.
-final class _GMarkupParser extends ffi.Struct {
+final class GMarkupParser_ extends ffi.Struct {
   external ffi.Pointer<
       ffi.NativeFunction<
           ffi.Void Function(
@@ -81651,7 +81649,7 @@ final class _GMarkupParser extends ffi.Struct {
               ffi.Pointer<GError> error, ffi.Pointer user_data)>> error;
 }
 
-typedef GMarkupParser = _GMarkupParser;
+typedef GMarkupParser = GMarkupParser_;
 
 enum GMarkupCollectType {
   G_MARKUP_COLLECT_INVALID(0),
@@ -81676,13 +81674,13 @@ enum GMarkupCollectType {
       };
 }
 
-final class _GVariantType extends ffi.Opaque {}
+final class GVariantType_ extends ffi.Opaque {}
 
-typedef GVariantType = _GVariantType;
+typedef GVariantType = GVariantType_;
 
-final class _GVariant extends ffi.Opaque {}
+final class GVariant_ extends ffi.Opaque {}
 
-typedef GVariant = _GVariant;
+typedef GVariant = GVariant_;
 
 enum GVariantClass {
   G_VARIANT_CLASS_BOOLEAN(98),
@@ -81730,12 +81728,12 @@ enum GVariantClass {
       };
 }
 
-final class _GVariantIter extends ffi.Struct {
+final class GVariantIter_ extends ffi.Struct {
   @ffi.Array.multi([16])
   external ffi.Array<ffi.UintPtr> x;
 }
 
-typedef GVariantIter = _GVariantIter;
+typedef GVariantIter = GVariantIter_;
 
 final class UnnamedStruct13 extends ffi.Struct {
   @ffi.Size()
@@ -81754,11 +81752,11 @@ final class UnnamedUnion6 extends ffi.Union {
   external ffi.Array<ffi.UintPtr> x;
 }
 
-final class _GVariantBuilder extends ffi.Struct {
+final class GVariantBuilder_ extends ffi.Struct {
   external UnnamedUnion6 u;
 }
 
-typedef GVariantBuilder = _GVariantBuilder;
+typedef GVariantBuilder = GVariantBuilder_;
 
 enum GVariantParseError {
   G_VARIANT_PARSE_ERROR_FAILED(0),
@@ -81826,11 +81824,11 @@ final class UnnamedUnion7 extends ffi.Union {
   external ffi.Array<ffi.UintPtr> x;
 }
 
-final class _GVariantDict extends ffi.Struct {
+final class GVariantDict_ extends ffi.Struct {
   external UnnamedUnion7 u;
 }
 
-typedef GVariantDict = _GVariantDict;
+typedef GVariantDict = GVariantDict_;
 
 enum GLogLevelFlags {
   G_LOG_FLAG_RECURSION(1),
@@ -81895,7 +81893,7 @@ enum GLogWriterOutput {
       };
 }
 
-final class _GLogField extends ffi.Struct {
+final class GLogField_ extends ffi.Struct {
   external ffi.Pointer<ffi.Char> key;
 
   external ffi.Pointer value;
@@ -81918,7 +81916,7 @@ final class _GLogField extends ffi.Struct {
 /// value.
 ///
 /// Since: 2.50
-typedef GLogField = _GLogField;
+typedef GLogField = GLogField_;
 typedef GLogWriterFuncFunction = ffi.UnsignedInt Function(ffi.Int log_level,
     ffi.Pointer<GLogField> fields, ffi.Size n_fields, ffi.Pointer user_data);
 typedef DartGLogWriterFuncFunction = GLogWriterOutput Function(
@@ -81968,16 +81966,16 @@ typedef DartGPrintFuncFunction = void Function(ffi.Pointer<ffi.Char> string);
 /// These are called with the complete formatted string to output.
 typedef GPrintFunc = ffi.Pointer<ffi.NativeFunction<GPrintFuncFunction>>;
 
-final class _GOptionContext extends ffi.Opaque {}
+final class GOptionContext_ extends ffi.Opaque {}
 
 /// GOptionContext:
 ///
 /// A `GOptionContext` struct defines which options
 /// are accepted by the commandline option parser. The struct has only private
 /// fields and should not be directly accessed.
-typedef GOptionContext = _GOptionContext;
+typedef GOptionContext = GOptionContext_;
 
-final class _GOptionGroup extends ffi.Opaque {}
+final class GOptionGroup_ extends ffi.Opaque {}
 
 /// GOptionGroup:
 ///
@@ -81988,7 +81986,7 @@ final class _GOptionGroup extends ffi.Opaque {}
 /// need to parse commandline options are expected to provide a function for
 /// getting a `GOptionGroup` holding their options, which
 /// the application can then add to its #GOptionContext.
-typedef GOptionGroup = _GOptionGroup;
+typedef GOptionGroup = GOptionGroup_;
 
 /// GOptionArg:
 /// @G_OPTION_ARG_NONE: No extra argument. This is useful for simple flags or booleans.
@@ -82082,7 +82080,7 @@ enum GOptionArg {
 /// A GOptionEntry struct defines a single option. To have an effect, they
 /// must be added to a #GOptionGroup with g_option_context_add_main_entries()
 /// or g_option_group_add_entries().
-final class _GOptionEntry extends ffi.Struct {
+final class GOptionEntry_ extends ffi.Struct {
   external ffi.Pointer<ffi.Char> long_name;
 
   @ffi.Char()
@@ -82103,7 +82101,7 @@ final class _GOptionEntry extends ffi.Struct {
   external ffi.Pointer<ffi.Char> arg_description;
 }
 
-typedef GOptionEntry = _GOptionEntry;
+typedef GOptionEntry = GOptionEntry_;
 
 /// GOptionFlags:
 /// @G_OPTION_FLAG_NONE: No flags. Since: 2.42.
@@ -82255,16 +82253,16 @@ enum GOptionError {
       };
 }
 
-final class _GPathBuf extends ffi.Struct {
+final class GPathBuf_ extends ffi.Struct {
   @ffi.Array.multi([8])
   external ffi.Array<ffi.Pointer> dummy;
 }
 
-typedef GPathBuf = _GPathBuf;
+typedef GPathBuf = GPathBuf_;
 
-final class _GPatternSpec extends ffi.Opaque {}
+final class GPatternSpec_ extends ffi.Opaque {}
 
-typedef GPatternSpec = _GPatternSpec;
+typedef GPatternSpec = GPatternSpec_;
 
 /// GQueue:
 /// @head: a pointer to the first element of the queue
@@ -82273,7 +82271,7 @@ typedef GPatternSpec = _GPatternSpec;
 ///
 /// Contains the public fields of a
 /// [Queue][glib-Double-ended-Queues].
-final class _GQueue extends ffi.Struct {
+final class GQueue_ extends ffi.Struct {
   external ffi.Pointer<GList> head;
 
   external ffi.Pointer<GList> tail;
@@ -82282,11 +82280,11 @@ final class _GQueue extends ffi.Struct {
   external int length;
 }
 
-typedef GQueue = _GQueue;
+typedef GQueue = GQueue_;
 
-final class _GRand extends ffi.Opaque {}
+final class GRand_ extends ffi.Opaque {}
 
-typedef GRand = _GRand;
+typedef GRand = GRand_;
 
 /// GRefString:
 ///
@@ -82774,17 +82772,17 @@ enum GRegexMatchFlags {
   }
 }
 
-final class _GRegex extends ffi.Opaque {}
+final class GRegex_ extends ffi.Opaque {}
 
-typedef GRegex = _GRegex;
+typedef GRegex = GRegex_;
 
-final class _GMatchInfo extends ffi.Opaque {}
+final class GMatchInfo_ extends ffi.Opaque {}
 
 /// GMatchInfo:
 ///
 /// A GMatchInfo is an opaque struct used to return information about
 /// matches.
-typedef GMatchInfo = _GMatchInfo;
+typedef GMatchInfo = GMatchInfo_;
 typedef GRegexEvalCallbackFunction = ffi.Int Function(
     ffi.Pointer<GMatchInfo> match_info,
     ffi.Pointer<GString> result,
@@ -82812,9 +82810,9 @@ typedef DartGRegexEvalCallbackFunction = int Function(
 typedef GRegexEvalCallback
     = ffi.Pointer<ffi.NativeFunction<GRegexEvalCallbackFunction>>;
 
-final class _GScannerConfig extends ffi.Opaque {}
+final class GScannerConfig_ extends ffi.Opaque {}
 
-typedef GScannerConfig = _GScannerConfig;
+typedef GScannerConfig = GScannerConfig_;
 
 enum GTokenType {
   G_TOKEN_EOF(0),
@@ -82874,7 +82872,7 @@ enum GTokenType {
       };
 }
 
-final class _GTokenValue extends ffi.Union {
+final class GTokenValue_ extends ffi.Union {
   external ffi.Pointer v_symbol;
 
   external ffi.Pointer<ffi.Char> v_identifier;
@@ -82908,8 +82906,8 @@ final class _GTokenValue extends ffi.Union {
   external int v_error;
 }
 
-typedef GTokenValue = _GTokenValue;
-typedef GScanner = _GScanner;
+typedef GTokenValue = GTokenValue_;
+typedef GScanner = GScanner_;
 typedef GScannerMsgFuncFunction = ffi.Void Function(
     ffi.Pointer<GScanner> scanner,
     ffi.Pointer<ffi.Char> message,
@@ -82919,7 +82917,7 @@ typedef DartGScannerMsgFuncFunction = void Function(
 typedef GScannerMsgFunc
     = ffi.Pointer<ffi.NativeFunction<GScannerMsgFuncFunction>>;
 
-final class _GScanner extends ffi.Struct {
+final class GScanner_ extends ffi.Struct {
   external ffi.Pointer user_data;
 
   @ffi.UnsignedInt()
@@ -83003,13 +83001,13 @@ enum GErrorType {
       };
 }
 
-final class _GSequence extends ffi.Opaque {}
+final class GSequence_ extends ffi.Opaque {}
 
-typedef GSequence = _GSequence;
+typedef GSequence = GSequence_;
 
-final class _GSequenceNode extends ffi.Opaque {}
+final class GSequenceNode_ extends ffi.Opaque {}
 
-typedef GSequenceIter = _GSequenceNode;
+typedef GSequenceIter = GSequenceNode_;
 typedef GSequenceIterCompareFuncFunction = ffi.Int Function(
     ffi.Pointer<GSequenceIter> a,
     ffi.Pointer<GSequenceIter> b,
@@ -83268,13 +83266,13 @@ enum GSpawnFlags {
       };
 }
 
-final class _GStringChunk extends ffi.Opaque {}
+final class GStringChunk_ extends ffi.Opaque {}
 
-typedef GStringChunk = _GStringChunk;
+typedef GStringChunk = GStringChunk_;
 
-final class _GStrvBuilder extends ffi.Opaque {}
+final class GStrvBuilder_ extends ffi.Opaque {}
 
-typedef GStrvBuilder = _GStrvBuilder;
+typedef GStrvBuilder = GStrvBuilder_;
 
 final class GTestCase extends ffi.Opaque {}
 
@@ -83469,7 +83467,7 @@ enum GTestFileType {
       };
 }
 
-final class _GThreadPool extends ffi.Struct {
+final class GThreadPool_ extends ffi.Struct {
   external GFunc func;
 
   external ffi.Pointer user_data;
@@ -83478,29 +83476,29 @@ final class _GThreadPool extends ffi.Struct {
   external int exclusive;
 }
 
-typedef GThreadPool = _GThreadPool;
+typedef GThreadPool = GThreadPool_;
 
-final class _GTimer extends ffi.Opaque {}
+final class GTimer_ extends ffi.Opaque {}
 
-typedef GTimer = _GTimer;
-typedef GTrashStack = _GTrashStack;
+typedef GTimer = GTimer_;
+typedef GTrashStack = GTrashStack_;
 
-final class _GTrashStack extends ffi.Struct {
+final class GTrashStack_ extends ffi.Struct {
   external ffi.Pointer<GTrashStack> next;
 }
 
-final class _GTree extends ffi.Opaque {}
+final class GTree_ extends ffi.Opaque {}
 
-typedef GTree = _GTree;
+typedef GTree = GTree_;
 
-final class _GTreeNode extends ffi.Opaque {}
+final class GTreeNode_ extends ffi.Opaque {}
 
 /// GTreeNode:
 ///
 /// An opaque type which identifies a specific node in a #GTree.
 ///
 /// Since: 2.68
-typedef GTreeNode = _GTreeNode;
+typedef GTreeNode = GTreeNode_;
 typedef GTraverseFuncFunction = ffi.Int Function(
     ffi.Pointer key, ffi.Pointer value, ffi.Pointer data);
 typedef DartGTraverseFuncFunction = int Function(
@@ -83525,9 +83523,9 @@ typedef DartGTraverseNodeFuncFunction = int Function(
 typedef GTraverseNodeFunc
     = ffi.Pointer<ffi.NativeFunction<GTraverseNodeFuncFunction>>;
 
-final class _GUri extends ffi.Opaque {}
+final class GUri_ extends ffi.Opaque {}
 
-typedef GUri = _GUri;
+typedef GUri = GUri_;
 
 /// GUriFlags:
 /// @G_URI_FLAGS_NONE: No flags set.
@@ -83663,7 +83661,7 @@ enum GUriParamsFlags {
       };
 }
 
-final class _GUriParamsIter extends ffi.Struct {
+final class GUriParamsIter_ extends ffi.Struct {
   @ffi.Int()
   external int dummy0;
 
@@ -83675,7 +83673,7 @@ final class _GUriParamsIter extends ffi.Struct {
   external ffi.Array<ffi.Uint8> dummy3;
 }
 
-typedef GUriParamsIter = _GUriParamsIter;
+typedef GUriParamsIter = GUriParamsIter_;
 
 /// GUriError:
 /// @G_URI_ERROR_FAILED: Generic error if no more specific error is available.
@@ -83723,17 +83721,17 @@ enum GUriError {
       };
 }
 
-final class _GAllocator extends ffi.Opaque {}
+final class GAllocator_ extends ffi.Opaque {}
 
-typedef GAllocator = _GAllocator;
+typedef GAllocator = GAllocator_;
 
-final class _GMemChunk extends ffi.Opaque {}
+final class GMemChunk_ extends ffi.Opaque {}
 
-typedef GMemChunk = _GMemChunk;
+typedef GMemChunk = GMemChunk_;
 
-final class _GCache extends ffi.Opaque {}
+final class GCache_ extends ffi.Opaque {}
 
-typedef GCache = _GCache;
+typedef GCache = GCache_;
 typedef GCacheNewFuncFunction = ffi.Pointer Function(ffi.Pointer key);
 typedef GCacheNewFunc = ffi.Pointer<ffi.NativeFunction<GCacheNewFuncFunction>>;
 typedef GCacheDupFuncFunction = ffi.Pointer Function(ffi.Pointer value);
@@ -83753,7 +83751,7 @@ typedef DartGCompletionStrncmpFuncFunction = int Function(
 typedef GCompletionStrncmpFunc
     = ffi.Pointer<ffi.NativeFunction<GCompletionStrncmpFuncFunction>>;
 
-final class _GCompletion extends ffi.Struct {
+final class GCompletion_ extends ffi.Struct {
   external ffi.Pointer<GList> items;
 
   external GCompletionFunc func;
@@ -83765,20 +83763,20 @@ final class _GCompletion extends ffi.Struct {
   external GCompletionStrncmpFunc strncmp_func;
 }
 
-typedef GCompletion = _GCompletion;
+typedef GCompletion = GCompletion_;
 
-final class _GRelation extends ffi.Opaque {}
+final class GRelation_ extends ffi.Opaque {}
 
-typedef GRelation = _GRelation;
+typedef GRelation = GRelation_;
 
-final class _GTuples extends ffi.Struct {
+final class GTuples_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int len;
 }
 
-typedef GTuples = _GTuples;
+typedef GTuples = GTuples_;
 
-final class _GThreadFunctions extends ffi.Struct {
+final class GThreadFunctions_ extends ffi.Struct {
   external ffi.Pointer<ffi.NativeFunction<ffi.Pointer<GMutex> Function()>>
       mutex_new;
 
@@ -83873,72 +83871,72 @@ final class _GThreadFunctions extends ffi.Struct {
       thread_equal;
 }
 
-typedef GThreadFunctions = _GThreadFunctions;
+typedef GThreadFunctions = GThreadFunctions_;
 
 final class sched_param extends ffi.Struct {
   @ffi.Int()
   external int sched_priority;
 }
 
-typedef __cpu_mask = ffi.UnsignedLong;
-typedef Dart__cpu_mask = int;
+typedef cpu_mask_ = ffi.UnsignedLong;
+typedef Dartcpu_mask_ = int;
 
 final class cpu_set_t extends ffi.Struct {
   @ffi.Array.multi([16])
-  external ffi.Array<__cpu_mask> __bits;
+  external ffi.Array<cpu_mask_> bits_;
 }
 
-final class __jmp_buf_tag extends ffi.Struct {
+final class jmp_buf_tag_ extends ffi.Struct {
   @ffi.Array.multi([8])
-  external ffi.Array<ffi.Long> __jmpbuf;
+  external ffi.Array<ffi.Long> jmpbuf_;
 
   @ffi.Int()
-  external int __mask_was_saved;
+  external int mask_was_saved_;
 
-  external __sigset_t __saved_mask;
+  external sigset_t_ saved_mask_;
 }
 
-final class _pthread_cleanup_buffer extends ffi.Struct {
+final class pthread_cleanup_buffer_ extends ffi.Struct {
   external ffi
       .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
-      __routine;
+      routine_;
 
-  external ffi.Pointer<ffi.Void> __arg;
+  external ffi.Pointer<ffi.Void> arg_;
 
   @ffi.Int()
-  external int __canceltype;
+  external int canceltype_;
 
-  external ffi.Pointer<_pthread_cleanup_buffer> __prev;
+  external ffi.Pointer<pthread_cleanup_buffer_> prev_;
 }
 
-final class __cancel_jmp_buf_tag extends ffi.Struct {
+final class cancel_jmp_buf_tag_ extends ffi.Struct {
   @ffi.Array.multi([8])
-  external ffi.Array<ffi.Long> __cancel_jmp_buf;
+  external ffi.Array<ffi.Long> cancel_jmp_buf_;
 
   @ffi.Int()
-  external int __mask_was_saved;
+  external int mask_was_saved_;
 }
 
-final class __pthread_unwind_buf_t extends ffi.Struct {
+final class pthread_unwind_buf_t_ extends ffi.Struct {
   @ffi.Array.multi([1])
-  external ffi.Array<__cancel_jmp_buf_tag> __cancel_jmp_buf;
+  external ffi.Array<cancel_jmp_buf_tag_> cancel_jmp_buf_;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer<ffi.Void>> __pad;
+  external ffi.Array<ffi.Pointer<ffi.Void>> pad_;
 }
 
-final class __pthread_cleanup_frame extends ffi.Struct {
+final class pthread_cleanup_frame_ extends ffi.Struct {
   external ffi
       .Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>
-      __cancel_routine;
+      cancel_routine_;
 
-  external ffi.Pointer<ffi.Void> __cancel_arg;
-
-  @ffi.Int()
-  external int __do_it;
+  external ffi.Pointer<ffi.Void> cancel_arg_;
 
   @ffi.Int()
-  external int __cancel_type;
+  external int do_it_;
+
+  @ffi.Int()
+  external int cancel_type_;
 }
 
 final class GStaticMutex extends ffi.Struct {
@@ -83955,7 +83953,7 @@ final class UnnamedUnion8 extends ffi.Union {
   external double dummy;
 }
 
-final class _GStaticRecMutex extends ffi.Struct {
+final class GStaticRecMutex_ extends ffi.Struct {
   external GStaticMutex mutex;
 
   @ffi.UnsignedInt()
@@ -83964,9 +83962,9 @@ final class _GStaticRecMutex extends ffi.Struct {
   external UnnamedUnion8 unused;
 }
 
-typedef GStaticRecMutex = _GStaticRecMutex;
+typedef GStaticRecMutex = GStaticRecMutex_;
 
-final class _GStaticRWLock extends ffi.Struct {
+final class GStaticRWLock_ extends ffi.Struct {
   external GStaticMutex mutex;
 
   external ffi.Pointer<GCond> read_cond;
@@ -83986,14 +83984,14 @@ final class _GStaticRWLock extends ffi.Struct {
   external int want_to_write;
 }
 
-typedef GStaticRWLock = _GStaticRWLock;
+typedef GStaticRWLock = GStaticRWLock_;
 
-final class _GStaticPrivate extends ffi.Struct {
+final class GStaticPrivate_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int index;
 }
 
-typedef GStaticPrivate = _GStaticPrivate;
+typedef GStaticPrivate = GStaticPrivate_;
 typedef GAsyncQueue_autoptr = ffi.Pointer<GAsyncQueue>;
 typedef GAsyncQueue_listautoptr = ffi.Pointer<GList>;
 typedef GAsyncQueue_slistautoptr = ffi.Pointer<GSList>;
@@ -84245,7 +84243,7 @@ final class UnnamedUnion9 extends ffi.Union {
 /// #GValue users cannot make any assumptions about how data is stored
 /// within the 2 element @data union, and the @g_type member should
 /// only be accessed through the G_VALUE_TYPE() macro.
-final class _GValue extends ffi.Struct {
+final class GValue_ extends ffi.Struct {
   @GType()
   external int g_type;
 
@@ -84253,30 +84251,30 @@ final class _GValue extends ffi.Struct {
   external ffi.Array<UnnamedUnion9> data;
 }
 
-typedef GValue = _GValue;
+typedef GValue = GValue_;
 
-final class _GTypeCValue extends ffi.Opaque {}
+final class GTypeCValue_ extends ffi.Opaque {}
 
-typedef GTypeCValue = _GTypeCValue;
+typedef GTypeCValue = GTypeCValue_;
 
-final class _GTypePlugin extends ffi.Opaque {}
+final class GTypePlugin_ extends ffi.Opaque {}
 
-typedef GTypePlugin = _GTypePlugin;
+typedef GTypePlugin = GTypePlugin_;
 
 /// GTypeClass:
 ///
 /// An opaque structure used as the base of all classes.
-final class _GTypeClass extends ffi.Struct {
+final class GTypeClass_ extends ffi.Struct {
   @GType()
   external int g_type;
 }
 
-typedef GTypeClass = _GTypeClass;
+typedef GTypeClass = GTypeClass_;
 
 /// GTypeInterface:
 ///
 /// An opaque structure used as the base of all interface types.
-final class _GTypeInterface extends ffi.Struct {
+final class GTypeInterface_ extends ffi.Struct {
   @GType()
   external int g_type;
 
@@ -84284,16 +84282,16 @@ final class _GTypeInterface extends ffi.Struct {
   external int g_instance_type;
 }
 
-typedef GTypeInterface = _GTypeInterface;
+typedef GTypeInterface = GTypeInterface_;
 
 /// GTypeInstance:
 ///
 /// An opaque structure used as the base of all type instances.
-final class _GTypeInstance extends ffi.Struct {
+final class GTypeInstance_ extends ffi.Struct {
   external ffi.Pointer<GTypeClass> g_class;
 }
 
-typedef GTypeInstance = _GTypeInstance;
+typedef GTypeInstance = GTypeInstance_;
 typedef GBaseInitFuncFunction = ffi.Void Function(ffi.Pointer g_class);
 typedef DartGBaseInitFuncFunction = void Function(ffi.Pointer g_class);
 
@@ -84763,7 +84761,7 @@ typedef GTypeValueLCopyFunc
 ///
 /// The #GTypeValueTable provides the functions required by the #GValue
 /// implementation, to serve as a container for values of a type.
-final class _GTypeValueTable extends ffi.Struct {
+final class GTypeValueTable_ extends ffi.Struct {
   external GTypeValueInitFunc value_init;
 
   external GTypeValueFreeFunc value_free;
@@ -84781,7 +84779,7 @@ final class _GTypeValueTable extends ffi.Struct {
   external GTypeValueLCopyFunc lcopy_value;
 }
 
-typedef GTypeValueTable = _GTypeValueTable;
+typedef GTypeValueTable = GTypeValueTable_;
 
 /// GTypeInfo:
 /// @class_size: Size of the class structure (required for interface, classed and instantiatable types)
@@ -84812,7 +84810,7 @@ typedef GTypeValueTable = _GTypeValueTable;
 /// g_type_plugin_complete_type_info()). The type system will perform a deep
 /// copy of this structure, so its memory does not need to be persistent
 /// across invocation of g_type_register_static().
-final class _GTypeInfo extends ffi.Struct {
+final class GTypeInfo_ extends ffi.Struct {
   @ffi.Uint16()
   external int class_size;
 
@@ -84837,7 +84835,7 @@ final class _GTypeInfo extends ffi.Struct {
   external ffi.Pointer<GTypeValueTable> value_table;
 }
 
-typedef GTypeInfo = _GTypeInfo;
+typedef GTypeInfo = GTypeInfo_;
 
 /// GTypeFundamentalFlags:
 /// @G_TYPE_FLAG_CLASSED: Indicates a classed type
@@ -84871,7 +84869,7 @@ enum GTypeFundamentalFlags {
 ///
 /// A structure that provides information to the type system which is
 /// used specifically for managing fundamental types.
-final class _GTypeFundamentalInfo extends ffi.Struct {
+final class GTypeFundamentalInfo_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int type_flagsAsInt;
 
@@ -84879,7 +84877,7 @@ final class _GTypeFundamentalInfo extends ffi.Struct {
       GTypeFundamentalFlags.fromValue(type_flagsAsInt);
 }
 
-typedef GTypeFundamentalInfo = _GTypeFundamentalInfo;
+typedef GTypeFundamentalInfo = GTypeFundamentalInfo_;
 typedef GInterfaceInitFuncFunction = ffi.Void Function(
     ffi.Pointer g_iface, ffi.Pointer iface_data);
 typedef DartGInterfaceInitFuncFunction = void Function(
@@ -84922,7 +84920,7 @@ typedef GInterfaceFinalizeFunc
 ///
 /// A structure that provides information to the type system which is
 /// used specifically for managing interface types.
-final class _GInterfaceInfo extends ffi.Struct {
+final class GInterfaceInfo_ extends ffi.Struct {
   external GInterfaceInitFunc interface_init;
 
   external GInterfaceFinalizeFunc interface_finalize;
@@ -84930,7 +84928,7 @@ final class _GInterfaceInfo extends ffi.Struct {
   external ffi.Pointer interface_data;
 }
 
-typedef GInterfaceInfo = _GInterfaceInfo;
+typedef GInterfaceInfo = GInterfaceInfo_;
 
 /// GTypeQuery:
 /// @type: the #GType value of the type
@@ -84941,7 +84939,7 @@ typedef GInterfaceInfo = _GInterfaceInfo;
 /// A structure holding information for a specific type.
 ///
 /// See also: g_type_query()
-final class _GTypeQuery extends ffi.Struct {
+final class GTypeQuery_ extends ffi.Struct {
   @GType()
   external int type;
 
@@ -84954,7 +84952,7 @@ final class _GTypeQuery extends ffi.Struct {
   external int instance_size;
 }
 
-typedef GTypeQuery = _GTypeQuery;
+typedef GTypeQuery = GTypeQuery_;
 
 /// GTypeDebugFlags:
 /// @G_TYPE_DEBUG_NONE: Print no messages
@@ -85158,7 +85156,7 @@ enum GParamFlags {
   }
 }
 
-final class _GParamSpec extends ffi.Struct {
+final class GParamSpec_ extends ffi.Struct {
   external GTypeInstance g_type_instance;
 
   external ffi.Pointer<ffi.Char> name;
@@ -85174,9 +85172,9 @@ final class _GParamSpec extends ffi.Struct {
   @GType()
   external int owner_type;
 
-  external ffi.Pointer<ffi.Char> _nick;
+  external ffi.Pointer<ffi.Char> nick_;
 
-  external ffi.Pointer<ffi.Char> _blurb;
+  external ffi.Pointer<ffi.Char> blurb_;
 
   external ffi.Pointer<GData> qdata;
 
@@ -85187,7 +85185,7 @@ final class _GParamSpec extends ffi.Struct {
   external int param_id;
 }
 
-typedef GParamSpec = _GParamSpec;
+typedef GParamSpec = GParamSpec_;
 
 /// GParamSpecClass:
 /// @g_type_class: the parent class
@@ -85209,7 +85207,7 @@ typedef GParamSpec = _GParamSpec;
 /// The class structure for the GParamSpec type.
 /// Normally, GParamSpec classes are filled by
 /// g_param_type_register_static().
-final class _GParamSpecClass extends ffi.Struct {
+final class GParamSpecClass_ extends ffi.Struct {
   external GTypeClass g_type_class;
 
   @GType()
@@ -85248,7 +85246,7 @@ final class _GParamSpecClass extends ffi.Struct {
   external ffi.Array<ffi.Pointer> dummy;
 }
 
-typedef GParamSpecClass = _GParamSpecClass;
+typedef GParamSpecClass = GParamSpecClass_;
 
 /// GParameter:
 /// @name: the parameter name
@@ -85258,17 +85256,17 @@ typedef GParamSpecClass = _GParamSpecClass;
 /// to hand parameter name/value pairs to g_object_newv().
 ///
 /// Deprecated: 2.54: This type is not introspectable.
-final class _GParameter extends ffi.Struct {
+final class GParameter_ extends ffi.Struct {
   external ffi.Pointer<ffi.Char> name;
 
   external GValue value;
 }
 
-typedef GParameter = _GParameter;
+typedef GParameter = GParameter_;
 
-final class _GParamSpecPool extends ffi.Opaque {}
+final class GParamSpecPool_ extends ffi.Opaque {}
 
-typedef GParamSpecPool = _GParamSpecPool;
+typedef GParamSpecPool = GParamSpecPool_;
 
 /// GParamSpecTypeInfo:
 /// @instance_size: Size of the instance (object) structure.
@@ -85293,7 +85291,7 @@ typedef GParamSpecPool = _GParamSpecPool;
 /// The type system will perform a deep copy of this structure, so its memory
 /// does not need to be persistent across invocation of
 /// g_param_type_register_static().
-final class _GParamSpecTypeInfo extends ffi.Struct {
+final class GParamSpecTypeInfo_ extends ffi.Struct {
   @ffi.Uint16()
   external int instance_size;
 
@@ -85331,11 +85329,11 @@ final class _GParamSpecTypeInfo extends ffi.Struct {
               ffi.Pointer<GValue> value2)>> values_cmp;
 }
 
-typedef GParamSpecTypeInfo = _GParamSpecTypeInfo;
+typedef GParamSpecTypeInfo = GParamSpecTypeInfo_;
 
-final class _GClosure extends ffi.Opaque {}
+final class GClosure_ extends ffi.Opaque {}
 
-typedef GClosure = _GClosure;
+typedef GClosure = GClosure_;
 typedef GClosureNotifyFunction = ffi.Void Function(
     ffi.Pointer data, ffi.Pointer<GClosure> closure);
 typedef DartGClosureNotifyFunction = void Function(
@@ -85350,13 +85348,13 @@ typedef DartGClosureNotifyFunction = void Function(
 typedef GClosureNotify
     = ffi.Pointer<ffi.NativeFunction<GClosureNotifyFunction>>;
 
-final class _GClosureNotifyData extends ffi.Struct {
+final class GClosureNotifyData_ extends ffi.Struct {
   external ffi.Pointer data;
 
   external GClosureNotify notify;
 }
 
-typedef GClosureNotifyData = _GClosureNotifyData;
+typedef GClosureNotifyData = GClosureNotifyData_;
 typedef GCallbackFunction = ffi.Void Function();
 typedef DartGCallbackFunction = void Function();
 
@@ -85408,7 +85406,7 @@ typedef GVaClosureMarshalFunction = ffi.Void Function(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     ffi.Int n_params,
     ffi.Pointer<GType> param_types);
@@ -85416,7 +85414,7 @@ typedef DartGVaClosureMarshalFunction = void Function(
     ffi.Pointer<GClosure> closure,
     ffi.Pointer<GValue> return_value,
     ffi.Pointer instance,
-    ffi.Pointer<__va_list_tag> args,
+    ffi.Pointer<va_list_tag_> args,
     ffi.Pointer marshal_data,
     int n_params,
     ffi.Pointer<GType> param_types);
@@ -85442,14 +85440,14 @@ typedef DartGVaClosureMarshalFunction = void Function(
 typedef GVaClosureMarshal
     = ffi.Pointer<ffi.NativeFunction<GVaClosureMarshalFunction>>;
 
-final class _GCClosure extends ffi.Opaque {}
+final class GCClosure_ extends ffi.Opaque {}
 
 /// GCClosure:
 /// @closure: the #GClosure
 /// @callback: the callback function
 ///
 /// A #GCClosure is a specialization of #GClosure for C function callbacks.
-typedef GCClosure = _GCClosure;
+typedef GCClosure = GCClosure_;
 
 /// GSignalFlags:
 /// @G_SIGNAL_RUN_FIRST: Invoke the object method handler in the first emission stage.
@@ -85526,7 +85524,7 @@ enum GSignalFlags {
 /// A structure holding in-depth information for a specific signal.
 ///
 /// See also: g_signal_query()
-final class _GSignalQuery extends ffi.Struct {
+final class GSignalQuery_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int signal_id;
 
@@ -85549,7 +85547,7 @@ final class _GSignalQuery extends ffi.Struct {
   external ffi.Pointer<GType> param_types;
 }
 
-typedef GSignalQuery = _GSignalQuery;
+typedef GSignalQuery = GSignalQuery_;
 
 /// GSignalInvocationHint:
 /// @signal_id: The signal id of the signal invoking the callback
@@ -85562,7 +85560,7 @@ typedef GSignalQuery = _GSignalQuery;
 ///
 /// The #GSignalInvocationHint structure is used to pass on additional information
 /// to callbacks during a signal emission.
-final class _GSignalInvocationHint extends ffi.Struct {
+final class GSignalInvocationHint_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int signal_id;
 
@@ -85575,7 +85573,7 @@ final class _GSignalInvocationHint extends ffi.Struct {
   GSignalFlags get run_type => GSignalFlags.fromValue(run_typeAsInt);
 }
 
-typedef GSignalInvocationHint = _GSignalInvocationHint;
+typedef GSignalInvocationHint = GSignalInvocationHint_;
 
 /// GSignalCMarshaller:
 ///
@@ -85741,7 +85739,7 @@ typedef DartGBoxedFreeFuncFunction = void Function(ffi.Pointer boxed);
 typedef GBoxedFreeFunc
     = ffi.Pointer<ffi.NativeFunction<GBoxedFreeFuncFunction>>;
 
-final class _GObject extends ffi.Struct {
+final class GObject_ extends ffi.Struct {
   external GTypeInstance g_type_instance;
 
   @ffi.UnsignedInt()
@@ -85750,7 +85748,7 @@ final class _GObject extends ffi.Struct {
   external ffi.Pointer<GData> qdata;
 }
 
-typedef GObject = _GObject;
+typedef GObject = GObject_;
 
 /// GObjectConstructParam:
 /// @pspec: the #GParamSpec of the construct parameter
@@ -85758,13 +85756,13 @@ typedef GObject = _GObject;
 ///
 /// The GObjectConstructParam struct is an auxiliary structure used to hand
 /// #GParamSpec/#GValue pairs to the @constructor of a #GObjectClass.
-final class _GObjectConstructParam extends ffi.Struct {
+final class GObjectConstructParam_ extends ffi.Struct {
   external ffi.Pointer<GParamSpec> pspec;
 
   external ffi.Pointer<GValue> value;
 }
 
-typedef GObjectConstructParam = _GObjectConstructParam;
+typedef GObjectConstructParam = GObjectConstructParam_;
 
 /// GObjectClass:
 /// @g_type_class: the parent class
@@ -85826,7 +85824,7 @@ typedef GObjectConstructParam = _GObjectConstructParam;
 /// return object;
 /// }
 /// ]|
-final class _GObjectClass extends ffi.Struct {
+final class GObjectClass_ extends ffi.Struct {
   external GTypeClass g_type_class;
 
   external ffi.Pointer<GSList> construct_properties;
@@ -85896,9 +85894,9 @@ final class _GObjectClass extends ffi.Struct {
   external ffi.Array<ffi.Pointer> pdummy;
 }
 
-typedef GObjectClass = _GObjectClass;
-typedef GInitiallyUnowned = _GObject;
-typedef GInitiallyUnownedClass = _GObjectClass;
+typedef GObjectClass = GObjectClass_;
+typedef GInitiallyUnowned = GObject_;
+typedef GInitiallyUnownedClass = GObjectClass_;
 typedef GObjectGetPropertyFuncFunction = ffi.Void Function(
     ffi.Pointer<GObject> object,
     ffi.UnsignedInt property_id,
@@ -86000,9 +85998,9 @@ final class GWeakRef extends ffi.Struct {
   external UnnamedUnion10 priv;
 }
 
-final class _GBinding extends ffi.Opaque {}
+final class GBinding_ extends ffi.Opaque {}
 
-typedef GBinding = _GBinding;
+typedef GBinding = GBinding_;
 typedef GBindingTransformFuncFunction = ffi.Int Function(
     ffi.Pointer<GBinding> binding,
     ffi.Pointer<GValue> from_value,
@@ -86074,9 +86072,9 @@ enum GBindingFlags {
       };
 }
 
-final class _GBindingGroup extends ffi.Opaque {}
+final class GBindingGroup_ extends ffi.Opaque {}
 
-typedef GBindingGroup = _GBindingGroup;
+typedef GBindingGroup = GBindingGroup_;
 
 /// GEnumValue:
 /// @value: the enum value
@@ -86085,7 +86083,7 @@ typedef GBindingGroup = _GBindingGroup;
 ///
 /// A structure which contains a single enum value, its name, and its
 /// nickname.
-final class _GEnumValue extends ffi.Struct {
+final class GEnumValue_ extends ffi.Struct {
   @ffi.Int()
   external int value;
 
@@ -86094,7 +86092,7 @@ final class _GEnumValue extends ffi.Struct {
   external ffi.Pointer<ffi.Char> value_nick;
 }
 
-typedef GEnumValue = _GEnumValue;
+typedef GEnumValue = GEnumValue_;
 
 /// GEnumClass:
 /// @g_type_class: the parent class
@@ -86106,7 +86104,7 @@ typedef GEnumValue = _GEnumValue;
 ///
 /// The class of an enumeration type holds information about its
 /// possible values.
-final class _GEnumClass extends ffi.Struct {
+final class GEnumClass_ extends ffi.Struct {
   external GTypeClass g_type_class;
 
   @ffi.Int()
@@ -86121,7 +86119,7 @@ final class _GEnumClass extends ffi.Struct {
   external ffi.Pointer<GEnumValue> values;
 }
 
-typedef GEnumClass = _GEnumClass;
+typedef GEnumClass = GEnumClass_;
 
 /// GFlagsValue:
 /// @value: the flags value
@@ -86130,7 +86128,7 @@ typedef GEnumClass = _GEnumClass;
 ///
 /// A structure which contains a single flags value, its name, and its
 /// nickname.
-final class _GFlagsValue extends ffi.Struct {
+final class GFlagsValue_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int value;
 
@@ -86139,7 +86137,7 @@ final class _GFlagsValue extends ffi.Struct {
   external ffi.Pointer<ffi.Char> value_nick;
 }
 
-typedef GFlagsValue = _GFlagsValue;
+typedef GFlagsValue = GFlagsValue_;
 
 /// GFlagsClass:
 /// @g_type_class: the parent class
@@ -86150,7 +86148,7 @@ typedef GFlagsValue = _GFlagsValue;
 ///
 /// The class of a flags type holds information about its
 /// possible values.
-final class _GFlagsClass extends ffi.Struct {
+final class GFlagsClass_ extends ffi.Struct {
   external GTypeClass g_type_class;
 
   @ffi.UnsignedInt()
@@ -86162,7 +86160,7 @@ final class _GFlagsClass extends ffi.Struct {
   external ffi.Pointer<GFlagsValue> values;
 }
 
-typedef GFlagsClass = _GFlagsClass;
+typedef GFlagsClass = GFlagsClass_;
 
 /// GParamSpecChar:
 /// @parent_instance: private #GParamSpec portion
@@ -86171,7 +86169,7 @@ typedef GFlagsClass = _GFlagsClass;
 /// @default_value: default value for the property specified
 ///
 /// A #GParamSpec derived structure that contains the meta data for character properties.
-final class _GParamSpecChar extends ffi.Struct {
+final class GParamSpecChar_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @ffi.Int8()
@@ -86184,7 +86182,7 @@ final class _GParamSpecChar extends ffi.Struct {
   external int default_value;
 }
 
-typedef GParamSpecChar = _GParamSpecChar;
+typedef GParamSpecChar = GParamSpecChar_;
 
 /// GParamSpecUChar:
 /// @parent_instance: private #GParamSpec portion
@@ -86193,7 +86191,7 @@ typedef GParamSpecChar = _GParamSpecChar;
 /// @default_value: default value for the property specified
 ///
 /// A #GParamSpec derived structure that contains the meta data for unsigned character properties.
-final class _GParamSpecUChar extends ffi.Struct {
+final class GParamSpecUChar_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @ffi.Uint8()
@@ -86206,21 +86204,21 @@ final class _GParamSpecUChar extends ffi.Struct {
   external int default_value;
 }
 
-typedef GParamSpecUChar = _GParamSpecUChar;
+typedef GParamSpecUChar = GParamSpecUChar_;
 
 /// GParamSpecBoolean:
 /// @parent_instance: private #GParamSpec portion
 /// @default_value: default value for the property specified
 ///
 /// A #GParamSpec derived structure that contains the meta data for boolean properties.
-final class _GParamSpecBoolean extends ffi.Struct {
+final class GParamSpecBoolean_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @ffi.Int()
   external int default_value;
 }
 
-typedef GParamSpecBoolean = _GParamSpecBoolean;
+typedef GParamSpecBoolean = GParamSpecBoolean_;
 
 /// GParamSpecInt:
 /// @parent_instance: private #GParamSpec portion
@@ -86229,7 +86227,7 @@ typedef GParamSpecBoolean = _GParamSpecBoolean;
 /// @default_value: default value for the property specified
 ///
 /// A #GParamSpec derived structure that contains the meta data for integer properties.
-final class _GParamSpecInt extends ffi.Struct {
+final class GParamSpecInt_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @ffi.Int()
@@ -86242,7 +86240,7 @@ final class _GParamSpecInt extends ffi.Struct {
   external int default_value;
 }
 
-typedef GParamSpecInt = _GParamSpecInt;
+typedef GParamSpecInt = GParamSpecInt_;
 
 /// GParamSpecUInt:
 /// @parent_instance: private #GParamSpec portion
@@ -86251,7 +86249,7 @@ typedef GParamSpecInt = _GParamSpecInt;
 /// @default_value: default value for the property specified
 ///
 /// A #GParamSpec derived structure that contains the meta data for unsigned integer properties.
-final class _GParamSpecUInt extends ffi.Struct {
+final class GParamSpecUInt_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @ffi.UnsignedInt()
@@ -86264,7 +86262,7 @@ final class _GParamSpecUInt extends ffi.Struct {
   external int default_value;
 }
 
-typedef GParamSpecUInt = _GParamSpecUInt;
+typedef GParamSpecUInt = GParamSpecUInt_;
 
 /// GParamSpecLong:
 /// @parent_instance: private #GParamSpec portion
@@ -86273,7 +86271,7 @@ typedef GParamSpecUInt = _GParamSpecUInt;
 /// @default_value: default value for the property specified
 ///
 /// A #GParamSpec derived structure that contains the meta data for long integer properties.
-final class _GParamSpecLong extends ffi.Struct {
+final class GParamSpecLong_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @ffi.Long()
@@ -86286,7 +86284,7 @@ final class _GParamSpecLong extends ffi.Struct {
   external int default_value;
 }
 
-typedef GParamSpecLong = _GParamSpecLong;
+typedef GParamSpecLong = GParamSpecLong_;
 
 /// GParamSpecULong:
 /// @parent_instance: private #GParamSpec portion
@@ -86295,7 +86293,7 @@ typedef GParamSpecLong = _GParamSpecLong;
 /// @default_value: default value for the property specified
 ///
 /// A #GParamSpec derived structure that contains the meta data for unsigned long integer properties.
-final class _GParamSpecULong extends ffi.Struct {
+final class GParamSpecULong_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @ffi.UnsignedLong()
@@ -86308,7 +86306,7 @@ final class _GParamSpecULong extends ffi.Struct {
   external int default_value;
 }
 
-typedef GParamSpecULong = _GParamSpecULong;
+typedef GParamSpecULong = GParamSpecULong_;
 
 /// GParamSpecInt64:
 /// @parent_instance: private #GParamSpec portion
@@ -86317,7 +86315,7 @@ typedef GParamSpecULong = _GParamSpecULong;
 /// @default_value: default value for the property specified
 ///
 /// A #GParamSpec derived structure that contains the meta data for 64bit integer properties.
-final class _GParamSpecInt64 extends ffi.Struct {
+final class GParamSpecInt64_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @ffi.Int64()
@@ -86330,7 +86328,7 @@ final class _GParamSpecInt64 extends ffi.Struct {
   external int default_value;
 }
 
-typedef GParamSpecInt64 = _GParamSpecInt64;
+typedef GParamSpecInt64 = GParamSpecInt64_;
 
 /// GParamSpecUInt64:
 /// @parent_instance: private #GParamSpec portion
@@ -86339,7 +86337,7 @@ typedef GParamSpecInt64 = _GParamSpecInt64;
 /// @default_value: default value for the property specified
 ///
 /// A #GParamSpec derived structure that contains the meta data for unsigned 64bit integer properties.
-final class _GParamSpecUInt64 extends ffi.Struct {
+final class GParamSpecUInt64_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @ffi.Uint64()
@@ -86352,21 +86350,21 @@ final class _GParamSpecUInt64 extends ffi.Struct {
   external int default_value;
 }
 
-typedef GParamSpecUInt64 = _GParamSpecUInt64;
+typedef GParamSpecUInt64 = GParamSpecUInt64_;
 
 /// GParamSpecUnichar:
 /// @parent_instance: private #GParamSpec portion
 /// @default_value: default value for the property specified
 ///
 /// A #GParamSpec derived structure that contains the meta data for unichar (unsigned integer) properties.
-final class _GParamSpecUnichar extends ffi.Struct {
+final class GParamSpecUnichar_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @gunichar()
   external int default_value;
 }
 
-typedef GParamSpecUnichar = _GParamSpecUnichar;
+typedef GParamSpecUnichar = GParamSpecUnichar_;
 
 /// GParamSpecEnum:
 /// @parent_instance: private #GParamSpec portion
@@ -86375,7 +86373,7 @@ typedef GParamSpecUnichar = _GParamSpecUnichar;
 ///
 /// A #GParamSpec derived structure that contains the meta data for enum
 /// properties.
-final class _GParamSpecEnum extends ffi.Struct {
+final class GParamSpecEnum_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   external ffi.Pointer<GEnumClass> enum_class;
@@ -86384,7 +86382,7 @@ final class _GParamSpecEnum extends ffi.Struct {
   external int default_value;
 }
 
-typedef GParamSpecEnum = _GParamSpecEnum;
+typedef GParamSpecEnum = GParamSpecEnum_;
 
 /// GParamSpecFlags:
 /// @parent_instance: private #GParamSpec portion
@@ -86393,7 +86391,7 @@ typedef GParamSpecEnum = _GParamSpecEnum;
 ///
 /// A #GParamSpec derived structure that contains the meta data for flags
 /// properties.
-final class _GParamSpecFlags extends ffi.Struct {
+final class GParamSpecFlags_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   external ffi.Pointer<GFlagsClass> flags_class;
@@ -86402,7 +86400,7 @@ final class _GParamSpecFlags extends ffi.Struct {
   external int default_value;
 }
 
-typedef GParamSpecFlags = _GParamSpecFlags;
+typedef GParamSpecFlags = GParamSpecFlags_;
 
 /// GParamSpecFloat:
 /// @parent_instance: private #GParamSpec portion
@@ -86413,7 +86411,7 @@ typedef GParamSpecFlags = _GParamSpecFlags;
 /// by g_param_values_cmp(); the default value is 1e-30.
 ///
 /// A #GParamSpec derived structure that contains the meta data for float properties.
-final class _GParamSpecFloat extends ffi.Struct {
+final class GParamSpecFloat_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @ffi.Float()
@@ -86429,7 +86427,7 @@ final class _GParamSpecFloat extends ffi.Struct {
   external double epsilon;
 }
 
-typedef GParamSpecFloat = _GParamSpecFloat;
+typedef GParamSpecFloat = GParamSpecFloat_;
 
 /// GParamSpecDouble:
 /// @parent_instance: private #GParamSpec portion
@@ -86440,7 +86438,7 @@ typedef GParamSpecFloat = _GParamSpecFloat;
 /// by g_param_values_cmp(); the default value is 1e-90.
 ///
 /// A #GParamSpec derived structure that contains the meta data for double properties.
-final class _GParamSpecDouble extends ffi.Struct {
+final class GParamSpecDouble_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @ffi.Double()
@@ -86456,7 +86454,7 @@ final class _GParamSpecDouble extends ffi.Struct {
   external double epsilon;
 }
 
-typedef GParamSpecDouble = _GParamSpecDouble;
+typedef GParamSpecDouble = GParamSpecDouble_;
 
 /// GParamSpecString:
 /// @parent_instance: private #GParamSpec portion
@@ -86469,40 +86467,40 @@ typedef GParamSpecDouble = _GParamSpecDouble;
 ///
 /// A #GParamSpec derived structure that contains the meta data for string
 /// properties.
-final class _GParamSpecString extends ffi.Opaque {}
+final class GParamSpecString_ extends ffi.Opaque {}
 
-typedef GParamSpecString = _GParamSpecString;
+typedef GParamSpecString = GParamSpecString_;
 
 /// GParamSpecParam:
 /// @parent_instance: private #GParamSpec portion
 ///
 /// A #GParamSpec derived structure that contains the meta data for %G_TYPE_PARAM
 /// properties.
-final class _GParamSpecParam extends ffi.Struct {
+final class GParamSpecParam_ extends ffi.Struct {
   external GParamSpec parent_instance;
 }
 
-typedef GParamSpecParam = _GParamSpecParam;
+typedef GParamSpecParam = GParamSpecParam_;
 
 /// GParamSpecBoxed:
 /// @parent_instance: private #GParamSpec portion
 ///
 /// A #GParamSpec derived structure that contains the meta data for boxed properties.
-final class _GParamSpecBoxed extends ffi.Struct {
+final class GParamSpecBoxed_ extends ffi.Struct {
   external GParamSpec parent_instance;
 }
 
-typedef GParamSpecBoxed = _GParamSpecBoxed;
+typedef GParamSpecBoxed = GParamSpecBoxed_;
 
 /// GParamSpecPointer:
 /// @parent_instance: private #GParamSpec portion
 ///
 /// A #GParamSpec derived structure that contains the meta data for pointer properties.
-final class _GParamSpecPointer extends ffi.Struct {
+final class GParamSpecPointer_ extends ffi.Struct {
   external GParamSpec parent_instance;
 }
 
-typedef GParamSpecPointer = _GParamSpecPointer;
+typedef GParamSpecPointer = GParamSpecPointer_;
 
 /// GParamSpecValueArray:
 /// @parent_instance: private #GParamSpec portion
@@ -86510,7 +86508,7 @@ typedef GParamSpecPointer = _GParamSpecPointer;
 /// @fixed_n_elements: if greater than 0, arrays of this property will always have this many elements
 ///
 /// A #GParamSpec derived structure that contains the meta data for #GValueArray properties.
-final class _GParamSpecValueArray extends ffi.Struct {
+final class GParamSpecValueArray_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   external ffi.Pointer<GParamSpec> element_spec;
@@ -86519,17 +86517,17 @@ final class _GParamSpecValueArray extends ffi.Struct {
   external int fixed_n_elements;
 }
 
-typedef GParamSpecValueArray = _GParamSpecValueArray;
+typedef GParamSpecValueArray = GParamSpecValueArray_;
 
 /// GParamSpecObject:
 /// @parent_instance: private #GParamSpec portion
 ///
 /// A #GParamSpec derived structure that contains the meta data for object properties.
-final class _GParamSpecObject extends ffi.Struct {
+final class GParamSpecObject_ extends ffi.Struct {
   external GParamSpec parent_instance;
 }
 
-typedef GParamSpecObject = _GParamSpecObject;
+typedef GParamSpecObject = GParamSpecObject_;
 
 /// GParamSpecOverride:
 ///
@@ -86546,13 +86544,13 @@ typedef GParamSpecObject = _GParamSpecObject;
 /// unless you are implementing a new base type similar to GObject.
 ///
 /// Since: 2.4
-final class _GParamSpecOverride extends ffi.Struct {
+final class GParamSpecOverride_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   external ffi.Pointer<GParamSpec> overridden;
 }
 
-typedef GParamSpecOverride = _GParamSpecOverride;
+typedef GParamSpecOverride = GParamSpecOverride_;
 
 /// GParamSpecGType:
 /// @parent_instance: private #GParamSpec portion
@@ -86561,14 +86559,14 @@ typedef GParamSpecOverride = _GParamSpecOverride;
 /// A #GParamSpec derived structure that contains the meta data for #GType properties.
 ///
 /// Since: 2.10
-final class _GParamSpecGType extends ffi.Struct {
+final class GParamSpecGType_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @GType()
   external int is_a_type;
 }
 
-typedef GParamSpecGType = _GParamSpecGType;
+typedef GParamSpecGType = GParamSpecGType_;
 
 /// GParamSpecVariant:
 /// @parent_instance: private #GParamSpec portion
@@ -86584,7 +86582,7 @@ typedef GParamSpecGType = _GParamSpecGType;
 /// values compare equal.
 ///
 /// Since: 2.26
-final class _GParamSpecVariant extends ffi.Struct {
+final class GParamSpecVariant_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   external ffi.Pointer<GVariantType> type;
@@ -86595,13 +86593,13 @@ final class _GParamSpecVariant extends ffi.Struct {
   external ffi.Array<ffi.Pointer> padding;
 }
 
-typedef GParamSpecVariant = _GParamSpecVariant;
+typedef GParamSpecVariant = GParamSpecVariant_;
 
-final class _GSignalGroup extends ffi.Opaque {}
+final class GSignalGroup_ extends ffi.Opaque {}
 
-typedef GSignalGroup = _GSignalGroup;
+typedef GSignalGroup = GSignalGroup_;
 
-final class _GTypeModule extends ffi.Struct {
+final class GTypeModule_ extends ffi.Struct {
   external GObject parent_instance;
 
   @ffi.UnsignedInt()
@@ -86614,7 +86612,7 @@ final class _GTypeModule extends ffi.Struct {
   external ffi.Pointer<ffi.Char> name;
 }
 
-typedef GTypeModule = _GTypeModule;
+typedef GTypeModule = GTypeModule_;
 
 /// GTypeModuleClass:
 /// @parent_class: the parent class
@@ -86624,7 +86622,7 @@ typedef GTypeModule = _GTypeModule;
 ///
 /// In order to implement dynamic loading of types based on #GTypeModule,
 /// the @load and @unload functions in #GTypeModuleClass must be implemented.
-final class _GTypeModuleClass extends ffi.Struct {
+final class GTypeModuleClass_ extends ffi.Struct {
   external GObjectClass parent_class;
 
   external ffi.Pointer<
@@ -86645,7 +86643,7 @@ final class _GTypeModuleClass extends ffi.Struct {
   external ffi.Pointer<ffi.NativeFunction<ffi.Void Function()>> reserved4;
 }
 
-typedef GTypeModuleClass = _GTypeModuleClass;
+typedef GTypeModuleClass = GTypeModuleClass_;
 typedef GTypeModule_autoptr = ffi.Pointer<GTypeModule>;
 typedef GTypeModule_listautoptr = ffi.Pointer<GList>;
 typedef GTypeModule_slistautoptr = ffi.Pointer<GSList>;
@@ -86727,7 +86725,7 @@ typedef GTypePluginCompleteInterfaceInfo
 ///
 /// The #GTypePlugin interface is used by the type system in order to handle
 /// the lifecycle of dynamically loaded types.
-final class _GTypePluginClass extends ffi.Struct {
+final class GTypePluginClass_ extends ffi.Struct {
   external GTypeInterface base_iface;
 
   external GTypePluginUse use_plugin;
@@ -86739,9 +86737,9 @@ final class _GTypePluginClass extends ffi.Struct {
   external GTypePluginCompleteInterfaceInfo complete_interface_info;
 }
 
-typedef GTypePluginClass = _GTypePluginClass;
+typedef GTypePluginClass = GTypePluginClass_;
 
-final class _GValueArray extends ffi.Struct {
+final class GValueArray_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int n_values;
 
@@ -86751,7 +86749,7 @@ final class _GValueArray extends ffi.Struct {
   external int n_prealloced;
 }
 
-typedef GValueArray = _GValueArray;
+typedef GValueArray = GValueArray_;
 
 /// gchararray:
 ///
@@ -86786,19 +86784,19 @@ typedef GTypeClass_listautoptr = ffi.Pointer<GList>;
 typedef GTypeClass_slistautoptr = ffi.Pointer<GSList>;
 typedef GTypeClass_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstAtomicQueue extends ffi.Opaque {}
+final class GstAtomicQueue_ extends ffi.Opaque {}
 
 /// GstAtomicQueue:
 ///
 /// Opaque atomic data queue.
 ///
 /// Use the accessor functions to get the stored values.
-typedef GstAtomicQueue = _GstAtomicQueue;
+typedef GstAtomicQueue = GstAtomicQueue_;
 typedef GstAtomicQueue_autoptr = ffi.Pointer<GstAtomicQueue>;
 typedef GstAtomicQueue_listautoptr = ffi.Pointer<GList>;
 typedef GstAtomicQueue_slistautoptr = ffi.Pointer<GSList>;
 typedef GstAtomicQueue_queueautoptr = ffi.Pointer<GQueue>;
-typedef GstObject = _GstObject;
+typedef GstObject = GstObject_;
 
 /// GstObject:
 /// @lock: object LOCK
@@ -86807,7 +86805,7 @@ typedef GstObject = _GstObject;
 /// @flags: flags for this object
 ///
 /// GStreamer base object class.
-final class _GstObject extends ffi.Struct {
+final class GstObject_ extends ffi.Struct {
   external GInitiallyUnowned object;
 
   external GMutex lock;
@@ -86827,10 +86825,10 @@ final class _GstObject extends ffi.Struct {
   @ffi.Uint64()
   external int last_sync;
 
-  external ffi.Pointer _gst_reserved;
+  external ffi.Pointer gst_reserved_;
 }
 
-typedef GstObject1 = _GstObject;
+typedef GstObject1 = GstObject_;
 
 /// GstState:
 /// @GST_STATE_VOID_PENDING: no pending state.
@@ -86893,43 +86891,43 @@ enum GstStateChangeReturn {
       };
 }
 
-final class _GstBusPrivate extends ffi.Opaque {}
+final class GstBusPrivate_ extends ffi.Opaque {}
 
-typedef GstBusPrivate = _GstBusPrivate;
+typedef GstBusPrivate = GstBusPrivate_;
 
 /// GstBus:
 /// @object: the parent structure
 ///
 /// The opaque #GstBus data structure.
-final class _GstBus extends ffi.Struct {
+final class GstBus_ extends ffi.Struct {
   external GstObject1 object;
 
   external ffi.Pointer<GstBusPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstBus = _GstBus;
+typedef GstBus = GstBus_;
 
-final class _GstClockPrivate extends ffi.Opaque {}
+final class GstClockPrivate_ extends ffi.Opaque {}
 
-typedef GstClockPrivate = _GstClockPrivate;
+typedef GstClockPrivate = GstClockPrivate_;
 
 /// GstClock:
 /// @object: the parent structure
 ///
 /// #GstClock base structure.
-final class _GstClock extends ffi.Struct {
+final class GstClock_ extends ffi.Struct {
   external GstObject1 object;
 
   external ffi.Pointer<GstClockPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstClock = _GstClock;
+typedef GstClock = GstClock_;
 
 /// GstClockTimeDiff:
 ///
@@ -86973,7 +86971,7 @@ typedef DartGstClockTime = int;
 /// @contexts: (element-type Gst.Context): list of contexts
 ///
 /// GStreamer element abstract base class.
-final class _GstElement extends ffi.Struct {
+final class GstElement_ extends ffi.Struct {
   external GstObject1 object;
 
   external GRecMutex state_lock;
@@ -87040,10 +87038,10 @@ final class _GstElement extends ffi.Struct {
   external ffi.Pointer<GList> contexts;
 
   @ffi.Array.multi([3])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstElement = _GstElement;
+typedef GstElement = GstElement_;
 
 /// GstObjectClass:
 /// @parent_class: parent
@@ -87051,7 +87049,7 @@ typedef GstElement = _GstElement;
 /// @deep_notify: default signal handler
 ///
 /// GStreamer base object class.
-final class _GstObjectClass extends ffi.Struct {
+final class GstObjectClass_ extends ffi.Struct {
   external GInitiallyUnownedClass parent_class;
 
   external ffi.Pointer<ffi.Char> path_string_separator;
@@ -87064,17 +87062,17 @@ final class _GstObjectClass extends ffi.Struct {
               ffi.Pointer<GParamSpec> pspec)>> deep_notify;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstObjectClass = _GstObjectClass;
+typedef GstObjectClass = GstObjectClass_;
 
-final class _GstElementFactory extends ffi.Opaque {}
+final class GstElementFactory_ extends ffi.Opaque {}
 
 /// GstElementFactory:
 ///
 /// The opaque #GstElementFactory data structure.
-typedef GstElementFactory = _GstElementFactory;
+typedef GstElementFactory = GstElementFactory_;
 
 /// GstPad:
 /// @element_private: private data owned by the parent element
@@ -87083,9 +87081,9 @@ typedef GstElementFactory = _GstElementFactory;
 /// the pad.
 ///
 /// The #GstPad structure. Use the functions to update the variables.
-final class _GstPad extends ffi.Opaque {}
+final class GstPad_ extends ffi.Opaque {}
 
-typedef GstPad = _GstPad;
+typedef GstPad = GstPad_;
 
 /// GstPadDirection:
 /// @GST_PAD_UNKNOWN: direction is unknown.
@@ -87132,7 +87130,7 @@ enum GstPadPresence {
       };
 }
 
-typedef GstMiniObject = _GstMiniObject;
+typedef GstMiniObject = GstMiniObject_;
 typedef GstMiniObjectCopyFunctionFunction = ffi.Pointer<GstMiniObject> Function(
     ffi.Pointer<GstMiniObject> obj);
 
@@ -87184,7 +87182,7 @@ typedef GstMiniObjectFreeFunction
 /// @free: the free function
 ///
 /// Base class for refcounted lightweight objects.
-final class _GstMiniObject extends ffi.Struct {
+final class GstMiniObject_ extends ffi.Struct {
   @GType()
   external int type;
 
@@ -87209,17 +87207,17 @@ final class _GstMiniObject extends ffi.Struct {
   external ffi.Pointer priv_pointer;
 }
 
-typedef GstMiniObject1 = _GstMiniObject;
+typedef GstMiniObject1 = GstMiniObject_;
 
 /// GstCaps:
 /// @mini_object: the parent type
 ///
 /// Object describing media types.
-final class _GstCaps extends ffi.Struct {
+final class GstCaps_ extends ffi.Struct {
   external GstMiniObject1 mini_object;
 }
 
-typedef GstCaps = _GstCaps;
+typedef GstCaps = GstCaps_;
 
 final class UnnamedStruct15 extends ffi.Struct {
   @GType()
@@ -87230,7 +87228,7 @@ final class UnnamedStruct15 extends ffi.Struct {
 
 final class UnnamedUnion11 extends ffi.Union {
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 
   external UnnamedStruct15 abi;
 }
@@ -87238,7 +87236,7 @@ final class UnnamedUnion11 extends ffi.Union {
 /// GstPadTemplate:
 ///
 /// The padtemplate object.
-final class _GstPadTemplate extends ffi.Struct {
+final class GstPadTemplate_ extends ffi.Struct {
   external GstObject1 object;
 
   external ffi.Pointer<ffi.Char> name_template;
@@ -87258,7 +87256,7 @@ final class _GstPadTemplate extends ffi.Struct {
   external UnnamedUnion11 ABI;
 }
 
-typedef GstPadTemplate = _GstPadTemplate;
+typedef GstPadTemplate = GstPadTemplate_;
 
 /// GstStateChange:
 /// @GST_STATE_CHANGE_NULL_TO_READY    : state change from NULL to READY.
@@ -87507,7 +87505,7 @@ enum GstEventType {
 /// @seqnum: the sequence number of the event
 ///
 /// A #GstEvent.
-final class _GstEvent extends ffi.Struct {
+final class GstEvent_ extends ffi.Struct {
   external GstMiniObject1 mini_object;
 
   @ffi.UnsignedInt()
@@ -87522,7 +87520,7 @@ final class _GstEvent extends ffi.Struct {
   external int seqnum;
 }
 
-typedef GstEvent = _GstEvent;
+typedef GstEvent = GstEvent_;
 
 /// GstQueryType:
 /// @GST_QUERY_UNKNOWN: unknown query type
@@ -87612,7 +87610,7 @@ enum GstQueryType {
 /// @type: the #GstQueryType
 ///
 /// The #GstQuery structure.
-final class _GstQuery extends ffi.Struct {
+final class GstQuery_ extends ffi.Struct {
   external GstMiniObject1 mini_object;
 
   @ffi.UnsignedInt()
@@ -87621,7 +87619,7 @@ final class _GstQuery extends ffi.Struct {
   GstQueryType get type => GstQueryType.fromValue(typeAsInt);
 }
 
-typedef GstQuery = _GstQuery;
+typedef GstQuery = GstQuery_;
 
 /// GstMessageType:
 /// @GST_MESSAGE_UNKNOWN: an undefined message
@@ -87776,7 +87774,7 @@ sealed class GstMessageType {
 /// @seqnum: the sequence number of the message
 ///
 /// A #GstMessage.
-final class _GstMessage extends ffi.Struct {
+final class GstMessage_ extends ffi.Struct {
   external GstMiniObject1 mini_object;
 
   @ffi.Int()
@@ -87795,11 +87793,11 @@ final class _GstMessage extends ffi.Struct {
   external GCond cond;
 }
 
-typedef GstMessage = _GstMessage;
+typedef GstMessage = GstMessage_;
 
-final class _GstContext extends ffi.Opaque {}
+final class GstContext_ extends ffi.Opaque {}
 
-typedef GstContext = _GstContext;
+typedef GstContext = GstContext_;
 
 /// GstElementClass:
 /// @parent_class: the parent class structure
@@ -87825,7 +87823,7 @@ typedef GstContext = _GstContext;
 ///
 /// GStreamer element class. Override the vmethods to implement the element
 /// functionality.
-final class _GstElementClass extends ffi.Struct {
+final class GstElementClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   external ffi.Pointer metadata;
@@ -87936,10 +87934,10 @@ final class _GstElementClass extends ffi.Struct {
               ffi.Pointer<GstContext> context)>> set_context;
 
   @ffi.Array.multi([18])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstElementClass = _GstElementClass;
+typedef GstElementClass = GstElementClass_;
 
 /// GstObjectFlags:
 /// @GST_OBJECT_FLAG_MAY_BE_LEAKED: the object is expected to stay alive even
@@ -87970,9 +87968,9 @@ enum GstObjectFlags {
       };
 }
 
-final class _GstControlBindingPrivate extends ffi.Opaque {}
+final class GstControlBindingPrivate_ extends ffi.Opaque {}
 
-typedef GstControlBindingPrivate = _GstControlBindingPrivate;
+typedef GstControlBindingPrivate = GstControlBindingPrivate_;
 
 final class UnnamedStruct17 extends ffi.Struct {
   external ffi.Pointer<GstControlBindingPrivate> priv;
@@ -87982,7 +87980,7 @@ final class UnnamedUnion13 extends ffi.Union {
   external UnnamedStruct17 abi;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
 /// GstControlBinding:
@@ -87991,7 +87989,7 @@ final class UnnamedUnion13 extends ffi.Union {
 /// @pspec: #GParamSpec for this property
 ///
 /// The instance structure of #GstControlBinding.
-final class _GstControlBinding extends ffi.Struct {
+final class GstControlBinding_ extends ffi.Struct {
   external GstObject1 parent;
 
   external ffi.Pointer<ffi.Char> name;
@@ -88006,13 +88004,13 @@ final class _GstControlBinding extends ffi.Struct {
   external UnnamedUnion13 ABI;
 }
 
-typedef GstControlBinding = _GstControlBinding;
+typedef GstControlBinding = GstControlBinding_;
 
 /// GstControlBindingClass:
 /// @parent_class: Parent class
 ///
 /// The class structure of #GstControlBinding.
-final class _GstControlBindingClass extends ffi.Struct {
+final class GstControlBindingClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   /// GstControlBindingClass::sync_values:
@@ -88085,10 +88083,10 @@ final class _GstControlBindingClass extends ffi.Struct {
               ffi.Pointer<GValue> values)>> get_g_value_array;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstControlBindingClass = _GstControlBindingClass;
+typedef GstControlBindingClass = GstControlBindingClass_;
 
 /// GstClockID:
 ///
@@ -88175,7 +88173,7 @@ typedef GstClockCallback
 /// an entry.
 /// Note that GstClockEntry should be treated as an opaque structure. It must
 /// not be extended or allocated using a custom allocator.
-final class _GstClockEntry extends ffi.Struct {
+final class GstClockEntry_ extends ffi.Struct {
   @ffi.Int()
   external int refcount;
 
@@ -88210,17 +88208,17 @@ final class _GstClockEntry extends ffi.Struct {
   external int woken_up;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstClockEntry = _GstClockEntry;
+typedef GstClockEntry = GstClockEntry_;
 
 /// GstClockClass:
 /// @parent_class: the parent class structure
 ///
 /// GStreamer clock class. Override the vmethods to implement the clock
 /// functionality.
-final class _GstClockClass extends ffi.Struct {
+final class GstClockClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   /// GstClockClass::change_resolution:
@@ -88305,10 +88303,10 @@ final class _GstClockClass extends ffi.Struct {
               ffi.Pointer<GstClockEntry> entry)>> unschedule;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstClockClass = _GstClockClass;
+typedef GstClockClass = GstClockClass_;
 
 /// GstClockFlags:
 /// @GST_CLOCK_FLAG_CAN_DO_SINGLE_SYNC: clock can do a single sync timeout request
@@ -88356,7 +88354,7 @@ typedef GstClock_autoptr = ffi.Pointer<GstClock>;
 typedef GstClock_listautoptr = ffi.Pointer<GList>;
 typedef GstClock_slistautoptr = ffi.Pointer<GSList>;
 typedef GstClock_queueautoptr = ffi.Pointer<GQueue>;
-typedef GstControlSource = _GstControlSource;
+typedef GstControlSource = GstControlSource_;
 typedef GstControlSourceGetValueFunction = ffi.Int Function(
     ffi.Pointer<GstControlSource> self,
     GstClockTime timestamp,
@@ -88408,7 +88406,7 @@ typedef GstControlSourceGetValueArray
 /// @get_value_array: Function for returning a values array for a given timestamp
 ///
 /// The instance structure of #GstControlSource.
-final class _GstControlSource extends ffi.Struct {
+final class GstControlSource_ extends ffi.Struct {
   external GstObject1 parent;
 
   external GstControlSourceGetValue get_value;
@@ -88416,28 +88414,28 @@ final class _GstControlSource extends ffi.Struct {
   external GstControlSourceGetValueArray get_value_array;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
 /// GstControlSourceClass:
 /// @parent_class: Parent class
 ///
 /// The class structure of #GstControlSource.
-final class _GstControlSourceClass extends ffi.Struct {
+final class GstControlSourceClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstControlSourceClass = _GstControlSourceClass;
+typedef GstControlSourceClass = GstControlSourceClass_;
 
 /// GstTimedValue:
 /// @timestamp: timestamp of the value change
 /// @value: the corresponding value
 ///
 /// Structure for storing a timestamp and a value.
-final class _GstTimedValue extends ffi.Struct {
+final class GstTimedValue_ extends ffi.Struct {
   @GstClockTime()
   external int timestamp;
 
@@ -88445,11 +88443,11 @@ final class _GstTimedValue extends ffi.Struct {
   external double value;
 }
 
-typedef GstTimedValue = _GstTimedValue;
+typedef GstTimedValue = GstTimedValue_;
 
-final class _GstValueArray extends ffi.Opaque {}
+final class GstValueArray_ extends ffi.Opaque {}
 
-typedef GstValueArray = _GstValueArray;
+typedef GstValueArray = GstValueArray_;
 typedef GstControlSource_autoptr = ffi.Pointer<GstControlSource>;
 typedef GstControlSource_listautoptr = ffi.Pointer<GList>;
 typedef GstControlSource_slistautoptr = ffi.Pointer<GSList>;
@@ -88480,11 +88478,11 @@ typedef GstObject_listautoptr = ffi.Pointer<GList>;
 typedef GstObject_slistautoptr = ffi.Pointer<GSList>;
 typedef GstObject_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstPadPrivate extends ffi.Opaque {}
+final class GstPadPrivate_ extends ffi.Opaque {}
 
-typedef GstPadPrivate = _GstPadPrivate;
+typedef GstPadPrivate = GstPadPrivate_;
 
-final class _GstPadClass extends ffi.Struct {
+final class GstPadClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   external ffi.Pointer<
@@ -88498,10 +88496,10 @@ final class _GstPadClass extends ffi.Struct {
               ffi.Pointer<GstPad> pad, ffi.Pointer<GstPad> peer)>> unlinked;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstPadClass = _GstPadClass;
+typedef GstPadClass = GstPadClass_;
 
 /// GstPadProbeType:
 /// @GST_PAD_PROBE_TYPE_INVALID: invalid probe type
@@ -88668,7 +88666,7 @@ final class UnnamedStruct18 extends ffi.Struct {
 
 final class UnnamedUnion14 extends ffi.Union {
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 
   external UnnamedStruct18 abi;
 }
@@ -88684,7 +88682,7 @@ final class UnnamedUnion14 extends ffi.Union {
 /// #GST_PAD_PROBE_TYPE_PULL
 ///
 /// Info passed in the #GstPadProbeCallback.
-final class _GstPadProbeInfo extends ffi.Struct {
+final class GstPadProbeInfo_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int typeAsInt;
 
@@ -88704,7 +88702,7 @@ final class _GstPadProbeInfo extends ffi.Struct {
   external UnnamedUnion14 ABI;
 }
 
-typedef GstPadProbeInfo = _GstPadProbeInfo;
+typedef GstPadProbeInfo = GstPadProbeInfo_;
 
 /// GstPadMode:
 /// @GST_PAD_MODE_NONE: Pad will not handle dataflow
@@ -88800,7 +88798,7 @@ enum GstLockFlags {
       };
 }
 
-typedef GstMemory = _GstMemory;
+typedef GstMemory = GstMemory_;
 
 /// GstMapFlags:
 /// @GST_MAP_READ: map for read access
@@ -88944,7 +88942,7 @@ final class GstMapInfo extends ffi.Struct {
   external ffi.Array<ffi.Pointer> user_data;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
 typedef GstMemoryMapFullFunctionFunction = ffi.Pointer Function(
@@ -88978,9 +88976,9 @@ typedef DartGstMemoryUnmapFullFunctionFunction = void Function(
 typedef GstMemoryUnmapFullFunction
     = ffi.Pointer<ffi.NativeFunction<GstMemoryUnmapFullFunctionFunction>>;
 
-final class _GstAllocatorPrivate extends ffi.Opaque {}
+final class GstAllocatorPrivate_ extends ffi.Opaque {}
 
-typedef GstAllocatorPrivate = _GstAllocatorPrivate;
+typedef GstAllocatorPrivate = GstAllocatorPrivate_;
 
 /// GstAllocator:
 /// @mem_map: the implementation of the GstMemoryMapFunction
@@ -88994,7 +88992,7 @@ typedef GstAllocatorPrivate = _GstAllocatorPrivate;
 /// Will be used instead of @mem_unmap if present. (Since: 1.6)
 ///
 /// The #GstAllocator is used to create new memory.
-final class _GstAllocator extends ffi.Struct {
+final class GstAllocator_ extends ffi.Struct {
   external GstObject1 object;
 
   external ffi.Pointer<ffi.Char> mem_type;
@@ -89014,12 +89012,12 @@ final class _GstAllocator extends ffi.Struct {
   external GstMemoryUnmapFullFunction mem_unmap_full;
 
   @ffi.Array.multi([2])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 
   external ffi.Pointer<GstAllocatorPrivate> priv;
 }
 
-typedef GstAllocator = _GstAllocator;
+typedef GstAllocator = GstAllocator_;
 
 /// GstMemory:
 /// @mini_object: parent structure
@@ -89032,7 +89030,7 @@ typedef GstAllocator = _GstAllocator;
 ///
 /// Base structure for memory implementations. Custom memory will put this structure
 /// as the first member of their structure.
-final class _GstMemory extends ffi.Struct {
+final class GstMemory_ extends ffi.Struct {
   external GstMiniObject1 mini_object;
 
   external ffi.Pointer<GstAllocator> allocator;
@@ -89131,7 +89129,7 @@ typedef GstMemoryMapInfo = GstMapInfo;
 /// @padding: the desired padding
 ///
 /// Parameters to control the allocation of memory
-final class _GstAllocationParams extends ffi.Struct {
+final class GstAllocationParams_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int flagsAsInt;
 
@@ -89147,10 +89145,10 @@ final class _GstAllocationParams extends ffi.Struct {
   external int padding;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstAllocationParams = _GstAllocationParams;
+typedef GstAllocationParams = GstAllocationParams_;
 
 /// GstAllocatorClass:
 /// @object_class:  Object parent class
@@ -89158,7 +89156,7 @@ typedef GstAllocationParams = _GstAllocationParams;
 /// @free: implementation that releases memory
 ///
 /// The #GstAllocator is used to create new memory.
-final class _GstAllocatorClass extends ffi.Struct {
+final class GstAllocatorClass_ extends ffi.Struct {
   external GstObjectClass object_class;
 
   external ffi.Pointer<
@@ -89172,10 +89170,10 @@ final class _GstAllocatorClass extends ffi.Struct {
               ffi.Pointer<GstMemory> memory)>> free;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstAllocatorClass = _GstAllocatorClass;
+typedef GstAllocatorClass = GstAllocatorClass_;
 
 /// GstAllocatorFlags:
 /// @GST_ALLOCATOR_FLAG_CUSTOM_ALLOC: The allocator has a custom alloc function.
@@ -89220,7 +89218,7 @@ typedef GstAllocationParams_listautoptr = ffi.Pointer<GList>;
 typedef GstAllocationParams_slistautoptr = ffi.Pointer<GSList>;
 typedef GstAllocationParams_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstDateTime extends ffi.Opaque {}
+final class GstDateTime_ extends ffi.Opaque {}
 
 /// GstDateTime:
 ///
@@ -89229,7 +89227,7 @@ final class _GstDateTime extends ffi.Opaque {}
 /// `9999-12-31` in the Gregorian proleptic calendar.
 ///
 /// Use the accessor functions to get the stored values.
-typedef GstDateTime = _GstDateTime;
+typedef GstDateTime = GstDateTime_;
 typedef GstDateTime_autoptr = ffi.Pointer<GstDateTime>;
 typedef GstDateTime_listautoptr = ffi.Pointer<GList>;
 typedef GstDateTime_slistautoptr = ffi.Pointer<GSList>;
@@ -89239,7 +89237,7 @@ typedef GstDateTime_queueautoptr = ffi.Pointer<GQueue>;
 /// @type: the GType of a structure
 ///
 /// The GstStructure object. Most fields are private.
-final class _GstStructure extends ffi.Struct {
+final class GstStructure_ extends ffi.Struct {
   @GType()
   external int type;
 
@@ -89247,7 +89245,7 @@ final class _GstStructure extends ffi.Struct {
   external int name;
 }
 
-typedef GstStructure = _GstStructure;
+typedef GstStructure = GstStructure_;
 
 /// GstSerializeFlags:
 /// @GST_SERIALIZE_FLAG_NONE: No special flags specified.
@@ -89331,9 +89329,9 @@ typedef GstStructure_listautoptr = ffi.Pointer<GList>;
 typedef GstStructure_slistautoptr = ffi.Pointer<GSList>;
 typedef GstStructure_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstCapsFeatures extends ffi.Opaque {}
+final class GstCapsFeatures_ extends ffi.Opaque {}
 
-typedef GstCapsFeatures = _GstCapsFeatures;
+typedef GstCapsFeatures = GstCapsFeatures_;
 typedef GstCapsFeatures_autoptr = ffi.Pointer<GstCapsFeatures>;
 typedef GstCapsFeatures_listautoptr = ffi.Pointer<GList>;
 typedef GstCapsFeatures_slistautoptr = ffi.Pointer<GSList>;
@@ -89403,16 +89401,16 @@ enum GstCapsIntersectMode {
 /// Data structure to initialize #GstCaps from a string description usually
 /// used in conjunction with GST_STATIC_CAPS() and gst_static_caps_get() to
 /// instantiate a #GstCaps.
-final class _GstStaticCaps extends ffi.Struct {
+final class GstStaticCaps_ extends ffi.Struct {
   external ffi.Pointer<GstCaps> caps;
 
   external ffi.Pointer<ffi.Char> string;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstStaticCaps = _GstStaticCaps;
+typedef GstStaticCaps = GstStaticCaps_;
 typedef GstCapsForeachFuncFunction = ffi.Int Function(
     ffi.Pointer<GstCapsFeatures> features,
     ffi.Pointer<GstStructure> structure,
@@ -89484,9 +89482,9 @@ typedef GstCaps_listautoptr = ffi.Pointer<GList>;
 typedef GstCaps_slistautoptr = ffi.Pointer<GSList>;
 typedef GstCaps_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstBufferPoolPrivate extends ffi.Opaque {}
+final class GstBufferPoolPrivate_ extends ffi.Opaque {}
 
-typedef GstBufferPoolPrivate = _GstBufferPoolPrivate;
+typedef GstBufferPoolPrivate = GstBufferPoolPrivate_;
 
 /// GstBufferPool:
 /// @object: the parent structure
@@ -89494,7 +89492,7 @@ typedef GstBufferPoolPrivate = _GstBufferPoolPrivate;
 ///
 /// The structure of a #GstBufferPool. Use the associated macros to access the public
 /// variables.
-final class _GstBufferPool extends ffi.Struct {
+final class GstBufferPool_ extends ffi.Struct {
   external GstObject1 object;
 
   @ffi.Int()
@@ -89503,10 +89501,10 @@ final class _GstBufferPool extends ffi.Struct {
   external ffi.Pointer<GstBufferPoolPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstBufferPool = _GstBufferPool;
+typedef GstBufferPool = GstBufferPool_;
 
 /// GstBuffer:
 /// @mini_object: the parent structure
@@ -89529,7 +89527,7 @@ typedef GstBufferPool = _GstBufferPool;
 ///
 /// The structure of a #GstBuffer. Use the associated macros to access the public
 /// variables.
-final class _GstBuffer extends ffi.Struct {
+final class GstBuffer_ extends ffi.Struct {
   external GstMiniObject1 mini_object;
 
   external ffi.Pointer<GstBufferPool> pool;
@@ -89550,7 +89548,7 @@ final class _GstBuffer extends ffi.Struct {
   external int offset_end;
 }
 
-typedef GstBuffer = _GstBuffer;
+typedef GstBuffer = GstBuffer_;
 
 /// GstByteArrayInterface:
 /// @data: A pointer to an array of bytes.
@@ -89566,9 +89564,9 @@ typedef GstBuffer = _GstBuffer;
 /// array cannot grow.
 ///
 /// Since: 1.24
-typedef GstByteArrayInterface = _GstByteArrayInterface;
+typedef GstByteArrayInterface = GstByteArrayInterface_;
 
-final class _GstByteArrayInterface extends ffi.Struct {
+final class GstByteArrayInterface_ extends ffi.Struct {
   external ffi.Pointer<ffi.Uint8> data;
 
   @ffi.Size()
@@ -89581,7 +89579,7 @@ final class _GstByteArrayInterface extends ffi.Struct {
       resize;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
 /// GstMetaFlags:
@@ -89612,7 +89610,7 @@ enum GstMetaFlags {
       };
 }
 
-typedef GstMeta = _GstMeta;
+typedef GstMeta = GstMeta_;
 typedef GstMetaInitFunctionFunction = ffi.Int Function(
     ffi.Pointer<GstMeta> meta,
     ffi.Pointer params,
@@ -89699,7 +89697,7 @@ typedef DartGstMetaSerializeFunctionFunction = int Function(
 /// Since: 1.24
 typedef GstMetaSerializeFunction
     = ffi.Pointer<ffi.NativeFunction<GstMetaSerializeFunctionFunction>>;
-typedef GstMetaInfo = _GstMetaInfo;
+typedef GstMetaInfo = GstMetaInfo_;
 typedef GstMetaDeserializeFunctionFunction = ffi.Pointer<GstMeta> Function(
     ffi.Pointer<GstMetaInfo> info,
     ffi.Pointer<GstBuffer> buffer,
@@ -89757,7 +89755,7 @@ typedef GstMetaClearFunction
 ///
 /// The #GstMetaInfo provides information about a specific metadata
 /// structure.
-final class _GstMetaInfo extends ffi.Struct {
+final class GstMetaInfo_ extends ffi.Struct {
   @GType()
   external int api;
 
@@ -89780,7 +89778,7 @@ final class _GstMetaInfo extends ffi.Struct {
   external GstMetaClearFunction clear_func;
 }
 
-typedef GstMetaInfo1 = _GstMetaInfo;
+typedef GstMetaInfo1 = GstMetaInfo_;
 
 /// GstMeta:
 /// @flags: extra flags for the metadata
@@ -89788,7 +89786,7 @@ typedef GstMetaInfo1 = _GstMetaInfo;
 ///
 /// Base structure for metadata. Custom metadata will put this structure
 /// as the first member of their structure.
-final class _GstMeta extends ffi.Struct {
+final class GstMeta_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int flagsAsInt;
 
@@ -90046,13 +90044,13 @@ typedef GstBufferForeachMetaFunc
 /// for re-use.
 ///
 /// Since: 1.6
-final class _GstParentBufferMeta extends ffi.Struct {
+final class GstParentBufferMeta_ extends ffi.Struct {
   external GstMeta parent;
 
   external ffi.Pointer<GstBuffer> buffer;
 }
 
-typedef GstParentBufferMeta = _GstParentBufferMeta;
+typedef GstParentBufferMeta = GstParentBufferMeta_;
 
 /// GstReferenceTimestampMeta:
 /// @parent: the parent #GstMeta structure
@@ -90083,7 +90081,7 @@ typedef GstParentBufferMeta = _GstParentBufferMeta;
 /// gst_meta_deserialize().
 ///
 /// Since: 1.14
-final class _GstReferenceTimestampMeta extends ffi.Struct {
+final class GstReferenceTimestampMeta_ extends ffi.Struct {
   external GstMeta parent;
 
   external ffi.Pointer<GstCaps> reference;
@@ -90095,7 +90093,7 @@ final class _GstReferenceTimestampMeta extends ffi.Struct {
   external int duration;
 }
 
-typedef GstReferenceTimestampMeta = _GstReferenceTimestampMeta;
+typedef GstReferenceTimestampMeta = GstReferenceTimestampMeta_;
 typedef GstBuffer_autoptr = ffi.Pointer<GstBuffer>;
 typedef GstBuffer_listautoptr = ffi.Pointer<GList>;
 typedef GstBuffer_slistautoptr = ffi.Pointer<GSList>;
@@ -90127,9 +90125,9 @@ typedef GstBufferPool_queueautoptr = ffi.Pointer<GQueue>;
 /// Since: 1.22
 typedef GstBufferMapInfo = GstMapInfo;
 
-final class _GstBufferList extends ffi.Opaque {}
+final class GstBufferList_ extends ffi.Opaque {}
 
-typedef GstBufferList = _GstBufferList;
+typedef GstBufferList = GstBufferList_;
 typedef GstBufferListFuncFunction = ffi.Int Function(
     ffi.Pointer<ffi.Pointer<GstBuffer>> buffer,
     ffi.UnsignedInt idx,
@@ -90161,7 +90159,7 @@ typedef GstBufferList_listautoptr = ffi.Pointer<GList>;
 typedef GstBufferList_slistautoptr = ffi.Pointer<GSList>;
 typedef GstBufferList_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstPadTemplateClass extends ffi.Struct {
+final class GstPadTemplateClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   external ffi.Pointer<
@@ -90171,10 +90169,10 @@ final class _GstPadTemplateClass extends ffi.Struct {
       pad_created;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstPadTemplateClass = _GstPadTemplateClass;
+typedef GstPadTemplateClass = GstPadTemplateClass_;
 
 /// GstStaticPadTemplate:
 /// @name_template: the name of the template
@@ -90183,7 +90181,7 @@ typedef GstPadTemplateClass = _GstPadTemplateClass;
 /// @static_caps: the caps of the template.
 ///
 /// Structure describing the #GstStaticPadTemplate.
-final class _GstStaticPadTemplate extends ffi.Struct {
+final class GstStaticPadTemplate_ extends ffi.Struct {
   external ffi.Pointer<ffi.Char> name_template;
 
   @ffi.UnsignedInt()
@@ -90199,7 +90197,7 @@ final class _GstStaticPadTemplate extends ffi.Struct {
   external GstStaticCaps static_caps;
 }
 
-typedef GstStaticPadTemplate = _GstStaticPadTemplate;
+typedef GstStaticPadTemplate = GstStaticPadTemplate_;
 
 /// GstEventTypeFlags:
 /// @GST_EVENT_TYPE_UPSTREAM:     Set if the event can travel upstream.
@@ -90291,7 +90289,7 @@ enum GstIteratorResult {
       };
 }
 
-typedef GstIterator = _GstIterator;
+typedef GstIterator = GstIterator_;
 typedef GstIteratorCopyFunctionFunction = ffi.Void Function(
     ffi.Pointer<GstIterator> it, ffi.Pointer<GstIterator> copy);
 typedef DartGstIteratorCopyFunctionFunction = void Function(
@@ -90416,7 +90414,7 @@ typedef GstIteratorFreeFunction
 ///
 /// #GstIterator base structure. The values of this structure are
 /// protected for subclasses, use the methods to use the #GstIterator.
-final class _GstIterator extends ffi.Struct {
+final class GstIterator_ extends ffi.Struct {
   external GstIteratorCopyFunction copy;
 
   external GstIteratorNextFunction next;
@@ -90443,10 +90441,10 @@ final class _GstIterator extends ffi.Struct {
   external int size;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstIterator1 = _GstIterator;
+typedef GstIterator1 = GstIterator_;
 typedef GstIteratorForeachFunctionFunction = ffi.Void Function(
     ffi.Pointer<GValue> item, ffi.Pointer user_data);
 typedef DartGstIteratorForeachFunctionFunction = void Function(
@@ -90522,7 +90520,7 @@ enum GstFormat {
 /// @quark: A quark for the nick
 ///
 /// A format definition
-final class _GstFormatDefinition extends ffi.Struct {
+final class GstFormatDefinition_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int valueAsInt;
 
@@ -90536,7 +90534,7 @@ final class _GstFormatDefinition extends ffi.Struct {
   external int quark;
 }
 
-typedef GstFormatDefinition = _GstFormatDefinition;
+typedef GstFormatDefinition = GstFormatDefinition_;
 
 /// GstSegmentFlags:
 /// @GST_SEGMENT_FLAG_NONE: no flags
@@ -90649,7 +90647,7 @@ enum GstSegmentFlags {
 /// seeking with #GST_SEEK_TYPE_END.
 ///
 /// The structure that holds the configured region of interest in a media file.
-final class _GstSegment extends ffi.Struct {
+final class GstSegment_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int flagsAsInt;
 
@@ -90688,10 +90686,10 @@ final class _GstSegment extends ffi.Struct {
   external int duration;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstSegment = _GstSegment;
+typedef GstSegment = GstSegment_;
 
 /// GstSeekType:
 /// @GST_SEEK_TYPE_NONE: no change in position is required
@@ -90857,14 +90855,14 @@ typedef GstSegment_listautoptr = ffi.Pointer<GList>;
 typedef GstSegment_slistautoptr = ffi.Pointer<GSList>;
 typedef GstSegment_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstSample extends ffi.Opaque {}
+final class GstSample_ extends ffi.Opaque {}
 
 /// GstSample:
 ///
 /// The opaque structure of a #GstSample. A sample contains a typed memory
 /// block and the associated timing information. It is mainly used to
 /// exchange buffers with an application.
-typedef GstSample = _GstSample;
+typedef GstSample = GstSample_;
 typedef GstSample_autoptr = ffi.Pointer<GstSample>;
 typedef GstSample_listautoptr = ffi.Pointer<GList>;
 typedef GstSample_slistautoptr = ffi.Pointer<GSList>;
@@ -90950,7 +90948,7 @@ enum GstTagFlag {
       };
 }
 
-final class _GstTagList extends ffi.Struct {
+final class GstTagList_ extends ffi.Struct {
   external GstMiniObject1 mini_object;
 }
 
@@ -90958,7 +90956,7 @@ final class _GstTagList extends ffi.Struct {
 /// @mini_object: the parent type
 ///
 /// Object describing tags / metadata.
-typedef GstTagList = _GstTagList;
+typedef GstTagList = GstTagList_;
 typedef GstTagForeachFuncFunction = ffi.Void Function(
     ffi.Pointer<GstTagList> list,
     ffi.Pointer<ffi.Char> tag,
@@ -91066,13 +91064,13 @@ enum GstBufferingMode {
       };
 }
 
-final class _GstTocEntry extends ffi.Opaque {}
+final class GstTocEntry_ extends ffi.Opaque {}
 
-typedef GstTocEntry = _GstTocEntry;
+typedef GstTocEntry = GstTocEntry_;
 
-final class _GstToc extends ffi.Opaque {}
+final class GstToc_ extends ffi.Opaque {}
 
-typedef GstToc = _GstToc;
+typedef GstToc = GstToc_;
 
 /// GstTocScope:
 /// @GST_TOC_SCOPE_GLOBAL: global TOC representing all selectable options
@@ -91204,9 +91202,9 @@ typedef GstQuery_listautoptr = ffi.Pointer<GList>;
 typedef GstQuery_slistautoptr = ffi.Pointer<GSList>;
 typedef GstQuery_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstDevicePrivate extends ffi.Opaque {}
+final class GstDevicePrivate_ extends ffi.Opaque {}
 
-typedef GstDevicePrivate = _GstDevicePrivate;
+typedef GstDevicePrivate = GstDevicePrivate_;
 
 /// GstDevice:
 /// @parent: The parent #GstObject structure.
@@ -91214,16 +91212,16 @@ typedef GstDevicePrivate = _GstDevicePrivate;
 /// A device object.
 ///
 /// Since: 1.4
-final class _GstDevice extends ffi.Struct {
+final class GstDevice_ extends ffi.Struct {
   external GstObject1 parent;
 
   external ffi.Pointer<GstDevicePrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstDevice = _GstDevice;
+typedef GstDevice = GstDevice_;
 
 /// GstDeviceClass:
 /// @parent_class: The parent #GstObjectClass structure.
@@ -91236,7 +91234,7 @@ typedef GstDevice = _GstDevice;
 /// The class structure for a #GstDevice object.
 ///
 /// Since: 1.4
-final class _GstDeviceClass extends ffi.Struct {
+final class GstDeviceClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   external ffi.Pointer<
@@ -91251,10 +91249,10 @@ final class _GstDeviceClass extends ffi.Struct {
               ffi.Pointer<GstElement> element)>> reconfigure_element;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstDeviceClass = _GstDeviceClass;
+typedef GstDeviceClass = GstDeviceClass_;
 typedef GstDevice_autoptr = ffi.Pointer<GstDevice>;
 typedef GstDevice_listautoptr = ffi.Pointer<GList>;
 typedef GstDevice_slistautoptr = ffi.Pointer<GSList>;
@@ -91295,9 +91293,9 @@ enum GstStreamType {
       };
 }
 
-final class _GstStreamPrivate extends ffi.Opaque {}
+final class GstStreamPrivate_ extends ffi.Opaque {}
 
-typedef GstStreamPrivate = _GstStreamPrivate;
+typedef GstStreamPrivate = GstStreamPrivate_;
 
 /// GstStream:
 /// @stream_id: The Stream Identifier for this #GstStream
@@ -91316,7 +91314,7 @@ typedef GstStreamPrivate = _GstStreamPrivate;
 /// pertinent to streams of data).
 ///
 /// Since: 1.10
-final class _GstStream extends ffi.Struct {
+final class GstStream_ extends ffi.Struct {
   external GstObject1 object;
 
   external ffi.Pointer<ffi.Char> stream_id;
@@ -91324,31 +91322,31 @@ final class _GstStream extends ffi.Struct {
   external ffi.Pointer<GstStreamPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstStream = _GstStream;
+typedef GstStream = GstStream_;
 
 /// GstStreamClass:
 /// @parent_class: the parent class structure
 ///
 /// GstStream class structure
-final class _GstStreamClass extends ffi.Struct {
+final class GstStreamClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstStreamClass = _GstStreamClass;
+typedef GstStreamClass = GstStreamClass_;
 typedef GstStream_autoptr = ffi.Pointer<GstStream>;
 typedef GstStream_listautoptr = ffi.Pointer<GList>;
 typedef GstStream_slistautoptr = ffi.Pointer<GSList>;
 typedef GstStream_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstStreamCollectionPrivate extends ffi.Opaque {}
+final class GstStreamCollectionPrivate_ extends ffi.Opaque {}
 
-typedef GstStreamCollectionPrivate = _GstStreamCollectionPrivate;
+typedef GstStreamCollectionPrivate = GstStreamCollectionPrivate_;
 
 /// GstStreamCollection:
 ///
@@ -91370,7 +91368,7 @@ typedef GstStreamCollectionPrivate = _GstStreamCollectionPrivate;
 /// #GST_EVENT_SELECT_STREAMS event on a pipeline, bin or element.
 ///
 /// Since: 1.10
-final class _GstStreamCollection extends ffi.Struct {
+final class GstStreamCollection_ extends ffi.Struct {
   external GstObject1 object;
 
   external ffi.Pointer<ffi.Char> upstream_id;
@@ -91378,17 +91376,17 @@ final class _GstStreamCollection extends ffi.Struct {
   external ffi.Pointer<GstStreamCollectionPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstStreamCollection = _GstStreamCollection;
+typedef GstStreamCollection = GstStreamCollection_;
 
 /// GstStreamCollectionClass:
 /// @parent_class: the parent class structure
 /// @stream_notify: default signal handler for the stream-notify signal
 ///
 /// GstStreamCollection class structure
-final class _GstStreamCollectionClass extends ffi.Struct {
+final class GstStreamCollectionClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   external ffi.Pointer<
@@ -91399,10 +91397,10 @@ final class _GstStreamCollectionClass extends ffi.Struct {
               ffi.Pointer<GParamSpec> pspec)>> stream_notify;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstStreamCollectionClass = _GstStreamCollectionClass;
+typedef GstStreamCollectionClass = GstStreamCollectionClass_;
 typedef GstStreamCollection_autoptr = ffi.Pointer<GstStreamCollection>;
 typedef GstStreamCollection_listautoptr = ffi.Pointer<GList>;
 typedef GstStreamCollection_slistautoptr = ffi.Pointer<GSList>;
@@ -91556,16 +91554,16 @@ typedef GstEvent_queueautoptr = ffi.Pointer<GQueue>;
 /// GstTaskPool:
 ///
 /// The #GstTaskPool object.
-final class _GstTaskPool extends ffi.Struct {
+final class GstTaskPool_ extends ffi.Struct {
   external GstObject1 object;
 
   external ffi.Pointer<GThreadPool> pool;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstTaskPool = _GstTaskPool;
+typedef GstTaskPool = GstTaskPool_;
 typedef GstTaskPoolFunctionFunction = ffi.Void Function(
     ffi.Pointer<ffi.Void> user_data);
 typedef DartGstTaskPoolFunctionFunction = void Function(
@@ -91586,7 +91584,7 @@ typedef GstTaskPoolFunction
 /// @join: join a thread
 ///
 /// The #GstTaskPoolClass object.
-final class _GstTaskPoolClass extends ffi.Struct {
+final class GstTaskPoolClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   external ffi.Pointer<
@@ -91624,48 +91622,48 @@ final class _GstTaskPoolClass extends ffi.Struct {
       dispose_handle;
 
   @ffi.Array.multi([3])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstTaskPoolClass = _GstTaskPoolClass;
+typedef GstTaskPoolClass = GstTaskPoolClass_;
 typedef GstTaskPool_autoptr = ffi.Pointer<GstTaskPool>;
 typedef GstTaskPool_listautoptr = ffi.Pointer<GList>;
 typedef GstTaskPool_slistautoptr = ffi.Pointer<GSList>;
 typedef GstTaskPool_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstSharedTaskPoolPrivate extends ffi.Opaque {}
+final class GstSharedTaskPoolPrivate_ extends ffi.Opaque {}
 
-typedef GstSharedTaskPoolPrivate = _GstSharedTaskPoolPrivate;
+typedef GstSharedTaskPoolPrivate = GstSharedTaskPoolPrivate_;
 
 /// GstSharedTaskPool:
 ///
 /// The #GstSharedTaskPool object.
 ///
 /// since: 1.20
-final class _GstSharedTaskPool extends ffi.Struct {
+final class GstSharedTaskPool_ extends ffi.Struct {
   external GstTaskPool parent;
 
   external ffi.Pointer<GstSharedTaskPoolPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstSharedTaskPool = _GstSharedTaskPool;
+typedef GstSharedTaskPool = GstSharedTaskPool_;
 
 /// GstSharedTaskPoolClass:
 ///
 /// The #GstSharedTaskPoolClass object.
 ///
 /// Since: 1.20
-final class _GstSharedTaskPoolClass extends ffi.Struct {
+final class GstSharedTaskPoolClass_ extends ffi.Struct {
   external GstTaskPoolClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstSharedTaskPoolClass = _GstSharedTaskPoolClass;
+typedef GstSharedTaskPoolClass = GstSharedTaskPoolClass_;
 typedef GstTaskFunctionFunction = ffi.Void Function(ffi.Pointer user_data);
 typedef DartGstTaskFunctionFunction = void Function(ffi.Pointer user_data);
 
@@ -91699,9 +91697,9 @@ enum GstTaskState {
       };
 }
 
-final class _GstTaskPrivate extends ffi.Opaque {}
+final class GstTaskPrivate_ extends ffi.Opaque {}
 
-typedef GstTaskPrivate = _GstTaskPrivate;
+typedef GstTaskPrivate = GstTaskPrivate_;
 
 /// GstTask:
 /// @state: the state of the task
@@ -91713,7 +91711,7 @@ typedef GstTaskPrivate = _GstTaskPrivate;
 /// @running: a flag indicating that the task is running
 ///
 /// The #GstTask object.
-final class _GstTask extends ffi.Struct {
+final class GstTask_ extends ffi.Struct {
   external GstObject1 object;
 
   @ffi.UnsignedInt()
@@ -91739,21 +91737,21 @@ final class _GstTask extends ffi.Struct {
   external ffi.Pointer<GstTaskPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstTask = _GstTask;
+typedef GstTask = GstTask_;
 
-final class _GstTaskClass extends ffi.Struct {
+final class GstTaskClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   external ffi.Pointer<GstTaskPool> pool;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstTaskClass = _GstTaskClass;
+typedef GstTaskClass = GstTaskClass_;
 typedef GstTaskThreadFuncFunction = ffi.Void Function(ffi.Pointer<GstTask> task,
     ffi.Pointer<GThread> thread, ffi.Pointer user_data);
 typedef DartGstTaskThreadFuncFunction = void Function(ffi.Pointer<GstTask> task,
@@ -91873,7 +91871,7 @@ enum GstPadLinkCheck {
       };
 }
 
-typedef GstPad1 = _GstPad;
+typedef GstPad1 = GstPad_;
 typedef GstPadActivateFunctionFunction = ffi.Int Function(
     ffi.Pointer<GstPad1> pad, ffi.Pointer<GstObject1> parent);
 typedef DartGstPadActivateFunctionFunction = int Function(
@@ -92338,7 +92336,7 @@ typedef GstPad_queueautoptr = ffi.Pointer<GQueue>;
 /// @parent_class: the parent class structure
 ///
 /// GStreamer bus class.
-final class _GstBusClass extends ffi.Struct {
+final class GstBusClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   /// GstBusClass::message:
@@ -92364,10 +92362,10 @@ final class _GstBusClass extends ffi.Struct {
       sync_message;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstBusClass = _GstBusClass;
+typedef GstBusClass = GstBusClass_;
 
 /// GstBusFlags:
 /// @GST_BUS_FLUSHING: The bus is currently dropping all messages
@@ -92461,20 +92459,20 @@ typedef GstBus_listautoptr = ffi.Pointer<GList>;
 typedef GstBus_slistautoptr = ffi.Pointer<GSList>;
 typedef GstBus_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstElementFactoryClass extends ffi.Opaque {}
+final class GstElementFactoryClass_ extends ffi.Opaque {}
 
-typedef GstElementFactoryClass = _GstElementFactoryClass;
+typedef GstElementFactoryClass = GstElementFactoryClass_;
 
-final class _GstPlugin extends ffi.Opaque {}
+final class GstPlugin_ extends ffi.Opaque {}
 
 /// GstPlugin:
 ///
 /// The opaque plugin object
-typedef GstPlugin = _GstPlugin;
+typedef GstPlugin = GstPlugin_;
 
-final class _GstPluginClass extends ffi.Opaque {}
+final class GstPluginClass_ extends ffi.Opaque {}
 
-typedef GstPluginClass = _GstPluginClass;
+typedef GstPluginClass = GstPluginClass_;
 typedef GstPluginInitFuncFunction = ffi.Int Function(
     ffi.Pointer<GstPlugin> plugin);
 typedef DartGstPluginInitFuncFunction = int Function(
@@ -92515,7 +92513,7 @@ typedef GstPluginInitFunc
 ///
 /// The @licence parameter must be one of: LGPL, GPL, QPL, GPL/QPL, MPL,
 /// BSD, MIT/X11, Proprietary, unknown.
-final class _GstPluginDesc extends ffi.Struct {
+final class GstPluginDesc_ extends ffi.Struct {
   @ffi.Int()
   external int major_version;
 
@@ -92541,10 +92539,10 @@ final class _GstPluginDesc extends ffi.Struct {
   external ffi.Pointer<ffi.Char> release_datetime;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstPluginDesc = _GstPluginDesc;
+typedef GstPluginDesc = GstPluginDesc_;
 
 /// GstPluginError:
 /// @GST_PLUGIN_ERROR_MODULE: The plugin could not be loaded
@@ -92664,16 +92662,16 @@ typedef GstPlugin_listautoptr = ffi.Pointer<GList>;
 typedef GstPlugin_slistautoptr = ffi.Pointer<GSList>;
 typedef GstPlugin_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstPluginFeature extends ffi.Opaque {}
+final class GstPluginFeature_ extends ffi.Opaque {}
 
 /// GstPluginFeature:
 ///
 /// Opaque #GstPluginFeature structure.
-typedef GstPluginFeature = _GstPluginFeature;
+typedef GstPluginFeature = GstPluginFeature_;
 
-final class _GstPluginFeatureClass extends ffi.Opaque {}
+final class GstPluginFeatureClass_ extends ffi.Opaque {}
 
-typedef GstPluginFeatureClass = _GstPluginFeatureClass;
+typedef GstPluginFeatureClass = GstPluginFeatureClass_;
 
 /// GstRank:
 /// @GST_RANK_NONE: will be chosen last or not at all
@@ -92776,12 +92774,12 @@ enum GstURIType {
       };
 }
 
-final class _GstURIHandler extends ffi.Opaque {}
+final class GstURIHandler_ extends ffi.Opaque {}
 
 /// GstURIHandler:
 ///
 /// Opaque #GstURIHandler structure.
-typedef GstURIHandler = _GstURIHandler;
+typedef GstURIHandler = GstURIHandler_;
 
 /// GstURIHandlerInterface:
 /// @parent: The parent interface type
@@ -92791,7 +92789,7 @@ typedef GstURIHandler = _GstURIHandler;
 /// @set_uri: Method to set a new URI.
 ///
 /// Any #GstElement using this interface should implement these methods.
-final class _GstURIHandlerInterface extends ffi.Struct {
+final class GstURIHandlerInterface_ extends ffi.Struct {
   external GTypeInterface parent;
 
   external ffi.Pointer<ffi.NativeFunction<ffi.UnsignedInt Function(GType type)>>
@@ -92815,14 +92813,14 @@ final class _GstURIHandlerInterface extends ffi.Struct {
               ffi.Pointer<ffi.Pointer<GError>> error)>> set_uri;
 }
 
-typedef GstURIHandlerInterface = _GstURIHandlerInterface;
+typedef GstURIHandlerInterface = GstURIHandlerInterface_;
 
 /// GstUri:
 ///
 /// This is a private structure that holds the various parts of a parsed URI.
-final class _GstUri extends ffi.Opaque {}
+final class GstUri_ extends ffi.Opaque {}
 
-typedef GstUri = _GstUri;
+typedef GstUri = GstUri_;
 typedef GstUri_autoptr = ffi.Pointer<GstUri>;
 typedef GstUri_listautoptr = ffi.Pointer<GList>;
 typedef GstUri_slistautoptr = ffi.Pointer<GSList>;
@@ -92951,9 +92949,9 @@ enum GstBinFlags {
       };
 }
 
-final class _GstBinPrivate extends ffi.Opaque {}
+final class GstBinPrivate_ extends ffi.Opaque {}
 
-typedef GstBinPrivate = _GstBinPrivate;
+typedef GstBinPrivate = GstBinPrivate_;
 
 /// GstBin:
 /// @numchildren: the number of children in this bin
@@ -92969,7 +92967,7 @@ typedef GstBinPrivate = _GstBinPrivate;
 ///
 /// The GstBin base class. Subclasses can access these fields provided
 /// the LOCK is taken.
-final class _GstBin extends ffi.Struct {
+final class GstBin_ extends ffi.Struct {
   external GstElement element;
 
   @ffi.Int()
@@ -93000,10 +92998,10 @@ final class _GstBin extends ffi.Struct {
   external ffi.Pointer<GstBinPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstBin = _GstBin;
+typedef GstBin = GstBin_;
 
 /// GstBinClass:
 /// @parent_class: bin parent class
@@ -93019,7 +93017,7 @@ typedef GstBin = _GstBin;
 /// was added to a sub-bin of this bin. #GstBin implementations that override
 /// this message should chain up to the parent class implementation so the
 /// #GstBin::deep-element-added signal is emitted on all parents.
-final class _GstBinClass extends ffi.Struct {
+final class GstBinClass_ extends ffi.Struct {
   external GstElementClass parent_class;
 
   external ffi.Pointer<GThreadPool> pool;
@@ -93114,10 +93112,10 @@ final class _GstBinClass extends ffi.Struct {
               ffi.Pointer<GstElement> child)>> deep_element_removed;
 
   @ffi.Array.multi([2])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstBinClass = _GstBinClass;
+typedef GstBinClass = GstBinClass_;
 typedef GstBin_autoptr = ffi.Pointer<GstBin>;
 typedef GstBin_listautoptr = ffi.Pointer<GList>;
 typedef GstBin_slistautoptr = ffi.Pointer<GSList>;
@@ -93167,7 +93165,7 @@ enum GstBufferPoolAcquireFlags {
 /// The default implementation ignores the @start and @stop members but other
 /// implementations can use this extra information to decide what buffer to
 /// return.
-final class _GstBufferPoolAcquireParams extends ffi.Struct {
+final class GstBufferPoolAcquireParams_ extends ffi.Struct {
   @ffi.UnsignedInt()
   external int formatAsInt;
 
@@ -93186,16 +93184,16 @@ final class _GstBufferPoolAcquireParams extends ffi.Struct {
       GstBufferPoolAcquireFlags.fromValue(flagsAsInt);
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstBufferPoolAcquireParams = _GstBufferPoolAcquireParams;
+typedef GstBufferPoolAcquireParams = GstBufferPoolAcquireParams_;
 
 /// GstBufferPoolClass:
 /// @object_class:  Object parent class
 ///
 /// The #GstBufferPool class.
-final class _GstBufferPoolClass extends ffi.Struct {
+final class GstBufferPoolClass_ extends ffi.Struct {
   external GstObjectClass object_class;
 
   /// GstBufferPoolClass::get_options:
@@ -93348,23 +93346,23 @@ final class _GstBufferPoolClass extends ffi.Struct {
       flush_stop;
 
   @ffi.Array.multi([2])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstBufferPoolClass = _GstBufferPoolClass;
+typedef GstBufferPoolClass = GstBufferPoolClass_;
 
-final class _GstChildProxy extends ffi.Opaque {}
+final class GstChildProxy_ extends ffi.Opaque {}
 
 /// GstChildProxy:
 ///
 /// Opaque #GstChildProxy data structure.
-typedef GstChildProxy = _GstChildProxy;
+typedef GstChildProxy = GstChildProxy_;
 
 /// GstChildProxyInterface:
 /// @parent: parent interface type.
 ///
 /// #GstChildProxy interface.
-final class _GstChildProxyInterface extends ffi.Struct {
+final class GstChildProxyInterface_ extends ffi.Struct {
   external GTypeInterface parent;
 
   /// GstChildProxyInterface.get_child_by_name:
@@ -93430,10 +93428,10 @@ final class _GstChildProxyInterface extends ffi.Struct {
               ffi.Pointer<ffi.Char> name)>> child_removed;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstChildProxyInterface = _GstChildProxyInterface;
+typedef GstChildProxyInterface = GstChildProxyInterface_;
 
 /// GstDebugGraphDetails:
 /// @GST_DEBUG_GRAPH_SHOW_MEDIA_TYPE: show caps-name on edges
@@ -93474,9 +93472,9 @@ enum GstDebugGraphDetails {
       };
 }
 
-final class _GstDeviceProviderPrivate extends ffi.Opaque {}
+final class GstDeviceProviderPrivate_ extends ffi.Opaque {}
 
-typedef GstDeviceProviderPrivate = _GstDeviceProviderPrivate;
+typedef GstDeviceProviderPrivate = GstDeviceProviderPrivate_;
 
 /// GstDeviceProvider:
 /// @parent: The parent #GstObject
@@ -93485,7 +93483,7 @@ typedef GstDeviceProviderPrivate = _GstDeviceProviderPrivate;
 /// The structure of the base #GstDeviceProvider
 ///
 /// Since: 1.4
-final class _GstDeviceProvider extends ffi.Struct {
+final class GstDeviceProvider_ extends ffi.Struct {
   external GstObject1 parent;
 
   external ffi.Pointer<GList> devices;
@@ -93493,19 +93491,19 @@ final class _GstDeviceProvider extends ffi.Struct {
   external ffi.Pointer<GstDeviceProviderPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstDeviceProvider = _GstDeviceProvider;
+typedef GstDeviceProvider = GstDeviceProvider_;
 
-final class _GstDeviceProviderFactory extends ffi.Opaque {}
+final class GstDeviceProviderFactory_ extends ffi.Opaque {}
 
 /// GstDeviceProviderFactoryClass:
 ///
 /// The opaque #GstDeviceProviderFactoryClass data structure.
 ///
 /// Since: 1.4
-typedef GstDeviceProviderFactory = _GstDeviceProviderFactory;
+typedef GstDeviceProviderFactory = GstDeviceProviderFactory_;
 
 /// GstDeviceProviderClass:
 /// @parent_class: the parent #GstObjectClass structure
@@ -93522,7 +93520,7 @@ typedef GstDeviceProviderFactory = _GstDeviceProviderFactory;
 /// The structure of the base #GstDeviceProviderClass
 ///
 /// Since: 1.4
-final class _GstDeviceProviderClass extends ffi.Struct {
+final class GstDeviceProviderClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   external ffi.Pointer<GstDeviceProviderFactory> factory1;
@@ -93543,14 +93541,14 @@ final class _GstDeviceProviderClass extends ffi.Struct {
   external ffi.Pointer metadata;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstDeviceProviderClass = _GstDeviceProviderClass;
+typedef GstDeviceProviderClass = GstDeviceProviderClass_;
 
-final class _GstDeviceProviderFactoryClass extends ffi.Opaque {}
+final class GstDeviceProviderFactoryClass_ extends ffi.Opaque {}
 
-typedef GstDeviceProviderFactoryClass = _GstDeviceProviderFactoryClass;
+typedef GstDeviceProviderFactoryClass = GstDeviceProviderFactoryClass_;
 typedef GstDeviceProviderFactory_autoptr
     = ffi.Pointer<GstDeviceProviderFactory>;
 typedef GstDeviceProviderFactory_listautoptr = ffi.Pointer<GList>;
@@ -93561,9 +93559,9 @@ typedef GstDeviceProvider_listautoptr = ffi.Pointer<GList>;
 typedef GstDeviceProvider_slistautoptr = ffi.Pointer<GSList>;
 typedef GstDeviceProvider_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstDeviceMonitorPrivate extends ffi.Opaque {}
+final class GstDeviceMonitorPrivate_ extends ffi.Opaque {}
 
-typedef GstDeviceMonitorPrivate = _GstDeviceMonitorPrivate;
+typedef GstDeviceMonitorPrivate = GstDeviceMonitorPrivate_;
 
 /// GstDeviceMonitor:
 /// @parent: the parent #GstObject structure
@@ -93571,16 +93569,16 @@ typedef GstDeviceMonitorPrivate = _GstDeviceMonitorPrivate;
 /// Opaque device monitor object structure.
 ///
 /// Since: 1.4
-final class _GstDeviceMonitor extends ffi.Struct {
+final class GstDeviceMonitor_ extends ffi.Struct {
   external GstObject1 parent;
 
   external ffi.Pointer<GstDeviceMonitorPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstDeviceMonitor = _GstDeviceMonitor;
+typedef GstDeviceMonitor = GstDeviceMonitor_;
 
 /// GstDeviceMonitorClass:
 /// @parent_class: the parent #GstObjectClass structure
@@ -93588,31 +93586,31 @@ typedef GstDeviceMonitor = _GstDeviceMonitor;
 /// Opaque device monitor class structure.
 ///
 /// Since: 1.4
-final class _GstDeviceMonitorClass extends ffi.Struct {
+final class GstDeviceMonitorClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstDeviceMonitorClass = _GstDeviceMonitorClass;
+typedef GstDeviceMonitorClass = GstDeviceMonitorClass_;
 typedef GstDeviceMonitor_autoptr = ffi.Pointer<GstDeviceMonitor>;
 typedef GstDeviceMonitor_listautoptr = ffi.Pointer<GList>;
 typedef GstDeviceMonitor_slistautoptr = ffi.Pointer<GSList>;
 typedef GstDeviceMonitor_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstDynamicTypeFactory extends ffi.Opaque {}
+final class GstDynamicTypeFactory_ extends ffi.Opaque {}
 
 /// GstDynamicTypeFactory:
 ///
 /// The opaque #GstDynamicTypeFactory data structure.
 ///
 /// Since: 1.12
-typedef GstDynamicTypeFactory = _GstDynamicTypeFactory;
+typedef GstDynamicTypeFactory = GstDynamicTypeFactory_;
 
-final class _GstDynamicTypeFactoryClass extends ffi.Opaque {}
+final class GstDynamicTypeFactoryClass_ extends ffi.Opaque {}
 
-typedef GstDynamicTypeFactoryClass = _GstDynamicTypeFactoryClass;
+typedef GstDynamicTypeFactoryClass = GstDynamicTypeFactoryClass_;
 
 /// GstCoreError:
 /// @GST_CORE_ERROR_FAILED: a general error which doesn't fit in any other
@@ -93847,42 +93845,42 @@ enum GstStreamError {
       };
 }
 
-final class _GstProxyPad extends ffi.Opaque {}
+final class GstProxyPad_ extends ffi.Opaque {}
 
-typedef GstProxyPad = _GstProxyPad;
+typedef GstProxyPad = GstProxyPad_;
 
-final class _GstProxyPadPrivate extends ffi.Opaque {}
+final class GstProxyPadPrivate_ extends ffi.Opaque {}
 
-typedef GstProxyPadPrivate = _GstProxyPadPrivate;
+typedef GstProxyPadPrivate = GstProxyPadPrivate_;
 
-final class _GstProxyPadClass extends ffi.Struct {
+final class GstProxyPadClass_ extends ffi.Struct {
   external GstPadClass parent_class;
 
   @ffi.Array.multi([1])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstProxyPadClass = _GstProxyPadClass;
+typedef GstProxyPadClass = GstProxyPadClass_;
 
-final class _GstGhostPad extends ffi.Opaque {}
+final class GstGhostPad_ extends ffi.Opaque {}
 
 /// GstGhostPad:
 ///
 /// Opaque #GstGhostPad structure.
-typedef GstGhostPad = _GstGhostPad;
+typedef GstGhostPad = GstGhostPad_;
 
-final class _GstGhostPadPrivate extends ffi.Opaque {}
+final class GstGhostPadPrivate_ extends ffi.Opaque {}
 
-typedef GstGhostPadPrivate = _GstGhostPadPrivate;
+typedef GstGhostPadPrivate = GstGhostPadPrivate_;
 
-final class _GstGhostPadClass extends ffi.Struct {
+final class GstGhostPadClass_ extends ffi.Struct {
   external GstProxyPadClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstGhostPadClass = _GstGhostPadClass;
+typedef GstGhostPadClass = GstGhostPadClass_;
 typedef GstGhostPad_autoptr = ffi.Pointer<GstGhostPad>;
 typedef GstGhostPad_listautoptr = ffi.Pointer<GList>;
 typedef GstGhostPad_slistautoptr = ffi.Pointer<GSList>;
@@ -94088,7 +94086,7 @@ enum GstDebugColorMode {
 ///
 /// This is the struct that describes the categories. Once initialized with
 /// #GST_DEBUG_CATEGORY_INIT, its values can't be changed anymore.
-final class _GstDebugCategory extends ffi.Struct {
+final class GstDebugCategory_ extends ffi.Struct {
   @ffi.Int()
   external int threshold;
 
@@ -94100,11 +94098,11 @@ final class _GstDebugCategory extends ffi.Struct {
   external ffi.Pointer<ffi.Char> description;
 }
 
-typedef GstDebugCategory = _GstDebugCategory;
+typedef GstDebugCategory = GstDebugCategory_;
 
-final class _GstDebugMessage extends ffi.Opaque {}
+final class GstDebugMessage_ extends ffi.Opaque {}
 
-typedef GstDebugMessage = _GstDebugMessage;
+typedef GstDebugMessage = GstDebugMessage_;
 typedef GstLogFunctionFunction = ffi.Void Function(
     ffi.Pointer<GstDebugCategory> category,
     ffi.UnsignedInt level,
@@ -94219,7 +94217,7 @@ typedef GstValueDeserializeWithPSpecFunc
 /// @deserialize_with_pspec: a #GstValueDeserializeWithPSpecFunc
 ///
 /// VTable for the #GValue @type.
-final class _GstValueTable extends ffi.Struct {
+final class GstValueTable_ extends ffi.Struct {
   @GType()
   external int type;
 
@@ -94237,10 +94235,10 @@ final class _GstValueTable extends ffi.Struct {
   external GstValueDeserializeWithPSpecFunc deserialize_with_pspec;
 
   @ffi.Array.multi([3])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstValueTable = _GstValueTable;
+typedef GstValueTable = GstValueTable_;
 
 /// GstParamSpecFraction:
 /// @parent_instance: super class
@@ -94253,7 +94251,7 @@ typedef GstValueTable = _GstValueTable;
 ///
 /// A GParamSpec derived structure that contains the meta data for fractional
 /// properties.
-final class _GstParamSpecFraction extends ffi.Struct {
+final class GstParamSpecFraction_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   @ffi.Int()
@@ -94275,24 +94273,24 @@ final class _GstParamSpecFraction extends ffi.Struct {
   external int def_den;
 }
 
-typedef GstParamSpecFraction = _GstParamSpecFraction;
+typedef GstParamSpecFraction = GstParamSpecFraction_;
 
 /// GstParamSpecArray:
 /// @parent_instance: super class
 /// @element_spec: the #GParamSpec of the type of values in the array
 ///
 /// A GParamSpec derived structure for arrays of values.
-final class _GstParamSpecArray extends ffi.Struct {
+final class GstParamSpecArray_ extends ffi.Struct {
   external GParamSpec parent_instance;
 
   external ffi.Pointer<GParamSpec> element_spec;
 }
 
-typedef GstParamSpecArray = _GstParamSpecArray;
+typedef GstParamSpecArray = GstParamSpecArray_;
 
-final class _GstPipelinePrivate extends ffi.Opaque {}
+final class GstPipelinePrivate_ extends ffi.Opaque {}
 
-typedef GstPipelinePrivate = _GstPipelinePrivate;
+typedef GstPipelinePrivate = GstPipelinePrivate_;
 
 /// GstPipeline:
 /// @fixed_clock: The fixed clock of the pipeline, used when
@@ -94305,7 +94303,7 @@ typedef GstPipelinePrivate = _GstPipelinePrivate;
 /// when setting elements to PLAYING.
 ///
 /// The #GstPipeline structure.
-final class _GstPipeline extends ffi.Struct {
+final class GstPipeline_ extends ffi.Struct {
   external GstBin bin;
 
   external ffi.Pointer<GstClock> fixed_clock;
@@ -94319,19 +94317,19 @@ final class _GstPipeline extends ffi.Struct {
   external ffi.Pointer<GstPipelinePrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstPipeline = _GstPipeline;
+typedef GstPipeline = GstPipeline_;
 
-final class _GstPipelineClass extends ffi.Struct {
+final class GstPipelineClass_ extends ffi.Struct {
   external GstBinClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstPipelineClass = _GstPipelineClass;
+typedef GstPipelineClass = GstPipelineClass_;
 
 /// GstPipelineFlags:
 /// @GST_PIPELINE_FLAG_FIXED_CLOCK: this pipeline works with a fixed clock
@@ -94357,12 +94355,12 @@ typedef GstPipeline_listautoptr = ffi.Pointer<GList>;
 typedef GstPipeline_slistautoptr = ffi.Pointer<GSList>;
 typedef GstPipeline_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstPoll extends ffi.Opaque {}
+final class GstPoll_ extends ffi.Opaque {}
 
 /// GstPoll:
 ///
 /// A set of file/network descriptors.
-typedef GstPoll = _GstPoll;
+typedef GstPoll = GstPoll_;
 
 /// GstPollFD:
 /// @fd: a file descriptor
@@ -94376,12 +94374,12 @@ final class GstPollFD extends ffi.Struct {
   external int idx;
 }
 
-final class _GstPreset extends ffi.Opaque {}
+final class GstPreset_ extends ffi.Opaque {}
 
 /// GstPreset:
 ///
 /// Opaque #GstPreset data structure.
-typedef GstPreset = _GstPreset;
+typedef GstPreset = GstPreset_;
 
 /// GstPresetInterface:
 /// @parent: parent interface type.
@@ -94395,7 +94393,7 @@ typedef GstPreset = _GstPreset;
 /// @get_meta: virtual methods to get textual meta data from a preset
 ///
 /// #GstPreset interface.
-final class _GstPresetInterface extends ffi.Struct {
+final class GstPresetInterface_ extends ffi.Struct {
   external GTypeInterface parent;
 
   external ffi.Pointer<
@@ -94450,10 +94448,10 @@ final class _GstPresetInterface extends ffi.Struct {
               ffi.Pointer<ffi.Pointer<ffi.Char>> value)>> get_meta;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstPresetInterface = _GstPresetInterface;
+typedef GstPresetInterface = GstPresetInterface_;
 
 /// GstProtectionMeta:
 /// @meta: the parent #GstMeta.
@@ -94463,34 +94461,34 @@ typedef GstPresetInterface = _GstPresetInterface;
 /// track, including the information needed to decrypt it (if it is encrypted).
 ///
 /// Since: 1.6
-final class _GstProtectionMeta extends ffi.Struct {
+final class GstProtectionMeta_ extends ffi.Struct {
   external GstMeta meta;
 
   external ffi.Pointer<GstStructure> info;
 }
 
-typedef GstProtectionMeta = _GstProtectionMeta;
+typedef GstProtectionMeta = GstProtectionMeta_;
 
-final class _GstRegistryPrivate extends ffi.Opaque {}
+final class GstRegistryPrivate_ extends ffi.Opaque {}
 
-typedef GstRegistryPrivate = _GstRegistryPrivate;
+typedef GstRegistryPrivate = GstRegistryPrivate_;
 
 /// GstRegistry:
 ///
 /// Opaque #GstRegistry structure.
-final class _GstRegistry extends ffi.Struct {
+final class GstRegistry_ extends ffi.Struct {
   external GstObject1 object;
 
   external ffi.Pointer<GstRegistryPrivate> priv;
 }
 
-typedef GstRegistry = _GstRegistry;
+typedef GstRegistry = GstRegistry_;
 
-final class _GstRegistryClass extends ffi.Struct {
+final class GstRegistryClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 }
 
-typedef GstRegistryClass = _GstRegistryClass;
+typedef GstRegistryClass = GstRegistryClass_;
 typedef GstRegistry_autoptr = ffi.Pointer<GstRegistry>;
 typedef GstRegistry_listautoptr = ffi.Pointer<GList>;
 typedef GstRegistry_slistautoptr = ffi.Pointer<GSList>;
@@ -94500,11 +94498,11 @@ typedef GstRegistry_queueautoptr = ffi.Pointer<GQueue>;
 /// @parent: parent #GstMiniObject
 ///
 /// Since: 1.14
-final class _GstPromise extends ffi.Struct {
+final class GstPromise_ extends ffi.Struct {
   external GstMiniObject1 parent;
 }
 
-typedef GstPromise = _GstPromise;
+typedef GstPromise = GstPromise_;
 
 /// GstPromiseResult:
 /// @GST_PROMISE_RESULT_PENDING: Initial state. Waiting for transition to any
@@ -94553,32 +94551,32 @@ typedef GstPromise_listautoptr = ffi.Pointer<GList>;
 typedef GstPromise_slistautoptr = ffi.Pointer<GSList>;
 typedef GstPromise_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstSystemClockPrivate extends ffi.Opaque {}
+final class GstSystemClockPrivate_ extends ffi.Opaque {}
 
-typedef GstSystemClockPrivate = _GstSystemClockPrivate;
+typedef GstSystemClockPrivate = GstSystemClockPrivate_;
 
 /// GstSystemClock:
 ///
 /// The default implementation of a #GstClock that uses the system time.
-final class _GstSystemClock extends ffi.Struct {
+final class GstSystemClock_ extends ffi.Struct {
   external GstClock clock;
 
   external ffi.Pointer<GstSystemClockPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstSystemClock = _GstSystemClock;
+typedef GstSystemClock = GstSystemClock_;
 
-final class _GstSystemClockClass extends ffi.Struct {
+final class GstSystemClockClass_ extends ffi.Struct {
   external GstClockClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstSystemClockClass = _GstSystemClockClass;
+typedef GstSystemClockClass = GstSystemClockClass_;
 
 /// GstClockType:
 /// @GST_CLOCK_TYPE_REALTIME: time since Epoch
@@ -94612,100 +94610,100 @@ typedef GstSystemClock_listautoptr = ffi.Pointer<GList>;
 typedef GstSystemClock_slistautoptr = ffi.Pointer<GSList>;
 typedef GstSystemClock_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstTagSetter extends ffi.Opaque {}
+final class GstTagSetter_ extends ffi.Opaque {}
 
 /// GstTagSetter:
 ///
 /// Opaque #GstTagSetter data structure.
-typedef GstTagSetter = _GstTagSetter;
+typedef GstTagSetter = GstTagSetter_;
 
 /// GstTagSetterInterface:
 /// @g_iface: parent interface type.
 ///
 /// #GstTagSetterInterface interface.
-final class _GstTagSetterInterface extends ffi.Struct {
+final class GstTagSetterInterface_ extends ffi.Struct {
   external GTypeInterface g_iface;
 }
 
-typedef GstTagSetterInterface = _GstTagSetterInterface;
+typedef GstTagSetterInterface = GstTagSetterInterface_;
 
-final class _GstTocSetter extends ffi.Opaque {}
+final class GstTocSetter_ extends ffi.Opaque {}
 
 /// GstTocSetter:
 ///
 /// Opaque #GstTocSetter data structure.
-typedef GstTocSetter = _GstTocSetter;
+typedef GstTocSetter = GstTocSetter_;
 
 /// GstTocSetterInterface:
 /// @g_iface: parent interface type.
 ///
 /// #GstTocSetterInterface interface.
-final class _GstTocSetterInterface extends ffi.Struct {
+final class GstTocSetterInterface_ extends ffi.Struct {
   external GTypeInterface g_iface;
 }
 
-typedef GstTocSetterInterface = _GstTocSetterInterface;
+typedef GstTocSetterInterface = GstTocSetterInterface_;
 
-final class _GstTracerPrivate extends ffi.Opaque {}
+final class GstTracerPrivate_ extends ffi.Opaque {}
 
-typedef GstTracerPrivate = _GstTracerPrivate;
+typedef GstTracerPrivate = GstTracerPrivate_;
 
 /// GstTracer:
 ///
 /// The opaque GstTracer instance structure
-final class _GstTracer extends ffi.Struct {
+final class GstTracer_ extends ffi.Struct {
   external GstObject1 parent;
 
   external ffi.Pointer<GstTracerPrivate> priv;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstTracer = _GstTracer;
+typedef GstTracer = GstTracer_;
 
-final class _GstTracerClass extends ffi.Struct {
+final class GstTracerClass_ extends ffi.Struct {
   external GstObjectClass parent_class;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstTracerClass = _GstTracerClass;
+typedef GstTracerClass = GstTracerClass_;
 typedef GstTracer_autoptr = ffi.Pointer<GstTracer>;
 typedef GstTracer_listautoptr = ffi.Pointer<GList>;
 typedef GstTracer_slistautoptr = ffi.Pointer<GSList>;
 typedef GstTracer_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstTracerFactory extends ffi.Opaque {}
+final class GstTracerFactory_ extends ffi.Opaque {}
 
 /// GstTracerFactory:
 ///
 /// Opaque object that stores information about a tracer function.
 ///
 /// Since: 1.8
-typedef GstTracerFactory = _GstTracerFactory;
+typedef GstTracerFactory = GstTracerFactory_;
 
-final class _GstTracerFactoryClass extends ffi.Opaque {}
+final class GstTracerFactoryClass_ extends ffi.Opaque {}
 
-typedef GstTracerFactoryClass = _GstTracerFactoryClass;
+typedef GstTracerFactoryClass = GstTracerFactoryClass_;
 typedef GstTracerFactory_autoptr = ffi.Pointer<GstTracerFactory>;
 typedef GstTracerFactory_listautoptr = ffi.Pointer<GList>;
 typedef GstTracerFactory_slistautoptr = ffi.Pointer<GSList>;
 typedef GstTracerFactory_queueautoptr = ffi.Pointer<GQueue>;
 
-final class _GstTracerRecord extends ffi.Opaque {}
+final class GstTracerRecord_ extends ffi.Opaque {}
 
 /// GstTracerRecord:
 ///
 /// The opaque GstTracerRecord instance structure
 ///
 /// Since: 1.8
-typedef GstTracerRecord = _GstTracerRecord;
+typedef GstTracerRecord = GstTracerRecord_;
 
-final class _GstTracerRecordClass extends ffi.Opaque {}
+final class GstTracerRecordClass_ extends ffi.Opaque {}
 
-typedef GstTracerRecordClass = _GstTracerRecordClass;
+typedef GstTracerRecordClass = GstTracerRecordClass_;
 typedef GstTracerRecord_autoptr = ffi.Pointer<GstTracerRecord>;
 typedef GstTracerRecord_listautoptr = ffi.Pointer<GList>;
 typedef GstTracerRecord_slistautoptr = ffi.Pointer<GSList>;
@@ -94777,7 +94775,7 @@ enum GstTracerValueFlags {
 /// @get_length: Returns the length of current data.
 ///
 /// Object that stores typefind callbacks. To use with #GstTypeFindFactory.
-final class _GstTypeFind extends ffi.Struct {
+final class GstTypeFind_ extends ffi.Struct {
   external ffi.Pointer<
       ffi.NativeFunction<
           ffi.Pointer<ffi.Uint8> Function(
@@ -94795,10 +94793,10 @@ final class _GstTypeFind extends ffi.Struct {
       get_length;
 
   @ffi.Array.multi([4])
-  external ffi.Array<ffi.Pointer> _gst_reserved;
+  external ffi.Array<ffi.Pointer> gst_reserved_;
 }
 
-typedef GstTypeFind = _GstTypeFind;
+typedef GstTypeFind = GstTypeFind_;
 typedef GstTypeFindFunctionFunction = ffi.Void Function(
     ffi.Pointer<GstTypeFind> find, ffi.Pointer user_data);
 typedef DartGstTypeFindFunctionFunction = void Function(
@@ -94845,16 +94843,16 @@ enum GstTypeFindProbability {
       };
 }
 
-final class _GstTypeFindFactory extends ffi.Opaque {}
+final class GstTypeFindFactory_ extends ffi.Opaque {}
 
 /// GstTypeFindFactory:
 ///
 /// Opaque object that stores information about a typefind function.
-typedef GstTypeFindFactory = _GstTypeFindFactory;
+typedef GstTypeFindFactory = GstTypeFindFactory_;
 
-final class _GstTypeFindFactoryClass extends ffi.Opaque {}
+final class GstTypeFindFactoryClass_ extends ffi.Opaque {}
 
-typedef GstTypeFindFactoryClass = _GstTypeFindFactoryClass;
+typedef GstTypeFindFactoryClass = GstTypeFindFactoryClass_;
 typedef GstTypeFindFactory_autoptr = ffi.Pointer<GstTypeFindFactory>;
 typedef GstTypeFindFactory_listautoptr = ffi.Pointer<GList>;
 typedef GstTypeFindFactory_slistautoptr = ffi.Pointer<GSList>;
@@ -94927,12 +94925,12 @@ enum GstParseFlags {
       };
 }
 
-final class _GstParseContext extends ffi.Opaque {}
+final class GstParseContext_ extends ffi.Opaque {}
 
 /// GstParseContext:
 ///
 /// Opaque structure.
-typedef GstParseContext = _GstParseContext;
+typedef GstParseContext = GstParseContext_;
 typedef GstParseContext_autoptr = ffi.Pointer<GstParseContext>;
 typedef GstParseContext_listautoptr = ffi.Pointer<GList>;
 typedef GstParseContext_slistautoptr = ffi.Pointer<GSList>;

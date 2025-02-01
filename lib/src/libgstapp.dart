@@ -26895,6 +26895,30 @@ class LibGstApp {
   late final _g_qsort_with_data = _g_qsort_with_dataPtr.asFunction<
       void Function(ffi.Pointer, int, int, GCompareDataFunc, ffi.Pointer)>();
 
+  void g_sort_array(
+    ffi.Pointer<ffi.Void> array,
+    int n_elements,
+    int element_size,
+    GCompareDataFunc compare_func,
+    ffi.Pointer<ffi.Void> user_data,
+  ) {
+    return _g_sort_array(
+      array,
+      n_elements,
+      element_size,
+      compare_func,
+      user_data,
+    );
+  }
+
+  late final _g_sort_arrayPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Void Function(ffi.Pointer<ffi.Void>, ffi.Size, ffi.Size,
+              GCompareDataFunc, ffi.Pointer<ffi.Void>)>>('g_sort_array');
+  late final _g_sort_array = _g_sort_arrayPtr.asFunction<
+      void Function(ffi.Pointer<ffi.Void>, int, int, GCompareDataFunc,
+          ffi.Pointer<ffi.Void>)>();
+
   ffi.Pointer<GQueue> g_queue_new() {
     return _g_queue_new();
   }
@@ -30898,6 +30922,20 @@ class LibGstApp {
           'g_strv_builder_unref');
   late final _g_strv_builder_unref = _g_strv_builder_unrefPtr
       .asFunction<void Function(ffi.Pointer<GStrvBuilder>)>();
+
+  GStrv g_strv_builder_unref_to_strv(
+    ffi.Pointer<GStrvBuilder> builder,
+  ) {
+    return _g_strv_builder_unref_to_strv(
+      builder,
+    );
+  }
+
+  late final _g_strv_builder_unref_to_strvPtr =
+      _lookup<ffi.NativeFunction<GStrv Function(ffi.Pointer<GStrvBuilder>)>>(
+          'g_strv_builder_unref_to_strv');
+  late final _g_strv_builder_unref_to_strv = _g_strv_builder_unref_to_strvPtr
+      .asFunction<GStrv Function(ffi.Pointer<GStrvBuilder>)>();
 
   ffi.Pointer<GStrvBuilder> g_strv_builder_ref(
     ffi.Pointer<GStrvBuilder> builder,
@@ -80577,7 +80615,7 @@ final class _GBookmarkFile extends ffi.Opaque {}
 /// pointed by the URI like its MIME type, the application that is registering
 /// the bookmark and the icon that should be used to represent the bookmark.
 /// The data is stored using the
-/// [Desktop Bookmark Specification](http://www.gnome.org/~ebassi/bookmark-spec).
+/// [Desktop Bookmark Specification](https://www.freedesktop.org/wiki/Specifications/desktop-bookmark-spec/).
 ///
 /// The syntax of the bookmark files is described in detail inside the
 /// Desktop Bookmark Specification, here is a quick summary: bookmark
@@ -81065,8 +81103,8 @@ abstract class GIOCondition {
 /// `g_main_context_{prepare,query,check,dispatch}` to integrate GMainContext in
 /// other event loops.
 ///
-/// Flags to pass to g_main_context_new_with_flags() which affect the behaviour
-/// of a #GMainContext.
+/// Flags to pass to [ctor@GLib.MainContext.new_with_flags] which affect the
+/// behaviour of a [struct@GLib.MainContext].
 ///
 /// Since: 2.72
 abstract class GMainContextFlags {
@@ -81147,15 +81185,17 @@ typedef GSource = _GSource;
 /// @user_data: data passed to the function, set when the source was
 /// created with one of the above functions
 ///
-/// Specifies the type of function passed to g_timeout_add(),
-/// g_timeout_add_full(), g_idle_add(), and g_idle_add_full().
+/// Specifies the type of function passed to [func@GLib.timeout_add],
+/// [func@GLib.timeout_add_full], [func@GLib.idle_add], and
+/// [func@GLib.idle_add_full].
 ///
-/// When calling g_source_set_callback(), you may need to cast a function of a
-/// different type to this type. Use G_SOURCE_FUNC() to avoid warnings about
-/// incompatible function types.
+/// When calling [method@GLib.Source.set_callback], you may need to cast a
+/// function of a different type to this type. Use [func@GLib.SOURCE_FUNC] to
+/// avoid warnings about incompatible function types.
 ///
-/// Returns: %FALSE if the source should be removed. %G_SOURCE_CONTINUE and
-/// %G_SOURCE_REMOVE are more memorable names for the return value.
+/// Returns: %FALSE if the source should be removed.
+/// [const@GLib.SOURCE_CONTINUE] and [const@GLib.SOURCE_REMOVE] are more
+/// memorable names for the return value.
 typedef GSourceFunc = ffi.Pointer<ffi.NativeFunction<GSourceFuncFunction>>;
 typedef GSourceFuncFunction = ffi.Int Function(ffi.Pointer user_data);
 typedef DartGSourceFuncFunction = int Function(ffi.Pointer user_data);
@@ -81182,15 +81222,17 @@ typedef DartGSourceFuncFunction = int Function(ffi.Pointer user_data);
 /// %TRUE in either its @prepare or its @check function, or if a ready time
 /// has been reached. The @dispatch function receives a callback function and
 /// user data. The callback function may be %NULL if the source was never
-/// connected to a callback using g_source_set_callback(). The @dispatch
-/// function should call the callback function with @user_data and whatever
-/// additional parameters are needed for this type of event source. The
-/// return value of the @dispatch function should be %G_SOURCE_REMOVE if the
-/// source should be removed or %G_SOURCE_CONTINUE to keep it.
+/// connected to a callback using [method@GLib.Source.set_callback]. The
+/// @dispatch function should call the callback function with @user_data and
+/// whatever additional parameters are needed for this type of event source.
+/// The return value of the @dispatch function should be
+/// [const@GLib.SOURCE_REMOVE] if the source should be removed or
+/// [const@GLib.SOURCE_CONTINUE] to keep it.
 /// @finalize: Called when the source is finalized. At this point, the source
 /// will have been destroyed, had its callback cleared, and have been removed
-/// from its #GMainContext, but it will still have its final reference count,
-/// so methods can be called on it from within this function.
+/// from its [struct@GLib.MainContext], but it will still have its final
+/// reference count, so methods can be called on it from within this
+/// function.
 ///
 /// The `GSourceFuncs` struct contains a table of
 /// functions used to handle event sources in a generic manner.
@@ -81215,28 +81257,116 @@ typedef DartGSourceFuncFunction = int Function(ffi.Pointer user_data);
 typedef GSourceFuncs = _GSourceFuncs;
 
 final class _GSourceFuncs extends ffi.Struct {
-  external ffi.Pointer<
-          ffi.NativeFunction<
-              ffi.Int Function(
-                  ffi.Pointer<GSource> source, ffi.Pointer<ffi.Int> timeout_)>>
-      prepare;
+  external GSourceFuncsPrepareFunc prepare;
 
-  external ffi.Pointer<
-      ffi.NativeFunction<ffi.Int Function(ffi.Pointer<GSource> source)>> check;
+  external GSourceFuncsCheckFunc check;
 
-  external ffi.Pointer<
-      ffi.NativeFunction<
-          ffi.Int Function(ffi.Pointer<GSource> source, GSourceFunc callback,
-              ffi.Pointer user_data)>> dispatch;
+  external GSourceFuncsDispatchFunc dispatch;
 
-  external ffi.Pointer<
-          ffi.NativeFunction<ffi.Void Function(ffi.Pointer<GSource> source)>>
-      finalize;
+  external GSourceFuncsFinalizeFunc finalize;
 
   external GSourceFunc closure_callback;
 
   external GSourceDummyMarshal closure_marshal;
 }
+
+/// GSourceFuncsPrepareFunc:
+/// @source: The #GSource
+/// @timeout_: (out) (optional): the maximum timeout (in milliseconds) which should be passed to the poll call
+///
+/// Checks the source for readiness.
+///
+/// Called before all the file descriptors are polled. If the
+/// source can determine that it is ready here (without waiting for the
+/// results of the poll call) it should return %TRUE. It can also return
+/// a @timeout_ value which should be the maximum timeout (in milliseconds)
+/// which should be passed to the poll call. The actual timeout used will
+/// be `-1` if all sources returned `-1`, or it will be the minimum of all
+/// the @timeout_ values returned which were greater than or equal to `0`.
+/// If the prepare function returns a timeout and the source also has a
+/// ready time set, then the lower of the two will be used.
+///
+/// Since 2.36 this may be `NULL`, in which case the effect is as if the
+/// function always returns `FALSE` with a timeout of `-1`.
+///
+/// Returns: %TRUE if the source is ready, %FALSE otherwise
+///
+/// Since: 2.82
+typedef GSourceFuncsPrepareFunc
+    = ffi.Pointer<ffi.NativeFunction<GSourceFuncsPrepareFuncFunction>>;
+typedef GSourceFuncsPrepareFuncFunction = ffi.Int Function(
+    ffi.Pointer<GSource> source, ffi.Pointer<ffi.Int> timeout_);
+typedef DartGSourceFuncsPrepareFuncFunction = int Function(
+    ffi.Pointer<GSource> source, ffi.Pointer<ffi.Int> timeout_);
+
+/// GSourceFuncsCheckFunc:
+/// @source: The #GSource
+///
+/// Checks if the source is ready to be dispatched.
+///
+/// Called after all the file descriptors are polled. The source
+/// should return %TRUE if it is ready to be dispatched. Note that some
+/// time may have passed since the previous prepare function was called,
+/// so the source should be checked again here.
+///
+/// Since 2.36 this may be `NULL`, in which case the effect is
+/// as if the function always returns `FALSE`.
+///
+/// Returns: %TRUE if ready to be dispatched, %FALSE otherwise
+///
+/// Since: 2.82
+typedef GSourceFuncsCheckFunc
+    = ffi.Pointer<ffi.NativeFunction<GSourceFuncsCheckFuncFunction>>;
+typedef GSourceFuncsCheckFuncFunction = ffi.Int Function(
+    ffi.Pointer<GSource> source);
+typedef DartGSourceFuncsCheckFuncFunction = int Function(
+    ffi.Pointer<GSource> source);
+
+/// GSourceFuncsDispatchFunc:
+/// @source: The #GSource
+/// @callback: (nullable): The #GSourceFunc to call
+/// @user_data: (nullable): data to pass to @callback
+///
+/// Dispatches the source callback.
+///
+/// Called to dispatch the event source, after it has returned
+/// `TRUE` in either its prepare or its check function, or if a ready time
+/// has been reached. The dispatch function receives a callback function and
+/// user data. The callback function may be `NULL` if the source was never
+/// connected to a callback using [method@GLib.Source.set_callback]. The dispatch
+/// function should call the callback function with @user_data and whatever
+/// additional parameters are needed for this type of event source. The
+/// return value of the dispatch function should be [const@GLib.SOURCE_REMOVE]
+/// if the source should be removed or [const@GLib.SOURCE_CONTINUE] to keep it.
+///
+/// Returns: [const@GLib.SOURCE_REMOVE] if the source should be removed,
+/// [const@GLib.SOURCE_CONTINUE] otherwise.
+///
+/// Since: 2.82
+typedef GSourceFuncsDispatchFunc
+    = ffi.Pointer<ffi.NativeFunction<GSourceFuncsDispatchFuncFunction>>;
+typedef GSourceFuncsDispatchFuncFunction = ffi.Int Function(
+    ffi.Pointer<GSource> source, GSourceFunc callback, ffi.Pointer user_data);
+typedef DartGSourceFuncsDispatchFuncFunction = int Function(
+    ffi.Pointer<GSource> source, GSourceFunc callback, ffi.Pointer user_data);
+
+/// GSourceFuncsFinalizeFunc:
+/// @source: The #GSource
+///
+/// Finalizes the source.
+///
+/// Called when the source is finalized. At this point, the source
+/// will have been destroyed, had its callback cleared, and have been removed
+/// from its [type@GLib.MainContext], but it will still have its final reference
+/// count, so methods can be called on it from within this function.
+///
+/// Since: 2.82
+typedef GSourceFuncsFinalizeFunc
+    = ffi.Pointer<ffi.NativeFunction<GSourceFuncsFinalizeFuncFunction>>;
+typedef GSourceFuncsFinalizeFuncFunction = ffi.Void Function(
+    ffi.Pointer<GSource> source);
+typedef DartGSourceFuncsFinalizeFuncFunction = void Function(
+    ffi.Pointer<GSource> source);
 
 /// GSourceDummyMarshal:
 ///
@@ -81282,8 +81412,8 @@ typedef GMainLoop = _GMainLoop;
 /// GSourceDisposeFunc:
 /// @source: #GSource that is currently being disposed
 ///
-/// Dispose function for @source. See g_source_set_dispose_function() for
-/// details.
+/// Dispose function for @source. See [method@GLib.Source.set_dispose_function]
+/// for details.
 ///
 /// Since: 2.64
 typedef GSourceDisposeFunc
@@ -81298,10 +81428,10 @@ typedef DartGPid = int;
 /// GClearHandleFunc:
 /// @handle_id: the handle ID to clear
 ///
-/// Specifies the type of function passed to g_clear_handle_id().
-/// The implementation is expected to free the resource identified
-/// by @handle_id; for instance, if @handle_id is a #GSource ID,
-/// g_source_remove() can be used.
+/// Specifies the type of function passed to [func@GLib.clear_handle_id] The
+/// implementation is expected to free the resource identified by @handle_id;
+/// for instance, if @handle_id is a [struct@GLib.Source] ID,
+/// [func@GLib.Source.remove] can be used.
 ///
 /// Since: 2.56
 typedef GClearHandleFunc
@@ -81316,7 +81446,7 @@ typedef DartGClearHandleFuncFunction = void Function(int handle_id);
 /// A source function that is only called once before being removed from the main
 /// context automatically.
 ///
-/// See: g_idle_add_once(), g_timeout_add_once()
+/// See: [func@GLib.idle_add_once], [func@GLib.timeout_add_once]
 ///
 /// Since: 2.74
 typedef GSourceOnceFunc
@@ -81328,13 +81458,13 @@ typedef DartGSourceOnceFuncFunction = void Function(ffi.Pointer user_data);
 /// @pid: the process id of the child process
 /// @wait_status: Status information about the child process, encoded
 /// in a platform-specific manner
-/// @user_data: user data passed to g_child_watch_add()
+/// @user_data: user data passed to [func@GLib.child_watch_add]
 ///
 /// Prototype of a #GChildWatchSource callback, called when a child
 /// process has exited.
 ///
-/// To interpret @wait_status, see the documentation
-/// for g_spawn_check_wait_status(). In particular,
+/// To interpret @wait_status, see the documentation for
+/// [func@GLib.spawn_check_wait_status]. In particular,
 /// on Unix platforms, note that it is usually not equal
 /// to the integer passed to `exit()` or returned from `main()`.
 typedef GChildWatchFunc
@@ -84159,7 +84289,7 @@ typedef GTypeClass = _GTypeClass;
 /// @base_finalize: Location of the base finalization function (optional)
 /// @class_init: Location of the class initialization function for
 /// classed and instantiatable types. Location of the default vtable
-/// inititalization function for interface types. (optional) This function
+/// initialization function for interface types. (optional) This function
 /// is used both to fill in virtual functions in the class or default vtable,
 /// and to do type-specific setup such as registering signals and object
 /// properties.
@@ -93973,7 +94103,7 @@ const String G_GNUC_PRETTY_FUNCTION = '';
 
 const int G_ANALYZER_ANALYZING = 0;
 
-const String G_STRLOC = '/tmp/TIHUOR/temp_for_macros.hpp:48';
+const String G_STRLOC = '/tmp/SRLSXR/temp_for_macros.hpp:49';
 
 const int FALSE = 0;
 
@@ -93987,7 +94117,7 @@ const int _FEATURES_H = 1;
 
 const int _DEFAULT_SOURCE = 1;
 
-const int __GLIBC_USE_ISOC2X = 1;
+const int __GLIBC_USE_ISOC23 = 1;
 
 const int __USE_ISOC11 = 1;
 
@@ -94021,6 +94151,8 @@ const int __SYSCALL_WORDSIZE = 64;
 
 const int __TIMESIZE = 64;
 
+const int __USE_TIME_BITS64 = 1;
+
 const int __USE_MISC = 1;
 
 const int __USE_ATFILE = 1;
@@ -94031,7 +94163,7 @@ const int __GLIBC_USE_DEPRECATED_GETS = 0;
 
 const int __GLIBC_USE_DEPRECATED_SCANF = 0;
 
-const int __GLIBC_USE_C2X_STRTOL = 1;
+const int __GLIBC_USE_C23_STRTOL = 1;
 
 const int _STDC_PREDEF_H = 1;
 
@@ -94049,7 +94181,7 @@ const int __GNU_LIBRARY__ = 6;
 
 const int __GLIBC__ = 2;
 
-const int __GLIBC_MINOR__ = 39;
+const int __GLIBC_MINOR__ = 40;
 
 const int _SYS_CDEFS_H = 1;
 
@@ -94067,13 +94199,13 @@ const int __GLIBC_USE_LIB_EXT2 = 1;
 
 const int __GLIBC_USE_IEC_60559_BFP_EXT = 1;
 
-const int __GLIBC_USE_IEC_60559_BFP_EXT_C2X = 1;
+const int __GLIBC_USE_IEC_60559_BFP_EXT_C23 = 1;
 
 const int __GLIBC_USE_IEC_60559_EXT = 1;
 
 const int __GLIBC_USE_IEC_60559_FUNCS_EXT = 1;
 
-const int __GLIBC_USE_IEC_60559_FUNCS_EXT_C2X = 1;
+const int __GLIBC_USE_IEC_60559_FUNCS_EXT_C23 = 1;
 
 const int __GLIBC_USE_IEC_60559_TYPES_EXT = 1;
 
@@ -94339,6 +94471,16 @@ const int DBL_HAS_SUBNORM = 1;
 
 const int LDBL_HAS_SUBNORM = 1;
 
+const double INFINITY = double.infinity;
+
+const double NAN = double.nan;
+
+const double FLT_NORM_MAX = 3.4028234663852886e+38;
+
+const double DBL_NORM_MAX = 1.7976931348623157e+308;
+
+const double LDBL_NORM_MAX = double.infinity;
+
 const double G_MINFLOAT = 1.1754943508222875e-38;
 
 const double G_MAXFLOAT = 3.4028234663852886e+38;
@@ -94425,9 +94567,9 @@ const String G_GUINTPTR_FORMAT = 'lu';
 
 const int GLIB_MAJOR_VERSION = 2;
 
-const int GLIB_MINOR_VERSION = 80;
+const int GLIB_MINOR_VERSION = 82;
 
-const int GLIB_MICRO_VERSION = 3;
+const int GLIB_MICRO_VERSION = 4;
 
 const int G_VA_COPY_AS_ARRAY = 1;
 
@@ -94543,13 +94685,15 @@ const int GLIB_VERSION_2_78 = 151040;
 
 const int GLIB_VERSION_2_80 = 151552;
 
-const int GLIB_VERSION_CUR_STABLE = 151552;
+const int GLIB_VERSION_2_82 = 152064;
 
-const int GLIB_VERSION_PREV_STABLE = 151040;
+const int GLIB_VERSION_CUR_STABLE = 152064;
 
-const int GLIB_VERSION_MIN_REQUIRED = 151552;
+const int GLIB_VERSION_PREV_STABLE = 151552;
 
-const int GLIB_VERSION_MAX_ALLOWED = 151552;
+const int GLIB_VERSION_MIN_REQUIRED = 152064;
+
+const int GLIB_VERSION_MAX_ALLOWED = 152064;
 
 const int _TIME_H = 1;
 
@@ -95709,7 +95853,7 @@ const int GST_VERSION_MAJOR = 1;
 
 const int GST_VERSION_MINOR = 24;
 
-const int GST_VERSION_MICRO = 5;
+const int GST_VERSION_MICRO = 12;
 
 const int GST_VERSION_NANO = 0;
 

@@ -8,7 +8,7 @@ compiler-opts:
   - '-I/usr/include/gstreamer-1.0'
   - '-I/usr/include/glib-2.0'
   - '-I/usr/lib/glib-2.0/include'
-  - '-I/usr/lib/clang/17/include'
+  - '-I/usr/lib/clang/19/include'
 type-map:
   'typedefs':
     # GLib mappings from https://docs.gtk.org/glib/types.html
